@@ -201,7 +201,7 @@
       <script src="javascripts/all.js"></script>
   </head>
 
-  <body class="index" data-languages="[&quot;javascript&quot;,&quot;java&quot;,&quot;swift&quot;,&quot;json&quot;]">
+  <body class="index" data-languages="[&quot;javascript&quot;,&quot;java&quot;,&quot;swift&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -214,7 +214,6 @@
               <a href="#" data-language-name="javascript">javascript</a>
               <a href="#" data-language-name="java">java</a>
               <a href="#" data-language-name="swift">swift</a>
-              <a href="#" data-language-name="json">json</a>
         </div>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
@@ -321,6 +320,11 @@ Limitation of OY! Bayar (Trial Version)
 
 <span class="nb">window</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s2">"https://pay.oyindonesia.com/username?"</span> <span class="o">+</span> <span class="nx">params</span><span class="p">,</span> <span class="s2">"_blank"</span><span class="p">);</span> 
 </code></pre>
+<blockquote>
+<p>Sample curl command:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl -X GET http://pay.oyindonesia.com/username -H <span class="s1">'content-type: application/json'</span> -d <span class="s1">'{"txid": "partner000001", "amount": 10000, "description": "Mohon dikirim segera", "show_contact": "true", "show_account": "true", "send_notif": "true", "enable_payment_cc": "false", "enable_payment_va": "false"}'</span>
+</code></pre>
 <p>Open this URL as webview to open OY! Bayar Checkout page, optionally with additional parameters.</p>
 <h3 id='open-webview'>Open Webview</h3>
 <p><code>GET http://pay.oyindonesia.com/username</code></p>
@@ -377,7 +381,11 @@ Remember — Make sure to replace `username` with your account username, given o
 <td>Whether OY! should enable payment using Bank Virtual Accounts</td>
 </tr>
 </tbody></table>
-<h2 id='payment-result-callback'>Payment Result Callback</h2><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+<h2 id='payment-result-callback'>Payment Result Callback</h2>
+<blockquote>
+<p>The above command returns JSON structured similar like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"txid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"partner000001"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"oy_txid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234567"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"nominal"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span><span class="w">
@@ -397,35 +405,43 @@ Check here for example: <a href="/?json#payment-result-callback">example</a></p>
 <table><thead>
 <tr>
 <th>Parameter</th>
+<th>Type</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>txid</td>
+<td>String</td>
 <td>(Optional) TransactionID which partner set on the initial OY! Bayar URL</td>
 </tr>
 <tr>
 <td>oy_txid</td>
+<td>String</td>
 <td>Internal TransactionID from OY! system</td>
 </tr>
 <tr>
 <td>nominal</td>
+<td>BigDecimal</td>
 <td>Amount of payment by the Buyer</td>
 </tr>
 <tr>
 <td>name</td>
+<td>String</td>
 <td>Name of Buyer</td>
 </tr>
 <tr>
 <td>phone_number</td>
+<td>String</td>
 <td>Phone Number of Buyer</td>
 </tr>
 <tr>
 <td>note</td>
+<td>String</td>
 <td>(Optional) This is note from the Buyer</td>
 </tr>
 <tr>
 <td>result</td>
+<td>String</td>
 <td>Payment Status of Buyer. Can be either &quot;success&quot; or &quot;failed&quot;</td>
 </tr>
 </tbody></table>
@@ -435,15 +451,18 @@ Check here for example: <a href="/?json#payment-result-callback">example</a></p>
 <table><thead>
 <tr>
 <th>Payment Status</th>
+<th>Type</th>
 <th>Meaning</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>success</td>
+<td>String</td>
 <td>Payment by Buyer is successful and has been sent to your bank account</td>
 </tr>
 <tr>
 <td>failed</td>
+<td>String</td>
 <td>Payment by Buyer is failed</td>
 </tr>
 </tbody></table>
@@ -454,7 +473,6 @@ Check here for example: <a href="/?json#payment-result-callback">example</a></p>
                 <a href="#" data-language-name="javascript">javascript</a>
                 <a href="#" data-language-name="java">java</a>
                 <a href="#" data-language-name="swift">swift</a>
-                <a href="#" data-language-name="json">json</a>
           </div>
       </div>
     </div>
