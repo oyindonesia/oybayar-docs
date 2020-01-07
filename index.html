@@ -392,7 +392,9 @@ Remember — Make sure to replace `username` with your account username, given o
   </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Joko Widodo"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"phone_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+6281111111"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"note"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mohon dikirim segera"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w">
+  </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"sender_bank"</span><span class="p">:</span><span class="w"> </span><span class="s2">"008"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"payment_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Instant Pay"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Non-trial Account can register specific end point URL (web hook) to receive callback whenever payment occurs.</p>
@@ -442,14 +444,21 @@ Check here for example: <a href="/?json#payment-result-callback">example</a></p>
 <tr>
 <td>result</td>
 <td>String</td>
-<td>Payment Status of Buyer. Can be either &quot;success&quot; or &quot;failed&quot;</td>
+<td>Payment Status of Buyer. Can be either &quot;success&quot; or &quot;failed&quot; or &quot;&quot;</td>
 </tr>
 <tr>
 <td>sender_bank</td>
 <td>String</td>
 <td>Bank code used by buyer to do payment</td>
 </tr>
+<tr>
+<td>payment_method</td>
+<td>String</td>
+<td>Define what payment method to be used in transaction (<code>Instant Pay</code>/<code>Manual Pay</code>/<code>Manual Bank Transfer</code>)*</td>
+</tr>
 </tbody></table>
+
+<p>*Instant Pay = direct-debit or cc; Manual Pay = virtual account; Manual Bank Transfer = pay using manual transfer</p>
 <h1 id='response-codes'>Response Codes</h1>
 <p>Possible status codes on the Payment Result Callback:</p>
 
