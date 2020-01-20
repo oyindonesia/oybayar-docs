@@ -333,6 +333,8 @@ Limitation of OY! Bayar (Trial Version)
 Remember — Make sure to replace `username` with your account username, given on the email.
 </aside>
 <h3 id='query-parameters'>Query Parameters</h3>
+<p>Note: Make sure at most only two of the payment method are false</p>
+
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -379,6 +381,11 @@ Remember — Make sure to replace `username` with your account username, given o
 <td>enable_payment_va</td>
 <td>false</td>
 <td>Whether OY! should enable payment using Bank Virtual Accounts</td>
+</tr>
+<tr>
+<td>enable_payment_debit</td>
+<td>false</td>
+<td>Whether OY! should enable payment using Direct Debit</td>
 </tr>
 </tbody></table>
 <h2 id='payment-result-callback'>Payment Result Callback</h2>
