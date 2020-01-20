@@ -310,20 +310,24 @@ Limitation of OY! Bayar (Trial Version)
 <li>Buyer pays using any of <em>Direct Debit</em>, <em>Credit Cards</em>, or <em>Bank Virtual Accounts</em>.</li>
 <li>You <strong>receive money on your receiving account</strong> and OY! will <strong>send Payment status Callback</strong> to your end point (note: Only available for non-trial account)</li>
 </ol>
-<h1 id='oy-bayar-webview'>OY! Bayar Webview</h1><h2 id='request-with-parameters'>Request With Parameters</h2><pre class="highlight javascript tab-javascript"><code><span class="kd">let</span> <span class="nx">params</span> <span class="o">=</span> <span class="s1">'open=true'</span><span class="p">;</span>
+<h1 id='oy-bayar-webview'>OY! Bayar Webview</h1><h2 id='request-with-parameters'>Request With Parameters</h2><pre class="highlight javascript tab-javascript"><code><span class="c1">// note: at most only two of the payment method are false</span>
+<span class="kd">let</span> <span class="nx">params</span> <span class="o">=</span> <span class="s1">'open=true'</span><span class="p">;</span>
 <span class="nx">params</span> <span class="o">+=</span> <span class="p">(</span><span class="nx">txid</span> <span class="o">!==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">?</span> <span class="s1">'&amp;txid='</span><span class="o">+</span><span class="nx">txid</span> <span class="p">:</span> <span class="s1">''</span><span class="p">;</span>
 <span class="nx">params</span> <span class="o">+=</span> <span class="p">(</span><span class="nx">amount</span> <span class="o">!==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">?</span> <span class="s1">'&amp;amount='</span><span class="o">+</span><span class="nx">amount</span> <span class="p">:</span> <span class="s1">''</span><span class="p">;</span>
 <span class="nx">params</span> <span class="o">+=</span> <span class="p">(</span><span class="nx">description</span> <span class="o">!==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">?</span> <span class="s1">'&amp;description='</span><span class="o">+</span><span class="nb">encodeURIComponent</span><span class="p">(</span><span class="nx">description</span><span class="p">)</span> <span class="p">:</span> <span class="s1">''</span><span class="p">;</span>
 <span class="nx">params</span> <span class="o">+=</span> <span class="p">(</span><span class="nx">show_contact</span> <span class="o">!==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">?</span> <span class="s1">'&amp;show_contact='</span><span class="o">+</span><span class="nx">show_contact</span> <span class="p">:</span> <span class="s1">''</span><span class="p">;</span>
 <span class="nx">params</span> <span class="o">+=</span> <span class="p">(</span><span class="nx">show_account</span> <span class="o">!==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">?</span> <span class="s1">'&amp;show_account='</span><span class="o">+</span><span class="nx">show_account</span> <span class="p">:</span> <span class="s1">''</span><span class="p">;</span>
 <span class="nx">params</span> <span class="o">+=</span> <span class="p">(</span><span class="nx">send_notif</span> <span class="o">!==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">?</span> <span class="s1">'&amp;send_notif='</span><span class="o">+</span><span class="nx">send_notif</span> <span class="p">:</span> <span class="s1">''</span><span class="p">;</span>
+<span class="nx">params</span> <span class="o">+=</span> <span class="p">(</span><span class="nx">enable_payment_cc</span> <span class="o">!==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">?</span> <span class="s1">'&amp;enable_payment_cc'</span><span class="o">+</span><span class="nx">enable_payment_cc</span> <span class="p">:</span> <span class="s1">''</span><span class="p">;</span>
+<span class="nx">params</span> <span class="o">+=</span> <span class="p">(</span><span class="nx">enable_payment_va</span> <span class="o">!==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">?</span> <span class="s1">'&amp;enable_payment_va'</span><span class="o">+</span><span class="nx">enable_payment_va</span> <span class="p">:</span> <span class="s1">''</span><span class="p">;</span>
+<span class="nx">params</span> <span class="o">+=</span> <span class="p">(</span><span class="nx">enable_payment_debit</span> <span class="o">!==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">?</span> <span class="s1">'&amp;enable_payment_debit'</span><span class="o">+</span><span class="nx">enable_payment_debit</span> <span class="p">:</span> <span class="s1">''</span><span class="p">;</span>
 
 <span class="nb">window</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s2">"https://pay.oyindonesia.com/username?"</span> <span class="o">+</span> <span class="nx">params</span><span class="p">,</span> <span class="s2">"_blank"</span><span class="p">);</span> 
 </code></pre>
 <blockquote>
 <p>Sample curl command:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl -X GET http://pay.oyindonesia.com/username -H <span class="s1">'content-type: application/json'</span> -d <span class="s1">'{"txid": "partner000001", "amount": 10000, "description": "Mohon dikirim segera", "show_contact": "true", "show_account": "true", "send_notif": "true", "enable_payment_cc": "false", "enable_payment_va": "false"}'</span>
+<pre class="highlight shell tab-shell"><code>curl -X GET http://pay.oyindonesia.com/username -H <span class="s1">'content-type: application/json'</span> -d <span class="s1">'{"txid": "partner000001", "amount": 10000, "description": "Mohon dikirim segera", "show_contact": "true", "show_account": "true", "send_notif": "true", "enable_payment_cc": "false", "enable_payment_va": "false", "enable_payment_debit": "true}'</span>
 </code></pre>
 <p>Open this URL as webview to open OY! Bayar Checkout page, optionally with additional parameters.</p>
 <h3 id='open-webview'>Open Webview</h3>
@@ -374,17 +378,17 @@ Remember — Make sure to replace `username` with your account username, given o
 </tr>
 <tr>
 <td>enable_payment_cc</td>
-<td>false</td>
+<td>true</td>
 <td>Whether OY! should enable payment using Credit Card</td>
 </tr>
 <tr>
 <td>enable_payment_va</td>
-<td>false</td>
+<td>true</td>
 <td>Whether OY! should enable payment using Bank Virtual Accounts</td>
 </tr>
 <tr>
 <td>enable_payment_debit</td>
-<td>false</td>
+<td>true</td>
 <td>Whether OY! should enable payment using Direct Debit</td>
 </tr>
 </tbody></table>
