@@ -400,7 +400,7 @@ Remember — Make sure to replace `username` with your account username, given o
 </tr>
 </tbody></table>
 <h3 id='sample-payment-checkout-url-with-all-parameters-defined'>Sample payment checkout URL with all parameters defined:</h3>
-<p><code>https://pay.oyindonesia.com/yourusername?txid=partner000001&amp;amount=10000&amp;description=Mohon%20dikirim%20segera&amp;show_contact=true&amp;show_account=true&amp;send_notif=true&amp;enable_payment_cc=false&amp;enable_payment_va=false&amp;enable_payment_debit=true</code></p>
+<p><code>https://pay.oyindonesia.com/yourusername?txid=partner000001&amp;amount=15000&amp;description=Mohon%20dikirim%20segera&amp;show_contact=true&amp;show_account=true&amp;send_notif=true&amp;enable_payment_cc=false&amp;enable_payment_va=false&amp;enable_payment_debit=true</code></p>
 <h2 id='payment-result-callback'>Payment Result Callback</h2>
 <blockquote>
 <p>The above command returns JSON structured similar like this:</p>
@@ -408,7 +408,7 @@ Remember — Make sure to replace `username` with your account username, given o
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"txid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"partner000001"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"oy_txid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234567"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"nominal"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"nominal"</span><span class="p">:</span><span class="w"> </span><span class="mi">15000</span><span class="p">,</span><span class="w">
   </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Joko Widodo"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"phone_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+6281111111"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"note"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mohon dikirim segera"</span><span class="p">,</span><span class="w">
@@ -613,7 +613,7 @@ Make sure at most only two of the payment method are false and always use HTTPS 
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"partner_tx_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"partner000001"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"tx_ref_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234567"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">15000</span><span class="p">,</span><span class="w">
   </span><span class="s2">"sender_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Joko Widodo"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"sender_phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+6281111111"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"sender_note"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mohon dikirim segera"</span><span class="p">,</span><span class="w">
