@@ -243,10 +243,24 @@
                   <li>
                     <a href="#payment-result-callback" class="toc-h2 toc-link" data-title="Payment Result Callback">Payment Result Callback</a>
                   </li>
+                  <li>
+                    <a href="#response-codes" class="toc-h2 toc-link" data-title="Response Codes">Response Codes</a>
+                  </li>
               </ul>
           </li>
           <li>
-            <a href="#response-codes" class="toc-h1 toc-link" data-title="Response Codes">Response Codes</a>
+            <a href="#oy-bayar-webview-v2" class="toc-h1 toc-link" data-title="OY! Bayar Webview V2">OY! Bayar Webview V2</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#request-with-parameters-v2" class="toc-h2 toc-link" data-title="Request With Parameters V2">Request With Parameters V2</a>
+                  </li>
+                  <li>
+                    <a href="#payment-result-callback-v2" class="toc-h2 toc-link" data-title="Payment Result Callback V2">Payment Result Callback V2</a>
+                  </li>
+                  <li>
+                    <a href="#response-codes-v2" class="toc-h2 toc-link" data-title="Response Codes V2">Response Codes V2</a>
+                  </li>
+              </ul>
           </li>
       </ul>
         <ul class="toc-footer">
@@ -475,7 +489,7 @@ Check here for example: <a href="/?json#payment-result-callback">example</a></p>
 </tbody></table>
 
 <p>*Instant Pay = direct-debit or cc; Manual Pay = virtual account; Manual Bank Transfer = pay using manual transfer</p>
-<h1 id='response-codes'>Response Codes</h1>
+<h2 id='response-codes'>Response Codes</h2>
 <p>Possible status codes on the Payment Result Callback:</p>
 
 <table><thead>
@@ -494,6 +508,229 @@ Check here for example: <a href="/?json#payment-result-callback">example</a></p>
 <td>failed</td>
 <td>String</td>
 <td>Payment by Buyer is failed</td>
+</tr>
+</tbody></table>
+<h1 id='oy-bayar-webview-v2'>OY! Bayar Webview V2</h1><h2 id='request-with-parameters-v2'>Request With Parameters V2</h2><pre class="highlight javascript tab-javascript"><code><span class="c1">// note: at most only two of the payment method are false</span>
+<span class="kd">let</span> <span class="nx">params</span> <span class="o">=</span> <span class="s1">'username='</span> <span class="o">+</span> <span class="nx">username</span><span class="p">;</span>
+<span class="nx">params</span> <span class="o">+=</span> <span class="p">(</span><span class="nx">partner_tx_id</span> <span class="o">!==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">?</span> <span class="s1">'&amp;partner_tx_id='</span> <span class="o">+</span> <span class="nx">partner_tx_id</span> <span class="p">:</span> <span class="s1">''</span><span class="p">;</span>
+<span class="nx">params</span> <span class="o">+=</span> <span class="p">(</span><span class="nx">amount</span> <span class="o">!==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">?</span> <span class="s1">'&amp;amount='</span> <span class="o">+</span> <span class="nx">amount</span> <span class="p">:</span> <span class="s1">''</span><span class="p">;</span>
+<span class="nx">params</span> <span class="o">+=</span> <span class="p">(</span><span class="nx">sender_name</span> <span class="o">!==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">?</span> <span class="s1">'&amp;sender_name='</span> <span class="o">+</span> <span class="nx">sender_name</span> <span class="p">:</span> <span class="s1">''</span><span class="p">;</span>
+<span class="nx">params</span> <span class="o">+=</span> <span class="p">(</span><span class="nx">sender_phone</span> <span class="o">!==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">?</span> <span class="s1">'&amp;sender_phone='</span> <span class="o">+</span> <span class="nx">sender_phone</span> <span class="p">:</span> <span class="s1">''</span><span class="p">;</span>
+<span class="nx">params</span> <span class="o">+=</span> <span class="p">(</span><span class="nx">sender_note</span> <span class="o">!==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">?</span> <span class="s1">'&amp;sender_note='</span> <span class="o">+</span> <span class="nx">sender_note</span> <span class="p">:</span> <span class="s1">''</span><span class="p">;</span>
+<span class="nx">params</span> <span class="o">+=</span> <span class="p">(</span><span class="nx">description</span> <span class="o">!==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">?</span> <span class="s1">'&amp;description='</span> <span class="o">+</span> <span class="nb">encodeURIComponent</span><span class="p">(</span><span class="nx">description</span><span class="p">)</span> <span class="p">:</span> <span class="s1">''</span><span class="p">;</span>
+<span class="nx">params</span> <span class="o">+=</span> <span class="p">(</span><span class="nx">is_open</span> <span class="o">!==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">?</span> <span class="s1">'&amp;is_open='</span> <span class="o">+</span> <span class="nx">is_open</span> <span class="p">:</span> <span class="s1">''</span><span class="p">;</span>
+<span class="nx">params</span> <span class="o">+=</span> <span class="p">(</span><span class="nx">step</span> <span class="o">!==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">?</span> <span class="s1">'&amp;step='</span> <span class="o">+</span> <span class="nx">step</span> <span class="p">:</span> <span class="s1">''</span><span class="p">;</span>
+<span class="nx">params</span> <span class="o">+=</span> <span class="p">(</span><span class="nx">enable_payment_cc</span> <span class="o">!==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">?</span> <span class="s1">'&amp;enable_payment_cc='</span> <span class="o">+</span> <span class="nx">enable_payment_cc</span> <span class="p">:</span> <span class="s1">''</span><span class="p">;</span>
+<span class="nx">params</span> <span class="o">+=</span> <span class="p">(</span><span class="nx">enable_payment_va</span> <span class="o">!==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">?</span> <span class="s1">'&amp;enable_payment_va='</span> <span class="o">+</span> <span class="nx">enable_payment_va</span> <span class="p">:</span> <span class="s1">''</span><span class="p">;</span>
+<span class="nx">params</span> <span class="o">+=</span> <span class="p">(</span><span class="nx">enable_payment_debit</span> <span class="o">!==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">?</span> <span class="s1">'&amp;enable_payment_debit='</span> <span class="o">+</span> <span class="nx">enable_payment_debit</span> <span class="p">:</span> <span class="s1">''</span><span class="p">;</span>
+
+<span class="nb">window</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s2">"https://pay.oyindonesia.com/v2?"</span> <span class="o">+</span> <span class="nx">params</span><span class="p">,</span> <span class="s2">"_blank"</span><span class="p">);</span> 
+</code></pre>
+<blockquote>
+<p>Sample curl command:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl -X GET http://pay.oyindonesia.com/v2 -H <span class="s1">'content-type: application/json'</span> -d <span class="s1">'{ "partner_tx_id": "partner00001", "amount": "10000", "sender_name": "John Doe", "sender_phone": "%2B62812341234", "sender_note": "Catatan", "description": "Pembayaran Makanan", "is_open": "true", "step": "input-amount", "enable_payment_cc": "true", "enable_payment_va": "true", "enable_payment_debit": "true"}'</span>
+</code></pre>
+<p>Open this URL as webview to open OY! Bayar Checkout page, optionally with additional parameters.</p>
+<h3 id='open-webview-v2'>Open Webview V2</h3>
+<p><code>GET http://pay.oyindonesia.com/v2?username={username}</code></p>
+
+<aside class="success">
+Remember — Make sure to replace `{username}` with your account username, given on the email.
+</aside>
+<h3 id='query-parameters-v2'>Query Parameters V2</h3>
+<p>Note: Make sure at most only two of the payment method are false</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Default Value</th>
+<th>Description</th>
+<th>Limitation</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>username</td>
+<td>String</td>
+<td>-</td>
+<td>The username used by partner for registration with OY!</td>
+<td>-</td>
+</tr>
+<tr>
+<td>partner_tx_id</td>
+<td>String</td>
+<td>Auto generated</td>
+<td>A unique transaction ID provided by partner</td>
+<td>A partner_tx_id that has been succesfully paid cannot be used anymore under the same username</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>Integer</td>
+<td>-</td>
+<td>The amount of a transaction to be paid</td>
+<td>The amount that can be processed is between IDR 15,000 and IDR 25,000,000</td>
+</tr>
+<tr>
+<td>sender_name</td>
+<td>String</td>
+<td>-</td>
+<td>Name of the payer for a transaction</td>
+<td>-</td>
+</tr>
+<tr>
+<td>sender_phone</td>
+<td>Numeric</td>
+<td>-</td>
+<td>Phone number of the payer for a transaction</td>
+<td>-</td>
+</tr>
+<tr>
+<td>sender_note</td>
+<td>String</td>
+<td>-</td>
+<td>Additional notes from the payer for a transaction</td>
+<td>-</td>
+</tr>
+<tr>
+<td>description</td>
+<td>String</td>
+<td>-</td>
+<td>Description of the payment checkout link</td>
+<td>-</td>
+</tr>
+<tr>
+<td>is_open</td>
+<td>String</td>
+<td>TRUE</td>
+<td>Enable open/closed amount transaction method</td>
+<td>If is_open = TRUE and the amount parameter is defined, then a payer can pay any amount (greater than IDR 15,000) up to the defined amount. And in the case that is_open=false, then the amount and partner_tx_id parameters must be defined. Once a partner_tx_id has ever been defined with is_open=false, the amount and the is_open parameters cannot be updated unless the transaction is completed for that particular partner_tx_id.</td>
+</tr>
+<tr>
+<td>step</td>
+<td>String</td>
+<td>-</td>
+<td>Accessing specific page of the payment checkout URL. Possible values for this parameter: input-amount, input-personal-info, select-payment-method</td>
+<td>If step = input-personal-info then the amount parameter must be defined. And if step = select-payment-method then the amount and sender_name parameters must be defined.</td>
+</tr>
+</tbody></table>
+<h2 id='payment-result-callback-v2'>Payment Result Callback V2</h2>
+<blockquote>
+<p>The above command returns JSON structured similar like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"partner_tx_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"partner000001"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"tx_ref_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234567"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"sender_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Joko Widodo"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"sender_phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+6281111111"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"sender_note"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mohon dikirim segera"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"settlement_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"sender_bank"</span><span class="p">:</span><span class="w"> </span><span class="s2">"008"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"payment_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DC"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"va_number"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Non-trial Account can register specific end point URL (web hook) to receive callback whenever payment occurs.</p>
+
+<aside class="warning">You need to register an end point URL to receive this callback. Note that Trial Account would not get access to this feature</aside>
+<h3 id='callback-parameters-v2'>Callback Parameters V2</h3>
+<p>The data on the callback will be sent using JSON format via POST data to your web hook.
+Check here for example: <a href="/?json#payment-result-callback-v2">example</a></p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>partner_tx_id</td>
+<td>String</td>
+<td>A unique transaction ID provided by partner</td>
+</tr>
+<tr>
+<td>tx_ref_number</td>
+<td>String</td>
+<td>OY&#39;s internal unique transaction ID</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>BigDecimal</td>
+<td>The amount of a transaction that is paid</td>
+</tr>
+<tr>
+<td>sender_name</td>
+<td>String</td>
+<td>Name of a payer for a transaction</td>
+</tr>
+<tr>
+<td>sender_phone</td>
+<td>String</td>
+<td>Phone number of a payer for a transaction</td>
+</tr>
+<tr>
+<td>sender_note</td>
+<td>String</td>
+<td>Additional notes from a payer for a transaction</td>
+</tr>
+<tr>
+<td>status</td>
+<td>String</td>
+<td>The status of a transaction (e.g. Success/Failed/Processing)</td>
+</tr>
+<tr>
+<td>sender_bank</td>
+<td>String</td>
+<td>The bank code used by a payer to do payment</td>
+</tr>
+<tr>
+<td>payment_method</td>
+<td>String</td>
+<td>The payment method used in a transaction such as CC (Credit Card), DC (Debit Card) or VA (Virtual Account)</td>
+</tr>
+<tr>
+<td>va_number</td>
+<td>String</td>
+<td>VA number to be used on payment if using Virtual Account</td>
+</tr>
+</tbody></table>
+<h2 id='response-codes-v2'>Response Codes V2</h2>
+<p>Possible status codes on the Payment Result Callback:</p>
+
+<table><thead>
+<tr>
+<th>Payment Status</th>
+<th>Type</th>
+<th>Settlement Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>success</td>
+<td>String</td>
+<td>Realtime</td>
+<td>Payment has been successfully charged and disbursed to partner&#39;s bank account</td>
+</tr>
+<tr>
+<td>success</td>
+<td>String</td>
+<td>Non-realtime</td>
+<td>Payment has been successfully charged and partner&#39;s balance is updated in OY&#39;s business portal</td>
+</tr>
+<tr>
+<td>failed</td>
+<td>String</td>
+<td>Realtime/Non-realtime</td>
+<td>Payment failed to be charged. Payer may retry the payment request.</td>
+</tr>
+<tr>
+<td>processing</td>
+<td>String</td>
+<td>Realtime/Non-realtime</td>
+<td>A payment attempt has been initiated</td>
 </tr>
 </tbody></table>
 
