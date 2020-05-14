@@ -765,7 +765,7 @@ Check here for example: <a href="/?json#payment-result-callback-v2">example</a><
 <blockquote>
 <p>To open Payment Checkout, use following code from your platform:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl -X GET <span class="s1">'https://partner.oyindonesia.com/api/payment-checkout/status?partner_tx_id=OY123456&amp;send_callback=false'</span> -H <span class="s1">'content-type: application/json, accept: application/json, x-oy-username:yourusername, x-api-key:yourapikey'</span>
+<pre class="highlight shell tab-shell"><code>curl -X GET <span class="s1">'https://partner.oyindonesia.com/api/payment-checkout/status?partner_tx_id=OY123456&amp;send_callback=false'</span> -H <span class="s1">'x-oy-username:yourusername'</span> -H <span class="s1">' x-api-key:yourapikey'</span>
 </code></pre><h3 id='request-headers'>Request Headers</h3>
 <table><thead>
 <tr>
