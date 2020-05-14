@@ -258,7 +258,13 @@
                     <a href="#callback-results" class="toc-h2 toc-link" data-title="Callback Results">Callback Results</a>
                   </li>
                   <li>
-                    <a href="#response-codes-2" class="toc-h2 toc-link" data-title="Response Codes">Response Codes</a>
+                    <a href="#callback-parameters-2" class="toc-h2 toc-link" data-title="Callback Parameters">Callback Parameters</a>
+                  </li>
+                  <li>
+                    <a href="#callback-response-codes" class="toc-h2 toc-link" data-title="Callback Response Codes">Callback Response Codes</a>
+                  </li>
+                  <li>
+                    <a href="#api-callback" class="toc-h2 toc-link" data-title="API Callback">API Callback</a>
                   </li>
               </ul>
           </li>
@@ -622,7 +628,7 @@ Make sure at most only two of the payment method are false and always use HTTPS 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <aside class="warning">You need to register an end point Callback URL to receive this callback.</aside>
-<h3 id='callback-parameters-2'>Callback Parameters</h3>
+<h2 id='callback-parameters-2'>Callback Parameters</h2>
 <p>The data on the callback will be sent using JSON format via POST data to your web hook.
 Check here for example: <a href="/?json#payment-result-callback-v2">example</a></p>
 
@@ -691,15 +697,15 @@ Check here for example: <a href="/?json#payment-result-callback-v2">example</a><
 <tr>
 <td>created</td>
 <td>DateTime</td>
-<td>A timestamp to indicate when a payment checkout link is created or first accessed, format : <code>yyyy-MM-dd&#39;T&#39;HH:mm:ss</code></td>
+<td>The timestamp which indicates the creation time of a payment checkout link</td>
 </tr>
 <tr>
 <td>updated</td>
 <td>DateTime</td>
-<td>A timestamp to indicate when a payment status is updated, format : <code>yyyy-MM-dd&#39;T&#39;HH:mm:ss</code></td>
+<td>The timestamp which indicates the latest updated time of a payment checkout link due to status update</td>
 </tr>
 </tbody></table>
-<h2 id='response-codes-2'>Response Codes</h2>
+<h2 id='callback-response-codes'>Callback Response Codes</h2>
 <table><thead>
 <tr>
 <th>Payment Status</th>
@@ -709,28 +715,167 @@ Check here for example: <a href="/?json#payment-result-callback-v2">example</a><
 </tr>
 </thead><tbody>
 <tr>
-<td>success</td>
+<td>waiting_payment</td>
 <td>String</td>
-<td>realtime</td>
-<td>Payment has been successfully charged and disbursed to partner&#39;s bank account</td>
+<td>Bank Transfer</td>
+<td>Payer triggers a payment status check for an unpaid VA</td>
 </tr>
 <tr>
-<td>success</td>
+<td>expired_va</td>
 <td>String</td>
-<td>non_realtime</td>
-<td>Payment has been successfully charged and partner&#39;s balance is updated in OY&#39;s business portal</td>
+<td>Bank Transfer</td>
+<td>An unpaid VA has expired and payer can retry a payment</td>
 </tr>
 <tr>
-<td>failed</td>
+<td>charge_in_progress</td>
 <td>String</td>
-<td>realtime/non_realtime</td>
-<td>Payment failed to be charged. Payer may retry the payment request.</td>
+<td>Card</td>
+<td>OTP for card payment method has been succesfully entered and processed</td>
 </tr>
 <tr>
-<td>processing</td>
+<td>charge_sucess</td>
 <td>String</td>
-<td>realtime/non_realtime</td>
-<td>A payment attempt has been initiated</td>
+<td>Bank Transfer/Card</td>
+<td>A payment has been successfully received by OY</td>
+</tr>
+<tr>
+<td>charge_failed</td>
+<td>String</td>
+<td>Card</td>
+<td>OTP for card payment method has been succesfully entered but payment is rejected</td>
+</tr>
+<tr>
+<td>disburse_in_progress</td>
+<td>String</td>
+<td>Bank Transfer/Card</td>
+<td>For &quot;Realtime&quot; settlement option, disbursement is currently in progress to partner&#39;s registered bank account</td>
+</tr>
+<tr>
+<td>complete</td>
+<td>String</td>
+<td>Bank Transfer/Card  For &quot;Realtime&quot; settlement option, disbursement has been succesfully executed and received by partner</td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='api-callback'>API Callback</h2>
+<p>An endpoint to retrieve and/or re-send the latest callback status of a transaction. Please contact us to submit a request of an API Key and IP whitelisting.</p>
+<h3 id='https-request'>HTTPS Request</h3>
+<p>GET <code>https://partner.oyindonesia.com/api/payment-checkout/status</code></p>
+
+<blockquote>
+<p>To open Payment Checkout, use following code from your platform:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl -X GET <span class="s1">'https://partner.oyindonesia.com/api/payment-checkout/status?partner_tx_id=OY123456&amp;send_callback=false'</span> -H <span class="s1">'content-type: application/json, accept: application/json, x-oy-username:yourusername, x-api-key:yourapikey'</span>
+</code></pre><h3 id='request-headers'>Request Headers</h3>
+<table><thead>
+<tr>
+<th>Parameters</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>x-api-key</td>
+<td>String</td>
+<td>API Key for establishing connection to this particular endpoint</td>
+</tr>
+<tr>
+<td>x-oy-username</td>
+<td>String</td>
+<td>The registered partner username which access is enabled for payment checkout product</td>
+</tr>
+</tbody></table>
+<h3 id='request-parameters'>Request Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameters</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>partner_tx_id</td>
+<td>String</td>
+<td>A unique transaction ID which callback status to be checked</td>
+</tr>
+<tr>
+<td>send_callback</td>
+<td>Boolean</td>
+<td>A flag to indiciate if the latest callback of a transaction need to be re-sent or not</td>
+</tr>
+</tbody></table>
+<h3 id='response-parameters'>Response Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>partner_tx_id</td>
+<td>String</td>
+<td>A unique transaction ID provided by partner</td>
+</tr>
+<tr>
+<td>tx_ref_number</td>
+<td>String</td>
+<td>OY&#39;s internal unique transaction ID</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>BigDecimal</td>
+<td>The amount of a transaction that is paid</td>
+</tr>
+<tr>
+<td>sender_name</td>
+<td>String</td>
+<td>Name of a payer for a transaction</td>
+</tr>
+<tr>
+<td>sender_phone</td>
+<td>String</td>
+<td>Phone number of a payer for a transaction</td>
+</tr>
+<tr>
+<td>sender_note</td>
+<td>String</td>
+<td>Additional notes from a payer for a transaction</td>
+</tr>
+<tr>
+<td>status</td>
+<td>String</td>
+<td>The status of a transaction</td>
+</tr>
+<tr>
+<td>sender_bank</td>
+<td>String</td>
+<td>The bank code used by a payer to do payment</td>
+</tr>
+<tr>
+<td>payment_method</td>
+<td>String</td>
+<td>The payment method used in a transaction such as CC (Credit Card), DC (Debit Card) or VA (Virtual Account)</td>
+</tr>
+<tr>
+<td>va_number</td>
+<td>String</td>
+<td>VA number to be used on payment if using Virtual Account</td>
+</tr>
+<tr>
+<td>settlement_type</td>
+<td>String</td>
+<td>Indicate if a transaction will be settled in realtime/non-realtime</td>
+</tr>
+<tr>
+<td>created</td>
+<td>String</td>
+<td>The timestamp which indicates the creation time of a payment checkout link</td>
+</tr>
+<tr>
+<td>updated</td>
+<td>String</td>
+<td>The timestamp which indicates the latest updated time of a payment checkout link due to status update</td>
 </tr>
 </tbody></table>
 
