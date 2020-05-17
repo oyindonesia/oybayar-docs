@@ -884,23 +884,23 @@ Check here for example: <a href="/?json#payment-result-callback-v2">example</a><
 <h2 id='api-create-url'>API Create URL</h2>
 <p>An endpoint to create payment checkout URL which return parameters by encapsulation.</p>
 <h3 id='https-request-2'>HTTPS Request</h3>
-<p>POST <code>https://partner.oyindonesia.com/api/payment-checkout/create</code>
-{
-        &quot;username&quot;:&quot;justkhals&quot;,
-        &quot;partner_tx_id&quot;:&quot;ABC123456527&quot;,
-        &quot;sender_name&quot;:&quot;Roberto F&quot;,
-        &quot;sender_note&quot;:&quot;note str&quot;,
-        &quot;sender_phone&quot;: &quot;082114845847&quot;,
-        &quot;checkout_url&quot;:&quot;string&quot;,
-        &quot;amount&quot;:75000,
-        &quot;is_open&quot;:false,
-        &quot;step&quot;:&quot;input-amount&quot; ,
-        &quot;enable_payment_cc&quot;:false,
-        &quot;enable_payment_va&quot;:true,
-        &quot;enable_payment_debit&quot;:false,
-        &quot;description&quot;:&quot;description&quot;
-}</p>
-<h3 id='request-headers-2'>Request Headers</h3>
+<p>POST <code>https://partner.oyindonesia.com/api/payment-checkout/create</code></p>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+        </span><span class="s2">"username"</span><span class="p">:</span><span class="s2">"justkhals"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"partner_tx_id"</span><span class="p">:</span><span class="s2">"ABC123456527"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sender_name"</span><span class="p">:</span><span class="s2">"Roberto F"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sender_note"</span><span class="p">:</span><span class="s2">"note str"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sender_phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"082114845847"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"checkout_url"</span><span class="p">:</span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"amount"</span><span class="p">:</span><span class="mi">75000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"is_open"</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"step"</span><span class="p">:</span><span class="s2">"input-amount"</span><span class="w"> </span><span class="p">,</span><span class="w">
+        </span><span class="s2">"enable_payment_cc"</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"enable_payment_va"</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"enable_payment_debit"</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"description"</span><span class="p">:</span><span class="s2">"description"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='request-headers-2'>Request Headers</h3>
 <table><thead>
 <tr>
 <th>Parameters</th>
@@ -927,63 +927,82 @@ Check here for example: <a href="/?json#payment-result-callback-v2">example</a><
 <th>Parameters</th>
 <th>Type</th>
 <th>Description</th>
+<th>Limitation</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>username</td>
 <td>String</td>
 <td>The username used by partner for registration with OY!</td>
+<td>-</td>
 </tr>
 <tr>
 <td>partner_tx_id</td>
 <td>String</td>
-<td>A unique transaction ID provided by partner. A partner_tx_id that has been succesfully paid cannot be used anymore under the same username and only accepts alphanumerics.</td>
+<td>A unique transaction ID provided by partner.</td>
+<td>A partner_tx_id that has been succesfully paid cannot be used anymore under the same username and only accepts alphanumerics.</td>
 </tr>
 <tr>
 <td>amount</td>
 <td>Integer</td>
-<td>The amount of a transaction to be paid. The amount that can be processed is between IDR 15,000 and IDR 25,000,000.</td>
+<td>The amount of a transaction to be paid.</td>
+<td>The amount that can be processed is between IDR 15,000 and IDR 25,000,000.</td>
 </tr>
 <tr>
 <td>sender_name</td>
 <td>String</td>
-<td>Name of the payer for a transaction. Only accept alphabets (cannot be empty).</td>
+<td>Name of the payer for a transaction.</td>
+<td>Only accept alphabets (cannot be empty).</td>
 </tr>
 <tr>
 <td>sender_phone</td>
 <td>Numeric</td>
-<td>Phone number of the payer for a transaction. Do not use special character (e.g. &quot;+&quot;) and cannot be empty.</td>
+<td>Phone number of the payer for a transaction.</td>
+<td>Do not use special character (e.g. &quot;+&quot;) and cannot be empty.</td>
 </tr>
 <tr>
 <td>sender_note</td>
 <td>String</td>
-<td>Additional notes from the payer for a transaction. Cannot be empty string.</td>
+<td>Additional notes from the payer for a transaction.</td>
+<td>Cannot be empty string.</td>
 </tr>
 <tr>
 <td>description</td>
 <td>String</td>
 <td>Description of the payment checkout link.</td>
+<td>-</td>
 </tr>
 <tr>
 <td>is_open</td>
 <td>Boolean</td>
 <td>Enable open/closed amount transaction method.</td>
+<td>If is_open = TRUE and the amount parameter is defined, then a payer can pay any amount (greater than IDR 15,000) up to the defined amount. And in the case that is_open=false, then the amount and partner_tx_id parameters must be defined. Once a partner_tx_id has ever been defined with is_open=false, the amount and the is_open parameters cannot be updated unless the transaction is completed for that particular partner_tx_id.</td>
 </tr>
 <tr>
 <td>step</td>
 <td>String</td>
-<td>Accessing specific page of the payment checkout URL. Possible values for this parameter:</td>
+<td>Accessing specific page of the payment checkout URL. Possible values for this parameter are either (input-amount, input-personal-info, select-payment-method).</td>
+<td>If step = input-personal-info then the amount parameter must be defined. And if step = select-payment-method then the amount and sender_name parameters must be defined.</td>
+</tr>
+<tr>
+<td>enable_payment_va</td>
+<td>Boolean</td>
+<td>Enable VA payment method for the payment checkout link.</td>
+<td>There should be at least one payment method enabled.</td>
+</tr>
+<tr>
+<td>enable_payment_dc</td>
+<td>Boolean</td>
+<td>Enable debit card payment method for the payment checkout link.</td>
+<td>There should be at least one payment method enabled.</td>
+</tr>
+<tr>
+<td>enable_payment_cc</td>
+<td>Boolean</td>
+<td>Enable credit card payment method for the payment checkout link.</td>
+<td>There should be at least one payment method enabled.</td>
 </tr>
 </tbody></table>
-
-<ul>
-<li>input-amount</li>
-<li>input-personal-info</li>
-<li>select-payment-method
-enable_payment_va | Boolean | Enable VA payment method for the payment checkout link. There should be at least one payment method enabled.
-enable_payment_dc | Boolean | Enable debit card payment method for the payment checkout link. There should be at least one payment method enabled.
-enable_payment_cc | Boolean | Enable credit card payment method for the payment checkout link. There should be at least one payment method enabled.</li>
-</ul>
 <h3 id='response-parameters-2'>Response Parameters</h3>
 <table><thead>
 <tr>
