@@ -885,6 +885,10 @@ Check here for example: <a href="/?json#payment-result-callback-v2">example</a><
 <p>An endpoint to create payment checkout URL which return parameters by encapsulation.</p>
 <h3 id='https-request-2'>HTTPS Request</h3>
 <p>POST <code>https://partner.oyindonesia.com/api/payment-checkout/create</code></p>
+
+<blockquote>
+<p>Sample Curl</p>
+</blockquote>
 <pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
   https://partner.oyindonesia.com/api/payment-checkout/create <span class="se">\</span>
   -H <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
@@ -1012,7 +1016,7 @@ Check here for example: <a href="/?json#payment-result-callback-v2">example</a><
 <td>There should be at least one payment method enabled.</td>
 </tr>
 <tr>
-<td>enable_payment_dc</td>
+<td>enable_payment_debit</td>
 <td>Boolean</td>
 <td>Enable debit card payment method for the payment checkout link.</td>
 <td>There should be at least one payment method enabled.</td>
