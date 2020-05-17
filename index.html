@@ -235,7 +235,7 @@
               </ul>
           </li>
           <li>
-            <a href="#payment-checkout" class="toc-h1 toc-link" data-title="Payment Checkout">Payment Checkout</a>
+            <a href="#payment-checkout-v1-to-be-deprecated" class="toc-h1 toc-link" data-title="Payment Checkout V1 (To be Deprecated)">Payment Checkout V1 (To be Deprecated)</a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#request-with-parameters" class="toc-h2 toc-link" data-title="Request With Parameters">Request With Parameters</a>
@@ -249,7 +249,7 @@
               </ul>
           </li>
           <li>
-            <a href="#payment-checkout-v2-to-be-released" class="toc-h1 toc-link" data-title="Payment Checkout V2 (To be Released)">Payment Checkout V2 (To be Released)</a>
+            <a href="#payment-checkout-v2" class="toc-h1 toc-link" data-title="Payment Checkout V2">Payment Checkout V2</a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#request-with-parameters-2" class="toc-h2 toc-link" data-title="Request With Parameters">Request With Parameters</a>
@@ -333,7 +333,7 @@ Limitation of Payment Checkout (Trial Version)
 <li>Buyer pays using any of <em>Direct Debit</em>, <em>Credit Cards</em>, or <em>Bank Virtual Accounts</em>.</li>
 <li>You <strong>receive money on your receiving account</strong> and OY! will <strong>send Payment status Callback</strong> to your end point (note: Only available for non-trial account)</li>
 </ol>
-<h1 id='payment-checkout'>Payment Checkout</h1><h2 id='request-with-parameters'>Request With Parameters</h2><pre class="highlight javascript tab-javascript"><code><span class="c1">// note: at most only two of the payment method are false</span>
+<h1 id='payment-checkout-v1-to-be-deprecated'>Payment Checkout V1 (To be Deprecated)</h1><h2 id='request-with-parameters'>Request With Parameters</h2><pre class="highlight javascript tab-javascript"><code><span class="c1">// note: at most only two of the payment method are false</span>
 <span class="kd">let</span> <span class="nx">params</span> <span class="o">=</span> <span class="s1">'open=true'</span><span class="p">;</span>
 <span class="nx">params</span> <span class="o">+=</span> <span class="p">(</span><span class="nx">txid</span> <span class="o">!==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">?</span> <span class="s1">'&amp;txid='</span><span class="o">+</span><span class="nx">txid</span> <span class="p">:</span> <span class="s1">''</span><span class="p">;</span>
 <span class="nx">params</span> <span class="o">+=</span> <span class="p">(</span><span class="nx">amount</span> <span class="o">!==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">?</span> <span class="s1">'&amp;amount='</span><span class="o">+</span><span class="nx">amount</span> <span class="p">:</span> <span class="s1">''</span><span class="p">;</span>
@@ -514,7 +514,7 @@ Check here for example: <a href="/?json#payment-result-callback">example</a></p>
 <td>Payment by Buyer is failed</td>
 </tr>
 </tbody></table>
-<h1 id='payment-checkout-v2-to-be-released'>Payment Checkout V2 (To be Released)</h1><h2 id='request-with-parameters-2'>Request With Parameters</h2>
+<h1 id='payment-checkout-v2'>Payment Checkout V2</h1><h2 id='request-with-parameters-2'>Request With Parameters</h2>
 <p>Once you complete the registration and activation for payment checkout, you can immediately access our payment checkout link at <a href="https://pay.oyindonesia.com/v2?username=yourusername">https://pay.oyindonesia.com/v2?username=yourusername</a></p>
 
 <aside class="success">
