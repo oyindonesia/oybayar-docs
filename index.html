@@ -883,34 +883,26 @@ Check here for example: <a href="/?json#payment-result-callback-v2">example</a><
 </tbody></table>
 <h2 id='api-create-url'>API Create URL</h2>
 <p>An endpoint to create payment checkout URL which return parameters by encapsulation.</p>
-<h3 id='https-request-2'>HTTPS Request</h3>
-<p>POST <code>https://partner.oyindonesia.com/api/payment-checkout/create</code></p>
 
 <blockquote>
 <p>Sample Curl</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
   https://partner.oyindonesia.com/api/payment-checkout/create <span class="se">\</span>
-  -H <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
-  -H <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'x-api-key: apikeymu'</span> <span class="se">\</span>
-  -H <span class="s1">'x-oy-username: yourusername'</span> <span class="se">\</span>
-  -d <span class="s1">'{
-        "username":"yourusername",
-        "partner_tx_id":"AL003",
-        "sender_name":"AL B",
-        "sender_note":"note string API2",
-        "sender_phone": "087726272",
-        "checkout_url":"string",
-        "amount":15003,
-        "is_open":false,
-        "step":"select-payment-method" ,
-        "enable_payment_cc":false,
-        "enable_payment_va":true,
-        "enable_payment_debit":false,
-        "description":"description api 2"
+  -H <span class="s1">'cache-control: no-cache'</span> -H <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
+  -H <span class="s1">'x-api-key: apikeymu'</span> -H <span class="s1">'x-oy-username: yourusername'</span> <span class="se">\</span>
+  -d <span class="s1">'{"username":"yourusername","partner_tx_id":"AL003","sender_name":"AL B",
+        "sender_note":"note string API2","sender_phone": "087726272","checkout_url":"string",
+        "amount":15003,"is_open":false,"step":"select-payment-method","enable_payment_cc":false,
+        "enable_payment_va":true,"enable_payment_debit":false,"description":"description api 2"
     }'</span>
-</code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+</code></pre><h3 id='https-request-2'>HTTPS Request</h3>
+<p>POST <code>https://partner.oyindonesia.com/api/payment-checkout/create</code></p>
+
+<blockquote>
+<p>Json Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
         </span><span class="s2">"username"</span><span class="p">:</span><span class="s2">"justkhals"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"partner_tx_id"</span><span class="p">:</span><span class="s2">"ABC123456527"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"sender_name"</span><span class="p">:</span><span class="s2">"Roberto F"</span><span class="p">,</span><span class="w">
