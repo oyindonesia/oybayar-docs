@@ -519,7 +519,7 @@ Remember — Make sure to replace `username` with your account username, given o
 <aside class="success">
 Make sure at most only two of the payment method are false and always use HTTPS instead of HTTP to ensure the payment checkout link functioning properly.
 </aside>
-<pre class="highlight javascript tab-javascript"><code><span class="c1">// note: at most only two of the payment method are false</span>
+<pre class="highlight javascript tab-javascript"><code><span class="c1">// note: at most only two of the payment method can be false</span>
 <span class="kd">let</span> <span class="nx">params</span> <span class="o">=</span> <span class="s1">'username='</span> <span class="o">+</span> <span class="nx">username</span><span class="p">;</span>
 <span class="nx">params</span> <span class="o">+=</span> <span class="p">(</span><span class="nx">partner_tx_id</span> <span class="o">!==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">?</span> <span class="s1">'&amp;partner_tx_id='</span> <span class="o">+</span> <span class="nx">partner_tx_id</span> <span class="p">:</span> <span class="s1">''</span><span class="p">;</span>
 <span class="nx">params</span> <span class="o">+=</span> <span class="p">(</span><span class="nx">amount</span> <span class="o">!==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">?</span> <span class="s1">'&amp;amount='</span> <span class="o">+</span> <span class="nx">amount</span> <span class="p">:</span> <span class="s1">''</span><span class="p">;</span>
@@ -567,7 +567,7 @@ Make sure at most only two of the payment method are false and always use HTTPS 
 <td>String</td>
 <td>-</td>
 <td>Name of the payer for a transaction</td>
-<td>-</td>
+<td>Only accepts alphabets (A-Z) and space as input (cannot be empty)</td>
 </tr>
 <tr>
 <td>sender_phone</td>
@@ -581,14 +581,14 @@ Make sure at most only two of the payment method are false and always use HTTPS 
 <td>String</td>
 <td>-</td>
 <td>Additional notes from the payer for a transaction</td>
-<td>-</td>
+<td>Only accepts alphabets (A-Z), numeric (0-9) and space as input</td>
 </tr>
 <tr>
 <td>description</td>
 <td>String</td>
 <td>-</td>
 <td>Description of the payment checkout link</td>
-<td>-</td>
+<td>Only accepts alphabets (A-Z), numeric (0-9) and space as input</td>
 </tr>
 <tr>
 <td>is_open</td>
@@ -604,9 +604,30 @@ Make sure at most only two of the payment method are false and always use HTTPS 
 <td>Accessing specific page of the payment checkout URL. Possible values for this parameter: input-amount, input-personal-info, select-payment-method</td>
 <td>If step = input-personal-info then the amount parameter must be defined. And if step = select-payment-method then the amount and sender_name parameters must be defined.</td>
 </tr>
+<tr>
+<td>enable_payment_va</td>
+<td>Boolean</td>
+<td>Enable VA payment method for the payment checkout link</td>
+<td>There should be at least one payment method enabled</td>
+<td></td>
+</tr>
+<tr>
+<td>enable_payment_debit</td>
+<td>Boolean</td>
+<td>Enable debit card payment method for the payment checkout link</td>
+<td>There should be at least one payment method enabled</td>
+<td></td>
+</tr>
+<tr>
+<td>enable_payment_cc</td>
+<td>Boolean</td>
+<td>Enable credit card payment method for the payment checkout link</td>
+<td>There should be at least one payment method enabled</td>
+<td></td>
+</tr>
 </tbody></table>
 <h3 id='sample-payment-checkout-url-with-all-parameters-defined-2'>Sample payment checkout URL with all parameters defined:</h3>
-<p><code>https://pay.oyindonesia.com/v2?username=yourusername&amp;partner_tx_id=testSample&amp;amount=50000&amp;sender_name=testsender&amp;description=payment-checkout-testing&amp;is_open=false&amp;step=select-payment-method</code></p>
+<p><code>https://pay.oyindonesia.com/v2?username=yourusername&amp;partner_tx_id=testSample&amp;amount=50000&amp;sender_name=testsender&amp;description=payment%20checkout%20testing&amp;is_open=false&amp;step=select-payment-method&amp;enable_payment_cc=false&amp;enable_payment_debit=false</code></p>
 
 <p>The above URL will produce a payment checkout link with a closed amount of IDR 50,000 with VA payment method only available and payer will be redirected to the payment method page upon accessing the URL.</p>
 <h2 id='callback-results'>Callback Results</h2>
@@ -765,10 +786,27 @@ Check here for example: <a href="/?json#payment-result-callback-v2">example</a><
 <p>GET <code>https://partner.oyindonesia.com/api/payment-checkout/status</code></p>
 
 <blockquote>
-<p>To open Payment Checkout, use following code from your platform:</p>
+<p>To retrieve a callback result for a particular transaction, use following code from your platform:</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code>curl -X GET <span class="s1">'https://partner.oyindonesia.com/api/payment-checkout/status?partner_tx_id=OY123456&amp;send_callback=false'</span> -H <span class="s1">'x-oy-username:yourusername'</span> -H <span class="s1">' x-api-key:yourapikey'</span>
-</code></pre><h3 id='request-headers'>Request Headers</h3>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured similar like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"partner_tx_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"partner000001"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"tx_ref_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234567"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">15000</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"sender_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Joko Widodo"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"sender_phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+6281111111"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"sender_note"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mohon dikirim segera"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"settlement_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"realtime"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"sender_bank"</span><span class="p">:</span><span class="w"> </span><span class="s2">"008"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"payment_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DC"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"va_number"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='request-headers'>Request Headers</h3>
 <table><thead>
 <tr>
 <th>Parameters</th>
@@ -890,10 +928,10 @@ Check here for example: <a href="/?json#payment-result-callback-v2">example</a><
   https://partner.oyindonesia.com/api/payment-checkout/create <span class="se">\</span>
   -H <span class="s1">'cache-control: no-cache'</span> -H <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'x-api-key: apikeymu'</span> -H <span class="s1">'x-oy-username: yourusername'</span> <span class="se">\</span>
-  -d <span class="s1">'{"username":"yourusername","partner_tx_id":"AL003","sender_name":"AL B",
-        "sender_note":"note string API2","sender_phone": "087726272","checkout_url":"string",
-        "amount":15003,"is_open":false,"step":"select-payment-method","enable_payment_cc":false,
-        "enable_payment_va":true,"enable_payment_debit":false,"description":"description api 2"
+  -d <span class="s1">'{"username":"testaccount","partner_tx_id":"ABC123456527","sender_name":"Roberto F",
+        "sender_note":"bill payment","sender_phone": "082114845847","checkout_url":"string",
+        "amount":75000,"is_open":false,"step":"select-payment-method","enable_payment_cc":false,
+        "enable_payment_va":true,"enable_payment_debit":false,"description":"payment for March 2020"
     }'</span>
 </code></pre><h3 id='https-request-2'>HTTPS Request</h3>
 <p>POST <code>https://partner.oyindonesia.com/api/payment-checkout/create</code></p>
@@ -902,19 +940,19 @@ Check here for example: <a href="/?json#payment-result-callback-v2">example</a><
 <p>Json Response</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-        </span><span class="s2">"username"</span><span class="p">:</span><span class="s2">"justkhals"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"username"</span><span class="p">:</span><span class="s2">"testaccount"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"partner_tx_id"</span><span class="p">:</span><span class="s2">"ABC123456527"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"sender_name"</span><span class="p">:</span><span class="s2">"Roberto F"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"sender_note"</span><span class="p">:</span><span class="s2">"note str"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sender_note"</span><span class="p">:</span><span class="s2">"bill payment"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"sender_phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"082114845847"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"checkout_url"</span><span class="p">:</span><span class="s2">"string"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"amount"</span><span class="p">:</span><span class="mi">75000</span><span class="p">,</span><span class="w">
         </span><span class="s2">"is_open"</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"step"</span><span class="p">:</span><span class="s2">"input-amount"</span><span class="w"> </span><span class="p">,</span><span class="w">
+        </span><span class="s2">"step"</span><span class="p">:</span><span class="s2">"select-payment-method"</span><span class="w"> </span><span class="p">,</span><span class="w">
         </span><span class="s2">"enable_payment_cc"</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="w">
         </span><span class="s2">"enable_payment_va"</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="w">
         </span><span class="s2">"enable_payment_debit"</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"description"</span><span class="p">:</span><span class="s2">"description"</span><span class="w">
+        </span><span class="s2">"description"</span><span class="p">:</span><span class="s2">"payment for March 2020"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='request-headers-2'>Request Headers</h3>
 <table><thead>
@@ -968,7 +1006,7 @@ Check here for example: <a href="/?json#payment-result-callback-v2">example</a><
 <td>sender_name</td>
 <td>String</td>
 <td>Name of the payer for a transaction.</td>
-<td>Only accept alphabets (cannot be empty).</td>
+<td>Only accepts alphabets (A-Z) and space as input and cannot be empty.</td>
 </tr>
 <tr>
 <td>sender_phone</td>
@@ -980,13 +1018,13 @@ Check here for example: <a href="/?json#payment-result-callback-v2">example</a><
 <td>sender_note</td>
 <td>String</td>
 <td>Additional notes from the payer for a transaction.</td>
-<td>Cannot be empty string.</td>
+<td>Only accepts alphabets (A-Z), numeric (0-9) and space as input.</td>
 </tr>
 <tr>
 <td>description</td>
 <td>String</td>
 <td>Description of the payment checkout link.</td>
-<td>-</td>
+<td>Only accepts alphabets (A-Z), numeric (0-9) and space as input.</td>
 </tr>
 <tr>
 <td>is_open</td>
