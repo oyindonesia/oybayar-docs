@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>Product Documentation</title>
+    <title>Payment Checkout Reference</title>
 
     <style>
       .highlight table td { padding: 5px; }
@@ -232,47 +232,53 @@
         <ul class="search-results"></ul>
       <ul id="toc" class="toc-list-h1">
           <li>
-            <a href="#home" class="toc-h1 toc-link" data-title="Home">Home</a>
+            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#quick-integration" class="toc-h1 toc-link" data-title="Quick Integration">Quick Integration</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#how-to-register" class="toc-h2 toc-link" data-title="How to Register">How to Register</a>
+                    <a href="#get-payment-url-for-your-business" class="toc-h2 toc-link" data-title="Get Payment URL for your business">Get Payment URL for your business</a>
                   </li>
                   <li>
-                    <a href="#upgrading-your-account" class="toc-h2 toc-link" data-title="Upgrading your Account">Upgrading your Account</a>
-                  </li>
-                  <li>
-                    <a href="#required-supporting-documents" class="toc-h2 toc-link" data-title="Required Supporting Documents">Required Supporting Documents</a>
-                  </li>
-                  <li>
-                    <a href="#completion-checklist" class="toc-h2 toc-link" data-title="Completion Checklist">Completion Checklist</a>
+                    <a href="#how-does-it-work" class="toc-h2 toc-link" data-title="How Does It Work?">How Does It Work?</a>
                   </li>
               </ul>
           </li>
           <li>
-            <a href="#send-payments" class="toc-h1 toc-link" data-title="Send Payments">Send Payments</a>
+            <a href="#payment-checkout-v1-to-be-deprecated" class="toc-h1 toc-link" data-title="Payment Checkout V1 (To be Deprecated)">Payment Checkout V1 (To be Deprecated)</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#api-disburse" class="toc-h2 toc-link" data-title="API Disburse">API Disburse</a>
+                    <a href="#request-with-parameters" class="toc-h2 toc-link" data-title="Request With Parameters">Request With Parameters</a>
                   </li>
                   <li>
-                    <a href="#bulk-disburse" class="toc-h2 toc-link" data-title="Bulk Disburse">Bulk Disburse</a>
+                    <a href="#payment-result-callback" class="toc-h2 toc-link" data-title="Payment Result Callback">Payment Result Callback</a>
                   </li>
                   <li>
-                    <a href="#bank-codes" class="toc-h2 toc-link" data-title="Bank Codes">Bank Codes</a>
-                  </li>
-                  <li>
-                    <a href="#faq-general-for-disbursement" class="toc-h2 toc-link" data-title="FAQ (General for disbursement)">FAQ (General for disbursement)</a>
+                    <a href="#response-codes" class="toc-h2 toc-link" data-title="Response Codes">Response Codes</a>
                   </li>
               </ul>
           </li>
           <li>
-            <a href="#accept-payments" class="toc-h1 toc-link" data-title="Accept Payments">Accept Payments</a>
+            <a href="#payment-checkout-v2" class="toc-h1 toc-link" data-title="Payment Checkout V2">Payment Checkout V2</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#va-aggregator" class="toc-h2 toc-link" data-title="VA Aggregator">VA Aggregator</a>
+                    <a href="#request-with-parameters-2" class="toc-h2 toc-link" data-title="Request With Parameters">Request With Parameters</a>
                   </li>
                   <li>
-                    <a href="#payment-checkouts-invoice" class="toc-h2 toc-link" data-title="Payment Checkouts/Invoice">Payment Checkouts/Invoice</a>
+                    <a href="#callback-results" class="toc-h2 toc-link" data-title="Callback Results">Callback Results</a>
+                  </li>
+                  <li>
+                    <a href="#callback-parameters-2" class="toc-h2 toc-link" data-title="Callback Parameters">Callback Parameters</a>
+                  </li>
+                  <li>
+                    <a href="#callback-response-codes" class="toc-h2 toc-link" data-title="Callback Response Codes">Callback Response Codes</a>
+                  </li>
+                  <li>
+                    <a href="#api-callback" class="toc-h2 toc-link" data-title="API Callback">API Callback</a>
+                  </li>
+                  <li>
+                    <a href="#api-create-url" class="toc-h2 toc-link" data-title="API Create URL">API Create URL</a>
                   </li>
               </ul>
           </li>
@@ -284,871 +290,804 @@
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
-        <h1 id='home'>Home</h1>
-<p>Welcome to OY! We are aiming to be the world class financial services and always put our customers first in everything we do. We have a variety of products ranging from sending payments, accepting payments, and other financial related products that are all ready to meet your needs. We are ready to help you achieve greater success. </p>
-<h3 id='how-to-register'>How to Register</h3>
-<p>You can immediately tcreate an account and enjoy some of our features in trial mode with limited functionalities until your account is upgraded to the full version. Our documentation will help you navigate through the entire registration process, including submitting requests for upgrading your account. For further inquiries, please contact us at <a href="partner@oyindonesia.com">partner@oyindonesia.com</a> and our representative will get in touch. </p>
+        <h1 id='introduction'>Introduction</h1>
+<p>Payment Checkout service enables business owners like you to receive payments from customers, either <strong>from your Application</strong> or independently <strong>by sending your Payment URL to your customers</strong>.</p>
 
-<ol>
-<li><strong>Register on our Portal</strong>: To create your account, please go to our business portal at <a href="https://business.oyindonesia.com">https://business.oyindonesia.com/</a>, click &quot;Register Now&quot;, and complete the form with al the required information. </li>
-</ol>
+<p>With quick and easy integration, your business can start accepting payments on Day 1 after registration.</p>
 
-<p><img src="images/images/login" alt="Portal Login" /></p>
-
-<ol>
-<li><strong>Activate your account</strong>: Once the registration is submitted, an activation link will be sent to your email. </li>
-</ol>
-
-<p><img src="images/images/register_1" alt="Register" /></p>
-
-<p><img src="images/images/register_2" alt="Register" /></p>
-
-<p>Once you are able to login, you will be able to test some of our features in a trial mode or request to upgrade your account to enjoy the full version! </p>
-<h3 id='upgrading-your-account'>Upgrading your Account</h3>
-<ol>
-<li><strong>Request to Upgrade your Account</strong>: to upgrade the available services to full version, please select “Upgrade Your Account” on the menu at the left side of the dashboard and complete all the required information.</li>
-</ol>
-
-<p><em>Please note that the receiving bank account information cannot be changed via OY dashboard once your upgrade account request is approved for security reasons. Please contact us at <a href="partner@oyindonesia.com">partner@oyindonesia.com</a> to change the receiving bank account information.</em></p>
-
-<p><img src="images/images/upgrade_1" alt="Upgrade" /></p>
-
-<ol>
-<li><strong>Upload the Required Supporting Documents</strong>: Please upload the required supporting documents according to your business type. Documents are only accepted in PDF format and must be less than 10 MB in size each. </li>
-</ol>
-
-<p><img src="images/images/upgrade_2" alt="Upgrade" /></p>
-
-<ol>
-<li><strong>Submit your Request</strong>: Click “Submit &amp; Request to Upgrade”, and a new status of “Upgrade Account Requested” should appear on this page, indicating that your request has been submitted along with your supporting documents.</li>
-</ol>
-
-<p><img src="images/images/upgrade_3" alt="Upgrade" /></p>
-
-<p>This process should take about 1 week. In the event that the status of your request is <strong>Resubmit</strong> or <strong>Rejected</strong>, please keep reading below. Otherwise, you are good to go! </p>
-
-<p><strong>Status: Resubmit</strong> 
-Upon reviewing the upgrade request, we might ask for additional documentations. Please follow the steps below: </p>
-
-<ol>
-<li><p><strong>Read our report</strong>: A report will be sent to your email regarding the information and documents that will need to be revised or added. </p></li>
-<li><p><strong>Refill out the form</strong>: When submitting another request to upgrade your account, please resubmit all your supporting documents. Documents are only accepted in PDF format and must be less than 10 MB in size.</p></li>
-<li><p><strong>Submit your request</strong>: Click “Submit &amp; Request to Upgrade”, and a new status of “Upgrade Account Requested” should appear on this page, indicating that your request has been submitted along with your supporting documents.</p></li>
-</ol>
-
-<p>For further inquiries, please contact us at <a href="partner@oyindonesia.com">partner@oyindonesia.com</a> and our representative will get in touch. </p>
-
-<p><strong>Status: Rejected</strong> 
-For further inquiries regarding this review, please contact us at <a href="partner@oyindonesia.com">partner@oyindonesia.com</a> and our representative will get in touch. </p>
-<h3 id='required-supporting-documents'>Required Supporting Documents</h3>
-<p>Below is the list of documentation to be submitted for an upgrade request:
-1. SIUP/Izin Usaha lainnya
-2. NPWP Perusahaan
-3. Akta Pendirian Perusahaan
-4. Akta Perubahan Terakhir
-5. Lembar Pengesahan Men-hakim
-6. Kartu Identitas Direksi atau yang dikuasakan
-7. Surat Kuasa Direksi apabila dikuasakan
-8. NIB/TDP</p>
-<h3 id='completion-checklist'>Completion Checklist</h3>
-<p>This set up checklist is recommended to ensure you correctly set up your professional profile and fully maximize the capabilities of our platform: 
-1. Create an account
-2. Fill out the upgrade requirement
-3. Ensure the receiving bank account information is accurate
-4. Upload the required documentations
-5. Optional - create additional sub-account users under User Management
-You are good to go!</p>
-<h1 id='send-payments'>Send Payments</h1><h2 id='api-disburse'>API Disburse</h2>
-<p>API disbursement product provides the capability for you to disburse to 100+ banks in Indonesia via OY! at any time. The integration process to use the API disbursement product is straight forward and the details can be checked in here <a href="https://api-docs.oyindonesia.com/#fund-disbursement">https://api-docs.oyindonesia.com/#fund-disbursement</a>.  </p>
-<h3 id='key-features'>Key Features</h3>
-<p><strong>Overdraft</strong>
-OY! has established partnerships with third party lenders to credit a specific amount of funds that can be used for your disbursement needs. With this feature, you don’t need to top up the OY! balance to execute disbursements. Please contact our business representative for further details about this feature.</p>
-
-<p><strong>Overbooking</strong> 
-OY! can use the funds directly from your Mandiri and CIMB bank accounts for your disbursement needs. You will only need to top up the admin fee needed to execute the disbursements instead of the full amount of your disbursement. Please contact our business representative for further details about this feature.</p>
-
-<p><strong>Check Transaction Status and Callback</strong>
-For all disbursements executed, you will receive notifications regarding your transaction whether it’s successful, failed or pending. We also provide an API for you to check the transaction status manually. IP proxy is also available upon request to enhance the security and integrity of the callback you will receive. </p>
-
-<p><strong>Check Balance</strong>
-You can check your available balance at anytime to ensure  that you have sufficient balance to execute a disbursement</p>
-<h3 id='registration-and-set-up'>Registration and Set Up</h3>
-<p><strong>Prerequisites</strong> 
-* Register an account on OY dashboard
-* Upgrade your account 
-* Upgrade request is approved
-* Provide IP to be whitelisted and callback link to our business team
-* Receive an API Key from us
-* Integrate with our API <a href="https://api-docs.oyindonesia.com/#fund-disbursement">https://api-docs.oyindonesia.com/#fund-disbursement</a></p>
-<h3 id='testing-testing-environment-coming-soon'>Testing (Testing environment coming soon)</h3><h3 id='how-to-use'>How to Use</h3>
+<p>Payment Checkout supports multiple payment methods, including <em>Direct Debit</em>, <em>Credit Cards</em>, and <em>Bank Virtual Accounts</em>.</p>
+<h1 id='quick-integration'>Quick Integration</h1>
 <blockquote>
-<p>Below is an example of the request body for inquiry:</p>
+<p>To open Payment Checkout, use following code from your platform:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST https://partner.oyindonesia.com/api/inquiry 
-<span class="nt">-H</span> <span class="s1">'content-type: application/json, accept: application/json, x-oy-username:myuser, x-api-key:987654'</span> 
-<span class="nt">-d</span> <span class="s1">'{"recipient_bank": "022", 
-    "recipient_account": "7823023345"}'</span>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nb">window</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://pay.oyindonesia.com/username</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">_blank</span><span class="dl">"</span><span class="p">);</span>
+</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="nc">Intent</span> <span class="n">intent</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Intent</span><span class="o">(</span><span class="n">context</span><span class="o">,</span> <span class="nc">YourWebviewActivity</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+<span class="n">intent</span><span class="o">.</span><span class="na">putExtra</span><span class="o">(</span><span class="s">"url"</span><span class="o">,</span> <span class="s">"https://pay.oyindonesia.com/username"</span><span class="o">)</span>
+<span class="n">startActivity</span><span class="o">(</span><span class="n">intent</span><span class="o">)</span>
+</code></pre></div><div class="highlight"><pre class="highlight swift tab-swift"><code><span class="k">let</span> <span class="nv">controller</span> <span class="o">=</span> <span class="kt">OyWebViewController</span><span class="p">()</span>
+<span class="n">controller</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="s">"https://pay.oyindonesia.com/username"</span>
+<span class="k">let</span> <span class="nv">navigationController</span> <span class="o">=</span> <span class="kt">UINavigationController</span><span class="p">(</span><span class="nv">rootViewController</span><span class="p">:</span> <span class="n">controller</span><span class="p">)</span>
+<span class="nf">present</span><span class="p">(</span><span class="n">navigationController</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
 </code></pre></div>
 <blockquote>
-<p>It will return an error message if the request is not valid based on the error response codes documentation <a href="https://api-docs.oyindonesia.com/#fund-disbursement-response-codes">https://api-docs.oyindonesia.com/#fund-disbursement-response-codes</a>. Otherwise, below is the sample of response parameters that will be returned:</p>
+<p>Make sure to replace <code>username</code> with your account username, given on the email.</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="nl">"status"</span><span class="p">:{</span><span class="w">
-        </span><span class="nl">"code"</span><span class="p">:</span><span class="s2">"000"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"message"</span><span class="p">:</span><span class="s2">"Success"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="nl">"recipient_bank"</span><span class="p">:</span><span class="s2">"022"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"recipient_account"</span><span class="p">:</span><span class="s2">"7823023345"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"recipient_name"</span><span class="p">:</span><span class="s2">"Budi Soemitra Nasution"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="s2">"16-10-2019 09:55:31"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
-<p>Before you execute a disbursement, you can verify the beneficiary account information from our inquiry endpoint <a href="https://api-docs.oyindonesia.com/#bank-account-inquiry">https://api-docs.oyindonesia.com/#bank-account-inquiry</a>. </p>
-
-<blockquote>
-<p>Below is an example of the request body for the inquiry: 
-<code>shell
-curl -X POST https://partner.oyindonesia.com/api/remit 
--H &#39;content-type: application/json, accept: application/json, x-oy-username:myuser, x-api-key:7654321&#39; 
--d &#39;{&quot;recipient_bank&quot;: &quot;022&quot;, 
-    &quot;recipient_account&quot;: &quot;7823023345&quot;, 
-    &quot;amount&quot;:100000, 
-    &quot;note&quot;:&quot;Pembayaran Nov IV&quot;, 
-    &quot;partner_trx_id&quot;:&quot;Tx15048563JKFJ&quot;,
-    &quot;email&quot; :&quot;budi.s@gmail.com&quot;}&#39;
-</code></p>
-
-<p>It will return an error message if the request is not valid based on the error response codes documentation <a href="https://api-docs.oyindonesia.com/#fund-disbursement-response-codes">https://api-docs.oyindonesia.com/#fund-disbursement-response-codes</a>. Otherwise, below is the sample of response parameters that will be returned:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="nl">"status"</span><span class="p">:{</span><span class="w">
-        </span><span class="nl">"code"</span><span class="p">:</span><span class="s2">"101"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"message"</span><span class="p">:</span><span class="s2">"Request is Processed"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="nl">"amount"</span><span class="p">:</span><span class="mi">100000</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"recipient_bank"</span><span class="p">:</span><span class="s2">"022"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"recipient_account"</span><span class="p">:</span><span class="s2">"7823023345"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"trx_id"</span><span class="p">:</span><span class="s2">"89718ca8-4db6-40a0-a138-a9e30d82c67d"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"partner_trx_id"</span><span class="p">:</span><span class="s2">"Tx15048563JKFJ"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="s2">"16-10-2019 10:23:42"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
-<p>Next, send a request body to execute a disbursement request to be sent to our disbursement endpoint <a href="https://api-docs.oyindonesia.com/#disbursement">https://api-docs.oyindonesia.com/#disbursement</a>. </p>
-
-<blockquote>
-<p>Below is an example of the callback you will receive: (coming soon) </p>
-</blockquote>
-
-<p>A callback with the following information will be sent to the callback endpoint that you can register with us. </p>
-
-<blockquote>
-<p>Below is an example of the request body: </p>
-</blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST https://partner.oyindonesia.com/api/remit-status 
-<span class="nt">-H</span> <span class="s1">'content-type: application/json, accept: application/json, x-oy-username:myuser, x-api-key:7654321'</span> 
-<span class="nt">-d</span> <span class="s1">'{"partner_trx_id": "Tx15048563JKFJ"}'</span>
-</code></pre></div>
-<blockquote>
-<p>It will return an error message if the request is not valid based on the error response codes documentation <a href="https://api-docs.oyindonesia.com/#fund-disbursement-response-codes">https://api-docs.oyindonesia.com/#fund-disbursement-response-codes</a>. Otherwise, below is the sample of response parameters that will be returned:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="nl">"status"</span><span class="p">:{</span><span class="w">
-        </span><span class="nl">"code"</span><span class="p">:</span><span class="s2">"000"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"message"</span><span class="p">:</span><span class="s2">"Success"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="nl">"amount"</span><span class="p">:</span><span class="mi">100000</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"recipient_name"</span><span class="p">:</span><span class="s2">"Budi Soemitra Nasution"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"recipient_bank"</span><span class="p">:</span><span class="s2">"022"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"recipient_account"</span><span class="p">:</span><span class="s2">"7823023345"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"trx_id"</span><span class="p">:</span><span class="s2">"89718ca8-4db6-40a0-a138-a9e30d82c67d"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"partner_trx_id"</span><span class="p">:</span><span class="s2">"Tx15048563JKFJ"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="s2">"16-10-2019 10:40:23"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"created_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"16-10-2019 10:23:42"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"last_updated_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"16-10-2019 10:34:23"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
-<p>An enpoint to check the transaction is also available and can be accessed at anytime <a href="https://api-docs.oyindonesia.com/#get-disbursement-status">https://api-docs.oyindonesia.com/#get-disbursement-status</a>. </p>
-
-<blockquote>
-<p>Below is an example of a request body to check the balance:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="s1">'https://partner.oyindonesia.com/api/balance'</span> 
-<span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="nt">-H</span> <span class="s1">'Accept: application/json'</span> 
-<span class="nt">-H</span> <span class="s1">'X-OY-Username: janedoe'</span> <span class="nt">-H</span> <span class="s1">'X-Api-Key: 7654321'</span>
-</code></pre></div>
-<blockquote>
-<p>It will return an error message if the request is not valid based on the error response codes documentation <a href="https://api-docs.oyindonesia.com/#fund-disbursement-response-codes">https://api-docs.oyindonesia.com/#fund-disbursement-response-codes</a>. Otherwise, below is the sample of response parameters that will be returned:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="nl">"status"</span><span class="p">:{</span><span class="w">
-        </span><span class="nl">"code"</span><span class="p">:</span><span class="s2">"000"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"message"</span><span class="p">:</span><span class="s2">"Success"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="nl">"balance"</span><span class="p">:</span><span class="mf">100000000.0000</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"overdraftBalance"</span><span class="p">:</span><span class="mf">500000.0000</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"overbookingBalance"</span><span class="p">:</span><span class="mf">200000.0000</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"pendingBalance"</span><span class="p">:</span><span class="mf">2000000.0000</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"availableBalance"</span><span class="p">:</span><span class="mf">98500000.0000</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="s2">"10-12-2019 12:15:37"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
-<p>You can also check your balance anytime to ensure you have sufficient balance from our endpoint <a href="https://api-docs.oyindonesia.com/#get-balance">https://api-docs.oyindonesia.com/#get-balance</a>.</p>
-
-<p>Lastly, all transactions can be monitored from the OY! dashboard which includes all the transaction details.</p>
-
-<p><img src="images/images/api_disburse_list" alt="API Disburse" /></p>
-
-<p><img src="images/images/api_disburse_success" alt="API Disburse" /></p>
-
-<p>For further details on the parameters definition and proper usage, please refer to the API Documentation <a href="https://api-docs.oyindonesia.com/#fund-disbursement">https://api-docs.oyindonesia.com/#fund-disbursement</a></p>
-<h2 id='bulk-disburse'>Bulk Disburse</h2>
-<p>Bulk disbursement product provides the capability to execute disbursements to multiple beneficiaries with a single xlsx or csv file upload (“Campaign”). Bulk disbursement is made through OY dashboard, where details regarding the disbursement campaign can be found. No technical integration is required to use this product. </p>
-<h3 id='key-features-2'>Key Features</h3>
-<p><strong>Overdraft</strong>
-OY! has established partnerships with third party lenders to credit a specific amount of funds that can be used for your disbursement needs. With this feature, you don’t need to top up the OY! balance to execute disbursements. Please contact our business representative for further details about this feature.</p>
-
-<p><strong>Overbooking</strong> 
-OY! can use the funds directly from your Mandiri and CIMB bank accounts for your disbursement needs. You will only need to top up the admin fee needed to execute the disbursements instead of the full amount of your disbursement. Please contact our business representative for further details about this feature.</p>
-
-<p><strong>Account Management</strong> 
-When you first created an account, your account will be assigned as a super admin role. As a super admin, you have the ability to create new sub-accounts and assign different roles to your team such as maker and approver that is applicable for bulk disbursement. The super admin and admin can also edit or delete created sub-accounts. </p>
-
-<p><em>Note: it is not necessary to create new sub-accounts in order to use bulk disbursement. The Super Admin role allows you to directly create and approve bulk disbursements.</em></p>
-
-<p>For more detailed step-by-step instructions on setting up user management and the different role types, click here. </p>
-
-<p><strong>Overall Campaign Summary</strong>
-Keep track of all the details of the entire campaign such as the total amount of disbursement, total number of transactions, and the maker and approver related information of a campaign.</p>
-
-<p><strong>Transaction Details</strong>
-Itemized details of each individual transaction, including their respective statuses: success, pending, or failed</p>
-<h3 id='registration-and-set-up-2'>Registration and Set Up</h3>
-<p><strong>Prerequisites</strong>
-* Register an account on OY dashboard
-* Upgrade your account 
-* Upgrade request is approved </p>
-<h3 id='testing-testing-environment-coming-soon-2'>Testing (Testing environment coming soon)</h3><h3 id='how-to-use-2'>How to Use</h3>
-<p>In order to create disbursement campaigns, a sufficient available OY! balance is required in the account. If there is an insufficient available balance in the account, campaigns can still be created but not approved. </p>
-
-<p>Click here for more details and instructions about topping up to your OY! account. </p>
+<h3 id='get-payment-url-for-your-business'>Get Payment URL for your business</h3>
+<p><img src="images/img_signup-3fd6e1fd.png" alt="Signup for Trial" /></p>
 
 <ol>
-<li><p><strong>Create Disbursement</strong>: On the OY! dashboard, navigate to Send Payments &gt; Bulk Disburse on your left menu bar. Click “Create Disbursement” on the far righthand side of that page to create a new bulk disbursement campaign.</p></li>
-<li><p><strong>Create Campaign Details</strong>: Fill in the campaign details and upload an xlsx or csv file. </p></li>
+<li>Register for a unique payment URL here: <a href="https://business.oyindonesia.com/register">https://business.oyindonesia.com/register</a></li>
+<li>You will receive an email containing a unique payment URL for <em>trial version</em> of the checkout page. From here, you can immediately start the integration.</li>
 </ol>
 
-<p>Please fill out a campaign name and campaign description in the provided spaces. These details are strictly used as your tracking information only and will not be shared to the transaction recipients. </p>
+<aside class="warning">
+Limitation of Payment Checkout (Trial Version)
+</aside>
 
-<p>Please upload an xlsx or csv file with each individual transaction’s details of your bulk disbursement campaign. An example template for both file types are available for download on the OY! dashboard. The following list of items are required in your CSV file.</p>
+<p>Payment URL for the <em>trial version</em> will have several limitations, including:</p>
+
+<ul>
+<li>Amount of payment is locked to Rp 15.000</li>
+<li>It contains BIG watermark mentioning unverified account (note: you are not supposed to use this for production)</li>
+<li>You don&#39;t get API Callback for payment result. However, you will notice that money will be sent to your bank account in real time</li>
+</ul>
+
+<p>You can upgrade to OY! business partner to remove above limitations, by sending reply to the email that you receive. Our team will response your email quickly.</p>
+<h3 id='how-does-it-work'>How Does It Work?</h3>
+<p><img src="images/img_integration-2fd164b1.png" alt="Integration flow" /></p>
+
+<ol>
+<li><strong>Put the logic of opening webview</strong> on your app button, so that whenever buyer clicks on &quot;Payment&quot; button, it will open Payment Checkout</li>
+<li>You implement your own <strong>Product details page</strong></li>
+<li>You implement your <strong>Order System to create transactionId</strong> for buyers to checkout their order</li>
+<li>Your App/Web <strong>opens Payment Checkout</strong> page with additional parameters required</li>
+<li>Buyer pays using any of <em>Direct Debit</em>, <em>Credit Cards</em>, or <em>Bank Virtual Accounts</em>.</li>
+<li>You <strong>receive money on your receiving account</strong> and OY! will <strong>send Payment status Callback</strong> to your end point (note: Only available for non-trial account)</li>
+</ol>
+<h1 id='payment-checkout-v1-to-be-deprecated'>Payment Checkout V1 (To be Deprecated)</h1><h2 id='request-with-parameters'>Request With Parameters</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="c1">// note: at most only two of the payment method are false</span>
+<span class="kd">let</span> <span class="nx">params</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">open=true</span><span class="dl">'</span><span class="p">;</span>
+<span class="nx">params</span> <span class="o">+=</span> <span class="p">(</span><span class="nx">txid</span> <span class="o">!==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">?</span> <span class="dl">'</span><span class="s1">&amp;txid=</span><span class="dl">'</span><span class="o">+</span><span class="nx">txid</span> <span class="p">:</span> <span class="dl">''</span><span class="p">;</span>
+<span class="nx">params</span> <span class="o">+=</span> <span class="p">(</span><span class="nx">amount</span> <span class="o">!==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">?</span> <span class="dl">'</span><span class="s1">&amp;amount=</span><span class="dl">'</span><span class="o">+</span><span class="nx">amount</span> <span class="p">:</span> <span class="dl">''</span><span class="p">;</span>
+<span class="nx">params</span> <span class="o">+=</span> <span class="p">(</span><span class="nx">description</span> <span class="o">!==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">?</span> <span class="dl">'</span><span class="s1">&amp;description=</span><span class="dl">'</span><span class="o">+</span><span class="nb">encodeURIComponent</span><span class="p">(</span><span class="nx">description</span><span class="p">)</span> <span class="p">:</span> <span class="dl">''</span><span class="p">;</span>
+<span class="nx">params</span> <span class="o">+=</span> <span class="p">(</span><span class="nx">show_contact</span> <span class="o">!==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">?</span> <span class="dl">'</span><span class="s1">&amp;show_contact=</span><span class="dl">'</span><span class="o">+</span><span class="nx">show_contact</span> <span class="p">:</span> <span class="dl">''</span><span class="p">;</span>
+<span class="nx">params</span> <span class="o">+=</span> <span class="p">(</span><span class="nx">show_account</span> <span class="o">!==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">?</span> <span class="dl">'</span><span class="s1">&amp;show_account=</span><span class="dl">'</span><span class="o">+</span><span class="nx">show_account</span> <span class="p">:</span> <span class="dl">''</span><span class="p">;</span>
+<span class="nx">params</span> <span class="o">+=</span> <span class="p">(</span><span class="nx">send_notif</span> <span class="o">!==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">?</span> <span class="dl">'</span><span class="s1">&amp;send_notif=</span><span class="dl">'</span><span class="o">+</span><span class="nx">send_notif</span> <span class="p">:</span> <span class="dl">''</span><span class="p">;</span>
+<span class="nx">params</span> <span class="o">+=</span> <span class="p">(</span><span class="nx">enable_payment_cc</span> <span class="o">!==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">?</span> <span class="dl">'</span><span class="s1">&amp;enable_payment_cc</span><span class="dl">'</span><span class="o">+</span><span class="nx">enable_payment_cc</span> <span class="p">:</span> <span class="dl">''</span><span class="p">;</span>
+<span class="nx">params</span> <span class="o">+=</span> <span class="p">(</span><span class="nx">enable_payment_va</span> <span class="o">!==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">?</span> <span class="dl">'</span><span class="s1">&amp;enable_payment_va</span><span class="dl">'</span><span class="o">+</span><span class="nx">enable_payment_va</span> <span class="p">:</span> <span class="dl">''</span><span class="p">;</span>
+<span class="nx">params</span> <span class="o">+=</span> <span class="p">(</span><span class="nx">enable_payment_debit</span> <span class="o">!==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">?</span> <span class="dl">'</span><span class="s1">&amp;enable_payment_debit</span><span class="dl">'</span><span class="o">+</span><span class="nx">enable_payment_debit</span> <span class="p">:</span> <span class="dl">''</span><span class="p">;</span>
+
+<span class="nb">window</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://pay.oyindonesia.com/username?</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">params</span><span class="p">,</span> <span class="dl">"</span><span class="s2">_blank</span><span class="dl">"</span><span class="p">);</span>
+</code></pre></div>
+<p>Once you complete the registration and activation for payment checkout, you can immediately access our payment checkout link at <a href="https://pay.oyindonesia.com/yourusername">https://pay.oyindonesia.com/yourusername</a></p>
+
+<aside class="success">
+Remember — Make sure to replace `username` with your account username, given on the email.
+</aside>
+<h3 id='query-parameters'>Query Parameters</h3>
+<p>Note: Make sure at most only two of the payment method are false</p>
 
 <table><thead>
 <tr>
-<th>Column</th>
+<th>Parameter</th>
+<th>Default</th>
 <th>Description</th>
-<th>Example</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>Name</td>
-<td>Recipient Name</td>
-<td>Budy</td>
+<td>txid</td>
+<td>not set</td>
+<td>If set to specific ID, OY! will echo back the transactionID label via the Payment Result Callback (parameter name <code>txid</code>)</td>
 </tr>
 <tr>
-<td>Email</td>
-<td>Recipient Email (can contain up to 5 emails with a total maximum of 255 characters, incoming transaction notifications will be sent to these emails)</td>
-<td>Budi@email.com</td>
+<td>amount</td>
+<td>not set</td>
+<td>If set to certain amount, will lock the amount of payment that Buyer can pay. Otherwise, Buyer needs to input the amount</td>
 </tr>
 <tr>
-<td>Amount</td>
-<td>Amount in IDR (only numbers)</td>
-<td>100000</td>
+<td>description</td>
+<td>not set</td>
+<td>If set, description text will be shown the main page of Payment Checkout. Otherwise, it will show blank description</td>
 </tr>
 <tr>
-<td>Bank Code</td>
-<td>Destination Bank (please refer to our bank codes below)</td>
-<td>014</td>
+<td>show_contact</td>
+<td>true</td>
+<td>If set to true, Payment Checkout will show Contact Form asking details of the Buyer</td>
 </tr>
 <tr>
-<td>Bank Account Number</td>
-<td>Recipient Bank Account Number</td>
-<td>12341234</td>
+<td>show_account</td>
+<td>true</td>
+<td>If set to true, Payment Checkout will show your bank account number</td>
 </tr>
 <tr>
-<td>Phone Number</td>
-<td>Recipient Phone Number</td>
-<td>62812341234</td>
+<td>send_notif</td>
+<td>true</td>
+<td>Whether OY! should send payment notification to the Buyer via SMS/Push Notif</td>
 </tr>
 <tr>
-<td>Notes (Optional)</td>
-<td>Transaction Notes (Please refer to this page to learn more about &quot;Notes&quot;)</td>
-<td></td>
+<td>enable_payment_cc</td>
+<td>true</td>
+<td>Whether OY! should enable payment using Credit Card</td>
+</tr>
+<tr>
+<td>enable_payment_va</td>
+<td>true</td>
+<td>Whether OY! should enable payment using Bank Virtual Accounts</td>
+</tr>
+<tr>
+<td>enable_payment_debit</td>
+<td>true</td>
+<td>Whether OY! should enable payment using Direct Debit</td>
 </tr>
 </tbody></table>
+<h3 id='sample-payment-checkout-url-with-all-parameters-defined'>Sample payment checkout URL with all parameters defined:</h3>
+<p><code>https://pay.oyindonesia.com/yourusername?txid=partner000001&amp;amount=15000&amp;description=Mohon%20dikirim%20segera&amp;show_contact=true&amp;show_account=true&amp;send_notif=true&amp;enable_payment_cc=false&amp;enable_payment_va=false&amp;enable_payment_debit=true</code></p>
+<h2 id='payment-result-callback'>Payment Result Callback</h2>
+<blockquote>
+<p>The above command returns JSON structured similar like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"txid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"partner000001"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"oy_txid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234567"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"nominal"</span><span class="p">:</span><span class="w"> </span><span class="mi">15000</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Joko Widodo"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"phone_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+6281111111"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"note"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mohon dikirim segera"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"result"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"sender_bank"</span><span class="p">:</span><span class="w"> </span><span class="s2">"008"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"payment_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Instant Pay"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Non-trial Account can register specific end point URL (web hook) to receive callback whenever payment occurs.</p>
 
-<p><img src="images/images/bulk_disburse_1" alt="Bulk Disburse" /></p>
-
-<ol>
-<li><strong>Re-verify all the Information and Submit</strong>: Once your xlsx or csv file is uploaded, you can verify all of the information uploaded from the file from the table displayed. If there is any incorrect submission such as invalid entry due to special characters, a red box will appear to highlight the entry that should be corrected. Issues must be resolved before a campaign can be submitted.</li>
-</ol>
-
-<p><img src="images/images/bulk_disburse_2" alt="Bulk Disburse" /></p>
-
-<p>If there is no issue with the details uploaded from the xlsx or csv file, a blue bar with “100%” will show up above the list of transactions, indicating that all information is valid. Click “Submit” to complete creating the bulk disbursement campaign. </p>
-
-<p><img src="images/images/bulk_disburse_3" alt="Bulk Disburse" /></p>
-
-<p><em>Note: there is no limit to the amount of bulk disbursement campaigns that can be created at a given period of time.</em> </p>
-
-<ol>
-<li><strong>Approve/Cancel Campaign</strong>: Once the bulk disbursement campaign is created, a new status of <code>waiting approval</code> will appear. Approve the campaign by clicking the “Approve” button. If you want to cancel a campaign, click the “...” button and select “Cancel”. </li>
-</ol>
-
-<p><img src="images/images/bulk_disburse_4" alt="Bulk Disburse" /></p>
-
-<p>Once the bulk disbursement campaign is approved, details regarding the campaign can no longer be changed. This includes changes made to individual transactions and their respective recipient information. </p>
-
-<p>When a campaign is approved, the balances should immediately reflect changes. For more information about the different types of balances, click here. You will also receive an email with the campaign information summary (“Outgoing Transfer Alert”) when transactions are executed.</p>
-
-<p><em>Note: Multiple campaigns can be approved at a time as long as there is sufficient available balance to complete campaigns that have already been approved but are still in queue to be processed.</em></p>
-
-<ol>
-<li><strong>Keep Track of Campaign Details</strong>: To check the details of the bulk disbursement campaign, click on the campaign name to find the campaign summary and its recipient list. Keep track of the both the overall campaign status and the status of individual transactions through the page. </li>
-</ol>
-
-<p><img src="images/images/bulk_disburse_5" alt="Bulk Disburse" /></p>
-
-<ol>
-<li><strong>Status: Running, Cancel, and Finish</strong>: Congratulations! You just made your first bulk disbursement with OY! Below are a list of statuses you will find on your dashboard. </li>
-</ol>
-
-<p><em>In Progress</em>
-As your individual disbursements are executed, the status of your bulk disbursement campaign will indicate an in-progress status. </p>
-
-<p><img src="images/images/bulk_disburse_in_progress" alt="Bulk Disburse" /></p>
-
-<p><em>Finish</em>
-Once all the listed transactions are executed and reflect their respective statuses, the status of your bulk disbursement campaign will transition to Finish. The recipients should have all received an email detailing an “Incoming Transfer Alert.” You can also download a report of the campaign details directly through the portal. </p>
-
-<p><img src="images/images/bulk_disburse_finish" alt="Bulk Disburse" /></p>
-
-<p><em>Cancelled</em> 
-If you choose to stop your disbursement campaign, the status of your bulk disbursement campaign will indicate a cancel status. </p>
-
-<p><img src="images/images/bulk_disburse_cancel" alt="Bulk Disburse" /></p>
-
-<p>You can also double check each of your transactions by navigating to the account statement page on our portal. </p>
-<h3 id='faq-bulk-disburse'>FAQ (Bulk Disburse)</h3>
-<p><strong>What if the recipient name on the CSV file is different from the bank account name? What is the phone number used for?</strong>
-As long as the bank account number is valid and not dormant, the transaction will still be executed. </p>
-
-<p>The name and phone number are visible only to the partner and is used for the partner’s own documentation. The name and phone number listed are not used by OY or sent to the recipient. </p>
-
-<p><strong>How many recipient emails can I send the transaction notification to?</strong>
-You can send up to 5 emails per transactions with a limit of 255 characters total. For each transaction, simply list out the email recipients. </p>
-<h2 id='bank-codes'>Bank Codes</h2>
-<p>We support transactions to 100+ banks in Indonesia. Please refer to the bank codes <a href="https://api-docs.oyindonesia.com/#disbursement-bank-codes">here</a> when using our disbursement products. (Please note that we currently do not support disbursements to Virtual Accounts.)</p>
-<h2 id='faq-general-for-disbursement'>FAQ (General for disbursement)</h2>
-<p><strong>Bank Maintenance Schedule</strong>
-Banks often have regular maintenance schedules which differ from one bank to another. These regular maintenance schedules prevent the execution of transactions to the respective recipient bank during the set period of time. In the event that an unplanned maintenance or maintenance schedules run for an extended period of time, we will notify our users.</p>
-
-<p><strong>Disbursement Amount Limits</strong>
-<em>e-wallet</em>
-Since each e-wallet provide limits to the amount each user can hold at a time, disbursements made to e-wallet accounts have their respective limits. </p>
+<aside class="warning">You need to register an end point URL to receive this callback. Note that Trial Account would not get access to this feature</aside>
+<h3 id='callback-parameters'>Callback Parameters</h3>
+<p>The data on the callback will be sent using JSON format via POST data to your web hook.</p>
 
 <table><thead>
 <tr>
-<th>Wallet</th>
-<th>Account Type</th>
-<th>Maximum Amount</th>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>OVO</td>
-<td>OVO Club</td>
-<td>Rp 2.000.000</td>
+<td>txid</td>
+<td>String</td>
+<td>(Optional) TransactionID which partner set on the initial Payment Checkout URL</td>
 </tr>
 <tr>
-<td>OVO</td>
-<td>OVO Premier</td>
-<td>Rp 10.000.000</td>
+<td>oy_txid</td>
+<td>String</td>
+<td>Internal TransactionID from OY! system</td>
 </tr>
 <tr>
-<td>DANA</td>
-<td>DANA Verified</td>
-<td>Rp 1.000.000</td>
+<td>nominal</td>
+<td>BigDecimal</td>
+<td>Amount of payment by the Buyer</td>
 </tr>
 <tr>
-<td>DANA</td>
-<td>DANA Premium</td>
-<td>Rp 10.000.000</td>
+<td>name</td>
+<td>String</td>
+<td>Name of Buyer</td>
 </tr>
 <tr>
-<td>GoPay</td>
-<td>Unverified</td>
-<td>Rp 2.000.000</td>
+<td>phone_number</td>
+<td>String</td>
+<td>Phone Number of Buyer</td>
 </tr>
 <tr>
-<td>GoPay</td>
-<td>Verified</td>
-<td>Rp 10.000.000</td>
+<td>note</td>
+<td>String</td>
+<td>(Optional) This is note from the Buyer</td>
+</tr>
+<tr>
+<td>result</td>
+<td>String</td>
+<td>Payment Status of Buyer. Can be either &quot;success&quot; or &quot;failed&quot; or &quot;processing&quot;</td>
+</tr>
+<tr>
+<td>sender_bank</td>
+<td>String</td>
+<td>Bank code used by buyer to do payment</td>
+</tr>
+<tr>
+<td>payment_method</td>
+<td>String</td>
+<td>Define what payment method to be used in transaction (<code>Instant Pay</code>/<code>Manual Pay</code>/<code>Manual Bank Transfer</code>)*</td>
+</tr>
+<tr>
+<td>va_number</td>
+<td>String</td>
+<td>VA number to be used on payment if using Manual Pay</td>
 </tr>
 </tbody></table>
 
-<p><strong>Is there a cut-off time?</strong>
-No, we are available 24/7 including holidays. </p>
+<p>*Instant Pay = direct-debit or cc; Manual Pay = virtual account; Manual Bank Transfer = pay using manual transfer</p>
+<h2 id='response-codes'>Response Codes</h2>
+<p>Possible status codes on the Payment Result Callback:</p>
 
-<p><strong>Is there a maximum transaction volume and transaction amount in a day?</strong>
-There are no daily limits of how many bulk campaigns can be created and executed. There is also no limit to the number of total transactions per disbursement campaign. </p>
-<h1 id='accept-payments'>Accept Payments</h1><h2 id='va-aggregator'>VA Aggregator</h2>
-<p><strong>What is a VA?</strong> 
-Businesses are struggling to manage hundreds or even thousands physical bank accounts that are used for different purposes. It causes significant overhead cost in terms of the number of bank accounts to be maintained and lots of man hours to be spent for reporting and reconciliation purposes combining different information from different accounts. Virtual Account (VA) is essentially a dummy account that is linked to a physical account and has all the physical account characteristics that enables a much easier reporting and reconciliation process by centralizing the money flow into the physical account. By issuing VAs, you can assign each VA for specific person and/or purposes.</p>
+<table><thead>
+<tr>
+<th>Payment Status</th>
+<th>Type</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>success</td>
+<td>String</td>
+<td>Payment by Buyer is successful and has been sent to your bank account</td>
+</tr>
+<tr>
+<td>failed</td>
+<td>String</td>
+<td>Payment by Buyer is failed</td>
+</tr>
+</tbody></table>
+<h1 id='payment-checkout-v2'>Payment Checkout V2</h1><h2 id='request-with-parameters-2'>Request With Parameters</h2>
+<p>Once you complete the registration and activation for payment checkout, you can immediately access our payment checkout link at <a href="https://pay.oyindonesia.com/v2?username=yourusername">https://pay.oyindonesia.com/v2?username=yourusername</a></p>
 
-<p><img src="images/images/va_diagram_1" alt="VA Aggregator" /></p>
+<aside class="success">
+Make sure at most only two of the payment method are false and always use HTTPS instead of HTTP to ensure the payment checkout link functioning properly.
+</aside>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="c1">// note: at most only two of the payment method can be false</span>
+<span class="kd">let</span> <span class="nx">params</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">username=</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">username</span><span class="p">;</span>
+<span class="nx">params</span> <span class="o">+=</span> <span class="p">(</span><span class="nx">partner_tx_id</span> <span class="o">!==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">?</span> <span class="dl">'</span><span class="s1">&amp;partner_tx_id=</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">partner_tx_id</span> <span class="p">:</span> <span class="dl">''</span><span class="p">;</span>
+<span class="nx">params</span> <span class="o">+=</span> <span class="p">(</span><span class="nx">amount</span> <span class="o">!==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">?</span> <span class="dl">'</span><span class="s1">&amp;amount=</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">amount</span> <span class="p">:</span> <span class="dl">''</span><span class="p">;</span>
+<span class="nx">params</span> <span class="o">+=</span> <span class="p">(</span><span class="nx">sender_name</span> <span class="o">!==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">?</span> <span class="dl">'</span><span class="s1">&amp;sender_name=</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">sender_name</span> <span class="p">:</span> <span class="dl">''</span><span class="p">;</span>
+<span class="nx">params</span> <span class="o">+=</span> <span class="p">(</span><span class="nx">sender_phone</span> <span class="o">!==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">?</span> <span class="dl">'</span><span class="s1">&amp;sender_phone=</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">sender_phone</span> <span class="p">:</span> <span class="dl">''</span><span class="p">;</span>
+<span class="nx">params</span> <span class="o">+=</span> <span class="p">(</span><span class="nx">sender_note</span> <span class="o">!==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">?</span> <span class="dl">'</span><span class="s1">&amp;sender_note=</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">sender_note</span> <span class="p">:</span> <span class="dl">''</span><span class="p">;</span>
+<span class="nx">params</span> <span class="o">+=</span> <span class="p">(</span><span class="nx">description</span> <span class="o">!==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">?</span> <span class="dl">'</span><span class="s1">&amp;description=</span><span class="dl">'</span> <span class="o">+</span> <span class="nb">encodeURIComponent</span><span class="p">(</span><span class="nx">description</span><span class="p">)</span> <span class="p">:</span> <span class="dl">''</span><span class="p">;</span>
+<span class="nx">params</span> <span class="o">+=</span> <span class="p">(</span><span class="nx">is_open</span> <span class="o">!==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">?</span> <span class="dl">'</span><span class="s1">&amp;is_open=</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">is_open</span> <span class="p">:</span> <span class="dl">''</span><span class="p">;</span>
+<span class="nx">params</span> <span class="o">+=</span> <span class="p">(</span><span class="nx">step</span> <span class="o">!==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">?</span> <span class="dl">'</span><span class="s1">&amp;step=</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">step</span> <span class="p">:</span> <span class="dl">''</span><span class="p">;</span>
 
-<p>From the example above, it shows how payments made through the VAs are merely pass-throughs for the physical accounts to receive money. Without VAs, the above example might require up to 8 physical accounts from 2 different banks rather than 2 physical accounts from 2 different banks.</p>
+<span class="nb">window</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://pay.oyindonesia.com/v2?</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">params</span><span class="p">,</span> <span class="dl">"</span><span class="s2">_blank</span><span class="dl">"</span><span class="p">);</span>
+</code></pre></div><h3 id='query-parameters-2'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Default Value</th>
+<th>Description</th>
+<th>Limitation</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>username</td>
+<td>String</td>
+<td>-</td>
+<td>The username used by partner for registration with OY!</td>
+<td>-</td>
+</tr>
+<tr>
+<td>partner_tx_id</td>
+<td>String</td>
+<td>Auto generated</td>
+<td>A unique transaction ID provided by partner</td>
+<td>A partner_tx_id that has been succesfully paid cannot be used anymore under the same username</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>Integer</td>
+<td>-</td>
+<td>The amount of a transaction to be paid</td>
+<td>The amount that can be processed is between IDR 15,000 and IDR 25,000,000</td>
+</tr>
+<tr>
+<td>sender_name</td>
+<td>String</td>
+<td>-</td>
+<td>Name of the payer for a transaction</td>
+<td>Only accepts alphabets (A-Z) and space as input (cannot be empty)</td>
+</tr>
+<tr>
+<td>sender_phone</td>
+<td>Numeric</td>
+<td>-</td>
+<td>Phone number of the payer for a transaction</td>
+<td>-</td>
+</tr>
+<tr>
+<td>sender_note</td>
+<td>String</td>
+<td>-</td>
+<td>Additional notes from the payer for a transaction</td>
+<td>Only accepts alphabets (A-Z), numeric (0-9) and space as input</td>
+</tr>
+<tr>
+<td>description</td>
+<td>String</td>
+<td>-</td>
+<td>Description of the payment checkout link</td>
+<td>Only accepts alphabets (A-Z), numeric (0-9) and space as input</td>
+</tr>
+<tr>
+<td>is_open</td>
+<td>String</td>
+<td>TRUE</td>
+<td>Enable open/closed amount transaction method</td>
+<td>If is_open = TRUE and the amount parameter is defined, then a payer can pay any amount (greater than IDR 15,000) up to the defined amount. And in the case that is_open=false, then the amount and partner_tx_id parameters must be defined. Once a partner_tx_id has ever been defined with is_open=false, the amount and the is_open parameters cannot be updated unless the transaction is completed for that particular partner_tx_id.</td>
+</tr>
+<tr>
+<td>step</td>
+<td>String</td>
+<td>-</td>
+<td>Accessing specific page of the payment checkout URL. Possible values for this parameter: input-amount, input-personal-info, select-payment-method</td>
+<td>If step = input-personal-info then the amount parameter must be defined. And if step = select-payment-method then the amount and sender_name parameters must be defined.</td>
+</tr>
+<tr>
+<td>enable_payment_va</td>
+<td>Boolean</td>
+<td>-</td>
+<td>Enable VA payment method for the payment checkout link</td>
+<td>There should be at least one payment method enabled</td>
+</tr>
+<tr>
+<td>enable_payment_debit</td>
+<td>Boolean</td>
+<td>-</td>
+<td>Enable debit card payment method for the payment checkout link</td>
+<td>There should be at least one payment method enabled</td>
+</tr>
+<tr>
+<td>enable_payment_cc</td>
+<td>Boolean</td>
+<td>-</td>
+<td>Enable credit card payment method for the payment checkout link</td>
+<td>There should be at least one payment method enabled</td>
+</tr>
+</tbody></table>
+<h3 id='sample-payment-checkout-url-with-all-parameters-defined-2'>Sample payment checkout URL with all parameters defined:</h3>
+<p><code>https://pay.oyindonesia.com/v2?username=yourusername&amp;partner_tx_id=testSample&amp;amount=50000&amp;sender_name=testsender&amp;description=payment%20checkout%20testing&amp;is_open=false&amp;step=select-payment-method&amp;enable_payment_cc=false&amp;enable_payment_debit=false</code></p>
 
-<p><strong>OY VA Aggregator</strong>
-Our VA Aggregator product provides you with the capabilities to create unique Virtual Account (VA) numbers as a bank transfer payment method for your customers while the fund movements take place through OY!&#39;s physical account. It provides you with the capabilities to receive payments from your customers via bank transfer without having each respective bank account across multiple banks.  </p>
-
-<p>Our virtual accounts are adjustable according to your needs. We offer options of static or dynamic accounts, single or mutli use accounts, opened or closed amounts, and determinable expiration dates. You can also track all created virtual accounts, incoming payments, and their respective details either through our API callback or OY portal. </p>
-
-<p><img src="images/images/va_diagram_2" alt="VA Aggregator" /></p>
-<h3 id='key-features-3'>Key Features</h3>
-<p><em>Static VA vs Dynamic VA</em>
-A static VA is an account that has a lifetime validity that will exist until it is manually deactivated. Therefore, a static VA is always active and configured to be used for multiple times.</p>
-
-<p>A dynamic VA is an account that has a specific validity that will exist until it is expired or manually deactivated. </p>
-
-<p><em>Closed vs Opened Amount</em> 
-A closed amount is a configuration so that a VA can only be paid if the actual declared amount is paid to the VA</p>
-
-<p>An opened amount is a configuration so that a VA can be paid up to the declared amount (or any, if amount is not declared)</p>
-
-<p><em>Single Use vs Multi Use</em>
-A single use configuration can only be setup for a dynamic VA where the VA is no longer usable once it receives a payment</p>
-
-<p>A multi use configuration, by nature, is the characteristic of a static VA. For dynamic VA, it means it can be used for multiple times until the VA is expired or manually deactivated</p>
-
-<p><em>Update VA</em>
-All VA characteristics mentioned above can be updated. Below are a few examples of what features can be updated on a VA: 
-* A static VA with a closed amount can be updated with a new closed amount hence it can work as a bill to be paid for a particular customer
-* A static VA can be updated to a single use so it will be the last payment received from a particular customer
-* A dynamic VA with a closed amount is updated to an opened amount so that it can accept payments for any amount</p>
-
-<p>All of the VA information, even after they are updated, is available on the OY! dashboard or via api </p>
-
-<p>Once a VA is updated, the new set of configuration will apply for that VA and the previous configure is overridden and no longer applicable </p>
-
-<p>_Retrieve the VA details and incoming transactions- 
-All of the created VAs and incoming transactions can be monitored on the OY! dashboard and also from APIs (<a href="https://api-docs.oyindonesia.com/#get-list-of-created-va">https://api-docs.oyindonesia.com/#get-list-of-created-va</a> and <a href="https://api-docs.oyindonesia.com/#get-list-of-transaction-for-va">https://api-docs.oyindonesia.com/#get-list-of-transaction-for-va</a>). Notifications will be sent for all incoming transactions.</p>
-<h3 id='registration-and-set-up-3'>Registration and Set Up</h3>
-<p>Prerequisities:
-* Register an account on the OY! dashboard
-* Upgrade your account 
-* Upgrade request is approved
-* Provide an IP to be whitelisted and callback link to our business team 
-* API Key to be shared
-* Integrate with our API <a href="https://api-docs.oyindonesia.com/#fund-disbursement">https://api-docs.oyindonesia.com/#fund-disbursement</a></p>
-<h3 id='how-to-use-3'>How to Use</h3>
-<blockquote>
-<p>Below is an example of a request body to execute your request:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> POST https://partner.oyindonesia.com/api/generate-static-va
-<span class="nt">--header</span> <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
-<span class="nt">--header</span> <span class="s1">'accept: application/json'</span> <span class="se">\</span>
-<span class="nt">--header</span> <span class="s1">'x-oy-username: username'</span> <span class="se">\</span>
-<span class="nt">--header</span> <span class="s1">'x-api-key: apikey'</span> <span class="se">\</span>
-<span class="nt">-d</span> <span class="s1">'{"partner_user_id":"51200021","bank_code": "014","amount": 150000,"is_open" : false,"is_single_use" : false,"is_lifetime": false,"expiration_time": 5,"username_display" : "va name","email": "email@mail.com"}'</span>
-</code></pre></div>
-<blockquote>
-<p>It will return an error message if the request is not valid based on the error response codes documentation <a href="https://api-docs.oyindonesia.com/#va-aggregator-response-codes">https://api-docs.oyindonesia.com/#va-aggregator-response-codes</a>. Otherwise, below is the sample of response parameters that will be returned:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345b1-23be-45670-a123-5ca678f12b3e"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"000"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Success"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">15000</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"va_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"700707760000000003"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"bank_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"014"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"is_open"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"is_single_use"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"expiration_time"</span><span class="p">:</span><span class="w"> </span><span class="mi">1582783668175</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"va_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WAITING_PAYMENT"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"username_display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"va name"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"trx_expiration_time"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1582783668175</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"partner_trx_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"TRX0001"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
-<p>Send us instructions to generate a new VA number.</p>
-
-<p>Once a VA is created, its details can be seen and monitored through the OY! dashboard. </p>
-
-<p><img src="images/images/va_waiting_payment" alt="VA Aggregator" /></p>
-
-<blockquote>
-<p>Below is an example of the request body:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET https://partner.oyindonesia.com/api/static-virtual-account/12345b1-23be-45670-a123-5ca678f12b3e
-<span class="nt">--header</span> <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
-<span class="nt">--header</span> <span class="s1">'accept: application/json'</span> <span class="se">\</span>
-<span class="nt">--header</span> <span class="s1">'x-oy-username: username'</span> <span class="se">\</span>
-<span class="nt">--header</span> <span class="s1">'x-api-key: apikey'</span>
-</code></pre></div>
-<blockquote>
-<p>Below is the sample of response parameters that will be returned:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345b1-23be-45670-a123-5ca678f12b3e"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"000"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Success"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">150000.0000</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"va_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"700707760000000003"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"bank_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"014"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"is_open"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"is_single_use"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"expiration_time"</span><span class="p">:</span><span class="w"> </span><span class="mi">1582783668175</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"va_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WAITING_PAYMENT"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"username_display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"va name"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"amount_detected"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"partner_user_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123456"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"trx_expiration_time"</span><span class="p">:</span><span class="w"> </span><span class="mi">1582783668175</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"partner_trx_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TRX0001"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
-<p>An endpoint to check your VA information is also available and can be accessed at anytime <a href="https://api-docs.oyindonesia.com/#get-va-info">https://api-docs.oyindonesia.com/#get-va-info</a>.</p>
-
-<blockquote>
-<p>Below is an example of the request body:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> PUT https://partner.oyindonesia.com/api/static-virtual-account/12345b1-23be-45670-a123-5ca678f12b3e
-<span class="nt">--header</span> <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
-<span class="nt">--header</span> <span class="s1">'accept: application/json'</span> <span class="se">\</span>
-<span class="nt">--header</span> <span class="s1">'x-oy-username: username'</span> <span class="se">\</span>
-<span class="nt">--header</span> <span class="s1">'x-api-key: apikey'</span> <span class="se">\</span>
-<span class="nt">-d</span> <span class="s1">'{"is_open" : true,"amount": 50000,"is_single_use" : false,"expiration_time": 30,"username_display" : "va name","bank_code": "014","trx_expiration_time":5,"partner_trx_id":"TRX0001"}'</span>
-</code></pre></div>
-<blockquote>
-<p>Below is the sample of response parameters that will be returned:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345b1-23be-45670-a123-5ca678f12b3e"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"000"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Success"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">50000</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"va_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"700707760000000003"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"bank_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"014"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"is_open"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"is_single_use"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"expiration_time"</span><span class="p">:</span><span class="w"> </span><span class="mi">1582802205412</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"va_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WAITING_PAYMENT"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"username_display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"va name"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"partner_user_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123456"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"trx_expiration_time"</span><span class="p">:</span><span class="w"> </span><span class="mi">1582802205412</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"partner_trx_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TRX0001"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
-<p>If you wish to change the details of your VA, you can do so by updating your VA at any time <a href="https://api-docs.oyindonesia.com/#update-va">https://api-docs.oyindonesia.com/#update-va</a>.</p>
-
-<p>All details regarding your created VA and its payments can be retrieved via our API endpoint (<a href="https://api-docs.oyindonesia.com/#get-list-of-created-va">https://api-docs.oyindonesia.com/#get-list-of-created-va</a>) or can be monitored directly from the OY! dashboard.</p>
-
-<p><img src="images/images/va_created_va" alt="VA Aggregator" /></p>
-
-<p>Similarly, all the details regarding incoming transactions for specific va numbers can be retrived via our API endpoint (<a href="https://api-docs.oyindonesia.com/#get-list-of-transaction-for-va">https://api-docs.oyindonesia.com/#get-list-of-transaction-for-va</a>) or can be monitored directly the from OY! dashboard.</p>
-
-<p><img src="images/images/va_incoming" alt="VA Aggregator" /></p>
-
-<p>For further details regarding OY!&#39;s extensive VA Aggregator capabilities and endpoints, please refer to the <a href="https://api-docs.oyindonesia.com/#va-aggregator">OY! API Documentation</a>.</p>
-<h3 id='faq-virtual-account-coming-soon'>FAQ (Virtual Account) (coming soon)</h3><h2 id='payment-checkouts-invoice'>Payment Checkouts/Invoice</h2>
-<p>Our Payment Checkout/Invoice product allows you to create and send URLs to accept payments from your users. You can either send your users a pre-generated URL for your account (&quot;Payment Checkout/Invoice Link&quot;) or a unique encapsulated URL generated through an API (&quot;API Payment Checkout/Invoice&quot;). </p>
-<h3 id='kay-features'>Kay Features</h3>
-<p><em>Payment Checkout/Invoice via Link</em>
-<strong>No Integration Needed</strong>
-Access and declare all parameters needed from the URL with easy and simple declaration. </p>
-
-<p><strong>Reusable Link</strong> 
-One link can be used many times without repeating declaration. </p>
-
-<p><strong>Amount and Payment Method Customization</strong> 
-You can customize the amount to be billed to your user whether they have to pay a fix amount (closed amount) or any amount (open amount). We provide Bank Transfers, Credit Card, Debit Card, and QR code payment methods that you can also enable/disable at any time.</p>
-
-<p><strong>Check Incoming Transactions Status and Callback</strong> 
-For all incoming payments, you will receive notifications regarding your transactions. We also provide an API for you to check the transaction status manually. IP proxy is also available upon request to enhance the security and integrity of the callback you will receive. </p>
-
-<p><em>Payment Checkout/Invoice via API</em> 
-<strong>Complete Customization</strong>
-* Open vs. closed amount
-* Admin fee to be paid by your customers
-* Amount and payment method customization
-* Choose the bank(s) to be enabled for your Bank Transfer
-* Set an expiry time for your payment link</p>
-
-<p><strong>Static VA for Invoice Payment</strong>
-You can enable a static VA option when using the API specifically assigned to your customer.</p>
-
-<p><strong>Upload or Create a PDF for your Invoice Billing</strong>
-You can upload an invoice attachment or create an attachment using the OY! PDF templates via our API so you do not need to send a separate email to your customer.</p>
-
-<p><strong>Payment Link Delivery by Email</strong>
-Payment link created can be sent to your customer’s email directly instead of sharing the payment link separately.</p>
-
-<p><strong>Check Incoming Transaction Status and Callback</strong>
-For all incoming payments, you will receive notifications regarding your transactions. We also provide an API for you to check the transaction status . IP proxy is also available upon request to enhance the security and integrity of the callback you will receive. </p>
-
-<p><em>Payment Checkout/Invoice via Dashboard (Coming Soon)</em> </p>
-
-<p><strong><em>Enjoy the quality services of our product!</em></strong>
-Whether you send your user a pre-generated link or an API-generated encapsulated link, each of your distributed payment checkout links can be monitored through our OY portal. You will be able to see the details of the payment checkout including, but not limited to, the payment status, creation and expiration dates and times, amount, description, payment details, and payer details. For further convenience, you can also find and filter through your payment link list by creation date, partner transaction ID, or status. </p>
-<h3 id='registration-and-set-up-4'>Registration and Set Up***</h3>
-<p>Prerequisites 
-* Register and account on the OY! dashboard 
-* Upgrade your account 
-* Upgrade request is approved
-* Provide an IP to be whitelisted (for API Payment Checkout/Invoice) and callback link to our business team 
-* For link: once your account is approved, you can access it via <a href="https://pay.oyindonesia.com/v2?username=yourusername">https://pay.oyindonesia.com/v2?username=yourusername (https://pay.oyindonesia.com/v2?username</a>. Please refer to the how to use section for further information. 
-* For API: 
-1. Complete IP whitelisting process
-2. Retrieve API Key 
-3. Integrate with our API <a href="https://api-docs.oyindonesia.com/#api-create-payment-checkout">https://api-docs.oyindonesia.com/#api-create-payment-checkout</a></p>
-<h3 id='how-to-use-payment-checkout-via-link'>How to Use Payment Checkout via Link</h3>
-<ol>
-<li><strong>Access your payment link and input amount</strong>: Access our pre-generated link unique to your account by simply replacing yourusername with your username approved with OY at <a href="https://pay.oyindonesia.com/v2?username=yourusername">https://pay.oyindonesia.com/v2?username=yourusername</a>. Our payment link includes parameters that are easily adjustable according to your needs. You can send the link to your customer at any point within this process. </li>
-</ol>
-
-<p>By default, payment checkout via link declaration will be expired within 24 hours.</p>
-
-<p><img src="images/images/payment_checkout_1" alt="Payment Checkout" /></p>
-
-<p>If you do not want to specify the amount, you can immediately send the link at this step to your customers, allowing them to input their desired amount. </p>
-
-<p>If you would like to charge your customers for a specific amount, input the number and click “lanjutkan”.</p>
-
-<ol>
-<li><strong>(Optional) Lock amount</strong>: You might notice that you can easily change the checkout details by simply editing the parameters within the link. For example, amount=100000 can be changed to a different number and the payment details will readjust accordingly. The same is true when you edit the username, step, and sender_name.</li>
-</ol>
-
-<p><code>https://pay.oyindonesia.com/v2?username=yourusername&amp;amount=100000&amp;partner_tx_id=OY2020ABCD123&amp;step=input_personal_info</code></p>
-
-<p>In order to lock editing the amount for your customers, add <code>is_open=false</code> to the payment link and <code>partner_tx_id</code> and <code>amount</code> becomes mandatory to be filled out. This will permanently attaches the <code>amount</code> to the unique transaction ID. In the example above, the <code>amount=100000</code> is locked to this specific <code>partner_tx_id</code>.</p>
-
-<p><code>https://pay.oyindonesia.com/v2?username=yourusername&amp;amount=100000&amp;partner_tx_id=OY2020ABCD123&amp;step=input_personal_info&amp;is_open=false</code></p>
-
-<p>When this is done, deleting <code>is_open=false</code> from the link or changing it back to <code>is_open=true</code> will not revert the amount back to an unlocked value. Once <code>is_open=false</code> is declared, the amount is permanently frozen for this particular <code>partner_tx_id</code>.</p>
-
-<p>Test your link to ensure that the amount is locked by changing the <code>amount</code> parameter within your link. If done correctly, the amount displayed on the payment checkout page should reflect what you have previously locked regardless of what is altered within the link.</p>
-
-<ol>
-<li><strong>Input the customer&#39;s information</strong>: After inputting the amount, you will be required to enter the customer’s information. Either you or your customer can fill out this information. </li>
-</ol>
-
-<p><img src="images/images/payment_checkout_2" alt="Payment Checkout" /></p>
-
-<ol>
-<li><strong>Select Payment Method</strong>: We support payments either through bank transfer, credit card, or debit card. You can choose specific payment methods to be enabled via parameter declaration by specifying <code>enable_payment_va</code>, <code>enable_payment_cc</code> or <code>enable_payment_debit</code> as <code>true</code> or <code>false</code>.</li>
-</ol>
-
-<p><img src="images/images/payment_checkout_3" alt="Payment Checkout" /></p>
-
-<ol>
-<li><strong>Access payment checkout link details</strong>:</li>
-</ol>
-
-<p>You can look at your payment checkout link details through the OY! dashboard. It notes each created payment checkout link including the URL, status, payment link details, and user details. </p>
-
-<p><img src="images/images/payment_checkout_complete" alt="Payment Checkout" /></p>
-
-<ol>
-<li><strong>Monitor all your payment checkout links</strong>: Our portal also provides you with the capabilities to monitor all your created payment links and their statuses. This allows you to track the statuses of each created link, including those that have expired. This report will include all payment checkout links generated both via Link and API.</li>
-</ol>
-
-<p><img src="images/images/payment_checkout_list" alt="Payment Checkout" /></p>
-<h3 id='how-to-use-payment-checkout-via-api'>How to Use Payment Checkout via API</h3>
-<blockquote>
-<p>Below is an example of a request body to execute your request:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="se">\</span>
-  https://partner.oyindonesia.com/api/payment-checkout/create-v2 <span class="se">\-</span>H <span class="s1">'cache-control: no-cache'</span> <span class="nt">-H</span> <span class="s1">'content-type: application/json'</span> <span class="se">\-</span>H <span class="s1">'X-Api-Key: apikeymu'</span> <span class="nt">-H</span> <span class="s1">'X-Oy-Username: yourusername'</span> <span class="se">\-</span>d <span class="s1">'{
-        "partner_tx_id":"partnerTxId",
-        "description":"description",
-        "notes":"notes",
-        "sender_name":"Sender name",
-        "amount":50000,
-        "email":"",
-        "phone_number":"",
-        "is_open":false,
-        "step":"input-amount",
-        "include_admin_fee":false,
-        "list_disabled_payment_methods":"",
-        "list_enabled_banks":"",
-        "expiration":"2020-08-08 08:09:12"
-    }'</span>
-</code></pre></div>
-<blockquote>
-<p>It will return an error message if the request is not valid based on the error response codes in the documentation. Otherwise, below is the sample of response parameters that will be returned:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="w">    </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="err">,</span><span class="w">
-    </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://pay.oyindonesia.com/id"</span><span class="err">,</span><span class="w">
-    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="err">,</span><span class="w">
-    </span><span class="nl">"email_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PROCESSED"</span><span class="err">,</span><span class="w">
-    </span><span class="nl">"payment_link_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"id"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
-<p>We provide 3 different payment checkout endpoints depending on your requirements and needs. We provide payment checkout, invoicing, and recurring invoice.  </p>
-
-<p>Send us instructions to generate a payment checkout link <a href="https://api-docs.oyindonesia.com/#api-create-payment-checkout">https://api-docs.oyindonesia.com/#api-create-payment-checkout</a>. </p>
+<p>The above URL will produce a payment checkout link with a closed amount of IDR 50,000 with VA payment method only available and payer will be redirected to the payment method page upon accessing the URL.</p>
+<h2 id='callback-results'>Callback Results</h2>
+<p>In order to receive a callback result, please register specific end point URL (web hook) to receive callback whenever payment occurs.</p>
 
 <blockquote>
-<p>Below is an example of a request body to execute your request:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>url <span class="nt">-X</span> POST <span class="se">\</span>
-  https://partner.oyindonesia.com/api/payment-checkout/create-invoice<span class="se">\-</span>H <span class="s1">'cache-control: no-cache'</span> <span class="nt">-H</span> <span class="s1">'content-type: application/json'</span> <span class="se">\-</span>H <span class="s1">'X-Api-key: apikeymu'</span> <span class="nt">-H</span> <span class="s1">'X-Oy-Username: yourusername'</span> <span class="se">\-</span>d <span class="s1">'{
-        "partner_tx_id":"partner tx id",
-        "description":"desc invoice",
-        "notes":"notes satu",
-        "sender_name":"Sender Name API",
-        "amount":"30000",
-        "email":"",
-        "phone_number":"",
-        "is_open":"true",
-        "step":"input-amount",
-        "include_admin_fee":false,
-        "list_disabled_payment_methods":"",
-        "list_enabled_banks":"013",
-        "expiration":"2020-07-28 19:15:13",
-        "partner_user_id":"partner user id", 
-          "full_name" : "Raymond",
-          "is_va_lifetime": false,
-        "attachment": "JVBERi0xLjQKJeLjz9MKMyAwIG9iago8PC9GaWx0ZXIvRmxhdGVEZWNvZGUvTGVuZ3RoIDQ5Nj4+c3RyZWFtCnicrZVdb9MwFIbv/SsOd51EwrHjz0tKhxQk2IciJMS4CG46lbVNyYcE/HqcbNloh5xO8U3OUXJ8Hr/2aweBQkQBQRjhnnZLfpJ5RhIJQhjIluQ8I1eEwYfubVeHMFRnW/LmPQWKkK3I7Cz70dU+lfTN/hnE3ChJY9SPA0U3EPvP1S2ZXXx5Bemnzxfpu/OuGcLtfxp+/ebisp+QH8VkrNjhHJ9QaV23xRKyciKIGuCGjYPmv6cq0idKWuRNEYDlV7VoixAgwcdEXeZVsysqyH5BughA88t6uy3bXQNO3XRbCEq9pKr8sw5gPuXT8zGv7/JNCOeh9mAYMoxQRcyEMJ5KRlEmokkI63lVrSgqi8JEWlsV8ZURkRFMR1pILkVuZcJYCEd69V7vY3eZxYj4GvEkGsaMK5SAMTcauYsKje6aObskUsGWaKr7bPOYHUd7/8XIocZlx9H2DfuSh+Qw2AG4GZLDYMlqmLfHEQIS/XyBaOf++5uoqG213jfrcjfVfAYdi/tY0288noxBrpqpvwoh1AjjslrbqUo6j/kpWdnkG7iZpYvrm7MQmyOe045vBhkhDbFFI6gTz6Jvj9zqCd+frz/5MRMvOvyeBUxGRM3bvIHvRZXvmryGu7Jq901ZhTDJqEweC+xlvkTqX6+ILeYKZW5kc3RyZWFtCmVuZG9iagoxIDAgb2JqCjw8L1RhYnMvUy9Hcm91cDw8L1MvVHJhbnNwYXJlbmN5L1R5cGUvR3JvdXAvQ1MvRGV2aWNlUkdCPj4vQ29udGVudHMgMyAwIFIvVHlwZS9QYWdlL1Jlc291cmNlczw8L0NvbG9yU3BhY2U8PC9DUy9EZXZpY2VSR0I+Pi9Qcm9jU2V0IFsvUERGIC9UZXh0IC9JbWFnZUIgL0ltYWdlQyAvSW1hZ2VJXS9Gb250PDwvRjEgMiAwIFI+Pj4+L1BhcmVudCA0IDAgUi9Sb3RhdGUgOTAvTWVkaWFCb3hbMCAwIDU5NSA4NDJdPj4KZW5kb2JqCjUgMCBvYmoKWzEgMCBSL1hZWiAwIDYwNSAwXQplbmRvYmoKMiAwIG9iago8PC9TdWJ0eXBlL1R5cGUxL1R5cGUvRm9udC9CYXNlRm9udC9IZWx2ZXRpY2EvRW5jb2RpbmcvV2luQW5zaUVuY29kaW5nPj4KZW5kb2JqCjQgMCBvYmoKPDwvS2lkc1sxIDAgUl0vVHlwZS9QYWdlcy9Db3VudCAxL0lUWFQoMi4xLjcpPj4KZW5kb2JqCjYgMCBvYmoKPDwvTmFtZXNbKEpSX1BBR0VfQU5DSE9SXzBfMSkgNSAwIFJdPj4KZW5kb2JqCjcgMCBvYmoKPDwvRGVzdHMgNiAwIFI+PgplbmRvYmoKOCAwIG9iago8PC9OYW1lcyA3IDAgUi9UeXBlL0NhdGFsb2cvUGFnZXMgNCAwIFIvVmlld2VyUHJlZmVyZW5jZXM8PC9QcmludFNjYWxpbmcvQXBwRGVmYXVsdD4+Pj4KZW5kb2JqCjkgMCBvYmoKPDwvTW9kRGF0ZShEOjIwMjAwNzI5MTE1MzE1WikvQ3JlYXRvcihKYXNwZXJSZXBvcnRzIExpYnJhcnkgdmVyc2lvbiBudWxsKS9DcmVhdGlvbkRhdGUoRDoyMDIwMDcyOTExNTMxNVopL1Byb2R1Y2VyKGlUZXh0IDIuMS43IGJ5IDFUM1hUKT4+CmVuZG9iagp4cmVmCjAgMTAKMDAwMDAwMDAwMCA2NTUzNSBmIAowMDAwMDAwNTc4IDAwMDAwIG4gCjAwMDAwMDA4NjQgMDAwMDAgbiAKMDAwMDAwMDAxNSAwMDAwMCBuIAowMDAwMDAwOTUyIDAwMDAwIG4gCjAwMDAwMDA4MjkgMDAwMDAgbiAKMDAwMDAwMTAxNSAwMDAwMCBuIAowMDAwMDAxMDY5IDAwMDAwIG4gCjAwMDAwMDExMDEgMDAwMDAgbiAKMDAwMDAwMTIwNCAwMDAwMCBuIAp0cmFpbGVyCjw8L0luZm8gOSAwIFIvSUQgWzwzZWMyMWUyNjkwNjcxYzViYTliNjUxODNhY2IxOTM3ND48NzZhNzM1MWE1YmY4ZmMxNDNmY2NlZmUwYjRjMzA4MWI+XS9Sb290IDggMCBSL1NpemUgMTA+PgpzdGFydHhyZWYKMTM1OAolJUVPRgo=",
-          "invoice_items": [
-          {
-            "item":"item name", 
-            "description":"description", 
-            "quantity": 10, 
-            "date_of_purchase":"2020-09-20", 
-            "price_per_item": 33000  
-          }
-        ],
-          "attachment": "string base 64 pdf"
-    }'</span>
-</code></pre></div>
-<blockquote>
-<p>Below is the sample of response parameters that will be returned:</p>
+<p>The above command returns JSON structured similar like this:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://pay.oyindonesia.com/invoice/id"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"email_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PROCESSED"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"payment_link_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"id"</span><span class="w">
+  </span><span class="nl">"partner_tx_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"partner000001"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"tx_ref_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234567"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">15000</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"sender_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Joko Widodo"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"sender_phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+6281111111"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"sender_note"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mohon dikirim segera"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"settlement_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"realtime"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"sender_bank"</span><span class="p">:</span><span class="w"> </span><span class="s2">"008"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"payment_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DC"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"va_number"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>Send us instructions to generate a payment checkout invoice link <a href="https://api-docs.oyindonesia.com/#api-create-invoicing">(https://api-docs.oyindonesia.com/#api-create-invoicing</a>. </p>
+<aside class="warning">You need to register an end point Callback URL to receive this callback.</aside>
+<h2 id='callback-parameters-2'>Callback Parameters</h2>
+<p>The data on the callback will be sent using JSON format via POST data to your web hook.
+Check here for example: <a href="/?json#payment-result-callback-v2">example</a></p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>partner_tx_id</td>
+<td>String</td>
+<td>A unique transaction ID provided by partner</td>
+</tr>
+<tr>
+<td>tx_ref_number</td>
+<td>String</td>
+<td>OY&#39;s internal unique transaction ID</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>BigDecimal</td>
+<td>The amount of a transaction that is paid</td>
+</tr>
+<tr>
+<td>sender_name</td>
+<td>String</td>
+<td>Name of a payer for a transaction</td>
+</tr>
+<tr>
+<td>sender_phone</td>
+<td>String</td>
+<td>Phone number of a payer for a transaction</td>
+</tr>
+<tr>
+<td>sender_note</td>
+<td>String</td>
+<td>Additional notes from a payer for a transaction</td>
+</tr>
+<tr>
+<td>status</td>
+<td>String</td>
+<td>The status of a transaction (e.g. success/failed/processing)</td>
+</tr>
+<tr>
+<td>sender_bank</td>
+<td>String</td>
+<td>The bank code used by a payer to do payment</td>
+</tr>
+<tr>
+<td>payment_method</td>
+<td>String</td>
+<td>The payment method used in a transaction such as CC (Credit Card), DC (Debit Card) or VA (Virtual Account)</td>
+</tr>
+<tr>
+<td>va_number</td>
+<td>String</td>
+<td>VA number to be used on payment if using Virtual Account</td>
+</tr>
+<tr>
+<td>settlement_type</td>
+<td>String</td>
+<td>Indicate if a transaction will be settled in realtime/non-realtime</td>
+</tr>
+<tr>
+<td>created</td>
+<td>DateTime</td>
+<td>The timestamp which indicates the creation time of a payment checkout link</td>
+</tr>
+<tr>
+<td>updated</td>
+<td>DateTime</td>
+<td>The timestamp which indicates the latest updated time of a payment checkout link due to status update</td>
+</tr>
+</tbody></table>
+<h2 id='callback-response-codes'>Callback Response Codes</h2>
+<table><thead>
+<tr>
+<th>Payment Status</th>
+<th>Type</th>
+<th>Payment Method</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>waiting_payment</td>
+<td>String</td>
+<td>Bank Transfer</td>
+<td>Payer triggers a payment status check for an unpaid VA</td>
+</tr>
+<tr>
+<td>expired_va</td>
+<td>String</td>
+<td>Bank Transfer</td>
+<td>An unpaid VA has expired and payer can retry a payment</td>
+</tr>
+<tr>
+<td>charge_in_progress</td>
+<td>String</td>
+<td>Card</td>
+<td>OTP for card payment method has been succesfully entered and processed</td>
+</tr>
+<tr>
+<td>charge_sucess</td>
+<td>String</td>
+<td>Bank Transfer/Card</td>
+<td>A payment has been successfully received by OY</td>
+</tr>
+<tr>
+<td>charge_failed</td>
+<td>String</td>
+<td>Card</td>
+<td>OTP for card payment method has been succesfully entered but payment is rejected</td>
+</tr>
+<tr>
+<td>disburse_in_progress</td>
+<td>String</td>
+<td>Bank Transfer/Card</td>
+<td>For &quot;Realtime&quot; settlement option, disbursement is currently in progress to partner&#39;s registered bank account</td>
+</tr>
+<tr>
+<td>complete</td>
+<td>String</td>
+<td>Bank Transfer/Card</td>
+<td>For &quot;Realtime&quot; settlement option, disbursement has been succesfully executed and received by partner</td>
+</tr>
+</tbody></table>
+<h2 id='api-callback'>API Callback</h2>
+<p>An endpoint to retrieve and/or re-send the latest callback status of a transaction. Please contact us to submit a request of an API Key and IP whitelisting.</p>
+<h3 id='https-request'>HTTPS Request</h3>
+<p>GET <code>https://partner.oyindonesia.com/api/payment-checkout/status</code></p>
 
 <blockquote>
-<p>Below is an example of a request body to execute your request: tbd</p>
-</blockquote>
-
-<p>Send us instructions to generate a recurring payment checkout invoice link <a href="https://api-docs.oyindonesia.com/#api-create-recurring-invoice-coming-soon">https://api-docs.oyindonesia.com/#api-create-recurring-invoice-coming-soon</a>. </p>
-
-<blockquote>
-<p>Below is an example of a request body to execute your request: </p>
+<p>To retrieve a callback result for a particular transaction, use following code from your platform:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="s1">'https://partner.oyindonesia.com/api/payment-checkout/status?partner_tx_id=OY123456&amp;send_callback=false'</span> <span class="nt">-H</span> <span class="s1">'x-oy-username:yourusername'</span> <span class="nt">-H</span> <span class="s1">' x-api-key:yourapikey'</span>
 </code></pre></div>
 <blockquote>
-<p>It will return an error message if the request is not valid based on the error response codes in the documentation. Otherwise, below is the sample of response parameters that will be returned:</p>
+<p>The above command returns JSON structured similar like this:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="nl">"partner_tx_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"partner000001"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"tx_ref_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234567"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">15000</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"sender_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Joko Widodo"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"sender_phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+6281111111"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"sender_note"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mohon dikirim segera"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"settlement_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"realtime"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"sender_bank"</span><span class="p">:</span><span class="w"> </span><span class="s2">"008"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"payment_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DC"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"va_number"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+  </span><span class="nl">"partner_tx_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"partner000001"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"tx_ref_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234567"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">15000</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"sender_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Joko Widodo"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"sender_phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+6281111111"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"sender_note"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mohon dikirim segera"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"settlement_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"realtime"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"sender_bank"</span><span class="p">:</span><span class="w"> </span><span class="s2">"008"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"payment_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DC"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"va_number"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div>
-<p>An endpoint to retrieve and/or re-send the latest callback status of a transaction is also available and can be accessed at anytime <a href="https://api-docs.oyindonesia.com/#api-payment-status">https://api-docs.oyindonesia.com/#api-payment-status</a>. </p>
+</span></code></pre></div><h3 id='request-headers'>Request Headers</h3>
+<table><thead>
+<tr>
+<th>Parameters</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>x-api-key</td>
+<td>String</td>
+<td>API Key for establishing connection to this particular endpoint</td>
+</tr>
+<tr>
+<td>x-oy-username</td>
+<td>String</td>
+<td>The registered partner username which access is enabled for payment checkout product</td>
+</tr>
+</tbody></table>
+<h3 id='request-parameters'>Request Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameters</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>partner_tx_id</td>
+<td>String</td>
+<td>A unique transaction ID which callback status to be checked</td>
+</tr>
+<tr>
+<td>send_callback</td>
+<td>Boolean</td>
+<td>A flag to indiciate if the latest callback of a transaction need to be re-sent or not</td>
+</tr>
+</tbody></table>
+<h3 id='response-parameters'>Response Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>partner_tx_id</td>
+<td>String</td>
+<td>A unique transaction ID provided by partner</td>
+</tr>
+<tr>
+<td>tx_ref_number</td>
+<td>String</td>
+<td>OY&#39;s internal unique transaction ID</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>BigDecimal</td>
+<td>The amount of a transaction that is paid</td>
+</tr>
+<tr>
+<td>sender_name</td>
+<td>String</td>
+<td>Name of a payer for a transaction</td>
+</tr>
+<tr>
+<td>sender_phone</td>
+<td>String</td>
+<td>Phone number of a payer for a transaction</td>
+</tr>
+<tr>
+<td>sender_note</td>
+<td>String</td>
+<td>Additional notes from a payer for a transaction</td>
+</tr>
+<tr>
+<td>status</td>
+<td>String</td>
+<td>The status of a transaction</td>
+</tr>
+<tr>
+<td>sender_bank</td>
+<td>String</td>
+<td>The bank code used by a payer to do payment</td>
+</tr>
+<tr>
+<td>payment_method</td>
+<td>String</td>
+<td>The payment method used in a transaction such as CC (Credit Card), DC (Debit Card) or VA (Virtual Account)</td>
+</tr>
+<tr>
+<td>va_number</td>
+<td>String</td>
+<td>VA number to be used on payment if using Virtual Account</td>
+</tr>
+<tr>
+<td>settlement_type</td>
+<td>String</td>
+<td>Indicate if a transaction will be settled in realtime/non-realtime</td>
+</tr>
+<tr>
+<td>created</td>
+<td>String</td>
+<td>The timestamp which indicates the creation time of a payment checkout link</td>
+</tr>
+<tr>
+<td>updated</td>
+<td>String</td>
+<td>The timestamp which indicates the latest updated time of a payment checkout link due to status update</td>
+</tr>
+</tbody></table>
+<h2 id='api-create-url'>API Create URL</h2>
+<p>An endpoint to create payment checkout URL which return parameters by encapsulation.</p>
 
 <blockquote>
-<p>Below is an example of a request body to execute your request: </p>
+<p>Sample Curl</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="se">\</span>
-  https://partner.oyindonesia.com/api/payment-checkout/<span class="o">{</span>payment_link_id_or_partner_tx_id<span class="o">}</span><span class="se">\</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="se">\</span>
+  https://partner.oyindonesia.com/api/payment-checkout/create <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'cache-control: no-cache'</span> <span class="nt">-H</span> <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s1">'X-Api-key: apikeymu'</span> <span class="nt">-H</span> <span class="s1">'X-Oy-Username: yourusername'</span>
-</code></pre></div>
+  <span class="nt">-H</span> <span class="s1">'x-api-key: apikeymu'</span> <span class="nt">-H</span> <span class="s1">'x-oy-username: yourusername'</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="s1">'{"username":"testaccount","partner_tx_id":"ABC123456527","sender_name":"Roberto F",
+        "sender_note":"bill payment","sender_phone": "082114845847","checkout_url":"string",
+        "amount":75000,"is_open":false,"step":"select-payment-method","enable_payment_cc":false,
+        "enable_payment_va":true,"enable_payment_debit":false,"description":"payment for March 2020"
+    }'</span>
+</code></pre></div><h3 id='https-request-2'>HTTPS Request</h3>
+<p>POST <code>https://partner.oyindonesia.com/api/payment-checkout/create</code></p>
+
 <blockquote>
-<p>It will return an error message if the request is not valid based on the error response codes in the documentation. Otherwise, below is the sample of response parameters that will be returned:</p>
+<p>Json Response</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"partnerTxId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abc10"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"paymentLinkId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"703e05c0-48e3-47bd-9c22-670941d4d5fe"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">15000</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"justkhals"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"senderName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Doe"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"senderPhoneNumber"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"senderNotes"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CREATED"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"txRefNumber"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"testdesc"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"isOpen"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"step"</span><span class="p">:</span><span class="w"> </span><span class="s2">"input-amount"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"notes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"testnote"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"phoneNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"085248395555"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"maskalgrr@gmail.com"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"includeAdminFee"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"listDisabledPaymentMethods"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"listEnabledBanks"</span><span class="p">:</span><span class="w"> </span><span class="s2">"008"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"expirationTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-08-12 00:00:00"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"invoiceData"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"fullName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Dooe"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"isVaLifetime"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"isScheduled"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"recurringStartDate"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"recurringEndDate"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"recurringFrequency"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"invoiceItems"</span><span class="p">:</span><span class="w"> </span><span class="s2">"[{</span><span class="se">\"</span><span class="s2">item</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">AK 47</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">quantity</span><span class="se">\"</span><span class="s2">: 2000, </span><span class="se">\"</span><span class="s2">description</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">Untuk Kemanan Negara</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">price_per_item</span><span class="se">\"</span><span class="s2">: 2250000, </span><span class="se">\"</span><span class="s2">date_of_purchase</span><span class="se">\"</span><span class="s2">: 1590969600000}]"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-   </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"return payment checkout data"</span><span class="p">,</span><span class="w">
-   </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+        </span><span class="nl">"username"</span><span class="p">:</span><span class="s2">"testaccount"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"partner_tx_id"</span><span class="p">:</span><span class="s2">"ABC123456527"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"sender_name"</span><span class="p">:</span><span class="s2">"Roberto F"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"sender_note"</span><span class="p">:</span><span class="s2">"bill payment"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"sender_phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"082114845847"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"checkout_url"</span><span class="p">:</span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"amount"</span><span class="p">:</span><span class="mi">75000</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"is_open"</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"step"</span><span class="p">:</span><span class="s2">"select-payment-method"</span><span class="w"> </span><span class="p">,</span><span class="w">
+        </span><span class="nl">"enable_payment_cc"</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"enable_payment_va"</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"enable_payment_debit"</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"description"</span><span class="p">:</span><span class="s2">"payment for March 2020"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div>
-<p>An endpoint to check your payment or invoice data is also available and can be accessed at anytime <a href="https://api-docs.oyindonesia.com/#api-get">https://api-docs.oyindonesia.com/#api-get</a>.</p>
+</span></code></pre></div><h3 id='request-headers-2'>Request Headers</h3>
+<table><thead>
+<tr>
+<th>Parameters</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>x-api-key</td>
+<td>String</td>
+<td>API Key for establishing connection to this particular endpoint</td>
+</tr>
+<tr>
+<td>x-oy-username</td>
+<td>String</td>
+<td>The registered partner username which access is enabled for payment checkout product</td>
+</tr>
+</tbody></table>
+<h3 id='request-parameters-2'>Request Parameters</h3>
+<p><em>Note: all parameters defined via API are mandatory to be declared in the request</em></p>
 
-<blockquote>
-<p>Below is an example of a request body to execute your request: </p>
-</blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> DELETE <span class="se">\</span>
-  https://partner.oyindonesia.com/api/payment-checkout/<span class="o">{</span>payment_link_id_or_partner_tx_id<span class="o">}</span><span class="se">\</span>
-  <span class="nt">-H</span> <span class="s1">'cache-control: no-cache'</span> <span class="nt">-H</span> <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s1">'X-Api-key: apikeymu'</span> <span class="nt">-H</span> <span class="s1">'X-Oy-Username: yourusername'</span> 
-</code></pre></div>
-<blockquote>
-<p>Below is the sample of response parameters that will be returned:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="nl">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"success delete payment checkout data"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
-<p>Lastly, we provide an endpoint to delete your payment or invoice link based on <code>payment_link_id</code> or <code>partner_tx_id</code>. The payment or invoice link must still be active and a payment method must not have been selected.</p>
+<table><thead>
+<tr>
+<th>Parameters</th>
+<th>Type</th>
+<th>Description</th>
+<th>Limitation</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>username</td>
+<td>String</td>
+<td>The username used by partner for registration with OY!</td>
+<td>-</td>
+</tr>
+<tr>
+<td>partner_tx_id</td>
+<td>String</td>
+<td>A unique transaction ID provided by partner.</td>
+<td>A partner_tx_id that has been succesfully paid cannot be used anymore under the same username and only accepts alphanumerics.</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>Integer</td>
+<td>The amount of a transaction to be paid.</td>
+<td>The amount that can be processed is between IDR 15,000 and IDR 25,000,000.</td>
+</tr>
+<tr>
+<td>sender_name</td>
+<td>String</td>
+<td>Name of the payer for a transaction.</td>
+<td>Only accepts alphabets (A-Z) and space as input and cannot be empty.</td>
+</tr>
+<tr>
+<td>sender_phone</td>
+<td>Numeric</td>
+<td>Phone number of the payer for a transaction.</td>
+<td>Do not use special character (e.g. &quot;+&quot;) and cannot be empty.</td>
+</tr>
+<tr>
+<td>sender_note</td>
+<td>String</td>
+<td>Additional notes from the payer for a transaction.</td>
+<td>Only accepts alphabets (A-Z), numeric (0-9) and space as input.</td>
+</tr>
+<tr>
+<td>description</td>
+<td>String</td>
+<td>Description of the payment checkout link.</td>
+<td>Only accepts alphabets (A-Z), numeric (0-9) and space as input.</td>
+</tr>
+<tr>
+<td>is_open</td>
+<td>Boolean</td>
+<td>Enable open/closed amount transaction method.</td>
+<td>If is_open = TRUE and the amount parameter is defined, then a payer can pay any amount (greater than IDR 15,000) up to the defined amount. And in the case that is_open=false, then the amount and partner_tx_id parameters must be defined. Once a partner_tx_id has ever been defined with is_open=false, the amount and the is_open parameters cannot be updated unless the transaction is completed for that particular partner_tx_id.</td>
+</tr>
+<tr>
+<td>step</td>
+<td>String</td>
+<td>Accessing specific page of the payment checkout URL. Possible values for this parameter are either (input-amount, input-personal-info, select-payment-method).</td>
+<td>If step = input-personal-info then the amount parameter must be defined. And if step = select-payment-method then the amount and sender_name parameters must be defined.</td>
+</tr>
+<tr>
+<td>enable_payment_va</td>
+<td>Boolean</td>
+<td>Enable VA payment method for the payment checkout link.</td>
+<td>There should be at least one payment method enabled.</td>
+</tr>
+<tr>
+<td>enable_payment_debit</td>
+<td>Boolean</td>
+<td>Enable debit card payment method for the payment checkout link.</td>
+<td>There should be at least one payment method enabled.</td>
+</tr>
+<tr>
+<td>enable_payment_cc</td>
+<td>Boolean</td>
+<td>Enable credit card payment method for the payment checkout link.</td>
+<td>There should be at least one payment method enabled.</td>
+</tr>
+</tbody></table>
+<h3 id='response-parameters-2'>Response Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>success</td>
+<td>Boolean</td>
+<td>The username used by partner for registration with OY!</td>
+</tr>
+<tr>
+<td>url</td>
+<td>String</td>
+<td>A unique transaction ID provided by partner</td>
+</tr>
+</tbody></table>
 
-<p>Just like the Payment Checkout via Link, you can access all your payment checkout links and its details from the OY! dashboard. This report will include all payment checkout links generated both via Link and API.</p>
-
-<p><img src="images/images/payment_checkout_list" alt="Payment Checkout" /></p>
-<h3 id='how-to-use-payment-checkout-via-dashboard-comming-soon'>How to Use Payment Checkout via Dashboard (comming soon)</h3>
       </div>
       <div class="dark-box">
           <div class="lang-selector">
