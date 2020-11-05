@@ -397,10 +397,13 @@
             <a href="#faqs" class="toc-h1 toc-link" data-title="FAQs">FAQs</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#disbursement-bank-codes" class="toc-h2 toc-link" data-title="Disbursement Bank Codes">Disbursement Bank Codes</a>
+                    <a href="#api-and-bulk-disbursement" class="toc-h2 toc-link" data-title="API and Bulk Disbursement">API and Bulk Disbursement</a>
                   </li>
                   <li>
-                    <a href="#disbursement-products" class="toc-h2 toc-link" data-title="Disbursement Products">Disbursement Products</a>
+                    <a href="#api-va-aggregator-2" class="toc-h2 toc-link" data-title="API VA Aggregator">API VA Aggregator</a>
+                  </li>
+                  <li>
+                    <a href="#payment-checkout-invoice" class="toc-h2 toc-link" data-title="Payment Checkout/Invoice">Payment Checkout/Invoice</a>
                   </li>
               </ul>
           </li>
@@ -1036,7 +1039,7 @@
 
 <p><strong><em>3. Amount and Payment Method Customization</em></strong> </p>
 
-<p>You can customize the amount to be billed to your users whether they have to pay a fix amount (closed amount) or any amount (open amount). We provide Bank Transfers, Credit Card, Debit Card, and QR code payment methods that you can also enable/disable at any time.</p>
+<p>You can customize the amount to be billed to your users whether they have to pay a fix amount (closed amount) or any amount (open amount). We provide Bank Transfers, Credit Card, Debit Card, and QR code payment methods that you can also enable/disable at any time. Please refer to our <a href="https://docs.oyindonesia.com/#faqs">FAQ page</a> below for more information regarding closed and open amounts. </p>
 
 <p><strong><em>4. Hide Specific Payment Checkout Pages</em></strong></p>
 
@@ -1097,7 +1100,7 @@
 <li><p>Integrate with our <a href="https://api-docs.oyindonesia.com/#api-create-payment-checkout">API</a></p></li>
 </ol>
 <h2 id='testing-testing-environment-coming-soon-4'>Testing (Testing environment coming soon)</h2><h2 id='how-to-use-payment-checkout-via-link'>How to Use Payment Checkout via Link</h2>
-<p><em>Note:</em> Our payment link includes parameters that are easily adjustable according to your needs. You can send the link to your customer at any point within this process. </p>
+<p><em>Note:</em> Our payment link includes parameters that are easily adjustable according to your needs. You can send the link to multiple customers using the same link (please refer to the steps below) and we will take care the rest.</p>
 
 <p><strong>1. Access your payment link and input amount</strong>: Access our pre-generated link unique to your account by simply replacing yourusername with your username approved with OY at <a href="https://pay.oyindonesia.com/v2?username=yourusername">https://pay.oyindonesia.com/v2?username=yourusername</a>. </p>
 
@@ -1329,9 +1332,7 @@
 <p>Just like the Payment Checkout via Link, you can access all your payment checkout links and its details from the OY! dashboard. This report will include all payment checkout links generated both via Link and API.</p>
 
 <p><img src="images/payment_checkout_list-881cc456.png" alt="Payment Checkout" /></p>
-<h2 id='how-to-use-payment-checkout-via-dashboard-coming-soon'>How to Use Payment Checkout via Dashboard (coming soon)</h2><h1 id='faqs'>FAQs</h1><h2 id='disbursement-bank-codes'>Disbursement Bank Codes</h2>
-<p>We support transactions to 100+ banks in Indonesia. Please refer to the bank codes <a href="https://api-docs.oyindonesia.com/#disbursement-bank-codes">here</a> when using our disbursement products. (Please note that we currently do not support disbursements to Virtual Accounts.)</p>
-<h2 id='disbursement-products'>Disbursement Products</h2>
+<h2 id='how-to-use-payment-checkout-via-dashboard-coming-soon'>How to Use Payment Checkout via Dashboard (coming soon)</h2><h1 id='faqs'>FAQs</h1><h2 id='api-and-bulk-disbursement'>API and Bulk Disbursement</h2>
 <p><strong>What are bank maintenance schedules? Will partners be informed?</strong></p>
 
 <p>Banks often have regular maintenance schedules which differ from one bank to another. These regular maintenance schedules prevent the execution of transactions to the respective recipient bank during the set period of time. In the event that an unplanned maintenance or maintenance schedules run for an extended period of time, we will notify our partners.</p>
@@ -1391,11 +1392,53 @@
 
 <p>You can send up to 5 emails per transactions with a limit of 255 characters total. For each transaction, simply list out the email recipients. </p>
 
-<p><strong>[Bulk Disburse Specific] What if the recipient name on the xlsx or CSV file is different from the bank account name? What is the phone number used for?</strong></p>
+<p><strong>What are the supported banks for the disbursement products?</strong></p>
+
+<p>We support transactions to 100+ banks in Indonesia. Please refer to the bank codes <a href="https://api-docs.oyindonesia.com/#disbursement-bank-codes">here</a> when using our disbursement products. (Please note that we currently do not support disbursements to Virtual Accounts.)</p>
+
+<p><strong>Can I specify the &quot;notes&quot; to be reflected in the beneficiary bank account statement?</strong> </p>
+
+<p>Yes. However, we only support notes for these 7 banks: BCA, BNI, BRI, CIMB, DBS, Mandiri, and Permata. However, please note that should there arise unexpected difficulties with the connection to these aforementioned banks, our failover system will not be able to support these notes to be reflected in the beneficiary bank account statement. </p>
+
+<p><strong>Will the funds accepted from the API VA Aggregator and Payment Checkout and Invoice products be readily available for disbursement uses?</strong> </p>
+
+<p>Yes. The funds accepted from the API VA Aggregator and Payment Checkout and Invoice products will be automatically reflected in your OY! balance in real-time, allowing you to use these funds directly for disbursement purposes. </p>
+
+<p><strong>[Bulk Disbursement Specific] What if the recipient name on the xlsx or CSV file is different from the bank account name? What is the phone number used for?</strong></p>
 
 <p>As long as the bank account number is valid and not dormant, the transaction will still be executed. </p>
 
 <p>The name and phone number are visible only to the partner and is used for the partner’s own documentation. The name and phone number listed are not used by OY or sent to the recipient. </p>
+
+<p><strong>[API Disbursement Specific] Are the disbursements performed in real-time?</strong></p>
+
+<p>Yes. Disbursements executed through our API Disbursement are all performed in real-time. </p>
+<h2 id='api-va-aggregator-2'>API VA Aggregator</h2>
+<p><strong>What are the supported banks?</strong> </p>
+
+<p>We currently have 6 available banks for our API VA Aggregator. Please refer to the bank codes <a href="https://api-docs.oyindonesia.com/#va-aggregator-bank-code">here</a>.</p>
+
+<p>**What closed amount </p>
+
+<p><strong>Is the amount received in realtime?</strong> </p>
+
+<p>Yes, all the amount received are in realtime and will be immediately available in your OY! balance.</p>
+<h2 id='payment-checkout-invoice'>Payment Checkout/Invoice</h2>
+<p><strong>What are the possible payment methods for users?</strong> 
+We support payments via bank transfers, credit card, debit card, and QR code from the following: </p>
+
+<ul>
+<li><p>Bank Transfer via Virtual Account: BCA, BNI, BRI, CIMB Niaga, Mandiri, Permata Bank.</p></li>
+<li><p>Credit Card: VISA, Mastercard </p></li>
+<li><p>Debit Card: Bank BTN, BNI, BRI, CIMB Niaga, digibank by DBS, Jenius (Bank BTPN), Mandiri, Permata.</p></li>
+<li><p>QR Code: Qris</p></li>
+</ul>
+
+<p><strong>What are closed and open amounts? What happens when the amount paid by the user is different from the declared amount in the created Payment Checkouts?</strong> </p>
+
+<p>A closed amount is a configuration so that the payment checkout or invoice can only be paid if the actual declared amount is paid. The user will not be able to pay any amount other than the declared amount.</p>
+
+<p>An opened amount is a configuration so that the payment checkout or invoice can be paid up to the declared amount (or any, if amount is not declared). If the user pays an amount that is different from the declared amount, the payment checkout will remain active. The payment checkout will only reflect a completed status when the full amount is paid in total. </p>
 
       </div>
       <div class="dark-box">
