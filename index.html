@@ -248,8 +248,11 @@
 .highlight .kd {
   color: #cb4b16;
 }
-.highlight .s, .highlight .sa, .highlight .sb, .highlight .sc, .highlight .dl, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+.highlight .s, .highlight .sb, .highlight .sc, .highlight .dl, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
   color: #859900;
+}
+.highlight .sa {
+  color: #6c71c4;
 }
 .highlight .sr {
   color: #2aa198;
@@ -279,10 +282,13 @@
   color: #859900;
 }
     </style>
-    <link href="stylesheets/screen-e0648b2b.css" rel="stylesheet" media="screen" />
-    <link href="stylesheets/print-c427a123.css" rel="stylesheet" media="print" />
-      <script src="javascripts/all-e9bde216.js"></script>
+    <link href="stylesheets/screen-75f6955d.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print-953e3353.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all-a9fde460.js"></script>
 
+    <script>
+      $(function() { setupCodeCopy(); });
+    </script>
   </head>
 
   <body class="index" data-languages="[&quot;shell&quot;]">
@@ -1605,7 +1611,7 @@ Step by step instructions can be found <a href="https://docs.oyindonesia.com/#ho
 <h2 id='how-to-use-payment-checkout-via-dashboard-coming-soon'>How to Use Payment Checkout via Dashboard (coming soon)</h2><h1 id='faqs'>FAQs</h1><h2 id='api-and-bulk-disbursement'>API and Bulk Disbursement</h2>
 <p><strong>What are bank maintenance schedules? Will partners be informed?</strong></p>
 
-<p>Banks often have regular maintenance schedules which differ from one bank to another. These regular maintenance schedules prevent the execution of transactions to the respective recipient bank during the set period of time. In the event that an unplanned maintenance or maintenance schedules run for an extended period of time, we will notify our partners.</p>
+<p>Banks often have regular maintenance schedules which differ from one bank to another. These regular maintenance schedules prevent the execution of transactions to the respective recipient bank during the set period of time. To ensure your convenience, we will queue any transaction requests submitted during the maintenance hours and automatically disburse them once the maintenance is over.</p>
 
 <p><strong>What are the amount limits for disbursements?</strong></p>
 
@@ -1647,6 +1653,34 @@ Step by step instructions can be found <a href="https://docs.oyindonesia.com/#ho
 <td>GoPay</td>
 <td>Verified</td>
 <td>Rp 10.000.000</td>
+</tr>
+</tbody></table>
+
+<p><strong>What are the minimum transaction for disbursements?</strong></p>
+
+<p><em>e-wallet:</em> Since each e-wallet provide limits to the amount each user can hold at a time, disbursements made to e-wallet accounts have their respective limits. </p>
+
+<table><thead>
+<tr>
+<th>Wallet</th>
+<th>Maximum Amount</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>OVO</td>
+<td>Rp 20.000</td>
+</tr>
+<tr>
+<td>DANA</td>
+<td>Rp 20.000</td>
+</tr>
+<tr>
+<td>GoPay</td>
+<td>Rp 10.000</td>
+</tr>
+<tr>
+<td>Linkaja</td>
+<td>Rp 10.000</td>
 </tr>
 </tbody></table>
 
