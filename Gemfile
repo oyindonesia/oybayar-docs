@@ -9,5 +9,5 @@ gem 'middleman-sprockets', '~> 4.1'
 
 gem 'rouge', '~> 3.21'
 gem 'redcarpet', '~> 3.5.0'
-gem 'nokogiri', '~> 1.11.0'
+gem 'nokogiri', '~> 1.11.4'
 gem 'sass'
