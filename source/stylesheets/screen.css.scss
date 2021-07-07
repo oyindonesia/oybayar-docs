@@ -40,6 +40,57 @@ html, body {
 // TABLE OF CONTENTS
 ////////////////////////////////////////////////////////////////////////////////
 
+.header {
+  width: 98.5%;
+  display: flex;
+  position: fixed;
+  background-color: white;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  border-bottom: 1px solid #E7ECF4;
+  padding: 8px 16px;
+  align-items: center;
+  justify-content: space-between;
+  &-section {
+    display: flex;
+    align-items: center;
+    > *:not(:last-child) {
+      margin-right: 48px;
+    }
+  }
+  &-link{
+    text-decoration: none;
+    color: #0A2540;
+    font-size: 16px;
+    &:hover{
+      color: lighten($color: #0D47A1, $amount: 5);
+    }
+
+    &Underline{
+      color: #0D47A1;
+      text-decoration: underline;
+      transition: .2s all ease;
+      font-size: 16px;
+      &:hover{
+        color: lighten($color: #0D47A1, $amount: 5);
+      }
+    }
+    &Button{
+      text-decoration: none;
+      border-radius: 20px;
+      padding: 8px 16px;
+      background-color: #0D47A1;
+      color: white;
+      transition: .2s all ease;
+      font-size: 16px;
+      &:hover{
+        background-color: lighten($color: #0D47A1, $amount: 5);
+      }
+    }
+  }
+}
+
 #toc > ul > li > a > span {
   float: right;
   background-color: #2484FF;
@@ -49,18 +100,18 @@ html, body {
 
 .toc-wrapper {
   transition: left 0.3s ease-in-out;
-
   overflow-y: auto;
   overflow-x: hidden;
   position: fixed;
   z-index: 30;
-  top: 0;
+  top: $header-height;
   left: 0;
   bottom: 0;
   width: $nav-width;
   background-color: $nav-bg;
   font-size: 13px;
   font-weight: bold;
+  border-right: 1px solid #E7ECF4;
 
   // language selector for mobile devices
   .lang-selector {
@@ -144,17 +195,24 @@ html, body {
     line-height: 28px;
   }
 
+  ul {
+    padding: 8px 0;
+  }
+
   li {
     color: $nav-text;
-    transition-property: background;
-    transition-timing-function: linear;
-    transition-duration: 200ms;
+    transition: 200ms background linear, 200ms color ease;
   }
 
   // This is the currently selected ToC entry
   .toc-link.active {
     background-color: $nav-active-bg;
     color: $nav-active-text;
+    border-radius: 10px;
+    margin: 0 8px;
+    &:hover{
+      color: lighten($color: #0D47A1, $amount: 10);
+    }
   }
 
   // this is parent links of the currently selected ToC entry
@@ -197,16 +255,14 @@ html, body {
 }
 
 .toc-link, .toc-footer li {
-  padding: 0 $nav-padding 0 $nav-padding;
+  padding: $nav-padding;
   display: block;
-  overflow-x: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
   text-decoration: none;
   color: $nav-text;
-  transition-property: background;
-  transition-timing-function: linear;
-  transition-duration: 130ms;
+  transition: all .2s linear;
+  &:hover{
+    color: #0D47A1;
+  }
 }
 
 // button to show navigation on mobile devices
@@ -266,7 +322,7 @@ html, body {
     background-color: $examples-bg;
     position: absolute;
     right: 0;
-    top: 0;
+    top: $header-height;
     bottom: 0;
   }
 
@@ -347,14 +403,11 @@ html, body {
 
   h1 {
     @extend %header-font;
-    font-size: 25px;
+    font-size: 36px;
     padding-top: 0.5em;
     padding-bottom: 0.5em;
     margin-bottom: $h1-margin-bottom;
     margin-top: 2em;
-    border-top: 1px solid #ccc;
-    border-bottom: 1px solid #ccc;
-    background-color: #fdfdfd;
   }
 
   h1:first-child, div:first-child + h1 {
@@ -364,10 +417,10 @@ html, body {
 
   h2 {
     @extend %header-font;
-    font-size: 19px;
-    margin-top: 4em;
+    font-size: 36px;
+    margin-top: 26px;
     margin-bottom: 0;
-    border-top: 1px solid #ccc;
+    border-top: 1px solid #E7ECF4;
     padding-top: 1.2em;
     padding-bottom: 1.2em;
     background-image: linear-gradient(to bottom, rgba(#fff, 0.2), rgba(#fff, 0));
@@ -517,7 +570,6 @@ html, body {
   }
 
   pre, blockquote {
-    background-color: $code-bg;
     color: #fff;
 
     margin: 0;
@@ -541,16 +593,28 @@ html, body {
 
   pre {
     @extend %code-font;
+    background-color: $code-bg;
     padding-top: 2em;
     padding-bottom: 2em;
     padding: 2em $main-padding;
+    border-radius: 0 0 8px 8px;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
   }
 
   blockquote {
+    &:not(:first-child){
+      margin-top: 24px;
+    }
     &>p {
+      border-radius: 8px 8px 0px 0px;
       background-color: $code-annotation-bg;
       padding: $code-annotation-padding 2em;
-      color: #eee;
+      color: #A6B8C8;
     }
   }
 }

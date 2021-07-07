@@ -32,7 +32,7 @@ under the License.
     <title><%= current_page.data.title || "API Documentation" %></title>
 
     <style media="screen">
-      <%= Rouge::Themes::OyTheme.render(:scope => '.highlight') %>
+      <%= Rouge::Themes::MonokaiSublimeSlate.render(:scope => '.highlight') %>
     </style>
     <style media="print">
       * {
@@ -47,9 +47,6 @@ under the License.
     <% else %>
       <%= javascript_include_tag  "all_nosearch" %>
     <% end %>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
 
     <% if current_page.data.code_clipboard %>
     <script>
@@ -59,15 +56,6 @@ under the License.
   </head>
 
   <body class="<%= page_classes %>" data-languages="<%=h language_tabs.map{ |lang| lang.is_a?(Hash) ? lang.keys.first : lang }.to_json %>">
-    <div class="header">
-      <%= image_tag "oy-docs.png", class: 'logo' %>
-      <div class="header-section">
-        <a href="#home" class="header-link">Home</a>
-        <a href="https://api-docs.oyindonesia.com" class="header-link">API Docs</a>
-        <a href="#" class="header-linkButton">Daftar Sekarang</a>
-        <a href="#" class="header-linkUnderline">Masuk Dashboard</a>
-      </div>
-    </div>
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -75,6 +63,7 @@ under the License.
       </span>
     </a>
     <div class="toc-wrapper">
+      <%= image_tag "logo.png", class: 'logo' %>
       <% if language_tabs.any? %>
         <div class="lang-selector">
           <% language_tabs.each do |lang| %>
@@ -85,6 +74,12 @@ under the License.
             <% end %>
           <% end %>
         </div>
+      <% end %>
+      <% if current_page.data.search %>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
       <% end %>
       <ul id="toc" class="toc-list-h1">
         <% toc_data(page_content).each do |h1| %>
@@ -102,6 +97,13 @@ under the License.
           </li>
         <% end %>
       </ul>
+      <% if current_page.data.toc_footers %>
+        <ul class="toc-footer">
+          <% current_page.data.toc_footers.each do |footer| %>
+            <li><%= footer %></li>
+          <% end %>
+        </ul>
+      <% end %>
     </div>
     <div class="page-wrapper">
       <div class="dark-box"></div>
