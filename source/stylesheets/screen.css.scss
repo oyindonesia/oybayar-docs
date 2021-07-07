@@ -109,7 +109,7 @@ html, body {
   bottom: 0;
   width: $nav-width;
   background-color: $nav-bg;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: bold;
   border-right: 1px solid #E7ECF4;
 
@@ -214,7 +214,6 @@ html, body {
       color: lighten($color: #0D47A1, $amount: 10);
     }
   }
-
   // this is parent links of the currently selected ToC entry
   .toc-link.active-parent {
     background-color: $nav-active-parent-bg;
@@ -225,6 +224,14 @@ html, body {
     display: none;
     background-color: $nav-subitem-bg;
     font-weight: 500;
+  }
+
+  .toc-h1{
+    display: flex;
+    align-items: center;
+    img{
+      margin-right: 8px;
+    }
   }
 
   .toc-h2 {
