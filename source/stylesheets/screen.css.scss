@@ -276,7 +276,6 @@ html, body {
     background-color: $nav-active-bg;
     color: $nav-active-text;
     border-radius: 10px;
-    margin: 0 8px;
     &:hover{
       color: lighten($color: #0D47A1, $amount: 10);
     }
@@ -296,14 +295,16 @@ html, body {
   .toc-h1{
     display: flex;
     align-items: center;
-    img{
-      margin-right: 8px;
+    &.active .icon-arrow, &.active-parent .icon-arrow{
+      transform: rotate(180deg);
     }
   }
 
   .toc-h2 {
-    padding-left: $nav-padding + $nav-indent;
     font-size: 12px;
+    &.toc-link{
+      margin: 0 16px;
+    }
   }
 
   .toc-footer {
@@ -330,7 +331,9 @@ html, body {
 
 .toc-link, .toc-footer li {
   padding: $nav-padding;
-  display: block;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   text-decoration: none;
   color: $nav-text;
   transition: all .2s linear;
@@ -450,6 +453,9 @@ html, body {
   // to place content above the dark box
   position: relative;
   z-index: 30;
+  // padding: 32px 16px;
+  margin-top: $header-height;
+  padding: 0 48px;
 
   &:after {
     content: '';
