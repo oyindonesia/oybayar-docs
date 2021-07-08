@@ -40,6 +40,7 @@ under the License.
       }
       <%= Rouge::Themes::Base16::Solarized.render(:scope => '.highlight') %>
     </style>
+    <%= favicon_tag 'favicon.ico' %>
     <%= stylesheet_link_tag :screen, media: :screen %>
     <%= stylesheet_link_tag :print, media: :print %>
     <% if current_page.data.search %>
@@ -62,9 +63,15 @@ under the License.
     <div class="header">
       <%= image_tag "oy-docs.png", class: 'logo' %>
       <div class="header-section">
+        <% if current_page.data.search %>
+          <div class="search">
+            <input type="text" class="search" id="input-search" placeholder="Search Documentation">
+            <ul class="search-results"></ul>
+          </div>
+        <% end %>
         <a href="#home" class="header-link">Home</a>
         <a href="https://api-docs.oyindonesia.com" class="header-link">API Docs</a>
-        <a href="#" class="header-linkButton">Daftar Sekarang</a>
+        <a href="https://business.oyindonesia.com/register" class="header-linkButton">Daftar Sekarang</a>
         <a href="#" class="header-linkUnderline">Masuk Dashboard</a>
       </div>
     </div>
@@ -90,7 +97,6 @@ under the License.
         <% toc_data(page_content).each do |h1| %>
           <li>
             <a href="#<%= h1[:id] %>" class="toc-h1 toc-link" data-title="<%= h1[:title] %>">
-              <%# <%= image_tag('home.svg') %>
               <%= h1[:content] %>
             </a>
             <% if h1[:children].length > 0 %>
