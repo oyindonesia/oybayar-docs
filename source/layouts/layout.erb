@@ -61,8 +61,10 @@ under the License.
 
   <body class="<%= page_classes %>" data-languages="<%=h language_tabs.map{ |lang| lang.is_a?(Hash) ? lang.keys.first : lang }.to_json %>">
     <div class="header">
-      <%= image_tag "oy-docs.png", class: 'logo' %>
       <div class="header-section">
+        <%= image_tag "oy-docs.png", class: 'header-logo' %>
+      </div>
+      <div class="header-section header-action">
         <% if current_page.data.search %>
           <div class="search">
             <input type="text" class="search" id="input-search" placeholder="Search Documentation">
@@ -74,13 +76,26 @@ under the License.
         <a href="https://business.oyindonesia.com/register" class="header-linkButton">Daftar Sekarang</a>
         <a href="#" class="header-linkUnderline">Masuk Dashboard</a>
       </div>
+      <div class="header-section header-action-mobile">
+        <%= image_tag 'search.svg', id: "search-toggle-mobile" %>
+        <a href="#" id="nav-button">
+          <span>
+            <%= image_tag('menu-outline.svg') %>
+          </span>
+        </a>
+      </div>
     </div>
-    <a href="#" id="nav-button">
-      <span>
-        NAV
-        <%= image_tag('navbar.png') %>
-      </span>
-    </a>
+
+    <div class="search-bar-mobile">
+      <% if current_page.data.search %>
+          <div class="search">
+            <input type="text" class="search" id="input-search-mobile" placeholder="Search Documentation">
+            <ul class="search-results-mobile"></ul>
+          </div>
+          <%= image_tag "close.svg", id: 'search-bar-close' %>
+        <% end %>
+    </div>
+    
     <div class="toc-wrapper">
       <% if language_tabs.any? %>
         <div class="lang-selector">
@@ -93,6 +108,10 @@ under the License.
           <% end %>
         </div>
       <% end %>
+      <div class="toc-header-mobile">
+        <%= image_tag "oy-docs.png", class: 'header-logo' %>
+        <%= image_tag "close.svg", class: 'header-close' %>
+      </div>
       <ul id="toc" class="toc-list-h1">
         <% toc_data(page_content).each do |h1| %>
           <li>

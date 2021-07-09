@@ -43,6 +43,7 @@ $search-notice-bg: #c97a7e !default;
 
 // TEXT COLORS
 ////////////////////
+$main-color: #0D47A1 !default;
 $main-text: #333 !default; // main content text color
 $nav-text: #425466 !default;
 $nav-active-text: #0D47A1 !default;
@@ -54,7 +55,9 @@ $lang-select-pressed-text: #fff !default; // color of language tab text when mou
 
 // SIZES
 ////////////////////
-$header-height: 68px !default;
+$header-height: 52px !default; // height of the header
+$header-v-padding: 8px !default;
+$header-h-padding: 16px !default;
 $nav-width: 230px !default; // width of the navbar
 $examples-width: 35% !default; // portion of the screen taken up by code examples
 $logo-margin: 0px !default; // margin below logo
@@ -64,6 +67,7 @@ $nav-v-padding: 10px !default; // padding used vertically around search boxes an
 $nav-indent: 10px !default; // extra padding for ToC subitems
 $code-annotation-padding: 13px !default; // padding inside code annotations
 $h1-margin-bottom: 21px !default; // padding under the largest header tags
+$desktop-width: 1024px !default; 
 $tablet-width: 930px !default; // min width before reverting to tablet size
 $phone-width: $tablet-width - $nav-width !default; // min width before reverting to mobile size
 
