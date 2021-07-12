@@ -55,7 +55,7 @@
         };
       }();
       wait(function () {
-        search(e);
+        search(e, searchResults, '#input-search');
       }, searchDelay);
     });
 
@@ -67,7 +67,7 @@
         };
       }();
       wait(function () {
-        searchMobile(e);
+        search(e, searchResultsMobile, '#input-search-mobile');
       }, searchDelay);
     });
 
@@ -82,69 +82,47 @@
       searchResultsMobile.removeClass('visible');
       searchResultsMobile.empty();
     })
-  }
 
-  function search(event) {
-
-    var searchInput = $('#input-search')[0];
-
-    unhighlight();
-    searchResults.addClass('visible');
-
-    // ESC clears the field
-    if (event.keyCode === 27) searchInput.value = '';
-
-    if (searchInput.value) {
-      var results = index.search(searchInput.value).filter(function (r) {
-        return r.score > 0.0001;
-      });
-
-      if (results.length) {
-        searchResults.empty();
-        $.each(results, function (index, result) {
-          var elem = document.getElementById(result.ref);
-          searchResults.append("<li><a href='#" + result.ref + "'>" + $(elem).text() + "</a></li>");
-        });
-        highlight.call(searchInput);
-      } else {
-        searchResults.html('<li></li>');
-        $('.search-results li').text('No Results Found for "' + searchInput.value + '"');
-      }
-    } else {
-      unhighlight();
-      searchResults.removeClass('visible');
-    }
-  }
-
-  function searchMobile(event) {
-
-    var searchInput = $('#input-search-mobile')[0];
-
-    unhighlight();
-    searchResultsMobile.addClass('visible');
-
-    // ESC clears the field
-    if (event.keyCode === 27) searchInput.value = '';
-
-    if (searchInput.value) {
-      var results = index.search(searchInput.value).filter(function (r) {
-        return r.score > 0.0001;
-      });
-
-      if (results.length) {
-        searchResultsMobile.empty();
-        $.each(results, function (index, result) {
-          var elem = document.getElementById(result.ref);
-          searchResultsMobile.append("<li><a href='#" + result.ref + "'>" + $(elem).text() + "</a></li>");
-        });
-        highlight.call(searchInput);
-      } else {
-        searchResultsMobile.html('<li></li>');
-        $('.search-results-mobile li').text('No Results Found for "' + searchInput.value + '"');
-      }
-    } else {
-      unhighlight();
+    $('*').click(function () {
       searchResultsMobile.removeClass('visible');
+      searchResults.removeClass('visible');
+    })
+  }
+
+  function search(event, searchResult, idInputSearch) {
+
+    var searchInput = $(idInputSearch)[0];
+
+    unhighlight();
+    searchResult.addClass('visible');
+
+    // ESC clears the field
+    if (event.keyCode === 27) searchInput.value = '';
+
+    if (searchInput.value) {
+      var results = index.search(searchInput.value).filter(function (r) {
+        return r.score > 0.0001;
+      });
+
+      if (results.length) {
+        searchResult.empty();
+        $.each(results, function (index, result) {
+          var elem = document.getElementById(result.ref);
+          searchResult.append("<li><a href='#" + result.ref + "'>" + $(elem).text() + "</a></li>");
+        });
+        highlight.call(searchInput);
+
+        searchResult.click(function () {
+          searchResult.removeClass('visible');
+        })
+      } else {
+        searchResult.html('')
+        searchResult.append(`<li>No Results Found for "${searchInput.value}"</li>`);
+      }
+    } else {
+      unhighlight();
+      searchResult.removeClass('visible');
+      searchResult.unbind('click');
     }
   }
 

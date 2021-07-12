@@ -12,6 +12,7 @@ includes:
   - sending-payments
   - accepting-payments
   - faq
+  - dummy
 
 code_clipboard: true
 ---
