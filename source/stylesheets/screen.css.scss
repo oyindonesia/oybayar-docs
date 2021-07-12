@@ -334,6 +334,15 @@ html, body {
   li {
     color: $nav-text;
     transition: 200ms background linear, 200ms color ease;
+    a {
+      span{
+        display: flex;
+        align-items: center;
+        img{
+          margin-right: 8px;
+        }
+      }
+    }
   }
 
   // This is the currently selected ToC entry
@@ -873,6 +882,10 @@ html, body {
 
 .highlight, .highlight .w {
   background-color: $code-bg;
+}
+
+.highlight{
+  border-radius: 0 0 8px 8px;
 }
 
 .copy-clipboard {
