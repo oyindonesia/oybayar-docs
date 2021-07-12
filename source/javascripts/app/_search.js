@@ -74,7 +74,7 @@
     $('#search-toggle-mobile').click(function () {
       $('.search-bar-mobile').addClass('open')
       var searchInput = $('#input-search-mobile')[0];
-      searchInput.value('')
+      searchInput.value = ''
     });
 
     $('#search-bar-close').click(function () {
@@ -116,8 +116,8 @@
           searchResult.removeClass('visible');
         })
       } else {
-        searchResult.html('')
-        searchResult.append(`<li>No Results Found for "${searchInput.value}"</li>`);
+        searchResult.empty();
+        searchResult.append('<li>No Results Found for "' + searchInput.value + '"</li>');
       }
     } else {
       unhighlight();
