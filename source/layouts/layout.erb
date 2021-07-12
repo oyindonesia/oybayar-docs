@@ -61,8 +61,8 @@ under the License.
 
   <body class="<%= page_classes %>" data-languages="<%=h language_tabs.map{ |lang| lang.is_a?(Hash) ? lang.keys.first : lang }.to_json %>">
     <div class="header">
-      <div class="header-section">
-        <%= image_tag "oy-docs.png", class: 'header-logo' %>
+      <div class="header-section header-logo-container">
+        <%= image_tag "oy-docs.svg", class: 'header-logo' %>
       </div>
       <div class="header-section header-action">
         <% if current_page.data.search %>
@@ -71,10 +71,12 @@ under the License.
             <ul class="search-results"></ul>
           </div>
         <% end %>
-        <a href="#home" class="header-link">Home</a>
-        <a href="https://api-docs.oyindonesia.com" class="header-link">API Docs</a>
-        <a href="https://business.oyindonesia.com/register" class="header-linkButton">Daftar Sekarang</a>
-        <a href="#" class="header-linkUnderline">Masuk Dashboard</a>
+        <div class="header-section header-action-link">
+          <a href="#home" class="header-link">Home</a>
+          <a href="https://api-docs.oyindonesia.com" class="header-link">API Docs</a>
+          <a href="https://business.oyindonesia.com/register" class="header-linkButton">Daftar Sekarang</a>
+          <a href="#" class="header-linkUnderline">Masuk Dashboard</a>
+        </div>
       </div>
       <div class="header-section header-action-mobile">
         <%= image_tag 'search.svg', id: "search-toggle-mobile" %>

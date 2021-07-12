@@ -121,10 +121,11 @@ html, body {
   border-bottom: 1px solid #E7ECF4;
   padding: $header-v-padding $header-h-padding;
   align-items: center;
-  justify-content: space-between;
   &-logo {
-    height: 75%;
     width: auto;
+    &-container{
+      width: $nav-width - 16px;
+    }
   }
 
   &-section {
@@ -205,6 +206,14 @@ html, body {
         }
       }
     }
+
+  }
+  
+  &-action{
+    flex: 1;
+    margin-left: 48px;
+    display: flex;
+    justify-content: space-between;
   }
 
   &-action-mobile{
@@ -282,7 +291,7 @@ html, body {
   bottom: 0;
   width: $nav-width;
   background-color: $nav-bg;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: bold;
   border-right: 1px solid #E7ECF4;
 
@@ -358,7 +367,7 @@ html, body {
   }
 
   .toc-h2 {
-    font-size: 12px;
+    font-size: 14px;
     &.toc-link{
       margin: 0 16px;
     }
@@ -786,6 +795,7 @@ html, body {
 
 @media (max-width: $tablet-width) {
   .header{
+    justify-content: space-between;
     &-action{
       display: none;
       &-mobile{
