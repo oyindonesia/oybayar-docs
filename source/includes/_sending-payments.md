@@ -4,7 +4,7 @@
 
 API disbursement product provides the capability for you to disburse to 100+ banks in Indonesia via OY! at any time. The integration process to use the API disbursement product is straight forward and the details can be checked [here](https://api-docs.oyindonesia.com/#fund-disbursement).  
 
-## API Disbursement - Key Features
+### Key Features
 **Overdraft**
 
 OY! has established partnerships with third party lenders to credit a specific amount of funds that can be used for your disbursement needs. With this feature, you don’t need to top up the OY! balance to execute disbursements. Please contact our [business representative](partner@oyindonesia.com) for further details about this feature.
@@ -21,7 +21,7 @@ For all disbursements executed, you will receive notifications regarding your tr
 
 You can check your available balance at anytime to ensure that you have sufficient balance to execute a disbursement.
 
-## API Disbursement - Registration and Set Up
+### Registration and Set Up
 **Prerequisites** 
 
 * Register an account on the [OY! dashboard](https://business.oyindonesia.com/register?)
@@ -38,9 +38,9 @@ You can check your available balance at anytime to ensure that you have sufficie
 
 * Integrate with our [API](https://api-docs.oyindonesia.com/#fund-disbursement)
 
-## API Disbursement - Testing (Coming Soon)
+### Testing (Coming Soon)
 
-## API Disbursement - How to Use 
+### How to Use 
 
 In order to create disbursements, a sufficient available OY! balance is required in the account. More details and instructions about topping up to your OY! account coming soon.
 
@@ -223,7 +223,7 @@ For further details on the parameters definition and proper usage, please refer 
 
 Our Bulk disbursement product provides the capability to execute disbursements to multiple beneficiaries with a single xlsx or csv file upload ("Campaign") up to 25,000 transactions. Bulk disbursement is made through the OY! dashboard, where details regarding the disbursement campaign can be found. No technical integration is required to use this product.
 
-## Bulk Disbursement - Key Features 
+### Key Features 
 **Overdraft**
 
 OY! has established partnerships with third party lenders to credit a specific amount of funds that can be used for your disbursement needs. With this feature, you don’t need to top up the OY! balance to execute disbursements. Please contact our [business representative](partner@oyindonesia.com) for further details about this feature.
@@ -248,7 +248,7 @@ Keep track of all the details of the entire campaign such as the total amount of
 
 Itemized details of each individual transaction, including their respective statuses: success, pending, or failed.
 
-## Bulk Disbursement - Registration and Set Up 
+### Registration and Set Up 
 **Prerequisites**
 
 * Register an account on the [OY! dashboard](https://business.oyindonesia.com/register?)
@@ -259,9 +259,9 @@ Itemized details of each individual transaction, including their respective stat
 
 * Upgrade request is approved 
 
-## Bulk Disbursement - Testing (Testing environment coming soon) 
+### Testing (Testing environment coming soon) 
 
-## Bulk Disbursement - How to Use
+### How to Use
 
 In order to create disbursement campaigns, a sufficient available OY! balance is required in the account. If there is an insufficient available balance in the account, campaigns can still be created but not approved. 
 

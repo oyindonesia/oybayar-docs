@@ -122,15 +122,34 @@ under the License.
                 <%=image_tag h1[:id]+'.svg' %>
                 <%= h1[:content] %>
               </span>
-              <%= image_tag "arrow-bottom.svg",  class: 'icon-arrow' %>
+              <% if h1[:children].length > 0 %>
+                <%= image_tag "arrow-bottom.svg",  class: 'icon-arrow' %>
+              <% else %>
+                <%= h2[:content] %> <%= image_tag "arrow-right.svg", class: 'icon-arrow'%>
+              <% end %>
             </a>
             <% if h1[:children].length > 0 %>
               <ul class="toc-list-h2">
                 <% h1[:children].each do |h2| %>
                   <li>
                     <a href="#<%= h2[:id] %>" class="toc-h2 toc-link" data-title="<%= h2[:title] %>">
-                      <%= h2[:content] %> <%= image_tag "arrow-right.svg", class: 'icon-arrow'%>
+                      <% if h2[:children].length > 0 %>
+                        <%= h2[:content] %> <%= image_tag "arrow-bottom.svg", class: 'active-parent icon-arrow'%>
+                      <% else %>
+                        <%= h2[:content] %> <%= image_tag "arrow-right.svg", class: 'icon-arrow'%>
+                      <% end %>
                     </a>
+                   <% if h2[:children].length > 0 %>
+                    <ul class="toc-list-h3">
+                      <% h2[:children].each do |h3| %>
+                        <li>
+                          <a href="#<%= h3[:id] %>" class="toc-h3 toc-link" data-title="<%= h3[:title] %>">
+                            <%= h3[:content] %> <%= image_tag "arrow-right.svg", class: 'icon-arrow'%>
+                          </a>
+                        </li>
+                      <% end %>
+                    </ul>
+                   <% end %>
                   </li>
                 <% end %>
               </ul>

@@ -22,7 +22,7 @@ Our virtual accounts are adjustable according to your needs. We offer options of
 
 Your users will be able to pay into a Virtual Account through ATM, Mobile Banking, and Internet Banking.
 
-## API VA Aggregator - Key Features
+### Key Features
 
 1. **Support multiple banks** - Currently, we support virtual accounts (VA) at 6 banks: BCA, BNI, Mandiri, BRI, Permata, and CIMB Niaga
 2. **Real-time settlement for majority of the banks** - Payment into a VA will settle in your OY! dashboard on a real-time basis for the majority of the banks (note: for BCA, the settlement will take place H+2 after payment is made into the VA)
@@ -57,12 +57,11 @@ Example:
 
 All of the VA information, even after they are updated, is available on the OY! dashboard or via API. Once a VA is updated, the new set of configuration will apply for that VA and the previous configure is overridden and no longer applicable 
 
-## API VA Aggregator - Use Cases
+### Use Cases
 
 ![API VA Aggregator](images/va_use_case_new.png)
 
-## API VA Aggregator - Registration and Set Up
-
+### Registration and Set Up
 Follow the below check-list to ensure you're all set up to use our VA Aggregator API service:
 
 1. Create an account
@@ -73,7 +72,7 @@ Follow the below check-list to ensure you're all set up to use our VA Aggregator
 6. Receive an API Key from us (note: it is required for API authorization purpose)
 7. Integrate with our Virtual Account Aggregator API
 
-## API VA Aggregator - Testing 
+### Testing 
 
 Once you successfully create an OY! account, you can immediately simulate VA payments via API.
 
@@ -93,7 +92,7 @@ Follow the below steps to test the VA flow:
 
 7. The payment made to the VA can be monitored through OY! dashboard. Go to "Virtual Account" menu, and choose "Incoming Payment"
 
-## API VA Aggregator - How to Use
+### How to Use
 
 Send us instructions to generate a new VA number.
 
@@ -232,7 +231,7 @@ Similarly, all the details regarding [incoming transactions](https://api-docs.oy
 
 For further details regarding OY!'s extensive API VA Aggregator capabilities and endpoints, please refer to the [OY! API Documentation](https://api-docs.oyindonesia.com/#va-aggregator).
 
-## API VA Aggregator - VA Bank Details
+### VA Bank Details
 
 Bank (Virtual Account) | SKN Supported | RTGS Supported | Payment from ATM  | Payment from m-banking / i-banking (intra bank) | Payment from business account (m-banking/i-banking) | Payment from m-banking/i-banking (inter bank) 
 ------ | ----------- | ----------- | ----------- | -----------  | ----------- | ----------- 
@@ -283,9 +282,9 @@ Step 3 - Select Payment Method
 ![Payment Checkout](images/payment_checkout_payment_method.png)
 
 
-## Payment Checkout/Invoice - Key Features 
+### Key Features 
 
-### Various options of creating payment  checkout/invoice page
+#### Various options of creating payment  checkout/invoice page
 
 **1. Creating payment checkout/invoice page through pre-generated URL**
 
@@ -339,7 +338,7 @@ If you want to use our payment checkout/invoice page without undergoing technica
 
 This capability enables you to enjoy most of the features and benefits of creating payment checkout/invoice page through API - without any integration needed!
 
-### Capability to monitor payment checkout/invoice details on dashboard
+#### Capability to monitor payment checkout/invoice details on dashboard
 
 Whether you send your user a pre-generated link, dashboard-generated link, or an API-generated encapsulated link, each of your distributed payment checkout links can be monitored through the OY! Dashboard. We will also send a callback for all incoming payments.
 
@@ -349,7 +348,7 @@ We also provide an API for you to check the transaction status manually.
 
 ![Payment Checkout](images/payment_checkout_list.png)
 
-## Payment Checkout/Invoice - Registration and Set Up
+### Registration and Set Up
 
 **For dashboard and URL-generated links** 
 
@@ -380,7 +379,7 @@ Step by step instructions can be found [here](https://docs.oyindonesia.com/#how-
 
 8. Integrate with our [Payment Checkout API](https://api-docs.oyindonesia.com/#api-create-payment-checkout)
 
-## Payment Checkout/Invoice - Testing 
+### Testing 
 
 **Creating dashboard-generated test links** 
 
@@ -411,7 +410,7 @@ Step by step instructions can be found [here](https://docs.oyindonesia.com/#how-
 
 Whether you create the link through URL, dashboard, or API, you can see the details of your link on the OY! Dashboard. The details that can be checked are the created date of the link, amount billed, amount received, expiration date, and status.
 
-## How to Use Payment Checkout/Invoice via Link/URL
+### How to Use Payment Checkout/Invoice via Link/URL
 
 *Note:* Our payment link includes parameters that are easily adjustable according to your needs. You can send the link to multiple customers using the same link (please refer to the steps below) and we will take care the rest.
 
@@ -432,7 +431,7 @@ It is optional to specify each of the parameter listed above.
 
 Whether you create the link through URL, dashboard, or API, you can see the details of your link on the OY! Dashboard. The details that can be checked are the created date of the link, amount billed, amount received, expiration date, and status.
 
-## How to Use Payment Checkout/Invoice via Dashboard
+### How to Use Payment Checkout/Invoice via Dashboard
 
 1. Log on your OY! dashboard
 2. Choose "Production" environment
@@ -453,7 +452,7 @@ Whether you create the link through URL, dashboard, or API, you can see the deta
 
 Whether you create the link through URL, dashboard, or API, you can see the details of your link on the OY! Dashboard. The details that can be checked are the created date of the link, amount billed, amount received, expiration date, and status.
 
-## How to Use Payment Checkout via API 
+### How to Use Payment Checkout via API 
 
 We provide 3 different payment checkout endpoints depending on your requirements and needs. We provide payment checkout, invoicing, and recurring invoice.  
 
@@ -656,7 +655,7 @@ Just like the Payment Checkout via Link, you can access all your payment checkou
 
 ![Payment Checkout](images/payment_checkout_list.png)
 
-## Payment Checkout/Invoice - VA Bank Details
+### VA Bank Details
 
 Bank (Virtual Account) | SKN Supported | RTGS Supported | Payment from ATM  | Payment from m-banking / i-banking (intra bank) | Payment from business account (m-banking/i-banking) | Payment from m-banking/i-banking (inter bank) 
 ------ | ----------- | ----------- | ----------- | -----------  | ----------- | ----------- 
