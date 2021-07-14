@@ -97,9 +97,10 @@ under the License.
           <%= image_tag "close.svg", id: 'search-bar-close' %>
         <% end %>
     </div>
-    
-    <div class="toc-wrapper">
-      <% if language_tabs.any? %>
+
+    <% if language_tabs.any? %>
+      <div class="lang-selector__container">
+        <p class="lang-selector__title">Select Language</p>
         <div class="lang-selector">
           <% language_tabs.each do |lang| %>
             <% if lang.is_a? Hash %>
@@ -109,7 +110,10 @@ under the License.
             <% end %>
           <% end %>
         </div>
-      <% end %>
+      </div>
+    <% end %>
+    
+    <div class="toc-wrapper">
       <div class="toc-header-mobile">
         <%= image_tag "oy-docs.png", class: 'header-logo' %>
         <%= image_tag "close.svg", class: 'header-close' %>
@@ -165,14 +169,17 @@ under the License.
       </div>
       <div class="dark-box">
         <% if language_tabs.any? %>
-          <div class="lang-selector">
-            <% language_tabs.each do |lang| %>
-              <% if lang.is_a? Hash %>
-                <a href="#" data-language-name="<%= lang.keys.first %>"><%= lang.values.first %></a>
-              <% else %>
-                <a href="#" data-language-name="<%= lang %>"><%= lang %></a>
+          <div class="lang-selector__container">
+            <p class="lang-selector__title">Select Language</p>
+            <div class="lang-selector">
+              <% language_tabs.each do |lang| %>
+                <% if lang.is_a? Hash %>
+                  <a href="#" data-language-name="<%= lang.keys.first %>"><%= lang.values.first %></a>
+                <% else %>
+                  <a href="#" data-language-name="<%= lang %>"><%= lang %></a>
+                <% end %>
               <% end %>
-            <% end %>
+            </div>
           </div>
         <% end %>
       </div>
