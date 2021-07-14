@@ -19,7 +19,7 @@ class UniqueHeadCounter < Middleman::Renderers::MiddlemanRedcarpetHTML
       @previous[header_level] = friendly_text
     end
 
-    if header_level >= 3 
+    if header_level > 1 
       friendly_text += "-#{@previous[header_level-1]}"
     end
 
