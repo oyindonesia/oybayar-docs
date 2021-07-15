@@ -378,7 +378,7 @@ html, body {
     display: flex;
     align-items: center;
     margin: 0 $spacing-s;
-    &.active .icon-arrow, &.active-parent .icon-arrow{
+    &.active .icon-arrow.parent, &.active-parent .icon-arrow {
       transform: rotate(180deg);
     }
   }
