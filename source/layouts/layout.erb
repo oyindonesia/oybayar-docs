@@ -164,7 +164,11 @@ under the License.
     </div>
     <div class="page-wrapper">
       <div class="dark-box"></div>
+      <% if language_tabs.any? %>
+      <div class="content use-language">
+      <% else %>
       <div class="content">
+      <% end %>
         <%= page_content %>
       </div>
       <div class="dark-box">

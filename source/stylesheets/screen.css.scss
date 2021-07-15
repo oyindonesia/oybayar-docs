@@ -525,6 +525,7 @@ html, body {
     outline: 0;
     background-color: #fff;
     margin-right: $spacing-s;
+    transition: all .2s ease;
 
     &:not(.active){
       border: 1px solid #A5AAAF;
@@ -537,6 +538,11 @@ html, body {
 
     &.active {
       background-color: $lang-select-active-bg;
+      color: $lang-select-active-text;
+    }
+    
+    &:hover{
+      background-color: lighten($color: $lang-select-active-bg, $amount: 5);
       color: $lang-select-active-text;
     }
   }
@@ -901,8 +907,14 @@ html, body {
     }
   }
 
+  
   .page-wrapper {
     margin-left: 0;
+    .lang-selector {
+      &__container{
+        width: 35vw;
+      }
+    }
   }
 
   #nav-button {
@@ -919,7 +931,9 @@ html, body {
   .content{
     width: 100%;
     padding: 0 $spacing-s;
-    margin-top: $header-height + 2*$header-v-padding + 89px;
+    &.use-language{
+      margin-top: $header-height + 2*$header-v-padding + $language-selector-mobile-height;      
+    }
   }
 
   .dark-box {
