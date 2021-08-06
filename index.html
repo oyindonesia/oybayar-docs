@@ -473,8 +473,8 @@
                           </a>
                         </li>
                         <li>
-                          <a href="#testing-coming-soon-api-disbursement" class="toc-h3 toc-link" data-title="Testing (Coming Soon)">
-                            Testing (Coming Soon) <img src="images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
+                          <a href="#testing-api-disbursement" class="toc-h3 toc-link" data-title="Testing">
+                            Testing <img src="images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
                           </a>
                         </li>
                         <li>
@@ -500,8 +500,8 @@
                           </a>
                         </li>
                         <li>
-                          <a href="#testing-testing-environment-coming-soon-bulk-disbursement" class="toc-h3 toc-link" data-title="Testing (Testing environment coming soon)">
-                            Testing (Testing environment coming soon) <img src="images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
+                          <a href="#testing-bulk-disbursement" class="toc-h3 toc-link" data-title="Testing">
+                            Testing <img src="images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
                           </a>
                         </li>
                         <li>
@@ -1052,7 +1052,23 @@ b. Disable Success Notification: email notification will only be sent for pendin
 <li><p>Receive an API Key from us</p></li>
 <li><p>Integrate with our <a href="https://api-docs.oyindonesia.com/#fund-disbursement">API</a></p></li>
 </ul>
-<h3 id='testing-coming-soon-api-disbursement'>Testing (Coming Soon)</h3><h3 id='how-to-use-api-disbursement'>How to Use</h3>
+<h3 id='testing-api-disbursement'>Testing</h3>
+<p>Once you successfully create an OY! account, you can immediately simulate disbursement via API.
+Follow the below steps to test the flow:</p>
+
+<ol>
+<li>Create an account</li>
+<li>Login into the dashboard </li>
+<li>Change the environment to “staging” </li>
+<li>Once the environment changed to staging, there will be API key staging available on the bottom left corner of the page</li>
+<li>Before creating a disbursement transaction, check your available balance through API GET https://api-stg.oyindonesia.com/api/balance</li>
+<li>Create a disbursement by sending a ‘POST’ request to <em>https://api-stg.oyindonesia.com/api/remit</em> (https://api-stg.oyindonesia.com/api/remit) using your staging API key. Enter the required and optional fields, as referenced in the API reference docs (https://api-docs.oyindonesia.com/#disbursement-fund-disbursement)</li>
+<li>Fill in the amount, recipient bank, recipient account, and the partner transaction-id</li>
+<li>To get the status of a disbursement request, you can call the API https://api-stg.oyindonesia.com/api/remit-status,  This API also offers the option for callback status under field  send_callback</li>
+<li>If payment is successful or failed, we will send a callback to the registered staging callback URL destination. Callback URL can be registered via our business representative.</li>
+<li>The API disbursement transactions can be monitored through OY! dashboard from the “Send money - API disbursement” menu.</li>
+</ol>
+<h3 id='how-to-use-api-disbursement'>How to Use</h3>
 <p>In order to create disbursements, a sufficient available OY! balance is required in the account. More details and instructions about topping up to your OY! account coming soon.</p>
 
 <p>Before you execute a disbursement, you can verify the beneficiary account information from our <a href="https://api-docs.oyindonesia.com/#bank-account-inquiry">inquiry endpoint</a>. </p>
@@ -1257,16 +1273,24 @@ b. Disable Success Notification: email notification will only be sent for pendin
 <li><p>Upgrade your account </p></li>
 <li><p>Upgrade request is approved </p></li>
 </ul>
-<h3 id='testing-testing-environment-coming-soon-bulk-disbursement'>Testing (Testing environment coming soon)</h3><h3 id='how-to-use-bulk-disbursement'>How to Use</h3>
-<p>In order to create disbursement campaigns, a sufficient available OY! balance is required in the account. If there is an insufficient available balance in the account, campaigns can still be created but not approved. </p>
+<h3 id='testing-bulk-disbursement'>Testing</h3>
+<ol>
+<li>Log on your OY! dashboard</li>
+<li>Choose &quot;Staging&quot; environment</li>
+<li>Click &quot;Send Money&quot; menu, and choose &quot;Bulk disbursement&quot;</li>
+<li>Click &quot;Create Disbursement&quot;</li>
+<li>Fill in the necessary details by following the steps explained in the “How to Use” section</li>
+</ol>
+<h3 id='how-to-use-bulk-disbursement'>How to Use</h3>
+<p>In order to create disbursement campaigns, a sufficient available OY! balance is required in the account. If there is an insufficient available balance in the account, campaigns can still be created but not approved.</p>
 
-<p>More details and instructions about topping up to your OY! account coming soon. </p>
+<p><em>1. Create Disbursement</em>: On the OY! dashboard, navigate to Send Payments &gt; Bulk Disburse on your left menu bar. Click “Create Disbursement” on the far righthand side of that page to create a new bulk disbursement campaign.</p>
 
-<p><strong>1. Create Disbursement</strong>: On the OY! dashboard, navigate to Send Payments &gt; Bulk Disburse on your left menu bar. Click “Create Disbursement” on the far righthand side of that page to create a new bulk disbursement campaign.</p>
+<p><em>2. Create Campaign Details</em>: Fill in the campaign details with 2 options:</p>
 
-<p><strong>2. Create Campaign Details</strong>: Fill in the campaign details and upload an xlsx or csv file. </p>
+<p><img src="https://user-images.githubusercontent.com/79620482/128454459-16770aa6-486a-40b8-a73b-f2c4bb1910e3.png" alt="Create Bulk - 1  Initial" /></p>
 
-<p>Please fill out a campaign name and campaign description in the provided spaces. These details are strictly used as your tracking information only and will not be shared to the transaction recipients. </p>
+<p>a. upload an xlsx or csv file </p>
 
 <p>Please upload an xlsx or csv file with each individual transaction’s details of your bulk disbursement campaign. An example template for both file types are available for download on the OY! dashboard. The following list of items are required in your CSV file.</p>
 
@@ -1314,19 +1338,27 @@ b. Disable Success Notification: email notification will only be sent for pendin
 </tr>
 </tbody></table>
 
-<p><img src="images/bulk_disburse_1-fe2561ac.png" alt="Bulk Disburse" /></p>
+<p>b. add disbursement detail manually. : 
+choose ‘add disbursement detail manually’ and fill out a campaign name and campaign description in the provided spaces. These details are strictly used as your tracking information only and will not be shared to the transaction recipients.</p>
 
-<p><strong>3. Re-verify all the Information and Submit</strong>: Once your xlsx or csv file is uploaded, you can verify all of the information uploaded from the file from the table displayed. If there is any incorrect submission such as invalid entry due to special characters, a red box will appear to highlight the entry that should be corrected. Issues must be resolved before a campaign can be submitted.</p>
+<p><em>3. Re-verify all the Information and Submit</em>: Once your xlsx or csv file is uploaded or filled out manually, you can verify all of the information uploaded from the file from the table displayed. If there is any incorrect submission such as invalid entry due to special characters, a red box will appear to highlight the entry that should be corrected. Issues must be resolved before a campaign can be submitted</p>
 
-<p><img src="images/bulk_disburse_2-c6f5de0e.png" alt="Bulk Disburse" /></p>
+<p><img src="https://user-images.githubusercontent.com/79620482/128454606-2838f6ca-aad1-446a-becb-75d780460708.png" alt="Create Bulk - 2  File Uploaded" /></p>
 
-<p>If there is no issue with the details uploaded from the xlsx or csv file, a blue bar with “100%” will show up above the list of transactions, indicating that all information is valid. Click “Submit” to complete creating the bulk disbursement campaign. </p>
+<p><em>4. Validate Name Matching</em>
+After all the issue has been resolved, user able to click submit and there will be popup shown to validate each recipient <em>name *with their *Bank Account Name</em> as shown below:</p>
 
-<p><img src="images/bulk_disburse_3-6cae1383.png" alt="Bulk Disburse" /></p>
+<p><img src="https://user-images.githubusercontent.com/79620482/128454745-c5a42979-30ba-44c2-a405-bbe9b0325677.png" alt="Create Bulk - 3  Ask Name Validation" /></p>
 
-<p><em>Note: there is no limit to the amount of bulk disbursement campaigns that can be created at a given period of time.</em> </p>
+<p>if you choose YES: if there is a name difference, a popup name validation with details of mismatched transactions will be displayed. if the information inputted is invalid, you could edit the information and choose the ‘ validate’ button to revalidate the data, or you could click the ‘ignore mismatch’ button to ignore the name matching validation and to process the disbursement.</p>
 
-<p><strong>4. Approve/Cancel Campaign</strong>: Once the bulk disbursement campaign is created, a new status of <code>waiting approval</code> will appear. Approve the campaign by clicking the “Approve” button. If you want to cancel a campaign, click the “...” button and select “Cancel”. </p>
+<p><img src="https://user-images.githubusercontent.com/79620482/128454900-3a007579-2701-4305-9f9d-15cc8a09ab2f.png" alt="Create Bulk - 5e  Mismatch Names" /></p>
+
+<p>If there is no issue with the details uploaded, a validate and submit button will be available at the bottom of the list of transactions, indicating that all information is valid. Click “Submit” to complete creating the bulk disbursement campaign.</p>
+
+<p><img src="https://user-images.githubusercontent.com/79620482/128454982-b1ab6dfc-c279-4baf-a0e6-a2983a069488.png" alt="Create Bulk - 6a  All data inquired without Name Matching" /></p>
+
+<p><em>5. Approve/Cancel Campaign</em>*: Once the bulk disbursement campaign is created, a new status of <code>waiting approval</code> will appear. Approve the campaign by clicking the “Approve” button. If you want to cancel a campaign, click the “...” button and select “Cancel”. </p>
 
 <p><img src="images/bulk_disburse_4-e10ff72d.png" alt="Bulk Disburse" /></p>
 
@@ -1336,11 +1368,11 @@ b. Disable Success Notification: email notification will only be sent for pendin
 
 <p><em>Note: Multiple campaigns can be approved at a time as long as there is sufficient available balance to complete campaigns that have already been approved but are still in queue to be processed.</em></p>
 
-<p><strong>5. Keep Track of Campaign Details</strong>: To check the details of the bulk disbursement campaign, click on the campaign name to find the campaign summary and its recipient list. Keep track of the both the overall campaign status and the status of individual transactions through the page. </p>
+<p><em>6. Keep Track of Campaign Details</em>*: To check the details of the bulk disbursement campaign, click on the campaign name to find the campaign summary and its recipient list. Keep track of the both the overall campaign status and the status of individual transactions through the page. </p>
 
 <p><img src="images/bulk_disburse_5-3795f48e.png" alt="Bulk Disburse" /></p>
 
-<p><strong>6. Status: In-Progress, Finish, and Cancel</strong>: Congratulations! You just made your first bulk disbursement with OY! Below are a list of statuses you will find on the OY! dashboard. </p>
+<p><em>7. Status: In-Progress, Finish, and Cancel</em>*: Congratulations! You just made your first bulk disbursement with OY! Below are a list of statuses you will find on the OY! dashboard. </p>
 
 <p><em>In-Progress</em></p>
 
