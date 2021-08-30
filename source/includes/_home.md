@@ -92,10 +92,6 @@ For further inquiries, please contact us at [partner@oyindonesia.com](partner@oy
 
 For further inquiries regarding this review, please contact us at [partner@oyindonesia.com](partner@oyindonesia.com) and our representative will get in touch. 
 
-**Status: Rejected** 
-
-For further inquiries regarding this review, please contact us at [partner@oyindonesia.com](partner@oyindonesia.com) and our representative will get in touch. 
-
 ## Required Supporting Documents 
 Below is the list of documentation to be submitted for an upgrade request:
 
