@@ -74,7 +74,7 @@ After you upload the required supporting documents, you need to choose which pro
 
 ![Upgrade](images/upgrade_3.png)
 
-This process should take about 1 week. In the event that the status of your request is **Resubmit** or **Rejected**, please keep reading below. Otherwise, you are good to go! 
+This process should take about 1-2 working days. In the event that the status of your request is **Resubmit** or **Rejected**, please keep reading below. Otherwise, you are good to go! 
 
 **Status: Resubmit** 
 
