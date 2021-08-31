@@ -24,8 +24,8 @@ Your users will be able to pay into a Virtual Account through ATM, Mobile Bankin
 
 ### Key Features
 
-1. **Support multiple banks** - Currently, we support virtual accounts (VA) at 6 banks: BCA, BNI, Mandiri, BRI, Permata, and CIMB Niaga
-2. **Real-time settlement for majority of the banks** - Payment into a VA will settle in your OY! dashboard on a real-time basis for the majority of the banks (note: for BCA, the settlement will take place H+2 after payment is made into the VA)
+1. **Support multiple banks** - Currently, we support virtual accounts (VA) at 6 banks: BCA, BNI, Mandiri, BRI, Permata, CIMB Niaga, and BTPN
+2. **Real-time settlement for majority of the banks** - Payment into a VA will settle in your OY! dashboard on a real-time basis for the majority of the banks (note: for BCA, the settlement will depend on the agreement with our business representative)
 3. **Transaction tracking and monitoring capability** - You can track all created VA, incoming payments, and their respective details through our API callback or the OY! dashboard. You will receive a callback all incoming transactions.
 4. **Customizable VA types** - Refer to the table below for more informations on various types of VA:
 
@@ -238,9 +238,10 @@ Bank (Virtual Account) | SKN Supported | RTGS Supported | Payment from ATM  | Pa
 Bank Mandiri| Yes| Yes |Yes| Yes  | Yes | Yes
 BRI| Yes| Yes |Yes| Yes  | No | Yes
 BNI| Yes| Yes |Yes| Yes  | No | Yes
-BCA| No| No|Yes| Yes  | No | Yes
+BCA| No| No|Yes| Yes  | No | No
 Bank Permata| Yes| Yes |Yes| Yes  | No | Yes
 CIMB Niaga| Yes| Yes |Yes| Yes  | No| Yes
+BTPN| Yes| Yes |Yes| Yes  | No| Yes
 
 Bank (Virtual Account) | Payment from Teller (Inter and Intra Banks) | SWIFT Payment | Intra bank transfer fees  | 
 ------ | ----------- | ----------- | ----------- | 
@@ -250,6 +251,8 @@ BNI| Yes| No |Rp 0|
 BCA| Yes (Teller BCA); No (Teller from other banks)| No|Rp 0| 
 Bank Permata| Yes| No |Rp 5000| 
 CIMB Niaga| Yes| Yes |Rp 0|
+BTPN| Yes| No |Rp 0|
+
 
 
 ## Payment Checkouts/Invoice 
