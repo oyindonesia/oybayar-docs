@@ -710,17 +710,25 @@
                           </a>
                         </li>
                         <li>
-                          <a href="#how-to-use-payment-checkout-invoice-via-dashboard-payment-checkouts-invoice" class="toc-h3 toc-link" data-title="How to Use Payment Checkout/Invoice via Dashboard">
+                          <a href="#how-to-use-payment-checkout-via-dashboard-payment-checkouts-invoice" class="toc-h3 toc-link" data-title="How to Use Payment Checkout via Dashboard">
                             <span class="toc-link-content">
-                              How to Use Payment Checkout/Invoice via Dashboard
+                              How to Use Payment Checkout via Dashboard
                             </span> 
                             <img src="images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
                           </a>
                         </li>
                         <li>
-                          <a href="#how-to-use-payment-checkout-via-api-payment-checkouts-invoice" class="toc-h3 toc-link" data-title="How to Use Payment Checkout via API">
+                          <a href="#how-to-use-invoice-via-dashboard-payment-checkouts-invoice" class="toc-h3 toc-link" data-title="How to Use Invoice via Dashboard">
                             <span class="toc-link-content">
-                              How to Use Payment Checkout via API
+                              How to Use Invoice via Dashboard
+                            </span> 
+                            <img src="images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#how-to-use-payment-checkout-invoice-via-api-payment-checkouts-invoice" class="toc-h3 toc-link" data-title="How to Use Payment Checkout/Invoice via API">
+                            <span class="toc-link-content">
+                              How to Use Payment Checkout/Invoice via API
                             </span> 
                             <img src="images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
                           </a>
@@ -2177,7 +2185,7 @@ Step by step instructions can be found <a href="https://docs.oyindonesia.com/#ho
 <p>It is optional to specify each of the parameter listed above.</p>
 
 <p>Whether you create the link through URL, dashboard, or API, you can see the details of your link on the OY! Dashboard. The details that can be checked are the created date of the link, amount billed, amount received, expiration date, and status.</p>
-<h3 id='how-to-use-payment-checkout-invoice-via-dashboard-payment-checkouts-invoice' type='normal'>How to Use Payment Checkout/Invoice via Dashboard</h3>
+<h3 id='how-to-use-payment-checkout-via-dashboard-payment-checkouts-invoice' type='normal'>How to Use Payment Checkout via Dashboard</h3>
 <ol>
 <li>Log on your OY! dashboard</li>
 <li>Choose &quot;Production&quot; environment</li>
@@ -2209,12 +2217,12 @@ Step by step instructions can be found <a href="https://docs.oyindonesia.com/#ho
 <td>You can choose between &quot;Included in total amount&quot; or &quot;Excluded from total amount&quot;. &quot;Included in total amount&quot; means the admin fee will be deducted from the payment amount made by the customer. &quot;Excluded from total amount&quot; means the admin fee will be added to the customer&#39;s total payment (Total Amount = Specified Amount + Admin Fee)</td>
 </tr>
 <tr>
-<td>Expiration Fee</td>
+<td>Payment Link Expiration Date</td>
 <td>You can choose between &quot;Default&quot; and &quot;Custom&quot;. &quot;Default&quot; means the payment link will expire 24 hours after it is created. &quot;Custom&quot; means you can specify the expired date. The payment link will expire when this specified expired date is reached</td>
 </tr>
 <tr>
-<td>Payment Type</td>
-<td>You can choose between &quot;Non Invoice&quot; and &quot;Invoice&quot;. By choosing &quot;Invoice&quot;, you will be able to upload the invoice PDF or list down the items to be invoiced (item name, description, quantity, purchase date, price per item, and total price). You can also choose whether to assign a static virtual account to the corresponding user.</td>
+<td>Transaction Due Date</td>
+<td>Due date of a transaction. You can choose between &quot;Same with Payment Link Expiration Date&quot; and &quot;Custom&quot;. Your customer will get reminders to pay on D-1, D-Day, and D+7 from the transaction due date.  A transaction can exceed the due date, but the link can still be opened (because transaction due date and link expiration time are 2 separate things).</td>
 </tr>
 <tr>
 <td>Description</td>
@@ -2222,12 +2230,80 @@ Step by step instructions can be found <a href="https://docs.oyindonesia.com/#ho
 </tr>
 <tr>
 <td>Customer Detail</td>
-<td>Details that can be specified: Customer Name, Phone Number, Email, and Notes. We will send the payment checkout page link to the specified email address (if email address is filled in)</td>
+<td>Details that can be specified: Customer Name, Phone Number, Email, and Notes. We will send the payment checkout page link as well as the payment success receipt to the specified email address (if email address is filled in)</td>
 </tr>
 </tbody></table>
 
 <p>Whether you create the link through URL, dashboard, or API, you can see the details of your link on the OY! Dashboard. The details that can be checked are the created date of the link, amount billed, amount received, expiration date, and status.</p>
-<h3 id='how-to-use-payment-checkout-via-api-payment-checkouts-invoice' type='normal'>How to Use Payment Checkout via API</h3>
+
+<p>Whether you create the link through URL, dashboard, or API, you can see the details of your link on the OY! Dashboard. The details that can be checked are the created date of the link, amount billed, amount received, expiration date, and status.</p>
+<h3 id='how-to-use-invoice-via-dashboard-payment-checkouts-invoice' type='normal'>How to Use Invoice via Dashboard</h3>
+<ol>
+<li>Log on your OY! dashboard</li>
+<li>Choose &quot;Production&quot; environment</li>
+<li>Click &quot;Request Money&quot; menu, and choose &quot;Invoice&quot;</li>
+<li>Click &quot;Create Invoice&quot;</li>
+<li>Fill in the necessary details</li>
+</ol>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Amount Type</td>
+<td>You can choose between Open Amount and Closed Amount.  Open Amount = can accept payments of any amount, OR up to the specified amount (if amount is filled in). Closed Amount = only accept payments of the specified amount</td>
+</tr>
+<tr>
+<td>Partner Transaction ID</td>
+<td>A unique transaction ID that you can assign for a transaction</td>
+</tr>
+<tr>
+<td>Payment Method</td>
+<td>The payment method that you can choose to enable/disable for your customers. The payment methods available are Bank Transfer (via Virtual Account), Cards (Credit Card/Debit Card), E-Wallet (ShopeePay, DANA, LinkAja, OVO), and QR Code</td>
+</tr>
+<tr>
+<td>Admin Fee Method</td>
+<td>You can choose between &quot;Included in total amount&quot; or &quot;Excluded from total amount&quot;. &quot;Included in total amount&quot; means the admin fee will be deducted from the payment amount made by the customer. &quot;Excluded from total amount&quot; means the admin fee will be added to the customer&#39;s total payment (Total Amount = Specified Amount + Admin Fee)</td>
+</tr>
+<tr>
+<td>Payment Link Expiration Date</td>
+<td>You can choose between &quot;Default&quot; and &quot;Custom&quot;. &quot;Default&quot; means the payment link will expire 24 hours after it is created. &quot;Custom&quot; means you can specify the expired date. The payment link will expire when this specified expired date is reached</td>
+</tr>
+<tr>
+<td>Transaction Due Date</td>
+<td>Due date of a transaction. You can choose between &quot;Same with Payment Link Expiration Date&quot; and &quot;Custom&quot;. Your customer will get reminders to pay on D-1, D-Day, and D+7 from the transaction due date.  A transaction can exceed the due date, but the link can still be opened (because transaction due date and link expiration time are 2 separate things).</td>
+</tr>
+<tr>
+<td>Partner User ID</td>
+<td>ID assigned for a specific user/customer</td>
+</tr>
+<tr>
+<td>VA Static</td>
+<td>You can choose between &quot;Disable&quot; and &quot;Enable&quot;. &#39;Disable&quot; means a new VA number will be assigned for the respective Partner User ID (if the user chooses to pay via VA). &quot;Enable&quot; means we will assign a static VA for the respective Partner User ID (if the user chooses to pay via VA). The VA number assigned will be the same for the respective partner user ID</td>
+</tr>
+<tr>
+<td>Customer Full Name</td>
+<td>Full name of your customer that will be displayed in the invoice link.</td>
+</tr>
+<tr>
+<td>Invoice Detail</td>
+<td>You can choose between attaching the PDF file of your invoice and input the item list (such as Item Name, Price, and Quantity). Note that the subtotal of price and quantity inputted here must be the same with the total amount inputted in he field above.</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>The description of the payment link. Usually this is used to describe the purpose of the payment checkout page</td>
+</tr>
+<tr>
+<td>Customer Detail</td>
+<td>Details that can be specified: Customer Phone Number, Email, and Notes. We will send the payment checkout page link as well as the payment success receipt to the specified email address (if email address is filled in).</td>
+</tr>
+</tbody></table>
+
+<p>Whether you create the link through URL, dashboard, or API, you can see the details of your link on the OY! Dashboard. The details that can be checked are the created date of the link, amount billed, amount received, expiration date, and status.</p>
+<h3 id='how-to-use-payment-checkout-invoice-via-api-payment-checkouts-invoice' type='normal'>How to Use Payment Checkout/Invoice via API</h3>
 <p>We provide 3 different payment checkout endpoints depending on your requirements and needs. We provide payment checkout, invoicing, and recurring invoice.  </p>
 
 <p>Send us instructions to generate a <a href="https://api-docs.oyindonesia.com/#api-create-payment-checkout">payment checkout link</a>. </p>
