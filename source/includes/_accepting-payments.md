@@ -475,7 +475,7 @@ Whether you create the link through URL, dashboard, or API, you can see the deta
 | Customer Full Name | Full name of your customer that will be displayed in the invoice link. |
 | Invoice Detail | You can choose between attaching the PDF file of your invoice and input the item list (such as Item Name, Price, and Quantity). Note that the subtotal of price and quantity inputted here must be the same with the total amount inputted in he field above. |
 | Description   |The description of the payment link. Usually this is used to describe the purpose of the payment checkout page|
-|Customer Detail |Details that can be specified: Customer Name, Phone Number, Email, and Notes. We will send the payment checkout page link as well as the payment success receipt to the specified email address (if email address is filled in).|
+|Customer Detail |Details that can be specified: Customer Phone Number, Email, and Notes. We will send the payment checkout page link as well as the payment success receipt to the specified email address (if email address is filled in).|
 
 Whether you create the link through URL, dashboard, or API, you can see the details of your link on the OY! Dashboard. The details that can be checked are the created date of the link, amount billed, amount received, expiration date, and status.
 
