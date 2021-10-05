@@ -598,6 +598,56 @@
                         </li>
                     </ul>
                   </li>
+                  <li>
+                    <a href="#claim-fund-sending-payments" class="toc-h2 toc-link" data-title="Claim Fund">
+                      <span class="toc-link-content">
+                        Claim Fund
+                      </span>
+                         <img src="images/arrow-bottom-425d93ba.svg" class="active-parent icon-arrow" alt="" />
+                    </a>
+                    <ul class="toc-list-h3">
+                        <li>
+                          <a href="#transaction-flow-claim-fund" class="toc-h3 toc-link" data-title="Transaction Flow">
+                            <span class="toc-link-content">
+                              Transaction Flow
+                            </span> 
+                            <img src="images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#use-case-claim-fund" class="toc-h3 toc-link" data-title="Use Case">
+                            <span class="toc-link-content">
+                              Use Case
+                            </span> 
+                            <img src="images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#registration-and-set-up-claim-fund" class="toc-h3 toc-link" data-title="Registration and Set Up">
+                            <span class="toc-link-content">
+                              Registration and Set Up
+                            </span> 
+                            <img src="images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#testing-claim-fund" class="toc-h3 toc-link" data-title="Testing">
+                            <span class="toc-link-content">
+                              Testing
+                            </span> 
+                            <img src="images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#how-to-use-claim-fund" class="toc-h3 toc-link" data-title="How to Use">
+                            <span class="toc-link-content">
+                              How to Use
+                            </span> 
+                            <img src="images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
+                          </a>
+                        </li>
+                    </ul>
+                  </li>
               </ul>
           </li>
           <li>
@@ -1592,6 +1642,124 @@ After all the issue has been resolved, user able to click submit and there will 
 <p><img src="images/bulk_disburse_cancel-a08d220a.png" alt="Bulk Disburse" /></p>
 
 <p>You can also double check each of your transactions by navigating to the account statement page on the OY! dashboard. </p>
+<h2 id='claim-fund-sending-payments' type='normal'>Claim Fund</h2>
+<p>Claim Fund product enable you to do disbursement without knowing your recipient bank account at first. You will simply create a link for them to fill-out bank account information and the payment will be processed by our system.
+This feature will remove you from the hassle of collecting your customer information manually then doing multiple bank transfer.
+Best use of this feature is : refunds, reimbursement claim, any disburse transaction in which the destination is not your regular partner.</p>
+
+<p>At the moment, Claim Fund product is available only on OY! Business Dashboard.</p>
+<h3 id='transaction-flow-claim-fund' type='normal'>Transaction Flow</h3>
+<p><img src="images/claim-fund-flow-7c6c28d2.png" alt="Transacation Flow" /></p>
+<h3 id='use-case-claim-fund' type='normal'>Use Case</h3>
+<ol>
+<li>Refund for purchase transaction </li>
+<li>Any money transfer transaction where you don&#39;t have recipient bank information</li>
+</ol>
+<h3 id='registration-and-set-up-claim-fund' type='normal'>Registration and Set Up</h3>
+<p><strong>Prerequisites</strong> </p>
+
+<ul>
+<li>Register an account on the OY! dashboard (https://business.oyindonesia.com/register?)</li>
+<li>Activate your account through the activation link sent via email</li>
+<li>Upgrade your account</li>
+<li>Upgrade request is approved</li>
+</ul>
+<h3 id='testing-claim-fund' type='normal'>Testing</h3>
+<ol>
+<li>Log on your OY! dashboard</li>
+<li>Choose &quot;Staging&quot; environment</li>
+<li>Click &quot;Send Money&quot; menu, and choose &quot;Claim Fund&quot;</li>
+<li>Click &quot;Create Claim Fund&quot;</li>
+<li>Fill in the necessary details by following the steps explained in the “How to Use” section</li>
+</ol>
+<h3 id='how-to-use-claim-fund' type='normal'>How to Use</h3>
+<p>In order to execute claim fund transaction successfully, a sufficient available OY! balance is required in the account. However, if there is an insufficient available balance, claim fund transaction can still be created but the approval will failed.</p>
+
+<p><strong>1. Business Dashboard - Create Claim Fund</strong></p>
+
+<ul>
+<li><p>Create Claim Fund: On the OY! dashboard, navigate to Send Money &gt; Claim Fund on your left menu bar. Click <code>Create Claim Fund</code> button on the far righthand side of that page to create a new claim fund transaction.
+<img src="images/claim-fund-landing-74abc1d1.png" alt="Claim Fund Landing Page" />
+<img src="images/claim-fund-create-f67af52a.png" alt="Create Claim Fund - input data" /></p></li>
+<li><p>Please fill-out the information accordingly. Below table is the description of each fields:</p></li>
+</ul>
+
+<table><thead>
+<tr>
+<th>Column</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Amount to Claim</td>
+<td>Amount of money to be sent</td>
+<td>1000000</td>
+</tr>
+<tr>
+<td>Expiration Duration</td>
+<td>How long does this claim link be active. After expiration time, customer will not be able to submit their information then new claim fund link has to be created.</td>
+<td>12 Hours</td>
+</tr>
+<tr>
+<td>Set as default expiration duration</td>
+<td>Select this option to make it default expiration time for the next claim fund transaction.</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Partner Transaction ID</td>
+<td>Unique identifier for the recipient.</td>
+<td>CF00001</td>
+</tr>
+<tr>
+<td>Note</td>
+<td>additional remarks for recipient</td>
+<td>Refund transaction</td>
+</tr>
+<tr>
+<td>Recipient Name</td>
+<td>Recipient Name</td>
+<td>Dwiki Dermawan</td>
+</tr>
+<tr>
+<td>Email</td>
+<td>Recipient Email</td>
+<td>dwiki@gmail.com</td>
+</tr>
+</tbody></table>
+
+<ul>
+<li><p>Click <code>Create Claim Fund</code> button to submit the transaction. Your recipient will get notified of this claim fund transaction through email. Transaction link will be attached on this email.</p></li>
+<li><p>Successful claim fund transaction will be listed on the claim fund transaction listing with INITIATED status.
+<img src="images/claim-fund-create-success-5cbe3daa.png" alt="Create Claim Fund - Success" /></p></li>
+<li><p>Please be noted that this transaction still need account detail to be filled-out by the recipient.</p></li>
+</ul>
+
+<p><strong>2. Fund Recipient - Input Account Information</strong></p>
+
+<ul>
+<li><p>On the notification email, user click the <code>Ajukan Klaim Dana</code> link to get into claim fund input page. 
+<img src="images/claim-fund-user-email-11b6f860.png" alt="Create Claim Fund - Email" /></p></li>
+<li><p>User should fill-out the detail information so that OY! system can continue with the approval process. 
+<img src="images/claim-fund-input-detail-a0596fb9.png" alt="Create Claim Fund - input detail" />
+<img src="images/claim-fund-input-submitted-b120fcfe.png" alt="Create Claim Fund - input submitted" /></p></li>
+</ul>
+
+<p><strong>3. Business Dashboard - Approve Transaction</strong></p>
+
+<p>Transaction need to go through approval process to ensure that the money will be delivered to correct recipient and sufficient amount is available.</p>
+
+<ul>
+<li><p>Approve claim fund transaction: On the OY! dashboard, navigate to Send Money &gt; Claim Fund on your left menu bar. Transactions that already have user detail will be marked with <code>WAITING APPROVAL</code> status. 
+<img src="images/claim-fund-partner-approval1-be83b780.png" alt="Create Claim Fund - partner approval" /></p></li>
+<li><p>You can approve the transaction directly from this screen by clicking Approve button, or go to detail transaction to see more information before approve.
+<img src="images/claim-fund-partner-approval2-06bc29d2.png" alt="Create Claim Fund - partner approval" /></p></li>
+<li><p>Click approve button to release the transaction to user.</p></li>
+<li><p>The transaction is now marked as <code>IN PROGRESS</code></p></li>
+<li><p>Your recipient should get the money delivered to their account immediately.</p></li>
+<li><p>In parallel, your customer will also get email notification about successful claim fund transaction.
+<img src="images/claim-fund-user-success-e274ad50.png" alt="Create Claim Fund - user success" /></p></li>
+</ul>
 <h1 id='accepting-payments' type='normal'>Accepting Payments</h1><h2 id='api-va-aggregator-accepting-payments' type='normal'>API VA Aggregator</h2>
 <p>Businesses are struggling to manage hundreds or even thousands of physical bank accounts that are used for different purposes. It causes significant overhead cost in terms of the amount of account maintenance and man hours needed for reporting and reconciliation purposes, combining different information from different accounts. </p>
 
