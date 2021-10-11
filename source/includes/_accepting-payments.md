@@ -728,6 +728,7 @@ If we pick green (#HEX code #067610) as the primary color and black (#HEX code #
 
 ![Payment Checkout](images/ui_customization_result_3.png)
 
+
 ### VA Bank Details
 
 Bank (Virtual Account) | SKN Supported | RTGS Supported | Payment from ATM  | Payment from m-banking / i-banking (intra bank) | Payment from business account (m-banking/i-banking) | Payment from m-banking/i-banking (inter bank) 
@@ -747,3 +748,476 @@ BNI| Yes| No |Rp 0|
 BCA| Yes (Teller BCA); No (Teller from other banks)| No|Rp 0| 
 Bank Permata| Yes| No |Rp 5000| 
 CIMB Niaga| Yes| Yes |Rp 0|
+
+### Displaying Payment Checkout/Invoice on Your Frontend Environment
+  
+> Below is how to display payment checkout into your website: 
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    iframe {
+      border-radius: 10px;
+      border-style: none;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+  </style>
+</head>
+<body>
+<!-- *** Your website content ***  -->
+
+<iframe 
+  width="400"
+  height="900"
+  src="https://pay.oyindonesia.com/{{yourPaymentLink}}" 
+  title="OY! Indonesia Payment Checkout">
+</iframe>
+
+<!-- *** Your website content ***  -->
+
+</body>
+</html>
+```
+
+```javascript
+import React from 'react';
+import './paycheckout.module.css'; // File can be seen in css tab
+
+function Paycheckout() {
+  return (
+    <iframe 
+      width="400"
+      height="900"
+      src="https://pay-dev.oyindonesia.com/{{yourPaymentLinkId}}" 
+      title="OY! Indonesia Payment Checkout">
+    </iframe>
+  );
+}
+
+export default Paycheckout;
+```
+
+```css
+/* Here is the css for ReactJS implementation */
+iframe {
+  border-radius: 10px;
+  border-style: none;
+}
+```
+
+> Below is how to display payment checkout as a pop up into your website:
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    iframe {
+      border-radius: 10px;
+      border-style: none;
+    }
+    
+    .modal-container {
+      display: none;
+      justify-content: center;
+      align-items: center;
+      position: fixed;
+      left: 0;
+      top: 0;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.4);
+    }
+
+    .modal-content {
+      width: 400px;
+      background-color: white;
+      border: 1px solid #888;
+      border-radius: 10px;
+      
+    }
+    
+    .button-close {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #0D47A1;
+      border-radius: 4px;
+      background-color: white;
+      color: #0D47A1;
+      font-weight: bold;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      outline: none;
+    }
+    
+    .button-close:hover,
+    .button-close:focus {
+      background-color: #f2f3fd;
+      cursor: pointer;
+    }
+
+  </style>
+</head>
+<body>
+<!-- *** Your website content ***  -->
+
+<!-- Trigger/Open The Modal -->
+<button id="button-open">Open Modal</button>
+
+<!-- The Modal container-->
+<div id="modal-container" class="modal-container">
+
+  <!-- Modal content -->
+  <div id="modal-content" class="modal-content">
+    <iframe 
+      width="400"
+      height="800"
+      src="https://pay-dev.oyindonesia.com/{{yourPaymentLinkId}}" 
+      title="OY! Indonesia Payment Checkout">
+    </iframe>
+    
+    <!-- Trigger/Close The Modal -->
+    <button id="button-close" class="button-close">Close</button>
+  </div>
+
+</div>
+
+<!-- *** Your website content ***  -->
+
+<script>
+  // Get the modal container
+  var modal = document.getElementById("modal-container");
+
+  // Get the button that opens the modal
+  var btn_open = document.getElementById("button-open");
+
+  // Get the button that closes the modal
+  var btn_close = document.getElementById("button-close");
+
+  // When the user clicks on the button, open the modal
+  btn_open.onclick = function() {
+    modal.style.display = "flex";
+  }
+
+  // When the user clicks on <span> (x), close the modal
+  btn_close.onclick = function() {
+    modal.style.display = "none";
+  }
+
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+</script>
+</body>
+</html>
+```
+
+```javascript
+import React from 'react';
+import classNames from 'classnames'; // Install with "npm install classnames" or "yarn add classnames"
+import styles from './paycheckout_popup.module.css'; // File can be seen in css tab
+
+function PaycheckoutPopUp({
+  position = "center",
+  show,
+  onClose,
+  paymentLinkId,
+}) {
+  
+  if (!show) {
+    return null;
+  }
+  
+  return (
+    <div>
+      {/* The Modal container*/}
+      <div 
+        id="modal-container" 
+        className={classNames(
+          styles.modal_container,
+          styles[position],
+        )}
+        onClick={onClose}
+      >
+        {/* Modal content */}
+        <div 
+          id="modal-content" 
+          className={styles.modal_content} 
+          onClick={e => e.stopPropagation()}
+        >
+          <iframe 
+            width="400"
+            height="800"
+            src={`https://pay-dev.oyindonesia.com/${paymentLinkId}`}
+            title="OY! Indonesia Payment Checkout">
+          </iframe>
+          
+          {/* Trigger/Close The Modal */}
+          <button 
+            id="button-close" 
+            className={styles.button_close} 
+            onClick={onClose}
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default PaycheckoutPopUp;
+```
+
+```css
+/* Here is the css for ReactJS implementation */
+iframe {
+  border-radius: 10px;
+  border-style: none;
+}
+
+.modal_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
+}
+
+.center {
+  justify-content: center;
+}
+
+.right {
+  justify-content: flex-end;
+}
+
+.left {
+  justify-content: flex-start;
+}
+
+.modal_content {
+  width: 400px;
+  background-color: white;
+  border: 1px solid #888;
+  border-radius: 10px;
+  
+}
+
+.button_close {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #0D47A1;
+  border-radius: 4px;
+  background-color: white;
+  color: #0D47A1;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  outline: none;
+}
+
+.button_close:hover,
+.button_close:focus {
+  background-color: #f2f3fd;
+  cursor: pointer;
+}
+```
+
+> Below is how to display payment checkout as a slide in into your website:
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    iframe {
+      border-style: none;
+    }
+    
+    .modal-container {
+      display: none;
+      position: fixed;
+      left: 0;
+      top: 0;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.4);
+    }
+
+    .modal-content {
+      width: 400px;
+      height: 100%;
+      background-color: #f4f4f4;
+      position: absolute;
+      right: -100px;
+      -webkit-animation: slide 0.5s forwards;
+      -webkit-animation-delay: 0s;
+      animation: slide 0.5s forwards;
+      animation-delay: 0s;
+    }
+    
+    @-webkit-keyframes slide {
+      100% { right: 0; }
+    }
+
+    @keyframes slide {
+      100% { right: 0; }
+    }
+
+  </style>
+</head>
+<body>
+<!-- *** Your website content ***  -->
+
+<!-- Trigger/Open The Modal -->
+<button id="button-open">Open Modal</button>
+
+<!-- Modal Container -->
+<div id="modal-container" class="modal-container">
+
+  <!-- Modal content -->
+  <div id="modal-content" class="modal-content">
+    <iframe 
+      width="400"
+      height="1000"
+      src="https://pay-dev.oyindonesia.com/{{yourPaymentLinkId}}" 
+      title="OY! Indonesia Payment Checkout">
+    </iframe>
+  </div>
+
+</div>
+
+<!-- *** Your website content ***  -->
+
+<script>
+  // Get the modal
+  var modal_container = document.getElementById("modal-container");
+  var modal_content = document.getElementById("model-content");
+
+  // Get the button that opens the modal
+  var btn = document.getElementById("button-open");
+
+  // When the user clicks on the button, open the modal
+  btn.onclick = function() {
+    modal_container.style.display = "block";
+    modal_content.classList.add('open');
+  }
+
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+    if (event.target == modal_container) {
+      modal_container.style.display = "none";
+      modal_content.classList.remove('open');
+    }
+  }
+</script>
+</body>
+</html>
+```
+
+```javascript
+import React from 'react';
+import styles from './paycheckout_slide.module.css'; // File can be seen in css tab
+
+function PaycheckoutSlide({
+    show, 
+    onClose,
+    paymentLinkId,
+  }) {
+
+  if (!show) {
+    return null;
+  }
+  
+  return (
+    <div>
+      {/* The Modal container*/}
+      <div id="modal-container" className={styles.modal_container} onClick={onClose}>
+
+        {/* Modal content */}
+        <div id="modal-content" className={styles.modal_content} onClick={e => e.stopPropagation()} >
+          <iframe 
+            width="400"
+            src={`https://pay-dev.oyindonesia.com/${paymentLinkId}`}
+            title="OY! Indonesia Payment Checkout">
+          </iframe>
+        </div>
+        
+      </div>
+    </div>
+  );
+}
+
+export default PaycheckoutSlide;
+```
+
+```css
+/* Here is the css for ReactJS implementation */
+iframe {
+  border-style: none;
+  height: 100%;
+}
+
+.modal_container {
+  display: block;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
+}
+
+.modal_content {
+  width: 400px;
+  height: 100%;
+  background-color: #f4f4f4;
+  position: absolute;
+  right: -100px;
+  -webkit-animation: slide 0.5s forwards;
+  -webkit-animation-delay: 0s;
+  animation: slide 0.5s forwards;
+  animation-delay: 0s;
+}
+
+@-webkit-keyframes slide {
+  100% { right: 0; }
+}
+
+@keyframes slide {
+  100% { right: 0; }
+}
+```
+Our payment checkout/invoice link can be appended into your environment using iFrame. So, your user will get more seamless experience as they don't need to redirect to our website in order to complete payment. By using iFrame, user can complete payment through your environment
+
+Insert videos from the marketing team
+
+We also provide several guide to display our payment checkout with a Pop Up & a Slide In
+
+
+
+Currently, our Payment Checkout Link can only be opened in the form of a webview, which requires Partners to redirect the users from their environment to our webview. Based on the feedbacks obtained from several partners, this redirection approach is not so seamless in terms of UI/UX. A better approach is to use an iFrame approach, which enables the payment link to be opened on Partner’s environment.
+
+Right now, our implementation has already enabled Partner to integrate Payment Checkout as an iFrame on their environment (Note: iFrame example: https://demo.midtrans.com/). However, this feature is not yet highlighted - leading to zero utilization of this feature. To market this feature, we need to;
+
+

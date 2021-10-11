@@ -13,5 +13,10 @@ includes:
   - accepting-payments
   - faq
 
+language_tabs:
+  - html: HTML
+  - javascript: ReactJS
+  - css: CSS
+
 code_clipboard: true
 ---
