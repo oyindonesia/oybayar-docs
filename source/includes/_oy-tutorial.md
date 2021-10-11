@@ -195,7 +195,7 @@ With this feature you will be able to :
 1. Have a detailed report on transactions performed by all of subsidiary account
 2. Distribute balance between the parent account to subsidiaries account
 3. Use subsidiary balance to disburse funds
-4. free admin fee to disburse between related user
+4. Free admin fee to disburse between related user
 
 ### **Registration & Setup**
 
