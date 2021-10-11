@@ -195,6 +195,7 @@ With this feature you will be able to :
 1. Have a detailed report on transactions performed by all of subsidiary account
 2. Distribute balance between the parent account to subsidiaries account
 3. Use subsidiary balance to disburse funds
+4. free admin fee to disburse between related user
 
 ### **Registration & Setup**
 
@@ -222,7 +223,7 @@ To add a new subsidiary as a parent account please 1) Log in to Dashboard with p
 2. Fill in the username for the subsidiary you wished to connect. You can find your username from the menu Accounts → User Profile in the Username section
 3. Click Add and then if the account is found in the system you can confirm by clicking Connect in the confirmation window
 
-![Image: As Parent - Subs - 6. Add Subsidiary - Type Username](../images/As_Parent_Subs_6_Add_Subsidiary_Type_Username.png)![Image: As Parent - Subs - 7a. Existing Username - Not Connected with any parent](../images/As_Parent_Subs_Existing_Username_Not Connected_with_any_parent.png)
+![Image: As Parent - Subs - 6. Add Subsidiary - Type Username](../images/As_Parent_Subs_6_Add_Subsidiary_Type_Username.png) ![Image: As Parent - Subs - 7a. Existing Username - Not Connected with any parent](../images/As_Parent_Subs_Existing_Username_Not Connected_with_any_parent.png)
 After confirming, the request will be sent to the respective account to be accepted
 
 1. **For Subsidiary Account**
