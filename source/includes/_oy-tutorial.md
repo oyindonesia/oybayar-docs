@@ -206,7 +206,7 @@ Upgrade your account
 Upgrade request is approved
 Contact our sales or account manager representatives to enable the feature
 
-### H**ow To Use**
+### **How To Use**
 
 To properly used Multi Account Management, we required several accounts to be linked together. Each account can be used independently, and each account needs to pass the KYB to be used fully.
 
@@ -257,7 +257,7 @@ In Multi Account Management, you will be able to do disbursement using your subs
 2. Select your subsidiary balance as a source of fund to do disbursement by selecting “My Subsdiary Balance” and choose the appropriate account.
 3. After choosing the balance you could proceed to do disbursement just like regular disbursement
 
-![Image: Choose SoF - 2. Choose SoF subsidiary.png](../images/Choose_SoF_2_Choose_SoF_subsidiary.png)![Image: Choose SoF - 4. Type or search sub.png](../images/Choose_SoF_4_Type_or_search_sub.png)
+![Image: Choose SoF - 2. Choose SoF subsidiary.png](../images/Choose_SoF_2_Choose_SoF_subsidiary.png) ![Image: Choose SoF - 4. Type or search sub.png](../images/Choose_SoF_4_Type_or_search_sub.png)
 
 
 
