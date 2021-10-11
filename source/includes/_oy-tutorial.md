@@ -258,7 +258,3 @@ In Multi Account Management, you will be able to do disbursement using your subs
 3. After choosing the balance you could proceed to do disbursement just like regular disbursement
 
 ![Image: Choose SoF - 2. Choose SoF subsidiary.png](../images/Choose_SoF_2_Choose_SoF_subsidiary.png) ![Image: Choose SoF - 4. Type or search sub.png](../images/Choose_SoF_4_Type_or_search_sub.png)
-
-
-
-
