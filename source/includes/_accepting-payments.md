@@ -821,7 +821,7 @@ iframe {
     
     .modal-container {
       display: none;
-      justify-content: center;
+      justify-content: center; /* You can change this to "flex-end" for pop up showing on the right side  or "flex-start" for pop up showing on the left side */
       align-items: center;
       position: fixed;
       left: 0;
@@ -926,7 +926,7 @@ import classNames from 'classnames'; // Install with "npm install classnames" or
 import styles from './paycheckout_popup.module.css'; // File can be seen in css tab
 
 function PaycheckoutPopUp({
-  position = "center",
+  position = "center", // You can change this to "right" for pop up showing on the right side  or "left" for pop up showing on the left side
   show,
   onClose,
   paymentLinkId,
