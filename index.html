@@ -830,6 +830,67 @@
               </ul>
           </li>
           <li>
+            <a href="#e-wallet-api" class="toc-h1 toc-link" data-title="E-Wallet API">
+              <span class="toc-link-content-image">
+                <img src="images/e-wallet-api.svg" alt="" />
+                <span class="toc-link-content">
+                  E-Wallet API
+                </span>
+              </span>
+                <img src="images/arrow-bottom-425d93ba.svg" class="icon-arrow" alt="" />
+            </a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#e-wallet-product-flow-payment-checkouts-invoice" class="toc-h2 toc-link" data-title="E-Wallet Product Flow">
+                      <span class="toc-link-content">
+                        E-Wallet Product Flow
+                      </span>
+                        <img src="images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#key-features-payment-checkouts-invoice-2" class="toc-h2 toc-link" data-title="Key Features">
+                      <span class="toc-link-content">
+                        Key Features
+                      </span>
+                        <img src="images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#registration-and-setup-payment-checkouts-invoice" class="toc-h2 toc-link" data-title="Registration and Setup">
+                      <span class="toc-link-content">
+                        Registration and Setup
+                      </span>
+                        <img src="images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#testing-payment-checkouts-invoice-2" class="toc-h2 toc-link" data-title="Testing">
+                      <span class="toc-link-content">
+                        Testing
+                      </span>
+                        <img src="images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#how-to-use-payment-checkouts-invoice" class="toc-h2 toc-link" data-title="How to Use">
+                      <span class="toc-link-content">
+                        How to Use
+                      </span>
+                        <img src="images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#e-wallet-details-payment-checkouts-invoice" class="toc-h2 toc-link" data-title="E-Wallet Details">
+                      <span class="toc-link-content">
+                        E-Wallet Details
+                      </span>
+                        <img src="images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
+                    </a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#faqs" class="toc-h1 toc-link" data-title="FAQs">
               <span class="toc-link-content-image">
                 <img src="images/faqs-5a5371ec.svg" alt="" />
@@ -2948,6 +3009,97 @@ Step by step instructions can be found <a href="https://docs.oyindonesia.com/#ho
 <td>Yes</td>
 <td>Yes</td>
 <td>Rp 0</td>
+</tr>
+</tbody></table>
+<h1 id='e-wallet-api' type='normal'>E-Wallet API</h1>
+<p>E-Wallet API allows partners to  charge and receive payments directly from top e-wallet issuers. With one integration, they are able to get access to all of OY’s available e-wallets and the upcoming e-wallet integrations.</p>
+<h3 id='e-wallet-product-flow-payment-checkouts-invoice' type='normal'>E-Wallet Product Flow</h3>
+<p><img src="images/ewallet_product_flow-7aba1dab.png" alt="E-Wallet API" /></p>
+<h3 id='key-features-payment-checkouts-invoice-2' type='normal'>Key Features</h3>
+<ol>
+<li> <strong>Support multiple e-wallets</strong>  - Currently, we support ShopeePay and LinkAja e-wallets. OVO and DANA are coming soon</li>
+<li> <strong>Transaction tracking and monitoring capability</strong>  - You can track all created e-wallet transactions, incoming payments, and their respective details through our API callback or OY! dashboard. You will receive a callback for all incoming transactions.</li>
+<li> <strong>Check Status capability</strong>  - We have a Check Status endpoint available for you to regularly check the status of an e-wallet transaction</li>
+</ol>
+<h3 id='registration-and-setup-payment-checkouts-invoice' type='normal'>Registration and Setup</h3>
+<p>Follow the below check-list to ensure you&#39;re all set up to use our E-Wallet API service:</p>
+
+<ol>
+<li> Create an account</li>
+<li> Upgrade your account by submitting the required documentations</li>
+<li> Have your upgrade request approved</li>
+<li> Set up your receiving bank account information (note: ensure that the receiving bank account information is accurate as it cannot be changed via OY! dashboard for security reasons)</li>
+<li> Submit your IPs and callback URLs to your business representative or to partner@oyindonesia.com</li>
+<li> Receive an API Key from us (note: it is required for API authorization purpose)</li>
+<li> Integrate with our E-Wallet API</li>
+</ol>
+<h3 id='testing-payment-checkouts-invoice-2' type='normal'>Testing</h3>
+<p>Once you successfully create an OY! account, you can immediately simulate E-Wallet payments via API.</p>
+
+<p>Follow the below steps to test the E-Wallet flow:</p>
+
+<ol>
+<li><p>Create an account</p></li>
+<li><p>Send a request to activate API E-Wallet product and obtain staging API Key to your business representative</p></li>
+<li><p>Create a VA number by sending a ‘POST’ request to https://api-stg.oyindonesia.com/api/e-wallet-aggregator/create-transaction using your staging API key. Enter the required and optional fields, as referenced in the API reference docs (https://api-docs.oyindonesia.com/#create-e-wallet-transaction-api-e-wallet-aggregator-coming-soon)</p></li>
+<li><p>After an E-Wallet transaction is generated, partner can simulate E-Wallet payment through your dashboard (in Staging environment) by going to Settings, and choose &quot;E-wallet Callback&quot;</p></li>
+<li><p>Fill in the e-wallet name, the generated ref number (you can fetch the ref number information through a Create E-Wallet Transaction response or through a Check Status response), and amount in the E-Wallet Callback section</p></li>
+</ol>
+
+<p><img src="images/ewallet_testing-62694ed6.png" alt="E-Wallet API" /></p>
+
+<ol>
+<li><p>If a payment is successful, we will send a callback to the registered staging callback URL destination</p></li>
+<li><p>The payment made to the e-wallet transaction can be monitored through OY! dashboard, in the &quot;E-Wallet&quot; sidebar</p></li>
+</ol>
+<h3 id='how-to-use-payment-checkouts-invoice' type='normal'>How to Use</h3>
+<p>We provide 2 endpoints for you to use:</p>
+
+<ul>
+<li>  <a href="https://api-docs.oyindonesia.com/#create-e-wallet-transaction-api-e-wallet-aggregator-coming-soon">Create E-Wallet Transaction</a>: Use this API to create an e-wallet transaction for your user</li>
+<li>  <a href="https://api-docs.oyindonesia.com/#check-e-wallet-transaction-status-api-e-wallet-aggregator-coming-soon">Check E-Wallet Transaction Status</a>: Use this API to check the status of an e-wallet transaction. We highly recommend that you implement this endpoint.</li>
+</ul>
+
+<p>All details regarding your created e-wallet and its payments can be retrieved via our API endpoint (Check E-Wallet Transaction Status) or can be monitored directly from the OY! dashboard (through the E-Wallet sidebar)</p>
+
+<p><img src="images/ewallet_dashboard-6497358c.png" alt="E-Wallet API" /></p>
+<h3 id='e-wallet-details-payment-checkouts-invoice' type='normal'>E-Wallet Details</h3>
+<table><thead>
+<tr>
+<th>E-Wallet Issuer</th>
+<th>E-Wallet Code</th>
+<th>Minimum Expiration Time</th>
+<th>Maximum Expiration Time</th>
+<th>Redirection Feature</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>OVO</td>
+<td>ovo_ewallet</td>
+<td>Parameter is ignored, always set to 55 seconds</td>
+<td>Parameter is ignored, always set to 55 seconds</td>
+<td>Not supported</td>
+</tr>
+<tr>
+<td>ShopeePay</td>
+<td>shopeepay_ewallet</td>
+<td>1 minute</td>
+<td>60 minutes</td>
+<td>Support</td>
+</tr>
+<tr>
+<td>Linkaja</td>
+<td>linkaja_ewallet</td>
+<td>Parameter is ignored, always set to 5 minutes</td>
+<td>Parameter is ignored, always set to 5 minutes</td>
+<td>Support</td>
+</tr>
+<tr>
+<td>DANA</td>
+<td>dana_ewallet</td>
+<td>1 minute</td>
+<td>60 minutes</td>
+<td>Support</td>
 </tr>
 </tbody></table>
 <h1 id='faqs' type='normal'>FAQs</h1><h2 id='api-and-bulk-disbursement-faqs' type='normal'>API and Bulk Disbursement</h2>
