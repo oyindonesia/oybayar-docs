@@ -685,7 +685,9 @@ Just like the Payment Checkout via Link, you can access all your payment checkou
 
 ### Displaying Payment Checkout Page on Frontend
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tincidunt odio et eros blandit fringilla. Sed leo turpis, dignissim nec pellentesque vitae, pretium quis est. Vestibulum in felis aliquet, auctor lectus ac, dapibus augue. Pellentesque tellus mauris, feugiat luctus risus sit amet, fringilla ultrices felis. Vestibulum a pretium quam. Curabitur convallis posuere dignissim. Ut sit amet est viverra, gravida arcu ut, mollis enim. Vivamus vel imperdiet lorem, vitae euismod nisl. Proin vitae feugiat turpis. Pellentesque imperdiet dolor ligula, a auctor sapien gravida id. Vivamus sagittis purus id venenatis pharetra. Cras nec ligula tristique, dapibus lacus vitae, feugiat massa. Vestibulum sed lacinia justo, a lobortis lorem. Sed eget turpis et est tincidunt mattis at at augue. In ut neque euismod, tempus diam eu, interdum justo. Nunc et dapibus nisi, et eleifend augue.
+Displaying our payment checkout page on your front-end web environment is now made easier than ever. Our payment checkout offers a seamless user experience in a way that can be catered to your UI needs.
+
+Click the button below to see a demonstration and a snippet code on how to display a payment checkout page in 4 styles/locations: Center, Right, Left, and Slide Right.
 
 <a class="lottie" id="learn-more" href="https://www.goal.com/id"></a>
 
