@@ -689,7 +689,7 @@ With Pop!, displaying our payment checkout page on your front-end web environmen
 
 Click the button below to see a demonstration and a snippet code on how to display a payment checkout page in 4 styles/locations: Center, Right, Left, and Slide Right.
 
-<a class="lottie" id="learn-more" href="https://www.goal.com/id"></a>
+<a class="lottie" id="learn-more" href="https://api-docs.oyindonesia.com/#pop-seamless-payment-experience-fund-acceptance"></a>
 
 ### Customizing the UI of Payment Checkout Link
 
