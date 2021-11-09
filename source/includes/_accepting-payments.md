@@ -683,6 +683,12 @@ Just like the Payment Checkout via Link, you can access all your payment checkou
 
 ![Payment Checkout](images/payment_checkout_list.png)
 
+### Displaying Payment Checkout Page on Frontend
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tincidunt odio et eros blandit fringilla. Sed leo turpis, dignissim nec pellentesque vitae, pretium quis est. Vestibulum in felis aliquet, auctor lectus ac, dapibus augue. Pellentesque tellus mauris, feugiat luctus risus sit amet, fringilla ultrices felis. Vestibulum a pretium quam. Curabitur convallis posuere dignissim. Ut sit amet est viverra, gravida arcu ut, mollis enim. Vivamus vel imperdiet lorem, vitae euismod nisl. Proin vitae feugiat turpis. Pellentesque imperdiet dolor ligula, a auctor sapien gravida id. Vivamus sagittis purus id venenatis pharetra. Cras nec ligula tristique, dapibus lacus vitae, feugiat massa. Vestibulum sed lacinia justo, a lobortis lorem. Sed eget turpis et est tincidunt mattis at at augue. In ut neque euismod, tempus diam eu, interdum justo. Nunc et dapibus nisi, et eleifend augue.
+
+<a class="lottie" id="learn-more" href="https://www.goal.com/id"></a>
+
 ### Customizing the UI of Payment Checkout Link
 
 In order to maintain a consistent brand experience for your users, you can customize the look and feel of your payment checkout link in the Dashboard, where you can do the following things;
