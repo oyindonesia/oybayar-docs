@@ -2502,6 +2502,56 @@ Step by step instructions can be found <a href="https://docs.oyindonesia.com/#ho
 <p><strong>Accessing and monitoring the created test payment checkout links</strong></p>
 
 <p>Whether you create the link through URL, dashboard, or API, you can see the details of your link on the OY! Dashboard. The details that can be checked are the created date of the link, amount billed, amount received, expiration date, and status.</p>
+
+<p><strong>Mock Amount Values for Testing</strong></p>
+
+<p>During testing, you can set the transaction amount to a certain mock value to simulate a specific scenario.</p>
+
+<table><thead>
+<tr>
+<th>Payment Method</th>
+<th>Scenario</th>
+<th>Criteria</th>
+<th>Expected Result</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>E-Wallet - ShopeePay</td>
+<td>Payment already successful on E-Wallet issuer side but failed on OY side (can be due to callback timeout reasons). The transaction is refunded to the end-user&#39;s balance</td>
+<td>Amount is between 55,000 and 66,000</td>
+<td>Refund Successful</td>
+</tr>
+<tr>
+<td>QRIS</td>
+<td>Payment already successful on E-Wallet issuer side but failed on OY side (can be due to callback timeout reasons). The transaction is refunded to the end-user&#39;s balance</td>
+<td>Amount is between 55,000 and 66,000</td>
+<td>Refund Successful</td>
+</tr>
+<tr>
+<td>E-Wallet - LinkAja</td>
+<td>Payment already successful on E-Wallet issuer side but failed on OY side (can be due to callback timeout reasons). The transaction is refunded to the end-user&#39;s balance</td>
+<td>Amount is between 55,000 and 66,000</td>
+<td>Refund Successful</td>
+</tr>
+<tr>
+<td>E-Wallet - ShopeePay</td>
+<td>Failure during refund process</td>
+<td>Amount is less than 55,000 or greater than 66,000</td>
+<td>Refund Failed</td>
+</tr>
+<tr>
+<td>QRIS</td>
+<td>Failure during refund process</td>
+<td>Amount is less than 55,000 or greater than 66,000</td>
+<td>Refund Failed</td>
+</tr>
+<tr>
+<td>E-Wallet - LinkAja</td>
+<td>Failure during refund process</td>
+<td>Amount is less than 55,000 or greater than 66,000</td>
+<td>Refund Failed</td>
+</tr>
+</tbody></table>
 <h3 id='how-to-use-payment-checkout-invoice-via-link-url-payment-checkouts-invoice' type='normal'>How to Use Payment Checkout/Invoice via Link/URL</h3>
 <p><em>Note:</em> Our payment link includes parameters that are easily adjustable according to your needs. You can send the link to multiple customers using the same link (please refer to the steps below) and we will take care the rest.</p>
 
