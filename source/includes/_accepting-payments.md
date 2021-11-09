@@ -683,9 +683,9 @@ Just like the Payment Checkout via Link, you can access all your payment checkou
 
 ![Payment Checkout](images/payment_checkout_list.png)
 
-### Displaying Payment Checkout Page on Frontend
+### Pop!: Seamless Payment Experience
 
-Displaying our payment checkout page on your front-end web environment is now made easier than ever. Our payment checkout offers a seamless user experience in a way that can be catered to your UI needs.
+With Pop!, displaying our payment checkout page on your front-end web environment is now made easier than ever. Our payment checkout offers a seamless user experience in a way that can be catered to your UI needs.
 
 Click the button below to see a demonstration and a snippet code on how to display a payment checkout page in 4 styles/locations: Center, Right, Left, and Slide Right.
 
