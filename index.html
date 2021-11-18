@@ -689,15 +689,15 @@
             </a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#api-va-aggregator-accepting-payments" class="toc-h2 toc-link" data-title="API VA Aggregator">
+                    <a href="#va-aggregator-accepting-payments" class="toc-h2 toc-link" data-title="VA Aggregator">
                       <span class="toc-link-content">
-                        API VA Aggregator
+                        VA Aggregator
                       </span>
                          <img src="images/arrow-bottom-425d93ba.svg" class="active-parent icon-arrow" alt="" />
                     </a>
                     <ul class="toc-list-h3">
                         <li>
-                          <a href="#key-features-api-va-aggregator" class="toc-h3 toc-link" data-title="Key Features">
+                          <a href="#key-features-va-aggregator" class="toc-h3 toc-link" data-title="Key Features">
                             <span class="toc-link-content">
                               Key Features
                             </span> 
@@ -705,7 +705,7 @@
                           </a>
                         </li>
                         <li>
-                          <a href="#use-cases-api-va-aggregator" class="toc-h3 toc-link" data-title="Use Cases">
+                          <a href="#use-cases-va-aggregator" class="toc-h3 toc-link" data-title="Use Cases">
                             <span class="toc-link-content">
                               Use Cases
                             </span> 
@@ -713,7 +713,7 @@
                           </a>
                         </li>
                         <li>
-                          <a href="#registration-and-set-up-api-va-aggregator" class="toc-h3 toc-link" data-title="Registration and Set Up">
+                          <a href="#registration-and-set-up-va-aggregator" class="toc-h3 toc-link" data-title="Registration and Set Up">
                             <span class="toc-link-content">
                               Registration and Set Up
                             </span> 
@@ -721,7 +721,7 @@
                           </a>
                         </li>
                         <li>
-                          <a href="#testing-api-va-aggregator" class="toc-h3 toc-link" data-title="Testing">
+                          <a href="#testing-va-aggregator" class="toc-h3 toc-link" data-title="Testing">
                             <span class="toc-link-content">
                               Testing
                             </span> 
@@ -729,7 +729,7 @@
                           </a>
                         </li>
                         <li>
-                          <a href="#how-to-use-api-va-aggregator" class="toc-h3 toc-link" data-title="How to Use">
+                          <a href="#how-to-use-va-aggregator" class="toc-h3 toc-link" data-title="How to Use">
                             <span class="toc-link-content">
                               How to Use
                             </span> 
@@ -737,7 +737,7 @@
                           </a>
                         </li>
                         <li>
-                          <a href="#va-bank-details-api-va-aggregator" class="toc-h3 toc-link" data-title="VA Bank Details">
+                          <a href="#va-bank-details-va-aggregator" class="toc-h3 toc-link" data-title="VA Bank Details">
                             <span class="toc-link-content">
                               VA Bank Details
                             </span> 
@@ -1967,12 +1967,12 @@ Best use of this feature is : refunds, reimbursement claim, any disburse transac
 <li><p>In parallel, your customer will also get email notification about successful claim fund transaction.
 <img src="images/claim-fund-user-success-e274ad50.png" alt="Create Claim Fund - user success" /></p></li>
 </ul>
-<h1 id='accepting-payments' type='normal'>Accepting Payments</h1><h2 id='api-va-aggregator-accepting-payments' type='normal'>API VA Aggregator</h2>
+<h1 id='accepting-payments' type='normal'>Accepting Payments</h1><h2 id='va-aggregator-accepting-payments' type='normal'>VA Aggregator</h2>
 <p>Businesses are struggling to manage hundreds or even thousands of physical bank accounts that are used for different purposes. It causes significant overhead cost in terms of the amount of account maintenance and man hours needed for reporting and reconciliation purposes, combining different information from different accounts. </p>
 
 <p>Virtual Account (VA) is essentially a dummy account that is linked to a physical account and has all the physical account characteristics that enables a much easier reporting and reconciliation process by centralizing the money flow into the physical account. By issuing VAs, you can assign each VA for specific person and/or purposes.</p>
 
-<p><img src="images/va_diagram_1-f839895a.png" alt="API VA Aggregator" /></p>
+<p><img src="images/va_diagram_1-2d9452b9.png" alt="API VA Aggregator" /></p>
 
 <p>From the example above, it shows how payments made through the VAs are merely pass-throughs for the physical accounts to receive money. Without VAs, the above example might require up to 8 physical accounts from 2 different banks rather than 2 physical accounts from 2 different banks.</p>
 
@@ -1983,55 +1983,57 @@ Best use of this feature is : refunds, reimbursement claim, any disburse transac
 <p>Our virtual accounts are adjustable according to your needs. We offer options of static or dynamic accounts, single or mutli use accounts, opened or closed amounts, and determinable expiration dates. You can also track all created virtual accounts, incoming payments, and their respective details either through our API callback or the OY! dashboard. </p>
 
 <p><img src="images/va_diagram_2-4d519dd9.png" alt="API VA Aggregator" /></p>
+<h3 id='key-features-va-aggregator' type='normal'>Key Features</h3>
+<ul>
+<li><strong>Create VA number via API</strong> - Create VA automatically by integrating your applications with our API VA. For more information, visit our <a href="https://api-docs.oyindonesia.com/">API Docs</a>.</li>
+</ul>
 
-<p><strong>VA Payment Flow</strong></p>
-
-<p>Your users will be able to pay into a Virtual Account through ATM, Mobile Banking, and Internet Banking.</p>
-<h3 id='key-features-api-va-aggregator' type='normal'>Key Features</h3>
 <ol>
-<li><strong>Support multiple banks</strong> - Currently, we support virtual accounts (VA) at 6 banks: BCA, BNI, Mandiri, BRI, Permata, and CIMB Niaga</li>
-<li><strong>Real-time settlement for majority of the banks</strong> - Payment into a VA will settle in your OY! dashboard on a real-time basis for the majority of the banks (note: for BCA, the settlement will take place H+2 after payment is made into the VA)</li>
-<li><strong>Transaction tracking and monitoring capability</strong> - You can track all created VA, incoming payments, and their respective details through our API callback or the OY! dashboard. You will receive a callback all incoming transactions.</li>
-<li><strong>Customizable VA types</strong> - Refer to the table below for more informations on various types of VA:</li>
-</ol>
+<li><p><strong>Create VA number via Dashboard</strong> - Do not have enough resources to integrate with API VA? Do not worry, you can create a VA number easily via OY! Dashboard. No need to write some codes!</p></li>
+<li><p><strong>Support multiple banks</strong> - Currently, we support virtual accounts (VA) at 6 7 banks: BCA, BNI, Mandiri, BRI, Permata, CIMB Niaga, and BTPN</p></li>
+<li><p><strong>Real-time settlement for majority of the banks</strong> - Payment into a VA will settle in your OY! dashboard on a real-time basis for the majority of the banks (note: for BCA, the settlement will take place H+2 after payment is made into the VA)</p></li>
+<li><p><strong>Transaction tracking and monitoring capability</strong> - You can track all created VA, incoming payments, and their respective details through our API callback or the OY! dashboard. You will receive a callback all incoming transactions.</p></li>
+<li><p><strong>Customizable VA types</strong> - You can customize the VA numbers you want to create. Each VA would consist of three categories you can define in the creation process. Refer to the table below for more information on various types of VA:</p>
 
 <table><thead>
 <tr>
+<th>Category</th>
 <th>Type/Feature</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
+<td>Validity Period</td>
 <td>Static Virtual Account</td>
 <td>VA that has a lifetime validity. It will always be active until it is manually deactivated</td>
 </tr>
 <tr>
+<td>Validity Period</td>
 <td>Dynamic Virtual Account</td>
 <td>VA that has a specific validity period. It will always be active until it is expired or manually deactivated</td>
 </tr>
 <tr>
+<td>Amount Type</td>
 <td>Closed Amount Virtual Account</td>
 <td>VA that only accepts payment of a specific amount/declared amount</td>
 </tr>
 <tr>
+<td>Amount Type</td>
 <td>Opened Amount Virtual Account</td>
 <td>VA that accepts payment of any amount</td>
 </tr>
 <tr>
+<td>Usage Frequency</td>
 <td>Single Use Virtual Account</td>
 <td>VA that expires after a single payment. A single use configuration can only be set up for a dynamic VA</td>
 </tr>
 <tr>
+<td>Usage Frequency</td>
 <td>Multiple Use Virtual Account</td>
 <td>VA that only expires when expiration date is reached or when it is manually deactivated</td>
 </tr>
-</tbody></table>
-
-<ol>
-<li><strong>Capability to update VA</strong> </li>
-</ol>
-
-<p>Attribute that can be updated:</p>
+</tbody></table></li>
+<li><p><strong>Capability to update VA</strong> Attribute that can be updated:</p>
 
 <ul>
 <li>amount</li>
@@ -2041,17 +2043,21 @@ Best use of this feature is : refunds, reimbursement claim, any disburse transac
 <li>expired_time</li>
 <li>trx_expired_time</li>
 <li>username_display</li>
+</ul></li>
+</ol>
+
+<p>Example:</p>
+
+<ul>
+<li>A static VA with a closed amount can be updated with a new closed amount hence it can work as a bill to be paid for a particular customer</li>
+<li>A static VA can be updated to a single use so it will be the last payment received from a particular customer</li>
+<li>A dynamic VA with a closed amount is updated to an opened amount so that it can accept payments for any amount</li>
 </ul>
 
-<p>Example:
-* A static VA with a closed amount can be updated with a new closed amount hence it can work as a bill to be paid for a particular customer
-* A static VA can be updated to a single use so it will be the last payment received from a particular customer
-* A dynamic VA with a closed amount is updated to an opened amount so that it can accept payments for any amount</p>
-
 <p>All of the VA information, even after they are updated, is available on the OY! dashboard or via API. Once a VA is updated, the new set of configuration will apply for that VA and the previous configure is overridden and no longer applicable </p>
-<h3 id='use-cases-api-va-aggregator' type='normal'>Use Cases</h3>
+<h3 id='use-cases-va-aggregator' type='normal'>Use Cases</h3>
 <p><img src="images/va_use_case_new-805a4cf1.png" alt="API VA Aggregator" /></p>
-<h3 id='registration-and-set-up-api-va-aggregator' type='normal'>Registration and Set Up</h3>
+<h3 id='registration-and-set-up-va-aggregator' type='normal'>Registration and Set Up</h3>
 <p>Follow the below check-list to ensure you&#39;re all set up to use our VA Aggregator API service:</p>
 
 <ol>
@@ -2063,7 +2069,7 @@ Best use of this feature is : refunds, reimbursement claim, any disburse transac
 <li>Receive an API Key from us (note: it is required for API authorization purpose)</li>
 <li>Integrate with our Virtual Account Aggregator API</li>
 </ol>
-<h3 id='testing-api-va-aggregator' type='normal'>Testing</h3>
+<h3 id='testing-va-aggregator' type='normal'>Testing</h3><h4 id='create-va-number-via-api-testing' type='normal'>Create VA number via API</h4>
 <p>Once you successfully create an OY! account, you can immediately simulate VA payments via API.</p>
 
 <p>Follow the below steps to test the VA flow:</p>
@@ -2071,14 +2077,30 @@ Best use of this feature is : refunds, reimbursement claim, any disburse transac
 <ol>
 <li><p>Create an account</p></li>
 <li><p>Send a request to activate API VA Aggregator product and obtain staging API Key to your business representative</p></li>
-<li><p>Create a VA number by sending a ‘POST’ request to https://api-stg.oyindonesia.com/api/generate-static-va using your staging API key. Enter the required and optional fields, as referenced in the API reference docs (https://api-docs.oyindonesia.com/#create-va)</p></li>
+<li><p>Create a VA number by sending a ‘POST’ request to https://api-stg.oyindonesia.com/api/generate-static-va using your staging API key. Enter the required and optional fields, as referenced in the <a href="https://api-docs.oyindonesia.com/#create-va">API reference docs</a></p></li>
 <li><p>After VA number is generated, partner can simulate VA payment through your dashboard (in Staging environment) by going to Settings, and choose &quot;VA Callback&quot;</p></li>
 <li><p>Fill in the bank name associated with the generated VA number, the generated VA number, amount, and payment date &amp; time</p></li>
 <li><p>If payment is successful, we will send a callback to the registered staging callback URL destination</p></li>
 <li><p>The payment made to the VA can be monitored through OY! dashboard. Go to &quot;Virtual Account&quot; menu, and choose &quot;Incoming Payment&quot;</p></li>
 </ol>
-<h3 id='how-to-use-api-va-aggregator' type='normal'>How to Use</h3>
-<p>Send us instructions to generate a new VA number.</p>
+<h4 id='create-va-via-dashboard-testing' type='normal'>Create VA via Dashboard</h4>
+<p>Once you successfully create an OY! account, you can immediately create VA number and simulate VA payments via Dashboard. </p>
+
+<p>Follow the instruction below:</p>
+
+<ol>
+<li><p>Create an Account.</p></li>
+<li><p>Select ‘Staging’ environment.</p></li>
+<li><p>Click menu Virtual Account, then click ‘Create VA’.</p></li>
+<li><p>In the top right, click ‘Create Virtual Account’ button.</p></li>
+<li><p>You can choose between creating VA by uploading a CSV file (template available) or creating manually one by one.</p></li>
+<li><p>Fill out the requirements: Partner User ID, Partner Transaction ID, Bank Name, VA Name, VA Type, Amount, usage, Usage Limit, VA Expiration Type,  VA Expiration Date &amp; Time, Transaction Expiration Date &amp; Time, and Email.</p></li>
+<li><p>Validate and Submit your request.</p></li>
+<li><p>VA number(s) that you created will appear in the Create VA menu.</p></li>
+<li><p>To simulate VA payment and see status changing, tap ‘Send Callback’ button in the right section of the table</p></li>
+</ol>
+<h3 id='how-to-use-va-aggregator' type='normal'>How to Use</h3>
+<p>Send us instructions to generate a new VA number, or create a VA number via dashboard.</p>
 
 <blockquote>
 <p>Below is an example of a request body to execute your request:</p>
@@ -2124,11 +2146,14 @@ Best use of this feature is : refunds, reimbursement claim, any disburse transac
 <blockquote>
 </blockquote>
 
-<p>Once a VA is created, its details can be seen and monitored through the OY! dashboard. </p>
+<p>Once a VA is created, its details can be seen and monitored through the OY! dashboard.</p>
+
+<ul>
+<li>For Create VA via API, an endpoint to <a href="https://api-docs.oyindonesia.com/#get-va-info">check your VA information</a> is also available and can be accessed at any time.</li>
+<li>If you wish to change the details of your VA, you can do so by <a href="https://api-docs.oyindonesia.com/#update-va">updating your VA</a> at any time.</li>
+</ul>
 
 <p><img src="images/va_waiting_payment-f593752a.png" alt="API VA Aggregator" /></p>
-
-<p>An endpoint to <a href="https://api-docs.oyindonesia.com/#get-va-info">check your VA information</a> is also available and can be accessed at anytime.</p>
 
 <blockquote>
 <p>Below is an example of the request body:</p>
@@ -2162,11 +2187,6 @@ Best use of this feature is : refunds, reimbursement claim, any disburse transac
     </span><span class="nl">"partner_trx_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TRX0001"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<blockquote>
-</blockquote>
-
-<p>If you wish to change the details of your VA, you can do so by <a href="https://api-docs.oyindonesia.com/#update-va">updating your VA</a> at any time.</p>
-
 <blockquote>
 <p>Below is an example of the request body:</p>
 </blockquote>
@@ -2202,16 +2222,24 @@ Best use of this feature is : refunds, reimbursement claim, any disburse transac
 <blockquote>
 </blockquote>
 
-<p>All details regarding your <a href="https://api-docs.oyindonesia.com/#get-list-of-created-va">created VA</a> and its payments can be retrieved via our API endpoint or can be monitored directly from the OY! dashboard.</p>
+<p>All details regarding your <a href="https://api-docs.oyindonesia.com/#get-list-of-created-va">created VA</a> and its payments can be monitored directly from the OY! dashboard.</p>
+
+<ul>
+<li>Additionally, Create VA via API can be retrieved via our API endpoint.</li>
+</ul>
 
 <p><img src="images/va_created_va-aed02d18.png" alt="API VA Aggregator" /></p>
 
-<p>Similarly, all the details regarding <a href="https://api-docs.oyindonesia.com/#get-list-of-transaction-for-va">incoming transactions</a> for specific va numbers can be retrived via our API endpoint or can be monitored directly from the OY! dashboard.</p>
+<p>Similarly, all the details regarding <a href="https://api-docs.oyindonesia.com/#get-list-of-transaction-for-va">incoming transactions</a> can be monitored directly from the OY! dashboard.</p>
+
+<ul>
+<li>Additionally, Create VA via API can be retrieved via our API endpoint.</li>
+</ul>
 
 <p><img src="images/va_incoming-7deed72a.png" alt="API VA Aggregator" /></p>
 
 <p>For further details regarding OY!&#39;s extensive API VA Aggregator capabilities and endpoints, please refer to the <a href="https://api-docs.oyindonesia.com/#va-aggregator">OY! API Documentation</a>.</p>
-<h3 id='va-bank-details-api-va-aggregator' type='normal'>VA Bank Details</h3>
+<h3 id='va-bank-details-va-aggregator' type='normal'>VA Bank Details</h3>
 <table><thead>
 <tr>
 <th>Bank (Virtual Account)</th>
@@ -3159,12 +3187,7 @@ Step by step instructions can be found <a href="https://docs.oyindonesia.com/#ho
 <li><p>Send a request to activate API E-Wallet product and obtain staging API Key to your business representative</p></li>
 <li><p>Create a VA number by sending a ‘POST’ request to https://api-stg.oyindonesia.com/api/e-wallet-aggregator/create-transaction using your staging API key. Enter the required and optional fields, as referenced in the API reference docs (https://api-docs.oyindonesia.com/#create-e-wallet-transaction-api-e-wallet-aggregator-coming-soon)</p></li>
 <li><p>After an E-Wallet transaction is generated, partner can simulate E-Wallet payment through your dashboard (in Staging environment) by going to Settings, and choose &quot;E-wallet Callback&quot;</p></li>
-<li><p>Fill in the e-wallet name, the generated ref number (you can fetch the ref number information through a Create E-Wallet Transaction response or through a Check Status response), and amount in the E-Wallet Callback section</p></li>
-</ol>
-
-<p><img src="images/ewallet_testing-62694ed6.png" alt="E-Wallet API" /></p>
-
-<ol>
+<li><p>Fill in the e-wallet name, the generated ref number (you can fetch the ref number information through a Create E-Wallet Transaction response or through a Check Status response), and amount in the E-Wallet Callback section <img src="images/ewallet_testing-62694ed6.png" alt="E-Wallet API" /></p></li>
 <li><p>If a payment is successful, we will send a callback to the registered staging callback URL destination</p></li>
 <li><p>The payment made to the e-wallet transaction can be monitored through OY! dashboard, in the &quot;E-Wallet&quot; sidebar</p></li>
 </ol>
