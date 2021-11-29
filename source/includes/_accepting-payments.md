@@ -904,7 +904,7 @@ For now, you can use API Payment Checkout or API Virtual Account for the receive
 
 ## Key Features
 1. **Accept and disburse money in a real time manner** - By integrating to this API, you will get end-to-end solutions from receive to disburse money. All in real time manner. Note : Some payment methods have H+1 or H+2 settlement period. You have to keep some balance to cater the settlement from the payment methods.
-1. **You can select API Payment Checkout or API VA to receive money** - See Payment Checkout or Virtual Account for more information. More channels are coming soon. Note : Payment Routing only allows closed amount. For VA, can cater single or multiple use and lifetime VA.
+1. **You can select API Payment Checkout or API VA to receive money** - See Payment Checkout or Virtual Account for more information. More channels are coming soon. Note : Payment Routing only allows closed amount type.
 1. **Transaction tracking and monitoring capability** - You can track all payment routing transactions details through our callback or the OY! dashboard. You will receive callbacks two times, for the receive money part and for the disburse money part.
 
 ### Use Cases
