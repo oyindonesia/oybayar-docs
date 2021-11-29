@@ -900,7 +900,7 @@ Payment Routing is an API that combines receive money and disburse money feature
 For now, you can use API Payment Checkout or API Virtual Account for the receive money part. 
 
 ### Flow
-![Payment Routing Flow](/image/Payment Routing Flow.png)
+![Payment Routing Flow](/images/Payment_Routing_Flow.png)
 
 ## Key Features
 1. **Accept and disburse money in a real time manner** - By integrating to this API, you will get end-to-end solutions from receive to disburse money. All in real time manner. Note : Some payment methods have H+1 or H+2 settlement period. You have to keep some balance to cater the settlement from the payment methods.
