@@ -905,7 +905,7 @@ For now, you can use Payment Checkout or Virtual Account for the receive money p
 Below are few examples of Payment Routing usage.
 
 1. Mutual Fund Investment - Accept investment money from users and directly disburse to each custodian banks.
-1. Borrower and Lender - Accept money from Lender/Borrower and disburse them directly to Rekening Penampungan Lender/Rekening Penampungan Borrower.
+1. Borrower and Lender - Accept money from Lender/Borrower and disburse them directly to *Rekening Penampungan Lender* or *Rekening Penampungan Borrower*.
 1. Put money directly to Your Business Account- Receive money from your customers/buyers and directly put them to your business bank account in order to secure the money and prevent fraud.
 
 ### Registration and Setup
@@ -924,8 +924,8 @@ Follow the below check-list to ensure you're all set up to use our Payment Routi
 Once you successfully create an OY! account, you can immediately simulate VA payments via API.
 Follow the below steps to test the Payment Routing flow:
 
-1. Create an account
-1. Send a request to activate API Payment Routing product and obtain staging API Key to your business representative
+1. Create an account.
+1. Send a request to activate API Payment Routing product and obtain your staging API Key in OY! Dashboard.
 1. Send a ‘POST’ request _https://partner.oyindonesia.com/api/payment-routing/create-transaction_ (https://partner.oyindonesia.com/api/payment-routing/create-transaction) using your staging API key. Enter the required and optional fields, as referenced in the API reference docs (https://api-docs.oyindonesia.com/#create-payment-routing).
 1. If you use VA as the payment method, after VA number is generated, you can simulate the payment through your dashboard (in Staging environment) by going to Settings, and choose "VA Callback".
 1. If you use Payment Checkout as the payment method, you can open the link and simulate payment from there.
