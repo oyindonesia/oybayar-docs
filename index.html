@@ -926,18 +926,16 @@
                             <img src="images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
                           </a>
                         </li>
-                    </ul>
-                  </li>
-                  <li>
-                    <a href="#key-features-accepting-payments" class="toc-h2 toc-link" data-title="Key Features">
-                      <span class="toc-link-content">
-                        Key Features
-                      </span>
-                         <img src="images/arrow-bottom-425d93ba.svg" class="active-parent icon-arrow" alt="" />
-                    </a>
-                    <ul class="toc-list-h3">
                         <li>
-                          <a href="#use-cases-key-features" class="toc-h3 toc-link" data-title="Use Cases">
+                          <a href="#key-features-api-payment-routing" class="toc-h3 toc-link" data-title="Key Features">
+                            <span class="toc-link-content">
+                              Key Features
+                            </span> 
+                            <img src="images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#use-cases-api-payment-routing" class="toc-h3 toc-link" data-title="Use Cases">
                             <span class="toc-link-content">
                               Use Cases
                             </span> 
@@ -945,7 +943,7 @@
                           </a>
                         </li>
                         <li>
-                          <a href="#registration-and-setup-key-features" class="toc-h3 toc-link" data-title="Registration and Setup">
+                          <a href="#registration-and-setup-api-payment-routing" class="toc-h3 toc-link" data-title="Registration and Setup">
                             <span class="toc-link-content">
                               Registration and Setup
                             </span> 
@@ -953,7 +951,7 @@
                           </a>
                         </li>
                         <li>
-                          <a href="#testing-key-features" class="toc-h3 toc-link" data-title="Testing">
+                          <a href="#testing-api-payment-routing" class="toc-h3 toc-link" data-title="Testing">
                             <span class="toc-link-content">
                               Testing
                             </span> 
@@ -1553,10 +1551,6 @@ After confirming, the request will be sent to the respective account to be accep
 <h1 id='sending-payments' type='normal'>Sending Payments</h1><h2 id='api-disbursement-sending-payments' type='normal'>API Disbursement</h2>
 <p>API disbursement product provides the capability for you to disburse to 100+ banks in Indonesia via OY! at any time. The integration process to use the API disbursement product is straight forward and the details can be checked <a href="https://api-docs.oyindonesia.com/#fund-disbursement">here</a>.  </p>
 <h3 id='key-features-api-disbursement' type='normal'>Key Features</h3>
-<p><strong>Overdraft</strong></p>
-
-<p>OY! has established partnerships with third party lenders to credit a specific amount of funds that can be used for your disbursement needs. With this feature, you don’t need to top up the OY! balance to execute disbursements. Please contact our <a href="partner@oyindonesia.com">business representative</a> for further details about this feature.</p>
-
 <p><strong>Overbooking</strong> </p>
 
 <p>OY! can use the funds directly from your Mandiri, CIMB, or BNI bank accounts for your disbursement needs. You will only need to top up the admin fee needed to execute the disbursements instead of the full amount of your disbursement. Please contact our <a href="partner@oyindonesia.com">business representative</a> for further details about this feature.</p>
@@ -1749,7 +1743,7 @@ Follow the below steps to test the flow:</p>
         </span><span class="nl">"message"</span><span class="p">:</span><span class="s2">"Success"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="nl">"balance"</span><span class="p">:</span><span class="mf">100000000.0000</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"overdraftBalance"</span><span class="p">:</span><span class="mf">500000.0000</span><span class="p">,</span><span class="w">
+  </span><span class="err">//</span><span class="w">  </span><span class="nl">"overdraftBalance"</span><span class="p">:</span><span class="mf">500000.0000</span><span class="p">,</span><span class="w">
     </span><span class="nl">"overbookingBalance"</span><span class="p">:</span><span class="mf">200000.0000</span><span class="p">,</span><span class="w">
     </span><span class="nl">"pendingBalance"</span><span class="p">:</span><span class="mf">2000000.0000</span><span class="p">,</span><span class="w">
     </span><span class="nl">"availableBalance"</span><span class="p">:</span><span class="mf">98500000.0000</span><span class="p">,</span><span class="w">
@@ -1769,10 +1763,6 @@ Follow the below steps to test the flow:</p>
 <h2 id='bulk-disbursement-sending-payments' type='normal'>Bulk Disbursement</h2>
 <p>Our Bulk disbursement product provides the capability to execute disbursements to multiple beneficiaries with a single xlsx or csv file upload (&quot;Campaign&quot;) up to 25,000 transactions. Bulk disbursement is made through the OY! dashboard, where details regarding the disbursement campaign can be found. No technical integration is required to use this product.</p>
 <h3 id='key-features-bulk-disbursement' type='normal'>Key Features</h3>
-<p><strong>Overdraft</strong></p>
-
-<p>OY! has established partnerships with third party lenders to credit a specific amount of funds that can be used for your disbursement needs. With this feature, you don’t need to top up the OY! balance to execute disbursements. Please contact our <a href="partner@oyindonesia.com">business representative</a> for further details about this feature.</p>
-
 <p><strong>Overbooking</strong> </p>
 
 <p>OY! can use the funds directly from your Mandiri, CIMB, or BNI bank accounts for your disbursement needs. You will only need to top up the admin fee needed to execute the disbursements instead of the full amount of your disbursement. Please contact our <a href="partner@oyindonesia.com">business representative</a> for further details about this feature.</p>
@@ -2458,17 +2448,7 @@ OY! Payment Link/Invoice is a pre-built payment page that allows your business t
 
 <p><strong>Payment Link Preview</strong></p>
 
-<p>Step 1 - Input Amount</p>
-
-<p><img src="images/payment_checkout_input_amount-94499b04.png" alt="Payment Link" /></p>
-
-<p>Step 2 - Input Personal Info of the Customer</p>
-
-<p><img src="images/payment_checkout_info_customer-5cd7ebef.png" alt="Payment Link" /></p>
-
-<p>Step 3 - Select Payment Method</p>
-
-<p><img src="images/payment_checkout_payment_method-c2b26e90.png" alt="Payment Link" /></p>
+<p><img src="images/3p1p_preview-d8f1699d.png" alt="Payment Link" /></p>
 <h3 id='key-features-payment-links-invoice' type='normal'>Key Features</h3><h4 id='various-options-of-creating-payment-link-invoice-page-key-features' type='normal'>Various options of creating payment link/invoice page</h4>
 <p><strong>1. Creating payment link/invoice page through dashboard</strong></p>
 
@@ -2554,8 +2534,6 @@ You can choose whether your users will pay a fixed amount (closed amount) or any
 <p>You can also choose which payment methods that you will enable for your customers. The payment methods to choose from are Bank Transfers, Credit Card, Debit Card, and QR code.</p>
 
 <p>Please refer to our <a href="https://docs.oyindonesia.com/#faqs">FAQ page</a> below for more information regarding closed and open amounts.</p></li>
-<li><p><strong>Payment link page customization</strong>
-You can customize which payment link pages are accessible for your users. We offer options to hide pages 1 (Input Amount), 2 (Customer Information), and 3 (Select Payment Method) of our payment link.</p></li>
 </ul>
 
 <p><strong>2. Creating payment link/invoice page through API</strong></p>
@@ -2572,7 +2550,6 @@ You can easily call our API - we will take care of the payment link/invoice link
 <li><p>Amount (specify the amount and choose between open amount vs closed amount)</p></li>
 <li><p>Admin fee (choose whether the admin fee will be borne by your customers or borne by you)</p></li>
 <li><p>Payment method (choose the payment methods displayed to your customers among Bank Transfer (via Virtual Account), Cards (Credit Card/Debit Card), E-Wallet (ShopeePay, DANA, LinkAja, OVO), and QR Code options. Additionally, you can choose which banks are enabled for Bank Transfer method.)</p></li>
-<li><p>Payment Link page (choose which payment link pages are accessible for your users. We offer options to hide pages 1 (Input Amount), 2 (Customer Information), and 3 (Select Payment Method) of our payment link.</p></li>
 <li><p>Payment link expiration date</p></li>
 </ol>
 
@@ -3520,11 +3497,7 @@ If you want to share the payment link to your customer&#39;s email, you can defi
 
 <p>If we pick green (#HEX code #067610) as the primary color and black (#HEX code #000000) as the secondary color, the look and feel will be as follows;</p>
 
-<p><img src="images/ui_customization_result_1-273446f4.png" alt="Payment Link" /></p>
-
-<p><img src="images/ui_customization_result_2-69bed257.png" alt="Payment Link" /></p>
-
-<p><img src="images/ui_customization_result_3-bf12033a.png" alt="Payment Link" /></p>
+<p><img src="images/3p1p_preview-d8f1699d.png" alt="Payment Link" /></p>
 <h3 id='va-bank-details-payment-links-invoice' type='normal'>VA Bank Details</h3>
 <table><thead>
 <tr>
@@ -3732,13 +3705,13 @@ If you want to share the payment link to your customer&#39;s email, you can defi
 <p>For now, you can use API Payment Link or API Virtual Account for the receive money part.</p>
 <h3 id='flow-api-payment-routing' type='normal'>Flow</h3>
 <p><img src="images/Payment_Routing_Flow-257eac36.png" alt="Payment Routing Flow" /></p>
-<h2 id='key-features-accepting-payments' type='normal'>Key Features</h2>
+<h3 id='key-features-api-payment-routing' type='normal'>Key Features</h3>
 <ol>
 <li><strong>Accept and disburse money in a real time manner</strong> - By integrating to this API, you will get end-to-end solutions from receive to disburse money. All in real time manner. Note : Some payment methods have H+1 or H+2 settlement period. You have to keep some balance to cater the settlement from the payment methods.</li>
 <li><strong>You can select API Payment Link or API VA to receive money</strong> - See Payment Link or Virtual Account for more information. More channels are coming soon. Note : Payment Routing only allows closed amount type.</li>
 <li><strong>Transaction tracking and monitoring capability</strong> - You can track all payment routing transactions details through our callback or the OY! dashboard. You will receive callbacks two times, for the receive money part and for the disburse money part.</li>
 </ol>
-<h3 id='use-cases-key-features' type='normal'>Use Cases</h3>
+<h3 id='use-cases-api-payment-routing' type='normal'>Use Cases</h3>
 <p>Below are few examples of Payment Routing usage.</p>
 
 <ol>
@@ -3746,7 +3719,7 @@ If you want to share the payment link to your customer&#39;s email, you can defi
 <li>Borrower and Lender - Accept money from Lender/Borrower and disburse them directly to Rekening Penampungan Lender/Rekening Penampungan Borrower.</li>
 <li>Put money directly to Your Business Account- Receive money from your customers/buyers and directly put them to your business bank account in order to secure the money and prevent fraud.</li>
 </ol>
-<h3 id='registration-and-setup-key-features' type='normal'>Registration and Setup</h3>
+<h3 id='registration-and-setup-api-payment-routing' type='normal'>Registration and Setup</h3>
 <p>Follow the below check-list to ensure you&#39;re all set up to use our Payment Routing API service:</p>
 
 <ol>
@@ -3758,7 +3731,7 @@ If you want to share the payment link to your customer&#39;s email, you can defi
 <li>Receive an API Key from us (note: it is required for API authorization purpose)</li>
 <li>Integrate with our Payment Routing API</li>
 </ol>
-<h3 id='testing-key-features' type='normal'>Testing</h3>
+<h3 id='testing-api-payment-routing' type='normal'>Testing</h3>
 <p>Once you successfully create an OY! account, you can immediately simulate VA payments via API.
 Follow the below steps to test the Payment Routing flow:</p>
 
