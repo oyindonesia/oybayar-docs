@@ -1007,13 +1007,13 @@ All details regarding your created e-wallet and its payments can be retrieved vi
 
 ## API Payment Routing
 
-Some business have some use cases that require them to receive and disburse the fund. Often times, the operation team is struggling to manage this use case. Limited resource makes it harder to disburse the fund received. Therefore, API Payment Routing is the best solutions to cater this needs. It allows end-to-end process from accepting fund to disburse fund in one flow.
+Sometimes, business need to immediately disburse the money after they receive from their customers. Therefore, API Payment Routing is the best solutions to cater this needs. It allows end-to-end process from accepting money to disburse money in only one flow.
 
 ### Description about Payment Routing
 
-Payment Routing is an API that combines receive money and disburse money features. It allows you to immediately disburse the money once you receive from your customers. By integrating to this API, you will get the end-to-end solutions for your business needs.
+Payment Routing is an API that combines receive money and disburse money products. It allows you to immediately disburse the money once you receive from your customers. By integrating to this API, you will get the end-to-end solutions for your business needs.
 
-For now, you can use Payment Link or Virtual Account for the receive money part.
+For now, you can use Payment Link or Virtual Account for the receive fund part.
 
 ### Flow
 
@@ -1029,9 +1029,9 @@ For now, you can use Payment Link or Virtual Account for the receive money part.
 
 Below are few examples of Payment Routing usage.
 
-1. Mutual Fund Investment - Accept investment money from users and directly disburse to each custodian banks.
-1. Borrower and Lender - Accept money from Lender/Borrower and disburse them directly to Rekening Penampungan Lender/Rekening Penampungan Borrower.
-1. Put money directly to Your Business Account- Receive money from your customers/buyers and directly put them to your business bank account in order to secure the money and prevent fraud.
+1. Mutual Fund Investment - Accept investment funds from users and directly disburse to each custodian banks.
+1. Borrower and Lender - Accept funds from Lender/Borrower and disburse them directly to Rekening Penampungan Lender/Rekening Penampungan Borrower.
+1. Put money directly to Your Business Account- Receive funds from your customers/buyers and directly put them to your business bank account in order to secure the money and prevent fraud.
 
 ### Registration and Setup
 
