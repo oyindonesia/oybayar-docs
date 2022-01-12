@@ -1030,8 +1030,8 @@ For now, you can use Payment Link or Virtual Account for the receive fund part.
 Below are few examples of Payment Routing usage.
 
 1. Mutual Fund Investment - Accept investment funds from users and directly disburse to each custodian banks.
-1. Borrower and Lender - Accept funds from Lender/Borrower and disburse them directly to Rekening Penampungan Lender/Rekening Penampungan Borrower.
-1. Put money directly to Your Business Account- Receive funds from your customers/buyers and directly put them to your business bank account in order to secure the money and prevent fraud.
+1. Borrower and Lender - Accept money from Lender/Borrower and disburse them directly to Rekening Penampungan Lender/Rekening Penampungan Borrower.
+1. Put money directly to Your Business Account- Receive money from your customers/buyers and directly put them into your business bank account in order to secure the money and prevent fraud.
 
 ### Registration and Setup
 
