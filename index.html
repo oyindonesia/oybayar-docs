@@ -3633,9 +3633,9 @@ If you want to share the payment link to your customer&#39;s email, you can defi
 <li> Integrate with our E-Wallet API</li>
 </ol>
 <h3 id='testing-api-e-wallet-aggregator' type='normal'>Testing</h3>
-<p>Once you successfully create an OY! account, you can immediately simulate E-Wallet payments via API.</p>
+<p>When you hit Create E-Wallet Transaction endpoint (https://api-docs.oyindonesia.com/#https-request-create-e-wallet-transaction), it will always return the same ewallet_url &amp; success_redirect URL in the response: https://pay-dev.shareitpay.in/aggregate-pay-gate. You cannot simulate payment by clicking this URL.</p>
 
-<p>Follow the below steps to test the E-Wallet flow:</p>
+<p>In order to be able to simulate payment (change the transaction status into Complete), follow the steps below: (Note: the process of simulating payment in Staging environment doesn&#39;t involve any forward / redirection to the E-Wallet apps, the scope is just changing the transaction status into Complete.)</p>
 
 <ol>
 <li> Create an account</li>
