@@ -1588,7 +1588,9 @@ After confirming, the request will be sent to the respective account to be accep
 <h1 id='sending-payments' type='normal'>Sending Payments</h1><h2 id='api-disbursement-sending-payments' type='normal'>API Disbursement</h2>
 <p>API disbursement product provides the capability for you to disburse to 100+ banks in Indonesia via OY! at any time. The integration process to use the API disbursement product is straight forward and the details can be checked <a href="https://api-docs.oyindonesia.com/#fund-disbursement">here</a>.  </p>
 <h3 id='key-features-api-disbursement' type='normal'>Key Features</h3>
-<p><strong>Check Transaction Status and Callback</strong></p>
+<p><strong>Overbooking</strong>
+OY! can use the funds directly from your Mandiri or CIMB bank accounts for your disbursement needs. You will only need to top up the admin fee needed to execute the disbursements instead of the full amount of your disbursement. Please contact our <a href="partner@oyindonesia.com">business representative</a> for further details about this feature.
+<strong>Check Transaction Status and Callback</strong></p>
 
 <p>For all disbursements executed, you will receive notifications regarding your transaction whether it is successful, failed or pending. We also provide an API for you to check the transaction status manually. IP proxy is also available upon request to enhance the security and integrity of the callback you will receive. </p>
 
@@ -1778,6 +1780,7 @@ Follow the below steps to test the flow:</p>
     </span><span class="nl">"balance"</span><span class="p">:</span><span class="mf">100000000.0000</span><span class="p">,</span><span class="w">
     </span><span class="nl">"pendingBalance"</span><span class="p">:</span><span class="mf">2000000.0000</span><span class="p">,</span><span class="w">
     </span><span class="nl">"availableBalance"</span><span class="p">:</span><span class="mf">98500000.0000</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"overbookingBalance"</span><span class="p">:</span><span class="mf">98500000.0000</span><span class="p">,</span><span class="w">
     </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="s2">"10-12-2019 12:15:37"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
@@ -1794,6 +1797,9 @@ Follow the below steps to test the flow:</p>
 <h2 id='bulk-disbursement-sending-payments' type='normal'>Bulk Disbursement</h2>
 <p>Our Bulk disbursement product provides the capability to execute disbursements to multiple beneficiaries with a single xlsx or csv file upload (&quot;Campaign&quot;) up to 25,000 transactions. Bulk disbursement is made through the OY! dashboard, where details regarding the disbursement campaign can be found. No technical integration is required to use this product.</p>
 <h3 id='key-features-bulk-disbursement' type='normal'>Key Features</h3>
+<p><strong>Overbooking</strong>
+OY! can use the funds directly from your Mandiri or CIMB bank accounts for your disbursement needs. You will only need to top up the admin fee needed to execute the disbursements instead of the full amount of your disbursement. Please contact our <a href="partner@oyindonesia.com">business representative</a> for further details about this feature.</p>
+
 <p><strong>Account Management</strong> </p>
 
 <p>When you first create an account, your account will be assigned as a Super Admin role. As a Super Admin, you have the ability to create new sub-accounts and assign different roles to your team such as Admin, Maker and Approver that are applicable for bulk disbursement. The Super Admin and Admin can also edit or delete created sub-accounts. </p>
