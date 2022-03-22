@@ -683,6 +683,56 @@
                         </li>
                     </ul>
                   </li>
+                  <li>
+                    <a href="#api-biller-sending-payments" class="toc-h2 toc-link" data-title="API Biller">
+                      <span class="toc-link-content">
+                        API Biller
+                      </span>
+                         <img src="images/arrow-bottom-425d93ba.svg" class="active-parent icon-arrow" alt="" />
+                    </a>
+                    <ul class="toc-list-h3">
+                        <li>
+                          <a href="#transaction-flow-api-biller" class="toc-h3 toc-link" data-title="Transaction Flow">
+                            <span class="toc-link-content">
+                              Transaction Flow
+                            </span> 
+                            <img src="images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#key-features-api-biller" class="toc-h3 toc-link" data-title="Key Features">
+                            <span class="toc-link-content">
+                              Key Features
+                            </span> 
+                            <img src="images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#registration-and-set-up-api-biller" class="toc-h3 toc-link" data-title="Registration and Set Up">
+                            <span class="toc-link-content">
+                              Registration and Set Up
+                            </span> 
+                            <img src="images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#testing-api-biller" class="toc-h3 toc-link" data-title="Testing">
+                            <span class="toc-link-content">
+                              Testing
+                            </span> 
+                            <img src="images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#how-to-use-api-biller" class="toc-h3 toc-link" data-title="How to Use">
+                            <span class="toc-link-content">
+                              How to Use
+                            </span> 
+                            <img src="images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
+                          </a>
+                        </li>
+                    </ul>
+                  </li>
               </ul>
           </li>
           <li>
@@ -2078,6 +2128,193 @@ Best use of this feature is : refunds, reimbursement claim, any disburse transac
 <li><p>In parallel, your customer will also get email notification about successful claim fund transaction.
 <img src="images/claim-fund-user-success-e274ad50.png" alt="Create Claim Fund - user success" /></p></li>
 </ul>
+<h2 id='api-biller-sending-payments' type='normal'>API Biller</h2>
+<p>API biller product provides the capability for you to pay the bill products. With 130+ types of billing products, you can provide numerous bill payment options with ease and in real-time.
+The integration process to use the API biller product is straight forward and the details can be checked <a href="https://api-docs.oyindonesia.com/#biller-api">here</a>.  </p>
+<h3 id='transaction-flow-api-biller' type='normal'>Transaction Flow</h3>
+<p><img src="images/Flow_API_Biller-df0a4f41.png" alt="Transacation Flow" /></p>
+<h3 id='key-features-api-biller' type='normal'>Key Features</h3>
+<p><strong>Overbooking</strong>
+OY! can use the funds directly from your Mandiri or CIMB bank accounts for your bill payment needs. Please contact our <a href="partner@oyindonesia.com">business representative</a> for further details about this feature.</p>
+
+<p><strong>Check Transaction Status and Callback</strong></p>
+
+<p>For all bill inquiry &amp; bill payment executed, you will receive notifications regarding your transaction whether it is successful, failed or pending. We also provide an API for you to check the transaction status manually. IP proxy is also available upon request to enhance the security and integrity of the callback you will receive. </p>
+
+<p><strong>Check Balance</strong></p>
+
+<p>You can check your available balance at anytime to ensure that you have sufficient balance to execute a bill payment.</p>
+<h3 id='registration-and-set-up-api-biller' type='normal'>Registration and Set Up</h3>
+<p><strong>Prerequisites</strong> </p>
+
+<ul>
+<li><p>Register an account on the <a href="https://business.oyindonesia.com/register?">OY! dashboard</a></p></li>
+<li><p>Activate your account through the activation link sent via email</p></li>
+<li><p>Upgrade your account </p></li>
+<li><p>Upgrade request is approved</p></li>
+<li><p>Provide IP to be whitelisted and callback link to our business team</p></li>
+<li><p>Receive an API Key from us</p></li>
+<li><p>Integrate with our <a href="https://api-docs.oyindonesia.com/#biller-api">API</a></p></li>
+</ul>
+<h3 id='testing-api-biller' type='normal'>Testing</h3>
+<p>Once you successfully create an OY! account, you can immediately simulate bill payment via API.
+Follow the below steps to test the flow:</p>
+
+<ol>
+<li>Create an account</li>
+<li>Login into the dashboard </li>
+<li>Change the environment to “demo” </li>
+<li>Once the environment changed to demo, there will be API key demo available on the bottom left corner of the page</li>
+<li>Before creating a bill payment transaction, check your available balance through API GET <em>https://api-stg.oyindonesia.com/api/balance</em></li>
+<li>Request inquiry for the bill you want to pay by sending a ‘POST’ request to <em>https://api-stg.oyindonesia.com/api/v2/bill</em> using your staging API key. Enter the required and optional fields, as referenced in the API reference docs (https://api-docs.oyindonesia.com/#bill-inquiry-biller-api)</li>
+<li>Fill in the customer-id, product-id, and the partner transaction-id. You will get the detail information about the bill that you want to pay. </li>
+<li>After successful inquiry, you should do the payment process by sending a ‘POST’ request to <em>https://api-stg.oyindonesia.com/api/v2/bill/payment</em>. Enter the required and optional fields, as referenced in the API reference docs (https://api-docs.oyindonesia.com/#pay-bill-biller-api)</li>
+<li>To get the status of a bill payment request, you can call the API https://api-stg.oyindonesia.com/api/v2/bill/status</li>
+<li>If payment is successful or failed, we will send a callback to the registered staging callback URL destination. Callback URL can be registered via our business representative.</li>
+<li>The API biller transactions can be monitored through OY! dashboard from the “Send money - API biller&quot; menu.</li>
+</ol>
+<h3 id='how-to-use-api-biller' type='normal'>How to Use</h3>
+<p>In order to create API biller transaction, a sufficient available OY! balance is required in the account. More details and instructions about topping up to your OY! account can you see here https://docs.oyindonesia.com/#top-up-oy-dashboard-tutorial.</p>
+
+<p>Before you execute the bill payment, you have to verify the bill information from our <a href="https://api-docs.oyindonesia.com/#bill-inquiry-biller-api">bill inquiry endpoint</a>. </p>
+
+<blockquote>
+<p>Below is an example of the request body for inquiry:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST https://partner.oyindonesia.com/api/v2/bill 
+<span class="nt">-H</span> <span class="s1">'content-type: application/json, accept: application/json, x-oy-username:myuser, x-api-key:987654'</span> 
+<span class="nt">-d</span> <span class="s1">'{
+    "customer_id": "512233308943",
+    "product_id": "plnpost",
+    "partner_tx_id": "Tx15048563JKFJ"
+    }'</span>
+</code></pre></div>
+<blockquote>
+<p>It will return an <a href="https://api-docs.oyindonesia.com/#api-biller-response-codes-biller-api">error message</a> if the request is not valid. Otherwise, below is the sample response parameters that will be returned:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:{</span><span class="w">
+        </span><span class="nl">"code"</span><span class="p">:</span><span class="s2">"000"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"message"</span><span class="p">:</span><span class="s2">"Success"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"tx_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a3d87877-e579-4378-844b-c06294fc9564"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"partner_tx_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tx15048563JKFJ"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"product_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"plnpost"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"customer_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"512233308943"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"customer_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Plg.,De'mo 512233308943"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">282380</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"additional_data"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{</span><span class="se">\"</span><span class="s2">customer_id</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">512233308943</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">customer_name</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">Plg.,De'mo 512233308943</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">admin_fee</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">2.500</span><span class="se">\"</span><span class="s2">}"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+</blockquote>
+
+<p>Next, send a request body to execute a bill payment request to be sent to our <a href="https://api-docs.oyindonesia.com/#pay-bill-biller-api">bill payment endpoint</a>. </p>
+
+<blockquote>
+<p>Below is an example of the request body for the bill payment: </p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST https://partner.oyindonesia.com/api/v2/bill/payment 
+<span class="nt">-H</span> <span class="s1">'content-type: application/json, accept: application/json, x-oy-username:myuser, x-api-key:7654321'</span> 
+<span class="nt">-d</span> <span class="s1">'{
+    "partner_trx_id":"Tx15048563JKFJ", 
+    "note" :"biller transaction test"
+    }'</span>
+</code></pre></div>
+<blockquote>
+<p>Below is the sample response parameters that will be returned:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:{</span><span class="w">
+        </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"102"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Request is In progress"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"tx_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a3d87877-e579-4378-844b-c06294fc9564"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"partner_tx_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tx15048563JKFJ"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"product_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"plnpost"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"customer_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"512233308943"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"customer_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Plg.,De'mo 512233308943"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">282380</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"note"</span><span class="p">:</span><span class="w"> </span><span class="s2">"biller transaction test"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+</blockquote>
+
+<p>An endpoint to <a href="https://api-docs.oyindonesia.com/#get-bill-payment-status-biller-api">check the transaction</a> is also available and can be accessed at anytime. </p>
+
+<blockquote>
+<p>Below is an example of the request body: </p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST https://partner.oyindonesia.com/api/b2/bill/status 
+<span class="nt">-H</span> <span class="s1">'content-type: application/json, accept: application/json, x-oy-username:myuser, x-api-key:7654321'</span> 
+<span class="nt">-d</span> <span class="s1">'{
+    "partner_trx_id": "Tx15048563JKFJ"
+    }'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns a JSON structured similar like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:{</span><span class="w">
+        </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"000"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Success"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"tx_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a3d87877-e579-4378-844b-c06294fc9564"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"partner_tx_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tx15048563JKFJ"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"product_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"plnpost"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"customer_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"512233308943"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"customer_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Plg.,De'mo 512233308943"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">282380</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"additional_data"</span><span class="p">:</span><span class="w"> </span><span class="s2">"</span><span class="se">\"</span><span class="s2">{</span><span class="se">\\\"</span><span class="s2">bill_period</span><span class="se">\\\"</span><span class="s2">:</span><span class="se">\\\"</span><span class="s2">FEB2022</span><span class="se">\\\"</span><span class="s2">,</span><span class="se">\\\"</span><span class="s2">total_amount</span><span class="se">\\\"</span><span class="s2">:</span><span class="se">\\\"</span><span class="s2">282.380</span><span class="se">\\\"</span><span class="s2">,</span><span class="se">\\\"</span><span class="s2">customer_id</span><span class="se">\\\"</span><span class="s2">:</span><span class="se">\\\"</span><span class="s2">512233308943</span><span class="se">\\\"</span><span class="s2">,</span><span class="se">\\\"</span><span class="s2">customer_name</span><span class="se">\\\"</span><span class="s2">:</span><span class="se">\\\"</span><span class="s2">Plg.,De'mo 512233308943</span><span class="se">\\\"</span><span class="s2">,</span><span class="se">\\\"</span><span class="s2">admin_fee</span><span class="se">\\\"</span><span class="s2">:</span><span class="se">\\\"</span><span class="s2">2.500</span><span class="se">\\\"</span><span class="s2">,</span><span class="se">\\\"</span><span class="s2">settlement_date</span><span class="se">\\\"</span><span class="s2">:</span><span class="se">\\\"</span><span class="s2">09/03/2022 16:49</span><span class="se">\\\"</span><span class="s2">}</span><span class="se">\"</span><span class="s2">"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SUCCESS"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+</blockquote>
+
+<p>A callback with the following information will be sent to the callback endpoint that you can register with us. </p>
+
+<p>You can also <a href="https://api-docs.oyindonesia.com/#get-balance">check your balance</a> anytime to ensure you have sufficient balance from our endpoint.</p>
+
+<blockquote>
+<p>Below is an example of a request body to check the balance:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="s1">'https://partner.oyindonesia.com/api/balance'</span> 
+<span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> 
+<span class="nt">-H</span> <span class="s1">'Accept: application/json'</span> 
+<span class="nt">-H</span> <span class="s1">'X-OY-Username: janedoe'</span> 
+<span class="nt">-H</span> <span class="s1">'X-Api-Key: 7654321'</span>
+</code></pre></div>
+<blockquote>
+<p>Below is the sample response parameters that will be returned:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:{</span><span class="w">
+        </span><span class="nl">"code"</span><span class="p">:</span><span class="s2">"000"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"message"</span><span class="p">:</span><span class="s2">"Success"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"balance"</span><span class="p">:</span><span class="mf">100000000.0000</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"pendingBalance"</span><span class="p">:</span><span class="mf">2000000.0000</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"availableBalance"</span><span class="p">:</span><span class="mf">98500000.0000</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"overbookingBalance"</span><span class="p">:</span><span class="mf">98500000.0000</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="s2">"10-12-2019 12:15:37"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+</blockquote>
+
+<p>Lastly, all transactions can be monitored from the OY! dashboard which includes all the transaction details.</p>
+
+<p><img src="images/API_Biller-3313124e.png" alt="API Biller" /></p>
+
+<p>For further details on the parameters definition and proper usage, please refer to our <a href="https://api-docs.oyindonesia.com/#biller-api">API Documentation</a>.</p>
 <h1 id='accepting-payments' type='normal'>Accepting Payments</h1><h2 id='va-aggregator-accepting-payments' type='normal'>VA Aggregator</h2>
 <p>Businesses are struggling to manage hundreds or even thousands of physical bank accounts that are used for different purposes. It causes significant overhead cost in terms of the amount of account maintenance and man hours needed for reporting and reconciliation purposes, combining different information from different accounts.</p>
 
