@@ -853,9 +853,25 @@
                           </a>
                         </li>
                         <li>
-                          <a href="#how-to-use-invoice-via-dashboard-payment-links-invoice" class="toc-h3 toc-link" data-title="How to Use Invoice via Dashboard">
+                          <a href="#how-to-use-invoice-account-receivable-via-dashboard-payment-links-invoice" class="toc-h3 toc-link" data-title="How to Use Invoice/Account Receivable via Dashboard">
                             <span class="toc-link-content">
-                              How to Use Invoice via Dashboard
+                              How to Use Invoice/Account Receivable via Dashboard
+                            </span> 
+                            <img src="images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#creating-a-customer-for-account-receivable-invoice-payment-links-invoice" class="toc-h3 toc-link" data-title="Creating a Customer for Account Receivable/Invoice">
+                            <span class="toc-link-content">
+                              Creating a Customer for Account Receivable/Invoice
+                            </span> 
+                            <img src="images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#amount-customization-for-account-receivable-invoice-payment-links-invoice" class="toc-h3 toc-link" data-title="Amount Customization for Account Receivable/Invoice">
+                            <span class="toc-link-content">
+                              Amount Customization for Account Receivable/Invoice
                             </span> 
                             <img src="images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
                           </a>
@@ -3542,12 +3558,12 @@ You can upload an invoice attachment or create an attachment using the OY! PDF t
 </tbody></table>
 
 <p><img src="images/reusable_link_child-abc3dd6f.png" alt="Payment Link" /></p>
-<h3 id='how-to-use-invoice-via-dashboard-payment-links-invoice' type='normal'>How to Use Invoice via Dashboard</h3>
+<h3 id='how-to-use-invoice-account-receivable-via-dashboard-payment-links-invoice' type='normal'>How to Use Invoice/Account Receivable via Dashboard</h3>
 <ol>
 <li>Log on your OY! dashboard</li>
 <li>Choose &quot;Production&quot; environment</li>
-<li>Click &quot;Request Money&quot; menu, and choose &quot;Invoice&quot;</li>
-<li>Click &quot;Create Invoice&quot;</li>
+<li>Click &quot;Create Invoice&quot; under Account Receivable menu</li>
+<li>Click &quot;Create New Invoice&quot;</li>
 <li>Fill in the necessary details</li>
 </ol>
 
@@ -3558,12 +3574,48 @@ You can upload an invoice attachment or create an attachment using the OY! PDF t
 </tr>
 </thead><tbody>
 <tr>
-<td>Amount Type</td>
-<td>You can choose between Open Amount and Closed Amount. Open Amount = can accept payments of any amount, OR up to the specified amount (if amount is filled in). Closed Amount = only accept payments of the specified amount</td>
+<td>Invoice Number</td>
+<td>The number of the invoice to be created</td>
 </tr>
 <tr>
-<td>Partner Transaction ID</td>
-<td>A unique transaction ID that you can assign for a transaction</td>
+<td>Invoice Date</td>
+<td>The date of the invoice</td>
+</tr>
+<tr>
+<td>Due Date</td>
+<td>Due date of a transaction. You can choose between 7, 14, 30, 45, or 60 days after created date of the invoice OR you can also input a specific/custom date. Your customer will get reminders to pay on D-1, D-Day, and D+7 from the transaction due date.</td>
+</tr>
+<tr>
+<td>Customer</td>
+<td>The name of the customer that the invoice is addressed to. You can choose the name of the customer from the dropdown. To create a new customer, follow the instruction on xxxxx</td>
+</tr>
+<tr>
+<td>Product Description</td>
+<td>The name and/or description of the product</td>
+</tr>
+<tr>
+<td>Quantity</td>
+<td>The quantity of the product</td>
+</tr>
+<tr>
+<td>Unit price</td>
+<td>Unit price of the product</td>
+</tr>
+<tr>
+<td>Amount</td>
+<td>Total amount for the product</td>
+</tr>
+<tr>
+<td>Notes</td>
+<td>The note to be displayed in the automatically generated invoice file</td>
+</tr>
+<tr>
+<td>Additional Documents</td>
+<td>The supporting documents that will be attached in the email along with the invoice. Accept PDF &amp; Excel files. Maximum of 4 documents (maximum 5MB each).</td>
+</tr>
+<tr>
+<td>Invoice Payment</td>
+<td>You can choose between &quot;Payment Link&quot; (the invoice will be embedded with a payment link that the customer can use to make a payment on) or &quot;Invoice Only&quot; (the invoice will not be embedded with a payment link)</td>
 </tr>
 <tr>
 <td>Payment Method</td>
@@ -3573,41 +3625,41 @@ You can upload an invoice attachment or create an attachment using the OY! PDF t
 <td>Admin Fee Method</td>
 <td>You can choose between &quot;Included in total amount&quot; or &quot;Excluded from total amount&quot;. &quot;Included in total amount&quot; means the admin fee will be deducted from the payment amount made by the customer. &quot;Excluded from total amount&quot; means the admin fee will be added to the customer&#39;s total payment (Total Amount = Specified Amount + Admin Fee)</td>
 </tr>
-<tr>
-<td>Payment Link Expiration Date</td>
-<td>You can choose between &quot;Default&quot; and &quot;Custom&quot;. &quot;Default&quot; means the payment link will expire 24 hours after it is created. &quot;Custom&quot; means you can specify the expired date. The payment link will expire when this specified expired date is reached</td>
-</tr>
-<tr>
-<td>Transaction Due Date</td>
-<td>Due date of a transaction. You can choose between &quot;Same with Payment Link Expiration Date&quot; and &quot;Custom&quot;. Your customer will get reminders to pay on D-1, D-Day, and D+7 from the transaction due date. A transaction can exceed the due date, but the link can still be opened (because transaction due date and link expiration time are 2 separate things).</td>
-</tr>
-<tr>
-<td>Partner User ID</td>
-<td>ID assigned for a specific user/customer</td>
-</tr>
-<tr>
-<td>VA Static</td>
-<td>You can choose between &quot;Disable&quot; and &quot;Enable&quot;. &#39;Disable&quot; means a new VA number will be assigned for the respective Partner User ID (if the user chooses to pay via VA). &quot;Enable&quot; means we will assign a static VA for the respective Partner User ID (if the user chooses to pay via VA). The VA number assigned will be the same for the respective partner user ID</td>
-</tr>
-<tr>
-<td>Customer Full Name</td>
-<td>Full name of your customer that will be displayed in the invoice link.</td>
-</tr>
-<tr>
-<td>Invoice Detail</td>
-<td>You can choose between attaching the PDF file of your invoice and input the item list (such as Item Name, Price, and Quantity). Note that the subtotal of price and quantity inputted here must be the same with the total amount inputted in he field above.</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>The description of the payment link. Usually this is used to describe the purpose of the payment link page</td>
-</tr>
-<tr>
-<td>Customer Detail</td>
-<td>Details that can be specified: Customer Phone Number, Email, and Notes. We will send the payment link as well as the payment success receipt to the specified email address (if email address is filled in).</td>
-</tr>
 </tbody></table>
 
-<p>Whether you create the link through URL, dashboard, or API, you can see the details of your link on the OY! Dashboard. The details that can be checked are the created date of the link, amount billed, amount received, expiration date, and status.</p>
+<p><img src="images/create_new_invoice_1-3a6b2233.png" alt="Invoice" /></p>
+
+<p><img src="images/create_new_invoice_2-7f5b14ba.png" alt="Invoice" /></p>
+<h3 id='creating-a-customer-for-account-receivable-invoice-payment-links-invoice' type='normal'>Creating a Customer for Account Receivable/Invoice</h3>
+<p><img src="images/add_new_customer-9f6436a8.png" alt="Invoice" /></p>
+
+<ol>
+<li>Click dropdown of the &quot;Customer&quot;</li>
+<li>Click &quot;Add new customer&quot;</li>
+<li>Fill in Customer ID, Customer Name (mandatory), PIC Name, Customer Phone Number, Tax Type (mandatory), Customer Email, Address.</li>
+<li>Click save</li>
+</ol>
+
+<p>For Tax Type, the explanation is as follows:</p>
+
+<p>| No tax           | Tax will not be added upon the subtotal                                                                                                                          |
+| PPN 10% Exclusive            | PPN 10% of the subtotal will be added upon the subtotal of the invoice. For example is subtotal is 10,000, then the PPN will be 10% of the 10,000 = 1,000                |
+| PPN 10% Inclusive          | Tax will not be added upon the subtotal because the subtotal is assumed to be tax inclusive   |</p>
+<h3 id='amount-customization-for-account-receivable-invoice-payment-links-invoice' type='normal'>Amount Customization for Account Receivable/Invoice</h3>
+<p>We have a feature that allows you to add the price of the subtotal (addition) and/or deduct the price from subtotal. The step is as follows:</p>
+
+<p><img src="images/add_column_amount_customization-bc8b29b6.png" alt="Invoice" /></p>
+
+<ol>
+<li>Click &quot;add column&quot; below the subtotal</li>
+<li>Choose &quot;addition&quot; or &quot;substraction&quot; from the dropdown</li>
+<li>Fill in the description</li>
+<li>Fill in the amount</li>
+</ol>
+
+<p><img src="images/column_addition_substraction-0d1c136a.png" alt="Invoice" /></p>
+
+<p><img src="images/after_state_amount_customization-96843090.png" alt="Invoice" /></p>
 <h3 id='how-to-use-payment-link-invoice-via-api-payment-links-invoice' type='normal'>How to Use Payment Link/Invoice via API</h3>
 <p>We provide 3 different payment link endpoints depending on your requirements and needs. We provide payment link, invoicing, and recurring invoice.</p>
 
