@@ -1034,6 +1034,48 @@
                         </li>
                     </ul>
                   </li>
+                  <li>
+                    <a href="#feature-resend-callback-accepting-payments" class="toc-h2 toc-link" data-title="Feature: Resend Callback">
+                      <span class="toc-link-content">
+                        Feature: Resend Callback
+                      </span>
+                         <img src="images/arrow-bottom-425d93ba.svg" class="active-parent icon-arrow" alt="" />
+                    </a>
+                    <ul class="toc-list-h3">
+                        <li>
+                          <a href="#key-features-feature-resend-callback" class="toc-h3 toc-link" data-title="Key Features">
+                            <span class="toc-link-content">
+                              Key Features
+                            </span> 
+                            <img src="images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#registration-and-set-up-feature-resend-callback" class="toc-h3 toc-link" data-title="Registration and Set Up">
+                            <span class="toc-link-content">
+                              Registration and Set Up
+                            </span> 
+                            <img src="images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#callback-interval-feature-resend-callback" class="toc-h3 toc-link" data-title="Callback Interval">
+                            <span class="toc-link-content">
+                              Callback Interval
+                            </span> 
+                            <img src="images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#idempotency-key-feature-resend-callback" class="toc-h3 toc-link" data-title="Idempotency Key">
+                            <span class="toc-link-content">
+                              Idempotency Key
+                            </span> 
+                            <img src="images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
+                          </a>
+                        </li>
+                    </ul>
+                  </li>
               </ul>
           </li>
           <li>
@@ -4192,6 +4234,67 @@ Follow the below steps to test the Payment Routing flow:</p>
 <li>If payment is successful, we will send a callback to the registered staging callback URL destination.</li>
 <li>You can monitor Payment Routing transaction through OY! Dashboard or call the endpoint API. Go to “Payment Routing” menu to monitor your transactions.</li>
 </ol>
+<h2 id='feature-resend-callback-accepting-payments' type='normal'>Feature: Resend Callback</h2><h3 id='key-features-feature-resend-callback' type='normal'>Key Features</h3>
+<p>Retry Callback allows you to resend a callback for your successful transaction to your system. Initially, OY! will send a callback to your system after your transaction status has been converted to success. If your system failed to receive the callback, this feature can help you to retry the callback process. The process can be done in two ways</p>
+
+<ol>
+<li><p>Automated retry callback
+If on the first try the callback is not successfully received, the system will automatically retry the callback delivery. If that callback still not received by the clients&#39;  system, the system will automatically retry until 5 occurence. The interval of the sending process will be detailed in Callback Interval section. If all automated Retry Callback have been sent but still returned failed, system will send email notification to email address that has been set in the configuration.</p></li>
+<li><p>Manual retry callback
+Beside the automated process, you can manually request a callback.</p></li>
+</ol>
+<h3 id='registration-and-set-up-feature-resend-callback' type='normal'>Registration and Set Up</h3>
+<p>Follow the instruction below to activate retry callback</p>
+
+<ol>
+<li>Login to your account in OY! Dashboard</li>
+<li>Open “Settings” and choose “Developer Option”. Choose “Callback Configuration”</li>
+<li>Fill your callback URL in the related product that you want to activate. Make sure the format is right. You can click URL String Validation button to validate the URL format.</li>
+<li>If you want to activate automated retry callback, check the Enable Automatic Retry Callback and fill in the email. The email will be used to receive a notification if all the automatic callback attempts have been made but still fail</li>
+<li>Click &quot;Save Changes&quot;. The configuration will not able to be saved if the callback URL or/and email format are not valid.</li>
+</ol>
+
+<p><img src="images/retry_callback_developer_option-d8e35a4c.png" alt="Resend Callback" /></p>
+
+<p>Don&#39;t forget to whitelist these IPs in order to be able to receive callback from OY: 54.151.191.85 and 54.179.86.72</p>
+
+<p>If you want to manually resend a callback, you can follow the instruction below</p>
+
+<ol>
+<li>Login to your account in OY! Dashboard</li>
+<li>Open the desired product menu</li>
+</ol>
+
+<p>Payment Link: open &quot;Payment Link&quot; and choose &quot;One Time&quot;/&quot;Reusable&quot;
+VA Aggregator: open &quot;Virtual Account&quot; menu and choose &quot;Incoming Payment&quot;
+Ewallet Aggregator: open &quot;E-Wallet&quot; menu</p>
+
+<ol>
+<li>If the product is VA Aggregator or Ewallet Aggregator, click &quot;Resend Callback&quot; button in the related transaction</li>
+<li>If the product product is Payment Link, click 3 dots in the related transaction and click &quot;Resend Callback&quot;</li>
+</ol>
+
+<p><img src="images/payment_link_resend_callback-a208006e.png" alt="Resend Callback" /></p>
+
+<p><img src="images/reusable_resend_callback-83974787.png" alt="Resend Callback" /></p>
+
+<p><img src="images/images/va_resend_callback.png" alt="Resend Callback" /></p>
+
+<p><img src="images/ewallet_resend_callback-71fd871b.png" alt="Resend Callback" /></p>
+<h3 id='callback-interval-feature-resend-callback' type='normal'>Callback Interval</h3>
+<p>1st retry: realtime (after the first failed log received)
+2nd retry: 1 min (after callback failed log for the 1st retry is received)
+3rd retry: 2 mins (after callback failed log for the 2nd retry is received)
+4th retry: 13 mins (after callback failed log for the 3rd retry is received)
+5th retry: 47 mins (after callback failed log for the 4th retry is received)</p>
+
+<p>If all automated Retry Callback (all the 5 attempts) has been sent but we still get a Failed response from your end, our system will send an automated email notification to the  email address that has been set in the configuration earlier</p>
+<h3 id='idempotency-key-feature-resend-callback' type='normal'>Idempotency Key</h3>
+<p>To implement automated retry callback, you need to handle the idempotency logic in your system using the below key:</p>
+
+<p>Payment Link - Invoice: tx_ref_number
+VA: trx_id
+Ewallet: trx_id OR ref_number</p>
 <h1 id='faqs' type='normal'>FAQs</h1><h2 id='api-and-bulk-disbursement-faqs' type='normal'>API and Bulk Disbursement</h2>
 <p><strong>What are bank maintenance schedules? Will partners be informed?</strong></p>
 
