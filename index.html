@@ -733,6 +733,32 @@
                         </li>
                     </ul>
                   </li>
+                  <li>
+                    <a href="#account-payable-sending-payments" class="toc-h2 toc-link" data-title="Account Payable">
+                      <span class="toc-link-content">
+                        Account Payable
+                      </span>
+                         <img src="images/arrow-bottom-425d93ba.svg" class="active-parent icon-arrow" alt="" />
+                    </a>
+                    <ul class="toc-list-h3">
+                        <li>
+                          <a href="#how-to-use-account-payable-via-dashboard-account-payable" class="toc-h3 toc-link" data-title="How to Use Account Payable via Dashboard">
+                            <span class="toc-link-content">
+                              How to Use Account Payable via Dashboard
+                            </span> 
+                            <img src="images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#how-to-create-edit-and-inactivate-vendor-data-account-payable" class="toc-h3 toc-link" data-title="How to Create, Edit and Inactivate Vendor Data">
+                            <span class="toc-link-content">
+                              How to Create, Edit and Inactivate Vendor Data
+                            </span> 
+                            <img src="images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
+                          </a>
+                        </li>
+                    </ul>
+                  </li>
               </ul>
           </li>
           <li>
@@ -2364,6 +2390,259 @@ Follow the below steps to test the flow:</p>
 <p><img src="images/API_Biller-3313124e.png" alt="API Biller" /></p>
 
 <p>For further details on the parameters definition and proper usage, please refer to our <a href="https://api-docs.oyindonesia.com/#biller-api">API Documentation</a>.</p>
+<h2 id='account-payable-sending-payments' type='normal'>Account Payable</h2>
+<p>OY! Account Payable product provides the capability to record, create approval level, and auto payment for invoice payable without hassle. Account Payable is made through the OY! dashboard, so no technical integration is required to use this product. </p>
+<h3 id='how-to-use-account-payable-via-dashboard-account-payable' type='normal'>How to Use Account Payable via Dashboard</h3>
+<p>You can create new invoice to be paid and set up payment by following this step:</p>
+
+<ol>
+<li>Log on to your OY! dashboard</li>
+<li>Choose &quot;Production&quot; environment</li>
+<li>Click &quot;Pay Invoice&quot; under Account Payable menu</li>
+<li>Click &quot;Invoice List&quot;</li>
+<li>Choose &quot;Create New Invoice&quot;</li>
+<li>Upload your invoice document to help you easier record the invoice by click &quot;Browse to Upload&quot; or Drag &amp; drop to the invoice area</li>
+<li><p>Fill in the necessary details</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Purchase Type</td>
+<td>You can choose between purchase order, service fee, bill, subscription fee, and reimbursement</td>
+</tr>
+<tr>
+<td>Invoice Number</td>
+<td>The number of the invoice that you get from your vendor/supplier</td>
+</tr>
+<tr>
+<td>Invoice Date</td>
+<td>The date of the invoice</td>
+</tr>
+<tr>
+<td>Due Date</td>
+<td>Due date of a transaction as mention in invoice. Your approver will be reminder to approved on D-7, D-3, and D-1 from the invoice due date</td>
+</tr>
+<tr>
+<td>PO/PR Number (optional)</td>
+<td>The reference PO/PR number from your company to track this invoice</td>
+</tr>
+<tr>
+<td>Note</td>
+<td>The note for this invoice</td>
+</tr>
+<tr>
+<td>Vendor</td>
+<td>The name of the vendor that this invoice belongs to. You can choose the name of the vendor on the dropdown. To create a new vendor, follow the instruction here</td>
+</tr>
+<tr>
+<td>Product Description</td>
+<td>The name and/or description of the product</td>
+</tr>
+<tr>
+<td>Quantity</td>
+<td>The quantity of the product</td>
+</tr>
+<tr>
+<td>Price</td>
+<td>Unit price of the product</td>
+</tr>
+<tr>
+<td>Total</td>
+<td>Total price of the product (Total = Quantity x Price)</td>
+</tr>
+<tr>
+<td>Subtotal</td>
+<td>The total price of all the products</td>
+</tr>
+<tr>
+<td>PPn</td>
+<td>PPn that should be paid to the vendor. PPn will be calculate from subtotal. You can set up this when create the vendor or edit in &#39;Vendor Management&#39; menu under Account Payable</td>
+</tr>
+<tr>
+<td>PPh</td>
+<td>PPh that should be deduct from the vendor. PPh will be calculate from subtotal.You can set up this when create the vendor or edit in &#39;Vendor Management&#39; menu under Account Payable</td>
+</tr>
+<tr>
+<td>Total Pay to Vendor</td>
+<td>Total amount that will pay to vendor after complete approval</td>
+</tr>
+<tr>
+<td>Reference Documents (Upload document)</td>
+<td>The supporting documents that you want to record related to this invoice. Accept PDF files only. Maximum 7 documents (maximum 2.5MB each)</td>
+</tr>
+</tbody></table>
+
+<p>Note: Maximum 20 rows for line item detail</p>
+
+<p><strong>Image Account Payable</strong>
+<img src="images/accountPayable/invoice_creation_1-d95f0297.png" alt="AP Invoice Creation One" /></p></li>
+<li><p>Continue to set up &#39;Invoice Payment Details&#39;. You can set up the payment to one time payment by choosing &#39;Full Payment&#39; or multiple times payment by choosing &#39;Partial Payment&#39;.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Payment Amount</td>
+<td>Amount that will be automatically paid to vendor after approval.</td>
+</tr>
+<tr>
+<td>Due Date</td>
+<td>The due date of the payment. The due date cannot do back date or more than due date that set in the first page (record invoice). Notification will be send to approval D-7, D-3, and D-1 if the status is waiting aproval.</td>
+</tr>
+<tr>
+<td>Status</td>
+<td>Status of the invoice payment. You can choose Paid&#39; for record intention and this amount will not be paid automatically by system. Choose &#39;Unpaid&#39; for</td>
+</tr>
+<tr>
+<td>Remaining Amount</td>
+<td>Total pay to vendor - subtotal. This amount should be 0 to continue the process.</td>
+</tr>
+</tbody></table>
+
+<p><strong>Image Payment Page</strong>
+<img src="images/accountPayable/invoice_creation_2-eb0509f3.png" alt="AP Invoice Creation Two" /></p>
+
+<p><img src="images/accountPayable/invoice_creation_transaction_list-2b00c0c6.png" alt="AP Invoice Creation Transaction List" /></p></li>
+<li><p>Status: Waiting Payment, Partially Paid, Complete and Cancelled
+Congratulations! You have finish your first invoice payable set up. below is the list of statuses you will find on &#39;Invoice List&#39;</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Partially Paid</td>
+<td>Multi times payment or partially paid that not finish yet. You can click invoice number to find the partial payment details in &#39;payment transaction&#39; tab</td>
+</tr>
+<tr>
+<td>Waiting Payment</td>
+<td>Waiting for approval or balance not enough</td>
+</tr>
+<tr>
+<td>Cancelled</td>
+<td>Invoice has been cancelled</td>
+</tr>
+<tr>
+<td>Complete</td>
+<td>All payment of the invoice is complete</td>
+</tr>
+</tbody></table>
+
+<p><strong>List of the Invoice Payable</strong>
+<img src="images/accountPayable/invoice_list_payable-253bed12.png" alt="AP Invoice List Payable" /></p></li>
+</ol>
+<h3 id='how-to-create-edit-and-inactivate-vendor-data-account-payable' type='normal'>How to Create, Edit and Inactivate Vendor Data</h3>
+<p><strong>Add New Vendor for Account Payable</strong></p>
+
+<ol>
+<li>Click &#39;Add&#39; in the &#39;Vendor&#39; field in the &#39;Create Payable Invoice&#39; page.</li>
+<li>Fill in the necessary details</li>
+<li>Click &#39;Add Vendor&#39; after complete registration of new vendor</li>
+</ol>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Vendor ID (Optional)</td>
+<td>Unique ID of the vendor from your company. This is not mandatory</td>
+</tr>
+<tr>
+<td>Vendor Name</td>
+<td>The company/vendor name. Make sure the vendor name matches the vendor NPWP (if any) to help your company tax record</td>
+</tr>
+<tr>
+<td>Vendor Address (Optional)</td>
+<td>Vendor address to be record. This is not mandatory</td>
+</tr>
+<tr>
+<td>Bank Name</td>
+<td>Recipient bank name. You can choose using drop down</td>
+</tr>
+<tr>
+<td>Account Number</td>
+<td>Recipient bank account number. You can check the inquiry by click &#39;Get Account Name&#39; after fill the account number</td>
+</tr>
+<tr>
+<td>PIC Name</td>
+<td>The PIC name of this vendor</td>
+</tr>
+<tr>
+<td>PIC Email</td>
+<td>The PIC or recipient email. Payment/transfer receipt will be send automatically to this email after complete payment</td>
+</tr>
+<tr>
+<td>PIC WhatsApp (optional)</td>
+<td>The PIC WhatsApp number for your record</td>
+</tr>
+<tr>
+<td>PPh (optional)</td>
+<td>PPh type from this vendor. Default of the setting is Not Subject to PPh.</td>
+</tr>
+<tr>
+<td>Vendor NPWP (optional)</td>
+<td>The vendor NPWP number record that can be use for company reference to generate &#39;Faktur Pajak&#39;</td>
+</tr>
+<tr>
+<td>NPWP Document (optional)</td>
+<td>Vendor NPWP document to be record. Accept PDF and JPG format. Maximum 10 MB</td>
+</tr>
+<tr>
+<td>PPn (optional)</td>
+<td>PPn type of this vendor. Default of the setting is Not Subject to PPn.</td>
+</tr>
+<tr>
+<td>SKB Document (optional)</td>
+<td>Vendor SKB Document to be record. Accept PDF and JPG format. Maximum 10 MB</td>
+</tr>
+</tbody></table>
+
+<p>| Not subject of PPh | Tax will not be added upon the subtotal |</p>
+
+<p>| Not subject of PPn | Tax will not be added upon the subtotal |
+| PPN 10% Exclusive | PPN 10% of the subtotal will be added upon the subtotal of the invoice. For example is subtotal is 10,000, then the PPN will be 10% of the 10,000 = 1,000 |
+| PPN 10% Inclusive | Tax will not be added upon the subtotal because the subtotal is assumed to be tax inclusive |</p>
+
+<p>Each vendor only have 1 type of PPh setting and 1 type of PPn setting</p>
+
+<p>There will be auto email PPh every 1st day in a month that contain all the PPh from your vendor in the previous month. This report will help company for tax payment &amp; reporting, and generate &#39;Faktur Pajak&#39; to your vendor.</p>
+
+<p><strong>Create New Vendor</strong>
+<img src="images/vendorManagement/creation-40890d05.png" alt="VM Vendor Creation" /></p>
+
+<p><strong>List Of Vendor</strong>
+<img src="images/vendorManagement/list-da5074a6.png" alt="VM Vendor List" /></p>
+
+<p><strong>Vendor Detail</strong>
+<img src="images/vendorManagement/detail-19b86d7a.png" alt="VM Vendor Detail" /></p>
+
+<p><strong>How to Set Up Invoice Payable Approval</strong></p>
+
+<p>You can set up multi level approval from OY&#39;s users. There will be 4 type or user: Super Admin, Admin, Approver, and Maker</p>
+
+<p><strong>Approval Layer Set Up</strong></p>
+
+<p>Approval Layer can be set up using &#39;User Management&#39; under &#39;General&#39; menu. When you first create an account, your account will be assigned as a Super Admin role. As a Super Admin, you have the ability to create new sub-accounts and assign different roles to your team such as Admin, Maker and Approver that are applicable for bulk disbursement. The Super Admin and Admin can also edit or delete created sub-accounts.
+Note: it is not necessary to create new sub-accounts in order to use Account Payable. The Super Admin and Admin roles allows you to directly create and approve Account Payable and also Bulk Disbursement.
+Detailed step-by-step instructions on setting up user management and the different role types coming soon.</p>
+
+<p><strong>Multi-Layer Approval</strong></p>
+
+<p>Multi-layer Approval will improve your control over your bulk disburse transaction especially for big amount of money. You can setup up to 3 layers of approver before the transaction instruction is executed. By assigning proper approver and amount limitation, you can avoid a huge trouble on your business operational caused by incorrect transfer amount.</p>
+
+<p>Default approval: Super Admin, Admin, and Approval.</p>
 <h1 id='accepting-payments' type='normal'>Accepting Payments</h1><h2 id='va-aggregator-accepting-payments' type='normal'>VA Aggregator</h2>
 <p>Businesses are struggling to manage hundreds or even thousands of physical bank accounts that are used for different purposes. It causes significant overhead cost in terms of the amount of account maintenance and man hours needed for reporting and reconciliation purposes, combining different information from different accounts.</p>
 
