@@ -536,6 +536,56 @@
                         </li>
                     </ul>
                   </li>
+                  <li>
+                    <a href="#xero-integration-oy-dashboard-tutorial" class="toc-h2 toc-link" data-title="Xero Integration">
+                      <span class="toc-link-content">
+                        Xero Integration
+                      </span>
+                         <img src="images/arrow-bottom-425d93ba.svg" class="active-parent icon-arrow" alt="" />
+                    </a>
+                    <ul class="toc-list-h3">
+                        <li>
+                          <a href="#how-it-works-xero-integration" class="toc-h3 toc-link" data-title="How it works?">
+                            <span class="toc-link-content">
+                              How it works?
+                            </span> 
+                            <img src="images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#connect-your-xero-xero-integration" class="toc-h3 toc-link" data-title="Connect your Xero">
+                            <span class="toc-link-content">
+                              Connect your Xero
+                            </span> 
+                            <img src="images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#map-your-chart-of-account-xero-integration" class="toc-h3 toc-link" data-title="Map your Chart of Account">
+                            <span class="toc-link-content">
+                              Map your Chart of Account
+                            </span> 
+                            <img src="images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#record-transaction-to-xero-xero-integration" class="toc-h3 toc-link" data-title="Record Transaction to Xero">
+                            <span class="toc-link-content">
+                              Record Transaction to Xero
+                            </span> 
+                            <img src="images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#disconnected-your-xero-xero-integration" class="toc-h3 toc-link" data-title="Disconnected your Xero">
+                            <span class="toc-link-content">
+                              Disconnected your Xero
+                            </span> 
+                            <img src="images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
+                          </a>
+                        </li>
+                    </ul>
+                  </li>
               </ul>
           </li>
           <li>
@@ -1710,6 +1760,35 @@ After confirming, the request will be sent to the respective account to be accep
 <p><img src="images/reusable_pc_mam_flow-7954d13f.png" alt="MAM Payment Link" /></p>
 
 <p>Preview for reusable payment link</p>
+<h2 id='xero-integration-oy-dashboard-tutorial' type='normal'>Xero Integration</h2>
+<p>Xero is an accounting platform that is mainly used by companies. We have integrated our system to Xero system in order to help you optimize your workflow. By connecting your OY! account to your Xero account, you do not have to login to your Xero account. Means that you do not have to manually record your transaction that happened in OY! to Xero. You will get seamless experience of recording your transaction.</p>
+<h3 id='how-it-works-xero-integration' type='normal'>How it works?</h3>
+<p>Once you have connected your Xero account in OY!, any transaction that happened in OY! will be automatically recorded to your Xero tenant account. Upon successful connection, we will trigger creation of new Bank Account, which is OY! Balance Bank Account. Any transaction that happened in OY! will be recorded in that bank account, to SPEND or RECEIVE money transaction. Then, you will be required to map your Xero’s Chart of Account. Mapping your Chart of Accounts will help us to put your transaction into a correct Account.</p>
+<h3 id='connect-your-xero-xero-integration' type='normal'>Connect your Xero</h3>
+<ol>
+<li>Login to your dashboard. In the sidebar, select Integration menu.</li>
+<li>You will see Xero menu. Click “Connect” to connect your Xero account to OY!. You will be redirected to Xero’s login page. Once you have successfully logged in to Xero, a notification will appear.</li>
+<li>Upon success connect to Xero, we will create a new Bank Account into your Xero account, named “OY! balance” in which any transaction happened in OY! will be recorded there.</li>
+</ol>
+<h3 id='map-your-chart-of-account-xero-integration' type='normal'>Map your Chart of Account</h3>
+<ol>
+<li>Once you have successfully connected to Xero, you will be directed to a page to map your Chart of Account.</li>
+<li>Then, map each product to the corresponding Account. Any transaction using each product will be put into the chart of account you defined in this page. Note: For Bulk Disbursement, you also can define in the create campaign page. </li>
+<li>You can change the CoA mapping anytime as needed, just go to Integration &gt;&gt; Xero &gt;&gt; Configuration.</li>
+</ol>
+<h3 id='record-transaction-to-xero-xero-integration' type='normal'>Record Transaction to Xero</h3>
+<ol>
+<li>Now, your OY! account has been connected to your Xero account and each products has been mapped to its corresponding Chart of Account.</li>
+<li>Any success transaction that happened in OY! will be recorded to Xero with the corresponding Account you defined in Mapping Account menu.</li>
+<li>Transaction in OY! will be treated as SPEND or RECEIVE money transaction in a bank account (OY! Balance). </li>
+<li>Each transaction will contains of two rows. Row 1 contains of amount of transaction where row 2 contains of admin fee.</li>
+<li>In this version, any tax will be excluded. Means that you will need to input manually the tax invoice you obtained from OY! team to your Xero.</li>
+</ol>
+<h3 id='disconnected-your-xero-xero-integration' type='normal'>Disconnected your Xero</h3>
+<ol>
+<li>To disconnect your Xero account from OY!, open the Integration menu on the sidebar. Then select “Disconnect”.</li>
+<li>Then, you will be disconnected from Xero. Any transaction that you execute via OY! will not be recorded into Xero.</li>
+</ol>
 <h1 id='sending-payments' type='normal'>Sending Payments</h1><h2 id='api-disbursement-sending-payments' type='normal'>API Disbursement</h2>
 <p>API disbursement product provides the capability for you to disburse to 100+ banks in Indonesia via OY! at any time. The integration process to use the API disbursement product is straight forward and the details can be checked <a href="https://api-docs.oyindonesia.com/#fund-disbursement">here</a>.  </p>
 <h3 id='key-features-api-disbursement' type='normal'>Key Features</h3>
