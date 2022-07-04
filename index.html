@@ -937,6 +937,14 @@
                           </a>
                         </li>
                         <li>
+                          <a href="#monitoring-the-invoices-account-receivable-payment-links-invoice" class="toc-h3 toc-link" data-title="Monitoring the invoices/account receivable">
+                            <span class="toc-link-content">
+                              Monitoring the invoices/account receivable
+                            </span> 
+                            <img src="images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
+                          </a>
+                        </li>
+                        <li>
                           <a href="#creating-a-customer-for-account-receivable-invoice-payment-links-invoice" class="toc-h3 toc-link" data-title="Creating a Customer for Account Receivable/Invoice">
                             <span class="toc-link-content">
                               Creating a Customer for Account Receivable/Invoice
@@ -4021,7 +4029,77 @@ You can upload an invoice attachment or create an attachment using the OY! PDF t
 <p><img src="images/create_new_invoice_1-3a6b2233.png" alt="Invoice" /></p>
 
 <p><img src="images/create_new_invoice_2-7f5b14ba.png" alt="Invoice" /></p>
+<h3 id='monitoring-the-invoices-account-receivable-payment-links-invoice' type='normal'>Monitoring the invoices/account receivable</h3>
+<p><img src="images/invoice_list-cd0a2940.png" alt="Invoice" /></p>
+
+<p>All of the created invoices can be monitored through your dashboard (Invoice List).</p>
+
+<p>The transaction details that you can see are;</p>
+
+<table><thead>
+<tr>
+<th>Column Name</th>
+<th>Definition</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Invoice Number</td>
+<td>The number of the invoice created</td>
+</tr>
+<tr>
+<td>Customer Name</td>
+<td>The name of the customer whom the invoice belongs to</td>
+</tr>
+<tr>
+<td>Amount Billed</td>
+<td>The amount billed for that particular transaction</td>
+</tr>
+<tr>
+<td>Admin Fee</td>
+<td>The admin fee charged for that particular transaction</td>
+</tr>
+<tr>
+<td>Amount Received</td>
+<td>The amount received / the amount of payment made by the user. This will only be filled in if the user has completed the payment.</td>
+</tr>
+<tr>
+<td>Invoice Date</td>
+<td>The date of the invoice.</td>
+</tr>
+<tr>
+<td>Payment Date</td>
+<td>The date of payment (if the invoice has been successfully paid by the customer)</td>
+</tr>
+<tr>
+<td>Due Date</td>
+<td>The invoice due date</td>
+</tr>
+<tr>
+<td>Days Past Due</td>
+<td>How many days an invoice has gone unpaid past the due date. For example, if due date is 1 July and the invoice is not paid by 4 July, then Days Past Due will be filled in with 3</td>
+</tr>
+<tr>
+<td>Status</td>
+<td>The transaction status. Possible values are CREATED, PAID, CANCELLED, and OVERDUE</td>
+</tr>
+</tbody></table>
+
+<p>In terms of status, below are the status mapping between API Invoice and status in dashboard
+| API Invoice Status         | Dashboard status                                                                                                                                                        |
+| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| CREATED, WAITING PAYMENT, FAILED  | CREATED                                                             |
+| COMPLETE | PAID                                                           |
+| EXPIRED  | CANCELLED                                                          |</p>
+
+<p>There are several actions that you can take for the created invoice:
+1. Send invoice --&gt; To send the invoice to the customer&#39;s defined email
+2. Download invoice --&gt; To download the PDF file of the invoice
+3. Delete --&gt; To delete the invoice. Only invoice with status CREATED can be deleted</p>
 <h3 id='creating-a-customer-for-account-receivable-invoice-payment-links-invoice' type='normal'>Creating a Customer for Account Receivable/Invoice</h3>
+<p>There are 2 ways to create a Customer:</p>
+
+<p>Option 1: Through &quot;Create Invoice&quot; menu</p>
+
 <p><img src="images/add_new_customer-9f6436a8.png" alt="Invoice" /></p>
 
 <ol>
@@ -4033,9 +4111,44 @@ You can upload an invoice attachment or create an attachment using the OY! PDF t
 
 <p>For Tax Type, the explanation is as follows:</p>
 
-<p>| No tax           | Tax will not be added upon the subtotal                                                                                                                          |
-| PPN 10% Exclusive            | PPN 10% of the subtotal will be added upon the subtotal of the invoice. For example is subtotal is 10,000, then the PPN will be 10% of the 10,000 = 1,000                |
-| PPN 10% Inclusive          | Tax will not be added upon the subtotal because the subtotal is assumed to be tax inclusive   |</p>
+<table><thead>
+<tr>
+<th>Tax Type</th>
+<th>Definition</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>No tax</td>
+<td>Tax will not be added upon the subtotal</td>
+</tr>
+<tr>
+<td>PPN 10% Inclusive</td>
+<td>Tax will not be added upon the subtotal because the subtotal is assumed to be tax inclusive</td>
+</tr>
+</tbody></table>
+
+<p>Option 2: Through &quot;Customer Management&quot; menu</p>
+
+<p><img src="images/customer_management_home-7dfa7b03.png" alt="Invoice" /></p>
+
+<p><img src="images/customer_management_add_customer_1-d264fc84.png" alt="Invoice" /></p>
+
+<ol>
+<li>Click &quot;Customer Management&quot; sidebar under the &quot;Account Receivable&quot; menu</li>
+<li>Click &quot;Add new customer&quot;</li>
+<li>Fill in Customer ID, Customer Name (mandatory), PIC Name, Customer Phone Number, Tax Type (mandatory), Customer Email, Address.</li>
+<li>Click save</li>
+</ol>
+
+<p><img src="images/customer_management_home-7dfa7b03.png" alt="Invoice" /></p>
+
+<p>All of the created customer can be monitored through your dashboard (Customer List). There are several actions that you take for the customer data:
+1. Edit --&gt; To edit the data of the customer
+2. Activate/Deactivate --&gt; To deactivate / reactivate the customer</p>
+
+<p>If you click the hyperlink of Customer ID, you will be able to see the detailed data of the customer, including the list of invoices belonging to that customer.</p>
+
+<p><img src="images/customer_management_detail-3e5e8855.png" alt="Invoice" /></p>
 <h3 id='amount-customization-for-account-receivable-invoice-payment-links-invoice' type='normal'>Amount Customization for Account Receivable/Invoice</h3>
 <p>We have a feature that allows you to add the price of the subtotal (addition) and/or deduct the price from subtotal. The step is as follows:</p>
 
