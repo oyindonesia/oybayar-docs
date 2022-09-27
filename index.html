@@ -1032,9 +1032,9 @@
                           </a>
                         </li>
                         <li>
-                          <a href="#customizing-the-ui-of-payment-link-payment-links-invoice" class="toc-h3 toc-link" data-title="Customizing the UI of Payment Link">
+                          <a href="#customizing-the-ui-of-payment-link-amp-account-receivable-payment-links-invoice" class="toc-h3 toc-link" data-title="Customizing the UI of Payment Link &amp; Account Receivable">
                             <span class="toc-link-content">
-                              Customizing the UI of Payment Link
+                              Customizing the UI of Payment Link &amp; Account Receivable
                             </span> 
                             <img src="images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
                           </a>
@@ -1043,6 +1043,14 @@
                           <a href="#sending-the-created-payment-link-through-whatsapp-payment-links-invoice" class="toc-h3 toc-link" data-title="Sending the Created Payment Link through WhatsApp">
                             <span class="toc-link-content">
                               Sending the Created Payment Link through WhatsApp
+                            </span> 
+                            <img src="images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#sending-account-receivable-invoice-with-payment-link-through-whatsapp-payment-links-invoice" class="toc-h3 toc-link" data-title="Sending Account Receivable Invoice with Payment Link through WhatsApp">
+                            <span class="toc-link-content">
+                              Sending Account Receivable Invoice with Payment Link through WhatsApp
                             </span> 
                             <img src="images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
                           </a>
@@ -2593,7 +2601,7 @@ Follow the below steps to test the flow:</p>
 
 <p>For further details on the parameters definition and proper usage, please refer to our <a href="https://api-docs.oyindonesia.com/#biller-api">API Documentation</a>.</p>
 <h2 id='account-payable-sending-payments' type='normal'>Account Payable</h2>
-<p>OY! Account Payable product provides the capability to record, create approval level, and auto payment for invoice payable without hassle. Account Payable is made through the OY! dashboard, so no technical integration is required to use this product. </p>
+<p>OY! Account Payable product provides the capability to record, create approval levels, and scheduled payment for invoice payables without hassle. Account Payable is made through the OY! dashboard, so no technical integration is required to use this product. </p>
 <h3 id='how-to-use-account-payable-via-dashboard-account-payable' type='normal'>How to Use Account Payable via Dashboard</h3>
 <p>You can create new invoice to be paid and set up payment by following this step:</p>
 
@@ -2626,7 +2634,7 @@ Follow the below steps to test the flow:</p>
 </tr>
 <tr>
 <td>Due Date</td>
-<td>Due date of a transaction as mention in invoice. Your approver will be reminder to approved on D-7, D-3, and D-1 from the invoice due date</td>
+<td>Due date of a transaction as mentioned in the invoice. Your approver will be reminded to approve on D-7, D-3, and D-1 from the invoice due date</td>
 </tr>
 <tr>
 <td>PO/PR Number (optional)</td>
@@ -2638,7 +2646,7 @@ Follow the below steps to test the flow:</p>
 </tr>
 <tr>
 <td>Vendor</td>
-<td>The name of the vendor that this invoice belongs to. You can choose the name of the vendor on the dropdown. To create a new vendor, follow the instruction here</td>
+<td>The name of the vendor that this invoice belongs to. You can choose the name of the vendor from the dropdown menu. To create a new vendor, follow the instruction here</td>
 </tr>
 <tr>
 <td>Product Description</td>
@@ -2662,15 +2670,15 @@ Follow the below steps to test the flow:</p>
 </tr>
 <tr>
 <td>PPn</td>
-<td>PPn that should be paid to the vendor. PPn will be calculate from subtotal. You can set up this when create the vendor or edit in &#39;Vendor Management&#39; menu under Account Payable</td>
+<td>PPn that should be paid to the vendor. PPn is calculated from subtotal amount. You can set up the tax during vendor addition or edit in &#39;Vendor Management&#39; menu under Account Payable</td>
 </tr>
 <tr>
 <td>PPh</td>
-<td>PPh that should be deduct from the vendor. PPh will be calculate from subtotal.You can set up this when create the vendor or edit in &#39;Vendor Management&#39; menu under Account Payable</td>
+<td>PPh that should be deducted from the vendor. PPh is calculated from subtotal amount.You can set up the tax during vendor addition or edit in &#39;Vendor Management&#39; menu under Account Payable</td>
 </tr>
 <tr>
 <td>Total Pay to Vendor</td>
-<td>Total amount that will pay to vendor after complete approval</td>
+<td>Total amount that will be paid to vendor on scheduled date, post approval</td>
 </tr>
 <tr>
 <td>Reference Documents (Upload document)</td>
@@ -2692,28 +2700,34 @@ Follow the below steps to test the flow:</p>
 </thead><tbody>
 <tr>
 <td>Payment Amount</td>
-<td>Amount that will be automatically paid to vendor after approval.</td>
+<td>Amount that will be automatically paid to vendor on scheduled date</td>
 </tr>
 <tr>
 <td>Due Date</td>
-<td>The due date of the payment. The due date cannot do back date or more than due date that set in the first page (record invoice). Notification will be send to approval D-7, D-3, and D-1 if the status is waiting aproval.</td>
+<td>The due date of the payment. The due date cannot do back date or more than due date that set in the first page (record invoice). Notification will be send to approval D-7, D-3, and D-1 if the status is waiting aproval</td>
 </tr>
 <tr>
 <td>Status</td>
-<td>Status of the invoice payment. You can choose Paid&#39; for record intention and this amount will not be paid automatically by system. Choose &#39;Unpaid&#39; for</td>
+<td>Status of the invoice payment. You can choose &#39;Paid&#39; for record intention and this amount will not be paid by system. Choose &#39;Unpaid&#39; for incoming transaction that needs to be paid</td>
+</tr>
+<tr>
+<td>Scheduled Payment</td>
+<td>Time of the payment. You can prepare the balance prior to scheduled payment time and make sure the payment date is based on your preference and will only be executed post approval</td>
 </tr>
 <tr>
 <td>Remaining Amount</td>
-<td>Total pay to vendor - subtotal. This amount should be 0 to continue the process.</td>
+<td>Total pay to vendor - subtotal. This amount should be 0 to continue the process</td>
 </tr>
 </tbody></table>
 
 <p><strong>Image Payment Page</strong>
-<img src="images/accountPayable/invoice_creation_2-eb0509f3.png" alt="AP Invoice Creation Two" /></p>
+<img src="images/accountPayable/AP_scheduled_payment-3b936c35.png" alt="AP Invoice Creation Two" /></p>
 
-<p><img src="images/accountPayable/invoice_creation_transaction_list-2b00c0c6.png" alt="AP Invoice Creation Transaction List" /></p></li>
+<p><img src="images/accountPayable/AP_Scheduled_Payment_Details-5d6eba59.png" alt="AP Invoice Scheduled Payment Detai" /></p>
+
+<p><img src="images/accountPayable/AP_Trx_detail-3fe5dfd9.png" alt="AP Detail Transaction" /></p></li>
 <li><p>Status: Waiting Payment, Partially Paid, Complete and Cancelled
-Congratulations! You have finish your first invoice payable set up. below is the list of statuses you will find on &#39;Invoice List&#39;</p>
+Congratulations! You have finished your first invoice payable set up. Below are the list of statuses you will find on &#39;Invoice List&#39;</p>
 
 <table><thead>
 <tr>
@@ -2740,7 +2754,7 @@ Congratulations! You have finish your first invoice payable set up. below is the
 </tbody></table>
 
 <p><strong>List of the Invoice Payable</strong>
-<img src="images/accountPayable/invoice_list_payable-253bed12.png" alt="AP Invoice List Payable" /></p></li>
+<img src="images/accountPayable/AP_Trx_detail-3fe5dfd9.png" alt="AP Invoice List" /></p></li>
 </ol>
 <h3 id='how-to-create-edit-and-inactivate-vendor-data-account-payable' type='normal'>How to Create, Edit and Inactivate Vendor Data</h3>
 <p><strong>Add New Vendor for Account Payable</strong></p>
@@ -2767,7 +2781,7 @@ Congratulations! You have finish your first invoice payable set up. below is the
 </tr>
 <tr>
 <td>Vendor Address (Optional)</td>
-<td>Vendor address to be record. This is not mandatory</td>
+<td>Vendor address to be recorded. This is not mandatory</td>
 </tr>
 <tr>
 <td>Bank Name</td>
@@ -2775,7 +2789,7 @@ Congratulations! You have finish your first invoice payable set up. below is the
 </tr>
 <tr>
 <td>Account Number</td>
-<td>Recipient bank account number. You can check the inquiry by click &#39;Get Account Name&#39; after fill the account number</td>
+<td>Recipient bank account number. You can check the inquiry by clicking &#39;Get Account Name&#39; after filling the account number</td>
 </tr>
 <tr>
 <td>PIC Name</td>
@@ -2809,17 +2823,27 @@ Congratulations! You have finish your first invoice payable set up. below is the
 <td>SKB Document (optional)</td>
 <td>Vendor SKB Document to be record. Accept PDF and JPG format. Maximum 10 MB</td>
 </tr>
+<tr>
+<td>Not subject of PPh</td>
+<td>Tax will not be added upon the subtotal</td>
+</tr>
+<tr>
+<td>Not subject of PPn</td>
+<td>Tax will not be added upon the subtotal</td>
+</tr>
+<tr>
+<td>PPN Exclusive</td>
+<td>PPN of the subtotal will be added upon the subtotal of the invoice. For example is subtotal is 10,000, then the PPN is 11% of the 10,000 = 1,100</td>
+</tr>
+<tr>
+<td>PPN Inclusive</td>
+<td>Tax will not be added upon the subtotal because the subtotal is assumed to be tax inclusive</td>
+</tr>
 </tbody></table>
 
-<p>| Not subject of PPh | Tax will not be added upon the subtotal |</p>
+<p><strong>Each vendor only have 1 type of PPh setting and 1 type of PPn setting</strong></p>
 
-<p>| Not subject of PPn | Tax will not be added upon the subtotal |
-| PPN 10% Exclusive | PPN 10% of the subtotal will be added upon the subtotal of the invoice. For example is subtotal is 10,000, then the PPN will be 10% of the 10,000 = 1,000 |
-| PPN 10% Inclusive | Tax will not be added upon the subtotal because the subtotal is assumed to be tax inclusive |</p>
-
-<p>Each vendor only have 1 type of PPh setting and 1 type of PPn setting</p>
-
-<p>There will be auto email PPh every 1st day in a month that contain all the PPh from your vendor in the previous month. This report will help company for tax payment &amp; reporting, and generate &#39;Faktur Pajak&#39; to your vendor.</p>
+<p>There will be an PPh email sent on the 1st day of each month that contains all the PPh from your vendors in the previous month. This report can help company with tax payment &amp; reporting, and &#39;Faktur Pajak&#39; generation to your vendor.</p>
 
 <p><strong>Create New Vendor</strong>
 <img src="images/vendorManagement/creation-40890d05.png" alt="VM Vendor Creation" /></p>
@@ -2832,7 +2856,7 @@ Congratulations! You have finish your first invoice payable set up. below is the
 
 <p><strong>How to Set Up Invoice Payable Approval</strong></p>
 
-<p>You can set up multi level approval from OY&#39;s users. There will be 4 type or user: Super Admin, Admin, Approver, and Maker</p>
+<p>You can set up multi level approval from OY&#39;s users. There will be 4 type of users: Super Admin, Admin, Approver, and Maker</p>
 
 <p><strong>Approval Layer Set Up</strong></p>
 
@@ -3991,6 +4015,10 @@ You can upload an invoice attachment or create an attachment using the OY! PDF t
 <td>Due date of a transaction. You can choose between 7, 14, 30, 45, or 60 days after created date of the invoice OR you can also input a specific/custom date. Your customer will get reminders to pay on D-1, D-Day, and D+7 from the transaction due date.</td>
 </tr>
 <tr>
+<td>Link Expiry Datetime</td>
+<td>You can now set your link expiry date and time for your conveniences. The expiry time selected will also appear on PDF documents.</td>
+</tr>
+<tr>
 <td>Customer</td>
 <td>The name of the customer that the invoice is addressed to. You can choose the name of the customer from the dropdown. To create a new customer, follow the instruction <a href="https://docs.oyindonesia.com/#creating-a-customer-for-account-receivable-invoice-payment-links-invoice">here</a>.</td>
 </tr>
@@ -4020,7 +4048,7 @@ You can upload an invoice attachment or create an attachment using the OY! PDF t
 </tr>
 <tr>
 <td>Invoice Payment</td>
-<td>You can choose between &quot;Payment Link&quot; (the invoice will be embedded with a payment link that the customer can use to make a payment on) or &quot;Invoice Only&quot; (the invoice will not be embedded with a payment link)</td>
+<td>You can choose between &quot;Payment Link&quot; (the invoice will be embedded with a payment link that the customer can use to make a payment on) or &quot;Invoice Only&quot; (the invoice will not be embedded with a payment link). For &quot;Invoice Only&quot;, invoice status can be adjusted at any time for record purposes.</td>
 </tr>
 <tr>
 <td>Payment Method</td>
@@ -4032,15 +4060,20 @@ You can upload an invoice attachment or create an attachment using the OY! PDF t
 </tr>
 </tbody></table>
 
-<p><img src="images/create_new_invoice_1-3a6b2233.png" alt="Invoice" /></p>
-
-<p><img src="images/create_new_invoice_2-7f5b14ba.png" alt="Invoice" /></p>
+<ul>
+<li><p>Create Invoice form with flexible Payment Link Expiry Time
+<img src="images/accountReceivable/AR_expiry_datetime-babb01ab.png" alt="Invoice" /></p></li>
+<li><p>Link Expiry Time is reflected on the Account Receivable PDF in OY! dashboard and email sent to customers.
+<img src="images/accountReceivable/AR_detailed_timeline-7d944c6a.png" alt="Invoice" /></p></li>
+<li><p>Adjustable invoice status for “Invoice Only” invoices
+<img src="images/accountReceivable/AR_editable_status-1e1c1678.png" alt="Invoice" /></p></li>
+</ul>
 <h3 id='monitoring-the-invoices-account-receivable-payment-links-invoice' type='normal'>Monitoring the invoices/account receivable</h3>
-<p><img src="images/invoice_list-cd0a2940.png" alt="Invoice" /></p>
+<p><img src="images/accountReceivable/AR_analytics-f54f1550.png" alt="Invoice" /></p>
 
 <p>All of the created invoices can be monitored through your dashboard (Invoice List).</p>
 
-<p>The transaction details that you can see are;</p>
+<p>The transaction details that you can see are:</p>
 
 <table><thead>
 <tr>
@@ -4085,17 +4118,36 @@ You can upload an invoice attachment or create an attachment using the OY! PDF t
 <td>How many days an invoice has gone unpaid past the due date. For example, if due date is 1 July and the invoice is not paid by 4 July, then Days Past Due will be filled in with 3</td>
 </tr>
 <tr>
+<td>Payment Link Expiry</td>
+<td>Maximum date and time that a payment link can stay valid for before expiring permanently</td>
+</tr>
+<tr>
 <td>Status</td>
 <td>The transaction status. Possible values are CREATED, PAID, CANCELLED, and OVERDUE</td>
 </tr>
 </tbody></table>
 
-<p>In terms of status, below are the status mapping between API Invoice and status in dashboard
-| API Invoice Status         | Dashboard status                                                                                                                                                        |
-| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| CREATED, WAITING PAYMENT, FAILED  | CREATED                                                             |
-| COMPLETE | PAID                                                           |
-| EXPIRED  | CANCELLED                                                          |</p>
+<p>In terms of status, below are the status mapping between API Invoice and status in dashboard</p>
+
+<table><thead>
+<tr>
+<th>API Invoice Status</th>
+<th>Dashboard status</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>CREATED, WAITING PAYMENT, FAILED</td>
+<td>CREATED</td>
+</tr>
+<tr>
+<td>COMPLETE</td>
+<td>PAID</td>
+</tr>
+<tr>
+<td>EXPIRED</td>
+<td>CANCELLED</td>
+</tr>
+</tbody></table>
 
 <p>There are several actions that you can take for the created invoice:
 1. Send invoice --&gt; To send the invoice to the customer&#39;s defined email
@@ -4129,34 +4181,54 @@ You can upload an invoice attachment or create an attachment using the OY! PDF t
 </tr>
 <tr>
 <td>PPN 10% Inclusive</td>
+<td>Tax will not be added upon the subtotal because the subtotal is assumed to be tax inclusive. 10% is applicable for older than April 2022 transaction</td>
+</tr>
+<tr>
+<td>PPN 10% Exclusive</td>
+<td>Tax will be added separately to the subtotal. 10% is applicable for older than April 2022 transaction</td>
+</tr>
+<tr>
+<td>PPN 11% Inclusive</td>
 <td>Tax will not be added upon the subtotal because the subtotal is assumed to be tax inclusive</td>
+</tr>
+<tr>
+<td>PPN 11% Exclusive</td>
+<td>Tax will be added separately to the subtotal.</td>
+</tr>
+<tr>
+<td>PPh23 Non NPWP 4%</td>
+<td>Tax will be substracted from subtotal</td>
+</tr>
+<tr>
+<td>PPh 23 NPWP 2%</td>
+<td>Tax will be substracted from subtotal</td>
 </tr>
 </tbody></table>
 
 <p>Option 2: Through &quot;Customer Management&quot; menu</p>
 
-<p><img src="images/customer_management_home-7dfa7b03.png" alt="Invoice" /></p>
+<p><img src="images/accountReceivable/AR_customer-124f0e6a.png" alt="Invoice" /></p>
 
-<p><img src="images/customer_management_add_customer_1-d264fc84.png" alt="Invoice" /></p>
+<p><img src="images/accountReceivable/AR_new_customer-a0eeba3c.png" alt="Invoice" /></p>
 
 <ol>
 <li>Click &quot;Customer Management&quot; sidebar under the &quot;Account Receivable&quot; menu</li>
 <li>Click &quot;Add new customer&quot;</li>
 <li>Fill in Customer ID, Customer Name (mandatory), PIC Name, Customer Phone Number, Tax Type (mandatory), Customer Email, Address.</li>
-<li>Click save</li>
+<li>Click &quot;Save&quot;</li>
 </ol>
 
-<p><img src="images/customer_management_home-7dfa7b03.png" alt="Invoice" /></p>
+<p><img src="images/accountReceivable/AR_new_customer-a0eeba3c.png" alt="Invoice" /></p>
 
 <p>All of the created customer can be monitored through your dashboard (Customer List). There are several actions that you take for the customer data:
 1. Edit --&gt; To edit the data of the customer
-2. Activate/Deactivate --&gt; To deactivate / reactivate the customer</p>
+1. Activate/Deactivate --&gt; To deactivate / reactivate the customer</p>
 
 <p>If you click the hyperlink of Customer ID, you will be able to see the detailed data of the customer, including the list of invoices belonging to that customer.</p>
 
 <p><img src="images/customer_management_detail-3e5e8855.png" alt="Invoice" /></p>
 <h3 id='amount-customization-for-account-receivable-invoice-payment-links-invoice' type='normal'>Amount Customization for Account Receivable/Invoice</h3>
-<p>We have a feature that allows you to add the price of the subtotal (addition) and/or deduct the price from subtotal. The step is as follows:</p>
+<p>OY! has a feature that allows you to add the price of the subtotal (addition) and/or deduct the price from subtotal. The step is as follows:</p>
 
 <p><img src="images/add_column_amount_customization-bc8b29b6.png" alt="Invoice" /></p>
 
@@ -4167,11 +4239,9 @@ You can upload an invoice attachment or create an attachment using the OY! PDF t
 <li>Fill in the amount</li>
 </ol>
 
-<p><img src="images/column_addition_substraction-0d1c136a.png" alt="Invoice" /></p>
-
-<p><img src="images/after_state_amount_customization-96843090.png" alt="Invoice" /></p>
+<p><img src="images/accountReceivable/AR_kolom-07084ed5.png" alt="Invoice" /></p>
 <h3 id='how-to-use-payment-link-invoice-via-api-payment-links-invoice' type='normal'>How to Use Payment Link/Invoice via API</h3>
-<p>We provide 3 different payment link endpoints depending on your requirements and needs. We provide payment link, invoicing, and recurring invoice.</p>
+<p>OY! provides 3 different payment link endpoints depending on your requirements and needs. We provide payment link, invoicing, and recurring invoice.</p>
 
 <p>Send us instructions to generate a <a href="https://api-docs.oyindonesia.com/#api-create-payment-checkout">payment link</a>.</p>
 
@@ -4373,23 +4443,27 @@ You can upload an invoice attachment or create an attachment using the OY! PDF t
 <p>Click the button below to see a demonstration and a snippet code on how to display a payment link page in 4 styles/locations: Center, Right, Left, and Slide Right.</p>
 
 <p><a class="lottie" id="learn-more" href="https://api-docs.oyindonesia.com/#pop-seamless-payment-experience-fund-acceptance"></a></p>
-<h3 id='customizing-the-ui-of-payment-link-payment-links-invoice' type='normal'>Customizing the UI of Payment Link</h3>
-<p>In order to maintain a consistent brand experience for your users, you can customize the look and feel of your payment link in the Dashboard, where you can do the following things;</p>
+<h3 id='customizing-the-ui-of-payment-link-amp-account-receivable-payment-links-invoice' type='normal'>Customizing the UI of Payment Link &amp; Account Receivable</h3>
+<p>In order to maintain a consistent brand experience for your users, you can customize the look and feel of your payment link &amp; Account Receivable in the Dashboard, where you can do the following things;</p>
 
 <ul>
 <li>Upload a logo</li>
 <li>Choose the button and the theme color of the payment link</li>
 </ul>
 
-<p>How to customize the UI:</p>
+<p>The updated logo will be reflected in both products</p>
+
+<p>How to customize the UI via Payment Link or Account Receivable</p>
 
 <ul>
 <li>Log onto business.oyindonesia.com</li>
 <li>Go to Payment Link section in the dashboard</li>
-<li>Click the &#39;Settings&quot; icon</li>
+<li>Click the &#39;Settings&quot; icon located at the top right of the page</li>
 </ul>
 
 <p><img src="images/ui_customization_settings_icon-ba305741.png" alt="Payment Link" /></p>
+
+<p><img src="images/accountReceivable/AR_analytics-f54f1550.png" alt="Account Receivable" /></p>
 
 <ul>
 <li>You will be redirected to the Settings page</li>
@@ -4412,8 +4486,8 @@ You can upload an invoice attachment or create an attachment using the OY! PDF t
 <p>Note:</p>
 
 <ul>
-<li>By saving the change, the colours will be applied to the payment links previously created (before saving) as well as the payment links created after saving.</li>
-<li>Please create new payment link after you successfully save changes to check the difference</li>
+<li>By saving the changes, the colours will be applied to the payment links previously created (before saving) as well as the payment links created after saving and also account receivable PDF documents.</li>
+<li>Please create new payment link or Account Receivable invoice after you successfully save changes to check the difference</li>
 </ul>
 
 <p>Illustration;</p>
@@ -4429,6 +4503,19 @@ You can upload an invoice attachment or create an attachment using the OY! PDF t
 <p><img src="images/flow_whatsapp_notif-74ae82e7.png" alt="WhatsApp Flow" /></p>
 
 <p>Click <a href="https://api-docs.oyindonesia.com/#https-request-send-payment-invoice-link-whatsapp-notification">here</a> for more information on API Send WhatsApp</p>
+<h3 id='sending-account-receivable-invoice-with-payment-link-through-whatsapp-payment-links-invoice' type='normal'>Sending Account Receivable Invoice with Payment Link through WhatsApp</h3>
+<p>For your convenience, you can now distribute invoice to your users through WhatsApp using default message template. Please kindly contact OY! team if you are interested in using this feature</p>
+
+<p>There will be 3 different ways to distribute the invoice via Whatsapp and there is a maximum of one Whatsapp message per unpaid invoice. When the status is paid, users will get a payment confirmation from Whatsapp too.</p>
+
+<ul>
+<li><p>Option 1 - via invoice details
+<img src="images/accountReceivable/AR_WA_Table-5e7d1413.png" alt="WhatsApp Flow via detail" /></p></li>
+<li><p>Option 2 - via new invoice creation
+<img src="images/source/images/accountReceivable/AR_WA_Creation.png" alt="WhatsApp Flow via new invoice" /></p></li>
+<li><p>Option 3 - via invoice table
+<img src="images/accountReceivable/AR_WA_Table-5e7d1413.png" alt="WhatsApp Flow via table" /></p></li>
+</ul>
 <h3 id='va-bank-details-payment-links-invoice' type='normal'>VA Bank Details</h3>
 <table><thead>
 <tr>
