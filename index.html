@@ -864,6 +864,56 @@
                         </li>
                     </ul>
                   </li>
+                  <li>
+                    <a href="#virtual-card-sending-payments" class="toc-h2 toc-link" data-title="Virtual Card">
+                      <span class="toc-link-content">
+                        Virtual Card
+                      </span>
+                         <img src="images/arrow-bottom-425d93ba.svg" class="active-parent icon-arrow" alt="" />
+                    </a>
+                    <ul class="toc-list-h3">
+                        <li>
+                          <a href="#how-to-use-virtual-card-feature-via-dashboard-virtual-card" class="toc-h3 toc-link" data-title="How to Use Virtual Card Feature via Dashboard">
+                            <span class="toc-link-content">
+                              How to Use Virtual Card Feature via Dashboard
+                            </span> 
+                            <img src="images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#how-to-set-approver-virtual-card" class="toc-h3 toc-link" data-title="How to Set Approver">
+                            <span class="toc-link-content">
+                              How to Set Approver
+                            </span> 
+                            <img src="images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#how-to-manage-card-virtual-card" class="toc-h3 toc-link" data-title="How to Manage Card">
+                            <span class="toc-link-content">
+                              How to Manage Card
+                            </span> 
+                            <img src="images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#how-to-set-up-card-config-virtual-card" class="toc-h3 toc-link" data-title="How to Set Up Card Config">
+                            <span class="toc-link-content">
+                              How to Set Up Card Config
+                            </span> 
+                            <img src="images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#how-to-transact-with-card-virtual-card" class="toc-h3 toc-link" data-title="How to Transact with Card">
+                            <span class="toc-link-content">
+                              How to Transact with Card
+                            </span> 
+                            <img src="images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
+                          </a>
+                        </li>
+                    </ul>
+                  </li>
               </ul>
           </li>
           <li>
@@ -2869,6 +2919,282 @@ Detailed step-by-step instructions on setting up user management and the differe
 <p>Multi-layer Approval will improve your control over your bulk disburse transaction especially for big amount of money. You can setup up to 3 layers of approver before the transaction instruction is executed. By assigning proper approver and amount limitation, you can avoid a huge trouble on your business operational caused by incorrect transfer amount.</p>
 
 <p>Default approval: Super Admin, Admin, and Approval.</p>
+<h2 id='virtual-card-sending-payments' type='normal'>Virtual Card</h2>
+<p>OY! Virtual Card product provides the capability to create customized virtual cards and manage subscriptions without hassle. Virtual Card can be generated through the OY! dashboard, so no technical integration is required to use this product.</p>
+
+<p><strong>Key Features</strong> </p>
+
+<table><thead>
+<tr>
+<th>Condition</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>Card creation</strong></td>
+<td>OY! can use the funds directly from your OY! balance for virtual card needs. It is essential to top-up your OY! balance based on your card limit. Please contact our business representative (https://docs.oyindonesia.com/partner@oyindonesia.com) for further details about this feature.</td>
+</tr>
+<tr>
+<td><strong>Card control</strong></td>
+<td>Create and control the card based on your requirements. You can set amount, validity period, renewal frequency and even transaction limitations directly through dashboard. Moreover, you can block and deactivate virtual card real-time! Everything on your fingertips.</td>
+</tr>
+<tr>
+<td><strong>Real-time transaction</strong></td>
+<td>Transactions can be tracked easily through dashboard real-time. There is no need to wait until the end of month for full statement.</td>
+</tr>
+</tbody></table>
+<h3 id='how-to-use-virtual-card-feature-via-dashboard-virtual-card' type='normal'>How to Use Virtual Card Feature via Dashboard</h3>
+<p>You can create new virtual card by following these steps:</p>
+
+<ol>
+<li>Log on to your OY! dashboard</li>
+<li>Choose “Production” environment</li>
+<li>Click “Virtual Card” under <em>Send Money</em> menu</li>
+<li>Click “Add New Card”</li>
+</ol>
+
+<p><img src="images/virtualCard/vcc_emptystate-bc2f4379.png" alt="VCC Dashboard" /></p>
+
+<ol>
+<li>Choose “Card Type” either single use or multiple use and click “Next”</li>
+</ol>
+
+<p><img src="images/virtualCard/vcc_cardtype-b49f7f6b.png" alt="VCC Card Type" /></p>
+
+<ol>
+<li><p>Fill in Cardholder details and Card details
+<img src="images/virtualCard/vcc_form1-b0812733.png" alt="VCC Form" />
+<img src="images/virtualCard/vcc_form2-e0b64f37.png" alt="VCC Form" /></p></li>
+<li><p>Once submitted, Virtual Card will be in “waiting for approval” state</p></li>
+<li><p>After approval step, the card is ready to be used for transactions</p></li>
+</ol>
+
+<p><img src="images/virtualCard/vcc_info-a63b8331.png" alt="VCC Detail" /></p>
+
+<p><strong>Notes:</strong> OY! balance would be put on pending once card is created.</p>
+
+<ol>
+<li>Once card is used for transaction, it will appears in “Virtual Card” page and sent through email to Cardholder</li>
+</ol>
+
+<p><img src="images/virtualCard/vcc_txndetail-fb89beb3.png" alt="VCC Transaction Detail" />
+<img src="images/virtualCard/vcc_txnemail-65140dca.png" alt="VCC Transaction Email" /></p>
+
+<ol>
+<li>Card Status</li>
+</ol>
+
+<table><thead>
+<tr>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Pending Approval</td>
+<td>Card has been requested but approval is not yet given. Request can only stay valid for 14 days.</td>
+</tr>
+<tr>
+<td>Active</td>
+<td>Card is ready to be used for transaction.</td>
+</tr>
+<tr>
+<td>Active with Warning</td>
+<td>Card is active with balance, but only &lt;15% balance remaining.</td>
+</tr>
+<tr>
+<td>Inactive</td>
+<td>Card has been deactivated, but still contain limit.</td>
+</tr>
+<tr>
+<td>Need top-up</td>
+<td>New card has been created, but with 0 limit OR card limit is back to 0 and pass renewal time due to insufficient balance.</td>
+</tr>
+<tr>
+<td>Expired</td>
+<td>Card is expired or intentionally archived permanently.</td>
+</tr>
+<tr>
+<td>Rejected</td>
+<td>Card is rejected by Approver.</td>
+</tr>
+</tbody></table>
+
+<ol>
+<li>Transaction Status</li>
+</ol>
+
+<table><thead>
+<tr>
+<th>Transaction Status</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Successful</td>
+<td>Card has been used for transaction successfully</td>
+</tr>
+<tr>
+<td>Failed</td>
+<td>Transction was decline</td>
+</tr>
+</tbody></table>
+<h3 id='how-to-set-approver-virtual-card' type='normal'>How to Set Approver</h3>
+<ol>
+<li>During first time product activation, prompt to fill in Approver data will be triggered</li>
+</ol>
+
+<p><img src="images/virtualCard/vcc_addapprover-c95085c7.png" alt="VCC Add Approver" /></p>
+
+<ol>
+<li><p>Fill in the approver details
+<img src="images/virtualCard/vcc_approverform-78758619.png" alt="VCC Approver Form" /></p></li>
+<li><p>Tick T&amp;C and confirm your Approver details
+<img src="images/virtualCard/vcc_confirmation-b00a43bf.png" alt="VCC Confirmation" /></p></li>
+<li><p>Approver will receive confirmation email 
+<img src="images/virtualCard/vcc_appemail-317d6dd5.png" alt="VCC Approval Email" /></p></li>
+</ol>
+
+<p><strong>Notes</strong>: Approver data cannot be added or edited through dashboard for security purposes. Please contact our business representative for helps</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Name</td>
+<td>Unique ID of the vendor from your company. This is not mandatory</td>
+</tr>
+<tr>
+<td>Position</td>
+<td>The company/vendor name. Make sure the vendor name matches the vendor NPWP (if any) to help your company tax record</td>
+</tr>
+<tr>
+<td>Phone Number</td>
+<td>Vendor address to be record. This is not mandatory</td>
+</tr>
+<tr>
+<td>Email</td>
+<td>Recipient bank name. You can choose using drop down</td>
+</tr>
+</tbody></table>
+<h3 id='how-to-manage-card-virtual-card' type='normal'>How to Manage Card</h3>
+<ol>
+<li>Click “See All Virtual Cards”</li>
+<li>Click the card that needs to be managed</li>
+</ol>
+
+<p><img src="images/virtualCard/vcc_cardlist-75e8efc9.png" alt="VCC Card List" /></p>
+
+<ol>
+<li>Card actions</li>
+</ol>
+
+<table><thead>
+<tr>
+<th>Card Actions</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Resend Card Info</td>
+<td>Card has been used for transaction successfully</td>
+</tr>
+<tr>
+<td>Edit Information</td>
+<td>Transction was declined</td>
+</tr>
+<tr>
+<td>Block</td>
+<td>To temporarily lock the card, limit remains in the card</td>
+</tr>
+<tr>
+<td>Archive</td>
+<td>To permanently lock the card, limit will be 0</td>
+</tr>
+<tr>
+<td>Renew Limit</td>
+<td>To renew card limit with amount that has been approved during request. Applicable for new card with 0 limit, or existing card with less than 100% limit</td>
+</tr>
+<tr>
+<td>Resend Approval Notification</td>
+<td>To remind Approver to approve the card request</td>
+</tr>
+<tr>
+<td>Delete</td>
+<td>Only applicable for &quot;Waiting for Approval&quot; card</td>
+</tr>
+</tbody></table>
+<h3 id='how-to-set-up-card-config-virtual-card' type='normal'>How to Set Up Card Config</h3>
+<ol>
+<li>Click “Virtual Card Settings”</li>
+<li>Select Department / Category / Approver</li>
+<li>You can choose to whether add new, edit existing or delete</li>
+<li>Click save changes</li>
+</ol>
+
+<ul>
+<li>Department page prior to “Edit Department” button</li>
+</ul>
+
+<p><img src="images/virtualCard/vcc_dept-3d38c05c.png" alt="VCC Department" /></p>
+
+<ul>
+<li>Edit Department page</li>
+</ul>
+
+<p><img src="images/virtualCard/vcc_editdept-beeb73fb.png" alt="VCC Edit Department" /></p>
+
+<ul>
+<li>Category page</li>
+</ul>
+
+<p><img src="images/virtualCard/vcc_cat-d9224c1a.png" alt="VCC Category" /></p>
+
+<ul>
+<li>Approver Page</li>
+</ul>
+
+<p><img src="images/virtualCard/vcc_approver-ff736a20.png" alt="VCC Approver" /></p>
+<h3 id='how-to-transact-with-card-virtual-card' type='normal'>How to Transact with Card</h3>
+<p>Steps to use card for online transaction:</p>
+
+<ol>
+<li>Access your card information via email and enter OTP</li>
+<li>Once accessed, input all of you card information into merchant side under “Credit / Debit Card” Option
+
+<ol>
+<li>Input 16 digit number, expiry date (MM/YY) and CVV</li>
+</ol></li>
+<li>Submit the information and proceed with the transaction and transaction is successful</li>
+</ol>
+
+<p><strong>Failed Transaction Possible Reasons</strong></p>
+
+<ol>
+<li>Card utilized more than 
+
+<ol>
+<li>requested frequency (multiple use vs single use)</li>
+<li>available limit</li>
+</ol></li>
+<li>Card is inactive</li>
+<li>Card is expired</li>
+<li>Invalid card number</li>
+<li>Invalid expiry date</li>
+<li>Invalid CVV</li>
+<li>Issuer network not supported</li>
+</ol>
+
+<p><strong>Notes</strong>
+* Transaction will be settled following bank’s instruction
+* Usage of card will directly reduce card limit and hold OY! balance
+* For refund, please kindly contact the merchant where you make the purchase at. OY! is not responsible to perform refund prior receiving the fund back from the merchant
+    * Refund duration will dependent on the merchant and the bank
+    * Once refund has been issued, the balance will be returned back to your OY! balance
+* It is user’s responsibility to block card usage whenever fraudulent transactions found. OY! is not responsible for the transaction.</p>
 <h1 id='accepting-payments' type='normal'>Accepting Payments</h1><h2 id='va-aggregator-accepting-payments' type='normal'>VA Aggregator</h2>
 <p>Businesses are struggling to manage hundreds or even thousands of physical bank accounts that are used for different purposes. It causes significant overhead cost in terms of the amount of account maintenance and man hours needed for reporting and reconciliation purposes, combining different information from different accounts.</p>
 
