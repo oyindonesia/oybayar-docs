@@ -839,6 +839,48 @@
                     </ul>
                   </li>
                   <li>
+                    <a href="#feature-resend-callback-sending-payments" class="toc-h2 toc-link" data-title="Feature: Resend Callback">
+                      <span class="toc-link-content">
+                        Feature: Resend Callback
+                      </span>
+                         <img src="images/arrow-bottom-425d93ba.svg" class="active-parent icon-arrow" alt="" />
+                    </a>
+                    <ul class="toc-list-h3">
+                        <li>
+                          <a href="#key-features-feature-resend-callback" class="toc-h3 toc-link" data-title="Key Features">
+                            <span class="toc-link-content">
+                              Key Features
+                            </span> 
+                            <img src="images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#registration-and-set-up-feature-resend-callback" class="toc-h3 toc-link" data-title="Registration and Set Up">
+                            <span class="toc-link-content">
+                              Registration and Set Up
+                            </span> 
+                            <img src="images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#callback-interval-feature-resend-callback" class="toc-h3 toc-link" data-title="Callback Interval">
+                            <span class="toc-link-content">
+                              Callback Interval
+                            </span> 
+                            <img src="images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#idempotency-key-feature-resend-callback" class="toc-h3 toc-link" data-title="Idempotency Key">
+                            <span class="toc-link-content">
+                              Idempotency Key
+                            </span> 
+                            <img src="images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
+                          </a>
+                        </li>
+                    </ul>
+                  </li>
+                  <li>
                     <a href="#account-payable-sending-payments" class="toc-h2 toc-link" data-title="Account Payable">
                       <span class="toc-link-content">
                         Account Payable
@@ -2650,6 +2692,51 @@ Follow the below steps to test the flow:</p>
 <p><img src="images/API_Biller-3313124e.png" alt="API Biller" /></p>
 
 <p>For further details on the parameters definition and proper usage, please refer to our <a href="https://api-docs.oyindonesia.com/#biller-api">API Documentation</a>.</p>
+<h2 id='feature-resend-callback-sending-payments' type='normal'>Feature: Resend Callback</h2><h3 id='key-features-feature-resend-callback' type='normal'>Key Features</h3>
+<p>Retry Callback allows you to resend a callback of your transaction to your system. Initially, OY! will send a callback to your system after your transaction status has been updated. If your system failed to receive the callback, this feature can help you to retry the callback process. The process can be done in two ways</p>
+
+<ol>
+<li><p>Automated retry callback
+If the callback is not successfully received on the first try, the system will automatically retry the callback delivery. If that callback is still not received by the client&#39;s system, the system will automatically retry until 5 occurrences. The interval of the sending process will be detailed in the Callback Interval section. If all automated Retry Callbacks have been sent but still returned failed, the system will send an email notification to the email address set in the configuration.</p></li>
+<li><p>Manual retry callback
+Besides the automated process, you can manually request a callback via the dashboard.</p></li>
+</ol>
+<h3 id='registration-and-set-up-feature-resend-callback' type='normal'>Registration and Set Up</h3>
+<p>Follow the instruction below to activate retry callback</p>
+
+<ol>
+<li>Login to your account in OY! Dashboard</li>
+<li>Open “Settings” and choose “Developer Option”. Choose “Callback Configuration”</li>
+<li>Fill your callback URL in the related product that you want to activate. Make sure the format is right. You can click URL String Validation button to validate the URL format.</li>
+<li>If you want to activate automated retry callback, check the Enable Automatic Retry Callback and fill in the email. The email will be used to receive a notification if all the automatic callback attempts have been made but still fail</li>
+<li>Click &quot;Save Changes&quot;. The configuration will not able to be saved if the callback URL or/and email format are not valid.</li>
+</ol>
+
+<p><img src="images/api_disburse_retry_callback_developer_option-5742a7a7.png" alt="Resend Callback" /></p>
+
+<p>Don&#39;t forget to whitelist these IPs in order to be able to receive callback from OY: 54.151.191.85 and 54.179.86.72</p>
+
+<p>If you want to manually resend a callback, you can follow the instruction below</p>
+
+<ol>
+<li>Login to your account in OY! Dashboard</li>
+<li>Open the API Disbursement menu</li>
+<li>Click the &quot;Resend Callback&quot; button in the related transaction</li>
+</ol>
+
+<p><img src="images/api_disburse_resend_callback-db4433f2.png" alt="Resend Callback" /></p>
+<h3 id='callback-interval-feature-resend-callback' type='normal'>Callback Interval</h3>
+<p>1st retry: realtime (after the first failed log received)
+2nd retry: 1 min (after callback failed log for the 1st retry is received)
+3rd retry: 2 mins (after callback failed log for the 2nd retry is received)
+4th retry: 13 mins (after callback failed log for the 3rd retry is received)
+5th retry: 47 mins (after callback failed log for the 4th retry is received)</p>
+
+<p>If all automated Retry Callback (all the 5 attempts) has been sent but we still get a Failed response from your end, our system will send an automated email notification to the  email address that has been set in the configuration earlier</p>
+<h3 id='idempotency-key-feature-resend-callback' type='normal'>Idempotency Key</h3>
+<p>To implement automated retry callback, you need to handle the idempotency logic in your system using the below key:</p>
+
+<p>API Disburse: trx_id</p>
 <h2 id='account-payable-sending-payments' type='normal'>Account Payable</h2>
 <p>OY! Account Payable product provides the capability to record, create approval levels, and scheduled payment for invoice payables without hassle. Account Payable is made through the OY! dashboard, so no technical integration is required to use this product. </p>
 <h3 id='how-to-use-account-payable-via-dashboard-account-payable' type='normal'>How to Use Account Payable via Dashboard</h3>
