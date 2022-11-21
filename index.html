@@ -1365,6 +1365,32 @@
                         </li>
                     </ul>
                   </li>
+                  <li>
+                    <a href="#feature-refund-e-wallet-accepting-payments" class="toc-h2 toc-link" data-title="Feature: Refund E-wallet">
+                      <span class="toc-link-content">
+                        Feature: Refund E-wallet
+                      </span>
+                         <img src="images/arrow-bottom-425d93ba.svg" class="active-parent icon-arrow" alt="" />
+                    </a>
+                    <ul class="toc-list-h3">
+                        <li>
+                          <a href="#key-features-feature-refund-e-wallet" class="toc-h3 toc-link" data-title="Key Features">
+                            <span class="toc-link-content">
+                              Key Features
+                            </span> 
+                            <img src="images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#how-to-use-feature-refund-e-wallet" class="toc-h3 toc-link" data-title="How to Use">
+                            <span class="toc-link-content">
+                              How to Use
+                            </span> 
+                            <img src="images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
+                          </a>
+                        </li>
+                    </ul>
+                  </li>
               </ul>
           </li>
           <li>
@@ -5145,6 +5171,7 @@ You can upload an invoice attachment or create an attachment using the OY! PDF t
 <th>Minimum Expiration Time</th>
 <th>Maximum Expiration Time</th>
 <th>Redirection Feature</th>
+<th>Refund Feature</th>
 </tr>
 </thead><tbody>
 <tr>
@@ -5153,6 +5180,7 @@ You can upload an invoice attachment or create an attachment using the OY! PDF t
 <td>Parameter is ignored, always set to 55 seconds</td>
 <td>Parameter is ignored, always set to 55 seconds</td>
 <td>Not supported</td>
+<td>Not supported</td>
 </tr>
 <tr>
 <td>ShopeePay</td>
@@ -5160,6 +5188,7 @@ You can upload an invoice attachment or create an attachment using the OY! PDF t
 <td>1 minute</td>
 <td>60 minutes</td>
 <td>Support</td>
+<td>Full</td>
 </tr>
 <tr>
 <td>Linkaja</td>
@@ -5167,6 +5196,7 @@ You can upload an invoice attachment or create an attachment using the OY! PDF t
 <td>Parameter is ignored, always set to 5 minutes</td>
 <td>Parameter is ignored, always set to 5 minutes</td>
 <td>Support</td>
+<td>Full</td>
 </tr>
 <tr>
 <td>DANA</td>
@@ -5174,6 +5204,7 @@ You can upload an invoice attachment or create an attachment using the OY! PDF t
 <td>1 minute</td>
 <td>60 minutes</td>
 <td>Support</td>
+<td>Full, Partial</td>
 </tr>
 </tbody></table>
 <h2 id='api-payment-routing-accepting-payments' type='normal'>API Payment Routing</h2>
@@ -5284,6 +5315,56 @@ Ewallet Aggregator: open &quot;E-Wallet&quot; menu</p>
 <p>Payment Link - Invoice: tx_ref_number
 VA: trx_id
 Ewallet: trx_id OR ref_number</p>
+<h2 id='feature-refund-e-wallet-accepting-payments' type='normal'>Feature: Refund E-wallet</h2><h3 id='key-features-feature-refund-e-wallet' type='normal'>Key Features</h3>
+<p>Refund features allow you to refund a successful e-wallet transaction to your end-users. A refund can either be full or partial. A full refund will give your end-users or payers their entire payment amount back (100%). A partial refund will return up to the total amount paid to your end-users or payers. These requirements must be met in order for a refund transaction to be issued:</p>
+
+<ol>
+<li>Refunds can only be issued up to 7 days after transaction is success/complete.</li>
+<li>You have enough balance that allows us to deduct the amount of the transaction that should be refunded.</li>
+<li>A refund can only be issued once, whether it is a full or partial refund.</li>
+</ol>
+
+<table><thead>
+<tr>
+<th>E-Wallet Issuer</th>
+<th>Refund Feature</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>OVO</td>
+<td>Not supported</td>
+</tr>
+<tr>
+<td>ShopeePay</td>
+<td>Full</td>
+</tr>
+<tr>
+<td>Linkaja</td>
+<td>Full</td>
+</tr>
+<tr>
+<td>DANA</td>
+<td>Full, Partial</td>
+</tr>
+</tbody></table>
+<h3 id='how-to-use-feature-refund-e-wallet' type='normal'>How to Use</h3>
+<ol>
+<li>Log in to your OY! Bisnis dashboard with your username and password that you registered with.</li>
+<li>Click on the product page you desired.
+
+<ul>
+<li>Payment Link : Click “Payment Link” and choose “One Time”/“Reusable”</li>
+<li>VA Aggregator : Click “Virtual Account” and choose “Incoming Payment”</li>
+<li>Payment Routing ; Click “Payment Routing”</li>
+</ul></li>
+<li>You can see a transaction that should be refunded</li>
+<li>On “Action” column, you can click the the three-dots button and click “Refund E-Wallet”. <img src="images/ewallet_refund_action-4389f77e.png" alt="Refund E-wallet" /></li>
+<li>If you try to trigger refund after the time limit or outside operational hours, an error modal will show up and you can not continue the refund process. <img src="images/ewallet_refund_operational-0f8eb9ee.png" alt="Refund E-wallet" /></li>
+<li>You can fill the amount of refund, only for partial refund. <img src="images/ewallet_refund_amount-d249bbbb.png" alt="Refund E-wallet" /></li>
+<li>Make sure that you have enough balance to issue a refund. If you do not have enough balance, an error message will show up. You can top up your balance via “Top Up” feature. <img src="images/ewallet_refund_balance-6c32e327.png" alt="Refund E-wallet" /></li>
+<li>The transaction will change to “Refunded” if the refund is successful. You can not trigger another refund after the refund is successful. The refund button will be disabled.</li>
+<li>You can see the refunded transaction in “Account Statement” page by clicking “Transaction Report” and “Account Statement”. <img src="images/ewallet_refund_account_statement-78081314.png" alt="Refund E-wallet" /></li>
+</ol>
 <h1 id='faqs' type='normal'>FAQs</h1><h2 id='api-and-bulk-disbursement-faqs' type='normal'>API and Bulk Disbursement</h2>
 <p><strong>What are bank maintenance schedules? Will partners be informed?</strong></p>
 
