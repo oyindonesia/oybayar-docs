@@ -6,6 +6,7 @@ on:
 
 jobs:
   deploy:
+    # See https://github.com/oyindonesia/oybayar-docs/pull/119 about the reason of using 20.04
     runs-on: ubuntu-20.04
     env:
       ruby-version: 2.5
