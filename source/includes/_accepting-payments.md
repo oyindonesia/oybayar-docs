@@ -53,10 +53,15 @@ Our virtual accounts are adjustable according to your needs. We offer options of
 Example:
 
 * A static VA with a closed amount can be updated with a new closed amount hence it can work as a bill to be paid for a particular customer
+<<<<<<< Updated upstream
 * A static VA can be updated to a single use so it will be the last payment received from a particular customer
 <<<<<<< Updated upstream
 
 =======
+>>>>>>> Stashed changes
+=======
+* A static VA can be updated to a single use so it will be the last payment received from a particular customer 
+
 >>>>>>> Stashed changes
 
 All of the VA information, even after they are updated, is available on the OY! dashboard or via API. Once a VA is updated, the new set of configuration will apply for that VA and the previous configure is overridden and no longer applicable
