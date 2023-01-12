@@ -21,11 +21,15 @@ If you tick the 'Remember this device' option, you are not required to input an 
 
 Analytics feature allows you to get some insights about your earning and spending transaction that happened in OY!. With this feature, you can get information about how much money you have spent and how much money you have earned in a time interval. You can see your transaction growth on daily, weekly, or monthly basis. You also can select the time range. You will get some insights about the trend of your business transaction. Therefore, this feature can help you to generate new business decision to grow your business.
 
-![Dashboard Analytics Image](images/dashboard_analytics_new.png)
+![Dashboard Analytics Image](images/desktop_analytics_spendingearning.png)
 
 * You can select which time granularity and time period you want to see you transaction growth with. 
 * The increase and decrease indicator will compare your transaction performance from the time period you select vs the previous period. 
 * If you put your cursor in a line point, the number of transaction volume will be displayed.
+
+For VA, Payment Link, and E-wallet users. Now you can see the comparison of conversion between each payment method your end users are using. This data can be a great insight for you so you know which channel most of your users are using.
+
+![Dashboard Analytics Payment Method](images/desktop_analytics_payment_method.png)
 
 ## User Management
 
