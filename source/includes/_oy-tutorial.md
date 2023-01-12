@@ -390,16 +390,35 @@ Once you have connected your Accurate account in OY!, any transaction that happe
 ### Connect your Accurate
 1. Login to your OY! dashboard. In the sidebar, select the Integration menu.
 2. You will see Accurate menu. Click “Connect” to connect your Accurate account to OY!. You will be redirected to Accurate’s login page. 
-3. Once you have successfully logged in to Accurate, you will be required to select the database that you want to connect with your OY! account.
-4. If the connection process success, a notification will appear.
-5. Upon success connecting to Accurate, we will create a new Bank Account into your Accurate account, named “OY! balance” in which any transaction that happened in OY! will be recorded there.
-6. In your Accurate Dashboard, you can see that OY! Indonesia app will be listed in the Accurate Store >> Aplikasi Saya menu.
-7. Note: A fee of IDR 20k/month will be added to your Accurate billing.
+
+[Connect Accurate](images/desktop_accurate_connect.png)
+
+3. After login to your Accurate account, click Allow to allow conection between OY! and Accurate.
+[User Consent Accurate](images/desktop_accurate_authorize.png)
+
+4. Next, please select an Accurate database that you want to connect with your OY! account.
+[Accurate Select Database](images/desktop_accurate_select_database.png)
+
+5. Once you have successfully connected to Accurate, a notification in your OY! dashboard will appear and you can see your status is now "Connected/Terhubung".
+
+[Accurate Connected](images/desktop_accurate_connected_status.png)
+
+6. Upon success connecting to Accurate, we will create a new Bank Account into your Accurate account, named “OY! balance” in which any transaction that happened in OY! will be recorded there.
+
+7. In your Accurate Dashboard, you can see that OY! Indonesia app will be listed in the Accurate Store >> Aplikasi Saya menu.
+[Accurate Listing](images/desktop_accurate_listing.png)
+[Accurate Aplikasi saya](images/desktop_accurate_aplikasisaya.png)
+
+8. Note: A fee of IDR 20k/month will be added to your Accurate billing.
 
 ### Map your Chart of Account (Akun Perkiraan)
-1. Once you have successfully connected to Accurate, you will be directed to a page to map your Chart of Account (Akun Perkiraan).
+
+2. Click on "Configure" to map your Chart of Account (Akun Perkiraan).
 2. Then, map each product to the corresponding Account. Any transaction using each product will be put into the Chart of Accounts you defined on this page. Note: For Bulk Disbursement, you also can define on the create campaign page. 
-3. You can change the CoA mapping anytime as needed, just go to Integration >> Accurate >> Configuration.
+
+[Accurate Config COA](images/desktop_accurate_config_coa.png)
+
+3. You can change the CoA mapping anytime as needed, just go to Integration >> Accurate >> Configure.
 
 ### Record Transaction to Accurate
 1. Now, your OY! account has been connected to your Accurate account and each product has been mapped to its corresponding Chart of Account.
@@ -408,5 +427,8 @@ Once you have connected your Accurate account in OY!, any transaction that happe
 
 ### Disconnected your Accurate 
 1. To disconnect your Accurate account from OY!, open the Integration menu on the sidebar. Then select “Disconnect”.
+
+[Accurate Connected](images/desktop_accurate_connected_status.png)
+
 2. Then, you will be disconnected from Accurate. Any transaction that you execute via OY! will not be recorded in Accurate.
 3. Note: To remove the bill, please make sure you also uninstall OY! app in your Accurate dashboard.
