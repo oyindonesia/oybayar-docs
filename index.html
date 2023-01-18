@@ -1636,41 +1636,405 @@ If you are ready to proceed to go live or integrate with OY!, refer to the below
 <p>These are the following steps to add new users;</p>
 
 <ol>
-<li> Login to Dashboard</li>
-<li> Go to Accounts -&gt; User Management</li>
+<li> Login to Dashboard.</li>
+<li> Go to Accounts -&gt; User Management.</li>
+<li> Click the &#39;Create User&#39; button</li>
 </ol>
 
 <p><img src="images/user_management_1-12119ec4.png" alt="User Management 1" /></p>
 
 <ol>
-<li> Click the &#39;Create User&#39; button</li>
 <li> Fill in the full name, username, email, phone number (optional), and password</li>
 </ol>
 
 <p><img src="images/user_management_2-780dbcec.png" alt="User Management 2" /></p>
 
 <ol>
-<li> Choose the role that you want to assign your team member(s) to. You can choose one from the following available role:</li>
+<li> Choose the role that you want to assign your team member(s) to. You can select between Admin, Approver, and Maker</li>
 </ol>
 
-<ul>
-<li>Admin: Has access to all menu, create and approve bulk disbursement and request, view active feature report, manage user list.</li>
-<li>Sub Account (Approver): Has access to approve disbursement and request, and view active feature report.</li>
-<li>Sub Account (Maker): Has access to create disbursement and request, and view active feature report</li>
-</ul>
-
 <p>Aside from adding new users, a Super Admin is also able to edit and delete their existing users through clicking edit/delete button on the User List table.</p>
+
+<p>Here are the access control matrix in OY! Dashboard:</p>
+
+<p>Dashboard features</p>
+
+<table><thead>
+<tr>
+<th>Task</th>
+<th>Superadmin</th>
+<th>Admin</th>
+<th>Approver</th>
+<th>Maker</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Upgrade Account</td>
+<td>Can upgrade</td>
+<td>Can upgrade</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Analytics</td>
+<td>Can view</td>
+<td>Can view</td>
+<td>Can view</td>
+<td>Can view</td>
+</tr>
+<tr>
+<td>Account Statement</td>
+<td>Can view and export</td>
+<td>Can view and export</td>
+<td>Can view and export</td>
+<td>Can view and export</td>
+</tr>
+<tr>
+<td>Settlement Report</td>
+<td>Can view and export</td>
+<td>Can view and export</td>
+<td>Can view and export</td>
+<td>Can view and export</td>
+</tr>
+<tr>
+<td>Top up Balance</td>
+<td>Can top up</td>
+<td>Can top up</td>
+<td>Can top up</td>
+<td>Can top up</td>
+</tr>
+<tr>
+<td>Withdraw Balance</td>
+<td>Can withdraw</td>
+<td>Can withdraw</td>
+<td>Can withdraw</td>
+<td>Can withdraw</td>
+</tr>
+<tr>
+<td>Add User</td>
+<td>Can add user</td>
+<td>Can add user</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>User Profile</td>
+<td>Can view and edit</td>
+<td>Can view and edit</td>
+<td>Can view and edit</td>
+<td>Can view and edit</td>
+</tr>
+<tr>
+<td>Business Profile</td>
+<td>Can view and edit</td>
+<td>Can view and edit</td>
+<td>Can view and edit</td>
+<td>Can view and edit</td>
+</tr>
+<tr>
+<td>Authenticator OTP</td>
+<td>Has permission</td>
+<td>Has permission</td>
+<td>Has permission</td>
+<td>Has permission</td>
+</tr>
+<tr>
+<td>Add Payment Method</td>
+<td>Can add</td>
+<td>Can add</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Set up auto report</td>
+<td>Can set up</td>
+<td>Can set up</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Set up auto withdrawal</td>
+<td>Can set up</td>
+<td>Can set up</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Set up multi approval</td>
+<td>Can set up</td>
+<td>Can set up</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Set up notification settings</td>
+<td>Can set up</td>
+<td>Can set up</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Set up developer options</td>
+<td>Can set up</td>
+<td>Can set up</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Add transaction category</td>
+<td>Can add</td>
+<td>Can add</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Config Transaction Receipt</td>
+<td>Can config</td>
+<td>Can config</td>
+<td>Can config</td>
+<td>Can config</td>
+</tr>
+</tbody></table>
+
+<p>Multi account Management</p>
+
+<table><thead>
+<tr>
+<th>Task</th>
+<th>Superadmin</th>
+<th>Admin</th>
+<th>Approver</th>
+<th>Maker</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Create Child</td>
+<td>Can create</td>
+<td>Can create</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Top up Child via Dashboard</td>
+<td>Can top up</td>
+<td>Can top up</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Disconenct child</td>
+<td>Can disconnect</td>
+<td>Can disconnect</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody></table>
+
+<p>Bulk Disbursement Product</p>
+
+<table><thead>
+<tr>
+<th>Task</th>
+<th>Superadmin</th>
+<th>Admin</th>
+<th>Approver</th>
+<th>Maker</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Create Disbursement Campaign</td>
+<td>Can create</td>
+<td>Can create</td>
+<td>-</td>
+<td>Can create</td>
+</tr>
+<tr>
+<td>Approve Disbursement Campaign</td>
+<td>Can approve</td>
+<td>Can approve</td>
+<td>Can approve</td>
+<td>-</td>
+</tr>
+<tr>
+<td>View and Export Bulk Disbursement Report</td>
+<td>Can view and export</td>
+<td>Can view and export</td>
+<td>Can view and export</td>
+<td>Can view and export</td>
+</tr>
+</tbody></table>
+
+<p>Claim Fund Product</p>
+
+<table><thead>
+<tr>
+<th>Task</th>
+<th>Superadmin</th>
+<th>Admin</th>
+<th>Approver</th>
+<th>Maker</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Create Claim Fund</td>
+<td>Can create</td>
+<td>Can create</td>
+<td>-</td>
+<td>Can create</td>
+</tr>
+<tr>
+<td>Approve Claim Fund</td>
+<td>Can approve</td>
+<td>Can approve</td>
+<td>Can approve</td>
+<td>-</td>
+</tr>
+<tr>
+<td>View and Export Claim Fund Report</td>
+<td>Can view and export</td>
+<td>Can view and export</td>
+<td>Can view and export</td>
+<td>Can view and export</td>
+</tr>
+</tbody></table>
+
+<p>Account Payable Invoice
+| Task | Superadmin | Admin | Approver | Maker
+|-------|-------|-------|-------|-------|
+|Create AP Invoice | Can create| Can create | - | Can create |
+|Approve AP Invoice | Can approve | Can approve | Can approve | - |
+|View and Export AP Report| Can view and export | Can view and export | Can view and export | Can view and export |</p>
+
+<p>Payment Link One time and Reusable Product</p>
+
+<table><thead>
+<tr>
+<th>Task</th>
+<th>Superadmin</th>
+<th>Admin</th>
+<th>Approver</th>
+<th>Maker</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Create Payment Link</td>
+<td>Can create</td>
+<td>Can create</td>
+<td>Can Create</td>
+<td>Can create</td>
+</tr>
+<tr>
+<td>View and Export Payment Link Report</td>
+<td>Can view and export</td>
+<td>Can view and export</td>
+<td>Can view and export</td>
+<td>Can view and export</td>
+</tr>
+</tbody></table>
+
+<p>Virtual Account</p>
+
+<table><thead>
+<tr>
+<th>Task</th>
+<th>Superadmin</th>
+<th>Admin</th>
+<th>Approver</th>
+<th>Maker</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Create VA via Dashboard</td>
+<td>Can create</td>
+<td>Can create</td>
+<td>Can Create</td>
+<td>Can create</td>
+</tr>
+<tr>
+<td>View and Export VA Report</td>
+<td>Can view and export</td>
+<td>Can view and export</td>
+<td>Can view and export</td>
+<td>Can view and export</td>
+</tr>
+</tbody></table>
+
+<p>E-Wallet Aggregator</p>
+
+<table><thead>
+<tr>
+<th>Task</th>
+<th>Superadmin</th>
+<th>Admin</th>
+<th>Approver</th>
+<th>Maker</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>View and Export E-Wallet Report</td>
+<td>Can view and export</td>
+<td>Can view and export</td>
+<td>Can view and export</td>
+<td>Can view and export</td>
+</tr>
+</tbody></table>
+
+<p>Account Receivable Invoice
+| Task | Superadmin | Admin | Approver | Maker
+|-------|-------|-------|-------|-------|
+|Create AR Invoice | Can create| Can create | Can create | Can create |
+|View and Export AP Report| Can view and export | Can view and export | Can view and export | Can view and export |</p>
+
+<p>API Inquiry</p>
+
+<table><thead>
+<tr>
+<th>Task</th>
+<th>Superadmin</th>
+<th>Admin</th>
+<th>Approver</th>
+<th>Maker</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>View and Export API Inquiry Report</td>
+<td>Can view and export</td>
+<td>Can view and export</td>
+<td>Can view and export</td>
+<td>Can view and export</td>
+</tr>
+</tbody></table>
+
+<p>API Transaction Data</p>
+
+<table><thead>
+<tr>
+<th>Task</th>
+<th>Superadmin</th>
+<th>Admin</th>
+<th>Approver</th>
+<th>Maker</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>View and Export API Transaction Data Report</td>
+<td>Can view and export</td>
+<td>Can view and export</td>
+<td>Can view and export</td>
+<td>Can view and export</td>
+</tr>
+</tbody></table>
 <h2 id='2-factor-authentication-oy-dashboard-tutorial' type='normal'>2-Factor Authentication</h2>
 <p>To increase the security of your account, you can set up 2-factor Authentication. Currently, the security method that OY provides is through an authenticator app</p>
 
 <p>These are the following steps to set up the 2-factor authentication;</p>
 
 <ol>
-<li>Login to Dashboard</li>
-<li>Go to Accounts -&gt; Authenticator OTP</li>
+<li>Login to Dashboard.</li>
+<li>Go to Accounts -&gt; Authenticator OTP.</li>
 <li>Download Authenticator App in your smartphone (from Play Store/App Store) or PC (you can download an extension for your browser). Examples of the app: Google Authenticator, Microsoft Authenticator, Authy, etc</li>
-<li>Scan the barcode displayed on your OY Dashboard with your Authenticator App OR enter the setup key displayed next to it on your Authenticator App</li>
-<li>Please type in the 6-numerical code displayed on your Authenticator App in the &#39;Authenticator OTP&#39; on OY Dashboard</li>
+<li>Scan the barcode displayed on your OY Dashboard with your Authenticator App OR enter the setup key displayed next to it on your Authenticator App.</li>
+<li>Please type in the 6-numerical code displayed on your Authenticator App in the &#39;Authenticator OTP&#39; on OY Dashboard.</li>
 </ol>
 <h2 id='top-up-oy-dashboard-tutorial' type='normal'>Top Up</h2>
 <p>Top up is used to add balance to your OY account.</p>
@@ -1923,17 +2287,23 @@ Note :  The operational hour for this method is every day, from 3.01 AM to 8.30 
 
 <p>Filter: You are able to filter the settlement report by transaction date (range), product, payment method, settlement date (range), and settlement status</p>
 <h2 id='notification-oy-dashboard-tutorial' type='normal'>Notification</h2>
-<p>You can enable or disable notification settings for disbursement products if you have a super admin or admin role:</p>
+<p>You can enable or disable notification settings for low balance, send money products and receive money products if you have a super admin or admin role:</p>
 
 <ol>
 <li>Login to dashboard https://business.oyindonesia.com/</li>
-<li><p>Go to Settings -&gt; Notification
-<img src="https://user-images.githubusercontent.com/79620482/126457509-ca20c24b-9277-4be4-943e-801b79806e65.png" alt="Notif Disbursement - 1  Initial" /></p></li>
-<li><p>Choose whether or not you want notifications enabled or disabled for Bulk, API, or scheduled disbursements.
+<li>Go to Settings -&gt; Notification
+<img src="https://user-images.githubusercontent.com/79620482/126457509-ca20c24b-9277-4be4-943e-801b79806e65.png" alt="Notif Disbursement - 1  Initial" /></li>
+<li>If you want to notified by email if your balance is low, set in the &quot;Low Balance&quot; tab. Input the amount threshold and the email where the notification will be sent to.</li>
+<li>Choose whether or not you want notifications enabled or disabled for 
+Bulk Disbursement or API Disbursement.
 a. Enable Notification: Email notification will be sent for pending, failed and success transactions.
-b. Disable Success Notification: email notification will only be sent for pending and failed transactions.</p></li>
-<li><p>The email field: allows the user to add, remove, and edit email notification receivers in this column, which can hold up to three email addresses.</p></li>
-<li><p>Click ‘Save Changes’</p></li>
+b. Disable Success Notification: email notification will only be sent for pending and failed transactions.</li>
+<li>Choose whether or not you want notifications enabled or disabled for 
+Payment Link, or VA.
+a. Enable Notification: Email notification will be sent for success transactions.
+b. Disable Success Notification: No email notification will be sent.</li>
+<li>The email field: allows the user to add, remove, and edit email notification receivers in this column, which can hold up to three email addresses.</li>
+<li>Click ‘Save Changes’</li>
 </ol>
 <h2 id='multi-account-management-oy-dashboard-tutorial' type='normal'>Multi Account Management</h2>
 <p>Multi Account Management (Children) is a feature that can help you handle complex relations between entities in your business in the Oy! Dashboard. Please contact our Sales or Account Management if you’re interested to use this feature.<br>
