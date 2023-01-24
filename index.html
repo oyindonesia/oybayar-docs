@@ -4618,7 +4618,7 @@ You can upload an invoice attachment or create an attachment using the OY! PDF t
 
 <p><strong>Mock Credentials for Testing</strong></p>
 
-<p>Specifically for payment via Credit Card or Debit Card, you may use the below credentials to simulate payment for a successful transaction in staging environment</p>
+<p>Specifically for payment via Credit Card or Debit Card, you may use the below credentials to simulate an end-to-end payment joruney for a successful transaction in staging environment</p>
 
 <table><thead>
 <tr>
@@ -4643,6 +4643,21 @@ You can upload an invoice attachment or create an attachment using the OY! PDF t
 <td>Testing</td>
 </tr>
 </tbody></table>
+
+<p><strong>Simulate Credit Card / Debit Card Transaction Callback for Testing</strong>
+As an alternative to the above, if you would like to simulate the callback for Credit Card or Debit Card transaction, but not necessarily the end-to-end payment journey, you may manually send callback by following these steps: </p>
+
+<ol>
+<li>Log in to your OY! Dashboard </li>
+<li>Select Environment: Demo in the top left corner </li>
+<li>Make sure to have inputted your staging callback URL on Settings: &#39;Developer Options&#39; (tab: Callback Configuration - Payment Link)</li>
+<li>Create a payment link in Demo environment</li>
+<li>Click on the link and proceed with Credit Card or Debit Card as your payment method </li>
+<li>Copy the Reference Number of the transaction - it should be available under &quot;Transaction Details&quot; </li>
+<li>Return to OY! Dashboard and click on the Settings: &#39;CC-DC Callback&quot; </li>
+<li>Paste the Reference Number of the transaction and choose whether you would like to simulate a callback for successful transaction or a failed transaction </li>
+<li>Click &quot;Send Callback&quot;. OY! will only send callback for a successful transaction whether in staging environment or production environment </li>
+</ol>
 <h3 id='how-to-use-payment-link-via-dashboard-payment-links-invoice' type='normal'>How to Use Payment Link via Dashboard</h3>
 <p>One-time Link</p>
 
