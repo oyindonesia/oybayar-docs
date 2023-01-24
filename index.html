@@ -1417,6 +1417,48 @@
                         </li>
                     </ul>
                   </li>
+                  <li>
+                    <a href="#feature-account-linking-accepting-payments" class="toc-h2 toc-link" data-title="Feature: Account Linking">
+                      <span class="toc-link-content">
+                        Feature: Account Linking
+                      </span>
+                         <img src="images/arrow-bottom-425d93ba.svg" class="active-parent icon-arrow" alt="" />
+                    </a>
+                    <ul class="toc-list-h3">
+                        <li>
+                          <a href="#key-features-feature-account-linking" class="toc-h3 toc-link" data-title="Key Features">
+                            <span class="toc-link-content">
+                              Key Features
+                            </span> 
+                            <img src="images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#account-linking-flow-feature-account-linking" class="toc-h3 toc-link" data-title="Account Linking Flow">
+                            <span class="toc-link-content">
+                              Account Linking Flow
+                            </span> 
+                            <img src="images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#account-unlinking-flow-feature-account-linking" class="toc-h3 toc-link" data-title="Account Unlinking Flow">
+                            <span class="toc-link-content">
+                              Account Unlinking Flow
+                            </span> 
+                            <img src="images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#payment-method-supported-feature-account-linking" class="toc-h3 toc-link" data-title="Payment Method Supported">
+                            <span class="toc-link-content">
+                              Payment Method Supported
+                            </span> 
+                            <img src="images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
+                          </a>
+                        </li>
+                    </ul>
+                  </li>
               </ul>
           </li>
           <li>
@@ -5917,6 +5959,67 @@ Ewallet: trx_id OR ref_number</p>
 <li>The transaction will change to “Refunded” if the refund is successful. You can not trigger another refund after the refund is successful. The refund button will be disabled.</li>
 <li>You can see the refunded transaction in “Account Statement” page by clicking “Transaction Report” and “Account Statement”. <img src="images/ewallet_refund_account_statement-78081314.png" alt="Refund E-wallet" /></li>
 </ol>
+<h2 id='feature-account-linking-accepting-payments' type='normal'>Feature: Account Linking</h2>
+<p><strong>Overview</strong> Account Linking is a feature that allows your customer&#39;s bank/e-wallet account to be linked to your system using tokenization. By setting up account linking up front, your customer can later complete payments without being prompted for any card details or e-wallet phone number. Currently, our account linking feature is supported in E-Wallet (DANA).</p>
+
+<p>Account linking feature is free of charge.</p>
+<h3 id='key-features-feature-account-linking' type='normal'>Key Features</h3>
+<p><strong>1. Account Linking</strong>
+Link your customer&#39;s bank/e-wallet account to your system using tokenization.
+<strong>2. Account Unlinking</strong>
+Unlink your customer&#39;s bank/e-wallet account from your system. 
+<strong>3. Get E-wallet Balance</strong>
+By using account linking, your users can now see their e-wallet balance on before checking out a payment.</p>
+<h3 id='account-linking-flow-feature-account-linking' type='normal'>Account Linking Flow</h3>
+<ol>
+<li>You hit OY! API Account Linking for a particular payment method (e.g., DANA).</li>
+<li>OY! returns redirect URL for authentication</li>
+<li>Your customer authorizes the account linking by signing the agreement page and inserting a PIN.</li>
+<li>OY! returns account linking result. If success, OY! will save the authorization as a token and redirect your customer to your success page URL.</li>
+</ol>
+<h3 id='account-unlinking-flow-feature-account-linking' type='normal'>Account Unlinking Flow</h3>
+<p>Account Unlinking can be done in several ways:
+- <strong>OY! API Unlinking</strong> 
+  You can hit OY! API Unlinking to unlink your customer&#39;s bank/e-wallet account
+  1. You hit OY! API Account Unlinking for a particular payment method (e.g., DANA).
+  2. OY! returns account unlinking result. If success, OY! will invalidate the token.
+- <strong>Mobile Banking/E-Wallet Application</strong> 
+Your customer can unlink their account via their m-Banking/E-Wallet application.
+- <strong>Deleted/Blocked Accounts</strong> 
+If your customer&#39;s account is deleted/blocked, then their account is automatically unlinked.</p>
+<h3 id='payment-method-supported-feature-account-linking' type='normal'>Payment Method Supported</h3>
+<p>Currently, Account Linking is only supported on e-wallet payment method. Each payment method have different expiry time and process to renew token.</p>
+
+<table><thead>
+<tr>
+<th>E-Wallet Issuer</th>
+<th>Token Expiry Time</th>
+<th>Token Renewal</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>DANA</td>
+<td>10 Years</td>
+<td>After Expiry Time</td>
+</tr>
+<tr>
+<td>ShopeePay</td>
+<td>Not supported</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Linkaja</td>
+<td>Not supported</td>
+<td>-</td>
+</tr>
+<tr>
+<td>OVO</td>
+<td>Not supported</td>
+<td>-</td>
+</tr>
+</tbody></table>
+
+<p>For DANA: If your customer&#39;s DANA account is frozen, then their account is temporarily unlinked. Once the account is unfrozen and the token has not expired, their account is automatically linked again.</p>
 <h1 id='faqs' type='normal'>FAQs</h1><h2 id='api-and-bulk-disbursement-faqs' type='normal'>API and Bulk Disbursement</h2>
 <p><strong>What are bank maintenance schedules? Will partners be informed?</strong></p>
 
