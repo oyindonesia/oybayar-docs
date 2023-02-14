@@ -662,6 +662,56 @@
                         </li>
                     </ul>
                   </li>
+                  <li>
+                    <a href="#jurnal-integration-oy-dashboard-tutorial" class="toc-h2 toc-link" data-title="Jurnal Integration">
+                      <span class="toc-link-content">
+                        Jurnal Integration
+                      </span>
+                         <img src="images/arrow-bottom-425d93ba.svg" class="active-parent icon-arrow" alt="" />
+                    </a>
+                    <ul class="toc-list-h3">
+                        <li>
+                          <a href="#how-does-it-work-jurnal-integration" class="toc-h3 toc-link" data-title="How does it work?">
+                            <span class="toc-link-content">
+                              How does it work?
+                            </span> 
+                            <img src="images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#connect-your-jurnal-jurnal-integration" class="toc-h3 toc-link" data-title="Connect your Jurnal">
+                            <span class="toc-link-content">
+                              Connect your Jurnal
+                            </span> 
+                            <img src="images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#map-your-chart-of-account-jurnal-integration" class="toc-h3 toc-link" data-title="Map your Chart of Account">
+                            <span class="toc-link-content">
+                              Map your Chart of Account
+                            </span> 
+                            <img src="images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#record-transaction-to-jurnal-jurnal-integration" class="toc-h3 toc-link" data-title="Record Transaction to Jurnal">
+                            <span class="toc-link-content">
+                              Record Transaction to Jurnal
+                            </span> 
+                            <img src="images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#disconnected-your-jurnal-jurnal-integration" class="toc-h3 toc-link" data-title="Disconnected your Jurnal">
+                            <span class="toc-link-content">
+                              Disconnected your Jurnal
+                            </span> 
+                            <img src="images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
+                          </a>
+                        </li>
+                    </ul>
+                  </li>
               </ul>
           </li>
           <li>
@@ -2590,7 +2640,7 @@ After confirming, the request will be sent to the respective account to be accep
 <p><img src="images/desktop_accurate_connected_status-6d08e3c4.png" alt="Accurate Connected" /></p>
 
 <ol>
-<li><p>Upon success connecting to Accurate, we will create a new Bank Account into your Accurate account, named “OY! balance” in which any transaction that happened in OY! will be recorded there.</p></li>
+<li><p>Upon success connecting to Accurate, we will create a new Bank Account into your Accurate account, named “OY! balance” in which any transaction that happened in OY! will be recorded there. Your current OY! balance will also be mapped there.</p></li>
 <li><p>In your Accurate Dashboard, you can see that OY! Indonesia app will be listed in the Accurate Store &gt;&gt; Aplikasi Saya menu.
 <img src="images/desktop_accurate_listing-bbac4d17.png" alt="Accurate Listing" />
 <img src="images/desktop_accurate_aplikasisaya-e4c7bdb7.png" alt="Accurate Aplikasi saya" /></p></li>
@@ -2615,7 +2665,8 @@ After confirming, the request will be sent to the respective account to be accep
 <ol>
 <li>Now, your OY! account has been connected to your Accurate account and each product has been mapped to its corresponding Chart of Account.</li>
 <li>Any successful transaction that happened in OY! will be recorded to Accurate with the corresponding Account you defined in the Mapping Account menu.</li>
-<li>Transactions in OY! will be recorded in Pengeluaran or Pemasukan module, under OY! Balance bank account.</li>
+<li>Transactions in OY! will be recorded in Pengeluaran or Pemasukan module, under OY! Balance bank account. It will also credited/debited your OY! Balance Bank Account. </li>
+<li>Note: For some reasons, we do not map Top up and Withdraw balance transactions to Jurnal. Therefore, you should adjust your bank’s Cash Bank account balance as well as OY! Indonesia Cash Bank account balance in your Accurate dashboard everytime you execute top up and withdraw transactions.</li>
 </ol>
 <h3 id='disconnected-your-accurate-accurate-integration' type='normal'>Disconnected your Accurate</h3>
 <ol>
@@ -2627,6 +2678,80 @@ After confirming, the request will be sent to the respective account to be accep
 <ol>
 <li>Then, you will be disconnected from Accurate. Any transaction that you execute via OY! will not be recorded in Accurate.</li>
 <li>Note: To remove the bill, please make sure you also uninstall OY! app in your Accurate dashboard.</li>
+</ol>
+<h2 id='jurnal-integration-oy-dashboard-tutorial' type='normal'>Jurnal Integration</h2>
+<p>Jurnal is a local accounting platform that is mainly used by companies in Indonesia. We have integrated our system to the Jurnal system in order to help you optimize your workflow. By connecting your OY! Account, you do not have to manually record your transaction that happened in OY! to Jurnal. You will get a seamless experience of recording your transaction.</p>
+<h3 id='how-does-it-work-jurnal-integration' type='normal'>How does it work?</h3>
+<p>Once you have connected your Jurnal account in OY!, any transaction that happened in OY! will be automatically recorded to your Jurnal account. Upon successful connection, we will trigger the creation of a new Bank Account, which is OY! Balance Bank Account. You will be required to map your Jurnal’s Chart of Account. Mapping your Chart of Accounts will help us to put your transaction into the correct Account. Transactions that happened in OY! will be recorded in that bank account, into the EXPENSES or SALES INVOICE modules.</p>
+<h3 id='connect-your-jurnal-jurnal-integration' type='normal'>Connect your Jurnal</h3>
+<ol>
+<li>Before connecting your Jurnal account, you need to log in to your Jurnal account in your browser.</li>
+</ol>
+
+<p><img src="images/jurnal_login-c80b66c6.png" alt="Jurnal Login" /></p>
+
+<ol>
+<li><p>Login to your OY! dashboard. In the sidebar, select the &quot;Integration&quot; menu.</p></li>
+<li><p>You will see the Jurnal menu. Click “Connect” to connect your Jurnal account to OY!. </p></li>
+</ol>
+
+<p><img src="images/jurnal_integration_menu-fdd3d6ad.png" alt="Jurnal Connect" /></p>
+
+<ol>
+<li>There will be a page to ask for your consent regarding this connection process. Make sure to select OY! Indonesia. Click Allow to allow connection between OY! and Jurnal.</li>
+</ol>
+
+<p><img src="images/jurnal_authorization_page-fd3d4a24.png" alt="Jurnal Authorization" /></p>
+
+<ol>
+<li>Once you have successfully connected to Jurnal, a notification in your OY! dashboard will appear and you can see your status is now &quot;Connected/ Terhubung&quot;.</li>
+</ol>
+
+<p><img src="images/jurnal_connection_success-9b219fc7.png" alt="Jurnal Connection Success" /></p>
+
+<p><img src="images/jurnal_success_notif-7a689614.png" alt="Jurnal Notification" /></p>
+
+<p><img src="images/images/jurnal_connection_status.png" alt="Jurnal Connection Status" /></p>
+
+<ol>
+<li>Upon success connecting to Jurnal, we will create a new Bank Account into your Jurnal account, named “OY! Balance”. Any transaction that happened in OY! will be recorded under that bank account. Your current OY! balance will be mapped into your OY! Balance Cash Bank Account as a bank deposit transaction. </li>
+</ol>
+
+<p><img src="images/jurnal_oy_balance-c042b246.png" alt="Jurnal OY! Balance" /></p>
+<h3 id='map-your-chart-of-account-jurnal-integration' type='normal'>Map your Chart of Account</h3>
+<ol>
+<li><p>Click on &quot;Configure&quot; button in the &quot;Integrasi&quot; menu to map your Chart of Account.</p></li>
+<li><p>Then, map each product to the corresponding Account. Any transaction using each product will be put into the Chart of Accounts you defined on this page.</p></li>
+</ol>
+
+<p><img src="images/jurnal_coa_mapping-9a73b605.png" alt="Jurnal COA Mapping" /></p>
+
+<ol>
+<li>Note: Special for Bulk Disbursement product, you can define the Chart of Account later in the campaign creation process - Step 3 Input Detail page. In the Transaction Category field.</li>
+</ol>
+
+<p><img src="images/jurnal_bulk_disburse_coa-43b5b583.png" alt="Jurnal Bulk Disburse COA" /></p>
+
+<ol>
+<li><p>You can change the CoA mapping anytime as needed, just go to Integration &gt;&gt; Jurnal &gt;&gt; Configure.</p></li>
+<li><p>Note: currently, we do not include mapping and recording the PPN tax. The applied tax will be recorded to Admin Fee Chart of Account. We will update this document as soon as possible once we have included mapping PPN function.</p></li>
+</ol>
+<h3 id='record-transaction-to-jurnal-jurnal-integration' type='normal'>Record Transaction to Jurnal</h3>
+<ol>
+<li>Now, your OY! account has been connected to your Jurnal account and each product has been mapped to its corresponding Chart of Account.</li>
+<li><p>Any successful transaction that happened in OY! will be recorded to Jurnal with the corresponding Account you defined in the Mapping Account menu. Transactions from OY! will be recorded in the Expenses or Sales Invoice module, under OY! Balance bank account and it will credited/debited your OY! balance bank account. Note: Admin Fee of Receive Money transactions will be recorded in the Expenses module.</p></li>
+<li><p>In this image, we show you a Disbursement Transaction with CoA &quot;Iklan &amp; Promosi&quot; and admin fee with CoA &quot;Komisi &amp; Fee&quot;. It is recorded into the &quot;Expenses&quot; module in your Jurnal account with status LUNAS.</p></li>
+</ol>
+
+<p><img src="images/jurnal_bulk_disburse_txn-0e73c013.png" alt="Jurnal Disburse Transaction" /></p>
+
+<ol>
+<li>Note: For some reasons, we do not map Top up and Withdraw balance transactions to Jurnal. Therefore, you should adjust your bank’s Cash Bank account balance as well as OY! Indonesia Cash Bank account balance in your Jurnal dashboard everytime you execute top up and withdraw transactions.</li>
+</ol>
+<h3 id='disconnected-your-jurnal-jurnal-integration' type='normal'>Disconnected your Jurnal</h3>
+<ol>
+<li>To disconnect your Jurnal account from OY!, open the Integration menu on the sidebar. Then select “Disconnect”.</li>
+<li>Then, you will be disconnected from Jurnal. Any transaction that you execute via OY! will not be recorded in Jurnal.</li>
 </ol>
 <h1 id='oy-bisnis-app' type='normal'>OY! Bisnis App</h1><h2 id='oy-bisnis-app-oy-bisnis-app' type='normal'>OY! Bisnis App</h2>
 <p>Great news for you who always in mobility mode but you need to access our dashboard! Now you can access your OY! dashboard from the tip of your finger. OY! Bisnis offer you with easy access to OY! Dashboard, so you can do your financial activities everywhere you are, without opening your laptop or PC. In this app, you can see your balance, account statement, transaction status, send money and also receive money. Yes, doing transaction is now easier than before!</p>
