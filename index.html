@@ -1546,6 +1546,14 @@
                         <img src="images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
                     </a>
                   </li>
+                  <li>
+                    <a href="#payment-routing-faqs" class="toc-h2 toc-link" data-title="Payment Routing">
+                      <span class="toc-link-content">
+                        Payment Routing
+                      </span>
+                        <img src="images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
+                    </a>
+                  </li>
               </ul>
           </li>
       </ul>
@@ -5931,13 +5939,13 @@ As an alternative to the above, if you would like to simulate the callback for C
 <h3 id='description-about-payment-routing-api-payment-routing' type='normal'>Description about Payment Routing</h3>
 <p>Payment Routing is an API that combines receive money and disburse money features. It allows you to immediately disburse the money once you receive from your customers. By integrating to this API, you will get the end-to-end solutions for your business needs.</p>
 
-<p>For now, you can use Payment Link, Virtual Account, E-Wallet, QRIS for the receive money part.</p>
+<p>For now, you can use Payment Link, Bank Transfer (via Virtual Account &amp; Unique Code), E-Wallet, QRIS for the receive money part.</p>
 <h3 id='flow-api-payment-routing' type='normal'>Flow</h3>
 <p><img src="images/Payment_Routing_Flow-257eac36.png" alt="Payment Routing Flow" /></p>
 <h3 id='key-features-api-payment-routing' type='normal'>Key Features</h3>
 <ol>
 <li><strong>Accept and disburse money in a real time manner</strong> - By integrating to this API, you will get end-to-end solutions from receive to disburse money. All in real time manner. Note : Some payment methods have H+1 or H+2 settlement period. You have to keep some balance to cater the settlement from the payment methods.</li>
-<li><strong>You can select Payment Link, VA, E-Wallet, and QRIS to receive money</strong> - You can choose Virtual Account, E-Wallet, or QRIS as a payment method to receive the money. We provide all banks offered in VA Aggregator for Virtual Accounts and provide ShopeePay, DANA, LinkAja as payment method for E-Wallet. However, you don&#39;t need to worry if you don&#39;t have your own UI. You can use our Payment Link to help your customers to complete the payments.</li>
+<li><strong>You can select Payment Link, Bank Transfer, E-Wallet, and QRIS to receive money</strong> - You can choose Bank Transfer (via Virtual Account &amp; Unique Code), E-Wallet, or QRIS as a payment method to receive the money. We provide all banks offered in VA Aggregator for Virtual Accounts, provide BCA for Unique Code, and provide ShopeePay, DANA, LinkAja as payment method for E-Wallet. However, you don&#39;t need to worry if you don&#39;t have your own UI. You can use our Payment Link to help your customers to complete the payments.</li>
 <li><strong>Transaction tracking and monitoring capability</strong> - You can track all payment routing transactions details through our callback or the OY! dashboard. You will receive callbacks two times, once we have succesfully receive money and once we have successfully disburse money.</li>
 </ol>
 <h3 id='use-cases-api-payment-routing' type='normal'>Use Cases</h3>
@@ -6257,7 +6265,7 @@ If your customer&#39;s account is deleted/blocked, then their account is automat
 <h2 id='api-va-aggregator-faqs' type='normal'>API VA Aggregator</h2>
 <p><strong>What are the supported banks?</strong></p>
 
-<p>We currently have 6 available banks for our API VA Aggregator. Please refer to the bank codes <a href="https://api-docs.oyindonesia.com/#va-aggregator-bank-code">here</a>.</p>
+<p>We currently have 11 available banks for our API VA Aggregator. Please refer to the bank codes <a href="https://api-docs.oyindonesia.com/#va-aggregator-bank-code">here</a>.</p>
 
 <p><strong>Is the amount received in realtime?</strong></p>
 
@@ -6268,9 +6276,10 @@ We support payments via bank transfers, credit card, debit card, and QR code fro
 
 <ul>
 <li><p>Bank Transfer via Virtual Account: BCA, BNI, BRI, CIMB Niaga, Mandiri, Permata Bank.</p></li>
+<li><p>Bank Transfer via Unique Code: BCA</p></li>
 <li><p>Credit Card/Debit Card: VISA, Mastercard</p></li>
-<li><p>E-Wallet: ShopeePay</p></li>
-<li><p>QR Code: Qris</p></li>
+<li><p>E-Wallet: ShopeePay, DANA, LinkAja, OVO</p></li>
+<li><p>QR Code: QRIS</p></li>
 </ul>
 
 <p><strong>What are closed and open amounts? What happens when the amount paid by the user is different from the declared amount in the created Payment Links?</strong></p>
@@ -6278,6 +6287,11 @@ We support payments via bank transfers, credit card, debit card, and QR code fro
 <p>A closed amount is a configuration so that the payment link or invoice can only be paid if the actual declared amount is paid. The user will not be able to pay any amount other than the declared amount.</p>
 
 <p>An opened amount is a configuration so that the payment link or invoice can be paid up to the declared amount (or any, if amount is not declared). If the user pays an amount that is different from the declared amount, the payment link will remain active. The payment link will only reflect a completed status when the full amount is paid in total.</p>
+<h2 id='payment-routing-faqs' type='normal'>Payment Routing</h2>
+<p><strong>What is the difference between Bank Transfer via Virtual Account and Bank Transfer via Unique Code?</strong>
+Bank Transfer via Virtual Account (VA) will generate specific account number destination for each transaction. You can create an open amount or closed amount transaction using VA. Detail explanation of VA can be seen <a href="https://docs.oyindonesia.com/#va-aggregator-accepting-payments">here</a>. You can create VA Transactions via <a href="https://docs.oyindonesia.com/#va-aggregator-accepting-payments">API Payment Routing</a> or <a href="https://docs.oyindonesia.com/#va-aggregator-accepting-payments">VA Aggregator</a> </p>
+
+<p>Bank Transfer via Unique Code generates unique code for each transaction but the account number destination will always be the same. The total amount paid is subtracted by the unique code. For example, your end user wants to paid a transaction of Rp 100.000 and get Rp 100 as the unique code. The payment uses subtraction approach, so your end user will pay a total of Rp 99.900 to complete the payments. Unique Code also have limitations compared to VA, where you can only create unique code transaction during the operational hours (3 AM - 8.30 PM GMT+7). You can create  Unique Code Transaction only via <a href="https://docs.oyindonesia.com/#va-aggregator-accepting-payments">API Payment Routing</a></p>
 
       </div>
       <div class="dark-box">
