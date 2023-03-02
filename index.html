@@ -1082,6 +1082,48 @@
                         </li>
                     </ul>
                   </li>
+                  <li>
+                    <a href="#international-transfer-sending-payments" class="toc-h2 toc-link" data-title="International Transfer">
+                      <span class="toc-link-content">
+                        International Transfer
+                      </span>
+                         <img src="images/arrow-bottom-425d93ba.svg" class="active-parent icon-arrow" alt="" />
+                    </a>
+                    <ul class="toc-list-h3">
+                        <li>
+                          <a href="#key-features-international-transfer" class="toc-h3 toc-link" data-title="Key Features">
+                            <span class="toc-link-content">
+                              Key Features
+                            </span> 
+                            <img src="images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#registration-and-set-up-international-transfer" class="toc-h3 toc-link" data-title="Registration and Set Up">
+                            <span class="toc-link-content">
+                              Registration and Set Up
+                            </span> 
+                            <img src="images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#testing-international-transfer" class="toc-h3 toc-link" data-title="Testing">
+                            <span class="toc-link-content">
+                              Testing
+                            </span> 
+                            <img src="images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#how-to-use-international-transfer" class="toc-h3 toc-link" data-title="How to Use">
+                            <span class="toc-link-content">
+                              How to Use
+                            </span> 
+                            <img src="images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
+                          </a>
+                        </li>
+                    </ul>
+                  </li>
               </ul>
           </li>
           <li>
@@ -4085,6 +4127,155 @@ Detailed step-by-step instructions on setting up user management and the differe
 </ul></li>
 <li><p>It is user’s responsibility to block card usage whenever fraudulent transactions found. OY! is not responsible for the transaction.</p></li>
 </ul>
+<h2 id='international-transfer-sending-payments' type='normal'>International Transfer</h2>
+<p>International Transfer product provides the capability for users to transfer across countries from Indonesia at any time. You may create a transaction within OY! dashboard without the need for any technical integration. </p>
+<h3 id='key-features-international-transfer' type='normal'>Key Features</h3>
+<p><strong>Account Management</strong>
+When you first create an account, your account will be assigned as a Super Admin role. As a Super Admin, you have the ability to create new sub-accounts and assign different roles to your team such as Admin that is applicable for international transfers. Both Super Admin and Admin may edit or delete created sub-accounts.</p>
+
+<p>Note: it is not necessary to create new sub-accounts in order to use international transfer. The Super Admin and Admin roles allows you to directly create and approve transactions.</p>
+
+<p>Detailed step-by-step instructions on setting up user management and the different role types coming soon.</p>
+
+<p><strong>Roles &amp; Accessibility</strong>
+Only Super Admin and Admin roles are available to create transactions. All other roles are only allowed to view transaction list, transaction details, filter, export and edit custom column in dashboard.</p>
+
+<p><strong>Available destinations</strong>
+Current list of countries supported: Singapore
+Current list of currencies supported: Singapore Dollars (SGD), US Dollars (USD)</p>
+
+<p>More countries such as Australia, China, Hongkong, Malaysia, South Korea and United States will be available soon.</p>
+
+<p><strong>Sender / Recipient Contacts</strong>
+Suppose that you want to create an international transfer on behalf of another entity, you may create an individual / business sender or recipient and input all required information about the sender or recipient. All sender and recipient information will be saved in contacts and may be reused in the future.</p>
+
+<p><strong>Additional Documents</strong>
+We provide a placeholder for you to upload invoice and other supporting documents for the purpose of transfer and source of funds.</p>
+
+<p><strong>Transaction Details</strong>
+Once a transaction is successfully created, all transaction details and updates will be recorded in OY! dashboard</p>
+<h3 id='registration-and-set-up-international-transfer' type='normal'>Registration and Set Up</h3>
+<p><strong>Prerequisites</strong> 
+* Register an account on the OY! dashboard
+* Activate your account through the activation link sent via email
+* Upgrade your account
+* Upgrade request is approved</p>
+<h3 id='testing-international-transfer' type='normal'>Testing</h3>
+<ol>
+<li>Log in to your OY! dashboard</li>
+<li>Choose &quot;Staging&quot; environment</li>
+<li>Click &quot;Send Money&quot; menu, and choose &quot;International Transfer&quot;</li>
+<li>Click &quot;Create New Transaction&quot;</li>
+<li>Fill in the necessary details by following the steps explained in the “How to Use” section</li>
+<li>Note: To reproduce a failed transaction in staging environment, you may fill the recipient account number as <strong>1234567891</strong>. All other account numbers will result in a successful transaction.</li>
+</ol>
+<h3 id='how-to-use-international-transfer' type='normal'>How to Use</h3>
+<p>In order to create international transfers, you need to have sufficient available OY! balance is required in the account. If there is an insufficient available balance in the account, international transfers cannot be created
+ 1. <em>Create new transaction</em>: On the OY! dashboard, navigate to Send Payments &gt; International Transfer on your left menu bar. Click “Create New Transaction” on the far righthand side of that page to create a new transfer.</p>
+
+<p><img src="images/internationalTransfer/create_inter_remit-f51d8cbb.jpg" alt="Create New Transaction" /></p>
+
+<ol>
+<li><em>Input transfer amount details</em>: You may fill out the amount of transfer in two ways:
+
+<ol>
+<li>Fill in the send amount (in Rupiah) you would like to transfer, along with the destination currency and country. Our system will automatically convert according to the foreign exchange rate at that time.</li>
+<li>Fill in the recipient amount (in SGD/USD) you would like to transfer, along with the destination currency and country. Our system will automatically convert according to the foreign exchange rate at that time.</li>
+</ol></li>
+</ol>
+
+<p><img src="images/internationalTransfer/input_amount-9f23009f.jpg" alt="Input Send Amount" /></p>
+
+<p><em>Note: If the nominal amount greater than the available balance, then our system will restrict users from proceeding</em>
+<img src="images/internationalTransfer/balance_less_than_send_amount-5d40e13b.jpg" alt="Balance Less Than Send Amount" /></p>
+
+<ol>
+<li><em>Input sender details</em>: Decide whether sender is an individual or business entity, and you will see the corresponding details to fill out for each. Previously saved sender contacts will be displayed at the bottom of this page.
+<img src="images/images/internationalTransfer/list_of_existing_senders.jpg" alt="List Of Existing Senders" /></li>
+</ol>
+
+<p>Create a new individual sender by filling out this form</p>
+
+<p><img src="images/internationalTransfer/input_individual_sender-9399026e.jpg" alt="Input Individual Sender" /></p>
+
+<p>Create a new business sender by filling out this form</p>
+
+<p><img src="images/internationalTransfer/input_business_sender-82251967.jpg" alt="Input Business Sender" /></p>
+
+<ol>
+<li><em>Input recipient details</em>: Decide whether recipient is an individual or business entity, and you will see the corresponding details to fill out for each. Previously saved recipient contacts will be displayed at the bottom of this page.</li>
+</ol>
+
+<p><img src="images/internationalTransfer/list_of_existing_recipients-69c7e4aa.jpg" alt="List Of Existing Recipients" /></p>
+
+<p>This will be the form you will need to fill out for individual recipient</p>
+
+<p>Create a new individual recipient by filling out this form</p>
+
+<p><img src="images/internationalTransfer/input_individual_recipient-b8d93608.jpg" alt="Input Individual Recipient" /></p>
+
+<p>Create a new business contact by filling out this form</p>
+
+<p><img src="images/internationalTransfer/input_business_recipient-a22e2910.jpg" alt="Input Business Recipient" /></p>
+
+<ol>
+<li><em>Add supporting information</em>: In this step, we need to record source of funds, purpose of transfer for the transaction. You may also attach supporting documents to aid the compliance requirements for your transaction.</li>
+</ol>
+
+<p><a href="images/internationalTransfer/transfer_reason_docs-ec3e293c.jpg">!Transfer Reason And Supporting Docs</a></p>
+
+<ol>
+<li><em>Summary</em>: The summary of your transaction will be shown. If all the information is correct, you may click the <strong>Submit</strong> button at the bottom right hand corner of the screen.</li>
+</ol>
+
+<p><a href="images/internationalTransfer/summary-41837506.png">!Summary</a></p>
+
+<p><em>Note: A fixed quotation rate is created since Input sender details and will be refreshed every 30 minutes. In the case when the quotation expires, a pop up will show to fetch the latest exchange rate and a new quotation is created.</em></p>
+
+<p><a href="images/internationalTransfer/update_exchange_rate-50515369.png">!Update Exchange Rate</a></p>
+
+<p>If the available balance is insufficient for the new quotation amount, then you will be prompted to change the transfer amount or top up balance.</p>
+
+<p><a href="images/internationalTransfer/balance_not_enough-9cf34a0d.png">!Balance Not Enough</a></p>
+
+<ol>
+<li><em>Input Password</em>: For security reasons, OY! will prompt clients to input their password prior to every transaction.</li>
+</ol>
+
+<p><a href="images/internationalTransfer/password_filled-f64c071c.png">!Password Filled</a></p>
+
+<p>Each client has 5 chances to input the correct password. If you failed to input the correct password 5 times, then the transaction will automatically be cancelled.</p>
+
+<p><a href="images/internationalTransfer/incorrect_password-7b4997c5.png">!Incorrect Password</a></p>
+
+<ol>
+<li><em>Transaction Status: In Progress, Success, Failed.</em></li>
+</ol>
+
+<p><em>In Progress</em></p>
+
+<p>Once a transaction is successfully created, it will appear in your dashboard the status column will be set as <em>In Progress</em>.</p>
+
+<p><a href="images/internationalTransfer/in_progress_transaction-e7e7d357.png">!In Progress Status</a></p>
+
+<p><em>Success</em></p>
+
+<p>Once your transaction is processed successfully, the status column will be updated as Success. Both sender and recipient should have received an email detailing a “Successful Transfer.”</p>
+
+<p><a href="images/internationalTransfer/success_email-4c36615f.png">!Success Email</a></p>
+
+<p><em>Failed</em></p>
+
+<p>If your transaction has failed to process, the status column will be updated as Failed. Both sender and recipient should have received an email detailing a “Failed Transfer.”</p>
+
+<p><a href="images/internationalTransfer/failed_email-1d7ef5b8.png">!Failed Email</a></p>
+
+<ol>
+<li><em>Check transaction details</em>: You may check transaction details by clicking on the transaction id on the list of transaction details on dashboard</li>
+</ol>
+
+<p><a href="images/internationalTransfer/list_of_transactions-ab9ec960.png">!List Of Transactions</a>
+<a href="images/internationalTransfer/transaction_detail-3f419e0b.png">!Transaction Detail</a></p>
 <h1 id='accepting-payments' type='normal'>Accepting Payments</h1><h2 id='va-aggregator-accepting-payments' type='normal'>VA Aggregator</h2>
 <p>Businesses are struggling to manage hundreds or even thousands of physical bank accounts that are used for different purposes. It causes significant overhead cost in terms of the amount of account maintenance and man hours needed for reporting and reconciliation purposes, combining different information from different accounts.</p>
 
