@@ -1193,6 +1193,14 @@
                             <img src="images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
                           </a>
                         </li>
+                        <li>
+                          <a href="#available-payment-channels-for-va-va-aggregator" class="toc-h3 toc-link" data-title="Available Payment Channels for VA">
+                            <span class="toc-link-content">
+                              Available Payment Channels for VA
+                            </span> 
+                            <img src="images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
+                          </a>
+                        </li>
                     </ul>
                   </li>
                   <li>
@@ -4607,6 +4615,120 @@ Once a transaction is successfully created, all transaction details and updates 
 <td>Closed Amount</td>
 </tr>
 </tbody></table>
+<h3 id='available-payment-channels-for-va-va-aggregator' type='normal'>Available Payment Channels for VA</h3>
+<p>Your end-users may use the below payment channels to pay for their bills via VA</p>
+
+<table><thead>
+<tr>
+<th>Bank (Virtual Account)</th>
+<th>SKN</th>
+<th>RTGS</th>
+<th>ATMs</th>
+<th>Intrabank Mobile Banking &amp; Internet Banking</th>
+<th>Interbank Internet Banking</th>
+<th>Interbank Mobile Banking</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Bank Mandiri</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>BRI</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>BNI</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Permata</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>CIMB Niaga / CIMB Niaga Syariah</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes (Mobile Banking), No (Internet Banking)</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>BCA</td>
+<td>No</td>
+<td>No</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td>BTPN</td>
+<td>Yes</td>
+<td>No</td>
+<td>Yes</td>
+<td>Yes (Mobile Banking), No (Internet Banking)</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Maybank</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Danamon</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td>KEB Hana</td>
+<td>No</td>
+<td>No</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td>BSI</td>
+<td>No</td>
+<td>No</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+</tbody></table>
 <h2 id='payment-links-invoice-accepting-payments' type='normal'>Payment Links/Invoice</h2>
 <p><strong>Overview</strong>
 Payment Link
@@ -6133,13 +6255,13 @@ As an alternative to the above, if you would like to simulate the callback for C
 <h3 id='description-about-payment-routing-api-payment-routing' type='normal'>Description about Payment Routing</h3>
 <p>Payment Routing is an API that combines receive money and disburse money features. It allows you to immediately disburse the money once you receive from your customers. By integrating to this API, you will get the end-to-end solutions for your business needs.</p>
 
-<p>For now, you can use Payment Link, Bank Transfer (via Virtual Account &amp; Unique Code), E-Wallet, QRIS for the receive money part.</p>
+<p>Through API Payment Routing you may create Payment Link transactions and/or receive money via Bank Transfer (via Virtual Account &amp; Unique Code), E-Wallet, QRIS, and Cards.</p>
 <h3 id='flow-api-payment-routing' type='normal'>Flow</h3>
 <p><img src="images/Payment_Routing_Flow-257eac36.png" alt="Payment Routing Flow" /></p>
 <h3 id='key-features-api-payment-routing' type='normal'>Key Features</h3>
 <ol>
 <li><strong>Accept and disburse money in a real time manner</strong> - By integrating to this API, you will get end-to-end solutions from receive to disburse money. All in real time manner. Note : Some payment methods have H+1 or H+2 settlement period. You have to keep some balance to cater the settlement from the payment methods.</li>
-<li><strong>You can select Payment Link, Bank Transfer, E-Wallet, and QRIS to receive money</strong> - You can choose Bank Transfer (via Virtual Account &amp; Unique Code), E-Wallet, or QRIS as a payment method to receive the money. We provide all banks offered in VA Aggregator for Virtual Accounts, provide BCA for Unique Code, and provide ShopeePay, DANA, LinkAja as payment method for E-Wallet. However, you don&#39;t need to worry if you don&#39;t have your own UI. You can use our Payment Link to help your customers to complete the payments.</li>
+<li><strong>You can select Payment Link, Bank Transfer, E-Wallet, and QRIS to receive money</strong> - You can choose Bank Transfer (via Virtual Account &amp; Unique Code), E-Wallet, Cards, or QRIS as a payment method to receive the money. We provide all banks offered in VA Aggregator for Virtual Accounts, BCA for Unique Code, ShopeePay, DANA, LinkAja as payment method for E-Wallet, and Visa/Mastercard for Cards. However, you don&#39;t need to worry if you don&#39;t have your own UI. You can use our Payment Link to help your customers to complete the payments.</li>
 <li><strong>Transaction tracking and monitoring capability</strong> - You can track all payment routing transactions details through our callback or the OY! dashboard. You will receive callbacks two times, once we have succesfully receive money and once we have successfully disburse money.</li>
 </ol>
 <h3 id='use-cases-api-payment-routing' type='normal'>Use Cases</h3>
