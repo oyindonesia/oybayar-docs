@@ -44,44 +44,56 @@ Once you are successfully logged in, you will be able to try our product suites 
 
 If you are ready to proceed to go live or integrate with OY!, refer to the below sections for more information on the steps to upgrade your account.
 
-## Upgrading your Account
+## Verifying Your Business
 
-Follow the steps below to upgrade your account:
+Follow the steps below to verify your business:
 
-**1. Request to Upgrade your Account**: to access the full version of our products and services, please select “Upgrade Your Account” on the menu at the left side of the OY! dashboard (Production environment) and complete all the required information.
-
-*Please note that the receiving bank account information cannot be changed via the OY! dashboard once your upgrade account request is approved for security reasons. Please contact us at [partner@oyindonesia.com](partner@oyindonesia.com) to change the receiving bank account information.*
+**1. Request to Verify your Business**: To access the full version of our products and services, please select “Verify Your Business” on the menu at the left side of the OY! dashboard (Production environment) and complete all the required information.
 
 ![Upgrade](images/upgrade_account_1.png)
 
-**2. Upload the Required Supporting Documents**: Please upload the required supporting documents according to your business type. Documents are only accepted in PDF format and must be less than 10 MB in size each.
+**2. For Individual User: Upload ID Card for Identity Verification**: Please take an identity card photo and a Selfie photo holding an identity card. The system will automatically read your Identity card photo to fill the form, make sure all information is correct based on your ID card.
 
 - For Individual type of business
   ![Upgrade](images/upgrade_account_2.png)
 
-- For Corporate (PJSP) type of business
-  ![Upgrade](images/upgrade_account_3.png)
+**2. For Corporate User: Upload the Legality Documents**: We ask for different legality documents for different types of corporate entities. After choosing your corporate type we will show you what document you need to submit.
 
-- For Corporate (Non PJSP) type of business  
+![Upgrade](images/upgrade_account_3.png)
+
+Please upload the required supporting documents according to your business type. Documents are only accepted in PDF format and must be less than 10 MB in size each.
+
+- Here is an example for Corporate (PJSP) type of business
   ![Upgrade](images/upgrade_account_4.png)
 
-After you upload the required supporting documents, you need to choose which products that you want to use.
+- For Corporate (Non PJSP) type of business  
+  ![Upgrade](images/upgrade_account_5.png)
 
-**3. Submit your Request**: Click “Submit”, and a new status of “Waiting for Approval” should appear on Home page, indicating that your request has been submitted along with your supporting documents.
+**3. Fill Business Information Form**: Let us know more about your business by filling out the Business Information form. Please note that you will not be able to change this field in the need revision status.
 
-![Upgrade](images/upgrade_3.png)
+![Upgrade](images/upgrade_account_7.png)
 
-This process should take about 1-2 working days. In the event that the status of your request is **Resubmit** or **Rejected**, please keep reading below. Otherwise, you are good to go!
+**4. Submit your Bank Account**: Add Bank Account Information as the destination account for withdrawing money from OY! Business Platform.
 
-**Status: Resubmit**
+*Please note that the receiving bank account information cannot be changed via the OY! dashboard once your business verification request is approved for security reasons. Please contact us at partner@oyindonesia.com to change the receiving bank account information.*
+
+![Upgrade](images/upgrade_account_6.png)
+
+**5. Submit your Request**: Click “Submit”, and a new status of “Waiting for Approval” should appear on the Home page, indicating that your request has been submitted along with your supporting documents.
+
+This process should take about 1-2 working days. In the event that the status of your request is **Need Revision** or **Rejected**, please keep reading below. Otherwise, you are good to go!
+
+**Status: Need Revision**
 
 Upon reviewing the upgrade request, we might ask for additional documentations. Please follow the steps below:
 
 **1. Read our report**: A report will be sent to your email regarding the information and documents that will need to be revised or added.
 
-**2. Refill out the form**: When submitting another request to upgrade your account, please resubmit all your supporting documents. Documents are only accepted in PDF format and must be less than 10 MB in size.
+**2. Refill out the form**: We will show you which part of the form and document that will need to be revised. When submitting another request to verify your business, please resubmit all your supporting documents. Documents are only accepted in PDF format and must be less than 10 MB in size.
 
 **3. Submit your request**: Click “Submit & Request to Upgrade”, and a new status of “Upgrade Account Requested” should appear on this page, indicating that your request has been submitted along with your supporting documents.
+
+Please note that after 3 or more revision processes, you will need longer waiting time to submit your next verification request. We will inform you via email or dashboard when you can do the next submission.
 
 For further inquiries, please contact us at [partner@oyindonesia.com](partner@oyindonesia.com) and our representative will get in touch.
 
@@ -95,30 +107,30 @@ Below is the list of documentation to be submitted for an upgrade request:
 
 - For Individual type of business
 
-1. SIUP/Izin Usaha lainnya
-2. NPWP Perusahaan
+1. ID Card
 
 - For Corporate (PJSP) type of business
 
 1. Company’s Nomor Pokok Wajib Pajak (NPWP)
-2. Surat Izin Usaha Perdagangan (SIUP)
-3. Tanda Daftar Perusahaan (TDP) / Nomor Induk Berusaha (NIB)
-4. SK Kemenhukam
-5. Legalized Akta Perubahan Terakhir
+2. Surat Izin Usaha Perdagangan (SIUP)/ Tanda Daftar Perusahaan (TDP) / Nomor Induk Berusaha (NIB)
+3. SK Kemenhukam
+4. Legalized Akta Perubahan Terakhir
+5. Legalized Akta Pendirian Perseroan
 6. Director’s National ID Card (KTP)
 7. Shareholder Structure
 8. License from BI/OJK
-9. IT Audit Result
+9. Pengesahan Kementerian Terkait
 
 - For Corporate (Non PJSP) type of business
 
 1. Company’s Nomor Pokok Wajib Pajak (NPWP)
-2. Surat Izin Usaha Perdagangan (SIUP)
-3. Tanda Daftar Perusahaan (TDP) / Nomor Induk Berusaha (NIB)
-4. SK Kemenhukam
-5. Legalized Akta Perubahan Terakhir
+2. Surat Izin Usaha Perdagangan (SIUP)/ Tanda Daftar Perusahaan (TDP) / Nomor Induk Berusaha (NIB)
+3. SK Kemenhukam
+4. Legalized Akta Perubahan Terakhir
+5. Legalized Akta Pendirian Perseroan
 6. Director’s National ID Card (KTP)
 7. Shareholder Structure
+8. Pengesahan Kementerian Terkait
 
 ## Completion/Go-Live Checklist
 
