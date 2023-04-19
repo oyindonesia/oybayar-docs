@@ -4950,7 +4950,7 @@ You can easily call our API - we will take care of the payment link/invoice link
 <ol>
 <li><p>Amount (specify the amount and choose between open amount vs closed amount)</p></li>
 <li><p>Admin fee (choose whether the admin fee will be borne by your customers or borne by you)</p></li>
-<li><p>Payment method (choose the payment methods displayed to your customers among Bank Transfer (via Virtual Account), Cards (Credit Card/Debit Card), E-Wallet (ShopeePay, DANA, LinkAja, OVO), and QR Code options. Additionally, you can choose which banks are enabled for Bank Transfer method.)</p></li>
+<li><p>Payment method (choose the payment methods displayed to your customers among Bank Transfer (via Virtual Account and Unique Code), Cards (Credit Card/Debit Card), E-Wallet (ShopeePay, DANA, LinkAja, OVO), and QR Code options. Additionally, you can choose which banks are enabled for Bank Transfer method.)</p></li>
 <li><p>Payment link expiration date</p></li>
 </ol>
 
@@ -5131,7 +5131,7 @@ You can upload an invoice attachment or create an attachment using the OY! PDF t
 <tr>
 <td>Payment Link Configuration</td>
 <td>Payment Method</td>
-<td>The payment method that you can choose to enable/disable for your customers. The payment methods available are Bank Transfer (via Virtual Account), Cards (Credit Card/Debit Card), E-Wallet (ShopeePay, DANA, LinkAja, OVO), and QRIS</td>
+<td>The payment method that you can choose to enable/disable for your customers. The payment methods available are Bank Transfer (via Virtual Account and Unique Code), Cards (Credit Card/Debit Card), E-Wallet (ShopeePay, DANA, LinkAja, OVO), and QRIS</td>
 </tr>
 <tr>
 <td>Payment Link Configuration</td>
@@ -5307,7 +5307,7 @@ As an alternative to the above, if you would like to simulate the callback for C
 <tr>
 <td>Payment Link Configuration</td>
 <td>Payment Method</td>
-<td>The payment method that you can choose to enable/disable for your customers. The payment methods available are Bank Transfer (via Virtual Account), Cards (Credit Card/Debit Card), E-Wallet (ShopeePay, DANA, LinkAja, OVO), and QRIS</td>
+<td>The payment method that you can choose to enable/disable for your customers. The payment methods available are Bank Transfer (via Virtual Account and Unique Code), Cards (Credit Card/Debit Card), E-Wallet (ShopeePay, DANA, LinkAja, OVO), and QRIS</td>
 </tr>
 <tr>
 <td>Payment Link Configuration</td>
@@ -5377,7 +5377,7 @@ As an alternative to the above, if you would like to simulate the callback for C
 <tr>
 <td>Payment Link Configuration</td>
 <td>Payment Method</td>
-<td>The payment method that you can choose to enable/disable for your customers. The payment methods available are Bank Transfer (via Virtual Account), Cards (Credit Card/Debit Card), E-Wallet (ShopeePay, DANA, LinkAja, OVO), and QRIS</td>
+<td>The payment method that you can choose to enable/disable for your customers. The payment methods available are Bank Transfer (via Virtual Account and Unique Code), Cards (Credit Card/Debit Card), E-Wallet (ShopeePay, DANA, LinkAja, OVO), and QRIS</td>
 </tr>
 <tr>
 <td>Payment Linkfiguration</td>
@@ -5747,7 +5747,7 @@ As an alternative to the above, if you would like to simulate the callback for C
 </tr>
 <tr>
 <td>Payment Method</td>
-<td>The payment method that you can choose to enable/disable for your customers. The payment methods available are Bank Transfer (via Virtual Account), Cards (Credit Card/Debit Card), E-Wallet (ShopeePay, DANA, LinkAja, OVO), and QR Code</td>
+<td>The payment method that you can choose to enable/disable for your customers. The payment methods available are Bank Transfer (via Virtual Account and Unique Code), Cards (Credit Card/Debit Card), E-Wallet (ShopeePay, DANA, LinkAja, OVO), and QR Code</td>
 </tr>
 <tr>
 <td>Admin Fee Method</td>
@@ -6707,11 +6707,16 @@ We support payments via bank transfers, credit card, debit card, and QR code fro
 <p>A closed amount is a configuration so that the payment link or invoice can only be paid if the actual declared amount is paid. The user will not be able to pay any amount other than the declared amount.</p>
 
 <p>An opened amount is a configuration so that the payment link or invoice can be paid up to the declared amount (or any, if amount is not declared). If the user pays an amount that is different from the declared amount, the payment link will remain active. The payment link will only reflect a completed status when the full amount is paid in total.</p>
+
+<p><strong>What is the difference between Bank Transfer via Virtual Account and Bank Transfer via Unique Code?</strong>
+Bank Transfer via Virtual Account (VA) will generate specific account number destination for each transaction. You can create an open amount or closed amount transaction using VA. Detail explanation of VA can be seen <a href="https://docs.oyindonesia.com/#va-aggregator-accepting-payments">here</a>. You can create VA Transactions via <a href="https://docs.oyindonesia.com/#va-aggregator-accepting-payments">API Payment Routing</a> or <a href="https://docs.oyindonesia.com/#va-aggregator-accepting-payments">VA Aggregator</a> </p>
+
+<p>Bank Transfer via Unique Code generates unique code for each transaction but the account number destination will always be the same. The total amount paid is subtracted by the unique code. For example, your end user wants to paid a transaction of Rp 100.000 and get Rp 100 as the unique code. The payment uses subtraction approach, so your end user will pay a total of Rp 99.900 to complete the payments. Unique Code also have limitations compared to VA, where you can only create unique code transaction during the operational hours (3 AM - 8.30 PM GMT+7).</p>
 <h2 id='payment-routing-faqs' type='normal'>Payment Routing</h2>
 <p><strong>What is the difference between Bank Transfer via Virtual Account and Bank Transfer via Unique Code?</strong>
 Bank Transfer via Virtual Account (VA) will generate specific account number destination for each transaction. You can create an open amount or closed amount transaction using VA. Detail explanation of VA can be seen <a href="https://docs.oyindonesia.com/#va-aggregator-accepting-payments">here</a>. You can create VA Transactions via <a href="https://docs.oyindonesia.com/#va-aggregator-accepting-payments">API Payment Routing</a> or <a href="https://docs.oyindonesia.com/#va-aggregator-accepting-payments">VA Aggregator</a> </p>
 
-<p>Bank Transfer via Unique Code generates unique code for each transaction but the account number destination will always be the same. The total amount paid is subtracted by the unique code. For example, your end user wants to paid a transaction of Rp 100.000 and get Rp 100 as the unique code. The payment uses subtraction approach, so your end user will pay a total of Rp 99.900 to complete the payments. Unique Code also have limitations compared to VA, where you can only create unique code transaction during the operational hours (3 AM - 8.30 PM GMT+7). You can create  Unique Code Transaction only via <a href="https://docs.oyindonesia.com/#va-aggregator-accepting-payments">API Payment Routing</a></p>
+<p>Bank Transfer via Unique Code generates unique code for each transaction but the account number destination will always be the same. The total amount paid is subtracted by the unique code. For example, your end user wants to paid a transaction of Rp 100.000 and get Rp 100 as the unique code. The payment uses subtraction approach, so your end user will pay a total of Rp 99.900 to complete the payments. Unique Code also have limitations compared to VA, where you can only create unique code transaction during the operational hours (3 AM - 8.30 PM GMT+7). You can create Unique Code Transaction via <a href="https://docs.oyindonesia.com/#va-aggregator-accepting-payments">API Payment Routing</a> or <a href="https://docs.oyindonesia.com/#payment-links-invoice-accepting-payments">Payment Link</a></p>
 
       </div>
       <div class="dark-box">
