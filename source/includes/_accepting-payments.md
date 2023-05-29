@@ -1358,7 +1358,7 @@ Refund features allow you to refund a successful e-wallet transaction to your en
 
 ## Feature: Account Linking
 
-**Overview** Account Linking is a feature that allows your customer's bank/e-wallet account to be linked to your system using tokenization. By setting up account linking up front, your customer can later complete payments without being prompted for any card details or e-wallet phone number. Currently, our account linking feature is supported in E-Wallet (DANA).
+**Overview** Account Linking is a feature that allows your customer's bank/e-wallet account to be linked to your system using tokenization. By setting up account linking up front, your customer can later complete payments without being prompted for any card details or e-wallet phone number. Currently, our account linking feature is supported in E-Wallet (DANA & ShopeePay).
 
 Account linking feature is free of charge.
 
@@ -1393,7 +1393,7 @@ Currently, Account Linking is only supported on e-wallet payment method. Each pa
 | E-Wallet Issuer    | Token Expiry Time  | Token Renewal      |
 | ------------------ | ------------------ | ------------------ |
 | DANA               | 10 Years           | After Expiry Time  |
-| ShopeePay          | Not supported      | -                  |
+| ShopeePay          | 5 Years            | After Expiry Time  |
 | Linkaja            | Not supported      | -                  |
 | OVO                | Not supported      | -                  |
 
