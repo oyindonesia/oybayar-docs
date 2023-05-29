@@ -1210,7 +1210,7 @@ Some business have some use cases that require them to receive and disburse the 
 
 Payment Routing is an API that combines receive money and disburse money features. It allows you to immediately disburse the money once you receive from your customers. By integrating to this API, you will get the end-to-end solutions for your business needs.
 
-Through API Payment Routing you may create Payment Link transactions and/or receive money via Bank Transfer (via Virtual Account & Unique Code), E-Wallet, QRIS, and Cards.
+Through API Payment Routing you may create Payment Link transactions and/or receive money via Bank Transfer (via Virtual Account & Unique Code), E-Wallet (One Time & Direct), QRIS, and Cards.
 
 ### Flow
 
@@ -1219,7 +1219,7 @@ Through API Payment Routing you may create Payment Link transactions and/or rece
 ### Key Features
 
 1. **Accept and disburse money in a real time manner** - By integrating to this API, you will get end-to-end solutions from receive to disburse money. All in real time manner. Note : Some payment methods have H+1 or H+2 settlement period. You have to keep some balance to cater the settlement from the payment methods.
-1. **You can select Payment Link, Bank Transfer, E-Wallet, and QRIS to receive money** - You can choose Bank Transfer (via Virtual Account & Unique Code), E-Wallet, Cards, or QRIS as a payment method to receive the money. We provide all banks offered in VA Aggregator for Virtual Accounts, BCA for Unique Code, ShopeePay, DANA, LinkAja as payment method for E-Wallet, and Visa/Mastercard for Cards. However, you don't need to worry if you don't have your own UI. You can use our Payment Link to help your customers to complete the payments.
+1. **You can select Payment Link, Bank Transfer, E-Wallet, and QRIS to receive money** - You can choose Bank Transfer (via Virtual Account & Unique Code), E-Wallet (One Time & Direct), Cards, or QRIS as a payment method to receive the money. We provide all banks offered in VA Aggregator for Virtual Accounts, BCA for Unique Code, ShopeePay, DANA, LinkAja as payment method for E-Wallet, and Visa/Mastercard for Cards. However, you don't need to worry if you don't have your own UI. You can use our Payment Link to help your customers to complete the payments.
 1. **Transaction tracking and monitoring capability** - You can track all payment routing transactions details through our callback or the OY! dashboard. You will receive callbacks two times, once we have succesfully receive money and once we have successfully disburse money.
 
 ### Use Cases
@@ -1363,18 +1363,18 @@ Refund features allow you to refund a successful e-wallet transaction to your en
 Account linking feature is free of charge.
 
 ### Key Features
-**1. Account Linking**
+1. **Account Linking**
 Link your customer's bank/e-wallet account to your system using tokenization.
-**2. Account Unlinking**
+2. **Account Unlinking**
 Unlink your customer's bank/e-wallet account from your system. 
-**3. Get E-wallet Balance**
+3. **Get E-wallet Balance**
 By using account linking, your users can now see their e-wallet balance on before checking out a payment.
 
 ### Account Linking Flow
 1. You hit OY! API Account Linking for a particular payment method (e.g., DANA).
-2. OY! returns redirect URL for authentication
-3. Your customer authorizes the account linking by signing the agreement page and inserting a PIN.
-4. OY! returns account linking result. If success, OY! will save the authorization as a token and redirect your customer to your success page URL.
+1. OY! returns redirect URL for authentication
+1. Your customer authorizes the account linking by signing the agreement page and inserting a PIN.
+1. OY! returns account linking result. If success, OY! will save the authorization as a token and redirect your customer to your success page URL.
 
 ### Account Unlinking Flow
 Account Unlinking can be done in several ways:

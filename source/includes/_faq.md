@@ -102,7 +102,36 @@ Bank Transfer via Unique Code generates unique code for each transaction but the
 
 
 ## Payment Routing
+**What are the possible payment methods for users?**
+We support payments via bank transfers, e-wallet , credit card/debit card, and QR code from the following:
+
+* Bank Transfer via Virtual Account: BCA, BNI, BRI, CIMB Niaga, Mandiri, Permata Bank.
+
+* Bank Transfer via Unique Code: BCA
+
+* Credit Card/Debit Card: VISA, Mastercard
+
+* E-Wallet - One Time: ShopeePay, DANA, LinkAja, OVO
+
+* E-Wallet - Direct Payment: ShopeePay
+
+* QR Code: QRIS
+
 **What is the difference between Bank Transfer via Virtual Account and Bank Transfer via Unique Code?**
 Bank Transfer via Virtual Account (VA) will generate specific account number destination for each transaction. You can create an open amount or closed amount transaction using VA. Detail explanation of VA can be seen [here](https://docs.oyindonesia.com/#va-aggregator-accepting-payments). You can create VA Transactions via [API Payment Routing](https://docs.oyindonesia.com/#va-aggregator-accepting-payments) or [VA Aggregator](https://docs.oyindonesia.com/#va-aggregator-accepting-payments) 
 
 Bank Transfer via Unique Code generates unique code for each transaction but the account number destination will always be the same. The total amount paid is subtracted by the unique code. For example, your end user wants to paid a transaction of Rp 100.000 and get Rp 100 as the unique code. The payment uses subtraction approach, so your end user will pay a total of Rp 99.900 to complete the payments. Unique Code also have limitations compared to VA, where you can only create unique code transaction during the operational hours (3 AM - 8.30 PM GMT+7). You can create Unique Code Transaction via [API Payment Routing](https://docs.oyindonesia.com/#va-aggregator-accepting-payments) or [Payment Link](https://docs.oyindonesia.com/#payment-links-invoice-accepting-payments)
+
+**What are the differences between E-Wallet One Time Payment and E-Wallet Direct Payment?**
+E-Wallet One Time creates a payment URL that can be paid by any guest users. Once payment URL is opened, your end user's is redirected to the E-Wallet app and completes the payment inside the E-Wallet's app.
+
+E-Wallet Direct creates a payment URL dedicated to a particular user. The end user needs to link their E-Wallet account first by doing [Account Linking](https://docs.oyindonesia.com/#feature-account-linking-accepting-payments). Once the end user has linked their account to your app, you can initiate a Direct payment. OY will return an authorization URL for the end users to input the E-Wallet PIN and complete the payment. Using Direct payment, your end users will complete the transaction inside your app. Therefore, it will bring a better experinence for your end users.
+
+|     | One Time | Direct |
+| --- | -------- | ------ |
+| Supported  E-Wallets | ShopeePay, LinkAja, DANA, OVO | ShopeePay |
+| Need to do Account Linking first? | No | Yes |
+| Can be created via.. | API Payment Routing <br> Payment Link <br> API E-Wallet Aggregator | API Payment Routing  |
+| Send phone number in API Create Request | Optional | Mandatory |
+| Who can complete the transaction? | Any Users/Guest | Dedicated User. <br> Only the user whose phone number listed in the API request |
+| Payment Completion Journey | Inside E-Wallet App | Your app |
