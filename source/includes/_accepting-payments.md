@@ -1342,7 +1342,7 @@ Refund features allow you to refund a successful e-wallet transaction to your en
 
 ### How to Use
 
-1. Log in to your OY! Bisnis dashboard with your username and password that you registered with.
+1. Log in to your OY! Business dashboard with your username and password that you registered with.
 2. Click on the product page you desired.
   - Payment Link : Click “Payment Link” and choose “One Time”/“Reusable”
   - VA Aggregator : Click “Virtual Account” and choose “Incoming Payment”
