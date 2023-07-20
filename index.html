@@ -1331,6 +1331,14 @@
                             <img src="images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
                           </a>
                         </li>
+                        <li>
+                          <a href="#credit-amp-debit-card-details-payment-links-invoice" class="toc-h3 toc-link" data-title="Credit &amp; Debit Card Details">
+                            <span class="toc-link-content">
+                              Credit &amp; Debit Card Details
+                            </span> 
+                            <img src="images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
+                          </a>
+                        </li>
                     </ul>
                   </li>
                   <li>
@@ -1443,6 +1451,14 @@
                           <a href="#testing-api-payment-routing" class="toc-h3 toc-link" data-title="Testing">
                             <span class="toc-link-content">
                               Testing
+                            </span> 
+                            <img src="images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#credit-amp-debit-card-details-api-payment-routing" class="toc-h3 toc-link" data-title="Credit &amp; Debit Card Details">
+                            <span class="toc-link-content">
+                              Credit &amp; Debit Card Details
                             </span> 
                             <img src="images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
                           </a>
@@ -6263,6 +6279,12 @@ As an alternative to the above, if you would like to simulate the callback for C
 <td>Closed Amount</td>
 </tr>
 </tbody></table>
+<h3 id='credit-amp-debit-card-details-payment-links-invoice' type='normal'>Credit &amp; Debit Card Details</h3>
+<p>For payments via credit and/or debit cards, ensure that your end-users: 
+1. Have sufficient balance or credit limit for the transaction 
+2. Have enabled 3D Secure (3DS) as a way to authenticate the transaction </p>
+
+<p>We currently only support Visa, Mastercard, and JCB transactions </p>
 <h2 id='api-e-wallet-aggregator-accepting-payments' type='normal'>API E-Wallet Aggregator</h2>
 <p>E-Wallet API allows clients to charge and receive payments directly from top e-wallet issuers. With one integration, they are able to get access to all of OY’s available e-wallets and the upcoming e-wallet integrations.</p>
 <h3 id='e-wallet-product-flow-api-e-wallet-aggregator' type='normal'>E-Wallet Product Flow</h3>
@@ -6401,6 +6423,12 @@ Follow the below steps to test the Payment Routing flow:</p>
 <li>If payment is successful, we will send a callback to the registered staging callback URL destination.</li>
 <li>You can monitor Payment Routing transaction through OY! Dashboard or call the endpoint API. Go to “Payment Routing” menu to monitor your transactions.</li>
 </ol>
+<h3 id='credit-amp-debit-card-details-api-payment-routing' type='normal'>Credit &amp; Debit Card Details</h3>
+<p>For payments via credit and/or debit cards, ensure that your end-users: 
+1. Have sufficient balance or credit limit for the transaction 
+2. Have enabled 3D Secure (3DS) as a way to authenticate the transaction </p>
+
+<p>We currently only support Visa, Mastercard, and JCB transactions </p>
 <h2 id='feature-resend-callback-accepting-payments' type='normal'>Feature: Resend Callback</h2><h3 id='key-features-feature-resend-callback' type='normal'>Key Features</h3>
 <p>Retry Callback allows you to resend a callback for your successful transaction to your system. Initially, OY! will send a callback to your system after your transaction status has been converted to success. If your system failed to receive the callback, this feature can help you to retry the callback process. The process can be done in two ways</p>
 
