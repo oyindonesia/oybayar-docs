@@ -1141,6 +1141,16 @@ There will be 3 different ways to distribute the invoice via Whatsapp and there 
 | Bank Syariah Indonesia (BSI)| Closed Amount                             | 
 
 
+
+### Credit & Debit Card Details
+
+For payments via credit and/or debit cards, ensure that your end-users: 
+1. Have sufficient balance or credit limit for the transaction 
+2. Have enabled 3D Secure (3DS) as a way to authenticate the transaction 
+
+We currently only support Visa, Mastercard, and JCB transactions 
+
+
 ## API E-Wallet Aggregator
 
 E-Wallet API allows clients to charge and receive payments directly from top e-wallet issuers. With one integration, they are able to get access to all of OY’s available e-wallets and the upcoming e-wallet integrations.
@@ -1254,6 +1264,18 @@ Follow the below steps to test the Payment Routing flow:
 1. If you use Payment Link as the payment method, you can open the link and simulate payment from there.
 1. If payment is successful, we will send a callback to the registered staging callback URL destination.
 1. You can monitor Payment Routing transaction through OY! Dashboard or call the endpoint API. Go to “Payment Routing” menu to monitor your transactions.
+
+
+
+### Credit & Debit Card Details
+
+For payments via credit and/or debit cards, ensure that your end-users: 
+1. Have sufficient balance or credit limit for the transaction 
+2. Have enabled 3D Secure (3DS) as a way to authenticate the transaction 
+
+We currently only support Visa, Mastercard, and JCB transactions 
+
+
 
 ## Feature: Resend Callback
 
