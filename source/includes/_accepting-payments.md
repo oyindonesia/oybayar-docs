@@ -1145,10 +1145,14 @@ There will be 3 different ways to distribute the invoice via Whatsapp and there 
 ### Credit & Debit Card Details
 
 For payments via credit and/or debit cards, ensure that your end-users: 
+
 1. Have sufficient balance or credit limit for the transaction 
+
 2. Have enabled 3D Secure (3DS) as a way to authenticate the transaction 
 
-We currently only support Visa, Mastercard, and JCB transactions 
+
+We currently only support Visa, Mastercard, and JCB transactions. Your end-users may use credit and/or debit cards issued locally or internationally. If you plan to conduct overseas transactions, it is important to note that OY! can only create the transactions in IDR. This means that your end-users can still use their overseas cards for payment, however the card will still be charged in IDR and settlement will also be done in IDR. The cardholder's billing statement, however, will show the transaction amount in their local currency with exchange rate & extra fees (if any) as applied by their issuing bank. 
+
 
 
 ## API E-Wallet Aggregator
@@ -1270,10 +1274,13 @@ Follow the below steps to test the Payment Routing flow:
 ### Credit & Debit Card Details
 
 For payments via credit and/or debit cards, ensure that your end-users: 
+
 1. Have sufficient balance or credit limit for the transaction 
+
 2. Have enabled 3D Secure (3DS) as a way to authenticate the transaction 
 
-We currently only support Visa, Mastercard, and JCB transactions 
+
+We currently only support Visa, Mastercard, and JCB transactions. Your end-users may use credit and/or debit cards issued locally or internationally. If you plan to conduct overseas transactions, it is important to note that OY! can only create the transactions in IDR. This means that your end-users can still use their overseas cards for payment, however the card will still be charged in IDR and settlement will also be done in IDR. The cardholder's billing statement, however, will show the transaction amount in their local currency with exchange rate & extra fees (if any) as applied by their issuing bank. 
 
 
 
