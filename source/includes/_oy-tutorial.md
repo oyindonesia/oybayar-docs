@@ -76,13 +76,13 @@ Dashboard features
 |Add transaction category| Can add | Can add | - | - |
 |Config Transaction Receipt | Can config | Can config | Can config | Can config |
 
-Multi account Management
+Multi Entity Management
 
 | Task | Superadmin | Admin | Approver | Maker
 |-------|-------|-------|-------|-------|
-|Create Child| Can create| Can create | - | - |
-|Top up Child via Dashboard| Can top up| Can top up | - | - |
-|Disconenct child| Can disconnect | Can disconnect | -| -|
+|Create Sub-entity| Can create| Can create | - | - |
+|Top up Sub-entity via Dashboard| Can top up| Can top up | - | - |
+|Disconenct Sub-entity| Can disconnect | Can disconnect | -| -|
 
 Bulk Disbursement Product
 
@@ -252,7 +252,7 @@ Here's how you can configure the auto withdrawal settings;
 | Auto Withdrawal Schedule | The schedule of your auto withdrawal. Options available: Daily, Weekly, Bi-Weekly, Monthly                                                                                                                                                                                                                                                                        |
 | Start Date               | Start date of your auto withdrawal schedule                                                                                                                                                                                                                                                                                                                       |
 | Ends                     | Options available: Never -> if the auto withdrawal will go on for an indefinite time, By Date -> if the auto withdrawal will end on a specific date. If you choose this option, you need to fill in the date on which you plan to end the auto withdrawal process                                                                                                 |
-| Amount                   | Amount to be automatically withdrawn. Options available: Maximum amount -> Withdraw the maximum available balance, Specified Amount -> custom specified amount. Note: Maximum Amount is recommended for Auto Withdrawal transactions as withdrawals will not be processed if the specified amount is greater than the OY balance when the withdraw scheduler runs |
+| Amount                   | Amount to be automatically withdrawn. Options available: Maxiitym amount -> Withdraw the maximum available balance, Specified Amount -> custom specified amount. Note: Maximum Amount is recommended for Auto Withdrawal transactions as withdrawals will not be processed if the specified amount is greater than the OY balance when the withdraw scheduler runs |
 | Withdrawal Type          | Options available: 1) Instant, or 2) Manual.                                                                                                                                                                                                                                                                                                                      |
 | Email                    | An email we will send the notification to. Use (;) between email to differentiate them (Max. 5 emails can be inputted)                                                                                                                                                                                                                                            |
 
@@ -324,15 +324,15 @@ Payment Link, or VA.
 6. The email field: allows the user to add, remove, and edit email notification receivers in this column, which can hold up to three email addresses.
 7. Click ‘Save Changes’
 
-## Multi Account Management
+## Multi Entity Management
 
-Multi Account Management (Children) is a feature that can help you handle complex relations between entities in your business in the Oy! Dashboard. Please contact our Sales or Account Management if you’re interested to use this feature.  
+Multi Entity Management is a feature that can help you handle complex relations between entities in your business in the OY! Dashboard. You can connect to other entities in the form of Main Entity - Sub Entities (1 to N relationship). The one who become the Main Entity will have a capability to oversee te sub-entities' transaction and execute transaction using its sub-entities' balance. Please contact our Business Development if you’re interested to use this feature.  
 With this feature you will be able to :
 
-1. Have a detailed report on transactions performed by all of children account
-2. Distribute balance between the parent account to children account.
-3. Use child account balance to disburse funds.
-4. Receive money using Payment Link on behalf of child's username.
+1. Have a detailed report on transactions performed by all of sub-entity account.
+2. Distribute balance between the main entity account to sub-entity account.
+3. Use sub-entity account balance to disburse funds.
+4. Receive money using Payment Link on behalf of sub-entity's username.
 5. Free admin fee to disburse between related user.
 
 ### **Registration & Setup**
@@ -343,44 +343,44 @@ With this feature you will be able to :
 - Activate your account through the activation link sent via email
 - Upgrade your account
 - Upgrade request is approved
-- Contact our sales or account manager representatives to enable the feature
+- Contact our representatives to enable the feature
 
 ### **How To Use**
 
-To properly used Multi Account Management, we required several accounts to be linked together. Each account can be used independently, and each account needs to pass the KYB to be used fully.
+To properly used Multi Entity Management, we required several accounts to be linked together. Each account can be used independently, and there will be some requirements that you should fulfil in order to use this feature. Please contact our representatives for more information.
 
-**A. Link to Child Account**
+**A. Link to Sub-entity Account**
 
-1. **For Parent Account**
+1. **For Main Entity Account**
 
-To add a new child as a parent account please 1) Log in to Dashboard with parent credential 2) Go to Child → List of Children
+To add a new sub-entity,please 1) Log in to Dashboard with main account credential 2) Go to Multi Entity → List of Sub-entity
 
-![As Parent - Subs - 1. Initial.png](../images/As_Parent_Subs_1_Initial(2).png)
+![Image: As a Main Entity - Add a New Sub-entity](../images/MEM_Add_Sub_Entity_1.png)
 
-1. Click the “+ Add Child”
-2. Fill in the username for the child you wished to connect. You can find your username from the menu Accounts → User Profile in the Username section
+1. Click the “+ Add Sub-Entity
+2. Fill in the username for the sub-entity you wished to connect. You can find your username from the menu Accounts → User Profile in the Username section
 3. Click Add and then if the account is found in the system you can confirm by clicking Connect in the confirmation window
 
-![Image: As Parent - Subs - 6. Add Child - Type Username](../images/As_Parent_Subs_6_Add_Subsidiary_Type_Username.png) ![Image: As Parent - Subs - 7a. Existing Username - Not Connected with any parent](../images/As_Parent_Subs_Existing_Username_Not_Connected_with_any_parent.png)
+![Image: As Main Entity - Subs - 6. Add Child - Type Username](../images/MEM_Add_Sub_Entity_2.jpg) 
 After confirming, the request will be sent to the respective account to be accepted
 
-1. **For Child Account**
+1. **For Sub-entity Account**
 
-To receive a request from a parent company, please 1) Log in to dashboard with child credential 2) Go to Transaction Report → Account Statement
+To receive a request from a main entity , please 1) Log in to dashboard with child credential 2) Go to Transaction Report → Account Statement
 ![Image: As Child - AccState - 2b. Waiting approval](../images/As_Child_AccState_2b_Waiting_approval.png)
 
 1. Click the “Check All request” button that can be found near the top right corner of the page
-2. You will see the incoming request to be the parent account for your account, then you can choose which account is the correct account for the parent by click Accept in the respective account and confirmation window
+2. You will see the incoming request to be the main entity account for your account, then you can choose which account is the correct account for the main entity by click Accept in the respective account and confirmation window
 
 ![Image: As Child - AccState - 4b. 2 Requests to connect.png](../images/As_Child_AccState_4b_2_Requests_to_connect.png)![Image: As Child - AccState - 4e. Confirmation to connect](../images/As_Child_AccState_4e_Confirmation_to_connect.png)
 
-3. After successfully received the parent request to connect, you will find your parent information near the top right corner of your page, and you are now connected as a parent-child account
+3. After successfully received the main entity request to connect, you will find your parent information near the top right corner of your page, and you are now connected with your main entity.
 
 ![Image: As Child - AccState - 4h. Success add new head company](../images/As_Child_AccState_4h_Success_add_new_head_company.png)
 
-**B. Topup money to a child account**
+**B. Topup money to a sub-entity account**
 
-After having a working parent-child account, you can transfer money to the child account by accessing the menu Children → List of Children
+After connected with your sub-entities, you can transfer money to the sub-entity account by accessing the menu Multi Entity → List of Sub-entity
 1. Find the account that you wished to top-up
 2. Click the “+ Top Up” button
 3. Fill in the amount you wish to top-up
@@ -389,46 +389,35 @@ After having a working parent-child account, you can transfer money to the child
 
 ![Image: As Parent - Subs - 5a. Top Up.png](../images/As_Parent_Subs_5a_Top_Up.png)
 
-**C. Disburse Money using child balance**
+**C. Disburse Money using a sub-entity's balance**
 
-In Multi Account Management, you will be able to do disbursement using your children account on their behalf. To do this you could
+In Multi Entity Management, you will be able to do disbursement using your sub-entity account on their behalf. To do this you could
 
 1. Access the Bulk Disbursement menu and clicking on “+ Create Disbursement” button
-2. Select your child balance as a source of fund to do disbursement by selecting “My Subsdiary Balance” and choose the appropriate account.
+2. Select your sub-entity balance as a source of fund to do disbursement by selecting “My Sub-entity Balance” and choose the appropriate account.
 3. After choosing the balance you could proceed to do disbursement just like regular disbursement
 
-![Image: Choose SoF - 2. Choose SoF subsidiary.png](images/desktop_disbursement_child_balance_2.png) 
-![Image: Choose SoF - 4. Type or search sub.png](images/desktop_disbursement_child_balance.png)
+![Image: Choose SoF - 2. Choose SoF subsidiary.png](images/MEM_select_subentity_disbursement.png)
 
-**D. Create a payment link on behalf of a child account**
+**D. Create a payment link on behalf of a sub-entity account**
 
-With this feature, you will be able to accept payment from your users through Payment Link created on behalf of a child account. When your users make a successful transaction, the transaction will be recorded in the Child Account's balance. As a parent, you are equipped with the ability to view the Child Account's balance and transaction list anytime through Children → Children Statement. 
+With this feature, you will be able to accept payment from your users through Payment Link created on behalf of your sub-entity account. When your users make a successful transaction, the transaction will be recorded in the Sub-entity Account's balance. As a main entity, you are equipped with the ability to view the Sub-entity Account's balance and transaction list anytime through Multi Entity → Sub-entity Statement. 
 
-The flow will be as follows:
-
-![MAM Payment Link](images/mam_flow_payment_link.png)
-
-Follow the below steps to create a payment link on behalf of a child account:
+Follow the below steps to create a payment link on behalf of a sub-entity account:
 
 ***Via API***
 
-Hit [API Create Payment Link](https://api-docs.oyindonesia.com/#api-create-payment-link-fund-acceptance) and fill in "child_balance" parameter with the username of a child account that you will set as the balance destination for the transaction. When your users make a successful transaction, the transaction will be recorded in the specified Child Account's balance
+Hit [API Create Payment Link](https://api-docs.oyindonesia.com/#api-create-payment-link-fund-acceptance) and fill in "child_balance" parameter with the username of a sub-entity account that you will set as the balance destination for the transaction. When your users make a successful transaction, the transaction will be recorded in the specified Sub-entity Account's balance.
 
 ***Via Dashboard***
  
 1. Click Payment Link -> One-time (if you want to create a one-time payment link) or Click Payment Link -> Reusable (if you want to create a reusable payment link)
 2. Click "Create One-Time Link" (for one-time payment link) or click "Create Reusable Link" (for reusable payment link)
 3. You will see a pop-up to proceed with the creation process
-4. Fill in "Balance Destination" with "My Balance" (if the balance destination of the transaction is your own) or "Child Balance" (if the balance destination of the transaction is your child's). If you select "Child Balance", you will see a dropdown to select a username of the child account. Only 1 child account is currently allowed to be a balance destination
-5. If you select "Child Balance", when your users make a successful transaction, the transaction will be recorded in the specified Child Account's balance.
+4. Fill in "Balance Destination" with "My Balance" (if the balance destination of the transaction is your own) or "Sub-entity Balance" (if the balance destination of the transaction is your sub-entity's). If you select "Sub-entity Balance", you will see a dropdown to select a username of the sub-entity account. Only 1 sub-entity account is currently allowed to be a balance destination
+5. If you select "Sub-entity Balance", when your users make a successful transaction, the transaction will be recorded in the specified Sub-entity Account's balance.
 
-![MAM Payment Link](images/one_time_pc_mam_flow.png)
-
-Preview for one-time payment link
-
-![MAM Payment Link](images/reusable_pc_mam_flow.png)
-
-Preview for reusable payment link
+![MAM Payment Link](images/MEM_select_subentity_paymentlink.png)
 
 ## Xero Integration
 
