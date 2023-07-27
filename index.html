@@ -1331,14 +1331,6 @@
                             <img src="images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
                           </a>
                         </li>
-                        <li>
-                          <a href="#credit-amp-debit-card-details-payment-links-invoice" class="toc-h3 toc-link" data-title="Credit &amp; Debit Card Details">
-                            <span class="toc-link-content">
-                              Credit &amp; Debit Card Details
-                            </span> 
-                            <img src="images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
-                          </a>
-                        </li>
                     </ul>
                   </li>
                   <li>
@@ -1455,10 +1447,60 @@
                             <img src="images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
                           </a>
                         </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="#understanding-cards-transaction-accepting-payments" class="toc-h2 toc-link" data-title="Understanding Cards Transaction">
+                      <span class="toc-link-content">
+                        Understanding Cards Transaction
+                      </span>
+                         <img src="images/arrow-bottom-425d93ba.svg" class="active-parent icon-arrow" alt="" />
+                    </a>
+                    <ul class="toc-list-h3">
                         <li>
-                          <a href="#credit-amp-debit-card-details-api-payment-routing" class="toc-h3 toc-link" data-title="Credit &amp; Debit Card Details">
+                          <a href="#how-to-activate-understanding-cards-transaction" class="toc-h3 toc-link" data-title="How to Activate">
                             <span class="toc-link-content">
-                              Credit &amp; Debit Card Details
+                              How to Activate
+                            </span> 
+                            <img src="images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#products-available-understanding-cards-transaction" class="toc-h3 toc-link" data-title="Products Available">
+                            <span class="toc-link-content">
+                              Products Available
+                            </span> 
+                            <img src="images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#supported-networks-understanding-cards-transaction" class="toc-h3 toc-link" data-title="Supported Networks">
+                            <span class="toc-link-content">
+                              Supported Networks
+                            </span> 
+                            <img src="images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#payments-via-cards-understanding-cards-transaction" class="toc-h3 toc-link" data-title="Payments via Cards">
+                            <span class="toc-link-content">
+                              Payments via Cards
+                            </span> 
+                            <img src="images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#understanding-overseas-transactions-understanding-cards-transaction" class="toc-h3 toc-link" data-title="Understanding Overseas Transactions">
+                            <span class="toc-link-content">
+                              Understanding Overseas Transactions
+                            </span> 
+                            <img src="images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#transactions-declined-by-issuer-understanding-cards-transaction" class="toc-h3 toc-link" data-title="Transactions Declined By Issuer">
+                            <span class="toc-link-content">
+                              Transactions Declined By Issuer
                             </span> 
                             <img src="images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
                           </a>
@@ -6268,15 +6310,6 @@ As an alternative to the above, if you would like to simulate the callback for C
 <td>Closed Amount</td>
 </tr>
 </tbody></table>
-<h3 id='credit-amp-debit-card-details-payment-links-invoice' type='normal'>Credit &amp; Debit Card Details</h3>
-<p>For payments via credit and/or debit cards, ensure that your end-users: </p>
-
-<ol>
-<li><p>Have sufficient balance or credit limit for the transaction </p></li>
-<li><p>Have enabled 3D Secure (3DS) as a way to authenticate the transaction </p></li>
-</ol>
-
-<p>We currently only support Visa, Mastercard, and JCB transactions. Your end-users may use credit and/or debit cards issued locally or internationally. If you plan to conduct overseas transactions, it is important to note that OY! can only create the transactions in IDR. This means that your end-users can still use their overseas cards for payment, however the card will still be charged in IDR and settlement will also be done in IDR. The cardholder&#39;s billing statement, however, will show the transaction amount in their local currency with exchange rate &amp; extra fees (if any) as applied by their issuing bank. </p>
 <h2 id='api-e-wallet-aggregator-accepting-payments' type='normal'>API E-Wallet Aggregator</h2>
 <p>E-Wallet API allows clients to charge and receive payments directly from top e-wallet issuers. With one integration, they are able to get access to all of OY’s available e-wallets and the upcoming e-wallet integrations.</p>
 <h3 id='e-wallet-product-flow-api-e-wallet-aggregator' type='normal'>E-Wallet Product Flow</h3>
@@ -6415,15 +6448,27 @@ Follow the below steps to test the Payment Routing flow:</p>
 <li>If payment is successful, we will send a callback to the registered staging callback URL destination.</li>
 <li>You can monitor Payment Routing transaction through OY! Dashboard or call the endpoint API. Go to “Payment Routing” menu to monitor your transactions.</li>
 </ol>
-<h3 id='credit-amp-debit-card-details-api-payment-routing' type='normal'>Credit &amp; Debit Card Details</h3>
-<p>For payments via credit and/or debit cards, ensure that your end-users: </p>
+<h2 id='understanding-cards-transaction-accepting-payments' type='normal'>Understanding Cards Transaction</h2><h3 id='how-to-activate-understanding-cards-transaction' type='normal'>How to Activate</h3>
+<p>If you need to accept payments from your end-users via debit and/or credit cards, you may contact your Business Representative for more information and assistance on the activation process. </p>
+<h3 id='products-available-understanding-cards-transaction' type='normal'>Products Available</h3>
+<p>You may receive credit and/or debit card payments via Payment Link or Payment Routing.</p>
+<h3 id='supported-networks-understanding-cards-transaction' type='normal'>Supported Networks</h3>
+<p>We currently support Mastercard, Visa, and JCB transactions. To protect you and your end-users from fraudulent payment attempts, all transactions will be processed with 3D Secure (i.e. 3DS). </p>
+<h3 id='payments-via-cards-understanding-cards-transaction' type='normal'>Payments via Cards</h3>
+<p>To increase the chance of successful transaction, please ensure that your end-users:</p>
 
 <ol>
-<li><p>Have sufficient balance or credit limit for the transaction </p></li>
-<li><p>Have enabled 3D Secure (3DS) as a way to authenticate the transaction </p></li>
+<li><p>Have sufficient balance or credit limit for the transaction</p></li>
+<li><p>Have enabled 3D Secure (3DS) as a way to authenticate the transaction</p></li>
 </ol>
+<h3 id='understanding-overseas-transactions-understanding-cards-transaction' type='normal'>Understanding Overseas Transactions</h3>
+<p>Your end-users may use credit and/or debit cards issued locally or internationally. If you plan to conduct overseas transactions, it is important to note that OY! can only create the transactions in IDR. This means that your end-users can still use their overseas cards for payment, however the card will still be charged in IDR and settlement will also be done in IDR. The cardholder&#39;s billing statement, however, will show the transaction amount in their local currency with foreign exchange rate &amp; extra fees (if any) as applied by their issuer (i.e. the bank or entity that issues the card).</p>
 
-<p>We currently only support Visa, Mastercard, and JCB transactions. Your end-users may use credit and/or debit cards issued locally or internationally. If you plan to conduct overseas transactions, it is important to note that OY! can only create the transactions in IDR. This means that your end-users can still use their overseas cards for payment, however the card will still be charged in IDR and settlement will also be done in IDR. The cardholder&#39;s billing statement, however, will show the transaction amount in their local currency with exchange rate &amp; extra fees (if any) as applied by their issuing bank. </p>
+<p>Some cards issuer might not allow overseas transactions. Therefore, it is recommended for your end-users to check with their issuing bank regarding country restrictions to reduce the chance of the transaction being declined by the issuer. </p>
+<h3 id='transactions-declined-by-issuer-understanding-cards-transaction' type='normal'>Transactions Declined By Issuer</h3>
+<p>When a transaction attempt is submitted to your end-user’s issuer (i.e. the bank or entity that issues the card), they usually have an automated system and parameters that help them in deciding whether or not to authorize the transaction. The parameters may include, but not limited to, behavior from past transactions, card details such as expiration date and CVV, and availability of funds. </p>
+
+<p>If all of the card details seem correct, the funds are available and 3DS has been enabled for the card, it is possible that the transaction is declined by the issuer. Unfortunately, sometimes the decline reason provided by the issuer is too “generic”. If that’s the case, you may ask your end-users to either use alternative cards or payment methods or to contact their issuer directly for more information on the decline reason. Due to privacy &amp; security concerns, issuers can only discuss the specific reason why a transaction is declined to the respective cardholder. This means that issuer will most likely not entertain decline explanation requests via OY!. </p>
 <h2 id='feature-resend-callback-accepting-payments' type='normal'>Feature: Resend Callback</h2><h3 id='key-features-feature-resend-callback' type='normal'>Key Features</h3>
 <p>Retry Callback allows you to resend a callback for your successful transaction to your system. Initially, OY! will send a callback to your system after your transaction status has been converted to success. If your system failed to receive the callback, this feature can help you to retry the callback process. The process can be done in two ways</p>
 
@@ -6536,33 +6581,55 @@ Ewallet: trx_id OR ref_number</p>
 <li>You can see the refunded transaction in “Account Statement” page by clicking “Transaction Report” and “Account Statement”. <img src="images/ewallet_refund_account_statement-78081314.png" alt="Refund E-wallet" /></li>
 </ol>
 <h2 id='feature-account-linking-accepting-payments' type='normal'>Feature: Account Linking</h2>
-<p><strong>Overview</strong> Account Linking is a feature that allows your customer&#39;s bank/e-wallet account to be linked to your system using tokenization. By setting up account linking up front, your customer can later complete payments without being prompted for any card details or e-wallet phone number. Currently, our account linking feature is supported in E-Wallet (DANA).</p>
+<p><strong>Overview</strong> </p>
+
+<p>Account Linking is a feature that allows your customer&#39;s bank/e-wallet account to be linked to your system using tokenization. By setting up account linking up front, your customer can later complete payments without being prompted for any card details or e-wallet phone number. Currently, our account linking feature is supported in E-Wallet (DANA).</p>
 
 <p>Account linking feature is free of charge.</p>
 <h3 id='key-features-feature-account-linking' type='normal'>Key Features</h3>
-<p><strong>1. Account Linking</strong>
-Link your customer&#39;s bank/e-wallet account to your system using tokenization.
-<strong>2. Account Unlinking</strong>
-Unlink your customer&#39;s bank/e-wallet account from your system. 
-<strong>3. Get E-wallet Balance</strong>
-By using account linking, your users can now see their e-wallet balance on before checking out a payment.</p>
+<p><strong>1. Account Linking</strong></p>
+
+<p>Link your customer&#39;s bank/e-wallet account to your system using tokenization.</p>
+
+<p><strong>2. Account Unlinking</strong></p>
+
+<p>Unlink your customer&#39;s bank/e-wallet account from your system. </p>
+
+<p><strong>3. Get E-wallet Balance</strong></p>
+
+<p>By using account linking, your users can now see their e-wallet balance on before checking out a payment.</p>
 <h3 id='account-linking-flow-feature-account-linking' type='normal'>Account Linking Flow</h3>
 <ol>
-<li>You hit OY! API Account Linking for a particular payment method (e.g., DANA).</li>
-<li>OY! returns redirect URL for authentication</li>
-<li>Your customer authorizes the account linking by signing the agreement page and inserting a PIN.</li>
-<li>OY! returns account linking result. If success, OY! will save the authorization as a token and redirect your customer to your success page URL.</li>
+<li><p>You hit OY! API Account Linking for a particular payment method (e.g., DANA).</p></li>
+<li><p>OY! returns redirect URL for authentication.</p></li>
+<li><p>Your customer authorizes the account linking by signing the agreement page and inserting a PIN.</p></li>
+<li><p>OY! returns account linking result. If success, OY! will save the authorization as a token and redirect your customer to your success page URL.</p></li>
 </ol>
 <h3 id='account-unlinking-flow-feature-account-linking' type='normal'>Account Unlinking Flow</h3>
-<p>Account Unlinking can be done in several ways:
-- <strong>OY! API Unlinking</strong> 
-  You can hit OY! API Unlinking to unlink your customer&#39;s bank/e-wallet account
-  1. You hit OY! API Account Unlinking for a particular payment method (e.g., DANA).
-  2. OY! returns account unlinking result. If success, OY! will invalidate the token.
-- <strong>Mobile Banking/E-Wallet Application</strong> 
-Your customer can unlink their account via their m-Banking/E-Wallet application.
-- <strong>Deleted/Blocked Accounts</strong> 
-If your customer&#39;s account is deleted/blocked, then their account is automatically unlinked.</p>
+<p>Account Unlinking can be done in several ways:</p>
+
+<ul>
+<li><strong>OY! API Unlinking</strong> </li>
+</ul>
+
+<p>You can hit OY! API Unlinking to unlink your customer&#39;s bank/e-wallet account</p>
+
+<ol>
+<li><p>You hit OY! API Account Unlinking for a particular payment method (e.g., DANA).</p></li>
+<li><p>OY! returns account unlinking result. If success, OY! will invalidate the token.</p></li>
+</ol>
+
+<ul>
+<li><strong>Mobile Banking/E-Wallet Application</strong> </li>
+</ul>
+
+<p>Your customer can unlink their account via their m-Banking/E-Wallet application.</p>
+
+<ul>
+<li><strong>Deleted/Blocked Accounts</strong> </li>
+</ul>
+
+<p>If your customer&#39;s account is deleted/blocked, then their account is automatically unlinked.</p>
 <h3 id='payment-method-supported-feature-account-linking' type='normal'>Payment Method Supported</h3>
 <p>Currently, Account Linking is only supported on e-wallet payment method. Each payment method have different expiry time and process to renew token.</p>
 
