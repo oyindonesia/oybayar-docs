@@ -1141,6 +1141,9 @@ There will be 3 different ways to distribute the invoice via Whatsapp and there 
 | Bank Syariah Indonesia (BSI)| Closed Amount                             | 
 
 
+
+
+
 ## API E-Wallet Aggregator
 
 E-Wallet API allows clients to charge and receive payments directly from top e-wallet issuers. With one integration, they are able to get access to all of OY’s available e-wallets and the upcoming e-wallet integrations.
@@ -1255,6 +1258,53 @@ Follow the below steps to test the Payment Routing flow:
 1. If payment is successful, we will send a callback to the registered staging callback URL destination.
 1. You can monitor Payment Routing transaction through OY! Dashboard or call the endpoint API. Go to “Payment Routing” menu to monitor your transactions.
 
+
+
+
+## Understanding Cards Transaction 
+
+### How to Activate 
+
+If you need to accept payments from your end-users via debit and/or credit cards, you may contact your Business Representative for more information and assistance on the activation process. 
+
+
+### Products Available 
+
+You may receive credit and/or debit card payments via Payment Link or Payment Routing.
+
+
+### Supported Networks 
+
+We currently support Mastercard, Visa, and JCB transactions. To protect you and your end-users from fraudulent payment attempts, all transactions will be processed with 3D Secure (i.e. 3DS). 
+
+
+### Payments via Cards
+
+To increase the chance of successful transaction, please ensure that your end-users:
+
+1. Have sufficient balance or credit limit for the transaction
+
+2. Have enabled 3D Secure (3DS) as a way to authenticate the transaction
+
+
+### Understanding Overseas Transactions
+
+Your end-users may use credit and/or debit cards issued locally or internationally. If you plan to conduct overseas transactions, it is important to note that OY! can only create the transactions in IDR. This means that your end-users can still use their overseas cards for payment, however the card will still be charged in IDR and settlement will also be done in IDR. The cardholder's billing statement, however, will show the transaction amount in their local currency with foreign exchange rate & extra fees (if any) as applied by their issuer (i.e. the bank or entity that issues the card).
+
+
+Some cards issuer might not allow overseas transactions. Therefore, it is recommended for your end-users to check with their issuing bank regarding country restrictions to reduce the chance of the transaction being declined by the issuer. 
+
+
+### Transactions Declined By Issuer 
+
+When a transaction attempt is submitted to your end-user’s issuer (i.e. the bank or entity that issues the card), they usually have an automated system and parameters that help them in deciding whether or not to authorize the transaction. The parameters may include, but not limited to, behavior from past transactions, card details such as expiration date and CVV, and availability of funds. 
+
+
+If all of the card details seem correct, the funds are available and 3DS has been enabled for the card, it is possible that the transaction is declined by the issuer. Unfortunately, sometimes the decline reason provided by the issuer is too “generic”. If that’s the case, you may ask your end-users to either use alternative cards or payment methods or to contact their issuer directly for more information on the decline reason. Due to privacy & security concerns, issuers can only discuss the specific reason why a transaction is declined to the respective cardholder. This means that issuer will most likely not entertain decline explanation requests via OY!. 
+
+
+
+
 ## Feature: Resend Callback
 
 ### Key Features
@@ -1342,7 +1392,7 @@ Refund features allow you to refund a successful e-wallet transaction to your en
 
 ### How to Use
 
-1. Log in to your OY! Bisnis dashboard with your username and password that you registered with.
+1. Log in to your OY! Business dashboard with your username and password that you registered with.
 2. Click on the product page you desired.
   - Payment Link : Click “Payment Link” and choose “One Time”/“Reusable”
   - VA Aggregator : Click “Virtual Account” and choose “Incoming Payment”
@@ -1358,34 +1408,58 @@ Refund features allow you to refund a successful e-wallet transaction to your en
 
 ## Feature: Account Linking
 
-**Overview** Account Linking is a feature that allows your customer's bank/e-wallet account to be linked to your system using tokenization. By setting up account linking up front, your customer can later complete payments without being prompted for any card details or e-wallet phone number. Currently, our account linking feature is supported in E-Wallet (DANA).
+**Overview** Account Linking is a feature that allows your customer's bank/e-wallet account to be linked to your system using tokenization. By setting up account linking up front, your customer can later complete payments without being prompted for any card details or e-wallet phone number. Currently, our account linking feature is supported in E-Wallet (DANA & ShopeePay).
+
 
 Account linking feature is free of charge.
 
 ### Key Features
-1. **Account Linking**
+**1. Account Linking**
+
 Link your customer's bank/e-wallet account to your system using tokenization.
-2. **Account Unlinking**
+
+**2. Account Unlinking**
+
 Unlink your customer's bank/e-wallet account from your system. 
-3. **Get E-wallet Balance**
+
+**3. Get E-wallet Balance**
+
 By using account linking, your users can now see their e-wallet balance on before checking out a payment.
+
 
 ### Account Linking Flow
 1. You hit OY! API Account Linking for a particular payment method (e.g., DANA).
-1. OY! returns redirect URL for authentication
-1. Your customer authorizes the account linking by signing the agreement page and inserting a PIN.
-1. OY! returns account linking result. If success, OY! will save the authorization as a token and redirect your customer to your success page URL.
+
+2. OY! returns redirect URL for authentication.
+
+3. Your customer authorizes the account linking by signing the agreement page and inserting a PIN.
+
+4. OY! returns account linking result. If success, OY! will save the authorization as a token and redirect your customer to your success page URL.
+
+
 
 ### Account Unlinking Flow
 Account Unlinking can be done in several ways:
+
 - **OY! API Unlinking** 
+
   You can hit OY! API Unlinking to unlink your customer's bank/e-wallet account
+
   1. You hit OY! API Account Unlinking for a particular payment method (e.g., DANA).
+
   2. OY! returns account unlinking result. If success, OY! will invalidate the token.
+
+
 - **Mobile Banking/E-Wallet Application** 
+
 Your customer can unlink their account via their m-Banking/E-Wallet application.
+
+
 - **Deleted/Blocked Accounts** 
+
 If your customer's account is deleted/blocked, then their account is automatically unlinked.
+
+
 
 ### Payment Method Supported
 Currently, Account Linking is only supported on e-wallet payment method. Each payment method have different expiry time and process to renew token.
@@ -1393,9 +1467,12 @@ Currently, Account Linking is only supported on e-wallet payment method. Each pa
 | E-Wallet Issuer    | Token Expiry Time  | Token Renewal      |
 | ------------------ | ------------------ | ------------------ |
 | DANA               | 10 Years           | After Expiry Time  |
-| ShopeePay          | Not supported      | -                  |
+| ShopeePay          | 5 Years            | After Expiry Time  |
 | Linkaja            | Not supported      | -                  |
 | OVO                | Not supported      | -                  |
 
 For DANA: If your customer's DANA account is frozen, then their account is temporarily unlinked. Once the account is unfrozen and the token has not expired, their account is automatically linked again.
+
+
+
 
