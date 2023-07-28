@@ -6406,13 +6406,13 @@ As an alternative to the above, if you would like to simulate the callback for C
 <h3 id='description-about-payment-routing-api-payment-routing' type='normal'>Description about Payment Routing</h3>
 <p>Payment Routing is an API that combines receive money and disburse money features. It allows you to immediately disburse the money once you receive from your customers. By integrating to this API, you will get the end-to-end solutions for your business needs.</p>
 
-<p>Through API Payment Routing you may create Payment Link transactions and/or receive money via Bank Transfer (via Virtual Account &amp; Unique Code), E-Wallet, QRIS, and Cards.</p>
+<p>Through API Payment Routing you may create Payment Link transactions and/or receive money via Bank Transfer (via Virtual Account &amp; Unique Code), E-Wallet (One Time &amp; Direct), QRIS, and Cards.</p>
 <h3 id='flow-api-payment-routing' type='normal'>Flow</h3>
 <p><img src="images/Payment_Routing_Flow-257eac36.png" alt="Payment Routing Flow" /></p>
 <h3 id='key-features-api-payment-routing' type='normal'>Key Features</h3>
 <ol>
 <li><strong>Accept and disburse money in a real time manner</strong> - By integrating to this API, you will get end-to-end solutions from receive to disburse money. All in real time manner. Note : Some payment methods have H+1 or H+2 settlement period. You have to keep some balance to cater the settlement from the payment methods.</li>
-<li><strong>You can select Payment Link, Bank Transfer, E-Wallet, and QRIS to receive money</strong> - You can choose Bank Transfer (via Virtual Account &amp; Unique Code), E-Wallet, Cards, or QRIS as a payment method to receive the money. We provide all banks offered in VA Aggregator for Virtual Accounts, BCA for Unique Code, ShopeePay, DANA, LinkAja as payment method for E-Wallet, and Visa/Mastercard for Cards. However, you don&#39;t need to worry if you don&#39;t have your own UI. You can use our Payment Link to help your customers to complete the payments.</li>
+<li><strong>You can select Payment Link, Bank Transfer, E-Wallet, and QRIS to receive money</strong> - You can choose Bank Transfer (via Virtual Account &amp; Unique Code), E-Wallet (One Time &amp; Direct), Cards, or QRIS as a payment method to receive the money. We provide all banks offered in VA Aggregator for Virtual Accounts, BCA for Unique Code, ShopeePay, DANA, LinkAja as payment method for E-Wallet, and Visa/Mastercard for Cards. However, you don&#39;t need to worry if you don&#39;t have your own UI. You can use our Payment Link to help your customers to complete the payments.</li>
 <li><strong>Transaction tracking and monitoring capability</strong> - You can track all payment routing transactions details through our callback or the OY! dashboard. You will receive callbacks two times, once we have succesfully receive money and once we have successfully disburse money.</li>
 </ol>
 <h3 id='use-cases-api-payment-routing' type='normal'>Use Cases</h3>
@@ -6801,10 +6801,66 @@ Bank Transfer via Virtual Account (VA) will generate specific account number des
 
 <p>Bank Transfer via Unique Code generates unique code for each transaction but the account number destination will always be the same. The total amount paid is subtracted by the unique code. For example, your end user wants to paid a transaction of Rp 100.000 and get Rp 100 as the unique code. The payment uses subtraction approach, so your end user will pay a total of Rp 99.900 to complete the payments. Unique Code also have limitations compared to VA, where you can only create unique code transaction during the operational hours (3 AM - 8.30 PM GMT+7).</p>
 <h2 id='payment-routing-faqs' type='normal'>Payment Routing</h2>
+<p><strong>What are the possible payment methods for users?</strong>
+We support payments via bank transfers, e-wallet , credit card/debit card, and QR code from the following:</p>
+
+<ul>
+<li><p>Bank Transfer via Virtual Account: BCA, BNI, BRI, CIMB Niaga, Mandiri, Permata Bank.</p></li>
+<li><p>Bank Transfer via Unique Code: BCA</p></li>
+<li><p>Credit Card/Debit Card: VISA, Mastercard</p></li>
+<li><p>E-Wallet - One Time: ShopeePay, DANA, LinkAja, OVO</p></li>
+<li><p>E-Wallet - Direct Payment: ShopeePay</p></li>
+<li><p>QR Code: QRIS</p></li>
+</ul>
+
 <p><strong>What is the difference between Bank Transfer via Virtual Account and Bank Transfer via Unique Code?</strong>
 Bank Transfer via Virtual Account (VA) will generate specific account number destination for each transaction. You can create an open amount or closed amount transaction using VA. Detail explanation of VA can be seen <a href="https://docs.oyindonesia.com/#va-aggregator-accepting-payments">here</a>. You can create VA Transactions via <a href="https://docs.oyindonesia.com/#va-aggregator-accepting-payments">API Payment Routing</a> or <a href="https://docs.oyindonesia.com/#va-aggregator-accepting-payments">VA Aggregator</a> </p>
 
 <p>Bank Transfer via Unique Code generates unique code for each transaction but the account number destination will always be the same. The total amount paid is subtracted by the unique code. For example, your end user wants to paid a transaction of Rp 100.000 and get Rp 100 as the unique code. The payment uses subtraction approach, so your end user will pay a total of Rp 99.900 to complete the payments. Unique Code also have limitations compared to VA, where you can only create unique code transaction during the operational hours (3 AM - 8.30 PM GMT+7). You can create Unique Code Transaction via <a href="https://docs.oyindonesia.com/#va-aggregator-accepting-payments">API Payment Routing</a> or <a href="https://docs.oyindonesia.com/#payment-links-invoice-accepting-payments">Payment Link</a></p>
+
+<p><strong>What are the differences between E-Wallet One Time Payment and E-Wallet Direct Payment?</strong>
+E-Wallet One Time creates a payment URL that can be paid by any guest users. Once payment URL is opened, your end user&#39;s is redirected to the E-Wallet app and completes the payment inside the E-Wallet&#39;s app.</p>
+
+<p>E-Wallet Direct creates a payment URL dedicated to a particular user. The end user needs to link their E-Wallet account first by doing <a href="https://docs.oyindonesia.com/#feature-account-linking-accepting-payments">Account Linking</a>. Once the end user has linked their account to your app, you can initiate a Direct payment. OY will return an authorization URL for the end users to input the E-Wallet PIN and complete the payment. Using Direct payment, your end users will complete the transaction inside your app. Therefore, it will bring a better experinence for your end users.</p>
+
+<table><thead>
+<tr>
+<th></th>
+<th>One Time</th>
+<th>Direct</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Supported  E-Wallets</td>
+<td>ShopeePay, LinkAja, DANA, OVO</td>
+<td>ShopeePay</td>
+</tr>
+<tr>
+<td>Need to do Account Linking first?</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Can be created via..</td>
+<td>API Payment Routing <br> Payment Link <br> API E-Wallet Aggregator</td>
+<td>API Payment Routing</td>
+</tr>
+<tr>
+<td>Send phone number in API Create Request</td>
+<td>Optional</td>
+<td>Mandatory</td>
+</tr>
+<tr>
+<td>Who can complete the transaction?</td>
+<td>Any Users/Guest</td>
+<td>Dedicated User. <br> Only the user whose phone number listed in the API request</td>
+</tr>
+<tr>
+<td>Payment Completion Journey</td>
+<td>Inside E-Wallet App</td>
+<td>Your app</td>
+</tr>
+</tbody></table>
 
       </div>
       <div class="dark-box">
