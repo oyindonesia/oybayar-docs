@@ -1,7 +1,7 @@
 ---
-title: t(:title)
+title: Product Documentation
 
-lang: id
+lang: en
   
 toc_footers:
   - <a href='https://business.oyindonesia.com/register'>Sign Up for Trial</a>
