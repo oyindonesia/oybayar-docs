@@ -1,4 +1,4 @@
-# Home
+# Beranda
 
 Selamat datang di OY! Indonesia. Kami bertujuan untuk menjadi perusahaan money movement terdepan yang selalu menempatkan partner kami sebagai prioritas utama. Berbekal berbagai produk, seperti Terima Uang dan Kirim Uang, kami siap membantu pertumbuhan bisnis Anda melalui solusi pembayaran yang cepat dan aman.
 
@@ -29,7 +29,7 @@ Setelah berhasil membuat akun, jika Anda tertarik untuk melanjutkan menggunakan 
 
 Untuk membuat akun, ikuti langkah-langkah berikut:
 
-1. **Daftar via website OY!:** Untuk membuat akun, silakan daftar [di sini](https://link-to-registration-page), dan lengkapi formulir dengan semua informasi yang diperlukan.
+1. **Daftar via website OY!:** Untuk membuat akun, silakan daftar [di sini](https://business.oyindonesia.com/register?), dan lengkapi formulir dengan semua informasi yang diperlukan.
 
    *Harap perhatikan bahwa username Anda tidak dapat diubah setelah formulir pendaftaran dikirimkan.*
 

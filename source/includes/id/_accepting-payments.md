@@ -1,4 +1,4 @@
-# Accepting Payments
+# Terima Uang
 
 ## VA Aggregator
 

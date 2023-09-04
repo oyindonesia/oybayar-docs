@@ -15,10 +15,11 @@ under the License.
 %>
 <% language_tabs = current_page.data.language_tabs || [] %>
 <% page_content = yield %>
+<% lang = current_page.data.lang || 'id' %>
+<% isLangId = lang == 'id' %>
 <%
   if current_page.data.includes
     current_page.data.includes.each do |include|
-      lang = current_page.data.lang ?? 'id'
       page_content += partial("includes/#{lang}/#{include}")
     end
   end
@@ -39,7 +40,7 @@ under the License.
         >
       <% end %>
     <% end %>
-    <title><%= current_page.data.title || "API Documentation" %></title>
+    <title><%= I18n.t(:title) || "API Documentation" %></title>
 
     <style media="screen">
       <%= Rouge::Themes::OyTheme.render(:scope => '.highlight') %>
@@ -53,6 +54,7 @@ under the License.
     <%= favicon_tag 'favicon.ico' %>
     <%= stylesheet_link_tag :screen, media: :screen %>
     <%= stylesheet_link_tag :print, media: :print %>
+    <%= stylesheet_link_tag :langstyle, media: :langstyle %>
     <% if current_page.data.search %>
       <%= javascript_include_tag  "all" %>
     <% else %>
@@ -74,19 +76,21 @@ under the License.
     <div class="header">
       <div class="header-section header-logo-container">
         <%= image_tag "oy-docs.svg", class: 'header-logo' %>
+        <%= I18n.locale %>
       </div>
       <div class="header-section header-action">
         <% if current_page.data.search %>
           <div class="search">
-            <input type="text" class="search" id="input-search" placeholder="Search Documentation">
+            <input type="text" class="search" id="input-search" placeholder="<%= t(:search) %>">
             <ul class="search-results"></ul>
           </div>
         <% end %>
         <div class="header-section header-action-link">
-          <a href="#home" class="header-link">Home</a>
-          <a href="https://api-docs.oyindonesia.com" class="header-link">API Docs</a>
-          <a href="https://business.oyindonesia.com/register" class="header-linkButton">Daftar Sekarang</a>
-          <a href="https://business.oyindonesia.com" class="header-linkUnderline">Masuk Dashboard</a>
+          <a href="#home" class="header-link"> <%= t(:home) %></a>
+          <a href="https://api-docs.oyindonesia.com" class="header-link"> <%= t(:api) %></a>
+          <a href="https://business.oyindonesia.com/register" class="header-linkButton"><%= t(:register) %></a>
+          <a href="https://business.oyindonesia.com" class="header-linkUnderline"> <%= t(:login) %></a>
+          <a href="<%= isLangId ? '/en' : '/id' %>"  class="header-link"> <%= t(:lang) %></a>
         </div>
       </div>
       <div class="header-section header-action-mobile">
@@ -102,27 +106,12 @@ under the License.
     <div class="search-bar-mobile">
       <% if current_page.data.search %>
           <div class="search">
-            <input type="text" class="search" id="input-search-mobile" placeholder="Search Documentation">
+            <input type="text" class="search" id="input-search-mobile" placeholder="<%= t(:search) %>">
             <ul class="search-results-mobile"></ul>
           </div>
           <%= image_tag "close.svg", id: 'search-bar-close' %>
         <% end %>
     </div>
-
-    <% if language_tabs.any? %>
-      <div class="lang-selector__container">
-        <p class="lang-selector__title">Select Language</p>
-        <div class="lang-selector">
-          <% language_tabs.each do |lang| %>
-            <% if lang.is_a? Hash %>
-              <a href="#" data-language-name="<%= lang.keys.first %>"><%= lang.values.first %></a>
-            <% else %>
-              <a href="#" data-language-name="<%= lang %>"><%= lang %></a>
-            <% end %>
-          <% end %>
-        </div>
-      </div>
-    <% end %>
     
     <div class="toc-wrapper">
       <div class="toc-header-mobile">
@@ -189,22 +178,6 @@ under the License.
       <div class="content">
       <% end %>
         <%= page_content %>
-      </div>
-      <div class="dark-box">
-        <% if language_tabs.any? %>
-          <div class="lang-selector__container">
-            <p class="lang-selector__title">Select Language</p>
-            <div class="lang-selector">
-              <% language_tabs.each do |lang| %>
-                <% if lang.is_a? Hash %>
-                  <a href="#" data-language-name="<%= lang.keys.first %>"><%= lang.values.first %></a>
-                <% else %>
-                  <a href="#" data-language-name="<%= lang %>"><%= lang %></a>
-                <% end %>
-              <% end %>
-            </div>
-          </div>
-        <% end %>
       </div>
     </div>
   </body>

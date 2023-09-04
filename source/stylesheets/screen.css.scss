@@ -2,7 +2,6 @@
 @import 'normalize';
 @import 'variables';
 @import 'icon-font';
-// @import 'rtl'; // uncomment to switch to RTL format
 
 /*
 Copyright 2008-2013 Concur Technologies, Inc.
@@ -602,9 +601,7 @@ a.lottie#learn-more {
 // This is all the stuff with the light background in the left half of the page
 
 .content {
-  // fixes webkit rendering bug for some: see #538
   -webkit-transform: translateZ(0);
-  // to place content above the dark box
   position: relative;
   z-index: 30;
   margin-top: $header-height + 2*$header-v-padding;
