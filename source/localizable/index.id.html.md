@@ -1,11 +1,5 @@
 ---
-title: t(:title)
-
 lang: id
-  
-langs:
-  - id
-  - en
 
 toc_footers:
   - <a href='https://business.oyindonesia.com/register'>Sign Up for Trial</a>

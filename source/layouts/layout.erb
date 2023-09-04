@@ -90,7 +90,8 @@ under the License.
           <a href="https://api-docs.oyindonesia.com" class="header-link"> <%= t(:api) %></a>
           <a href="https://business.oyindonesia.com/register" class="header-linkButton"><%= t(:register) %></a>
           <a href="https://business.oyindonesia.com" class="header-linkUnderline"> <%= t(:login) %></a>
-          <a href="<%= isLangId ? '/en' : '/id' %>"  class="header-link"> <%= t(:lang) %></a>
+          <!-- if default mount is id use /en : / -->
+          <a href="<%= isLangId ? '/' : '/id' %>"  class="header-link"> <%= t(:lang) %></a>
         </div>
       </div>
       <div class="header-section header-action-mobile">
