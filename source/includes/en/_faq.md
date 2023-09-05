@@ -1,4 +1,4 @@
-# SSD (Soal Sering Ditanya)
+# FAQs
 
 ## API and Bulk Disbursement
 
