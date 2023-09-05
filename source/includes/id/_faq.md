@@ -1,16 +1,16 @@
 # SSD (Soal Sering Ditanya)
 
-## API and Bulk Disbursement
+## API Kirim Uang & Multitransfer
 
-**What are bank maintenance schedules? Will partners be informed?**
+**Apa itu jadwal maintenance bank? apakah partner akan diinformasikan terkait itu?**
 
-Banks often have regular maintenance schedules which differ from one bank to another. These regular maintenance schedules prevent the execution of transactions to the respective recipient bank during the set period of time. To ensure your convenience, we will queue any transaction requests submitted during the maintenance hours and automatically disburse them once the maintenance is over.
+Jadwal maintenance bank akan menghentikan semua transaksi ke bank terkait selama periode tertentu. Biasanya, tiap bank punya jadwal maintenance yang sudah dijadwalkan, yang tentunya berbeda antara satu bank dan bank lainnya. Agar transaksi Anda nyaman, kami akan membuat antrean transaksi yang diajukan saat jam pemeliharaan dan akan otomatis dikirimkan setelah maintenance selesai.
 
-**What are the amount limits for disbursements?**
+**Berapa limit maksimal untuk mengirimkan uang?**
 
-_e-wallet:_ Since each e-wallet provide limits to the amount each user can hold at a time, disbursements made to e-wallet accounts have their respective limits.
+Setiap e-wallet mempunyai limit maksimal masing-masing, berikut penjelasannya:
 
-| Wallet | Account Type  | Maximum Amount |
+| E-Wallet | Tipe Akun  | Limit Maksimal |
 | ------ | ------------- | -------------- |
 | OVO    | OVO Club      | Rp 2.000.000   |
 | OVO    | OVO Premier   | Rp 10.000.000  |
@@ -19,119 +19,124 @@ _e-wallet:_ Since each e-wallet provide limits to the amount each user can hold 
 | GoPay  | Unverified    | Rp 2.000.000   |
 | GoPay  | Verified      | Rp 10.000.000  |
 
-**What are the minimum Amount for disbursements?**
+**Berapa limit minimal untuk mengirimkan uang?**
 
-_e-wallet:_ Since each e-wallet provide limits to the amount each user can hold at a time, disbursements made to e-wallet accounts have their respective limits.
+Setiap e-wallet mempunyai limit minimal masing-masing, berikut penjelasannya:
 
-| Wallet  | Minimum Amount |
+
+| E-Wallet  | Limit Minimal |
 | ------- | -------------- |
 | OVO     | Rp 10.000      |
 | DANA    | Rp 10.000      |
 | GoPay   | Rp 10.000      |
 | Linkaja | Rp 10.000      |
 
-**Is there a cut-off time?**
+**Apakah ada waktu Cut-Off time (COT) ?**
 
-No, we are available 24/7 including holidays.
+Tidak ada. Kami beroperasi 24 jam, termasuk pada hari libur. 
 
-**Is there a maximum transaction volume and transaction amount in a day?**
+**Apakah ada batasan volume transaksi dan nominal transaksi dalam sehari?**
 
-There are no daily limits of how many bulk campaigns can be created and executed. There is also no limit to the number of total transactions per disbursement campaign.
+Tidak ada batasan harian untuk berapa banyak transaksi Multitransfer yang Anda buat. Tidak ada batasan juga untuk nominal transaksi transaksi Multitransfer.
 
-**How many recipient emails can I send the transaction notification to?**
+**Berapa banyak alamat email yang dapat saya kirimkan untuk notifikasi transaksi?**
 
-You can send up to 5 emails per transactions with a limit of 255 characters total. For each transaction, simply list out the email recipients.
+Anda dapat mengirimkan hingga 5 email per transaksi dengan batas maksimal 255 karakter. 
 
-**What are the supported banks for the disbursement products?**
+**Apakah saya bisa mengirimkan "catatan" yang ada di dalam mutasi rekening penerima?**
 
-We support transactions to 100+ banks in Indonesia. Please refer to the bank codes [here](https://api-docs.oyindonesia.com/#disbursement-bank-codes) when using our disbursement products. (Please note that we currently do not support disbursements to Virtual Accounts.)
+Ya. Namun, kami hanya mendukung catatan untuk 7 bank ini: BCA, BNI, BRI, CIMB, DBS, Mandiri, dan Permata. Namun, harap diperhatikan bahwa jika terdapat gangguan saat kami menghubungkan ke bank yang disebutkan di atas, sistem kami tidak dapat mendukung agar catatan tersebut muncul dalam mutasi rekening bankpenerima.
 
-**Can I specify the "notes" to be reflected in the beneficiary bank account statement?**
+**Apakah saldo yang diterima dari API VA Aggregator dan produk Link Pembayaran serta Invoice dapat langsung digunakan untuk produk Kirim Uang?**
 
-Yes. However, we only support notes for these 7 banks: BCA, BNI, BRI, CIMB, DBS, Mandiri, and Permata. However, please note that should there arise unexpected difficulties with the connection to these aforementioned banks, our failover system will not be able to support these notes to be reflected in the beneficiary bank account statement.
+Ya. Dana yang diterima dari API VA Aggregator dan produk Link Pembayaran serta Invoice akan secara otomatis masuk ke dalam saldo OY! Anda secara real-time, memungkinkan Anda untuk langsung menggunakan saldo tersebut untuk mengirimkan uang.
 
-**Will the funds accepted from the API VA Aggregator and Payment Link and Invoice products be readily available for disbursement uses?**
+**[Khusus Multitransfer] Bagaimana jika nama penerima di dokumen unduhan xlsx atau CSV berbeda dengan nama di rekening bank? Untuk apa nama & nomor telepon pelanggan digunakan?**
 
-Yes. The funds accepted from the API VA Aggregator and Payment Link and Invoice products will be automatically reflected in your OY! balance in real-time, allowing you to use these funds directly for disbursement purposes.
+Selama nomor rekening bank valid dan aktif, transaksi akan tetap dikirimkan.
 
-**[Bulk Disbursement Specific] What if the recipient name on the xlsx or CSV file is different from the bank account name? What is the phone number used for?**
+Nama dan nomor telepon hanya terlihat oleh partner dan digunakan untuk dokumentasi partner sendiri. Nama dan nomor telepon yang tercantum tidak akan digunakan oleh OY!
 
-As long as the bank account number is valid and not dormant, the transaction will still be executed.
+**[Khusus API Kirim Uang] Apakah pengiriman uang dilakukan secara real-time?**
 
-The name and phone number are visible only to the partner and is used for the partner’s own documentation. The name and phone number listed are not used by OY or sent to the recipient.
+Ya. Pencairan yang dilakukan melalui API Kirim Uang semuanya dilakukan secara real-time.
 
-**[API Disbursement Specific] Are the disbursements performed in real-time?**
-
-Yes. Disbursements executed through our API Disbursement are all performed in real-time.
 
 ## API VA Aggregator
 
-**What are the supported banks?**
+Bank apa saja yang didukung untuk produk API VA Aggregator?
 
-We currently have 11 available banks for our API VA Aggregator. Please refer to the bank codes [here](https://api-docs.oyindonesia.com/#va-aggregator-bank-code).
+Saat ini kami memiliki 11 bank yang tersedia untuk API VA Aggregator. Anda dapat melihat daftar bank [di sini](https://api-docs.oyindonesia.com/#va-aggregator-bank-code).
 
-**Is the amount received in realtime?**
+**Apakah saldo yang saya terima langsung masuk secara real-time?**
 
-Yes, all the amount received are in realtime and will be immediately available in your OY! balance.
+Ya, semua saldo yang Anda terima bersifat real-time dan akan segera tersedia masuk ke saldo OY! Anda.
 
-## Payment Link/Invoice
+## Link Pembayaran/Invoice
 
-**What are the possible payment methods for users?**
-We support payments via bank transfers, credit card, debit card, and QR code from the following:
+**Apa saja metode pembayaran yang tersedia untuk pelanggan saya?**
 
-* Bank Transfer via Virtual Account: BCA, BNI, BRI, CIMB Niaga, Mandiri, Permata Bank.
+Kami menyediakan berbagai metode pembayaran melalui transfer bank, e-wallet, kartu kredit/debit, dan kode QR dengan detail sebagai berikut:
 
-* Bank Transfer via Unique Code: BCA
+1. Transfer bank melalui Virtual Account: BCA, BNI, BRI, CIMB Niaga, Mandiri, dan Permata Bank.
 
-* Credit Card/Debit Card: VISA, Mastercard
+2. Transfer dengan kode unik: BCA
 
-* E-Wallet: ShopeePay, DANA, LinkAja, OVO
+3. Kartu kredit/debit: VISA, Mastercard
 
-* QR Code: QRIS
+4. E-Wallet: ShopeePay, DANA, LinkAja, OVO
 
-**What are closed and open amounts? What happens when the amount paid by the user is different from the declared amount in the created Payment Links?**
+5. Kode QR: QRIS
 
-A closed amount is a configuration so that the payment link or invoice can only be paid if the actual declared amount is paid. The user will not be able to pay any amount other than the declared amount.
+**Apa yang dimaksud dengan VA closed dan open amount? Apa yang terjadi jika nominal yang dibayarkan oleh pelanggan berbeda dari nominal yang tertera di Link Pembayaran yang saya buat?**
 
-An opened amount is a configuration so that the payment link or invoice can be paid up to the declared amount (or any, if amount is not declared). If the user pays an amount that is different from the declared amount, the payment link will remain active. The payment link will only reflect a completed status when the full amount is paid in total.
+Closed Amount adalah jenis Virtual Account yang hanya menerima pembayaran dengan nominal yang ditentukan. Pengguna tidak akan dapat membayar nominal selain dari nominal yang tertera.
 
-**What is the difference between Bank Transfer via Virtual Account and Bank Transfer via Unique Code?**
-Bank Transfer via Virtual Account (VA) will generate specific account number destination for each transaction. You can create an open amount or closed amount transaction using VA. Detail explanation of VA can be seen [here](https://docs.oyindonesia.com/#va-aggregator-accepting-payments). You can create VA Transactions via [API Payment Routing](https://docs.oyindonesia.com/#va-aggregator-accepting-payments) or [VA Aggregator](https://docs.oyindonesia.com/#va-aggregator-accepting-payments) 
+Open Amount adalah jenis Virtual Account VA yang dapat menerima pembayaran dengan nominal berapa pun. Jika pelanggan membayar nominal lebih dari yang tertera, link pembayaran akan tetap aktif. Link pembayaran akan berubah status menjadi SELESAI hanya ketika mencapai nominal TOTAL yang ditentukan.
 
-Bank Transfer via Unique Code generates unique code for each transaction but the account number destination will always be the same. The total amount paid is subtracted by the unique code. For example, your end user wants to paid a transaction of Rp 100.000 and get Rp 100 as the unique code. The payment uses subtraction approach, so your end user will pay a total of Rp 99.900 to complete the payments. Unique Code also have limitations compared to VA, where you can only create unique code transaction during the operational hours (3 AM - 8.30 PM GMT+7).
+**Apa perbedaan antara transfer bank melalui Virtual Account dan transfer bank melalui kode unik?**
+
+Transfer bank melalui Virtual Account (VA) akan menghasilkan nomor rekening tujuan transfer yang khusus untuk setiap transaksi. Anda dapat membuat transaksi dengan jenis open amount atau closed menggunakan VA. Penjelasan rinci tentang VA dapat dilihat [di sini](https://docs.oyindonesia.com/#va-aggregator-accepting-payments). Anda dapat membuat transaksi VA melalui [API Routing Pembayaran](https://docs.oyindonesia.com/#va-aggregator-accepting-payments) atau [Link Pembayaran ](https://docs.oyindonesia.com/#va-aggregator-accepting-payments). 
+
+Berbeda dari sebelumnya, transfer bank melalui kode unik menghasilkan kode unik untuk setiap transaksi, tetapi nomor rekening tujuan akan tetap sama. Total nominal yang dibayarkan akan dikurangi dengan nilai kode unik tersebut. Sebagai contoh, pelanggan Anda ingin membayar transaksi sebesar Rp100.000 dan mendapatkan Rp100 sebagai kode unik. Jadi, pelanggan Anda akan membayar total Rp 99.900 untuk menyelesaikan pembayaran. Kode Unik juga memiliki keterbatasan dibandingkan dengan VA, di mana Anda hanya dapat membuat transaksi kode unik selama jam operasional (03.00 pagi - 08.30 malam GMT+7).
 
 
-## Payment Routing
-**What are the possible payment methods for users?**
-We support payments via bank transfers, e-wallet , credit card/debit card, and QR code from the following:
+## Routing Pembayaran
 
-* Bank Transfer via Virtual Account: BCA, BNI, BRI, CIMB Niaga, Mandiri, Permata Bank.
+**Apa saja metode pembayaran yang tersedia untuk pelanggan saya?** 
 
-* Bank Transfer via Unique Code: BCA
+Kami menyediakan berbagai metode pembayaran melalui transfer bank, e-wallet, kartu kredit/debit, dan kode QR dengan detail sebagai berikut:
 
-* Credit Card/Debit Card: VISA, Mastercard
+1. Transfer bank melalui Virtual Account: BCA, BNI, BRI, CIMB Niaga, Mandiri, dan Permata Bank.
 
-* E-Wallet - One Time: ShopeePay, DANA, LinkAja, OVO
+2. Transfer dengan kode unik: BCA
 
-* E-Wallet - Direct Payment: ShopeePay
+3. Kartu kredit/debit: VISA, Mastercard
 
-* QR Code: QRIS
+4. E-Wallet: ShopeePay, DANA, LinkAja, OVO
 
-**What is the difference between Bank Transfer via Virtual Account and Bank Transfer via Unique Code?**
-Bank Transfer via Virtual Account (VA) will generate specific account number destination for each transaction. You can create an open amount or closed amount transaction using VA. Detail explanation of VA can be seen [here](https://docs.oyindonesia.com/#va-aggregator-accepting-payments). You can create VA Transactions via [API Payment Routing](https://docs.oyindonesia.com/#va-aggregator-accepting-payments) or [VA Aggregator](https://docs.oyindonesia.com/#va-aggregator-accepting-payments) 
+5. Kode QR: QRIS
 
-Bank Transfer via Unique Code generates unique code for each transaction but the account number destination will always be the same. The total amount paid is subtracted by the unique code. For example, your end user wants to paid a transaction of Rp 100.000 and get Rp 100 as the unique code. The payment uses subtraction approach, so your end user will pay a total of Rp 99.900 to complete the payments. Unique Code also have limitations compared to VA, where you can only create unique code transaction during the operational hours (3 AM - 8.30 PM GMT+7). You can create Unique Code Transaction via [API Payment Routing](https://docs.oyindonesia.com/#va-aggregator-accepting-payments) or [Payment Link](https://docs.oyindonesia.com/#payment-links-invoice-accepting-payments)
+**Apa perbedaan antara transfer bank melalui Virtual Account dan transfer bank melalui kode unik?**
 
-**What are the differences between E-Wallet One Time Payment and E-Wallet Direct Payment?**
-E-Wallet One Time creates a payment URL that can be paid by any guest users. Once payment URL is opened, your end user's is redirected to the E-Wallet app and completes the payment inside the E-Wallet's app.
+Transfer bank melalui Virtual Account (VA) akan menghasilkan nomor rekening tujuan transfer yang khusus untuk setiap transaksi. Anda dapat membuat transaksi dengan jenis open amount atau closed menggunakan VA. Penjelasan rinci tentang VA dapat dilihat [disini](https://docs.oyindonesia.com/). Anda dapat membuat transaksi VA melalui API Routing Pembayaran atau VA Aggregator.
 
-E-Wallet Direct creates a payment URL dedicated to a particular user. The end user needs to link their E-Wallet account first by doing [Account Linking](https://docs.oyindonesia.com/#feature-account-linking-accepting-payments). Once the end user has linked their account to your app, you can initiate a Direct payment. OY will return an authorization URL for the end users to input the E-Wallet PIN and complete the payment. Using Direct payment, your end users will complete the transaction inside your app. Therefore, it will bring a better experinence for your end users.
+Berbeda dari sebelumnya, transfer bank melalui kode unik menghasilkan kode unik untuk setiap transaksi, tetapi nomor rekening tujuan akan tetap sama. Total nominal yang dibayarkan akan dikurangi dengan nilai kode unik tersebut. Sebagai contoh, pelanggan Anda ingin membayar transaksi sebesar Rp100.000 dan mendapatkan Rp100 sebagai kode unik. Jadi, pelanggan Anda akan membayar total Rp 99.900 untuk menyelesaikan pembayaran. Kode Unik juga memiliki keterbatasan dibandingkan dengan VA, di mana Anda hanya dapat membuat transaksi kode unik selama jam operasional (03.00 pagi - 08.30 malam GMT+7). Anda dapat membuat transaksi kode unik melalui [API Routing Pembayaran](https://docs.oyindonesia.com/#va-aggregator-accepting-payments) atau [Link Pembayaran ](https://docs.oyindonesia.com/#va-aggregator-accepting-payments).
 
-|     | One Time | Direct |
+
+
+**Apa perbedaan antara E-Wallet Sekali Pakai dan E-Wallet Direct Payment?**
+
+Pembayaran E-wallet sekali pakai dapat membuat URL pembayaran yang bisa dibayar oleh siapa pun. Begitu URL pembayaran dibuka, pelanggan Anda akan diarahkan ke aplikasi E-wallet dan menyelesaikan pembayaran di dalam aplikasi E-wallet.
+
+Sementara, E-wallet direct payment dapat membuat URL pembayaran yang diperuntukkan untuk pengguna tertentu. Pelanggan Anda perlu menghubungkan akun E-wallet mereka terlebih dahulu dengan melakukan [Account Linking](https://docs.oyindonesia.com/#feature-account-linking-accepting-payments). Setelah pelanggan menghubungkan akun mereka dengan aplikasi Anda, maka otomatis pembayaran akan dapat dilakukan. OY! akan mengembalikan otentikasi kepada pelanggan untuk memasukkan PIN E-wallet dan menyelesaikan pembayaran. Dengan menggunakan direct payment, pelanggan Anda akan menyelesaikan transaksi di dalam aplikasi Anda sendiri. Berikut adalah detail pembayaran masing-masing E-wallet:
+
+
+|     | Sekali Pakai | Direct |
 | --- | -------- | ------ |
-| Supported  E-Wallets | ShopeePay, LinkAja, DANA, OVO | ShopeePay |
-| Need to do Account Linking first? | No | Yes |
-| Can be created via.. | API Payment Routing <br> Payment Link <br> API E-Wallet Aggregator | API Payment Routing  |
-| Send phone number in API Create Request | Optional | Mandatory |
-| Who can complete the transaction? | Any Users/Guest | Dedicated User. <br> Only the user whose phone number listed in the API request |
-| Payment Completion Journey | Inside E-Wallet App | Your app |
+| E-Wallet yang didukung | ShopeePay, LinkAja, DANA, OVO | ShopeePay |
+|Harus menghubungkan akun terlebih dahulu? | Tidak | Ya |
+| Dapat dibuat melalui.. | API Payment Routing <br> Payment Link <br> API E-Wallet Aggregator | API Payment Routing  |
+| Mengirimkan nomor HP saat permintaan pembuatan API. | Opsional | Wajib |
+| Siapa yang dapat melakukan pembayaran? | Semua user/guest | User Tertentu|
+| Pembayaran dilakukan di | Di aplikasi E-wallet | Di aplikasi Anda sendiri |
