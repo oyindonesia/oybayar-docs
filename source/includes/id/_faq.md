@@ -1,16 +1,16 @@
 # SSD (Soal Sering Ditanya)
 
-## API and Bulk Disbursement
+## API Kirim Uang & Multitransfer
 
-**What are bank maintenance schedules? Will partners be informed?**
+**Apa itu jadwal maintenance bank? apakah partner akan diinformasikan terkait itu?**
 
-Banks often have regular maintenance schedules which differ from one bank to another. These regular maintenance schedules prevent the execution of transactions to the respective recipient bank during the set period of time. To ensure your convenience, we will queue any transaction requests submitted during the maintenance hours and automatically disburse them once the maintenance is over.
+Jadwal maintenance bank akan menghentikan semua transaksi ke bank terkait selama periode tertentu. Biasanya, tiap bank punya jadwal maintenance yang sudah dijadwalkan, yang tentunya berbeda antara satu bank dan bank lainnya. Agar transaksi Anda nyaman, kami akan membuat antrean transaksi yang diajukan saat jam pemeliharaan dan akan otomatis dikirimkan setelah maintenance selesai.
 
-**What are the amount limits for disbursements?**
+**Berapa limit maksimal untuk mengirimkan uang?**
 
-_e-wallet:_ Since each e-wallet provide limits to the amount each user can hold at a time, disbursements made to e-wallet accounts have their respective limits.
+Setiap e-wallet mempunyai limit maksimal masing-masing, berikut penjelasannya:
 
-| Wallet | Account Type  | Maximum Amount |
+| E-Wallet | Tipe Akun  | Limit Maksimal |
 | ------ | ------------- | -------------- |
 | OVO    | OVO Club      | Rp 2.000.000   |
 | OVO    | OVO Premier   | Rp 10.000.000  |
@@ -19,56 +19,54 @@ _e-wallet:_ Since each e-wallet provide limits to the amount each user can hold 
 | GoPay  | Unverified    | Rp 2.000.000   |
 | GoPay  | Verified      | Rp 10.000.000  |
 
-**What are the minimum Amount for disbursements?**
+**Berapa limit minimal untuk mengirimkan uang?**
 
-_e-wallet:_ Since each e-wallet provide limits to the amount each user can hold at a time, disbursements made to e-wallet accounts have their respective limits.
+Setiap e-wallet mempunyai limit minimal masing-masing, berikut penjelasannya:
 
-| Wallet  | Minimum Amount |
+
+| E-Wallet  | Limit Minimal |
 | ------- | -------------- |
 | OVO     | Rp 10.000      |
 | DANA    | Rp 10.000      |
 | GoPay   | Rp 10.000      |
 | Linkaja | Rp 10.000      |
 
-**Is there a cut-off time?**
+**Apakah ada waktu Cut-Off time (COT) ?**
 
-No, we are available 24/7 including holidays.
+Tidak ada. Kami beroperasi 24 jam, termasuk pada hari libur. 
 
-**Is there a maximum transaction volume and transaction amount in a day?**
+**Apakah ada batasan volume transaksi dan nominal transaksi dalam sehari?**
 
-There are no daily limits of how many bulk campaigns can be created and executed. There is also no limit to the number of total transactions per disbursement campaign.
+Tidak ada batasan harian untuk berapa banyak transaksi Multitransfer yang Anda buat. Tidak ada batasan juga untuk nominal transaksi transaksi Multitransfer.
 
-**How many recipient emails can I send the transaction notification to?**
+**Berapa banyak alamat email yang dapat saya kirimkan untuk notifikasi transaksi?**
 
-You can send up to 5 emails per transactions with a limit of 255 characters total. For each transaction, simply list out the email recipients.
+Anda dapat mengirimkan hingga 5 email per transaksi dengan batas maksimal 255 karakter. 
 
-**What are the supported banks for the disbursement products?**
+**Apakah saya bisa mengirimkan "catatan" yang ada di dalam mutasi rekening penerima?**
 
-We support transactions to 100+ banks in Indonesia. Please refer to the bank codes [here](https://api-docs.oyindonesia.com/#disbursement-bank-codes) when using our disbursement products. (Please note that we currently do not support disbursements to Virtual Accounts.)
+Ya. Namun, kami hanya mendukung catatan untuk 7 bank ini: BCA, BNI, BRI, CIMB, DBS, Mandiri, dan Permata. Namun, harap diperhatikan bahwa jika terdapat gangguan saat kami menghubungkan ke bank yang disebutkan di atas, sistem kami tidak dapat mendukung agar catatan tersebut muncul dalam mutasi rekening bankpenerima.
 
-**Can I specify the "notes" to be reflected in the beneficiary bank account statement?**
+**Apakah saldo yang diterima dari API VA Aggregator dan produk Link Pembayaran serta Invoice dapat langsung digunakan untuk produk Kirim Uang?**
 
-Yes. However, we only support notes for these 7 banks: BCA, BNI, BRI, CIMB, DBS, Mandiri, and Permata. However, please note that should there arise unexpected difficulties with the connection to these aforementioned banks, our failover system will not be able to support these notes to be reflected in the beneficiary bank account statement.
+Ya. Dana yang diterima dari API VA Aggregator dan produk Link Pembayaran serta Invoice akan secara otomatis masuk ke dalam saldo OY! Anda secara real-time, memungkinkan Anda untuk langsung menggunakan saldo tersebut untuk mengirimkan uang.
 
-**Will the funds accepted from the API VA Aggregator and Payment Link and Invoice products be readily available for disbursement uses?**
+**[Khusus Multitransfer] Bagaimana jika nama penerima di dokumen unduhan xlsx atau CSV berbeda dengan nama di rekening bank? Untuk apa nama & nomor telepon pelanggan digunakan?**
 
-Yes. The funds accepted from the API VA Aggregator and Payment Link and Invoice products will be automatically reflected in your OY! balance in real-time, allowing you to use these funds directly for disbursement purposes.
+Selama nomor rekening bank valid dan aktif, transaksi akan tetap dikirimkan.
 
-**[Bulk Disbursement Specific] What if the recipient name on the xlsx or CSV file is different from the bank account name? What is the phone number used for?**
+Nama dan nomor telepon hanya terlihat oleh partner dan digunakan untuk dokumentasi partner sendiri. Nama dan nomor telepon yang tercantum tidak akan digunakan oleh OY!
 
-As long as the bank account number is valid and not dormant, the transaction will still be executed.
+**[Khusus API Kirim Uang] Apakah pengiriman uang dilakukan secara real-time?**
 
-The name and phone number are visible only to the partner and is used for the partner’s own documentation. The name and phone number listed are not used by OY or sent to the recipient.
+Ya. Pencairan yang dilakukan melalui API Kirim Uang semuanya dilakukan secara real-time.
 
-**[API Disbursement Specific] Are the disbursements performed in real-time?**
-
-Yes. Disbursements executed through our API Disbursement are all performed in real-time.
 
 ## API VA Aggregator
 
-**What are the supported banks?**
+Bank apa saja yang didukung untuk produk API VA Aggregator?
 
-We currently have 11 available banks for our API VA Aggregator. Please refer to the bank codes [here](https://api-docs.oyindonesia.com/#va-aggregator-bank-code).
+Saat ini kami memiliki 11 bank yang tersedia untuk API VA Aggregator. Anda dapat melihat daftar bank [di sini](https://api-docs.oyindonesia.com/#va-aggregator-bank-code).
 
 **Is the amount received in realtime?**
 
