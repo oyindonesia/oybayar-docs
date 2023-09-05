@@ -1,190 +1,187 @@
 # Tutorial Dashboard OY!
 
-## Login
+## Masuk ke Dashboard
 
-To be able to login to Dashboard;
+Untuk masuk ke dashboard OY!, lakukan langkah berikut:
 
-1. Go to https://desktop-business.oyindonesia.com/login. 
-2. Make sure the username and password that you input are correct.
+1. Akses halaman login di https://desktop-business.oyindonesia.com/login. 
+2. Masukkan username dan password Anda. 
 
 ![Login page](images/desktop_login.png)
 
-3. You will be redirected to the input the OTP page. The OTP will be sent to the email associated with your username. Then, input the OTP number.
+3. Anda akan diarahkan untuk memasukkan kode OTP. Silakan cek inbox email yang terdaftar untuk mendapatkan kode OTP, lalu masukkan di kolom yang tersedia.
 
 ![Login OTP](images/desktop_login_otp.png)
 
 ![Email OTP](images/email_otp.png)
 
-If you tick the 'Remember this device' option, you are not required to input an OTP when you log back in next time. Hence, point 2 is required only when you login for the first time after you create your account.
+Jika Anda mencentang opsi “Ingat perangkat ini”, Anda tidak perlu memasukkan OTP saat Anda masuk kembali. Oleh karena itu, langkah ketiga hanya diperlukan saat Anda masuk untuk pertama kali setelah Anda membuat akun.
 
-## Dashboard Analytics
+## Analitik Transaksi
 
-Analytics feature allows you to get some insights about your earning and spending transaction that happened in OY!. With this feature, you can get information about how much money you have spent and how much money you have earned in a time interval. You can see your transaction growth on daily, weekly, or monthly basis. You also can select the time range. You will get some insights about the trend of your business transaction. Therefore, this feature can help you to generate new business decision to grow your business.
+Fitur analitik pada dashboard OY! memberikan Anda informasi tentang transaksi pendapatan dan pengeluaran yang terjadi di OY!. Dengan fitur ini, Anda bisa tahu berapa banyak uang yang sudah Anda keluarkan dan berapa yang sudah Anda dapatkan dalam jangka waktu tertentu. Anda bisa melihat rincian transaksi Anda secara harian, mingguan, atau bulanan. Anda juga bebas memilih periode waktu yang Anda inginkan. Dari sini, Anda akan mendapatkan gambaran tentang bagaimana tren transaksi bisnis Anda bergerak. Dengan demikian, fitur ini dapat membantu Anda dalam mengambil keputusan bisnis baru guna mengembangkan bisnis Anda.
+
 
 ![Dashboard Analytics Image](images/desktop_analytics_spend_earn.png)
 
-* You can select which time granularity and time period you want to see you transaction growth with. 
-* The increase and decrease indicator will compare your transaction performance from the time period you select vs the previous period. 
-* If you put your cursor in a line point, the number of transaction volume will be displayed.
+* Anda bisa pilih seberapa rinci dan dalam periode waktu berapa Anda ingin melihat informasi transaksi Anda.
+* Indikator kenaikan dan penurunan akan membandingkan bagaimana transaksi Anda pada periode yang Anda pilih dengan periode sebelumnya.
+* Jika Anda arahkan kursor ke suatu titik garis, jumlah volume transaksi akan muncul.
 
-For VA, Payment Link, and E-wallet users. Now you can see the comparison of conversion between each payment method your end users are using. This data can be a great insight for you so you know which channel most of your users are using.
+Bagi Anda yang menggunakan produk Virtual Account, Link Pembayaran, dan E-wallet, Anda bisa melihat perbandingan antar metode pembayaran yang digunakan oleh pelanggan Anda. Informasi ini bisa memberikan wawasan penting bagi Anda agar tahu metode pembayaran mana yang paling banyak digunakan oleh pelanggan Anda.
+
+
 
 ![Dashboard Analytics Payment Method](images/desktop_analytics_paymethod.png)
 
-## User Management
+## Manajemen Akun
 
-If you have a Super Admin role, you are able to add account for your team members and define the role for them.
+Jika Anda memiliki peran Super Admin, Anda dapat menambahkan akun untuk anggota tim Anda dan menentukan peran untuk mereka.
 
-These are the following steps to add new users;
+Berikut adalah langkah-langkah berikut untuk menambahkan pengguna baru:
 
-1.  Login to Dashboard.
-2.  Go to Accounts -> User Management.
-3.  Click the 'Create User' button
+1. Masuk ke dashboard OY!
+2. Klik menu Akun, kemudian klik “Manajemen Pengguna”
+3. Klik tombol “Tambah Pengguna” di sebelah kanan atas
 
 ![User Management 1](images/user_management_1.png)
 
-4.  Fill in the full name, username, email, phone number (optional), and password
+4.  Isi nama lengkap, username, email, nomor telepon (opsional), dan kata sandi
 
 ![User Management 2](images/user_management_2.png)
 
-5.  Choose the role that you want to assign your team member(s) to. You can select between Admin, Approver, and Maker
+5.  Pilih peran yang ingin Anda berikan kepada anggota tim Anda. Anda dapat memilih antara Administrator, Approver, dan Maker 
 
-Aside from adding new users, a Super Admin is also able to edit and delete their existing users through clicking edit/delete button on the User List table.
+Selain menambahkan pengguna baru, Super Admin juga dapat mengubah informaasi dan menghapus pengguna yang sudah ada dengan mengklik tombol ubah/hapus pada tabel Daftar Pengguna.
 
-Here are the access control matrix in OY! Dashboard:
+Berikut adalah daftar kontrol akses di dashboard OY! berdasarkan peran:
 
-Dashboard features
 
-| Task | Superadmin | Admin | Approver | Maker
+| Akses | Superadmin | Admin | Approver | Maker
 |-------|-------|-------|-------|-------|
-|Upgrade Account| Can upgrade | Can upgrade | - | - |
-|Analytics| Can view | Can view | Can view | Can view |
-|Account Statement| Can view and export | Can view and export | Can view and export | Can view and export |
-|Settlement Report| Can view and export | Can view and export | Can view and export | Can view and export |
-|Top up Balance | Can top up | Can top up | Can top up | Can top up |
-|Withdraw Balance | Can withdraw | Can withdraw | Can withdraw | Can withdraw |
-|Add User | Can add user | Can add user | - | - |
-|User Profile| Can view and edit | Can view and edit | Can view and edit | Can view and edit |
-|Business Profile| Can view and edit | Can view and edit | Can view and edit | Can view and edit |
-|Authenticator OTP| Has permission | Has permission | Has permission | Has permission |
-|Add Payment Method | Can add | Can add | - | - |
-|Set up auto report | Can set up | Can set up | - | - |
-|Set up auto withdrawal| Can set up | Can set up | - | - |
-|Set up multi approval| Can set up | Can set up | - | - |
-|Set up notification settings| Can set up | Can set up | - | - |
-|Set up developer options| Can set up | Can set up | - | - |
-|Add transaction category| Can add | Can add | - | - |
-|Config Transaction Receipt | Can config | Can config | Can config | Can config |
+|Verifikasi Akun| Bisa mengajukan| Bisa mengajukan| - | - |
+|Analitik| Bisa melihat| Bisa melihat| Bisa melihat| Bisa melihat|
+|Laporan Transaksi| Bisa melihat dan mengunduh | Bisa melihat dan mengunduh | Bisa melihat dan mengunduh | Bisa melihat dan mengunduh |
+|Laporan Penyelesaian| Bisa melihat dan mengunduh | Bisa melihat dan mengunduh | Bisa melihat dan mengunduh | Bisa melihat dan mengunduh |
+|Isi Saldo | Bisa mengisi saldo | Bisa mengisi saldo | Bisa mengisi saldo | Bisa mengisi saldo |
+|Tarik Saldo | Bisa menarik saldo| Bisa menarik saldo| Bisa menarik saldo| Bisa menarik saldo|
+|Tambah Pengguna | Bisa menambahkan | Bisa menambahkan | - | - |
+|Profil Pengguna| Bisa melihat dan mengedit | Bisa melihat dan mengedit | Bisa melihat dan mengedit | Bisa melihat dan mengedit |
+|Profil Bisnis| Bisa melihat dan mengedit | Bisa melihat dan mengedit | Bisa melihat dan mengedit | Bisa melihat dan mengedit |
+|Authenticator OTP| Punya akses | Punya akses | Punya akses | Punya akses |
+|Tambah Metode Pembayaran | Bisa menambahkan | Bisa menambahkan | - | - |
+|Laporan Otomatis| Bisa mengatur | Bisa mengatur | - | - |
+|Tarik Saldo Otomatis| Bisa mengatur | Bisa mengatur | - | - |
+|Multi Approval| Bisa mengatur | Bisa mengatur | - | - |
+|Pengaturan Notifikasi| Bisa mengatur | Bisa mengatur | - | - |
+|Opsi Developer| Bisa mengatur | Bisa mengatur | - | - |
+|Tambah Kategori Transaksi| Bisa menambahkan | Bisa menambahkan | - | - |
+|Pengaturan Bukti Transaksi | Bisa mengatur | Bisa mengatur | Bisa mengatur | Bisa mengatur |
 
-Multi Entity Management
+Multi Entity Managementy
 
-| Task | Superadmin | Admin | Approver | Maker
+| Akses | Superadmin | Admin | Approver | Maker
 |-------|-------|-------|-------|-------|
-|Create Sub-entity| Can create| Can create | - | - |
-|Top up Sub-entity via Dashboard| Can top up| Can top up | - | - |
-|Disconenct Sub-entity| Can disconnect | Can disconnect | -| -|
+|Membuat Sub-entit| Bisa membuat| Bisa membuat | - | - |
+|Isi ulang saldo Sub-entity| Bisa mengisi saldo| Bisa mengisi saldo | - | - |
+|Memutus Sub-entity| Bisa memutus | Bisa memutus | -| -|
 
-Bulk Disbursement Product
+Produk Multitransfer
 
-| Task | Superadmin | Admin | Approver | Maker
+| Akses | Superadmin | Admin | Approver | Maker
 |-------|-------|-------|-------|-------|
-|Create Disbursement Campaign| Can create| Can create | - | Can create |
-|Approve Disbursement Campaign| Can approve| Can approve | Can approve | - |
-|View and Export Bulk Disbursement Report| Can view and export | Can view and export | Can view and export | Can view and export |
+|Buat transaksi | Bisa membuat| Bisa membuat | - | Bisa membuat |
+|Menyetujui transaksi| Bisa menyetujui| Bisa menyetujui | Bisa menyetujui | - |
+|Melihat dan mengunduh laporan transaksi| Bisa melihat dan mengunduh | Bisa melihat dan mengunduh | Bisa melihat dan mengunduh | Bisa melihat dan mengunduh |
 
-Claim Fund Product
+Produk Pengembalian Dana
 
-| Task | Superadmin | Admin | Approver | Maker
+| Akses | Superadmin | Admin | Approver | Maker
 |-------|-------|-------|-------|-------|
-|Create Claim Fund | Can create| Can create | - | Can create |
-|Approve Claim Fund| Can approve| Can approve | Can approve | - |
-|View and Export Claim Fund Report| Can view and export | Can view and export | Can view and export | Can view and export |
+|Buat pengembalian dana | Bisa membuat| Bisa membuat | - | Bisa membuat |
+|Menyetujui pengembalian dana| Bisa menyetujui| Bisa menyetujui | Bisa menyetujui | - |
+|Melihat dan mengunduh laporan transaksi| Bisa melihat dan mengunduh | Bisa melihat dan mengunduh | Bisa melihat dan mengunduh | Bisa melihat dan mengunduh |
 
-Account Payable Invoice
+Produk Invoice Pembelian
 
-| Task | Superadmin | Admin | Approver | Maker
+| Akses | Superadmin | Admin | Approver | Maker
 |-------|-------|-------|-------|-------|
-|Create AP Invoice | Can create| Can create | - | Can create |
-|Approve AP Invoice | Can approve | Can approve | Can approve | - |
-|View and Export AP Report| Can view and export | Can view and export | Can view and export | Can view and export |
+|Buat invoice| Bisa membuat| Bisa membuat | - | Bisa membuat |
+|Menyetujui invoice | Bisa menyetujui | Bisa menyetujui | Bisa menyetujui | - |
+|Melihat dan mengunduh laporan invoice| Bisa melihat dan mengunduh | Bisa melihat dan mengunduh | Bisa melihat dan mengunduh | Bisa melihat dan mengunduh |
 
-Payment Link One time and Reusable Product
+Produk Link Pembayaran
 
-| Task | Superadmin | Admin | Approver | Maker
+| Akses | Superadmin | Admin | Approver | Maker
 |-------|-------|-------|-------|-------|
-|Create Payment Link| Can create| Can create | Can Create | Can create |
-|View and Export Payment Link Report| Can view and export | Can view and export | Can view and export | Can view and export |
+|Membuat Link Pembayaran| Bisa membuat| Bisa membuat | Bisa membuat | Bisa membuat |
+|Melihat dan mengunduh laporan link pembayaran| Bisa melihat dan mengunduh | Bisa melihat dan mengunduh | Bisa melihat dan mengunduh | Bisa melihat dan mengunduh |
 
-Virtual Account
+Produk Virtual Account
 
-| Task | Superadmin | Admin | Approver | Maker
+| Akses | Superadmin | Admin | Approver | Maker
 |-------|-------|-------|-------|-------|
-|Create VA via Dashboard| Can create| Can create | Can Create | Can create |
-|View and Export VA Report| Can view and export | Can view and export | Can view and export | Can view and export |
+|Membuat VA via dashboard| Bisa membuat| Bisa membuat | Bisa membuat | Bisa membuat |
+|Melihat dan mengunduh laporan VA| Bisa melihat dan mengunduh | Bisa melihat dan mengunduh | Bisa melihat dan mengunduh | Bisa melihat dan mengunduh |
 
 E-Wallet Aggregator
 
-| Task | Superadmin | Admin | Approver | Maker
+| Akses | Superadmin | Admin | Approver | Maker
 |-------|-------|-------|-------|-------|
-|View and Export E-Wallet Report| Can view and export | Can view and export | Can view and export | Can view and export |
+|Melihat dan mengunduh laporan E-Wallet| Bisa melihat dan mengunduh | Bisa melihat dan mengunduh | Bisa melihat dan mengunduh | Bisa melihat dan mengunduh |
 
-Account Receivable Invoice
+Produk Invoice Penjualan
 
-| Task | Superadmin | Admin | Approver | Maker
+| Akses | Superadmin | Admin | Approver | Maker
 |-------|-------|-------|-------|-------|
-|Create AR Invoice | Can create| Can create | Can create | Can create |
-|View and Export AP Report| Can view and export | Can view and export | Can view and export | Can view and export |
+|Buat invoice | Bisa membuat| Bisa membuat | Bisa membuat | Bisa membuat |
+|Melihat dan mengunduh laporan invoice| Bisa melihat dan mengunduh | Bisa melihat dan mengunduh | Bisa melihat dan mengunduh | Bisa melihat dan mengunduh |
 
-API Inquiry
+Inquiry API
 
-| Task | Superadmin | Admin | Approver | Maker
+| Akses | Superadmin | Admin | Approver | Maker
 |-------|-------|-------|-------|-------|
-|View and Export API Inquiry Report| Can view and export | Can view and export | Can view and export | Can view and export |
+|Melihat dan mengunduh laporan Inquiry API| Bisa melihat dan mengunduh | Bisa melihat dan mengunduh | Bisa melihat dan mengunduh | Bisa melihat dan mengunduh |
 
-API Transaction Data
+API Transaksi Data
 
-| Task | Superadmin | Admin | Approver | Maker
+| Akses | Superadmin | Admin | Approver | Maker
 |-------|-------|-------|-------|-------|
-|View and Export API Transaction Data Report| Can view and export | Can view and export | Can view and export | Can view and export |
+|Melihat dan mengunduh laporan API Transaksi Data| Bisa melihat dan mengunduh | Bisa melihat dan mengunduh | Bisa melihat dan mengunduh | Bisa melihat dan mengunduh |
 
 
 ## 2-Factor Authentication
 
-To increase the security of your account, you can set up 2-factor Authentication. Currently, the security method that OY provides is through an authenticator app
+Untuk meningkatkan keamanan akun Anda, Anda bisa mengaktifkan 2-Factor Authentication. Saat ini, OY menyediakan metode keamanan ini melalui aplikasi authenticator. Berikut adalah langkah-langkahnya:
 
-These are the following steps to set up the 2-factor authentication;
+1. Masuk ke dashboard OY!
+2. Pilih menu Akun -> Authenticator OTP
+3. Unduh aplikasi authenticator di handphone Anda (dari Play Store/App Store) atau PC (Anda bisa unduh ekstensi untuk brower Anda). Contoh aplikasi Authenticator: Google Authenticator, Microsoft Authenticator, Authy
+4. Scan QR code yang terlihat di dahsboard dengan aplikasi Authenticator Anda atau masukkan kunci pengaturan yang ada di sampingnya ke Aplikasi Authenticator Anda
+5. Ketik 6 digit kode yang muncul di aplikasi Authenticator Anda ke dalam kolom “Authenticator OTP”
 
-1. Login to Dashboard.
-2. Go to Accounts -> Authenticator OTP.
-3. Download Authenticator App in your smartphone (from Play Store/App Store) or PC (you can download an extension for your browser). Examples of the app: Google Authenticator, Microsoft Authenticator, Authy, etc
-4. Scan the barcode displayed on your OY Dashboard with your Authenticator App OR enter the setup key displayed next to it on your Authenticator App.
-5. Please type in the 6-numerical code displayed on your Authenticator App in the 'Authenticator OTP' on OY Dashboard.
+## Mengisi Saldo OY!
+Berikut adalah langkah-langkah untuk mengisi ulang saldo OY! Anda melalui dashboard:
 
-## Top Up
+1. Masuk ke dashboard OY!
+2. Pergi ke menu “Laporan Transaksi” lalu pilih “Laporan Transaksi Rekening”
+3. Klik tombol “Bagaimana Cara Isi Ulang”. Ada 2 cara untuk menambah saldo akun OY! Anda:
 
-Top up is used to add balance to your OY account.
-
-Here's how you can access the top-up menu on your dashboard;
-
-1.  Login to Dashboard.
-2.  Go to Transaction Report -> Account Statement.
-3.  Click the 'How To Top Up' button. There are 2 ways in which you can top up your OY account:
-
-### Top Up via Virtual Account
-  The Virtual Account number information can be found on 'How to Top Up Balance via VA' tab once you click the 'How To Top Up' button. If you choose to top up via VA, the topped up amount will be credited into your account real-time and you do not need to send any manual confirmation to OY
+### Isi Ulang via Virtual Account
+Anda bisa melihat nomor VA di tab 'Virtual Account' setelah Anda mengklik tombol 'Bagaimana Cara Isi Ulang'. Jumlah saldo yang Anda isi akan otomatis masuk ke akun Anda secara real-time tanpa perlu mengirim konfirmasi manual ke OY. 
 
 ![VA Topup](images/desktop_topup.png)
 
-### Manual Top Up via Bank Transfer
-  Aside from Virtual Account, you can also transfer the top up money to OY's giro account. If you choose to top up via this method, you need to perform a manual confirmation in order that your money can be credited into your account.
+### Isi Ulang Manual via Transfer Bank
+Selain menggunakan Virtual Account, Anda juga dapat mentransfer ke rekening giro OY. Jika Anda memilih untuk isi ulang saldo melalui metode ini, Anda perlu melakukan konfirmasi manual agar uang Anda dapat diteruskan ke akun Anda.
 
-After you have completed the fund transfer to OY! Indonesia, you need to perform the following steps;
+Setelah Anda menyelesaikan transfer dana ke OY! Indonesia, Anda perlu melakukan langkah-langkah berikut:
 
-1. Click the 'Manual Top Up Confirmation' tab on the top-up menu
+1. Klik tab “Transfer Bank Manual” pada menu Isi Ulang Saldo
 
 ![Manual Topup](images/manual_topup.png)
 
-2. Fill in the fields with the following information;
+2. Isi kolom informasi berikut:
 
 | Field Name            | Description                                                                                                                                                                                                                                                                                                                                                         |
 | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -193,85 +190,77 @@ After you have completed the fund transfer to OY! Indonesia, you need to perform
 | Transfer Receipt      | Click the upload button to upload the Bukti Transfer obtained after you have successfully performed the transfer. Can be in PDF, PNG, or JPEG format, with max. file size 10 MB                                                                                                                                                                                     |
 | Transfer Receipt Type | Transfer Receipt with Reference Number --> If your uploaded transfer receipt displays the reference number, you need to choose this option. Transfer Receipt without Reference Number --> If your uploaded transfer receipt doesn't display the reference number, you need to choose this option and fill in the date & timestamp according to your Bukti Transfer. |
 
-3. Click 'Submit Now'
-4. You will receive a receipt of your transaction in your email, stating that your transaction is currently being processed
+3. Klik “Kirim Sekarang”
+4. Anda akan menerima email menyatakan bahwa isi ulang saldo Anda sedang diproses.
+
 
 ![Topup Confirmation Dashboard](images/topup_confirmation_dashboard.png)
 
 ![Topup Confirmation Email](images/topup_confirmation_email.png)
 
-5. You will receive an email confirming whether your top up is success or failed
+5. Terakhir, Anda akan menerima email konfirmasi yang menyatakan bahwa isi ulang saldo Anda telah berhasil atau gagal.
 
 ![Success Failed Confirmation](images/success_failed_confirmation.png)
 
-### Top Up using BCA with Unique Code
-  Now, we provide you with a new method for BCA. Top-up using BCA with a unique code allows you to top up your balance in a real-time manner. You do not have to confirm manually as we will automatically detect your top-up and reflect it to your balance.
+### Isi Ulang via Transfer Instan BCA
 
-Steps:
+Sekarang, kami memberi kemudahan metode isi ulang untuk para nasabah BCA. Transfer instan BCA memungkinkan Anda untuk mengisi ulang saldo secara instan tanpa perlu mengonfirmasi bukti transfer secara manual. Sistem kami akan otomatis menambahkan saldo Anda saat Anda mengisi ulang. 
 
-1. In the top up page, click on the “BCA Unique Code” tab.
-2. Input the amount you want to top up. Note : The minimum amount that we allow for this method is IDR10,000.
+Untuk melakukan isi ulang via transfer instan BCA, silakan ikuti langkah-langkah berikut:
+
+1. Klik tab “Transfer Instan BCA” pada menu Isi Ulang Saldo.
+2. Masukkan nominal saldo yang ingin Anda isi, dengan pengisian minimal Rp10.000.
+
 
 ![BCA Unique Code Input Amount](images/desktop_bcauniquecode_input_amount.png)
 
-3. OY! will display the amount you input PLUS three-dgits unique code generated by us. Transfer the exact nominal that appeared on the screen to the bank account stated on the page. Please make sure to use BCA bank account. 
+3. OY! akan menampilkan jumlah yang harus Anda transfer, ditambah tiga digit kode unik di belakang nominal transfer. Pastikan Anda transfer sesuai dengan jumlah yang tertera.
 
 ![BCA Unique Code Transfer](images/desktop_bcauniquecode_transfer.png)
 
-4. After the transaction is successful, the ORIGINAL AMOUNT will be reflected in your balance.
-Note :  The operational hour for this method is every day, from 3.01 AM to 8.30 PM. Outside those hours, this method will be closed.
+4. Setelah transaksi berhasil, saldo yang tertera pada Subtotal akan masuk ke akun OY! Anda. 
+Catatan: Jam operasional untuk metode ini adalah setiap hari, mulai dari pukul 03.01 pagi hingga pukul 08.30 malam. Di luar jam tersebut, Anda tidak bisa menggunakan metode ini.
 
 ![BCA Unique Code Transfer](images/desktop_bcauniquecode_success.png)
 
-## Withdrawal
+## Tarik Saldo ke Rekening
 
-When you want to withdraw, do the following steps:
+Anda dapat menarik saldo OY! ke rekening Anda dengan mengikuti langkah-langkah berikut:
 
-1.  Go to Transaction Report -> Account Statement
-2.  Click Withdraw
-3.  Fill in the amount that you want to withdraw
+1. Masuk ke dashboard OY!
+2. Pergi ke menu “Laporan Transaksi” lalu pilih “Laporan Transaksi Rekening”
+3. Klik “Tarik Dana”
+4. Masukkan jumlah yang ingin Anda tarik
+
 
 ![Withdrawal Top Up](images/withdrawal_topup.png)
 
-4.  Choose your withdrawal type. You can pick one from the following options:
+4.  Pilih jenis penarikan Anda. Anda dapat memilih salah satu dari opsi berikut:
 
-    - Instant with admin fee -> This means that your withdrawal will be processed and arrive into your receiving bank real-time. If the amount to be withdrawn is <= IDR 50 million and the receiving banks are BCA, BRI, BNI, Mandiri, Permata, DBS and CIMB Niaga, you can choose this option. You will be charged an admin fee if you choose this option
+    - Instan dengan biaya admin -> Penarikan Anda akan diproses dan tiba di bank penerima Anda secara real-time, tetapi Anda akan dikenakan biaya admin. Jika jumlah yang akan ditarik <= Rp 50 juta dan bank penerima adalah BCA, BRI, BNI, Mandiri, Permata, DBS, dan CIMB Niaga.
 
-    - Manual -> This means that your withdrawal will be processed up to 2 business days. If the amount to be withdrawn is > IDR 50 million OR the receiving banks are not BCA, BRI, BNI, Mandiri, Permata, DBS or CIMB Niaga, you have to choose this option. You will NOT be charged an admin fee if you choose this option.
+    - Manual -> Penarikan Anda akan diproses dalam waktu hingga 2 hari kerja. Jika jumlah yang akan ditarik > Rp 50 juta ATAU bank penerima bukanlah BCA, BRI, BNI, Mandiri, Permata, DBS, atau CIMB Niaga, Anda harus memilih opsi ini. Anda TIDAK akan dikenakan biaya admin jika Anda memilih opsi ini.
+                                                                                                                |
 
-### Setting Up Auto Withdrawal Process
+## Laporan Transaksi - Laporan Penyelesaian
 
-If you want to set up an **Auto Withdrawal** periodically, go to Settings -> Auto Withdrawal.
+Laporan Penyelesaian adalah daftar transaksi yang menggunakan metode pembayaran dengan waktu proses non real-time atau tidak langsung. Misalnya, untuk metode pembayaran "VA BCA" butuh waktu 2 hari kerja sejak transaksi dilakukan agar uangnya masuk. Maka setiap kali pelanggan Anda melakukan transaksi dengan VA BCA, transaksi tersebut akan tercatat dalam Laporan Penyelesaian.
 
-![Auto Withdrawal](images/auto_withdrawal.png)
+Untuk mengakses laporan penyelesaian, ikuti langkah-langkah berikut:
+- Masuk ke dashboard OY!
+- Pilih menu Laporan Transaksi, lalu klik Laporan Penyelesaian
 
-Here's how you can configure the auto withdrawal settings;
-
-| Field Name               | Description                                                                                                                                                                                                                                                                                                                                                       |
-| ------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Auto Withdrawal Schedule | The schedule of your auto withdrawal. Options available: Daily, Weekly, Bi-Weekly, Monthly                                                                                                                                                                                                                                                                        |
-| Start Date               | Start date of your auto withdrawal schedule                                                                                                                                                                                                                                                                                                                       |
-| Ends                     | Options available: Never -> if the auto withdrawal will go on for an indefinite time, By Date -> if the auto withdrawal will end on a specific date. If you choose this option, you need to fill in the date on which you plan to end the auto withdrawal process                                                                                                 |
-| Amount                   | Amount to be automatically withdrawn. Options available: Maxiitym amount -> Withdraw the maximum available balance, Specified Amount -> custom specified amount. Note: Maximum Amount is recommended for Auto Withdrawal transactions as withdrawals will not be processed if the specified amount is greater than the OY balance when the withdraw scheduler runs |
-| Withdrawal Type          | Options available: 1) Instant, or 2) Manual.                                                                                                                                                                                                                                                                                                                      |
-| Email                    | An email we will send the notification to. Use (;) between email to differentiate them (Max. 5 emails can be inputted)                                                                                                                                                                                                                                            |
-
-## Transaction Report - Settlement Report
-
-Settlement Report stores the list of transactions corresponding to payment methods that are not settled on a real-time basis (delayed settlement). For example, if for VA BCA the settlement time is H+2, each new VA BCA transaction performed by your customers will appear on the Settlement Report.
-
-To access the Settlement report;
-
-- Login to Dashboard
-- Go to Transaction Report -> Settlement Report
 
 ![Settlement Report](images/settlement_report.png)
 
-The Settlement Report consists of the following information;
+Laporan Penyelesaian berisi informasi sebagai berikut:
 
-- Total Amount to be Settled Today: This tells you the sum of amount scheduled to be settled to your account statement balance today
-- Total Delayed Settlement Amount: This tells you the sum of amount not yet settled to your account statement. (the settlement status is still not SUCCESS)
-- The Settlement Transaction List Table
+- Total nominal untuk diselesaikan hari ini: Jumlah total yang dijadwalkan untuk diselesaikan ke saldo akun Anda hari ini.
+
+- Total nominal penyelesaian tertunda: Jumlah total yang belum diselesaikan ke saldo akun Anda. (status penyelesaian masih belum SUKSES)
+
+- Berikut adalah informasi di dalam tabel Daftar Transaksi Penyelesaian: 
+
 
 | Field Name             | Description                                                                                                                                                                                                                        | Example                              |
 | ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------ |
@@ -288,177 +277,186 @@ The Settlement Report consists of the following information;
 | Settlement Time        | The scheduled settlement timestamp for a given transaction                                                                                                                                                                         | 15:00:00                             |
 | Settlement Status      | The settlement status for a given transaction. Possible values: WAITING (if the amount is not yet settled to your account statement balance), SUCCESS (if the amount has been settled to your account statement balance).          | SUCCESS                              |
 
-If the Settlement Status of a transaction is still WAITING, it will not yet appear as a row in your Account Statement report and the amount will not yet be added in your Account Statement balance.
+Jika status penyelesaian suatu transaksi masih MENUNGGU, transaksi tersebut belum muncul di tabel laporan rekening Anda, dan jumlahnya juga belum akan ditambahkan dalam saldo Anda.
 
-If the Settlement Status of a transaction is already SUCCESS, it will appear as a row in your Account Statement report and the amount will be added in your Account Statement balance.
+Jika status penyelesaian suatu transaksi sudah SUKSES, transaksi tersebut akan muncul di dalam tabel laporan rekening Anda, dan jumlahnya akan ditambahkan dalam saldo Anda.
 
-### Callback for Delayed Settlement (Non-Real Time Settlement)
+### Callback untuk Transaksi Tertunda
+Jika Anda mempunyai transaksi dengan metode pembayaran yang diselesaikan H+>0, Anda akan menerima dua callback dengan rincian sebagai berikut:
 
-If your settlement is non-real time, for every transaction whose payment method is settled H+>0, you will receive two callbacks with details as follows:
+1. Callback Pertama -> Akan dikirim setelah pelanggan Anda berhasil melakukan transaksi. Misalnya, jika pelanggan Anda melakukan transaksi pada 11 Mei 2021 pukul 14.00, saat itu juga kami akan mengirimkan callback pertama kepada Anda. Dalam callback pertama, status penyelesaian akan menjadi MENUNGGU (karena belum masuk ke saldo Anda).
 
-1. 1st Callback -> To be sent after your customer successfully executes the transaction. For example, if your customer executes the transaction on 11 May 2021 at 14:00:00, that is also when we send the 1st Callback to you. In the 1st callback, the settlement status is set to WAITING (because it is not yet settled to your Account Statement balance)
-2. 2nd Callback -> To be sent after the settlement status is changed from WAITING into SUCCESS. For example, if the settlement status is changed into SUCCESS on 12 May 2021 at 15:00:00, that is also when we send the 2nd Callback to you. In the 2nd callback, the settlement status is SUCCESS
+2. Callback Kedua -> Akan dikirim setelah status penyelesaian berubah dari MENUNGGU menjadi SUKSES. Misalnya, jika status penyelesaian berubah menjadi SUKSES pada 12 Mei 2021 pukul 15.00, saat itu juga kami akan mengirimkan callback kedua kepada Anda. Dalam callback kedua, status penyelesaian akan menjadi SUKSES.
 
-### Capability to Export and Filter the Settlement Report
 
-Export: You are able to export/download the settlement report in CSV, PDF, and XLSX.
+### Unduh dan Filter Laporan Penyelesaian
+Tombol Ekspor: Anda dapat mengunduh laporan penyelesaian dalam format CSV, PDF, dan XLSX. 
 
-Filter: You are able to filter the settlement report by transaction date (range), product, payment method, settlement date (range), and settlement status
+Filter: Anda dapat mem-filter laporan penyelesaian berdasarkan rentang tanggal transaksi, produk, metode pembayaran, rentang tanggal penyelesaian, dan status penyelesaian.
 
-## Notification
+## Notifikasi
+Anda dapat mengaktifkan atau menonaktifkan pengaturan notifikasi saat saldo Anda mencapai limit, notifikasi untuk produk kirim uang, dan notifikasi untuk produk terima uang jika Anda memiliki peran super admin atau admin, berikut caranya:
 
-You can enable or disable notification settings for low balance, send money products and receive money products if you have a super admin or admin role:
-
-1. Login to dashboard https://business.oyindonesia.com/
-2. Go to Settings -> Notification
+1. Masuk ke dashboard melalui https://business.oyindonesia.com/ 
+2. Pergi ke menu Pengaturan -> Notifikasi
    ![Notif Disbursement - 1  Initial](https://user-images.githubusercontent.com/79620482/126457509-ca20c24b-9277-4be4-943e-801b79806e65.png)
-3. If you want to notified by email if your balance is low, set in the "Low Balance" tab. Input the amount threshold and the email where the notification will be sent to.
-4. Choose whether or not you want notifications enabled or disabled for 
-Bulk Disbursement or API Disbursement.
-   a. Enable Notification: Email notification will be sent for pending, failed and success transactions.
-   b. Disable Success Notification: email notification will only be sent for pending and failed transactions.
-5. Choose whether or not you want notifications enabled or disabled for 
-Payment Link, or VA.
-   a. Enable Notification: Email notification will be sent for success transactions.
-   b. Disable Success Notification: No email notification will be sent.
-6. The email field: allows the user to add, remove, and edit email notification receivers in this column, which can hold up to three email addresses.
-7. Click ‘Save Changes’
+3. Jika Anda ingin mendapatkan pemberitahuan melalui email jika saldo Anda mencapai limit, atur di tab "Saldo Rendah". Masukkan limit jumlah saldo dan alamat email yang ingin dikirimkan notifikasi.
+4. Pilih apakah Anda ingin mengaktifkan atau menonaktifkan pemberitahuan untuk Multitransfer atau API Kirim Uang. 
+  a. Aktifkan Pemberitahuan: Pemberitahuan melalui email akan dikirimkan untuk transaksi tertunda, gagal, dan berhasil. 
+  b. Nonaktifkan Pemberitahuan yang Berhasil: Pemberitahuan melalui email hanya akan dikirimkan untuk transaksi tertunda dan gagal.
+5. Pilih apakah Anda ingin mengaktifkan atau menonaktifkan pemberitahuan untuk Link Pembayaran atau VA:  
+  a. Aktifkan Pemberitahuan: Pemberitahuan melalui email akan dikirimkan untuk transaksi yang sukses. 
+  b. Nonaktifkan Pemberitahuan Berhasil: Tidak akan ada pemberitahuan melalui email.
+6. Kolom Email: Memungkinkan pengguna untuk menambahkan, menghapus, dan mengedit email penerima notifikasi dalam kolom ini, Anda dapat memasukkan hingga 3 alamat email 
+7. Klik 'Simpan Perubahan'
+
 
 ## Multi Entity Management
 
-Multi Entity Management is a feature that can help you handle complex relations between entities in your business in the OY! Dashboard. You can connect to other entities in the form of Main Entity - Sub Entities (1 to N relationship). The one who become the Main Entity will have a capability to oversee te sub-entities' transaction and execute transaction using its sub-entities' balance. Please contact our Business Development if you’re interested to use this feature.  
-With this feature you will be able to :
+Mengelola banyak akun rekening bisnis untuk perusahaan yang memiliki franchise, toko cabang, hingga anak perusahaan dapat membuat sebagian besar pengusaha dan pemilik bisnis kehabisan tenaga. Terkadang proses pembukuan menjadi lebih rumit karena banyak data transaksi dan arus kas yang harus dikelola. 
 
-1. Have a detailed report on transactions performed by all of sub-entity account.
-2. Distribute balance between the main entity account to sub-entity account.
-3. Use sub-entity account balance to disburse funds.
-4. Receive money using Payment Link on behalf of sub-entity's username.
-5. Free admin fee to disburse between related user.
+Sebagai bentuk solusi, OY! Indonesia melalui OY! Business menghadirkan fitur Multi Entity yang memudahkan para pemilik bisnis untuk memantau arus kas bisnis, memeriksa transaksi, serta menerima dan mengirim uang. 
 
-### **Registration & Setup**
+Multi Entity dari OY! Business memungkinkan pemilik bisnis untuk memiliki lebih dari 1 akun sekunder OY! Business. Akun sekunder ini disebut sebagai Sub-entity Account yang berada di dalam 1 akun utama yang bernama Main Entity untuk dikelola dan dikendalikan.
 
-**Prerequisites**
+Dengan fitur ini, Anda akan dapat:
 
-- Register an account on the [OY! dashboard](https://business.oyindonesia.com/register?)
-- Activate your account through the activation link sent via email
-- Upgrade your account
-- Upgrade request is approved
-- Contact our representatives to enable the feature
+* Memiliki laporan terperinci tentang transaksi yang dilakukan oleh semua Sub-entity.
+* Mentransfer saldo antara akun Main-entity ke akun Sub-entity.
+* Menggunakan saldo Sub-entity anak untuk mengirimkan dana.
+* Menerima uang menggunakan Link Pembayaran atas nama Sub-entity.
+* Tidak dikenakan biaya admin untuk mentransfer saldo antar entity.
 
-### **How To Use**
 
-To properly used Multi Entity Management, we required several accounts to be linked together. Each account can be used independently, and there will be some requirements that you should fulfil in order to use this feature. Please contact our representatives for more information.
+### **Cara Mendaftar dan Mengaktifkan Fitur**
+1. Buat Akun OY! Indonesia
+2. Aktifkan akun Anda melalui link aktivasi yang dikirim melalui email.
+3. Verifikasi bisnis Anda.
+4. Tunggu hingga bisnis Anda terverifikasi oleh tim kami.
+5. Hubungi perwakilan tim kami untuk mengaktifkan fitur Multi Entity
 
-**A. Link to Sub-entity Account**
 
-1. **For Main Entity Account**
 
-To add a new sub-entity,please 1) Log in to Dashboard with main account credential 2) Go to Multi Entity → List of Sub-entity
+### **Cara menggunakan Fitur Multi Entity Management**
+
+Untuk menggunakan Multi Entity Management, Anda perlu menghubungkan beberapa akun. Setiap akun dapat digunakan secara independen, dan ada beberapa persyaratan yang harus Anda penuhi untuk menggunakan fitur ini. Silakan hubungi tim kami untuk informasi lebih lanjut.
+
+
+**A. Menghubungkan Antar Akun**
+
+1. **Jika Anda adalah Main-Entity**
+
+Untuk menambahkan sub-entity, lakukan langkah berikut: 
+1. Masuk ke dashboard dengan akun utama 
+2. Pergi ke menu Multi Entity lalu klik tombol “Tambah Sub-Entity”
 
 ![Image: As a Main Entity - Add a New Sub-entity](../images/MEM_Add_Sub_Entity_1.png)
 
-1. Click the “+ Add Sub-Entity
-2. Fill in the username for the sub-entity you wished to connect. You can find your username from the menu Accounts → User Profile in the Username section
-3. Click Add and then if the account is found in the system you can confirm by clicking Connect in the confirmation window
+3. Isi username sub-entity yang ingin Anda hubungkan. Anda dapat menemukan username Anda dari menu Akun → Profil Pengguna dalam bagian username. 
+4. Klik Tombol “Tambah”, lalu jika akun ada di sistem, akan ada konfirmasi untuk menghubungkan. 
 
 ![Image: As Main Entity - Subs - 6. Add Child - Type Username](../images/MEM_Add_Sub_Entity_2.jpg) 
-After confirming, the request will be sent to the respective account to be accepted
 
-1. **For Sub-entity Account**
+5. Setelah mengonfirmasi, permintaan akan dikirimkan ke akun yang bersangkutan untuk diterima.
 
-To receive a request from a main entity , please 1) Log in to dashboard with child credential 2) Go to Transaction Report → Account Statement
+2. **Jika Anda adalah Sub-Entity**
+
+Untuk menerima permintaan dari main entity, silakan masuk ke dashboard dengan akun sub-entity, kemudian buka menu “Laporan Transaksi” → “Laporan Transaksi Rekening”.
 ![Image: As Child - AccState - 2b. Waiting approval](../images/As_Child_AccState_2b_Waiting_approval.png)
 
-1. Click the “Check All request” button that can be found near the top right corner of the page
-2. You will see the incoming request to be the main entity account for your account, then you can choose which account is the correct account for the main entity by click Accept in the respective account and confirmation window
+1. Klik tombol "Cek Permintaan" yang dapat ditemukan di dekat sudut kanan atas halaman.
+2. Anda akan melihat permintaan yang masuk untuk dihubungkan menjadi main entity untuk akun Anda, kemudian Anda dapat memilih akun mana yang merupakan akun yang benar untuk main entity dengan mengklik “Terima” pada akun yang sesuai. 
+
 
 ![Image: As Child - AccState - 4b. 2 Requests to connect.png](../images/As_Child_AccState_4b_2_Requests_to_connect.png)![Image: As Child - AccState - 4e. Confirmation to connect](../images/As_Child_AccState_4e_Confirmation_to_connect.png)
 
-3. After successfully received the main entity request to connect, you will find your parent information near the top right corner of your page, and you are now connected with your main entity.
+3. Setelah berhasil menerima permintaan dari main entity untuk terhubung, Anda akan menemukan informasi main entity Anda di dekat sudut kanan atas halaman Anda, dan selamat, Anda sekarang sudah terhubung! 
 
 ![Image: As Child - AccState - 4h. Success add new head company](../images/As_Child_AccState_4h_Success_add_new_head_company.png)
 
-**B. Topup money to a sub-entity account**
+**B. TMengisi Saldo ke akun Sub-Entity**
 
-After connected with your sub-entities, you can transfer money to the sub-entity account by accessing the menu Multi Entity → List of Sub-entity
-1. Find the account that you wished to top-up
-2. Click the “+ Top Up” button
-3. Fill in the amount you wish to top-up
-4. Click the “Top Up Now” button to proceed
-5. You can also do Top Up by transfer to one of the VA provided (see “How to Top Up Balance via VA”
+Setelah terhubung dengan sub-entity Anda, Anda dapat mengisi ulang saldo akun sub-entity dengan mengakses menu Multi Entity → Daftar sub-entity, lalu ikuti langkah berikut: 
+1. Temukan akun yang ingin Anda isi saldonya
+2. Klik tombol "Isi Ulang" 
+3. Isi jumlah yang ingin Anda isi 
+4. Klik tombol "Isi Ulang Sekarang" untuk melanjutkan 
+5. Anda juga dapat melakukan pengisian ulang dengan mentransfer ke salah satu Virtual Account yang disediakan (lihat "Cara Mengisi Saldo melalui VA")
+
 
 ![Image: As Parent - Subs - 5a. Top Up.png](../images/As_Parent_Subs_5a_Top_Up.png)
 
-**C. Disburse Money using a sub-entity's balance**
+**C. Mengirim Uang Menggunakan Saldo Sub-Entity**
 
-In Multi Entity Management, you will be able to do disbursement using your sub-entity account on their behalf. To do this you could
+Dengan menu Multi Entity, Anda dapat melakukan pengiriman uang menggunakan akun sub-entity atas nama mereka. Untuk melakukannya, Anda dapat mengikuti langkah-langkah berikut:
 
-1. Access the Bulk Disbursement menu and clicking on “+ Create Disbursement” button
-2. Select your sub-entity balance as a source of fund to do disbursement by selecting “My Sub-entity Balance” and choose the appropriate account.
-3. After choosing the balance you could proceed to do disbursement just like regular disbursement
+1. Akses menu Multitransfer dan klik tombol "+ Buat Transaksi Baru"
+2. Pilih saldo sub-entity Anda sebagai sumber dana untuk melakukan pengiriman uang dengan memilih "Saldo Sub-entity Saya" dan pilih akun yang sesuai.
+3. Setelah memilih, Anda dapat melanjutkan untuk melakukan pengiriman uang seperti biasa.
 
 ![Image: Choose SoF - 2. Choose SoF subsidiary.png](images/MEM_select_subentity_disbursement.png)
 
-**D. Create a payment link on behalf of a sub-entity account**
+**D. CMembuat Link Pembayaran Atas Nama Sub-Entity**
 
-With this feature, you will be able to accept payment from your users through Payment Link created on behalf of your sub-entity account. When your users make a successful transaction, the transaction will be recorded in the Sub-entity Account's balance. As a main entity, you are equipped with the ability to view the Sub-entity Account's balance and transaction list anytime through Multi Entity → Sub-entity Statement. 
+Dengan fitur ini, Anda akan dapat menerima pembayaran dari pelanggan Anda melalui Link Pembayaran yang dibuat atas nama akun sub-entity Anda. Ketika pelanggan Anda berhasil membayar, transaksi tersebut akan dicatat dalam saldo Akun Sub-entity. Sebagai main entity, Anda mempunyai akses untuk melihat saldo dan daftar transaksi Akun Sub-entity kapan saja.
 
-Follow the below steps to create a payment link on behalf of a sub-entity account:
+Silakan ikuti langkah-langkah berikut untuk membuat link pembayaran atas nama akun sub-entity:
 
-***Via API***
+***Melalui API***
 
-Hit [API Create Payment Link](https://api-docs.oyindonesia.com/#api-create-payment-link-fund-acceptance) and fill in "child_balance" parameter with the username of a sub-entity account that you will set as the balance destination for the transaction. When your users make a successful transaction, the transaction will be recorded in the specified Sub-entity Account's balance.
+Silakan hit [API Link Pembayaran](https://api-docs.oyindonesia.com/#api-create-payment-link-fund-acceptance) dan isi parameter "child_balance" dengan nama pengguna akun sub-entity yang akan Anda tetapkan sebagai tujuan saldo masuk. Ketika pelanggan Anda berhasil melakukan pembayaran, transaksi tersebut akan masuk ke dalam saldo Akun Sub-entity yang ditentukan.
 
-***Via Dashboard***
+
+***Melalui Dashboard***
  
-1. Click Payment Link -> One-time (if you want to create a one-time payment link) or Click Payment Link -> Reusable (if you want to create a reusable payment link)
-2. Click "Create One-Time Link" (for one-time payment link) or click "Create Reusable Link" (for reusable payment link)
-3. You will see a pop-up to proceed with the creation process
-4. Fill in "Balance Destination" with "My Balance" (if the balance destination of the transaction is your own) or "Sub-entity Balance" (if the balance destination of the transaction is your sub-entity's). If you select "Sub-entity Balance", you will see a dropdown to select a username of the sub-entity account. Only 1 sub-entity account is currently allowed to be a balance destination
-5. If you select "Sub-entity Balance", when your users make a successful transaction, the transaction will be recorded in the specified Sub-entity Account's balance.
+1. Klik Link Pembayaran -> Sekali Pakai (jika Anda ingin membuat link pembayaran sekali pakai) atau Klik Tautan Pembayaran -> Pakai Berulang (jika Anda ingin membuat link pembayaran yang dapat digunakan berulang kali.)
+2. Klik "Buat Link Pembayaran" (untuk tautan pembayaran satu kali) atau klik "Buat Link Pakai Berulang" (untuk link pembayaran yang dapat digunakan berulang kali). Anda akan melihat pop-up untuk melanjutkan proses pembuatan link pembayaran. 
+3. Isi "Tujuan Saldo" dengan "Saldo Saya" (jika tujuan saldo transaksi adalah ke akun main entity) atau "Saldo Sub-entity" (jika tujuan saldo transaksi adalah sub-entity Anda). Jika Anda memilih "Saldo Sub-entity", Anda akan melihat dropdown untuk memilih username sub-entity. Anda hanya dapat memilih 1 akun sub-entity. 
 
 ![MAM Payment Link](images/MEM_select_subentity_paymentlink.png)
 
-## Xero Integration
+## Integrasi dengan Xero
 
-Xero is an accounting platform that is mainly used by companies. We have integrated our system to Xero system in order to help you optimize your workflow. By connecting your OY! account to your Xero account, you do not have to login to your Xero account. Means that you do not have to manually record your transaction that happened in OY! to Xero. You will get seamless experience of recording your transaction.
+Integrasi OY! Bisnis dengan Xero bertujuan untuk memudahkan tim keuangan Anda untuk mendapatkan informasi keuangan yang mendalam. Dengan begitu, Anda dan tim jadi mengetahui kapan dan di mana Anda harus melakukan efisiensi terhadap biaya dan mendorong produktivitas. 
 
-### How does it works?
+Setiap transaksi yang terjadi di OY! akan otomatis tercatat dalam akun Xero Anda, baik transaksi pengeluaran maupun pendapatan.
 
-Once you have connected your Xero account in OY!, any transaction that happened in OY! will be automatically recorded to your Xero tenant account. Upon successful connection, we will trigger creation of new Bank Account, which is OY! Balance Bank Account. Any transaction that happened in OY! will be recorded in that bank account, to SPEND or RECEIVE money transaction. Then, you will be required to map your Xero’s Chart of Account. Mapping your Chart of Accounts will help us to put your transaction into a correct Account.
+### Bagaimana Cara Kerjanya?
 
-### Connect your Xero
+Setelah Anda berhasil menghubungkan akun Xero Anda di OY!, setiap transaksi yang terjadi di OY! akan otomatis tercatat di akun Xero Anda. Setelah koneksi berhasil, kami akan membuat rekening bank baru, yaitu rekening saldo OY!. Setiap transaksi yang terjadi di OY! akan dicatat dalam rekening bank tersebut, baik transaksi pengeluaran maupun pendapatan. Selanjutnya, Anda akan diminta untuk melakukan pemetaan chart of account Anda di Xero. Pemetaan chart of accounts Anda akan membantu kami untuk mengalokasikan transaksi Anda ke accounts yang tepat.
 
-- Login to your dashboard. In the sidebar, select Integration menu.
+### Menghubungkan Akun Xero Anda
+
+- Masuk ke dashboard, lalu pilih menu Integrasi
 ![Integration Menu](images/xero/menu.png)
 
-- You will see Xero menu. Click “Connect” to connect your Xero account to OY!. You will be redirected to Xero’s login page. Once you have successfully logged in to Xero, a notification will appear.
+- Anda akan melihat pilihan app Xero. Klik "Hubungkan" untuk menghubungkan akun Xero Anda ke OY!. Anda akan diarahkan ke halaman login Xero. Setelah Anda berhasil masuk ke Xero, akan muncul notifikasi.
 ![Product List](images/xero/product_list.png)
 
-Preview for Xero's login page
+Pratinjau untuk halaman login Xero:
 ![Xero's Login Page](images/xero/login_xero.png)
 ![Consent Page](images/xero/consent_page.png)
 
-Preview for Notification
+Pratinjau notifikasi OY!: 
 ![Notification](images/xero/connect_success_notification.png)
 
-- Upon success connect to Xero, we will create a new Bank Account into your Xero account, named “OY! balance” in which any transaction happened in OY! will be recorded there.
+- Setelah berhasil terhubung ke Xero, kami akan membuat rekening bank baru dalam akun Xero Anda, dengan nama "OY! Indonesia Balance" di mana setiap transaksi yang terjadi di OY! akan dicatat di sana.
 ![New Account](images/xero/new_account.png)
 
-### Map your Chart of Account
+### Memetakan Chart of Account Anda
 
-- Once you have successfully connected to Xero, you will be directed to a page to map your Chart of Account.
+- Setelah Anda berhasil terhubung ke Xero, Anda akan diarahkan ke halaman untuk melakukan pemetaan chart of account Anda.
 ![Configure Account Page](images/xero/coa_mapping.png)
 
-- Then, map each product to the corresponding Account. Any transaction using each product will be put into the chart of account you defined in this page. 
+- Kemudian, lakukan pemetaan setiap produk ke account yang sesuai. Setiap transaksi yang menggunakan setiap produk akan dimasukkan ke dalam chart of account yang Anda tentukan di halaman ini.
 ![Mapping Modal](images/xero/coa_mapping_modal.png)
 ![Mapping Modal](images/xero/coa_mapping_modal_2.png)
 
-Note: Special for Bulk Disbursement product, you can define the Chart of Account later in the campaign creation process - Step 3 Input Detail page. In the Transaction Category field.
+Catatan: Khusus untuk produk Multitransfer, Anda dapat menentukan chart of account nanti dalam proses pembuatan transaksi pada halaman "Masukkan Detail" di langkah ke-3, pada kolom kategori transaksi.
 
 ![Bulk Disbursement CoA](images/desktop_accountingapp_bulkdisbursement.png)
 
-- You can change the CoA mapping anytime as needed, just go to Integration >> Xero >> Configuration.
+- Anda dapat mengubah pemetaanchart of account kapan saja sesuai kebutuhan, cukup pergi ke menu Integrasi > Xero > Konfigurasi.
 
 ### Record Transaction to Xero
 
