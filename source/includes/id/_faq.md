@@ -68,68 +68,81 @@ Bank apa saja yang didukung untuk produk API VA Aggregator?
 
 Saat ini kami memiliki 11 bank yang tersedia untuk API VA Aggregator. Anda dapat melihat daftar bank [di sini](https://api-docs.oyindonesia.com/#va-aggregator-bank-code).
 
-**Is the amount received in realtime?**
+**Apakah saldo yang saya terima langsung masuk secara real-time?**
 
-Yes, all the amount received are in realtime and will be immediately available in your OY! balance.
+Ya, semua saldo yang Anda terima bersifat real-time dan akan segera tersedia masuk ke saldo OY! Anda.
 
-## Payment Link/Invoice
+## Link Pembayaran/Invoice
 
-**What are the possible payment methods for users?**
-We support payments via bank transfers, credit card, debit card, and QR code from the following:
+**Apa saja metode pembayaran yang tersedia untuk pelanggan saya?**
 
-* Bank Transfer via Virtual Account: BCA, BNI, BRI, CIMB Niaga, Mandiri, Permata Bank.
+Kami menyediakan berbagai metode pembayaran melalui transfer bank, e-wallet, kartu kredit/debit, dan kode QR dengan detail sebagai berikut:
 
-* Bank Transfer via Unique Code: BCA
+1. Transfer bank melalui Virtual Account: BCA, BNI, BRI, CIMB Niaga, Mandiri, dan Permata Bank.
 
-* Credit Card/Debit Card: VISA, Mastercard
+2. Transfer dengan kode unik: BCA
 
-* E-Wallet: ShopeePay, DANA, LinkAja, OVO
+3. Kartu kredit/debit: VISA, Mastercard
 
-* QR Code: QRIS
+4. E-Wallet: ShopeePay, DANA, LinkAja, OVO
 
-**What are closed and open amounts? What happens when the amount paid by the user is different from the declared amount in the created Payment Links?**
+5. Kode QR: QRIS
 
-A closed amount is a configuration so that the payment link or invoice can only be paid if the actual declared amount is paid. The user will not be able to pay any amount other than the declared amount.
+**Apa yang dimaksud dengan VA closed dan open amount? Apa yang terjadi jika nominal yang dibayarkan oleh pelanggan berbeda dari nominal yang tertera di Link Pembayaran yang saya buat?**
 
-An opened amount is a configuration so that the payment link or invoice can be paid up to the declared amount (or any, if amount is not declared). If the user pays an amount that is different from the declared amount, the payment link will remain active. The payment link will only reflect a completed status when the full amount is paid in total.
+Closed Amount adalah jenis Virtual Account yang hanya menerima pembayaran dengan nominal yang ditentukan. Pengguna tidak akan dapat membayar nominal selain dari nominal yang tertera.
 
-**What is the difference between Bank Transfer via Virtual Account and Bank Transfer via Unique Code?**
-Bank Transfer via Virtual Account (VA) will generate specific account number destination for each transaction. You can create an open amount or closed amount transaction using VA. Detail explanation of VA can be seen [here](https://docs.oyindonesia.com/#va-aggregator-accepting-payments). You can create VA Transactions via [API Payment Routing](https://docs.oyindonesia.com/#va-aggregator-accepting-payments) or [VA Aggregator](https://docs.oyindonesia.com/#va-aggregator-accepting-payments) 
+Open Amount adalah jenis Virtual Account VA yang dapat menerima pembayaran dengan nominal berapa pun. Jika pelanggan membayar nominal lebih dari yang tertera, link pembayaran akan tetap aktif. Link pembayaran akan berubah status menjadi SELESAI hanya ketika mencapai nominal TOTAL yang ditentukan.
 
-Bank Transfer via Unique Code generates unique code for each transaction but the account number destination will always be the same. The total amount paid is subtracted by the unique code. For example, your end user wants to paid a transaction of Rp 100.000 and get Rp 100 as the unique code. The payment uses subtraction approach, so your end user will pay a total of Rp 99.900 to complete the payments. Unique Code also have limitations compared to VA, where you can only create unique code transaction during the operational hours (3 AM - 8.30 PM GMT+7).
+**Apa perbedaan antara transfer bank melalui Virtual Account dan transfer bank melalui kode unik?**
+
+Transfer bank melalui Virtual Account (VA) akan menghasilkan nomor rekening tujuan transfer yang khusus untuk setiap transaksi. Anda dapat membuat transaksi dengan jenis open amount atau closed menggunakan VA. Penjelasan rinci tentang VA dapat dilihat [di sini](https://docs.oyindonesia.com/#va-aggregator-accepting-payments). Anda dapat membuat transaksi VA melalui [API Routing Pembayaran](https://docs.oyindonesia.com/#va-aggregator-accepting-payments) atau [Link Pembayaran ](https://docs.oyindonesia.com/#va-aggregator-accepting-payments). 
+
+Berbeda dari sebelumnya, transfer bank melalui kode unik menghasilkan kode unik untuk setiap transaksi, tetapi nomor rekening tujuan akan tetap sama. Total nominal yang dibayarkan akan dikurangi dengan nilai kode unik tersebut. Sebagai contoh, pelanggan Anda ingin membayar transaksi sebesar Rp100.000 dan mendapatkan Rp100 sebagai kode unik. Jadi, pelanggan Anda akan membayar total Rp 99.900 untuk menyelesaikan pembayaran. Kode Unik juga memiliki keterbatasan dibandingkan dengan VA, di mana Anda hanya dapat membuat transaksi kode unik selama jam operasional (03.00 pagi - 08.30 malam GMT+7).
 
 
-## Payment Routing
-**What are the possible payment methods for users?**
-We support payments via bank transfers, e-wallet , credit card/debit card, and QR code from the following:
+## Routing Pembayaran
 
-* Bank Transfer via Virtual Account: BCA, BNI, BRI, CIMB Niaga, Mandiri, Permata Bank.
+**Apa saja metode pembayaran yang tersedia untuk pelanggan saya?** 
 
-* Bank Transfer via Unique Code: BCA
+Kami menyediakan berbagai metode pembayaran melalui transfer bank, e-wallet, kartu kredit/debit, dan kode QR dengan detail sebagai berikut:
 
-* Credit Card/Debit Card: VISA, Mastercard
+1. Transfer bank melalui Virtual Account: BCA, BNI, BRI, CIMB Niaga, Mandiri, dan Permata Bank.
 
-* E-Wallet - One Time: ShopeePay, DANA, LinkAja, OVO
+2. Transfer dengan kode unik: BCA
 
-* E-Wallet - Direct Payment: ShopeePay
+3. Kartu kredit/debit: VISA, Mastercard
 
-* QR Code: QRIS
+4. E-Wallet: ShopeePay, DANA, LinkAja, OVO
 
-**What is the difference between Bank Transfer via Virtual Account and Bank Transfer via Unique Code?**
-Bank Transfer via Virtual Account (VA) will generate specific account number destination for each transaction. You can create an open amount or closed amount transaction using VA. Detail explanation of VA can be seen [here](https://docs.oyindonesia.com/#va-aggregator-accepting-payments). You can create VA Transactions via [API Payment Routing](https://docs.oyindonesia.com/#va-aggregator-accepting-payments) or [VA Aggregator](https://docs.oyindonesia.com/#va-aggregator-accepting-payments) 
+5. Kode QR: QRIS
 
-Bank Transfer via Unique Code generates unique code for each transaction but the account number destination will always be the same. The total amount paid is subtracted by the unique code. For example, your end user wants to paid a transaction of Rp 100.000 and get Rp 100 as the unique code. The payment uses subtraction approach, so your end user will pay a total of Rp 99.900 to complete the payments. Unique Code also have limitations compared to VA, where you can only create unique code transaction during the operational hours (3 AM - 8.30 PM GMT+7). You can create Unique Code Transaction via [API Payment Routing](https://docs.oyindonesia.com/#va-aggregator-accepting-payments) or [Payment Link](https://docs.oyindonesia.com/#payment-links-invoice-accepting-payments)
+**Apa perbedaan antara transfer bank melalui Virtual Account dan transfer bank melalui kode unik?**
 
-**What are the differences between E-Wallet One Time Payment and E-Wallet Direct Payment?**
-E-Wallet One Time creates a payment URL that can be paid by any guest users. Once payment URL is opened, your end user's is redirected to the E-Wallet app and completes the payment inside the E-Wallet's app.
+Transfer bank melalui Virtual Account (VA) akan menghasilkan nomor rekening tujuan transfer yang khusus untuk setiap transaksi. Anda dapat membuat transaksi dengan jenis open amount atau closed menggunakan VA. Penjelasan rinci tentang VA dapat dilihat [disini](https://docs.oyindonesia.com/). Anda dapat membuat transaksi VA melalui API Routing Pembayaran atau VA Aggregator.
 
-E-Wallet Direct creates a payment URL dedicated to a particular user. The end user needs to link their E-Wallet account first by doing [Account Linking](https://docs.oyindonesia.com/#feature-account-linking-accepting-payments). Once the end user has linked their account to your app, you can initiate a Direct payment. OY will return an authorization URL for the end users to input the E-Wallet PIN and complete the payment. Using Direct payment, your end users will complete the transaction inside your app. Therefore, it will bring a better experinence for your end users.
+Berbeda dari sebelumnya, transfer bank melalui kode unik menghasilkan kode unik untuk setiap transaksi, tetapi nomor rekening tujuan akan tetap sama. Total nominal yang dibayarkan akan dikurangi dengan nilai kode unik tersebut. Sebagai contoh, pelanggan Anda ingin membayar transaksi sebesar Rp100.000 dan mendapatkan Rp100 sebagai kode unik. Jadi, pelanggan Anda akan membayar total Rp 99.900 untuk menyelesaikan pembayaran. Kode Unik juga memiliki keterbatasan dibandingkan dengan VA, di mana Anda hanya dapat membuat transaksi kode unik selama jam operasional (03.00 pagi - 08.30 malam GMT+7). Anda dapat membuat transaksi kode unik melalui [API Routing Pembayaran](https://docs.oyindonesia.com/#va-aggregator-accepting-payments) atau [Link Pembayaran ](https://docs.oyindonesia.com/#va-aggregator-accepting-payments).
 
-|     | One Time | Direct |
+
+
+**Apa perbedaan antara E-Wallet Sekali Pakai dan E-Wallet Direct Payment?**
+
+Pembayaran E-wallet sekali pakai dapat membuat URL pembayaran yang bisa dibayar oleh siapa pun. Begitu URL pembayaran dibuka, pelanggan Anda akan diarahkan ke aplikasi E-wallet dan menyelesaikan pembayaran di dalam aplikasi E-wallet.
+
+Sementara, E-wallet direct payment dapat membuat URL pembayaran yang diperuntukkan untuk pengguna tertentu. Pelanggan Anda perlu menghubungkan akun E-wallet mereka terlebih dahulu dengan melakukan [Account Linking](https://docs.oyindonesia.com/#feature-account-linking-accepting-payments). Setelah pelanggan menghubungkan akun mereka dengan aplikasi Anda, maka otomatis pembayaran akan dapat dilakukan. OY! akan mengembalikan otentikasi kepada pelanggan untuk memasukkan PIN E-wallet dan menyelesaikan pembayaran. Dengan menggunakan direct payment, pelanggan Anda akan menyelesaikan transaksi di dalam aplikasi Anda sendiri. Berikut adalah detail pembayaran masing-masing E-wallet:
+
+
+|     | Sekali Pakai | Direct |
 | --- | -------- | ------ |
-| Supported  E-Wallets | ShopeePay, LinkAja, DANA, OVO | ShopeePay |
-| Need to do Account Linking first? | No | Yes |
-| Can be created via.. | API Payment Routing <br> Payment Link <br> API E-Wallet Aggregator | API Payment Routing  |
-| Send phone number in API Create Request | Optional | Mandatory |
-| Who can complete the transaction? | Any Users/Guest | Dedicated User. <br> Only the user whose phone number listed in the API request |
-| Payment Completion Journey | Inside E-Wallet App | Your app |
+| E-Wallet yang didukung | ShopeePay, LinkAja, DANA, OVO | ShopeePay |
+|Harus menghubungkan akun terlebih dahulu? | Tidak | Ya |
+| Dapat dibuat melalui.. | API Payment Routing <br> Payment Link <br> API E-Wallet Aggregator | API Payment Routing  |
+| Mengirimkan nomor HP saat permintaan pembuatan API. | Opsional | Wajib |
+| Siapa yang dapat melakukan pembayaran? | Semua user/guest | User Tertentu|
+| Pembayaran dilakukan di | Di aplikasi E-wallet | Di aplikasi Anda sendiri |
+
+
+
+
+
+
