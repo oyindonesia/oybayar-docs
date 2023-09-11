@@ -725,6 +725,24 @@
                         </li>
                     </ul>
                   </li>
+                  <li>
+                    <a href="#oy-39-s-authorization-callback-oy-dashboard-tutorial" class="toc-h2 toc-link" data-title="OY!'s Authorization Callback">
+                      <span class="toc-link-content">
+                        OY!'s Authorization Callback
+                      </span>
+                         <img src="images/arrow-bottom-425d93ba.svg" class="active-parent icon-arrow" alt="" />
+                    </a>
+                    <ul class="toc-list-h3">
+                        <li>
+                          <a href="#how-to-setup-authorization-callback-oy-39-s-authorization-callback" class="toc-h3 toc-link" data-title="How to Setup Authorization Callback">
+                            <span class="toc-link-content">
+                              How to Setup Authorization Callback
+                            </span> 
+                            <img src="images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
+                          </a>
+                        </li>
+                    </ul>
+                  </li>
               </ul>
           </li>
           <li>
@@ -2874,17 +2892,31 @@ After confirming, the request will be sent to the respective account to be accep
 <li>Now, your OY! account has been connected to your Jurnal account and each product has been mapped to its corresponding Chart of Account.</li>
 <li><p>Any successful transaction that happened in OY! will be recorded to Jurnal with the corresponding Account you defined in the Mapping Account menu. Transactions from OY! will be recorded in the Expenses or Sales Invoice module, under OY! Balance bank account and it will credited/debited your OY! balance bank account. Note: Admin Fee of Receive Money transactions will be recorded in the Expenses module.</p></li>
 <li><p>In this image, we show you a Disbursement Transaction with CoA &quot;Iklan &amp; Promosi&quot; and admin fee with CoA &quot;Komisi &amp; Fee&quot;. It is recorded into the &quot;Expenses&quot; module in your Jurnal account with status LUNAS.</p></li>
-</ol>
-
-<p><img src="images/jurnal_bulk_disburse_txn-0e73c013.png" alt="Jurnal Disburse Transaction" /></p>
-
-<ol>
-<li>Note: For some reasons, we do not map Top up and Withdraw balance transactions to Jurnal. Therefore, you should adjust your bank’s Cash Bank account balance as well as OY! Indonesia Cash Bank account balance in your Jurnal dashboard everytime you execute top up and withdraw transactions.</li>
+<li><p>Note: For some reasons, we do not map Top up and Withdraw balance transactions to Jurnal. Therefore, you should adjust your bank’s Cash Bank account balance as well as OY! Indonesia Cash Bank account balance in your Jurnal dashboard everytime you execute top up and withdraw transactions.</p></li>
 </ol>
 <h3 id='disconnected-your-jurnal-jurnal-integration' type='normal'>Disconnected your Jurnal</h3>
 <ol>
 <li>To disconnect your Jurnal account from OY!, open the Integration menu on the sidebar. Then select “Disconnect”.</li>
 <li>Then, you will be disconnected from Jurnal. Any transaction that you execute via OY! will not be recorded in Jurnal.</li>
+</ol>
+<h2 id='oy-39-s-authorization-callback-oy-dashboard-tutorial' type='normal'>OY!&#39;s Authorization Callback</h2>
+<p>When you successfully complete a transaction using OY!&#39;s API-based product, OY! will send a callback to your system. To keep your system secure, we have provided a feature that allows you to control and approve these callbacks from OY! before they are received by your system. </p>
+
+<p>Currently, we only support configuration for the OAuth 2.0 protocol. If your system uses OAuth 2.0, you can set up OY! callbacks to be directed to an authorization process before they are received by your system. To do this, simply enter the Authorization URL, client ID, and client secret via your dashboard. </p>
+<h3 id='how-to-setup-authorization-callback-oy-39-s-authorization-callback' type='normal'>How to Setup Authorization Callback</h3>
+<p>You can follow the steps below to set up callback authorization via your dashboard:</p>
+
+<ol>
+<li>Log in to the OY! dashboard as a super admin or admin, then select the &quot;Settings&quot; menu, and choose &quot;Developer Options.&quot; </li>
+<li>Click on the &quot;Authorization Callback&quot; tab. Then, you should input your authorization details (Authorization URL, client ID, and client secret). This step is necessary to allow OY! to complete the authorization process before sending a callback to you. </li>
+</ol>
+
+<p><img src="images/oy_auth_configuration-408c98cf.png" alt="Callback Authorization Configuration" /></p>
+
+<ol>
+<li>Click the &quot;Save changes&quot; button. </li>
+<li>Once you have configured your OAuth 2.0 credentials, all callbacks from OY! will go through your authorization process before you can receive them. OY! will obtain an access token along with the expiry time from your system. 
+If you no longer want callbacks from OY! to go through the authorization process, you can remove all the OAuth information or credentials you&#39;ve entered on this page and then click &quot;Save Changes.&quot;</li>
 </ol>
 <h1 id='oy-business-app' type='normal'>OY! Business App</h1><h2 id='oy-business-app-oy-business-app' type='normal'>OY! Business App</h2>
 <p>Great news for you who always in mobility mode but you need to access our dashboard! Now you can access your OY! dashboard from the tip of your finger. OY! Business offers you with easy access to OY! Dashboard, so you can do your financial activities everywhere you are, without opening your laptop or PC. In this app, you can see your balance, account statement, transaction status, send money and also receive money. Yes, doing transaction is now easier than before!</p>

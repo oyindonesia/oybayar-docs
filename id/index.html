@@ -735,6 +735,22 @@
                         </li>
                     </ul>
                   </li>
+                  <li>
+                    <a href="#authorization-callback-oy-tutorial-dashboard-oy" class="toc-h2 toc-link" data-title="Authorization Callback OY!">
+                      <span class="toc-link-content">
+                        Authorization Callback OY!
+                      </span>
+                        <img src="../images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#cara-mengatur-authorization-callback-tutorial-dashboard-oy" class="toc-h2 toc-link" data-title="Cara Mengatur Authorization Callback">
+                      <span class="toc-link-content">
+                        Cara Mengatur Authorization Callback
+                      </span>
+                        <img src="../images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
+                    </a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -2851,6 +2867,25 @@ b. Nonaktifkan Pemberitahuan Berhasil: Tidak akan ada pemberitahuan melalui emai
 <ol>
 <li>To disconnect your Jurnal account from OY!, open the Integration menu on the sidebar. Then select “Disconnect”.</li>
 <li>Then, you will be disconnected from Jurnal. Any transaction that you execute via OY! will not be recorded in Jurnal.</li>
+</ol>
+<h2 id='authorization-callback-oy-tutorial-dashboard-oy' type='normal'>Authorization Callback OY!</h2>
+<p>Ketika Anda berhasil melakukan transaksi dengan produk berbasis API, OY! Akan mengirimkan callback ke sistem klien. Untuk menjaga keamanan sistem Anda, kami telah menyediakan fitur yang memungkinkan Anda untuk mengontrol dan menyetujui pengiriman callback dari OY! sebelum callback tersebut diterima oleh sistem Anda. </p>
+
+<p>Untuk saat ini, kami hanya mendukung pengaturan untuk protokol OAuth 2.0. Jika sistem Anda menggunakan protokol tersebut, Anda dapat mengatur agar callback dari OY! akan diarahkan ke proses otorisasi atau perizinan yang Anda tentukan sebelum callback tersebut diterima oleh sistem Anda. Untuk melakukan hal tersebut, Anda hanya perlu memasukkan URL otorisasi, client ID, dan client secret untuk OY! melalui dashboard Anda.</p>
+<h2 id='cara-mengatur-authorization-callback-tutorial-dashboard-oy' type='normal'>Cara Mengatur Authorization Callback</h2>
+<p>Anda dapat mengikuti langkah-langkah berikut untuk mengatur perizinan callback melalui dashboard: </p>
+
+<ol>
+<li>Masuk ke dashboard OY! sebagai superadmin atau admin, kemudian pilih menu Pengaturan, lalu pilih Opsi Developer.</li>
+<li>Pilih tab “Authorization Callback”. Selanjutnya, Anda perlu memasukkan kredensial otorisasi Anda (URL untuk Otorisasi, client ID, dan client secret) sehingga OY! dapat melalui proses otorisasi sebelum mengirimkan callback kepada Anda.</li>
+</ol>
+
+<p><img src="../images/oy_auth_configuration-408c98cf.png" alt="Callback Authorization Configuration" /></p>
+
+<ol>
+<li>Klik tombol “Simpan Perubahan”.</li>
+<li>Jika Anda sudah memasukkan kredensial OAuth, maka setiap callback yang dikirimkan oleh OY! akan melalui proses otorisasi atau perizinan sebelum callback dikirimkan kepada Anda. OY! akan mendapatkan token akses beserta tenggat waktu dari sistem Anda.</li>
+<li>Jika Anda tidak lagi ingin callback dari OY! melewati proses otorisasi, Anda dapat menghapus semua informasi atau kredensial OAuth yang telah Anda masukkan pada halaman ini, lalu klik “Simpan Perubahan”.</li>
 </ol>
 <h1 id='oy-business-app' type='normal'>OY! Business App</h1><h2 id='oy-business-app-oy-business-app' type='normal'>OY! Business App</h2>
 <p>Great news for you who always in mobility mode but you need to access our dashboard! Now you can access your OY! dashboard from the tip of your finger. OY! Business offers you with easy access to OY! Dashboard, so you can do your financial activities everywhere you are, without opening your laptop or PC. In this app, you can see your balance, account statement, transaction status, send money and also receive money. Yes, doing transaction is now easier than before!</p>
