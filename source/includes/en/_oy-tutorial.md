@@ -591,7 +591,6 @@ Once you have connected your Jurnal account in OY!, any transaction that happene
 
 3. In this image, we show you a Disbursement Transaction with CoA "Iklan & Promosi" and admin fee with CoA "Komisi & Fee". It is recorded into the "Expenses" module in your Jurnal account with status LUNAS.
 
-![Jurnal Disburse Transaction](images/jurnal_bulk_disburse_txn.png)
 
 4. Note: For some reasons, we do not map Top up and Withdraw balance transactions to Jurnal. Therefore, you should adjust your bank’s Cash Bank account balance as well as OY! Indonesia Cash Bank account balance in your Jurnal dashboard everytime you execute top up and withdraw transactions.
 
@@ -601,14 +600,20 @@ Once you have connected your Jurnal account in OY!, any transaction that happene
 
 
 
+## OY!'s Authorization Callback
+When you successfully complete a transaction using OY!'s API-based product, OY! will send a callback to your system. To keep your system secure, we have provided a feature that allows you to control and approve these callbacks from OY! before they are received by your system. 
 
+Currently, we only support configuration for the OAuth 2.0 protocol. If your system uses OAuth 2.0, you can set up OY! callbacks to be directed to an authorization process before they are received by your system. To do this, simply enter the Authorization URL, client ID, and client secret via your dashboard. 
 
+### How to Setup Authorization Callback
+You can follow the steps below to set up callback authorization via your dashboard:
 
+1. Log in to the OY! dashboard as a super admin or admin, then select the "Settings" menu, and choose "Developer Options." 
+2. Click on the "Authorization Callback" tab. Then, you should input your authorization details (Authorization URL, client ID, and client secret). This step is necessary to allow OY! to complete the authorization process before sending a callback to you. 
 
+![Callback Authorization Configuration](images/oy_auth_configuration.png)
 
-
-
-
-
-
+3. Click the "Save changes" button. 
+4. Once you have configured your OAuth 2.0 credentials, all callbacks from OY! will go through your authorization process before you can receive them. OY! will obtain an access token along with the expiry time from your system. 
+If you no longer want callbacks from OY! to go through the authorization process, you can remove all the OAuth information or credentials you've entered on this page and then click "Save Changes."
 
