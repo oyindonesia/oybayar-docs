@@ -603,7 +603,7 @@ Ketika Anda berhasil melakukan transaksi dengan produk berbasis API, OY! Akan me
 
 Untuk saat ini, kami hanya mendukung pengaturan untuk protokol OAuth 2.0. Jika sistem Anda menggunakan protokol tersebut, Anda dapat mengatur agar callback dari OY! akan diarahkan ke proses otorisasi atau perizinan yang Anda tentukan sebelum callback tersebut diterima oleh sistem Anda. Untuk melakukan hal tersebut, Anda hanya perlu memasukkan URL otorisasi, client ID, dan client secret untuk OY! melalui dashboard Anda.
 
-## Cara Mengatur Authorization Callback
+### Cara Mengatur Authorization Callback
 Anda dapat mengikuti langkah-langkah berikut untuk mengatur perizinan callback melalui dashboard: 
 
 1. Masuk ke dashboard OY! sebagai superadmin atau admin, kemudian pilih menu Pengaturan, lalu pilih Opsi Developer.
@@ -613,4 +613,4 @@ Anda dapat mengikuti langkah-langkah berikut untuk mengatur perizinan callback m
 
 3. Klik tombol “Simpan Perubahan”.
 4. Jika Anda sudah memasukkan kredensial OAuth, maka setiap callback yang dikirimkan oleh OY! akan melalui proses otorisasi atau perizinan sebelum callback dikirimkan kepada Anda. OY! akan mendapatkan token akses beserta tenggat waktu dari sistem Anda.
-4. Jika Anda tidak lagi ingin callback dari OY! melewati proses otorisasi, Anda dapat menghapus semua informasi atau kredensial OAuth yang telah Anda masukkan pada halaman ini, lalu klik “Simpan Perubahan”.
+5. Jika Anda tidak lagi ingin callback dari OY! melewati proses otorisasi, Anda dapat menghapus semua informasi atau kredensial OAuth yang telah Anda masukkan pada halaman ini, lalu klik “Simpan Perubahan”.

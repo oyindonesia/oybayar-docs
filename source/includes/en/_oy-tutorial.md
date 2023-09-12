@@ -615,5 +615,5 @@ You can follow the steps below to set up callback authorization via your dashboa
 
 3. Click the "Save changes" button. 
 4. Once you have configured your OAuth 2.0 credentials, all callbacks from OY! will go through your authorization process before you can receive them. OY! will obtain an access token along with the expiry time from your system. 
-If you no longer want callbacks from OY! to go through the authorization process, you can remove all the OAuth information or credentials you've entered on this page and then click "Save Changes."
+5. If you no longer want callbacks from OY! to go through the authorization process, you can remove all the OAuth information or credentials you've entered on this page and then click "Save Changes."
 
