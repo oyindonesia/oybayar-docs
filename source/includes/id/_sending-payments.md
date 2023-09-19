@@ -849,58 +849,69 @@ Multi-layer Approval will improve your control over your bulk disburse transacti
 Default approval: Super Admin, Admin, and Approval.
 
 
-
-## Virtual Card
-OY! Virtual Card product provides the capability to create customized virtual cards and manage subscriptions without hassle. Virtual Card can be generated through the OY! dashboard, so no technical integration is required to use this product.
+## Corporate Card
+OY! Corporate Card product provides the capability to create customized cards that can be used to manage online subscriptions without hassle. Corporate Card can be generated through the OY! dashboard, therefore no technical integration is required to use this product.
 
 
 **Key Features** 
 
 Condition | Description
 ------ | -----------
-**Card creation** | OY! can use the funds directly from your OY! balance for virtual card needs. It is essential to top-up your OY! balance based on your card limit. Please contact our business representative (https://docs.oyindonesia.com/partner@oyindonesia.com) for further details about this feature.
-**Card control** | Create and control the card based on your requirements. You can set amount, validity period, renewal frequency and even transaction limitations directly through dashboard. Moreover, you can block and deactivate virtual card real-time! Everything on your fingertips.
-**Real-time transaction** | Transactions can be tracked easily through dashboard real-time. There is no need to wait until the end of month for full statement.
+**Card creation** | OY! can use the funds directly from your OY! balance for corporate card needs. It is essential to top-up your OY! balance based on your card limit. Please contact our business representative (https://docs.oyindonesia.com/partner@oyindonesia.com) for further details about this feature.
+**Card control** | Create and control the card based on your requirements. You can set the limit amount (in Rupiah), validity period, card renewal frequency and even transaction limitations directly through OY dashboard. Moreover, you can block and deactivate corporate card real-time! Everything on your fingertips.
+**Real-time transaction** | Transactions can be tracked easily through dashboard real-time. There is no need to wait until the end of month for full transaction statement
 
 
-### How to Use Virtual Card Feature via Dashboard
+### How to Create Corporate Card
 You can create new virtual card by following these steps:
 
-1. Log on to your OY! dashboard
+1. Log in to your OY! dashboard
 2. Choose “Production” environment
-3. Click “Virtual Card” under *Send Money* menu
+3. Click “Corporate Card” under Expense Management menu
 4. Click “Add New Card”
-5. Choose “Card Type” either single use or multiple use and click “Next”
+5. Choose “Card Type” for “Virtual” and usage frequency either single usage or multiple usage and click “Next”
 6. Fill in Cardholder details and Card details
-7. Once submitted, Virtual Card will be in “waiting for approval” state
-8. After approval step, the card is ready to be used for transactions
-9. Once card is used for transaction, it will appears in “Virtual Card” page and sent through email to Cardholder
+7. Once submitted, Corporate Card will be in “waiting for approval” state
+8. After the approval step, the card is ready to be used for transactions.
 
 **Notes:** OY! balance would be put on pending once card is created.
 
-* Virtual Card Dashboard
+* Corporate Card Dashboard
 
-![VCC Dashboard](images/virtualCard/vcc_emptystate.png)
+![Corporate Card Dashboard](images/virtualCard/blankpagecard.jpg)
 
 * Virtual Card Type
 
-![VCC Card Type](images/virtualCard/vcc_cardtype.png)
+![Card Form](images/virtualCard/virtualtype.jpg)
+
+![Card Form](images/virtualCard/frequency.jpg)
 
 * Virtual Card Form
 
-![VCC Form](images/virtualCard/vcc_form1.png)
+![Card Form](source/images/virtualCard/cardholderdetails.jpg)
 
-![VCC Form](images/virtualCard/vcc_form2.png)
+![Card Form](images/virtualCard/carddetails.jpg)
+
+
+### How to Transact with Card 
+Steps to use card for online transaction:
+1. Access your card information (including remaining balance & transaction) via email and enter OTP sent to the phone number registered.
+2. Once accessed, input all of you card information into merchant side under “Credit / Debit Card” Option
+3. Input 16 digit number, expiry date (MM/YY) and CVV
+4. Submit the information and proceed with the transaction and the transaction is successful.
+5. For record purposes, you can upload the invoice for each transaction inside OY! dashboard.
 
 * Virtual Card Information
 
-![VCC Detail](images/virtualCard/vcc_info.png)
+![VCC Detail](images/virtualCard/card_detail.png)
 
 * Virtual Card
 
-![VCC Transaction Detail](images/virtualCard/vcc_txndetail.png)
+![VCC Transaction Detail](images/virtualCard/detailtrxn.jpg) 
 
-![VCC Transaction Email](images/virtualCard/vcc_txnemail.png)
+![VCC Transaction Email](images/virtualCard/vcc_txnemail.png) 
+
+
 
 **Card Status**
 
@@ -914,13 +925,14 @@ Need top-up | New card has been created, but with 0 limit OR card limit is back 
 Expired | Card is expired or intentionally archived permanently.
 Rejected | Card is rejected by Approver.
 
+
 **Transaction Status** 
 
 Transaction Status | Description
 ------ | -----------
 Successful | Card has been used for transaction successfully
-Failed | Transction was decline
-
+Failed | Transction was declined
+Reversal | Temporary hold on card is returned to card prior settlement
 
 
 ### How to Set Approver
@@ -942,14 +954,14 @@ Failed | Transction was decline
 
 Parameter | Description
 ------ | -----------
-Name | Unique ID of the vendor from your company. This is not mandatory
-Position | The company/vendor name. Make sure the vendor name matches the vendor NPWP (if any) to help your company tax record
-Phone Number | Vendor address to be record. This is not mandatory
-Email | Recipient bank name. You can choose using drop down
+Name | Approver Name
+Position | Approver Role
+Phone Number | Approver Phone Number
+Email | Approver email for card approval purposes
 
 
 ### How to Manage Card
-1. Click “See All Virtual Cards”
+1. Click “See All Cards”
 2. Click the card that needs to be managed
 
 ![VCC Card List](images/virtualCard/vcc_cardlist.png)
@@ -958,48 +970,34 @@ Email | Recipient bank name. You can choose using drop down
 
 Card Actions | Description
 ------ | -----------
-Resend Card Info | Card has been used for transaction successfully
-Edit Information | Transction was declined
+Resend Card Info | To resend card info to cardholders, in case of missing email
+Edit Information | To edit the card limit. Editing card limits will lead to card temporary blockage and require reapproval flow again.
 Block | To temporarily lock the card, limit remains in the card
-Archive |To permanently lock the card, limit will be 0
-Renew Limit | To renew card limit with amount that has been approved during request. Applicable for new card with 0 limit, or existing card with less than 100% limit
-Resend Approval Notification | To remind Approver to approve the card request
+Archive | To permanently lock the card, limit will be 0 and returned to OY! balance
+Renew Limit | To renew card limit with a desired amount using OY! balance
+Resend Approval Notification | To remind Approver to approve the card request in case of closet email
 Delete | Only applicable for "Waiting for Approval" card
 
 
 
 ### How to Set Up Card Config
-1. Click “Virtual Card Settings”
+1. Click “Corporate Card Configuration”
 2. Select Department / Category / Approver
 3. You can choose to whether add new, edit existing or delete
-4. Click save changes
+4. Click "Save Changes"
 
 * Department page prior to “Edit Department” button
 
-![VCC Department](images/virtualCard/vcc_dept.png)
-
-* Edit Department page
-
-![VCC Edit Department](images/virtualCard/vcc_editdept.png)
+![Card Department](images/virtualCard/departmen.jpg)
 
 * Category page
 
-![VCC Category](images/virtualCard/vcc_cat.png)
+![Card Category](images/virtualCard/category.jpg)
 
 * Approver Page
 
-![VCC Approver](images/virtualCard/vcc_approver.png)
+![Card Approver](images/virtualCard/approver.jpg)
 
-
-
-### How to Transact with Card
-
-Steps to use card for online transaction:
-
-1. Access your card information via email and enter OTP
-2. Once accessed, input all of you card information into merchant side under “Credit / Debit Card” Option
-    1. Input 16 digit number, expiry date (MM/YY) and CVV
-3. Submit the information and proceed with the transaction and transaction is successful
 
 **Failed Transaction Possible Reasons**
 
@@ -1026,7 +1024,8 @@ Steps to use card for online transaction:
 
     * Once refund has been issued, the balance will be returned back to your OY! balance
 
-* It is user’s responsibility to block card usage whenever fraudulent transactions found. OY! is not responsible for the transaction.
+* It is the user’s responsibility to block card usage whenever fraudulent transactions found. OY! is not responsible for the transaction.
+
 
 ## International Transfer
 International Transfer product provides the capability for users to transfer across countries from Indonesia at any time. You may create a transaction within OY! dashboard without the need for any technical integration. 
