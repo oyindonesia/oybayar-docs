@@ -705,7 +705,9 @@ The details that you can see are;
 
 ![Payment Link](images/reusable_link_child.png)
 
+
 ### How to Use Invoice/Account Receivable via Dashboard
+
 
 1. Log on your OY! dashboard
 2. Choose "Production" environment
@@ -713,11 +715,12 @@ The details that you can see are;
 4. Click "Create New Invoice"
 5. Fill in the necessary details
 
+
 | Parameter                    | Description                                                                                                                                                                                                                                                                                                                                                          |
 | ---------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Invoice Number               | The number of the invoice to be created                                                                                                                                         |
 | Invoice Date      | The date of the invoice                                                                                                                                                                                                                                                                                                       |
-| Due Date               |  Due date of a transaction. You can choose between 7, 14, 30, 45, or 60 days after created date of the invoice OR you can also input a specific/custom date. Your customer will get reminders to pay on D-1, D-Day, and D+7 from the transaction due date.                                                                                                                
+| Due Date               |  Due date of a transaction. You can choose between 7, 14, 30, 45, or 60 days after created date of the invoice OR you can also input a specific/custom date. Your customer will get reminders to pay on D-1, D-Day, and D+7 from the transaction due date.                                                                                                               
 | Link Expiry Datetime          |  You can now set your link expiry date and time for your conveniences. The expiry time selected will also appear on PDF documents. |
 | Customer           | The name of the customer that the invoice is addressed to. You can choose the name of the customer from the dropdown. To create a new customer, follow the instruction [here](https://docs.oyindonesia.com/#creating-a-customer-for-account-receivable-invoice-payment-links-invoice).  |
 | Product Description| The name and/or description of the product                                                                                                                 |
@@ -731,23 +734,33 @@ The details that you can see are;
 | Admin Fee Method             | You can choose between "Included in total amount" or "Excluded from total amount". "Included in total amount" means the admin fee will be deducted from the payment amount made by the customer. "Excluded from total amount" means the admin fee will be added to the customer's total payment (Total Amount = Specified Amount + Admin Fee)                        |
 
 
+
+
 * Create Invoice form with flexible Payment Link Expiry Time
 ![Invoice](images/accountReceivable/AR_expiry_datetime.png)
 
-* Link Expiry Time is reflected on the Account Receivable PDF in OY! dashboard and email sent to customers.
-![Invoice](images/accountReceivable/AR_detailed_timeline.png)
 
-* Adjustable invoice status for “Invoice Only” invoices
-![Invoice](images/accountReceivable/AR_editable_status.png)
+* Invoice details inside dashboard.
+![Invoice](images/accountReceivable/invoice_detail.jpg)
+
+
+* Invoice preview inside dashboard
+![Invoice](images/accountReceivable/detailpdf.jpg)
+
+
 
 
 ### Monitoring the invoices/account receivable
 
-![Invoice](images/accountReceivable/AR_analytics.png)
 
-All of the created invoices can be monitored through your dashboard (Invoice List).
+All of the created invoices (via API or Dashboard) can be monitored through your dashboard (Invoice List).
+
+
+![Invoice](images/accountReceivable/filter.jpg)
+
 
 The transaction details that you can see are:
+
 
 | Column Name           | Definition                                                                                                                                                         |
 | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -755,89 +768,127 @@ The transaction details that you can see are:
 | Customer Name          | The name of the customer whom the invoice belongs to                                        |
 | Amount Billed         | The amount billed for that particular transaction                                                                                                                  |
 | Admin Fee             | The admin fee charged for that particular transaction                                                                                                              |
-| Amount Received       | The amount received / the amount of payment made by the user. This will only be filled in if the user has completed the payment.                                   |
+| Amount Received       | The amount received / the amount of payment made by the user. This will only be filled in after the user has completed the payment.                                   |
 | Invoice Date  | The date of the invoice.                                                                                                                                                        |
 | Payment Date        | The date of payment (if the invoice has been successfully paid by the customer) |
 | Due Date      | The invoice due date                                                                                                                           |
-| Days Past Due | How many days an invoice has gone unpaid past the due date. For example, if due date is 1 July and the invoice is not paid by 4 July, then Days Past Due will be filled in with 3 | 
-| Payment Link Expiry | Maximum date and time that a payment link can stay valid for before expiring permanently |                                                                                                        
+| Days Past Due | How many days an invoice has gone unpaid past the due date. For example, if due date is 1 July and the invoice is not paid by 4 July, then Days Past Due will be filled in with 3 |
+| Payment Link Expiry | Maximum date and time that a payment link can stay valid for before expiring permanently |                                                                                                       
 | Status                | The transaction status. Possible values are CREATED, PAID, CANCELLED, and OVERDUE                                                  |
+
 
 In terms of status, below are the status mapping between API Invoice and status in dashboard
 
+
 | API Invoice Status         | Dashboard status                                                                                                                                                        |
 | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| CREATED, WAITING PAYMENT, FAILED  | CREATED                                                             |
+| CREATED, WAITING PAYMENT, FAILED  | UNPAID                                                             |
 | COMPLETE | PAID                                                           |
 | EXPIRED  | CANCELLED                                                          |
+| OVERDUE | Late Payment Tab |
+
+
 
 
 There are several actions that you can take for the created invoice:
-1. Send invoice --> To send the invoice to the customer's defined email
-2. Download invoice --> To download the PDF file of the invoice
-3. Delete --> To delete the invoice. Only invoice with status CREATED can be deleted
+|Action | Definition |
+| ---------| -----------|
+| Send invoice | To send the invoice to the customer's defined email |
+| Download invoice | To download the PDF file of the invoice |
+| Delete | To delete the invoice. Only invoice with status CREATED can be deleted |
+
+
 
 
 ### Creating a Customer for Account Receivable/Invoice
 
+
 There are 2 ways to create a Customer:
+
 
 Option 1: Through "Create Invoice" menu
 
+
 ![Invoice](images/add_new_customer.png)
+
 
 1. Click dropdown of the "Customer"
 2. Click "Add new customer"
 3. Fill in Customer ID, Customer Name (mandatory), PIC Name, Customer Phone Number, Tax Type (mandatory), Customer Email, Address.
 4. Click save
 
+
 For Tax Type, the explanation is as follows:
+
 
 | Tax Type         | Definition                                                                                                                                                         |
 | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| No tax           | Tax will not be added upon the subtotal  |                                                                                         | PPN 11% Exclusive| PPN 11% of the subtotal will be added upon the subtotal of the invoice. For example is subtotal is 10,000, then the PPN will be 11% of the 10,000 = 1,100                                     |
-| PPN 10% Inclusive |	Tax will not be added upon the subtotal because the subtotal is assumed to be tax inclusive. 10% is applicable for older than April 2022 transaction |
-|PPN 10% Exclusive|	Tax will be added separately to the subtotal. 10% is applicable for older than April 2022 transaction
-|PPN 11% Inclusive |	Tax will not be added upon the subtotal because the subtotal is assumed to be tax inclusive
-|PPN 11% Exclusive|	Tax will be added separately to the subtotal.|
-|PPh23 Non NPWP 4%|	Tax will be substracted from subtotal|
-|PPh 23 NPWP 2%	|Tax will be substracted from subtotal |
+| No tax           | Tax will not be added to the subtotal  |                                                                                         | PPN 11% Exclusive| PPN 11% of the subtotal will be added upon the subtotal of the invoice. For example is subtotal is 10,000, then the PPN will be 11% of the 10,000 = 1,100                                     |
+| PPN 10% Inclusive | Tax will not be added upon the subtotal because the subtotal is assumed to be tax inclusive. 10% is applicable for older than April 2022 transaction |
+|PPN 10% Exclusive| Tax will be added separately to the subtotal. 10% is applicable for older than April 2022 transaction
+|PPN 11% Inclusive |  Tax will not be added upon the subtotal because the subtotal is assumed to be tax inclusive
+|PPN 11% Exclusive| Tax will be added separately to the subtotal.|
+|PPh23 Non NPWP 4%| Tax will be substracted from the subtotal|
+|PPh 23 NPWP 2% |Tax will be substracted from the subtotal |
+
 
 Option 2: Through "Customer Management" menu
 
+
 ![Invoice](images/accountReceivable/AR_customer.png)
+
 
 ![Invoice](images/accountReceivable/AR_new_customer.png)
 
 
-1. Click "Customer Management" sidebar under the "Account Receivable" menu
+
+
+1. Click "Customer Management" sidebar under the "Receive Money" menu
 2. Click "Add new customer"
 3. Fill in Customer ID, Customer Name (mandatory), PIC Name, Customer Phone Number, Tax Type (mandatory), Customer Email, Address.
 4. Click "Save"
 
+
 ![Invoice](images/accountReceivable/AR_new_customer.png)
 
+
 All of the created customer can be monitored through your dashboard (Customer List). There are several actions that you take for the customer data:
+
+
 1. Edit --> To edit the data of the customer
+
+
 1. Activate/Deactivate --> To deactivate / reactivate the customer
 
-If you click the hyperlink of Customer ID, you will be able to see the detailed data of the customer, including the list of invoices belonging to that customer.
 
-![Invoice](images/customer_management_detail.png)
+If you click on the row you selected, you will be able to see the detailed data of the customer, including the list of invoices belonging to that customer.
+
+
+
+
+![Invoice](images/accountReceivable/customermanagement.png)
+
+
+
 
 
 
 ### Amount Customization for Account Receivable/Invoice
 
+
 OY! has a feature that allows you to add the price of the subtotal (addition) and/or deduct the price from subtotal. The step is as follows:
 
+
 ![Invoice](images/add_column_amount_customization.png)
+
+
 
 
 1. Click "add column" below the subtotal
 2. Choose "addition" or "substraction" from the dropdown
 3. Fill in the description
 4. Fill in the amount
+
 
 ![Invoice](images/accountReceivable/AR_kolom.png)
 
@@ -1052,49 +1103,117 @@ Click the button below to see a demonstration and a snippet code on how to displ
 
 <a class="lottie" id="learn-more" href="https://api-docs.oyindonesia.com/#pop-seamless-payment-experience-fund-acceptance"></a>
 
+
 ### Customizing the UI of Payment Link & Account Receivable
 
-In order to maintain a consistent brand experience for your users, you can customize the look and feel of your payment link & Account Receivable in the Dashboard, where you can do the following things;
+
+In order to maintain a consistent brand experience for your users, you can customize the look and feel of your Payment Link & Account Receivable in the Dashboard, where you can do the following things;
+
 
 - Upload a logo
-- Choose the button and the theme color of the payment link
+- Choose the button color and the theme color of the payment link
 
-The updated logo will be reflected in both products
+
+The updated logo will be reflected in both products.
+
 
 How to customize the UI via Payment Link or Account Receivable
+
 
 - Log onto business.oyindonesia.com
 - Go to Payment Link section in the dashboard
 - Click the 'Settings" icon located at the top right of the page
 
+
 ![Payment Link](images/ui_customization_settings_icon.png)
 
-![Account Receivable](images/accountReceivable/AR_analytics.png)
+
+![Account Receivable](images/accountReceivable/appearance_setting.png)
+
 
 - You will be redirected to the Settings page
 
+
 ![Payment Link](images/ui_customization_settings_page.png)
+
 
 - Input the URL for your logo (If you’re using [snipboard.io](https://snipboard.io/), the correct URL should be in “https://i.snipboard.io/image.jpg” format. If you’re using [imgbb.com](https://imgbb.com/), the correct URL should be in “https://i.ibb.co/abcdef/image.jpg” format)
 
+
 - Select your primary color (you can select from our available color picker tools or you can input the 6 digit #HEX code). This primary color will be the main theme color in your payment link and the color of the text in the header
+
 
 - Select your secondary color (you can select from our available color picker tools or you can input the 6 digit #HEX code). This secondary color will be the color of CTA button in your payment link and the color of the text outside the header
 
+
 ![Payment Link](images/ui_customization_color_logo.png)
+
 
 - Click "Save Changes"
 
+
 Note:
 
+
 - By saving the changes, the colours will be applied to the payment links previously created (before saving) as well as the payment links created after saving and also account receivable PDF documents.
-- Please create new payment link or Account Receivable invoice after you successfully save changes to check the difference
+- Please create new payment link or Account Receivable invoice after you successfully save changes to check the difference.
+
 
 Illustration;
 
+
 If we pick green (#HEX code #067610) as the primary color and black (#HEX code #000000) as the secondary color, the look and feel will be as follows;
 
+
 ![Payment Link](images/3p1p_preview.png)
+
+
+### Customizing Account Receivable Invoice Template and Color
+
+
+For more personalized touch on the invoice, you can now customize your template look in the Dashboard, where you can do the following things;
+- Change invoice logo
+- Change Invoice template
+- Change Invoice color
+
+
+How to customize the Account Receivable Invoice UI:
+1. Log onto business.oyindonesia.com
+2. Go to Account Receivable section in the dashboard
+3. Click the 'Settings" icon located at the top right next to “Create New Invoice” button
+4. Click Open Configuration for “Invoice Template”
+5. Input the URL of your logo. Changing the logo here will automatically update the logo in Payment Link, Invoice and Email Notifications.
+6. Select your color theme (you can select from our available color picker tools or you can input the 6 digit #HEX code). This color will be the main theme color in your invoice.
+7. Select your template from our template selections. Changes will be reflected immediately in the preview area
+8. Click “Save”
+
+
+![Account Receivable](images/accountReceivable/appearance_setting.png)
+
+
+![Account Receivable](images/accountReceivable/Templatesettings.png)
+
+
+
+
+### How to Set Automated Invoice Number
+
+
+For your convenience, you have the option to auto-generate invoice numbers. No more worrying about the sequence of invoice numbers. The invoice number template has been pre-defined by OY!.
+
+
+1. Log onto business.oyindonesia.com
+2. Go to Payment Link or Account Receivable section in the dashboard
+3. Click the 'Settings" icon located at the top right next to “Create New Invoice” button
+4. Turn the toggle on. You can now adjust the automatic invoice number format
+5. Click “Save” to continue
+
+
+**This update will not impact your existing invoices**
+
+
+![Account Receivable](images/accountReceivable/invoicenumber.png)
+
 
 
 ### Sending the Created Payment Link through WhatsApp 
