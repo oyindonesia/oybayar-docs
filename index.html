@@ -1339,6 +1339,22 @@
                           </a>
                         </li>
                         <li>
+                          <a href="#customizing-account-receivable-invoice-template-and-color-payment-links-invoice" class="toc-h3 toc-link" data-title="Customizing Account Receivable Invoice Template and Color">
+                            <span class="toc-link-content">
+                              Customizing Account Receivable Invoice Template and Color
+                            </span> 
+                            <img src="images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#how-to-set-automated-invoice-number-payment-links-invoice" class="toc-h3 toc-link" data-title="How to Set Automated Invoice Number">
+                            <span class="toc-link-content">
+                              How to Set Automated Invoice Number
+                            </span> 
+                            <img src="images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
+                          </a>
+                        </li>
+                        <li>
                           <a href="#sending-the-created-payment-link-through-whatsapp-payment-links-invoice" class="toc-h3 toc-link" data-title="Sending the Created Payment Link through WhatsApp">
                             <span class="toc-link-content">
                               Sending the Created Payment Link through WhatsApp
@@ -5844,15 +5860,15 @@ As an alternative to the above, if you would like to simulate the callback for C
 <ul>
 <li><p>Create Invoice form with flexible Payment Link Expiry Time
 <img src="images/accountReceivable/AR_expiry_datetime-babb01ab.png" alt="Invoice" /></p></li>
-<li><p>Link Expiry Time is reflected on the Account Receivable PDF in OY! dashboard and email sent to customers.
-<img src="images/accountReceivable/AR_detailed_timeline-7d944c6a.png" alt="Invoice" /></p></li>
-<li><p>Adjustable invoice status for “Invoice Only” invoices
-<img src="images/accountReceivable/AR_editable_status-1e1c1678.png" alt="Invoice" /></p></li>
+<li><p>Invoice details inside dashboard.
+<img src="images/accountReceivable/invoice_detail-02289222.jpg" alt="Invoice" /></p></li>
+<li><p>Invoice preview inside dashboard
+<img src="images/accountReceivable/detailpdf-218e2ff7.jpg" alt="Invoice" /></p></li>
 </ul>
 <h3 id='monitoring-the-invoices-account-receivable-payment-links-invoice' type='normal'>Monitoring the invoices/account receivable</h3>
-<p><img src="images/accountReceivable/AR_analytics-f54f1550.png" alt="Invoice" /></p>
+<p>All of the created invoices (via API or Dashboard) can be monitored through your dashboard (Invoice List).</p>
 
-<p>All of the created invoices can be monitored through your dashboard (Invoice List).</p>
+<p><img src="images/accountReceivable/filter-0fb87022.jpg" alt="Invoice" /></p>
 
 <p>The transaction details that you can see are:</p>
 
@@ -5880,7 +5896,7 @@ As an alternative to the above, if you would like to simulate the callback for C
 </tr>
 <tr>
 <td>Amount Received</td>
-<td>The amount received / the amount of payment made by the user. This will only be filled in if the user has completed the payment.</td>
+<td>The amount received / the amount of payment made by the user. This will only be filled in after the user has completed the payment.</td>
 </tr>
 <tr>
 <td>Invoice Date</td>
@@ -5918,7 +5934,7 @@ As an alternative to the above, if you would like to simulate the callback for C
 </thead><tbody>
 <tr>
 <td>CREATED, WAITING PAYMENT, FAILED</td>
-<td>CREATED</td>
+<td>UNPAID</td>
 </tr>
 <tr>
 <td>COMPLETE</td>
@@ -5928,12 +5944,18 @@ As an alternative to the above, if you would like to simulate the callback for C
 <td>EXPIRED</td>
 <td>CANCELLED</td>
 </tr>
+<tr>
+<td>OVERDUE</td>
+<td>Late Payment Tab</td>
+</tr>
 </tbody></table>
 
 <p>There are several actions that you can take for the created invoice:
-1. Send invoice --&gt; To send the invoice to the customer&#39;s defined email
-2. Download invoice --&gt; To download the PDF file of the invoice
-3. Delete --&gt; To delete the invoice. Only invoice with status CREATED can be deleted</p>
+|Action | Definition |
+| ---------| -----------|
+| Send invoice | To send the invoice to the customer&#39;s defined email |
+| Download invoice | To download the PDF file of the invoice |
+| Delete | To delete the invoice. Only invoice with status CREATED can be deleted |</p>
 <h3 id='creating-a-customer-for-account-receivable-invoice-payment-links-invoice' type='normal'>Creating a Customer for Account Receivable/Invoice</h3>
 <p>There are 2 ways to create a Customer:</p>
 
@@ -5958,7 +5980,7 @@ As an alternative to the above, if you would like to simulate the callback for C
 </thead><tbody>
 <tr>
 <td>No tax</td>
-<td>Tax will not be added upon the subtotal</td>
+<td>Tax will not be added to the subtotal</td>
 </tr>
 <tr>
 <td>PPN 10% Inclusive</td>
@@ -5978,11 +6000,11 @@ As an alternative to the above, if you would like to simulate the callback for C
 </tr>
 <tr>
 <td>PPh23 Non NPWP 4%</td>
-<td>Tax will be substracted from subtotal</td>
+<td>Tax will be substracted from the subtotal</td>
 </tr>
 <tr>
 <td>PPh 23 NPWP 2%</td>
-<td>Tax will be substracted from subtotal</td>
+<td>Tax will be substracted from the subtotal</td>
 </tr>
 </tbody></table>
 
@@ -5993,7 +6015,7 @@ As an alternative to the above, if you would like to simulate the callback for C
 <p><img src="images/accountReceivable/AR_new_customer-a0eeba3c.png" alt="Invoice" /></p>
 
 <ol>
-<li>Click &quot;Customer Management&quot; sidebar under the &quot;Account Receivable&quot; menu</li>
+<li>Click &quot;Customer Management&quot; sidebar under the &quot;Receive Money&quot; menu</li>
 <li>Click &quot;Add new customer&quot;</li>
 <li>Fill in Customer ID, Customer Name (mandatory), PIC Name, Customer Phone Number, Tax Type (mandatory), Customer Email, Address.</li>
 <li>Click &quot;Save&quot;</li>
@@ -6001,13 +6023,16 @@ As an alternative to the above, if you would like to simulate the callback for C
 
 <p><img src="images/accountReceivable/AR_new_customer-a0eeba3c.png" alt="Invoice" /></p>
 
-<p>All of the created customer can be monitored through your dashboard (Customer List). There are several actions that you take for the customer data:
-1. Edit --&gt; To edit the data of the customer
-1. Activate/Deactivate --&gt; To deactivate / reactivate the customer</p>
+<p>All of the created customer can be monitored through your dashboard (Customer List). There are several actions that you take for the customer data:</p>
 
-<p>If you click the hyperlink of Customer ID, you will be able to see the detailed data of the customer, including the list of invoices belonging to that customer.</p>
+<ol>
+<li><p>Edit --&gt; To edit the data of the customer</p></li>
+<li><p>Activate/Deactivate --&gt; To deactivate / reactivate the customer</p></li>
+</ol>
 
-<p><img src="images/customer_management_detail-3e5e8855.png" alt="Invoice" /></p>
+<p>If you click on the row you selected, you will be able to see the detailed data of the customer, including the list of invoices belonging to that customer.</p>
+
+<p><img src="images/accountReceivable/customermanagement-7062c7ad.png" alt="Invoice" /></p>
 <h3 id='amount-customization-for-account-receivable-invoice-payment-links-invoice' type='normal'>Amount Customization for Account Receivable/Invoice</h3>
 <p>OY! has a feature that allows you to add the price of the subtotal (addition) and/or deduct the price from subtotal. The step is as follows:</p>
 
@@ -6225,14 +6250,14 @@ As an alternative to the above, if you would like to simulate the callback for C
 
 <p><a class="lottie" id="learn-more" href="https://api-docs.oyindonesia.com/#pop-seamless-payment-experience-fund-acceptance"></a></p>
 <h3 id='customizing-the-ui-of-payment-link-amp-account-receivable-payment-links-invoice' type='normal'>Customizing the UI of Payment Link &amp; Account Receivable</h3>
-<p>In order to maintain a consistent brand experience for your users, you can customize the look and feel of your payment link &amp; Account Receivable in the Dashboard, where you can do the following things;</p>
+<p>In order to maintain a consistent brand experience for your users, you can customize the look and feel of your Payment Link &amp; Account Receivable in the Dashboard, where you can do the following things;</p>
 
 <ul>
 <li>Upload a logo</li>
-<li>Choose the button and the theme color of the payment link</li>
+<li>Choose the button color and the theme color of the payment link</li>
 </ul>
 
-<p>The updated logo will be reflected in both products</p>
+<p>The updated logo will be reflected in both products.</p>
 
 <p>How to customize the UI via Payment Link or Account Receivable</p>
 
@@ -6244,7 +6269,7 @@ As an alternative to the above, if you would like to simulate the callback for C
 
 <p><img src="images/ui_customization_settings_icon-ba305741.png" alt="Payment Link" /></p>
 
-<p><img src="images/accountReceivable/AR_analytics-f54f1550.png" alt="Account Receivable" /></p>
+<p><img src="images/accountReceivable/appearance_setting-aedefcb1.png" alt="Account Receivable" /></p>
 
 <ul>
 <li>You will be redirected to the Settings page</li>
@@ -6268,7 +6293,7 @@ As an alternative to the above, if you would like to simulate the callback for C
 
 <ul>
 <li>By saving the changes, the colours will be applied to the payment links previously created (before saving) as well as the payment links created after saving and also account receivable PDF documents.</li>
-<li>Please create new payment link or Account Receivable invoice after you successfully save changes to check the difference</li>
+<li>Please create new payment link or Account Receivable invoice after you successfully save changes to check the difference.</li>
 </ul>
 
 <p>Illustration;</p>
@@ -6276,6 +6301,39 @@ As an alternative to the above, if you would like to simulate the callback for C
 <p>If we pick green (#HEX code #067610) as the primary color and black (#HEX code #000000) as the secondary color, the look and feel will be as follows;</p>
 
 <p><img src="images/3p1p_preview-d8f1699d.png" alt="Payment Link" /></p>
+<h3 id='customizing-account-receivable-invoice-template-and-color-payment-links-invoice' type='normal'>Customizing Account Receivable Invoice Template and Color</h3>
+<p>For more personalized touch on the invoice, you can now customize your template look in the Dashboard, where you can do the following things;
+- Change invoice logo
+- Change Invoice template
+- Change Invoice color</p>
+
+<p>How to customize the Account Receivable Invoice UI:
+1. Log onto business.oyindonesia.com
+2. Go to Account Receivable section in the dashboard
+3. Click the &#39;Settings&quot; icon located at the top right next to “Create New Invoice” button
+4. Click Open Configuration for “Invoice Template”
+5. Input the URL of your logo. Changing the logo here will automatically update the logo in Payment Link, Invoice and Email Notifications.
+6. Select your color theme (you can select from our available color picker tools or you can input the 6 digit #HEX code). This color will be the main theme color in your invoice.
+7. Select your template from our template selections. Changes will be reflected immediately in the preview area
+8. Click “Save”</p>
+
+<p><img src="images/accountReceivable/appearance_setting-aedefcb1.png" alt="Account Receivable" /></p>
+
+<p><img src="images/images/accountReceivable/Templatesettings.png" alt="Account Receivable" /></p>
+<h3 id='how-to-set-automated-invoice-number-payment-links-invoice' type='normal'>How to Set Automated Invoice Number</h3>
+<p>For your convenience, you have the option to auto-generate invoice numbers. No more worrying about the sequence of invoice numbers. The invoice number template has been pre-defined by OY!.</p>
+
+<ol>
+<li>Log onto business.oyindonesia.com</li>
+<li>Go to Payment Link or Account Receivable section in the dashboard</li>
+<li>Click the &#39;Settings&quot; icon located at the top right next to “Create New Invoice” button</li>
+<li>Turn the toggle on. You can now adjust the automatic invoice number format</li>
+<li>Click “Save” to continue</li>
+</ol>
+
+<p><strong>This update will not impact your existing invoices</strong></p>
+
+<p><img src="images/accountReceivable/invoicenumber-d9ec6dab.png" alt="Account Receivable" /></p>
 <h3 id='sending-the-created-payment-link-through-whatsapp-payment-links-invoice' type='normal'>Sending the Created Payment Link through WhatsApp</h3>
 <p>For better payment conversion, you can send the created link to your users through WhatsApp. The message template is pre-defined by OY. Contact our Business Representative if you&#39;d like to activate this feature.</p>
 
