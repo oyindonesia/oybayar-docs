@@ -88,7 +88,7 @@ Follow the below steps to test the VA flow:
 
 3. Create a VA number by sending a ‘POST’ request to https://api-stg.oyindonesia.com/api/generate-static-va using your staging API key. Enter the required and optional fields, as referenced in the [API reference docs](https://api-docs.oyindonesia.com/#create-va)
 
-4. After VA number is generated, partner can simulate VA payment through your dashboard (in Demo environment) by going to Settings, and choose "Bank Transfer Callback". [Bank Transfer Callback](images/bank_transfer_callback_va.png)
+4. After VA number is generated, partner can simulate VA payment through your dashboard (in Demo environment) by going to Settings, and choose "Bank Transfer Callback". ![Bank Transfer Callback](images/bank_transfer_callback_va.png)
 
 5. Choose Virtual Account and fill in the bank name associated with the generated VA number, the generated VA number, amount, payment date & time
 
@@ -1372,7 +1372,7 @@ Follow the below steps to test the Payment Routing flow:
 1. Create an account
 1. Send a request to activate API Payment Routing product and obtain staging API Key to your business representative
 1. Send a ‘POST’ request _https://partner.oyindonesia.com/api/payment-routing/create-transaction_ (https://partner.oyindonesia.com/api/payment-routing/create-transaction) using your staging API key. Enter the required and optional fields, as referenced in the API reference docs (https://api-docs.oyindonesia.com/#create-payment-routing).
-1. If you use Bank Transfer (via Virtual Account or Unique Code) as the payment method, you can simulate the payment through your dashboard (in Staging environment) by going to Settings, and choose "Bank Transfer Callback". [Bank Transfer Callback](images/bank_transfer_callback_va.png)
+1. If you use Bank Transfer (via Virtual Account or Unique Code) as the payment method, you can simulate the payment through your dashboard (in Staging environment) by going to Settings, and choose "Bank Transfer Callback". ![Bank Transfer Callback](images/bank_transfer_callback_va.png)
 1. If you use Ewallet as the payment method, you can simulate the payment through your dashboard (in Demo environment) by going to Settings, and choose "Ewallet Callback".
 1. If you use CC/DC as the payment method, you can simulate the payment through your dashboard (in Demo environment) by going to Settings, and choose "CC/DC Callback".
 1. If you use Payment Link as the payment method, you can open the link and simulate payment from there as an alternative.
