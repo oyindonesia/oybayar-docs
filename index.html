@@ -4608,9 +4608,9 @@ Once a transaction is successfully created, all transaction details and updates 
 <li><p>Create an account</p></li>
 <li><p>Send a request to activate API VA Aggregator product and obtain staging API Key to your business representative</p></li>
 <li><p>Create a VA number by sending a ‘POST’ request to https://api-stg.oyindonesia.com/api/generate-static-va using your staging API key. Enter the required and optional fields, as referenced in the <a href="https://api-docs.oyindonesia.com/#create-va">API reference docs</a></p></li>
-<li><p>After VA number is generated, partner can simulate VA payment through your dashboard (in Staging environment) by going to Settings, and choose &quot;VA Callback&quot;</p></li>
-<li><p>Fill in the bank name associated with the generated VA number, the generated VA number, amount, and payment date &amp; time</p></li>
-<li><p>If payment is successful, we will send a callback to the registered staging callback URL destination</p></li>
+<li><p>After VA number is generated, partner can simulate VA payment through your dashboard (in Demo environment) by going to Settings, and choose &quot;Bank Transfer Callback&quot;. <a href="images/bank_transfer_callback_va-f012ccef.png">Bank Transfer Callback</a></p></li>
+<li><p>Choose Virtual Account and fill in the bank name associated with the generated VA number, the generated VA number, amount, payment date &amp; time</p></li>
+<li><p>If payment is successful, we will send a callback to the registered demo callback URL destination</p></li>
 <li><p>The payment made to the VA can be monitored through OY! dashboard. Go to &quot;Virtual Account&quot; menu, and choose &quot;Incoming Payment&quot;</p></li>
 </ol>
 <h4 id='create-va-via-dashboard-testing' type='normal'>Create VA via Dashboard</h4>
@@ -6533,15 +6533,17 @@ As an alternative to the above, if you would like to simulate the callback for C
 <li>Integrate with our Payment Routing API</li>
 </ol>
 <h3 id='testing-api-payment-routing' type='normal'>Testing</h3>
-<p>Once you successfully create an OY! account, you can immediately simulate VA payments via API.
+<p>Once you successfully create an OY! account, you can immediately simulate Bank Transfer (Virtual Account and Unique Code), Ewallet, CC/DC payments via API.
 Follow the below steps to test the Payment Routing flow:</p>
 
 <ol>
 <li>Create an account</li>
 <li>Send a request to activate API Payment Routing product and obtain staging API Key to your business representative</li>
 <li>Send a ‘POST’ request <em>https://partner.oyindonesia.com/api/payment-routing/create-transaction</em> (https://partner.oyindonesia.com/api/payment-routing/create-transaction) using your staging API key. Enter the required and optional fields, as referenced in the API reference docs (https://api-docs.oyindonesia.com/#create-payment-routing).</li>
-<li>If you use VA as the payment method, after VA number is generated, you can simulate the payment through your dashboard (in Staging environment) by going to Settings, and choose &quot;VA Callback&quot;.</li>
-<li>If you use Payment Link as the payment method, you can open the link and simulate payment from there.</li>
+<li>If you use Bank Transfer (via Virtual Account or Unique Code) as the payment method, you can simulate the payment through your dashboard (in Staging environment) by going to Settings, and choose &quot;Bank Transfer Callback&quot;. <a href="images/bank_transfer_callback_va-f012ccef.png">Bank Transfer Callback</a></li>
+<li>If you use Ewallet as the payment method, you can simulate the payment through your dashboard (in Demo environment) by going to Settings, and choose &quot;Ewallet Callback&quot;.</li>
+<li>If you use CC/DC as the payment method, you can simulate the payment through your dashboard (in Demo environment) by going to Settings, and choose &quot;CC/DC Callback&quot;.</li>
+<li>If you use Payment Link as the payment method, you can open the link and simulate payment from there as an alternative.</li>
 <li>If payment is successful, we will send a callback to the registered staging callback URL destination.</li>
 <li>You can monitor Payment Routing transaction through OY! Dashboard or call the endpoint API. Go to “Payment Routing” menu to monitor your transactions.</li>
 </ol>
