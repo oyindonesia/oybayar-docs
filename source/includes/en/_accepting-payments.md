@@ -40,7 +40,7 @@ Our virtual accounts are adjustable according to your needs. We offer options of
 | Amount Type     | Opened Amount Virtual Account | VA that accepts payment of any amount                                                                        |
 | Usage Frequency | Single Use Virtual Account    | VA that expires after a single payment. A single use configuration can only be set up for a dynamic VA       |
 | Usage Frequency | Multiple Use Virtual Account  | VA that only expires when expiration date is reached or when it is manually deactivated                      |
-| VA Number       | Customized or predetermined   | You may personalize the VA suffix using the numbers you want (e.g. your end-users' phone number or billing number). To enable VA number customization, please contact your Business Representative         |
+| VA Number       | Customized or predetermined   | You may personalize the VA suffix using the numbers you want (e.g. your end-users' phone number or billing number). To enable VA number customization, please contact your Business Representative. Currently, this customizable VA number feature is only available for BRI and CIMB.        |
 
 7. **Capability to update VA** Attribute that can be updated:
    * amount
