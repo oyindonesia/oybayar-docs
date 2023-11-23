@@ -1,6 +1,9 @@
 # Unique header generation
 require './lib/unique_head.rb'
 
+activate :i18n, :mount_at_root => :en, :langs => [:id, :en]
+activate :livereload
+
 # Markdown
 set :markdown_engine, :redcarpet
 set :markdown,
@@ -23,7 +26,7 @@ set :fonts_dir, 'fonts'
 # Activate the syntax highlighter
 activate :syntax
 ready do
-  require './lib/monokai_sublime_slate.rb'
+  require './lib/oy_theme.rb'
   require './lib/multilang.rb'
 end
 

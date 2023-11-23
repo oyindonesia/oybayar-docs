@@ -8,7 +8,8 @@ on:
 
 jobs:
   test:
-    runs-on: ubuntu-latest
+    # See https://github.com/oyindonesia/oybayar-docs/pull/119 about the reason of using 20.04
+    runs-on: ubuntu-20.04
 
     strategy:
       matrix:
@@ -28,10 +29,6 @@ jobs:
         restore-keys: |
           gems-${{ runner.os }}-${{ matrix.ruby-version }}-
           gems-${{ runner.os }}-
-
-    # necessary to get ruby 2.3 to work nicely with bundler vendor/bundle cache
-    # can remove once ruby 2.3 is no longer supported
-    - run: gem update --system
 
     - run: bundle config set deployment 'true'
     - name: bundle install
