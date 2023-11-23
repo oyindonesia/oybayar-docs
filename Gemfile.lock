@@ -75,6 +75,10 @@ GEM
       toml
       uglifier (~> 3.0)
       webrick
+    middleman-livereload (3.4.7)
+      em-websocket (~> 0.5.1)
+      middleman-core (>= 3.3)
+      rack-livereload (~> 0.3.15)
     middleman-sprockets (4.1.1)
       middleman-core (~> 4.0)
       sprockets (>= 3.0)
@@ -96,6 +100,8 @@ GEM
     public_suffix (5.0.1)
     racc (1.6.0)
     rack (2.2.6.2)
+    rack-livereload (0.3.17)
+      rack
     rb-fsevent (0.11.2)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
@@ -131,6 +137,7 @@ PLATFORMS
 DEPENDENCIES
   middleman (~> 4.4)
   middleman-autoprefixer (~> 3.0)
+  middleman-livereload (~> 3.4)
   middleman-sprockets (~> 4.1)
   middleman-syntax (~> 3.2)
   nokogiri (~> 1.13.3)
