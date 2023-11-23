@@ -1082,6 +1082,14 @@
                     </a>
                     <ul class="toc-list-h3">
                         <li>
+                          <a href="#key-features-corporate-card" class="toc-h3 toc-link" data-title="Key Features">
+                            <span class="toc-link-content">
+                              Key Features
+                            </span> 
+                            <img src="../images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
+                          </a>
+                        </li>
+                        <li>
                           <a href="#how-to-create-corporate-card-corporate-card" class="toc-h3 toc-link" data-title="How to Create Corporate Card">
                             <span class="toc-link-content">
                               How to Create Corporate Card
@@ -1173,6 +1181,14 @@
                          <img src="../images/arrow-bottom-425d93ba.svg" class="active-parent icon-arrow" alt="" />
                     </a>
                     <ul class="toc-list-h3">
+                        <li>
+                          <a href="#key-features-reimbursement" class="toc-h3 toc-link" data-title="Key Features">
+                            <span class="toc-link-content">
+                              Key Features
+                            </span> 
+                            <img src="../images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
+                          </a>
+                        </li>
                         <li>
                           <a href="#how-to-set-approver-reporting-manager-reimbursement" class="toc-h3 toc-link" data-title="How to Set Approver (Reporting Manager)">
                             <span class="toc-link-content">
@@ -4076,9 +4092,7 @@ Detailed step-by-step instructions on setting up user management and the differe
 <p>Default approval: Super Admin, Admin, and Approval.</p>
 <h2 id='corporate-card-kirim-uang' type='normal'>Corporate Card</h2>
 <p>OY! Corporate Card product provides the capability to create customized cards that can be used to manage online subscriptions without hassle. Corporate Card can be generated through the OY! dashboard, therefore no technical integration is required to use this product.</p>
-
-<p><strong>Key Features</strong> </p>
-
+<h3 id='key-features-corporate-card' type='normal'>Key Features</h3>
 <table><thead>
 <tr>
 <th>Condition</th>
@@ -4136,12 +4150,15 @@ Detailed step-by-step instructions on setting up user management and the differe
 
 <p><img src="../images/virtualCard/carddetails-4d32f98e.jpg" alt="Card Form" /></p>
 <h3 id='how-to-transact-with-card-corporate-card' type='normal'>How to Transact with Card</h3>
-<p>Steps to use card for online transaction:
-1. Access your card information (including remaining balance &amp; transaction) via email and enter OTP sent to the phone number registered.
-2. Once accessed, input all of you card information into merchant side under “Credit / Debit Card” Option
-3. Input 16 digit number, expiry date (MM/YY) and CVV
-4. Submit the information and proceed with the transaction and the transaction is successful.
-5. For record purposes, you can upload the invoice for each transaction inside OY! dashboard.</p>
+<p>Steps to use card for online transaction:</p>
+
+<ol>
+<li>Access your card information (including remaining balance &amp; transaction) via email and enter OTP sent to the phone number registered.</li>
+<li>Once accessed, input all of you card information into merchant side under “Credit / Debit Card” Option</li>
+<li>Input 16 digit number, expiry date (MM/YY) and CVV</li>
+<li>Submit the information and proceed with the transaction and the transaction is successful.</li>
+<li>For record purposes, you can upload the invoice for each transaction inside OY! dashboard.</li>
+</ol>
 
 <ul>
 <li>Virtual Card Information</li>
@@ -4516,9 +4533,7 @@ Once a transaction is successfully created, all transaction details and updates 
 <img src="../images/internationalTransfer/transaction_detail-3f419e0b.png" alt="Transaction Detail" /></p>
 <h2 id='reimbursement-kirim-uang' type='normal'>Reimbursement</h2>
 <p>OY! Reimbursement product provides the capability to handle employee reimbursement requests and fund disbursement on one platform. Reimbursement can be done easily without any employee signing up for an OY! Account. No technical integration is required to utilize the product.</p>
-
-<p><strong>Key Features</strong> </p>
-
+<h3 id='key-features-reimbursement' type='normal'>Key Features</h3>
 <table><thead>
 <tr>
 <th>Feature</th>
@@ -4561,10 +4576,10 @@ Once a transaction is successfully created, all transaction details and updates 
 
 <p><img src="../images/reimbursement/Approver_Registration-39172cd3.png" alt="Approver registration" /></p>
 
-<p><strong>Notes</strong>
-* Approver emails are mapped based on department names, and duplicate department names are not allowed.</p>
+<p><strong>Notes</strong></p>
 
 <ul>
+<li><p>Approver emails are mapped based on department names, and duplicate department names are not allowed.</p></li>
 <li><p>After submission, addition, editing, or deletion of existing approvers can only be done via Customer Service.</p></li>
 <li><p>Reporting managers will only receive notifications via email; no dashboard access is required.</p></li>
 <li><p>The approver list view is accessible in the dashboard under reimbursement configuration.</p></li>
@@ -4647,9 +4662,12 @@ Once a transaction is successfully created, all transaction details and updates 
 </tr>
 </tbody></table>
 
-<p><strong>Notes</strong>
-* You can resend the link anytime in case employees lose the email.
-* A single request is applicable for 1 item only.</p>
+<p><strong>Notes</strong></p>
+
+<ul>
+<li>You can resend the link anytime in case employees lose the email.</li>
+<li>A single request is applicable for 1 item only.</li>
+</ul>
 <h3 id='how-to-schedule-disbursement-reimbursement' type='normal'>How to Schedule Disbursement</h3>
 <p>Scheduled disbursement can only be done if the reporting manager has approved the request, and the dashboard admin agrees to schedule the disbursement.</p>
 
@@ -4675,17 +4693,47 @@ Once a transaction is successfully created, all transaction details and updates 
 
 <p><strong>Note:</strong> If there is insufficient balance on the day of scheduled disbursement, you can retry manually when the balance is sufficient via the dashboard.</p>
 
-<p><strong>Dashboard Status</strong>
-Status | Description
------- | -----------
-Pending Approval | Submitted by employee but no action yet from approver 
-Need Approval | Approved by approver but no action yet from admin
-Canceled | Cancelation can only be performed by employee. No further action needed
-Completed | Money disbursed
-Rejected | Rejected by admin or approver
-Scheduled Payment | After admin has approved and set scheduled payment time
-Failed | Disbursement failed due to timeout or vendor issue
-Insufficient Balance | Fail to disburse due to insufficient balance (admin can retry payment manually from dashboard)</p>
+<p><strong>Dashboard Status</strong></p>
+
+<table><thead>
+<tr>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Pending Approval</td>
+<td>Submitted by employee but no action yet from approver</td>
+</tr>
+<tr>
+<td>Need Approval</td>
+<td>Approved by approver but no action yet from admin</td>
+</tr>
+<tr>
+<td>Canceled</td>
+<td>Cancelation can only be performed by employee. No further action needed</td>
+</tr>
+<tr>
+<td>Completed</td>
+<td>Money disbursed</td>
+</tr>
+<tr>
+<td>Rejected</td>
+<td>Rejected by admin or approver</td>
+</tr>
+<tr>
+<td>Scheduled Payment</td>
+<td>After admin has approved and set scheduled payment time</td>
+</tr>
+<tr>
+<td>Failed</td>
+<td>Disbursement failed due to timeout or vendor issue</td>
+</tr>
+<tr>
+<td>Insufficient Balance</td>
+<td>Fail to disburse due to insufficient balance (admin can retry payment manually from dashboard)</td>
+</tr>
+</tbody></table>
 <h3 id='how-to-approve-transaction-reporting-manager-reimbursement' type='normal'>How to Approve Transaction (Reporting Manager)</h3>
 <ol>
 <li>When a new request is submitted by an employee, the respective approver will receive a notification and an approver portal link via email.</li>
@@ -6217,12 +6265,27 @@ As an alternative to the above, if you would like to simulate the callback for C
 </tr>
 </tbody></table>
 
-<p>There are several actions that you can take for the created invoice:
-|Action | Definition |
-| ---------| -----------|
-| Send invoice | To send the invoice to the customer&#39;s defined email |
-| Download invoice | To download the PDF file of the invoice |
-| Delete | To delete the invoice. Only invoice with status CREATED can be deleted |</p>
+<p>There are several actions that you can take for the created invoice:</p>
+
+<table><thead>
+<tr>
+<th>Action</th>
+<th>Definition</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Send invoice</td>
+<td>To send the invoice to the customer&#39;s defined email</td>
+</tr>
+<tr>
+<td>Download invoice</td>
+<td>To download the PDF file of the invoice</td>
+</tr>
+<tr>
+<td>Delete</td>
+<td>To delete the invoice. Only invoice with status CREATED can be deleted</td>
+</tr>
+</tbody></table>
 <h3 id='creating-a-customer-for-account-receivable-invoice-payment-links-invoice' type='normal'>Creating a Customer for Account Receivable/Invoice</h3>
 <p>There are 2 ways to create a Customer:</p>
 
@@ -6569,20 +6632,26 @@ As an alternative to the above, if you would like to simulate the callback for C
 
 <p><img src="../images/3p1p_preview-d8f1699d.png" alt="Payment Link" /></p>
 <h3 id='customizing-account-receivable-invoice-template-and-color-payment-links-invoice' type='normal'>Customizing Account Receivable Invoice Template and Color</h3>
-<p>For more personalized touch on the invoice, you can now customize your template look in the Dashboard, where you can do the following things;
-- Change invoice logo
-- Change Invoice template
-- Change Invoice color</p>
+<p>For more personalized touch on the invoice, you can now customize your template look in the Dashboard, where you can do the following things;</p>
 
-<p>How to customize the Account Receivable Invoice UI:
-1. Log onto business.oyindonesia.com
-2. Go to Account Receivable section in the dashboard
-3. Click the &#39;Settings&quot; icon located at the top right next to “Create New Invoice” button
-4. Click Open Configuration for “Invoice Template”
-5. Input the URL of your logo. Changing the logo here will automatically update the logo in Payment Link, Invoice and Email Notifications.
-6. Select your color theme (you can select from our available color picker tools or you can input the 6 digit #HEX code). This color will be the main theme color in your invoice.
-7. Select your template from our template selections. Changes will be reflected immediately in the preview area
-8. Click “Save”</p>
+<ul>
+<li>Change invoice logo</li>
+<li>Change Invoice template</li>
+<li>Change Invoice color</li>
+</ul>
+
+<p>How to customize the Account Receivable Invoice UI:</p>
+
+<ol>
+<li>Log onto business.oyindonesia.com</li>
+<li>Go to Account Receivable section in the dashboard</li>
+<li>Click the &#39;Settings&quot; icon located at the top right next to “Create New Invoice” button</li>
+<li>Click Open Configuration for “Invoice Template”</li>
+<li>Input the URL of your logo. Changing the logo here will automatically update the logo in Payment Link, Invoice and Email Notifications.</li>
+<li>Select your color theme (you can select from our available color picker tools or you can input the 6 digit #HEX code). This color will be the main theme color in your invoice.</li>
+<li>Select your template from our template selections. Changes will be reflected immediately in the preview area</li>
+<li>Click “Save”</li>
+</ol>
 
 <p><img src="../images/accountReceivable/appearance_setting-aedefcb1.png" alt="Account Receivable" /></p>
 
