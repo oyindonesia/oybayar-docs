@@ -1164,3 +1164,189 @@ If your transaction has failed to process, the status column will be updated as 
 
 ![List Of Transactions](images/internationalTransfer/list_of_transactions.png)
 ![Transaction Detail](images/internationalTransfer/transaction_detail.png)
+
+
+
+
+## Reimbursement
+OY! Reimbursement product provides the capability to handle employee reimbursement requests and fund disbursement on one platform. Reimbursement can be done easily without any employee signing up for an OY! Account. No technical integration is required to utilize the product.
+
+
+**Key Features** 
+
+Feature | Description
+------ | -----------
+**Approval Capability** | To ensure no fraudulent requests are made, a double approval mechanism exists in the product and is mandatory for the reimbursement process. The first layer is for the reporting manager via email, and the second layer applies to the finance team via the dashboard.
+**Fund Disbursement** | Not only does the product process disbursement requests, but you can also immediately schedule the disbursement time after approval from the reporting manager. Currently, the scheduled disbursement options are 1 day, 3 days, 7 days, and 14 days, allowing flexibility in managing cash flows.
+**Reimbursement Details** | Every reimbursement request can be accessed through the OY! dashboard, including the uploaded file, to ensure it matches the requested amount.
+**Reimbursement Tracking** | For employees, no more hassle in checking reimbursement progress with the HR or finance team. Your employee will receive a tracking email to check progress in real-time.
+
+
+
+### How to Set Approver (Reporting Manager)
+
+Setting up the approver will only occur once when the page is first opened.
+
+1. Log in to your OY! dashboard.
+2. Select the "Production" environment.
+3. Navigate to "Reimbursement" product under the Expense Management menu.
+4. Click on "Create Reimbursement Link."
+5. Choose "Register Approver."
+6. Fill in the approver's name, email address, and department.
+7. After registration, the approver will receive a notification via email.
+
+
+* Approver registration page
+
+![Approver registration](images/reimbursement/Approver_Registration.png)
+
+
+**Notes**
+* Approver emails are mapped based on department names, and duplicate department names are not allowed.
+
+* After submission, addition, editing, or deletion of existing approvers can only be done via Customer Service.
+
+* Reporting managers will only receive notifications via email; no dashboard access is required.
+
+* The approver list view is accessible in the dashboard under reimbursement configuration.
+
+
+
+
+### How to Distribute Reimbursement Link
+
+After Approver registration, you can start sharing the reimbursement link with employees through two methods:
+
+1. Via Bulk Upload:
+    1. Download the sample file and input a list of employee emails in CSV or XLSX format.
+    2. Upload the file for email distribution.
+
+2. Via Copy Link:
+    1. Copy the link and distribute it using any convenient method.
+
+3. Employees will find the form link in their email and can proceed to submit a request.
+
+
+
+* Link distribution page
+
+![Distribution page](images/reimbursement/Reimbursement_Link.png)
+
+
+* Form page
+
+![Form page](images/reimbursement/Reimbursement_Step1.png)
+
+![Form page](images/reimbursement/Reimbursement_Step2.png)
+
+
+**Mandatory Parameters in the Form**
+
+Parameter | Description
+------ | -----------
+Employee Name | Employee identification purposes
+Employee Email | This will be used to trigger tracking to employee post-submission
+Department | Department will be mapped to approver's email directly
+Bank Name | Disbursement bank name
+Account Number | Disbursement bank account number. Bank account validity can be checked prior reimbursement submission
+Item | Item name or description
+Amount | Reimbursement total amount (in IDR). Minimum Rp 20.000
+Upload File | Placeholder to upload invoice document. Max 2 file with PDF, JPG, & PNG format (Each file max 5MB ).
+Transaction Date | Date of transaction printed on the invoice
+
+
+
+**Notes**
+* You can resend the link anytime in case employees lose the email.
+* A single request is applicable for 1 item only.
+
+
+
+### How to Schedule Disbursement
+
+Scheduled disbursement can only be done if the reporting manager has approved the request, and the dashboard admin agrees to schedule the disbursement.
+
+1. Open the OY! Dashboard and check the Reimbursement transaction list.
+2. Requests with "Need Approval" status will require action from the dashboard side.
+3. The admin can either reject with a reason or approve with a scheduled disbursement day.
+
+
+* Request list in dashboard
+
+![Dashboard list](images/reimbursement/Reimbursement_List.png)
+
+
+* Request detail in dashboard
+
+![Request Detail](images/reimbursement/Reimbursement_Detail1.png)
+
+![Request Detail](images/reimbursement/Reimbursement_Detail2.png)
+
+
+**Note:** If there is insufficient balance on the day of scheduled disbursement, you can retry manually when the balance is sufficient via the dashboard.
+
+
+
+**Dashboard Status**
+Status | Description
+------ | -----------
+Pending Approval | Submitted by employee but no action yet from approver 
+Need Approval | Approved by approver but no action yet from admin
+Canceled | Cancelation can only be performed by employee. No further action needed
+Completed | Money disbursed
+Rejected | Rejected by admin or approver
+Scheduled Payment | After admin has approved and set scheduled payment time
+Failed | Disbursement failed due to timeout or vendor issue
+Insufficient Balance | Fail to disburse due to insufficient balance (admin can retry payment manually from dashboard)
+
+
+
+### How to Approve Transaction (Reporting Manager)
+
+1. When a new request is submitted by an employee, the respective approver will receive a notification and an approver portal link via email.
+2. Inside the link, the approver can find all reimbursement requests with certain statuses (rejected, approved, and need approval).
+3. The approver can choose to either reject the request with a reason or simply approve.
+4. Approving the request will trigger an update inside the OY! Dashboard and employee tracker page.
+
+
+* Approver portal (unique per approver)
+
+![Approver portal](images/reimbursement/Approver_Portal_List.png)
+
+* Approver - request details with action buttons
+
+![Request details](images/reimbursement/Approver_List_Detail.png)
+
+
+
+### How to Check Reimbursement Progress (Employee)
+
+1. Employees can fill in the reimbursement request form portal via email.
+2. Once submitted, the employee will receive a tracking email.
+3. Inside the link, employees can find real-time reimbursement progress, from the submission timestamp until disbursement timestamp.
+4. Employees can still cancel the request if the approver has not yet approved.
+
+
+* Employee Tracker page
+
+![Employee tracker](images/reimbursement/Employee_Tracker1.png)
+
+* Employee Tracker page -- transaction detail
+
+![Employee tracker](images/reimbursement/Employee_Tracker2.png)
+
+
+
+**Tracker Status**
+
+Status | Description
+------ | -----------
+Pending Payment | Request approved but money not yet received
+Scheduled Payment | After the admin has approved and set scheduled payment time
+Rejected | Rejected by admin or approver
+Canceled | Canceled by employee
+Waiting Approval | Submitted but no action yet from approver or admin
+Completed | Money has been disbursed successfully
+
+
+**Note:** The tracking email is applicable to each employee per reimbursement request.
