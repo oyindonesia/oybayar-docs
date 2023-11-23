@@ -853,7 +853,7 @@ Default approval: Super Admin, Admin, and Approval.
 OY! Corporate Card product provides the capability to create customized cards that can be used to manage online subscriptions without hassle. Corporate Card can be generated through the OY! dashboard, therefore no technical integration is required to use this product.
 
 
-**Key Features** 
+### Key Features
 
 Condition | Description
 ------ | -----------
@@ -895,6 +895,7 @@ You can create new virtual card by following these steps:
 
 ### How to Transact with Card 
 Steps to use card for online transaction:
+
 1. Access your card information (including remaining balance & transaction) via email and enter OTP sent to the phone number registered.
 2. Once accessed, input all of you card information into merchant side under “Credit / Debit Card” Option
 3. Input 16 digit number, expiry date (MM/YY) and CVV
@@ -1172,7 +1173,7 @@ If your transaction has failed to process, the status column will be updated as 
 OY! Reimbursement product provides the capability to handle employee reimbursement requests and fund disbursement on one platform. Reimbursement can be done easily without any employee signing up for an OY! Account. No technical integration is required to utilize the product.
 
 
-**Key Features** 
+### Key Features 
 
 Feature | Description
 ------ | -----------
@@ -1202,6 +1203,7 @@ Setting up the approver will only occur once when the page is first opened.
 
 
 **Notes**
+
 * Approver emails are mapped based on department names, and duplicate department names are not allowed.
 
 * After submission, addition, editing, or deletion of existing approvers can only be done via Customer Service.
@@ -1221,8 +1223,10 @@ After Approver registration, you can start sharing the reimbursement link with e
     1. Download the sample file and input a list of employee emails in CSV or XLSX format.
     2. Upload the file for email distribution.
 
+
 2. Via Copy Link:
     1. Copy the link and distribute it using any convenient method.
+
 
 3. Employees will find the form link in their email and can proceed to submit a request.
 
@@ -1257,6 +1261,7 @@ Transaction Date | Date of transaction printed on the invoice
 
 
 **Notes**
+
 * You can resend the link anytime in case employees lose the email.
 * A single request is applicable for 1 item only.
 
@@ -1288,6 +1293,7 @@ Scheduled disbursement can only be done if the reporting manager has approved th
 
 
 **Dashboard Status**
+
 Status | Description
 ------ | -----------
 Pending Approval | Submitted by employee but no action yet from approver 

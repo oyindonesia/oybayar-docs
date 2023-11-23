@@ -791,6 +791,7 @@ In terms of status, below are the status mapping between API Invoice and status 
 
 
 There are several actions that you can take for the created invoice:
+
 |Action | Definition |
 | ---------| -----------|
 | Send invoice | To send the invoice to the customer's defined email |
@@ -1172,12 +1173,14 @@ If we pick green (#HEX code #067610) as the primary color and black (#HEX code #
 
 
 For more personalized touch on the invoice, you can now customize your template look in the Dashboard, where you can do the following things;
+
 - Change invoice logo
 - Change Invoice template
 - Change Invoice color
 
 
 How to customize the Account Receivable Invoice UI:
+
 1. Log onto business.oyindonesia.com
 2. Go to Account Receivable section in the dashboard
 3. Click the 'Settings" icon located at the top right next to “Create New Invoice” button
