@@ -122,6 +122,7 @@ Your end-users may use the below payment channels to pay for their bills via VA
 Unique Code is a type of bank transfer payment that adds/subtracts a unique amount (between Rp 1-999) to your billed amount. The unique amount acts as an identifier to complete transactions. Unlike virtual accounts where each customer gets a different account number, unique code always uses the same account number for all transactions. The destination account is under OY! Indonesia’s name (PT. Dompet Harapan Bangsa) and you can not modify the destination account with your account. Unique code also has operational hours where you can only create unique code transactions between 3 AM - 8.30 PM GMT+7. 
 
 There are two approaches that you can use on unique code transactions: addition or subtraction approach. 
+
 1. Addition Approach
    - By using the addition approach, the unique amount is added to your billed amount, meaning your customer will pay Rp 1-999 more than the billed amount. The additional amount will not be settled to your balance.
 1. Subtration Approach
@@ -842,211 +843,6 @@ You will need to fill and submit the following information and documents:
 1. Transaction will be successful 
 
 
-## VA Aggregator
-Businesses are struggling to manage hundreds or even thousands of physical bank accounts that are used for different purposes. It causes significant overhead costs in terms of the amount of account maintenance and manhours needed for reporting and reconciliation purposes, combining different information from different accounts.
-
-Virtual Account (VA) is essentially a dummy account that is linked to a physical account and has all the physical account characteristics that enable a much easier reporting and reconciliation process by centralizing the money flow into the physical account. By issuing VAs, you can assign each VA for a specific person and/or purposes.
-
-Virtual Account (VA) Aggregator is a feature that is specifically designed to generate Virtual Account that enable you to receive payments from your end-users via virtual account (VA) bank transfer. If you intend to use multiple payment methods to receive payment for one transaction, you should consider Payment Link and Payment Routing instead. 
-
-Generally, you may create a VA number for your customers via API VA Aggregator. However, if you prefer to create VA without API integration, then you may do so via OY! Dashboard by clicking the Virtual Account (Created VA) tab under the “Receive Money” section. 
-
-### Flow 
-![VA Aggregator Flow](images/acceptingPayments/vaAggregator/va_aggregator_flow.png)
-
-
-### Features 
-1. Flexible creation – either via Dashboard or API 
-   - You can create the VA number either by OY! Dashboard or API. Don’t worry if you don’t have the resources to conduct API integration since you can still create VA number and receive payment from your customers through OY! Dashboard 
-1. Support VA payments from multiple banks. Currently we support VA payments from 11 banks: 
-    1. Bank Central Asia (BCA) 
-    1. Bank Rakyat Indonesia (BRI) 
-    1. Bank Mandiri 
-    1. Bank Negara Indonesia (BNI) 
-    1. Bank CIMB & CIMB Syariah
-    1. Bank BTPN Jenius 
-    1. Bank Danamon 
-    1. BII Maybank 
-    1. Bank KEB Hana 
-    1. Bank Syariah Indonesia (BSI)
-    1. Bank Permata & Permata Syariah
-1. Quick settlement for majority of the banks 
-   - We understand that you need the funds to be as quickly as possible to be settled to you. We offer real-time settlement for majority of the banks listed so you should not worry about your cashflow.
-1. Customizable VA types 
-
-
-<table>
-  <tr>
-    <th valign="top"><b>Category</b></th>
-    <th valign="top"><b>Feature</b></th><th valign="top"><b>Description</b></th>
-  </tr>
-  <tr>
-    <td rowspan="2" valign="top">Validity Period</td>
-    <td valign="top">Static (Lifetime) </td>
-    <td valign="top">VA that has a lifetime validity. It will always be active and available to receive payment until it is manually deactivated.</td>
-  </tr>
-  <tr>
-    <td valign="top">Dynamic </td>
-    <td valign="top">VA that has a specific validity period. It will always be active until it is expired or manually deactivated.</td>
-  </tr>
-  <tr>
-    <td rowspan="2" valign="top">Usage Frequency</td>
-    <td valign="top">Single Use</td>
-    <td valign="top">VA that expires after a single payment. A single-use configuration can only be set up for a dynamic VA.</td>
-  </tr>
-  <tr>
-    <td valign="top">Multiple Use</td>
-    <td valign="top">VA that only expires when the expiration date is reached or when it is manually deactivated. You may also customize the limit of maximum payment. VA Multiple Use with customized maximum payment number will expire after the payment number limit is exceeded even if it has not reached the expiration time yet.</td>
-  </tr>
-  <tr>
-    <td rowspan="2" valign="top">Amount</td><td valign="top">Closed Amount</td>
-    <td valign="top">VA that only accepts payment of a specific amount as set when you create the VA number.</td>
-  </tr>
-  <tr>
-    <td valign="top">Open Amount</td>
-    <td valign="top">VA that accepts payment of any amount. You do not need to specify the amount when creating the VA number. </td>
-  </tr>
-  <tr>
-    <td rowspan="2" valign="top">VA Number</td>
-    <td valign="top">Customizable</td>
-    <td valign="top"><p>You may personalize the VA suffix using the numbers you want (e.g. your end-users' phone number or billing number). To enable VA number customization, please contact your Business Representative. You may refer to the [API Docs - Create Customized VA Number](https://api-docs.oyindonesia.com/#create-customized-va-va-aggregator).</p><p></p><p>Specifically for this feature, we currently only support BRI and CIMB. </p></td>
-    </tr>
-  <tr>
-    <td valign="top">Predetermined</td>
-    <td valign="top">OY! will create the VA number combination on your behalf. You may refer to the [API Docs - Create VA Number](https://api-docs.oyindonesia.com/#create-customized-va-va-aggregator)</td>
-    </tr>
-</table>
-
-5. Capability to Update VA 
-   1. After you have created the VA number, you are still able to modify the parameters below: 
-      - VA Amount (amount) 
-      - Multiple Use / Single Use (is\_single\_use) → you may update a single use VA to be a multiple use VA and vice versa 
-      - Email (email)
-      - Transaction Counter (trx\_counter) → you may update the number of payments a VA number can accept
-      - Transaction Expired Time (trx\_expired\_time) → the expiration time of a transaction of a VA number
-      - Expired Time (expired\_time) → the expiration time of a VA number. The VA expiration time must be at least equal or greater than the transaction expiration time 
-      - Username Display (username\_display) → the VA name that is displayed when your customer inputs the VA number in their mobile/internet banking application 
-   1. Once a VA is updated, the new set of configuration will apply for that VA and the previous configuration is no longer applicable
-1. Automatic Callback & Retry Callback
-   - You will get a callback for each successful VA payment from your customers via API. In addition, you may activate our “Enable Automatic Retry Callback” via OY! Dashboard (Settings → Developer Option → Callback Configuration tab). By activating this feature, if on the first try the callback is not successfully received by your system, then OY! system will automatically retry the callback delivery until 5 attempts. If all callback attempts still returned failed, OY! system will send email notification to email address that has been set in your configuration.
-   - You will also get a callback for each successful transaction fund settlement to your OY! balance 
-1. Minimum & Maximum Amount 
-   - Minimum amount for each VA transaction is Rp 10,000 (for closed amount) 
-   - Maximum amount for VA transactions depends on the banks: 
-
-
-|Banks|Max. Amount per transaction |
-| :-: | :-: |
-|Bank Central Asia (BCA) |Rp 50,000,000|
-|Bank Negara Indonesia (BNI) |Rp 50,000,000|
-|Bank Rakyat Indonesia (BRI) |Rp 500,000,000|
-|Bank Mandiri |Rp 500,000,000|
-|Bank CIMB |Rp 500,000,000|
-|Bank BTPN Jenius |Rp 500,000,000|
-|Bank Danamon |Rp 25,000,000|
-|BII Maybank |Rp 100,000,000|
-|Bank KEB Hana |Rp 50,000,000|
-|Bank Syariah Indonesia (BSI)|Rp 50,000,000|
-|Bank Permata|Rp 500,000,000|
-
-
-### Use Cases 
-![VA Aggregator Use Case](images/acceptingPayments/vaAggregator/va_aggregator_use_case.png)
-
-### Registration and Set Up 
-Here are the procedures to activate VA Aggregator feature: 
-
-1. Create an OY! account 
-1. Do account verification by submitting the verification form. Ensure to tick the “Receive Money” product since VA Aggregator is a part of Receive Money products.
-1. OY! team will review and verify the form and documents submitted
-1. Once verification is approved, set up your receiving bank account information. Important Note: Ensure that the receiving bank account information is accurate as you can only set it up once via OY! Dashboard for security reasons
-1. You may need to submit additional documents to be able to use VA for BCA (including, but not limited to, Taxpayer Registration Number (NPWP), and Nationality ID) 
-1. If you have any questions or concerns during this process, feel free to contact your Business Representative or email <partnerhelpdesk@oyindonesia.com> 
-
-
-If you plan to use VA Aggregator by API, then you need to do additional steps: 
-
-1. Submit your IP address(es) & callback URL to your business representative or send an email to [partnerhelpdesk@oyindonesia.com](mailto:partner@oyindonesia.com). The maximum number of IP addresses that can be registered are 5 addresses. 
-1. OY! will send the Production API Key as an API authorization through your business representative. 
-   Note: Staging/Demo API Key can be accessed via OY! Dashboard by going to the “Demo” environment and the key can be found on the bottom left menu. 
-1. Integrate API VA Aggregator to your system. Please follow the API documentation to guide you through[ ](https://api-docs.oyindonesia.com/#api-create-payment-checkout)[API Docs - VA Aggregator](https://api-docs.oyindonesia.com/#create-customized-va-va-aggregator)
-
-
-### Testing 
-1. Create VA Number via API 
-1. After creating an account, log on to OY! Dashboard and click “Try in Demo” button that will redirect you to our staging environment 
-1. Scroll down to the bottom left of the navigation bar and copy the API staging key for your perusal 
-1. Using the API staging key, create a VA number by sending a POST request to <https://api-stg.oyindonesia.com/api/generate-static-va>. Enter the required parameters stated in the API Docs 
-1. OY! system will respond to your request with a created VA number 
-1. Create VA via Dashboard 
-   1. After creating an account, log on to OY! Dashboard and click “Try in Demo” button that will redirect you to our staging environment 
-   1. Scroll down to “Receive Money” tab → Virtual Account → Created VA
-   1. Click the top right button “Create Virtual Account” 
-   1. You may choose to create the VA number(s) by uploading an Excel file (with the format as the template) or by inputting the VA number manually (in this case, you may click the “Add Virtual Account Details Manually” button) 
-   1. After you have successfully uploaded the file or filled in the fields (if manual), click “Validate” button on the bottom right corner 
-   1. After you have successfully validated your entries, click “Submit” button on the bottom right corner 
-   1. Once you have successfully submitted your request, you will be redirected to Created VA page where you can see your newly created VA numbers
-   1. Your created VA numbers should be ready to use 
-1. Simulating Successful Callback 
-   1. To simulate a successful payment, ensure that you are in our staging environment. Click “Try in Demo” button that will redirect you to our staging environment
-   1. Scroll down to “Settings” tab → Callback Bank Transfer 
-   1. Choose the “Virtual Account” as the Transaction Type 
-   1. Select the Bank Name of the VA number that you have previously created 
-   1. Enter the VA number and amount. For Closed VA, you need to enter the exact amount of the VA as created 
-   1. Enter the payment date and time. Ensure that payment date and time are greater than created but less than expiration time 
-
-### How to Use 
-1. Viewing list of Created VA 
-   1. You can monitor your created VA numbers through the “Receive Money” tab → Virtual Account → Created VA
-   1. You can also see their payment status, amount, VA type, and count of completed transactions. You may also click to export these details to your device as PDF, Excel or CSV 
-   1. *[Insert screenshot later on]* #todo insert picture
-1. Viewing list of VA Payment 
-   1. For all successful VA transactions, you can monitor them through the “Receive Money” tab → Virtual Account → Incoming Payment 
-   1. You can also see the transaction timestamp, status, amount, admin fee and other information.  You may also click to export these details to your device as PDF, Excel or CSV 
-   1. *[Insert screenshot later on]* #todo insert picture
-
-### VA Bank Details 
-Capabilities 
-
-
-|Banks|Bank Code|Open Amount |Closed Amount |Max. Expiration Time|
-| :-: | :-: | :-: | :-: | :-: |
-|Bank Central Asia (BCA) |014|Yes|Yes|Lifetime|
-|Bank Negara Indonesia (BNI) |009|No|Yes|Lifetime|
-|Bank Rakyat Indonesia (BRI) |002|Yes|Yes|Lifetime|
-|Bank Mandiri |008|Yes|Yes|Lifetime|
-|Bank CIMB |022|Yes|Yes|Lifetime|
-|Bank BTPN Jenius |213|Yes|Yes|Lifetime|
-|Bank Danamon |011|Yes|Yes|Lifetime|
-|BII Maybank |016|Yes|Yes|Lifetime|
-|Bank KEB Hana |484|Yes|Yes|Lifetime|
-|Bank Syariah Indonesia (BSI)|451|No|Yes|70 days after creation|
-|Bank Permata|013|Yes|Yes|Lifetime|
-
-Note: there is no minimum expiration time for VAs. However, you are recommended to set a reasonable expiration time, enabling your customers to complete their payments conveniently.
-
-
-### Available Payment Channels for VA 
-
-Your end-users may use the below payment channels to pay for their bills via VA
-
-
-| Bank (Virtual Account) | SKN  | RTGS  | ATMs | Intrabank Mobile Banking & Internet Banking | Interbank Internet Banking | Interbank Mobile Banking |
-| ---------------------- | ---  |----  |---- | ------------------------------------------- | --------------------------| ---------------------------- |
-| Bank Mandiri           | Yes  | Yes  | Yes | Yes                                            | Yes                       | Yes                          |
-| BRI                    | Yes  | Yes  | Yes | Yes                                            | No                       | Yes                           |
-| BNI                    | Yes  | Yes  | Yes | Yes                                            | No                       | Yes                           |
-| Permata                | Yes  | Yes  | Yes | Yes                                            | No                       | Yes 
-| CIMB Niaga / CIMB Niaga Syariah | Yes  | Yes | Yes | Yes (Mobile Banking), No (Internet Banking)| No                       | Yes                          |
-| BCA                    | No   | No   | Yes | Yes      | No                                  | No                       |
-| BTPN                   | Yes  | No   | Yes | Yes (Mobile Banking), No (Internet Banking)     | No                       | Yes                          |
-| Maybank                | Yes  | Yes  | Yes | Yes      | No                                  | No                       |
-| Danamon                | Yes  | Yes  | Yes | Yes      | No                                  | No                       |
-| KEB Hana               | No   | No   | Yes | Yes      | No                                  | No                       |
-| BSI                    | No   | No   | Yes | Yes      | Yes                                 | Yes                      |
-
-
-
 ## Payment Link
 Payment Link is a pre-built checkout page that allows your business to easily and securely accept payments online. You can share the link to your customers and they can choose various payment methods that OY supports inside the Payment Link. OY supports up to 17 payment methods– including Bank Transfer, E-Wallet, QR Code (QRIS), Credit and Debit cards. Payment Links can be created without using any code/integration. However, if you need to create Payment Links from your website/application, OY also provides Payment Link API.
 
@@ -1153,7 +949,7 @@ After creating Payment Links, you will receive a URL link that can be copied and
 
 If you create the Payment Link via OY! Business App, you can use the built-in share feature from your mobile device when sharing Payment Link. 
 
-![Masih ongoing fotonya #todo masukin gambar](images/acceptingPayments/paymentLink/masih_otw.png)
+![Payment Link Sharing Capabilities](images/acceptingPayments/paymentLink/payment_link_sharing_capabilities.jpg)
 #### Receipt for successful payments
 Customers can directly see the receipt of payments inside the Payment Link once payment is made. Customers can also receive the receipt via email(s) that you provided during Payment Link creation. Configure sending receipt via emails to your customers by going through this steps:
 
@@ -1388,6 +1184,213 @@ There might be times that your customer already completed the payments but the t
 
 ### Receiving fund to balance
 Once a transaction is paid by the customer, OY! updates the transaction status and sends notification to your system indicating that the transaction has been paid, and settles the funds to your OY! balance. Each payment method has a different settlement time, varying from real-time to D+2 Working Days. 
+
+
+## VA Aggregator
+Businesses are struggling to manage hundreds or even thousands of physical bank accounts that are used for different purposes. It causes significant overhead costs in terms of the amount of account maintenance and manhours needed for reporting and reconciliation purposes, combining different information from different accounts.
+
+Virtual Account (VA) is essentially a dummy account that is linked to a physical account and has all the physical account characteristics that enable a much easier reporting and reconciliation process by centralizing the money flow into the physical account. By issuing VAs, you can assign each VA for a specific person and/or purposes.
+
+Virtual Account (VA) Aggregator is a feature that is specifically designed to generate Virtual Account that enable you to receive payments from your end-users via virtual account (VA) bank transfer. If you intend to use multiple payment methods to receive payment for one transaction, you should consider Payment Link and Payment Routing instead. 
+
+Generally, you may create a VA number for your customers via API VA Aggregator. However, if you prefer to create VA without API integration, then you may do so via OY! Dashboard by clicking the Virtual Account (Created VA) tab under the “Receive Money” section. 
+
+### Flow 
+![VA Aggregator Flow](images/acceptingPayments/vaAggregator/va_aggregator_flow.png)
+
+
+### Features 
+1. Flexible creation – either via Dashboard or API 
+   - You can create the VA number either by OY! Dashboard or API. Don’t worry if you don’t have the resources to conduct API integration since you can still create VA number and receive payment from your customers through OY! Dashboard 
+1. Support VA payments from multiple banks. Currently we support VA payments from 11 banks: 
+    1. Bank Central Asia (BCA) 
+    1. Bank Rakyat Indonesia (BRI) 
+    1. Bank Mandiri 
+    1. Bank Negara Indonesia (BNI) 
+    1. Bank CIMB & CIMB Syariah
+    1. Bank BTPN Jenius 
+    1. Bank Danamon 
+    1. BII Maybank 
+    1. Bank KEB Hana 
+    1. Bank Syariah Indonesia (BSI)
+    1. Bank Permata & Permata Syariah
+1. Quick settlement for majority of the banks 
+   - We understand that you need the funds to be as quickly as possible to be settled to you. We offer real-time settlement for majority of the banks listed so you should not worry about your cashflow.
+1. Customizable VA types 
+
+
+<table>
+  <tr>
+    <th valign="top"><b>Category</b></th>
+    <th valign="top"><b>Feature</b></th><th valign="top"><b>Description</b></th>
+  </tr>
+  <tr>
+    <td rowspan="2" valign="top">Validity Period</td>
+    <td valign="top">Static (Lifetime) </td>
+    <td valign="top">VA that has a lifetime validity. It will always be active and available to receive payment until it is manually deactivated.</td>
+  </tr>
+  <tr>
+    <td valign="top">Dynamic </td>
+    <td valign="top">VA that has a specific validity period. It will always be active until it is expired or manually deactivated.</td>
+  </tr>
+  <tr>
+    <td rowspan="2" valign="top">Usage Frequency</td>
+    <td valign="top">Single Use</td>
+    <td valign="top">VA that expires after a single payment. A single-use configuration can only be set up for a dynamic VA.</td>
+  </tr>
+  <tr>
+    <td valign="top">Multiple Use</td>
+    <td valign="top">VA that only expires when the expiration date is reached or when it is manually deactivated. You may also customize the limit of maximum payment. VA Multiple Use with customized maximum payment number will expire after the payment number limit is exceeded even if it has not reached the expiration time yet.</td>
+  </tr>
+  <tr>
+    <td rowspan="2" valign="top">Amount</td><td valign="top">Closed Amount</td>
+    <td valign="top">VA that only accepts payment of a specific amount as set when you create the VA number.</td>
+  </tr>
+  <tr>
+    <td valign="top">Open Amount</td>
+    <td valign="top">VA that accepts payment of any amount. You do not need to specify the amount when creating the VA number. </td>
+  </tr>
+  <tr>
+    <td rowspan="2" valign="top">VA Number</td>
+    <td valign="top">Customizable</td>
+    <td valign="top"><p>You may personalize the VA suffix using the numbers you want (e.g. your end-users' phone number or billing number). To enable VA number customization, please contact your Business Representative. You may refer to the [API Docs - Create Customized VA Number](https://api-docs.oyindonesia.com/#create-customized-va-va-aggregator).</p><p></p><p>Specifically for this feature, we currently only support BRI and CIMB. </p></td>
+    </tr>
+  <tr>
+    <td valign="top">Predetermined</td>
+    <td valign="top">OY! will create the VA number combination on your behalf. You may refer to the [API Docs - Create VA Number](https://api-docs.oyindonesia.com/#create-customized-va-va-aggregator)</td>
+    </tr>
+</table>
+
+5. Capability to Update VA 
+   1. After you have created the VA number, you are still able to modify the parameters below: 
+      - VA Amount (amount) 
+      - Multiple Use / Single Use (is\_single\_use) → you may update a single use VA to be a multiple use VA and vice versa 
+      - Email (email)
+      - Transaction Counter (trx\_counter) → you may update the number of payments a VA number can accept
+      - Transaction Expired Time (trx\_expired\_time) → the expiration time of a transaction of a VA number
+      - Expired Time (expired\_time) → the expiration time of a VA number. The VA expiration time must be at least equal or greater than the transaction expiration time 
+      - Username Display (username\_display) → the VA name that is displayed when your customer inputs the VA number in their mobile/internet banking application 
+   1. Once a VA is updated, the new set of configuration will apply for that VA and the previous configuration is no longer applicable
+1. Automatic Callback & Retry Callback
+   - You will get a callback for each successful VA payment from your customers via API. In addition, you may activate our “Enable Automatic Retry Callback” via OY! Dashboard (Settings → Developer Option → Callback Configuration tab). By activating this feature, if on the first try the callback is not successfully received by your system, then OY! system will automatically retry the callback delivery until 5 attempts. If all callback attempts still returned failed, OY! system will send email notification to email address that has been set in your configuration.
+   - You will also get a callback for each successful transaction fund settlement to your OY! balance 
+1. Minimum & Maximum Amount 
+   - Minimum amount for each VA transaction is Rp 10,000 (for closed amount) 
+   - Maximum amount for VA transactions depends on the banks: 
+
+
+|Banks|Max. Amount per transaction |
+| :-: | :-: |
+|Bank Central Asia (BCA) |Rp 50,000,000|
+|Bank Negara Indonesia (BNI) |Rp 50,000,000|
+|Bank Rakyat Indonesia (BRI) |Rp 500,000,000|
+|Bank Mandiri |Rp 500,000,000|
+|Bank CIMB |Rp 500,000,000|
+|Bank BTPN Jenius |Rp 500,000,000|
+|Bank Danamon |Rp 25,000,000|
+|BII Maybank |Rp 100,000,000|
+|Bank KEB Hana |Rp 50,000,000|
+|Bank Syariah Indonesia (BSI)|Rp 50,000,000|
+|Bank Permata|Rp 500,000,000|
+
+
+### Use Cases 
+![VA Aggregator Use Case](images/acceptingPayments/vaAggregator/va_aggregator_use_case.png)
+
+### Registration and Set Up 
+Here are the procedures to activate VA Aggregator feature: 
+
+1. Create an OY! account 
+1. Do account verification by submitting the verification form. Ensure to tick the “Receive Money” product since VA Aggregator is a part of Receive Money products.
+1. OY! team will review and verify the form and documents submitted
+1. Once verification is approved, set up your receiving bank account information. Important Note: Ensure that the receiving bank account information is accurate as you can only set it up once via OY! Dashboard for security reasons
+1. You may need to submit additional documents to be able to use VA for BCA (including, but not limited to, Taxpayer Registration Number (NPWP), and Nationality ID) 
+1. If you have any questions or concerns during this process, feel free to contact your Business Representative or email <partnerhelpdesk@oyindonesia.com> 
+
+
+If you plan to use VA Aggregator by API, then you need to do additional steps: 
+
+1. Submit your IP address(es) & callback URL to your business representative or send an email to [partnerhelpdesk@oyindonesia.com](mailto:partner@oyindonesia.com). The maximum number of IP addresses that can be registered are 5 addresses. 
+1. OY! will send the Production API Key as an API authorization through your business representative. 
+   Note: Staging/Demo API Key can be accessed via OY! Dashboard by going to the “Demo” environment and the key can be found on the bottom left menu. 
+1. Integrate API VA Aggregator to your system. Please follow the API documentation to guide you through[ ](https://api-docs.oyindonesia.com/#api-create-payment-checkout)[API Docs - VA Aggregator](https://api-docs.oyindonesia.com/#create-customized-va-va-aggregator)
+
+
+### Testing 
+1. Create VA Number via API 
+1. After creating an account, log on to OY! Dashboard and click “Try in Demo” button that will redirect you to our staging environment 
+1. Scroll down to the bottom left of the navigation bar and copy the API staging key for your perusal 
+1. Using the API staging key, create a VA number by sending a POST request to <https://api-stg.oyindonesia.com/api/generate-static-va>. Enter the required parameters stated in the API Docs 
+1. OY! system will respond to your request with a created VA number 
+1. Create VA via Dashboard 
+   1. After creating an account, log on to OY! Dashboard and click “Try in Demo” button that will redirect you to our staging environment 
+   1. Scroll down to “Receive Money” tab → Virtual Account → Created VA
+   1. Click the top right button “Create Virtual Account” 
+   1. You may choose to create the VA number(s) by uploading an Excel file (with the format as the template) or by inputting the VA number manually (in this case, you may click the “Add Virtual Account Details Manually” button) 
+   1. After you have successfully uploaded the file or filled in the fields (if manual), click “Validate” button on the bottom right corner 
+   1. After you have successfully validated your entries, click “Submit” button on the bottom right corner 
+   1. Once you have successfully submitted your request, you will be redirected to Created VA page where you can see your newly created VA numbers
+   1. Your created VA numbers should be ready to use 
+1. Simulating Successful Callback 
+   1. To simulate a successful payment, ensure that you are in our staging environment. Click “Try in Demo” button that will redirect you to our staging environment
+   1. Scroll down to “Settings” tab → Callback Bank Transfer 
+   1. Choose the “Virtual Account” as the Transaction Type 
+   1. Select the Bank Name of the VA number that you have previously created 
+   1. Enter the VA number and amount. For Closed VA, you need to enter the exact amount of the VA as created 
+   1. Enter the payment date and time. Ensure that payment date and time are greater than created but less than expiration time 
+
+### How to Use 
+1. Viewing list of Created VA 
+   1. You can monitor your created VA numbers through the “Receive Money” tab → Virtual Account → Created VA
+   1. You can also see their payment status, amount, VA type, and count of completed transactions. You may also click to export these details to your device as PDF, Excel or CSV 
+   1. *[Insert screenshot later on]* #todo insert picture
+1. Viewing list of VA Payment 
+   1. For all successful VA transactions, you can monitor them through the “Receive Money” tab → Virtual Account → Incoming Payment 
+   1. You can also see the transaction timestamp, status, amount, admin fee and other information.  You may also click to export these details to your device as PDF, Excel or CSV 
+   1. *[Insert screenshot later on]* #todo insert picture
+
+### VA Bank Details 
+Capabilities 
+
+
+|Banks|Bank Code|Open Amount |Closed Amount |Max. Expiration Time|
+| :-: | :-: | :-: | :-: | :-: |
+|Bank Central Asia (BCA) |014|Yes|Yes|Lifetime|
+|Bank Negara Indonesia (BNI) |009|No|Yes|Lifetime|
+|Bank Rakyat Indonesia (BRI) |002|Yes|Yes|Lifetime|
+|Bank Mandiri |008|Yes|Yes|Lifetime|
+|Bank CIMB |022|Yes|Yes|Lifetime|
+|Bank BTPN Jenius |213|Yes|Yes|Lifetime|
+|Bank Danamon |011|Yes|Yes|Lifetime|
+|BII Maybank |016|Yes|Yes|Lifetime|
+|Bank KEB Hana |484|Yes|Yes|Lifetime|
+|Bank Syariah Indonesia (BSI)|451|No|Yes|70 days after creation|
+|Bank Permata|013|Yes|Yes|Lifetime|
+
+Note: there is no minimum expiration time for VAs. However, you are recommended to set a reasonable expiration time, enabling your customers to complete their payments conveniently.
+
+
+### Available Payment Channels for VA 
+
+Your end-users may use the below payment channels to pay for their bills via VA
+
+
+| Bank (Virtual Account) | SKN  | RTGS  | ATMs | Intrabank Mobile Banking & Internet Banking | Interbank Internet Banking | Interbank Mobile Banking |
+| ---------------------- | ---  |----  |---- | ------------------------------------------- | --------------------------| ---------------------------- |
+| Bank Mandiri           | Yes  | Yes  | Yes | Yes                                            | Yes                       | Yes                          |
+| BRI                    | Yes  | Yes  | Yes | Yes                                            | No                       | Yes                           |
+| BNI                    | Yes  | Yes  | Yes | Yes                                            | No                       | Yes                           |
+| Permata                | Yes  | Yes  | Yes | Yes                                            | No                       | Yes 
+| CIMB Niaga / CIMB Niaga Syariah | Yes  | Yes | Yes | Yes (Mobile Banking), No (Internet Banking)| No                       | Yes                          |
+| BCA                    | No   | No   | Yes | Yes      | No                                  | No                       |
+| BTPN                   | Yes  | No   | Yes | Yes (Mobile Banking), No (Internet Banking)     | No                       | Yes                          |
+| Maybank                | Yes  | Yes  | Yes | Yes      | No                                  | No                       |
+| Danamon                | Yes  | Yes  | Yes | Yes      | No                                  | No                       |
+| KEB Hana               | No   | No   | Yes | Yes      | No                                  | No                       |
+| BSI                    | No   | No   | Yes | Yes      | Yes                                 | Yes                      |
+
+
+
 
 ## Payment Links/Invoice
 
