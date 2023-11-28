@@ -1264,68 +1264,141 @@ There will be 3 different ways to distribute the invoice via Whatsapp and there 
 
 
 
+## API E-Wallet Aggregator 
+E-Wallet API allows clients to charge and receive payments directly from top e-wallet providers. With one integration, they are able to get access to all of OY’s available e-wallets and the upcoming e-wallet integrations.
+#### Flow
+![Ewallet Aggregator Flow](images/acceptingPayments/ewalletAggregator/ewallet_aggregator_sequence.png)
+### Features
+#### Support multiple E-wallets
+We currently support ShopeePay, LinkAja, DANA, and OVO for e-wallet transactions.
 
+#### Monitor transactions via OY! Dashboard
+All created e-wallet transactions are shown in OY! Dashboard. Navigate to “E-Wallet” to see the list of transactions. Inside the dashboard, you can see the details of the transactions, including all the transaction information inputted during creation, status of transactions, and the payment reference number. The dashboard also has a feature to search, filter, and export the list of transactions in various formats: Excel (.xlsx), PDF (.pdf), and CSV (.csv)
 
-## API E-Wallet Aggregator
+![Monitor E-wallet Aggregator Transaction](images/acceptingPayments/ewalletAggregator/ewallet_aggregator_monitoring_transactions.png)
+#### Receipt for successful payments
+Customers can receive receipt of successful payments via email(s) that you provided during the creation process. Configure sending receipt via emails to your customers by going through this steps:
 
-E-Wallet API allows clients to charge and receive payments directly from top e-wallet issuers. With one integration, they are able to get access to all of OY’s available e-wallets and the upcoming e-wallet integrations.
+1. Log in to your OY! Dashboard account
+1. Go to “Settings” → “Notifications”
+1. Click “Receive Money (To Sender)”
+1. Choose “Enable Success Notification” for E-Wallet API
+1. Input your logo to be put on the email in URL format (<https://example.com/image.jpg>) 
+    - If you do not have the URL for your logo, you can use online tools like [snipboard.io](https://snipboard.io/) or [imgbb](https://imgbb.com/).
+   - Once you convert your logo to URL, the correct URL should look like this:
+      - Snipboard.io: <https://i.snipboard.io/image.jpg>
+      - Ibbmg: <https://i.ibb.co/abcdef/image.jpg>
+1. Save the changes by clicking “Save”
+1. Create an E-Wallet transaction via API  and input the customer’s email address in the “email” parameter. 
+1. Your customer will receive successful receipt to the emails once payment is made
 
-### E-Wallet Product Flow
+![Receipt for successful Payment](images/acceptingPayments/ewalletAggregator/ewallet_aggregator_monitoring_transactions.png)
 
-![E-Wallet API](images/ewallet_product_flow.png)
+Note: If you do not put any of your customer’s email during transaction creation, OY! will not send any receipt via email even though you enabled the notification configuration
+#### Retry notification/callback for successful payments
+OY! will send a notification/callback to your system once a transaction is marked successful. Therefore, you will be notified if the customer has already completed the payment. There might be a case where your system does not receive the notification successfully. 
 
-### Key Features
+By enabling Retry Callback, OY will try to resend another callback to your system if your system does not receive the callback successfully. You can request to resend a callback using Manual Retry Callback or Automatic Retry Callback. 
 
-1.  **Support multiple e-wallets** - We support ShopeePay, LinkAja, DANA, and OVO
-2.  **Transaction tracking and monitoring capability** - You can track all created e-wallet transactions, incoming payments, and their respective details through our API callback or OY! dashboard. You will receive a callback for all incoming transactions.
-3.  **Check Status capability** - We have a Check Status endpoint available for you to regularly check the status of an e-wallet transaction
+##### Manual Retry Callback
+Manual Retry Callback allows you to manually send callbacks for each transaction from OY! Dashboard. Here are the steps to do so:
 
+1. Login to your account in OY! Dashboard
+1. Navigate to “E-Wallet API ”
+1. Search the record of the transaction and click 3 dots button under “Action” column
+1. Make sure that you have set up your Callback URL via “Settings” → “Developer Option” → “Callback Configuration”
+1. Make sure to whitelist OY’s IP to receive callbacks from OY 
+   - 54.151.191.85
+   - 54.179.86.72
+1. Click “Resend Callback” to resend a callback and repeat as you need
+
+![Manual Retry Callback](images/acceptingPayments/ewalletAggregator/ewallet_aggregator_manual_retry_callback.png)
+##### Automatic Retry Callback
+Automatic Retry Callback allows you to receive another callback within a certain interval if the previous callback that OY sent is not received successfully on your system. OY! will try to resend other callbacks up to 5 times. If your system still does not receive any callbacks after 5 retry attempts from OY, OY will notify you via email. You can input up to 6 email recipients and it is configurable via OY! Dashboard. 
+
+Callback Interval: Realtime → 1 minute (after the initial attempt)→ 2 minutes (after the first retry attempt)→ 13 minutes (after the second retry attempt) → 47 mins (after the third retry attempt) 
+
+OY! sends the first callback to your system once the transaction is successful on OY!’s side. If your system failed to receive the callback, OY! will send the first retry callback attempt to your system immediately. If your system still fails to receive the callback, OY! will send the second retry callback attempt 1 minute after timeout or getting a failed response from your side. The process goes on until you successfully receive the callback or all retry callback attempts have been sent.
+
+Automatic Retry Callback is not activated by default. You can see the guideline below to enable Automatic Retry Callback:
+
+1. Login to your account in OY! Dashboard
+1. Go to “Settings” and choose “Developer Option". 
+1. Choose “Callback Configuration” tab
+1. Input your callback URL in the related product that you want to activate. Make sure you input the correct URL format. Please validate your callback URL by clicking “URL String Validation”
+1. If you want to activate automated retry callback, tick the Enable Automatic Retry Callback for related products. You must input the email recipient(s) to receive a notification if all the callback attempts have been made but still failed in the end.
+1. Make sure to whitelist OY’s IP to receive callbacks from OY
+   - 54.151.191.85
+   - 54.179.86.72
+1. Make sure to implement the idempotency logic in your system. Use “tx\_ref\_number” parameter as idempotency key to ensure that multiple callbacks under “tx\_ref\_number”  key should not be treated as multiple different payments.
+1. Save the changes
+
+![Automatic Retry Callback](images/acceptingPayments/ewalletAggregator/ewallet_aggregator_automatic_retry_callback.png)
+
+#### Refund transactions to customer
+When your customer receives a defective product or the product is not delivered, they might request to refund the transaction. You can directly refund transactions to your customer’s account via OY! Dashboard. A refund can either be full or partial. A full refund gives your customers the entire amount back (100%). A partial refund returns the amount partially. 
+
+Refunds are free of charge. However, the admin fee charged for the original transaction is not refunded by OY to your balance.
+
+There are several requirements that must be met to issue a refund:
+
+1. Refunds can only be issued up to 7 calendar days after the transaction is marked as successful.
+1. You have enough balance that allows us to deduct the amount of the transaction that should be refunded. 
+1. A refund can only be issued once for each successful transaction, whether it is a full or partial refund.
+1. Refunds must be issued during operational hours, depending on the payment method. Refer to the table below.
+
+Currently, refunds are only available for DANA, ShopeePay, and LinkAja. 
+
+|Payment Method|Refund Feature|Operational Hours|
+| :- | :- | :- |
+|DANA	|Full Refund, Partial Refund|00\.00 - 23.59 GMT+7|
+|ShopeePay|Full Refund|05\.00 - 23.59 GMT+7|
+|LinkAja |Full Refund|00\.00 - 23.59 GMT+7|
+|OVO|Not supported|-|
+
+If you use Refund API, OY! will send a notification to your system via callback once a transaction is successfully refunded [Refund Callback - API Docs](https://api-docs.oyindonesia.com/#callback-parameters-e-wallet-refund-callback). You can also check the status of your refund request via API Refund Check Status. Refund [Check Status - API Docs](https://api-docs.oyindonesia.com/#get-e-wallet-refund-status-api-e-wallet-aggregator)
 ### Registration and Setup
+Here are the steps to guide you through registration and setup for creating E-wallet Aggregator transactions. 
 
-Follow the below check-list to ensure you're all set up to use our E-Wallet API service:
+1. Create an account at OY! Dashboard
+1. Do account verification by submitting the verification form. Ensure to tick the “Receive Money” product since E-wallet Aggregator is a part of Receive Money products.
+1. OY! team will review and verify the form and documents submitted 
+1. Once verification is approved, set up your receiving bank account information. Important Note: Ensure that the receiving bank account information is accurate as you can only set it up once via OY! Dashboard for security reasons
+1. Follow the registration process for each Ewallet that you want to use. Please refer to this section for detailed guidelines: e-wallet Onboarding #todo hyperlink
+1. Submit your IP address(es) & callback URL to your business representative or send an email to our support team, <business.support@oyindonesia.com> .
+1. OY! will send the Production API Key as an API authorization through your business representative. 
+   Note: Staging/Demo API Key can be accessed via OY! Dashboard by going to the “Demo” environment and the key can be found on the bottom left menu. 
+1. Integrate E-wallet API to your system. Please follow the API documentation to guide you through.[ E-wallet - API Docs](https://api-docs.oyindonesia.com/#create-e-wallet-transaction-api-e-wallet-aggregator) 
 
-1.  Create an account
-2.  Upgrade your account by submitting the required documentations
-3.  Have your upgrade request approved
-4.  Set up your receiving bank account information (note: ensure that the receiving bank account information is accurate as it cannot be changed via OY! dashboard for security reasons)
-5.  Submit your IPs and callback URLs to your business representative or to partner@oyindonesia.com
-6.  Receive an API Key from us (note: it is required for API authorization purpose)
-7.  Integrate with our E-Wallet API
+### Creating E-Wallet transactions
+Create E-Wallet Transactions: Use this API to create an e-wallet transaction for your user
 
-### Testing
+You can create E-Wallet transactions via API only. Here are the guidelines to create E-wallet transactions via API:
 
-When you hit Create E-Wallet Transaction endpoint (https://api-docs.oyindonesia.com/#https-request-create-e-wallet-transaction), it will always return the same ewallet_url & success_redirect URL in the response: https://pay-dev.shareitpay.in/aggregate-pay-gate. You cannot simulate payment by clicking this URL.
+1. Integrate API Create E-wallet transactions to your system. [Create E-wallet - API Docs](https://api-docs.oyindonesia.com/#https-request-create-e-wallet-transaction)
+1. Hit OY!’s API to Create E-wallet transaction.
+1. OY! will return the information to complete the payment
+   - For e-wallets that use the redirection method (i.e. ShopeePay, DANA, LinkAja), OY! will return the e-wallet URL to complete the payment. You can share the URL to your customer.
+   - For e-wallets that use the push notification method (i.e. OVO), the e-wallet provider will send a notification to your customer’s E-wallet app to complete the payment
 
-In order to be able to simulate payment (change the transaction status into Complete), follow the steps below: (Note: the process of simulating payment in Staging environment doesn't involve any forward / redirection to the E-Wallet apps, the scope is just changing the transaction status into Complete.)
+### Completing transaction
+Each e-wallet provider has a different method to complete the transaction, redirection or push notification method. ShopeePay, LinkAja, and DANA use a redirection method. Meanwhile, OVO uses a push notification method. Please refer to these guidelines for completing transactions based on each provider:
 
+1. Complete e-wallet transactions via ShopeePay #todo hyperlink
+1. Complete e-wallet transactions via LinkAja #todo hyperlink
+1. Complete e-wallet transactions via DANA #todo hyperlink
+1. Complete e-wallet transactions via OVO #todo hyperlink
 
-1.  Create an account
-2.  Send a request to activate API E-Wallet product and obtain staging API Key to your business representative
-3.  Create a transaction by sending a ‘POST’ request to https://api-stg.oyindonesia.com/api/e-wallet-aggregator/create-transaction using your staging API key. Enter the required and optional fields, as referenced in the API reference docs (https://api-docs.oyindonesia.com/#api-e-wallet-aggregator)
-4.  After an E-Wallet transaction is generated, you can simulate an E-Wallet payment through their dashboard (in Staging environment) by going to the "E-Wallet" sidebar, look for the newly created transaction row on the table (should be at the top), then click on the "Pay" button on the very right of that row. ![E-Wallet Table](images/ewallet_testing_2.png)
-5.  Fill in the e-wallet name, the ref number and amount should be prefilled from the transaction in the previous step, then click on "Send Callback" ![E-Wallet API](images/ewallet_testing.png)
-6.  If a payment is successful, we will send a callback to the registered staging callback URL destination
-7.  The payment made to the e-wallet transaction can be monitored through OY! dashboard, in the "E-Wallet" sidebar
+To simulate demo transactions, please refer to this section: Simulate E-Wallet Payments - Product Docs #todo hyperlink
 
-### How to Use
+### Checking transaction status
+All created E-wallet transactions are shown in OY! Dashboard. Navigate to “E-Wallet” to see the list of transactions. Inside the dashboard, you can see the details of the transactions, including all the transaction information inputted during creation, status of transactions, and the payment reference number. The dashboard also has a feature to search, filter, and export the list of transactions in various formats: Excel (.xlsx), PDF (.pdf), and CSV(.csv)
 
-We provide 2 endpoints for you to use:
+There might be times when your customer already completed the payments but the transaction status is not updated to success. Therefore, we also recommend you to check the transaction status periodically via the Check Status E-wallet API. [Check Status E-Wallet - API Docs](https://api-docs.oyindonesia.com/#https-request-check-e-wallet-transaction-status)
 
-- [Create E-Wallet Transaction](https://api-docs.oyindonesia.com/#api-e-wallet-aggregator): Use this API to create an e-wallet transaction for your user
-- [Check E-Wallet Transaction Status](https://api-docs.oyindonesia.com/#https-request-check-e-wallet-transaction-status): Use this API to check the status of an e-wallet transaction. We highly recommend that you implement this endpoint.
+### Receiving fund to balance
+Once a transaction is paid by the customer, OY! updates the transaction status and sends callback to your system that the transaction has been paid. OY! also sends/settles the funds to your OY! balance. Each provider has a different settlement time, varying from D+1 to D+2 working days. 
 
-All details regarding your created e-wallet and its payments can be retrieved via our API endpoint (Check E-Wallet Transaction Status) or can be monitored directly from the OY! dashboard (through the E-Wallet sidebar)
-
-![E-Wallet API](images/ewallet_dashboard.png)
-
-### E-Wallet Details
-
-| E-Wallet Issuer    | E-Wallet Code     | Minimum Expiration Time                        | Maximum Expiration Time                        | Redirection Feature | Refund Feature     |
-| ------------------ | ----------------- | ---------------------------------------------- | ---------------------------------------------- | ------------------- | ------------------ |
-| OVO                | ovo_ewallet       | Parameter is ignored, always set to 55 seconds | Parameter is ignored, always set to 55 seconds | Not supported       | Not supported      |
-| ShopeePay          | shopeepay_ewallet | 1 minute                                       | 60 minutes                                     | Support             | Full               |
-| Linkaja            | linkaja_ewallet   | Parameter is ignored, always set to 5 minutes  | Parameter is ignored, always set to 5 minutes  | Support             | Full               |
-| DANA               | dana_ewallet      | 1 minute                                       | 60 minutes                                     | Support             | Full, Partial      |
 
 ## API Payment Routing
 
