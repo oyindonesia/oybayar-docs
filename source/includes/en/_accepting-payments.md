@@ -1,4 +1,846 @@
 # Accepting Payments
+## Payment Methods
+
+### Bank Transfer - Virtual Account
+#### Introduction 
+To receive payments digitally from your customers, you can create a virtual account (VA) number for your transactions. Your customers can directly transfer the payment to the generated VA number and you will receive a notification (i.e. callback) from OY! once the transaction is considered complete. 
+
+Currently, we offer VA service for 11 banks: 
+
+1. Bank Central Asia (BCA) 
+1. Bank Rakyat Indonesia (BRI) 
+1. Bank Mandiri 
+1. Bank Negara Indonesia (BNI) 
+1. Bank CIMB & CIMB Syariah
+1. Bank BTPN Jenius 
+1. Bank Danamon 
+1. BII Maybank 
+1. Bank KEB Hana 
+1. Bank Syariah Indonesia (BSI)
+1. Bank Permata & Permata Syariah
+
+#### Main Features Availability
+|VA Features|Payment Link|VA Aggregator|E-Wallet Aggregator|Payment Routing|
+| :- | :-: | :-: | :-: | :-: |
+|Open Amount|❌|✅|❌|❌|
+|Closed Amount |✅|✅|❌|✅|
+|Multiple Use VA Number |❌|✅|❌|✅|
+|Single Use VA Number|✅|✅|❌|✅|
+|Static (Lifetime)|❌|✅|❌|✅|
+|Dynamic  |✅(set to 24 hours after VA number is generated)|✅|❌|✅|
+|Customizable Number|❌|✅|❌|❌|
+
+
+Regardless of the parameters of the Payment Link (e.g. open amount payment link, lifetime payment link, etc), your customers need to input the specific amount in the link to be able to choose a payment method successfully and proceed to payment. This is why if your customers choose to pay via VA - Payment Link, then the VA number generated can only accept the specified amount (i.e. closed amount) and can only be used for that particular transaction only (i.e. single use VA number). The expiry time for the VA generated via Payment Link is 24 hours after payment method confirmation from your customers.
+
+If you want to add a personal touch to your customer’s VA payment journey, you may do so by creating a customized VA number. With this feature, you can custom the suffix of the VA number according to your customer’s billing number or phone number. For example, if you customer’s phone number is 08123456789, then when you create a customized VA number, the VA number result will be 23088123456789. 
+
+To create customized VA numbers, you need to hit a different URL endpoint than the usual VA creation endpoint, the [API Create Customized VA](https://api-docs.oyindonesia.com/#create-customized-va-va-aggregator). The API endpoints to [update](https://api-docs.oyindonesia.com/#update-customized-va-va-aggregator) and [deactivate](https://api-docs.oyindonesia.com/#deactivate-customized-va-va-aggregator) the customized VA number are also different from the non-customized VA number. In general, the customized VA numbers can receive multiple payments and have lifetime validity. Currently, this feature is only supported for BRI and CIMB. To activate this feature, you may contact your business representative for assistance. 
+
+#### Transaction Amount Details 
+
+Minimum amount per transaction
+
+
+
+|Product Type|Min. VA Transaction Amount|
+| :-: | :-: |
+|Payment Link|Rp 10,000 |
+|Payment Routing|Rp 10,000 |
+|VA Aggregator (Closed Amount)|Rp 10,000 |
+|VA Aggregator (Open Amount)|No minimum amount |
+
+Maximum amount per transaction 
+
+
+|Banks|Max. Amount per transaction |
+| :-: | :-: |
+|Bank Central Asia (BCA) |Rp 50,000,000|
+|Bank Negara Indonesia (BNI) |Rp 50,000,000|
+|Bank Rakyat Indonesia (BRI) |Rp 500,000,000|
+|Bank Mandiri |Rp 500,000,000|
+|Bank CIMB |Rp 500,000,000|
+|Bank BTPN Jenius |Rp 500,000,000|
+|Bank Danamon |Rp 25,000,000|
+|BII Maybank |Rp 100,000,000|
+|Bank KEB Hana |Rp 50,000,000|
+|Bank Syariah Indonesia (BSI)|Rp 50,000,000|
+|Bank Permata|Rp 500,000,000|
+
+#### Product Availability
+
+|Payment Link|VA Aggregator|E-Wallet Aggregator|Payment Routing|
+| :-: | :-: | :-: | :-: |
+|✅|✅|❌|✅|
+
+
+#### Payment Flow 
+![Bank Transfer Virtual Account Flow](images/acceptingPayments/paymentMethod/payment_method_bank_transfer_sequence_virtual_account.png)
+#### Activation 
+1. Banks non BCA 
+   - Generally, you do not need extra onboarding steps to activate VAs for each bank (non-BCA). Once you are allowed to use Receive Money products, you should be able to use the VAs without additional documents required. Kindly let your business representative know about the banks that you will need 
+1. BCA 
+   - In addition to your onboarding documents, you also need to submit additional documents to be able to use VA for BCA (including, but not limited to, Taxpayer Registration Number (NPWP), and Nationality ID) 
+   - Onboarding process to the bank will take around 14 to 30 working days, depending on the document completion and assessment from the bank 
+
+#### Available Payment Channels for VA 
+
+
+Your end-users may use the below payment channels to pay for their bills via VA
+
+
+| Bank (Virtual Account) | SKN  | RTGS  | ATMs | Intrabank Mobile Banking & Internet Banking | Interbank Internet Banking | Interbank Mobile Banking |
+| ---------------------- | ---  |----  |---- | ------------------------------------------- | --------------------------| ---------------------------- |
+| Bank Mandiri           | Yes  | Yes  | Yes | Yes                                            | Yes                       | Yes                          |
+| BRI                    | Yes  | Yes  | Yes | Yes                                            | No                       | Yes                           |
+| BNI                    | Yes  | Yes  | Yes | Yes                                            | No                       | Yes                           |
+| Permata                | Yes  | Yes  | Yes | Yes                                            | No                       | Yes 
+| CIMB Niaga / CIMB Niaga Syariah | Yes  | Yes | Yes | Yes (Mobile Banking), No (Internet Banking)| No                       | Yes                          |
+| BCA                    | No   | No   | Yes | Yes      | No                                  | No                       |
+| BTPN                   | Yes  | No   | Yes | Yes (Mobile Banking), No (Internet Banking)     | No                       | Yes                          |
+| Maybank                | Yes  | Yes  | Yes | Yes      | No                                  | No                       |
+| Danamon                | Yes  | Yes  | Yes | Yes      | No                                  | No                       |
+| KEB Hana               | No   | No   | Yes | Yes      | No                                  | No                       |
+| BSI                    | No   | No   | Yes | Yes      | Yes                                 | Yes                      |
+
+
+
+#### Simulating Callback 
+1. To simulate a successful payment, ensure that you are in our staging environment. Click “Try in Demo” button that will redirect you to our staging environment
+1. Scroll down to “Settings” tab → Callback Bank Transfer 
+1. Choose the “Virtual Account” as the Transaction Type 
+1. Select the Bank Name of the VA number that you have previously created 
+1. Enter the VA number and amount. For Closed VA, you need to enter the exact amount of the VA as created 
+1. Enter the payment date and time. Ensure that payment date and time are greater than created but less than expiration time 
+1. You may use this feature for all your VA transactions across all of OY! Receive Money products (VA Aggregator, Payment Link, and Payment Routing) 
+
+![](Aspose.Words.50aec8f4-672b-4dff-9053-4c26d52e8822.003.png)
+
+
+### Bank Transfer - Unique Code
+#### Intro
+Unique Code is a type of bank transfer payment that adds/subtracts a unique amount (between Rp 1-999) to your billed amount. The unique amount acts as an identifier to complete transactions. Unlike virtual accounts where each customer gets a different account number, unique code always uses the same account number for all transactions. The destination account is under OY! Indonesia’s name (PT. Dompet Harapan Bangsa) and you can not modify the destination account with your account. Unique code also has operational hours where you can only create unique code transactions between 3 AM - 8.30 PM GMT+7. 
+
+There are two approaches that you can use on unique code transactions: addition or subtraction approach. 
+1. Addition Approach
+   - By using the addition approach, the unique amount is added to your billed amount, meaning your customer will pay Rp 1-999 more than the billed amount. The additional amount will not be settled to your balance.
+1. Subtration Approach
+   - By using the subtraction approach, the billed amount is subtracted by the unique amount. In this case, your customer will pay Rp 1-999 less than the billed amount. However, worry not, as the amount settled to your balance is not deducted by the unique amount. The default approach is addition, but you can request to change the approach via your business representative.
+
+As an example, if you create a unique code transaction with an amount of Rp 100.000, then OY! will generate a unique amount for that transaction. Let’s assume the unique amount generated for that transaction is Rp 100. If you use the addition approach, then your customer pays a total of Rp 100.100. However, if you use the subtraction approach, your customer pays a total of Rp 99.900. Using either approach, the amount settled to your balance is Rp 100.000.
+
+#### Unique Code Payment Details
+
+|Banks|Bank Code|Open Amount |Closed Amount |Max. Expiration Time|Operational Hours|
+| :-: | :-: | :-: | :-: | :-: | :-: |
+|Bank Central Asia (BCA) |014|No|Yes|3 hours|03\.00 - 20.30 GMT + 7|
+
+#### Feature Availability
+
+|Banks|Refund Feature|
+| :- | :- |
+|BCA|No|
+
+
+#### Product Availability
+
+|Bank |Payment Link|VA Aggregator|E-Wallet Aggregator|Payment Routing|
+| :- | :-: | :-: | :-: | :-: |
+|BCA |✅|❌|❌|✅|
+
+#### Transaction Amount Details 
+
+|Approach Type|Min. Transaction Amount|Max. Transaction Amount|
+| :-: | :-: | :-: |
+|Subtraction|Rp 11,000 |Rp 499,999,000|
+|Addition|Rp 10,000 |Rp 500,000,000|
+
+#### Payment Flow
+![Bank Transfer - Unique Code Flow](images/acceptingPayments/paymentMethod/payment_method_bank_transfer_sequence_unique_code.png)
+#### Activation
+You can only use one type of bank transfer (virtual account / unique code) per bank. By default, all banks use virtual accounts. In order to accept payments using unique code, you need to submit a request to OY! via your business representative or our business support. 
+#### Payment
+
+[Click here to see the payment journey](https://drive.google.com/file/d/1D8cJEPFmVEN8-QVppiSm9RPa2vpb-b2H/view?usp=drive_link)
+
+#### Simulate Payments
+To get more understanding of unique code transactions behavior, you can simulate unique code transactions that are created in the Demo environment. Here are the steps to simulate unique code payments via OY! Dashboard:
+
+1. Open OY! Dashboard and navigate to the Demo environment
+1. Open the “Settings” menu and click “Callback Bank Transfer”.
+1. Insert the payment detail of the transaction you want to simulate:
+   - Transaction Type: Choose “Unique Code” 
+   - Bank: Choose the destination bank.
+   - Account Number: Insert OY! Indonesia’s bank account number that you receive during creation
+   - Amount: Insert the billed amount and the unique amount that you receive during creation
+   - Payment Date and Time: Choose the date & time that you want the payment to occur
+1. Once you input all the fields, you can simulate the payment by clicking “Send Callback”. If the payment is successful, a success notification will be shown inside the dashboard. OY! will also send the callback to your specified callback URL. If for some reason you did not receive any callback, please contact the customer service to help you solve the problem.
+
+![Bank Transfer - Unique Code Simulate Payment](images/acceptingPayments/paymentMethod/payment_method_bank_transfer_simulate_payments.png)
+
+![Bank Transfer - Unique Code Amount Detail](images/acceptingPayments/paymentMethod/payment_method_bank_transfer_unique_amount.png)
+
+
+### QR Code (QRIS)
+#### Intro
+Quick Response Code Indonesian Standard (QRIS) is a standardized QR payments in Indonesia that are developed by Bank Indonesia. Payments are performed by the customers scanning the QR on their m-banking/e-wallet application. QR payments are highly suitable for low-value transactions since they offer an affordable price (0.7% per transaction). 
+
+#### Feature Availability
+
+|QRIS Provider|Refund Feature|
+| :- | :- |
+|QRIS|No|
+
+#### Product Availability
+
+|QRIS Provider|Payment Link|VA Aggregator|API E-Wallet Aggregator|Payment Routing|
+| :- | :- | :- | :- | :- |
+|QRIS|Yes|No|No|Yes|
+
+#### Transaction Amount Details 
+
+The maximum amount per transaction for QRIS is Rp 10,000,000. The minimum amount per transaction is Rp 10,000, both in Payment Link and Payment Routing. Should you have any request to receive payments below Rp 10,000 , please contact your Business Representative 
+#### Payment Flow
+![QRIS Flow](images/acceptingPayments/paymentMethod/payment_method_qris_sequence.png)
+#### Activation
+In order to accept payments using QRIS, you need to register your merchant to the QRIS providers first. You can do the registration via OY! Dashboard by opening the Payment Method page and clicking the Payment Method tab. OY! offers real time registration, so you can directly accept payments once you finish submitting your application.
+
+Here are the requirements that must be fulfilled in order to submit a registration: 
+
+<table>
+  <tr>
+    <th colspan="2" valign="top" style="text-align:center">
+      <p></p>
+      <p><b>Requirement</b></p>
+    </th>
+    <th valign="top" halign="center" ><b>QRIS</b></th>
+  </tr>
+  <tr>
+    <td colspan="2" valign="top">Business Ownership</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td rowspan="11" valign="top">Owner/Shareholder ID Card</td>
+    <td valign="top">ID Card Number</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td valign="top">Full Name</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td valign="top">Date of Birth</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td valign="top">Occupation </td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td valign="top">Gender</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td valign="top">Province</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td valign="top">City</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td valign="top">District </td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td valign="top">Village</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td valign="top">Postal Code</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td valign="top">Full Address</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="top">Owner/Shareholder Email Address</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="top">Owner/Shareholder Phone Number</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td rowspan="2" valign="top">NPWP</td>
+    <td valign="top">NPWP Number</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td valign="top">Document (dalam JPG atau PNG)</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td rowspan="2" valign="top">Person in Charge (PIC) - Director</td>
+    <td valign="top">Full Name</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td valign="top">
+      <p>Position</p>
+      <p></p>
+      <p></p>
+    </td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td rowspan="4" valign="top">Person in Charge (PIC) - Non Director</td>
+    <td valign="top">Full Name</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td valign="top">
+      <p>Position</p>
+      <p></p>
+      <p></p>
+    </td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td valign="top">Email Address</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td valign="top">Phone Number</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="top">Payment Flow</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="top">Business Logo (in Google Drive URL format)</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="top">Website URL</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="top">Business Permit Number (According to the legality document)</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="top">Date of Business Establishment (According to the legality document)</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="top">Place of Business Establishment (According to the legality document)</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="top">Projected turnover per month using QRIS</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="top">Projected number of transactions per month using QRIS</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+</table>
+
+
+#### Payments
+[Click here to see the payment journey](https://drive.google.com/file/d/1nwoMKH8iKaq8S89an0_bPlNQ11xMyo7T/view?usp=sharing)
+
+#### Simulate Payments
+Simulating QRIS payments for demo transactions is currently not available.
+
+### E-Wallet
+#### Intro
+E-Wallet is a type of electronic payment that allows you to pay for goods and services without requiring bank accounts or cash. E-Wallet plays a significant role in the rapid growth of e-commerce since it enables users to make payments easily without having to interact with banks or other third parties. OY! currently supports payment from several top e-wallets in Indonesia, including OVO, DANA, ShopeePay, and LinkAja.
+
+#### E-wallet Payment Details
+
+|E-wallet Provider|Ewallet Code|Allowed Expiration Time|Flow Type|Payments via desktop|Payments via mobile browser|Payments via provider’s mobile app|
+| :- | :- | :- | :- | :-: | :-: | :-: |
+|ShopeePay|shopeepay\_ewallet|1 - 60 minute(s)|Redirection (JumpApp)|❌|❌|✅|
+|OVO|ovo\_ewallet|55 seconds|Push notification|❌|❌|✅|
+|DANA|dana\_ewallet|1 - 60 minute(s)|Redirection (JumpApp)|✅|✅|✅|
+|LinkAja|linkaja\_ewallet|5 minutes|Redirection (JumpApp)|❌|❌|✅|
+
+The maximum amount per transaction for all E-wallet providers is 10,000,000 IDR for customers who have performed KYC on the provider’s app and 2,000,000 IDR for customers who have not. 
+
+#### Feature Availability
+
+|E-wallet Provider|Refund Feature|Account Linking Feature|Linking Expiry Time|Linking Renewal|
+| :- | :- | :- | :- | :- |
+|ShopeePay|Full|Supported|5 Years|After Expiry Time|
+|OVO|Not Supported|Not supported|-|-|
+|DANA|Full, Partial|Supported|10 Years|After Expiry Time|
+|LinkAja|Full|Not supported|-|-|
+
+#### Product Availability
+
+<table>
+  <tr>
+    <th rowspan="2" valign="top"><b>E-Wallet Provider</b></th>
+    <th valign="top"><b>Payment Link</b></th>
+    <th valign="top"><b>VA Aggregator</b></th>
+    <th valign="top"><b>API E-Wallet Aggregator</b></th>
+    <th colspan="2" valign="top"><b>Payment Routing</b></th>
+  </tr>
+  <tr>
+    <td valign="top"><b>One Time</b></td>
+    <td valign="top"><b>-</b></td>
+    <td valign="top"><b>One Time</b></td>
+    <td valign="top"><b>One Time</b></td>
+    <td valign="top"><b>Direct Payment</b></td>
+  </tr>
+  <tr>
+    <td valign="top">ShopeePay</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">❌</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td valign="top">OVO</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">❌</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">❌</td>
+    <td valign=”center” style="text-align:center">❌</td>
+  </tr>
+  <tr>
+    <td valign="top">DANA</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">❌</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">❌</td>
+  </tr>
+  <tr>
+    <td valign="top">LinkAja</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">❌</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">❌</td>
+  </tr>
+</table>
+
+#### Payment Type & Flow
+##### One Time Payment
+One Time payment is a type of payment that allows your customer to complete payments using E-wallet easily. 
+
+There are two types of payment flow for One Time Payment: Redirection (JumpApp) or Push Notification.
+
+![Ewallet Redirection Flow](images/acceptingPayments/paymentMethod/payment_method_ewallet_redirection_sequence.png)
+
+![Ewallet Push Notification Flow](images/acceptingPayments/paymentMethod/payment_method_ewallet_notification_sequence.png)
+
+##### Direct Payment
+Direct payment requires account linking, meaning that your customer must connect their E-wallet account to your system before completing payments. Direct payments offer a more seamless payment experience, as your customer does not need to open or get redirected to the e-wallet provider application to complete payments.
+
+Direct Payments offers both payment with and without authorization (auto-debit). Direct Payment with authorization requires the customer to input a PIN or OTP on every transaction, while Direct Payment without authorization allows your system to deduct your customers balance without the need to enter a PIN or OTP. Direct payment without authorization is suitable for subscription use cases.
+
+![Ewallet Direct Payment Flow](images/acceptingPayments/paymentMethod/payment_method_ewallet_direct_payment_sequence.png)
+#### Activation
+In order to accept payments using E-wallets, you need to register your merchant to the E-wallet providers first. You can do the registration via OY! Dashboard by opening the Payment Method page, Payment Method - OY! Dashboard. OY! offers real time registration, so you can directly accept payments once you finish submitting your application.
+
+Here are the requirements that must be fulfilled in order to submit a registration: 
+<table>
+  <tr>
+    <th colspan="2" rowspan="2" valign="top" style="text-align:center">
+      <p></p>
+      <p><b>Requirement</b></p>
+    </th>
+    <th colspan="4" valign="top" style="text-align:center"><b>E-wallet Provider</b></th>
+  </tr>
+  <tr>
+    <td valign="top"><b>ShopeePay</b></td>
+    <td valign="top"><b>LinkAja</b></td>
+    <td valign="top"><b>DANA</b></td>
+    <td valign="top"><b>OVO</b></td>
+  </tr>
+  <tr>
+    <td rowspan="11" valign="top">Owner/Shareholder ID Card</td>
+    <td valign="top">ID Card Number</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td valign="top">Full Name</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td valign="top">Date of Birth</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td valign="top">Occupation </td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td valign="top">Gender</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td valign="top">Province</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td valign="top">City</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td valign="top">District </td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td valign="top">Village</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td valign="top">Postal Code</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td valign="top">Full Address</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="top">Owner/Shareholder Email Address</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="top">Owner/Shareholder Phone Number</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td valign="top">NPWP</td>
+    <td valign="top">NPWP Owner Type</td>
+    <td valign=”center” style="text-align:center">❌</td>
+    <td valign=”center” style="text-align:center">❌</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">❌</td>
+  </tr>
+  <tr>
+    <td rowspan="8" valign="top"></td>
+    <td valign="top">NPWP Number</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td valign="top">Document (dalam JPG atau PNG)</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td valign="top">Province</td>
+    <td valign=”center” style="text-align:center">❌</td>
+    <td valign=”center” style="text-align:center">❌</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">❌</td>
+  </tr>
+  <tr>
+    <td valign="top">City</td>
+    <td valign=”center” style="text-align:center">❌</td>
+    <td valign=”center” style="text-align:center">❌</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">❌</td>
+  </tr>
+  <tr>
+    <td valign="top">District </td>
+    <td valign=”center” style="text-align:center">❌</td>
+    <td valign=”center” style="text-align:center">❌</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">❌</td>
+  </tr>
+  <tr>
+    <td valign="top">Village</td>
+    <td valign=”center” style="text-align:center">❌</td>
+    <td valign=”center” style="text-align:center">❌</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">❌</td>
+  </tr>
+  <tr>
+    <td valign="top">Postal Code</td>
+    <td valign=”center” style="text-align:center">❌</td>
+    <td valign=”center” style="text-align:center">❌</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">❌</td>
+  </tr>
+  <tr>
+    <td valign="top">Full Address</td>
+    <td valign=”center” style="text-align:center">❌</td>
+    <td valign=”center” style="text-align:center">❌</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">❌</td>
+  </tr>
+  <tr>
+    <td rowspan="4" valign="top">Person in Charge (PIC) - Non Director</td>
+    <td valign="top">Full Name</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td valign="top">
+      <p>Position</p>
+      <p></p>
+      <p></p>
+    </td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td valign="top">Email Address</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td valign="top">Phone Number</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="top">Does your business license have a validity?</td>
+    <td valign=”center” style="text-align:center">❌</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">❌</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="top">Payment Flow</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="top">Business Logo (in Google Drive URL format)</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="top">Website URL</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="top">Business Permit Number (According to the legality document)</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="top">Business Identification Number / Company Registration Certificate</td>
+    <td valign=”center” style="text-align:center">❌</td>
+    <td valign=”center” style="text-align:center">❌</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="top">Date of Business Establishment (According to the legality document)</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="top">Place of Business Establishment (According to the legality document)</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="top">Projected turnover per month using QRIS</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="top">Projected number of transactions per month using QRIS</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+</table>
+
+
+#### Payments
+ShopeePay (One Time)
+
+[Click here to see the payment journey](https://drive.google.com/file/d/162WY4oEKwEcvgF7p_1lQ6VLHS4XGS-yI/view?usp=drive_link)
+
+DANA
+
+[Click here to see the payment journey](https://drive.google.com/file/d/1c65gLG1gZdGKWhM6FazlqRA5qJVRhOYf/view?usp=drive_link)
+
+LinkAja
+
+[Click here to see the payment journey](https://drive.google.com/file/d/1bN4-fVS0i1ygK96UVo7XcdnIhhQqzZi3/view?usp=drive_link)
+
+OVO
+
+[Click here to see the payment journey](https://drive.google.com/file/d/1b_ImuHTQPGF1UE6jrtxhqRAShpbx8DDi/view?usp=sharing)
+
+#### Simulate Payments
+To get more understanding of E-wallet transactions behavior, you can simulate E-wallet Demo transactions that are created in the Demo environment. Here are the steps to simulate E-wallet payments via OY! Dashboard:
+
+1. Open OY! Dashboard and navigate to the Demo environment
+1. Open the “Settings” menu and click “E-wallet Callback”.
+1. Insert the payment detail of the transaction you want to simulate:
+   1. Choose the E-wallet provider: Shopeepay, DANA, LinkAja, or OVO.
+   1. Insert the Transaction Reference Number. For E-wallet transactions that are created via API E-wallet, you can find the Ref Number inside “E-Wallet API menu”. Please look at the image below to guide you
+   1. Input the amount of transaction
+1. Once you input all the fields, you can simulate the payment by clicking “Send Callback”. If the payment is successful, a success notification will be shown inside the dashboard. OY! will also send the callback to your specified callback URL. If for some reason you did not receive any callback, please contact our customer service to help you solve the problem.
+
+![Ewallet Simulate Callback](images/acceptingPayments/paymentMethod/payment_method_ewallet_simulate_payments.png)
+![Ewallet See Reference Number](images/acceptingPayments/paymentMethod/payment_method_ewallet_reference_number.png)
+
+Specifically for Payment Link transactions, you can directly simulate the payment on the Payment Link by clicking “Bayar Tagihan''.
+
+![Ewallet Simulate Callback Payment Link](images/acceptingPayments/paymentMethod/payment_method_ewallet_bayar_tagihan.png)
+
+### Cards
+#### Introduction 
+OY! offers both debit and credit cards as a payment method for your customers. We currently accept VISA, Mastercard, and JCB. 
+
+#### Feature Details 
+1. Transactions are protected by 3DS – protecting you and your customers from fraudulent transactions 
+1. Support multiple global network (Visa, Mastercard, JCB) – enabling you to process local and overseas transactions
+
+To increase the chance of successful transactions, please ensure that your customers: 
+
+1. Have enabled 3DS as an authentication method for each transaction made on their card
+1. Have sufficient balance or credit limit for each transaction 
+1. (Especially for overseas transactions) Have notified their card issuer (i.e. the bank or entity that issues the card) of their intention to conduct overseas transactions 
+
+Minimum transaction amount with cards is Rp 15.000. There is no maximum transaction limit for each transaction. The limit depends on the availability of balance or credit limit for each card. 
+#### Understanding Overseas Transactions 
+Your customers may use credit and/or debit cards issued locally or internationally. If you plan to conduct overseas transactions, it is important to note that OY! can only create the transactions in IDR. This means that your customers can still use their overseas cards for payment, however the card will still be charged in IDR and settlement to your OY! balance will also be done in IDR. The cardholder's billing statement, however, will show the transaction amount in their local currency with foreign exchange rate & extra fees (if any) as applied by their issuer (i.e. the bank or entity that issues the card).
+
+Some card issuers might not allow overseas transactions. Therefore, it is recommended for your customers to check with their issuing bank regarding country restrictions to reduce the chance of the transaction being declined by the issuer.
+#### Transactions Declined by Issuer 
+When a transaction attempt is submitted to your customer’s issuer (i.e. the bank or entity that issues the card), they usually have an automated system and parameters that help them in deciding whether or not to authorize the transaction. The parameters may include, but not limited to, behavior from past transactions, card details such as expiration date and CVV, and availability of funds.
+
+Even though all of the card details seem correct, the funds are available and 3DS has been enabled for the card, it is possible that the transaction is declined by the issuer. Unfortunately, sometimes the decline reason provided by the issuer is too “generic”. If that’s the case, you may ask your customers to either use alternative cards or payment methods or to contact their issuer directly for more information on the decline reason. Due to privacy & security concerns, issuers can only discuss the specific reason why a transaction is declined to the respective cardholder. This means that issuer will most likely not entertain decline explanation requests via OY!.
+#### Payment Flow 
+Flow via Payment Link 
+
+![Cards Flow via Payment Link](images/acceptingPayments/paymentMethod/payment_method_cards_flow_payment_link.png)
+
+Flow via Payment Routing
+
+![Cards Flow via Payment Routing](images/acceptingPayments/paymentMethod/payment_method_cards_flow_payment_routing.png)
+#### Activation 
+
+If you need to accept payments from your end-users via debit and/or credit cards, you may contact your Business Representative for more information and assistance on the activation process. 
+
+[Option for Design] (nanti pilih salah 1 yg lebih gampang yg mana) 
+
+
+
+|Requirement |Credit and Debit Cards|
+| :-: | :-: |
+|Partner Eligibility Form|✅|
+|Partner Request Form to Acquiring Bank |✅|
+|Partner and OY! Service Agreement |✅|
+|Company Profile |✅|
+|Operational license (if applicable)|✅|
+|KYC Flow |✅|
+|List of users|✅|
+
+
+You will need to fill and submit the following information and documents: 
+
+1. Partner Eligibility Form & Partner Request Form to Acquiring Bank 
+1. Partner and OY! Service Agreement 
+1. Company Profile 
+1. Operational license (if applicable) 
+1. KYC Flow 
+1. List of users 
+
+
+#### Simulate Payments
+1. Open OY! Dashboard and and navigate to the Demo environment
+1. Create a Payment Link transaction. Make sure you select “Cards” as one of the available payment method options 
+1. Open the payment link URL on your browser
+1. Choose and confirm “Credit/Debit Card” as your payment method. You will then automatically be redirected to a page to fill your card details. If you are not automatically redirected, then click “Payment with Cards” button 
+1. Fill the card details as follow 
+  |Card Details|Mock Values|
+  | :- | :-: |
+  |Card Number|2223000000000007|
+  |Card Expiry Time|01/39|
+  |Card CVN|100|
+  |Cardholder Name|Testing|
+
+1. Fill the email and phone number accordingly 
+1. Click to pay 
+1. You will be directed to a page to mock the 3DS step (i.e. in the actual payment in production environment, you will receive an OTP sent to the phone number registered to your card by your issuing bank). Choose from the dropdown menu to successfully authenticate the transaction (note: you may also choose to simulate rejected transactions by selecting unsuccessful authentication from the dropdown).
+1. Transaction will be successful 
+
 
 ## VA Aggregator
 Businesses are struggling to manage hundreds or even thousands of physical bank accounts that are used for different purposes. It causes significant overhead costs in terms of the amount of account maintenance and manhours needed for reporting and reconciliation purposes, combining different information from different accounts.
@@ -1897,50 +2739,6 @@ DANA
 1. Navigate to Account → Linked Accounts
 1. Click remove linking for your merchant
 1. If your customer's DANA account is frozen, then their account is temporarily unlinked. Once the account is unfrozen and the token has not expired, their account is automatically linked again.
-
-
-## Understanding Cards Transaction 
-
-### How to Activate 
-
-If you need to accept payments from your end-users via debit and/or credit cards, you may contact your Business Representative for more information and assistance on the activation process. 
-
-
-### Products Available 
-
-You may receive credit and/or debit card payments via Payment Link or Payment Routing.
-
-
-### Supported Networks 
-
-We currently support Mastercard, Visa, and JCB transactions. To protect you and your end-users from fraudulent payment attempts, all transactions will be processed with 3D Secure (i.e. 3DS). 
-
-
-### Payments via Cards
-
-To increase the chance of successful transaction, please ensure that your end-users:
-
-1. Have sufficient balance or credit limit for the transaction
-
-2. Have enabled 3D Secure (3DS) as a way to authenticate the transaction
-
-
-### Understanding Overseas Transactions
-
-Your end-users may use credit and/or debit cards issued locally or internationally. If you plan to conduct overseas transactions, it is important to note that OY! can only create the transactions in IDR. This means that your end-users can still use their overseas cards for payment, however the card will still be charged in IDR and settlement will also be done in IDR. The cardholder's billing statement, however, will show the transaction amount in their local currency with foreign exchange rate & extra fees (if any) as applied by their issuer (i.e. the bank or entity that issues the card).
-
-
-Some cards issuer might not allow overseas transactions. Therefore, it is recommended for your end-users to check with their issuing bank regarding country restrictions to reduce the chance of the transaction being declined by the issuer. 
-
-
-### Transactions Declined By Issuer 
-
-When a transaction attempt is submitted to your end-user’s issuer (i.e. the bank or entity that issues the card), they usually have an automated system and parameters that help them in deciding whether or not to authorize the transaction. The parameters may include, but not limited to, behavior from past transactions, card details such as expiration date and CVV, and availability of funds. 
-
-
-If all of the card details seem correct, the funds are available and 3DS has been enabled for the card, it is possible that the transaction is declined by the issuer. Unfortunately, sometimes the decline reason provided by the issuer is too “generic”. If that’s the case, you may ask your end-users to either use alternative cards or payment methods or to contact their issuer directly for more information on the decline reason. Due to privacy & security concerns, issuers can only discuss the specific reason why a transaction is declined to the respective cardholder. This means that issuer will most likely not entertain decline explanation requests via OY!. 
-
-
 
 
 ## Feature: Resend Callback
