@@ -1797,6 +1797,69 @@ Follow the below steps to test the Payment Routing flow:
 1. You can monitor Payment Routing transaction through OY! Dashboard or call the endpoint API. Go to “Payment Routing” menu to monitor your transactions.
 
 
+## API Account Linking
+Account Linking is a feature that allows your customer's payment account to be linked to your system using tokenization. By linking the customer’s account up front, your customer can see their account balance inside your application and later on can complete payments without being prompted for any card details or e-wallet phone number. The feature is currently supported for e-wallet ShopeePay & DANA. 
+
+Account linking feature is free of charge.
+#### Flow
+
+![Account Linking Flow](images/acceptingPayments/accountLinking/account_linking_sequence_linking.png)
+![Get Account Balance Flow](images/acceptingPayments/accountLinking/account_linking_sequence_get_ewallet_balance.png)
+![Account Unlinking API Flow](images/acceptingPayments/accountLinking/account_linking_sequence_unlinking_api.png)
+![Account Unlinking via App Flow](images/acceptingPayments/accountLinking/account_linking_sequence_unlinking_app.png)
+
+### Registration and Setup
+Here are the steps to guide you through registration and set up for doing Account Linking. 
+
+1. Create an account at OY! Dashboard
+1. Do account verification by submitting the verification form. Ensure to tick the “Receive Money” since Account Linking is a part of Receive Money.
+1. OY! team will review and verify the form and documents submitted. 
+1. Once verification is approved, set up your receiving bank account information. 
+    - Important Note: Ensure that the receiving bank account information is accurate as you can only set it up once via OY! Dashboard for security reasons
+1. Submit your IP address(es), callback URL, and redirect URL to your business representative or send an email to <business.support@oyindonesia.com> 
+1. OY! will send the Production API Key as an API authorization through your business representative. 
+   Note: Staging/Demo API Key can be accessed via OY! Dashboard by going to the “Demo” environment and the key can be found on the bottom left menu. 
+1. Integrate Account Linking API to your system. Please follow the API documentation to guide you through.[Account Linking - API Docs](https://api-docs.oyindonesia.com/#api-account-linking) 
+
+### Link customer’s payment account to your application
+Customers can link their payment account to your application by hitting the API Account Linking. Here are the steps to guide you and your customer when doing account linking:
+
+1. Integrate API Account Linking to your system. [Account Linking - API Docs](https://api-docs.oyindonesia.com/#get-linking-url-api-account-linking)
+1. Hit OY!’s API Account Link. You will receive a linking URL as a response. The linking URL is used for the customer to authorize the linking request by giving a permission.
+1. Customer give a permission and input PIN to authorize the request
+1. Payment provider will process the request and OY! will send you a callback to notify that the account is successfully linked
+1. Customer is redirected to the redirect URL you specify during registration
+
+### Check customer’s payment account balance
+Once the customer linked their payment account, you can get the information of the customer's account balance by hitting the API Get E-Wallet balance. You can show the balance inside your application. For instance, show the balance during the checkout process so the customer can know their balance before choosing a payment method. Please refer to the API Docs for more details: [Get Account Balance API - API Docs](https://api-docs.oyindonesia.com/#get-e-wallet-account-balance-api-account-linking)
+
+### Unlink customer’s payment account from your application
+Customers who have linked their payment account can unlink their account anytime. They can do so via API Account Unlinking or via Payment Provider Application. Using the API Account Unlinking allows your customers to unlink their account inside your application. Another option that the customer can do is to unlink their account via the payment provider’s application.
+
+
+Here are the steps to guide you and your customer when unlinking an account:
+
+**API Account Linking**
+
+1. Integrate API Account Unlinking to your system. Account Unlinking - API Docs
+1. Hit OY!’s API Account Unlinking. Once you hit our API, OY! will hit the provider’s system to unlink the customer’s account
+1. OY! will send a callback to let you know that the unlinking is successful
+
+
+**Payment Provider Application**
+
+ShopeePay
+
+1. Customer open Shopee app
+1. Navigate to Setting → Apps Linked to ShopeePay
+1. Click unlink account for your merchant
+
+DANA
+
+1. Customer open DANA app
+1. Navigate to Account → Linked Accounts
+1. Click remove linking for your merchant
+1. If your customer's DANA account is frozen, then their account is temporarily unlinked. Once the account is unfrozen and the token has not expired, their account is automatically linked again.
 
 
 ## Understanding Cards Transaction 
@@ -1942,74 +2005,6 @@ Refund features allow you to refund a successful e-wallet transaction to your en
 7. Make sure that you have enough balance to issue a refund. If you do not have enough balance, an error message will show up. You can top up your balance via “Top Up” feature. ![Refund E-wallet](images/ewallet_refund_balance.png)
 8. The transaction will change to “Refunded” if the refund is successful. You can not trigger another refund after the refund is successful. The refund button will be disabled.
 9. You can see the refunded transaction in “Account Statement” page by clicking “Transaction Report” and “Account Statement”. ![Refund E-wallet](images/ewallet_refund_account_statement.png)
-
-
-## Feature: Account Linking
-
-**Overview** Account Linking is a feature that allows your customer's bank/e-wallet account to be linked to your system using tokenization. By setting up account linking up front, your customer can later complete payments without being prompted for any card details or e-wallet phone number. Currently, our account linking feature is supported in E-Wallet (DANA & ShopeePay).
-
-
-Account linking feature is free of charge.
-
-### Key Features
-**1. Account Linking**
-
-Link your customer's bank/e-wallet account to your system using tokenization.
-
-**2. Account Unlinking**
-
-Unlink your customer's bank/e-wallet account from your system. 
-
-**3. Get E-wallet Balance**
-
-By using account linking, your users can now see their e-wallet balance on before checking out a payment.
-
-
-### Account Linking Flow
-1. You hit OY! API Account Linking for a particular payment method (e.g., DANA).
-
-2. OY! returns redirect URL for authentication.
-
-3. Your customer authorizes the account linking by signing the agreement page and inserting a PIN.
-
-4. OY! returns account linking result. If success, OY! will save the authorization as a token and redirect your customer to your success page URL.
-
-
-
-### Account Unlinking Flow
-Account Unlinking can be done in several ways:
-
-- **OY! API Unlinking** 
-
-  You can hit OY! API Unlinking to unlink your customer's bank/e-wallet account
-
-  1. You hit OY! API Account Unlinking for a particular payment method (e.g., DANA).
-
-  2. OY! returns account unlinking result. If success, OY! will invalidate the token.
-
-
-- **Mobile Banking/E-Wallet Application** 
-
-Your customer can unlink their account via their m-Banking/E-Wallet application.
-
-
-- **Deleted/Blocked Accounts** 
-
-If your customer's account is deleted/blocked, then their account is automatically unlinked.
-
-
-
-### Payment Method Supported
-Currently, Account Linking is only supported on e-wallet payment method. Each payment method have different expiry time and process to renew token.
-
-| E-Wallet Issuer    | Token Expiry Time  | Token Renewal      |
-| ------------------ | ------------------ | ------------------ |
-| DANA               | 10 Years           | After Expiry Time  |
-| ShopeePay          | 5 Years            | After Expiry Time  |
-| Linkaja            | Not supported      | -                  |
-| OVO                | Not supported      | -                  |
-
-For DANA: If your customer's DANA account is frozen, then their account is temporarily unlinked. Once the account is unfrozen and the token has not expired, their account is automatically linked again.
 
 
 
