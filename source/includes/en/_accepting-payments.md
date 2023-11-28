@@ -1,282 +1,187 @@
 # Accepting Payments
 
 ## VA Aggregator
-
-Businesses are struggling to manage hundreds or even thousands of physical bank accounts that are used for different purposes. It causes significant overhead cost in terms of the amount of account maintenance and man hours needed for reporting and reconciliation purposes, combining different information from different accounts.
-
-Virtual Account (VA) is essentially a dummy account that is linked to a physical account and has all the physical account characteristics that enables a much easier reporting and reconciliation process by centralizing the money flow into the physical account. By issuing VAs, you can assign each VA for specific person and/or purposes.
-
-![API VA Aggregator](images/va_diagram_1.png)
-
-From the example above, it shows how payments made through the VAs are merely pass-throughs for the physical accounts to receive money. Without VAs, the above example might require up to 8 physical accounts from 2 different banks rather than 2 physical accounts from 2 different banks.
-
-**OY! API VA Aggregator**
-
-Our API VA Aggregator product provides you with the capabilities to create unique Virtual Account (VA) numbers as a bank transfer payment method for your customers while the fund movements take place through OY!'s physical account. It provides you with the capabilities to receive payments from your customers via bank transfer without having each respective bank account across multiple banks.
-
-Our virtual accounts are adjustable according to your needs. We offer options of static or dynamic accounts, single or mutli use accounts, opened or closed amounts, and determinable expiration dates. You can also track all created virtual accounts, incoming payments, and their respective details either through our API callback or the OY! dashboard.
-
-![API VA Aggregator](images/va_diagram_2.png)
-
-### Key Features
-
-1. **Create VA number via API** - Create VA automatically by integrating your applications with our API VA. For more information, visit our [API Docs](https://api-docs.oyindonesia.com/).
-
-2. **Create VA number via Dashboard** - Do not have enough resources to integrate with API VA? Do not worry, you can create a VA number easily via OY! Dashboard. No need to write some codes!
-
-3. **Support multiple banks** - Currently, we support virtual accounts (VA) at 11 banks: BCA, BNI, Mandiri, BRI, Permata, CIMB Niaga, BTPN, KEB Hana, Danamon, Maybank and Bank Syariah Indonesia (BSI)
-
-4. **Real-time settlement for majority of the banks** - Payment into a VA will settle in your OY! dashboard on a real-time basis for the majority of the banks (note: for BCA, the settlement will take place H+2 after payment is made into the VA)
-
-5. **Transaction tracking and monitoring capability** - You can track all created VA, incoming payments, and their respective details through our API callback or the OY! dashboard. You will receive a callback all incoming transactions.
-
-6. **Customizable VA types** - You can customize the VA numbers you want to create. Each VA would consist of three categories you can define in the creation process. Refer to the table below for more information on various types of VA:
-
-| Category        | Type/Feature                  | Description                                                                                                  |
-| --------------- | ----------------------------- | ------------------------------------------------------------------------------------------------------------ |
-| Validity Period | Static Virtual Account        | VA that has a lifetime validity. It will always be active until it is manually deactivated                   |
-| Validity Period | Dynamic Virtual Account       | VA that has a specific validity period. It will always be active until it is expired or manually deactivated |
-| Amount Type     | Closed Amount Virtual Account | VA that only accepts payment of a specific amount/declared amount                                            |
-| Amount Type     | Opened Amount Virtual Account | VA that accepts payment of any amount                                                                        |
-| Usage Frequency | Single Use Virtual Account    | VA that expires after a single payment. A single use configuration can only be set up for a dynamic VA       |
-| Usage Frequency | Multiple Use Virtual Account  | VA that only expires when expiration date is reached or when it is manually deactivated                      |
-| VA Number       | Customized or predetermined   | You may personalize the VA suffix using the numbers you want (e.g. your end-users' phone number or billing number). To enable VA number customization, please contact your Business Representative. Currently, this customizable VA number feature is only available for BRI and CIMB.        |
-
-7. **Capability to update VA** Attribute that can be updated:
-   * amount
-   * is_single_use
-   * email
-   * trx_counter
-   * expired_time
-   * trx_expired_time
-   * username_display
-
-Example:
-
-* A static VA with a closed amount can be updated with a new closed amount hence it can work as a bill to be paid for a particular customer
-* A static VA can be updated to a single use so it will be the last payment received from a particular customer
-
-All of the VA information, even after they are updated, is available on the OY! dashboard or via API. Once a VA is updated, the new set of configuration will apply for that VA and the previous configure is overridden and no longer applicable
-
-### Use Cases
-
-![API VA Aggregator](images/va_use_case_new.png)
-
-### Registration and Set Up
-
-Follow the below check-list to ensure you're all set up to use our VA Aggregator API service:
-
-1. Create an account
-2. Upgrade your account by submitting the required documentations
-3. Have your upgrade request approved
-4. Set up your receiving bank account information (note: ensure that the receiving bank account information is accurate as it cannot be changed via OY! dashboard for security reasons)
-5. Submit your IPs and callback URLs to your business representative or to partner@oyindonesia.com
-6. Receive an API Key from us (note: it is required for API authorization purpose)
-7. Integrate with our Virtual Account Aggregator API
-
-### Testing
-
-#### Create VA number via API
-
-Once you successfully create an OY! account, you can immediately simulate VA payments via API.
-
-Follow the below steps to test the VA flow:
-
-1. Create an account
-
-2. Send a request to activate API VA Aggregator product and obtain staging API Key to your business representative
-
-3. Create a VA number by sending a ‘POST’ request to https://api-stg.oyindonesia.com/api/generate-static-va using your staging API key. Enter the required and optional fields, as referenced in the [API reference docs](https://api-docs.oyindonesia.com/#create-va)
-
-4. After VA number is generated, partner can simulate VA payment through your dashboard (in Demo environment) by going to Settings, and choose "Bank Transfer Callback". ![Bank Transfer Callback](images/bank_transfer_callback_va.png)
-
-5. Choose Virtual Account and fill in the bank name associated with the generated VA number, the generated VA number, amount, payment date & time
-
-6. If payment is successful, we will send a callback to the registered demo callback URL destination
-
-7. The payment made to the VA can be monitored through OY! dashboard. Go to "Virtual Account" menu, and choose "Incoming Payment"
-
-#### Create VA via Dashboard
-
-Once you successfully create an OY! account, you can immediately create VA number and simulate VA payments via Dashboard.
-
-Follow the instruction below:
-
-1. Create an Account.
-
-2. Select ‘Staging’ environment.
-
-3. Click menu Virtual Account, then click ‘Create VA’.
-
-4. In the top right, click ‘Create Virtual Account’ button.
-
-5. You can choose between creating VA by uploading a CSV file (template available) or creating manually one by one.
-
-6. Fill out the requirements: Partner User ID, Partner Transaction ID, Bank Name, VA Name, VA Type, Amount, usage, Usage Limit, VA Expiration Type, VA Expiration Date & Time, Transaction Expiration Date & Time, and Email.
-
-7. Validate and Submit your request.
-
-8. VA number(s) that you created will appear in the Create VA menu.
-
-9. To simulate VA payment and see status changing, tap ‘Send Callback’ button in the right section of the table
-
-### How to Use
-
-Send us instructions to generate a new VA number, or create a VA number via dashboard.
-
-> Below is an example of a request body to execute your request:
-
-```shell
-curl --location --request POST https://partner.oyindonesia.com/api/generate-static-va
---header 'content-type: application/json' \
---header 'accept: application/json' \
---header 'x-oy-username: username' \
---header 'x-api-key: apikey' \
--d '{
-    "partner_user_id":"51200021",
-    "bank_code": "014",
-    "amount": 150000,
-    "is_open" : false,
-    "is_single_use" : false,
-    "is_lifetime": false,
-    "expiration_time": 5,
-    "username_display" : "va name",
-    "email": "email@mail.com"
-    }'
-```
-
-> It will return an [error message](https://api-docs.oyindonesia.com/#va-aggregator-response-codes) if the request is not valid. Otherwise, below is the sample response parameters that will be returned:
-
-```json
-{
-  "id": "12345b1-23be-45670-a123-5ca678f12b3e",
-  "status": {
-    "code": "000",
-    "message": "Success"
-  },
-  "amount": 15000,
-  "va_number": "700707760000000003",
-  "bank_code": "014",
-  "is_open": false,
-  "is_single_use": false,
-  "expiration_time": 1582783668175,
-  "va_status": "WAITING_PAYMENT",
-  "username_display": "va name",
-  "trx_expiration_time": 1582783668175,
-  "partner_trx_id": "TRX0001"
-}
-```
-
->
-
-Once a VA is created, its details can be seen and monitored through the OY! dashboard.
-
-- For Create VA via API, an endpoint to [check your VA information](https://api-docs.oyindonesia.com/#get-va-info) is also available and can be accessed at any time.
-- If you wish to change the details of your VA, you can do so by [updating your VA](https://api-docs.oyindonesia.com/#update-va) at any time.
-
-![API VA Aggregator](images/va_waiting_payment.png)
-
-> Below is an example of the request body:
-
-```shell
-curl --location --request GET https://partner.oyindonesia.com/api/static-virtual-account/12345b1-23be-45670-a123-5ca678f12b3e
---header 'content-type: application/json' \
---header 'accept: application/json' \
---header 'x-oy-username: username' \
---header 'x-api-key: apikey'
-```
-
-> Below is the sample response parameters that will be returned:
-
-```json
-{
-  "id": "12345b1-23be-45670-a123-5ca678f12b3e",
-  "status": {
-    "code": "000",
-    "message": "Success"
-  },
-  "amount": 150000.0000,
-  "va_number": "700707760000000003",
-  "bank_code": "014",
-  "is_open": false,
-  "is_single_use": false,
-  "expiration_time": 1582783668175,
-  "va_status": "WAITING_PAYMENT",
-  "username_display": "va name",
-  "amount_detected": 0,
-  "partner_user_id": "123456",
-  "trx_expiration_time": 1582783668175,
-  "partner_trx_id": "TRX0001"
-}
-```
-
->
-
-> Below is an example of the request body:
-
-```shell
-curl --location --request PUT https://partner.oyindonesia.com/api/static-virtual-account/12345b1-23be-45670-a123-5ca678f12b3e
---header 'content-type: application/json' \
---header 'accept: application/json' \
---header 'x-oy-username: username' \
---header 'x-api-key: apikey' \
--d '{"is_open" : true,"amount": 50000,"is_single_use" : false,"expiration_time": 30,"username_display" : "va name","bank_code": "014","trx_expiration_time":5,"partner_trx_id":"TRX0001"}'
-```
-
-> Below is the sample of response parameters that will be returned:
-
-```json
-{
-  "id": "12345b1-23be-45670-a123-5ca678f12b3e",
-  "status": {
-    "code": "000",
-    "message": "Success"
-  },
-  "amount": 50000,
-  "va_number": "700707760000000003",
-  "bank_code": "014",
-  "is_open": true,
-  "is_single_use": false,
-  "expiration_time": 1582802205412,
-  "va_status": "WAITING_PAYMENT",
-  "username_display": "va name",
-  "partner_user_id": "123456",
-  "trx_expiration_time": 1582802205412,
-  "partner_trx_id": "TRX0001"
-}
-```
-
->
-
-All details regarding your [created VA](https://api-docs.oyindonesia.com/#get-list-of-created-va) and its payments can be monitored directly from the OY! dashboard.
-
-- Additionally, Create VA via API can be retrieved via our API endpoint.
-
-![API VA Aggregator](images/va_created_va.png)
-
-Similarly, all the details regarding [incoming transactions](https://api-docs.oyindonesia.com/#get-list-of-transaction-for-va) can be monitored directly from the OY! dashboard.
-
-- Additionally, Create VA via API can be retrieved via our API endpoint.
-
-![API VA Aggregator](images/va_incoming.png)
-
-For further details regarding OY!'s extensive API VA Aggregator capabilities and endpoints, please refer to the [OY! API Documentation](https://api-docs.oyindonesia.com/#va-aggregator).
-
-### VA Bank Details
-
-| Bank (Virtual Account) | Capability (Open Amount/Closed Amount)         |
-| ---------------------- | ---------------------------------------------- | 
-| BNI                    | Closed Amount                                  | 
-| Bank Mandiri           | Open Amount, Closed Amount                     |                  
-| BRI                    | Open Amount, Closed Amount                     | 
-| BCA                    | Open Amount, Closed Amount                     | 
-| Bank Permata / Permata Syariah| Open Amount, Closed Amount              |
-| CIMB Niaga / CIMB Niaga Syariah| Open Amount, Closed Amount             | 
-| BTPN                   | Open Amount, Closed Amount                     | 
-| KEB Hana               | Open Amount, Closed Amount                     | 
-| Maybank                | Open Amount, Closed Amount                     |
-| Bank Danamon           | Open Amount, Closed Amount                     |
-| BSI (Bank Syariah Indonesia)| Closed Amount                             |
+Businesses are struggling to manage hundreds or even thousands of physical bank accounts that are used for different purposes. It causes significant overhead costs in terms of the amount of account maintenance and manhours needed for reporting and reconciliation purposes, combining different information from different accounts.
+
+Virtual Account (VA) is essentially a dummy account that is linked to a physical account and has all the physical account characteristics that enable a much easier reporting and reconciliation process by centralizing the money flow into the physical account. By issuing VAs, you can assign each VA for a specific person and/or purposes.
+
+Virtual Account (VA) Aggregator is a feature that is specifically designed to generate Virtual Account that enable you to receive payments from your end-users via virtual account (VA) bank transfer. If you intend to use multiple payment methods to receive payment for one transaction, you should consider Payment Link and Payment Routing instead. 
+
+Generally, you may create a VA number for your customers via API VA Aggregator. However, if you prefer to create VA without API integration, then you may do so via OY! Dashboard by clicking the Virtual Account (Created VA) tab under the “Receive Money” section. 
+
+### Flow 
+![VA Aggregator Flow](images/acceptingPayments/vaAggregator/va_aggregator_flow.png)
+
+
+### Features 
+1. Flexible creation – either via Dashboard or API 
+   - You can create the VA number either by OY! Dashboard or API. Don’t worry if you don’t have the resources to conduct API integration since you can still create VA number and receive payment from your customers through OY! Dashboard 
+1. Support VA payments from multiple banks. Currently we support VA payments from 11 banks: 
+    1. Bank Central Asia (BCA) 
+    1. Bank Rakyat Indonesia (BRI) 
+    1. Bank Mandiri 
+    1. Bank Negara Indonesia (BNI) 
+    1. Bank CIMB & CIMB Syariah
+    1. Bank BTPN Jenius 
+    1. Bank Danamon 
+    1. BII Maybank 
+    1. Bank KEB Hana 
+    1. Bank Syariah Indonesia (BSI)
+    1. Bank Permata & Permata Syariah
+1. Quick settlement for majority of the banks 
+   - We understand that you need the funds to be as quickly as possible to be settled to you. We offer real-time settlement for majority of the banks listed so you should not worry about your cashflow.
+1. Customizable VA types 
+
+
+<table>
+  <tr>
+    <th valign="top"><b>Category</b></th>
+    <th valign="top"><b>Feature</b></th><th valign="top"><b>Description</b></th>
+  </tr>
+  <tr>
+    <td rowspan="2" valign="top">Validity Period</td>
+    <td valign="top">Static (Lifetime) </td>
+    <td valign="top">VA that has a lifetime validity. It will always be active and available to receive payment until it is manually deactivated.</td>
+  </tr>
+  <tr>
+    <td valign="top">Dynamic </td>
+    <td valign="top">VA that has a specific validity period. It will always be active until it is expired or manually deactivated.</td>
+  </tr>
+  <tr>
+    <td rowspan="2" valign="top">Usage Frequency</td>
+    <td valign="top">Single Use</td>
+    <td valign="top">VA that expires after a single payment. A single-use configuration can only be set up for a dynamic VA.</td>
+  </tr>
+  <tr>
+    <td valign="top">Multiple Use</td>
+    <td valign="top">VA that only expires when the expiration date is reached or when it is manually deactivated. You may also customize the limit of maximum payment. VA Multiple Use with customized maximum payment number will expire after the payment number limit is exceeded even if it has not reached the expiration time yet.</td>
+  </tr>
+  <tr>
+    <td rowspan="2" valign="top">Amount</td><td valign="top">Closed Amount</td>
+    <td valign="top">VA that only accepts payment of a specific amount as set when you create the VA number.</td>
+  </tr>
+  <tr>
+    <td valign="top">Open Amount</td>
+    <td valign="top">VA that accepts payment of any amount. You do not need to specify the amount when creating the VA number. </td>
+  </tr>
+  <tr>
+    <td rowspan="2" valign="top">VA Number</td>
+    <td valign="top">Customizable</td>
+    <td valign="top"><p>You may personalize the VA suffix using the numbers you want (e.g. your end-users' phone number or billing number). To enable VA number customization, please contact your Business Representative. You may refer to the [API Docs - Create Customized VA Number](https://api-docs.oyindonesia.com/#create-customized-va-va-aggregator).</p><p></p><p>Specifically for this feature, we currently only support BRI and CIMB. </p></td>
+    </tr>
+  <tr>
+    <td valign="top">Predetermined</td>
+    <td valign="top">OY! will create the VA number combination on your behalf. You may refer to the [API Docs - Create VA Number](https://api-docs.oyindonesia.com/#create-customized-va-va-aggregator)</td>
+    </tr>
+</table>
+
+5. Capability to Update VA 
+   1. After you have created the VA number, you are still able to modify the parameters below: 
+      - VA Amount (amount) 
+      - Multiple Use / Single Use (is\_single\_use) → you may update a single use VA to be a multiple use VA and vice versa 
+      - Email (email)
+      - Transaction Counter (trx\_counter) → you may update the number of payments a VA number can accept
+      - Transaction Expired Time (trx\_expired\_time) → the expiration time of a transaction of a VA number
+      - Expired Time (expired\_time) → the expiration time of a VA number. The VA expiration time must be at least equal or greater than the transaction expiration time 
+      - Username Display (username\_display) → the VA name that is displayed when your customer inputs the VA number in their mobile/internet banking application 
+   1. Once a VA is updated, the new set of configuration will apply for that VA and the previous configuration is no longer applicable
+1. Automatic Callback & Retry Callback
+   - You will get a callback for each successful VA payment from your customers via API. In addition, you may activate our “Enable Automatic Retry Callback” via OY! Dashboard (Settings → Developer Option → Callback Configuration tab). By activating this feature, if on the first try the callback is not successfully received by your system, then OY! system will automatically retry the callback delivery until 5 attempts. If all callback attempts still returned failed, OY! system will send email notification to email address that has been set in your configuration.
+   - You will also get a callback for each successful transaction fund settlement to your OY! balance 
+1. Minimum & Maximum Amount 
+   - Minimum amount for each VA transaction is Rp 10,000 (for closed amount) 
+   - Maximum amount for VA transactions depends on the banks: 
+
+
+|Banks|Max. Amount per transaction |
+| :-: | :-: |
+|Bank Central Asia (BCA) |Rp 50,000,000|
+|Bank Negara Indonesia (BNI) |Rp 50,000,000|
+|Bank Rakyat Indonesia (BRI) |Rp 500,000,000|
+|Bank Mandiri |Rp 500,000,000|
+|Bank CIMB |Rp 500,000,000|
+|Bank BTPN Jenius |Rp 500,000,000|
+|Bank Danamon |Rp 25,000,000|
+|BII Maybank |Rp 100,000,000|
+|Bank KEB Hana |Rp 50,000,000|
+|Bank Syariah Indonesia (BSI)|Rp 50,000,000|
+|Bank Permata|Rp 500,000,000|
+
+
+### Use Cases 
+![VA Aggregator Use Case](images/acceptingPayments/vaAggregator/va_aggregator_use_case.png)
+
+### Registration and Set Up 
+Here are the procedures to activate VA Aggregator feature: 
+
+1. Create an OY! account 
+1. Do account verification by submitting the verification form. Ensure to tick the “Receive Money” product since VA Aggregator is a part of Receive Money products.
+1. OY! team will review and verify the form and documents submitted
+1. Once verification is approved, set up your receiving bank account information. Important Note: Ensure that the receiving bank account information is accurate as you can only set it up once via OY! Dashboard for security reasons
+1. You may need to submit additional documents to be able to use VA for BCA (including, but not limited to, Taxpayer Registration Number (NPWP), and Nationality ID) 
+1. If you have any questions or concerns during this process, feel free to contact your Business Representative or email <partnerhelpdesk@oyindonesia.com> 
+
+
+If you plan to use VA Aggregator by API, then you need to do additional steps: 
+
+1. Submit your IP address(es) & callback URL to your business representative or send an email to [partnerhelpdesk@oyindonesia.com](mailto:partner@oyindonesia.com). The maximum number of IP addresses that can be registered are 5 addresses. 
+1. OY! will send the Production API Key as an API authorization through your business representative. 
+   Note: Staging/Demo API Key can be accessed via OY! Dashboard by going to the “Demo” environment and the key can be found on the bottom left menu. 
+1. Integrate API VA Aggregator to your system. Please follow the API documentation to guide you through[ ](https://api-docs.oyindonesia.com/#api-create-payment-checkout)[API Docs - VA Aggregator](https://api-docs.oyindonesia.com/#create-customized-va-va-aggregator)
+
+
+### Testing 
+1. Create VA Number via API 
+1. After creating an account, log on to OY! Dashboard and click “Try in Demo” button that will redirect you to our staging environment 
+1. Scroll down to the bottom left of the navigation bar and copy the API staging key for your perusal 
+1. Using the API staging key, create a VA number by sending a POST request to <https://api-stg.oyindonesia.com/api/generate-static-va>. Enter the required parameters stated in the API Docs 
+1. OY! system will respond to your request with a created VA number 
+1. Create VA via Dashboard 
+   1. After creating an account, log on to OY! Dashboard and click “Try in Demo” button that will redirect you to our staging environment 
+   1. Scroll down to “Receive Money” tab → Virtual Account → Created VA
+   1. Click the top right button “Create Virtual Account” 
+   1. You may choose to create the VA number(s) by uploading an Excel file (with the format as the template) or by inputting the VA number manually (in this case, you may click the “Add Virtual Account Details Manually” button) 
+   1. After you have successfully uploaded the file or filled in the fields (if manual), click “Validate” button on the bottom right corner 
+   1. After you have successfully validated your entries, click “Submit” button on the bottom right corner 
+   1. Once you have successfully submitted your request, you will be redirected to Created VA page where you can see your newly created VA numbers
+   1. Your created VA numbers should be ready to use 
+1. Simulating Successful Callback 
+   1. To simulate a successful payment, ensure that you are in our staging environment. Click “Try in Demo” button that will redirect you to our staging environment
+   1. Scroll down to “Settings” tab → Callback Bank Transfer 
+   1. Choose the “Virtual Account” as the Transaction Type 
+   1. Select the Bank Name of the VA number that you have previously created 
+   1. Enter the VA number and amount. For Closed VA, you need to enter the exact amount of the VA as created 
+   1. Enter the payment date and time. Ensure that payment date and time are greater than created but less than expiration time 
+
+### How to Use 
+1. Viewing list of Created VA 
+   1. You can monitor your created VA numbers through the “Receive Money” tab → Virtual Account → Created VA
+   1. You can also see their payment status, amount, VA type, and count of completed transactions. You may also click to export these details to your device as PDF, Excel or CSV 
+   1. *[Insert screenshot later on]* #todo insert picture
+1. Viewing list of VA Payment 
+   1. For all successful VA transactions, you can monitor them through the “Receive Money” tab → Virtual Account → Incoming Payment 
+   1. You can also see the transaction timestamp, status, amount, admin fee and other information.  You may also click to export these details to your device as PDF, Excel or CSV 
+   1. *[Insert screenshot later on]* #todo insert picture
+
+### VA Bank Details 
+Capabilities 
+
+
+|Banks|Bank Code|Open Amount |Closed Amount |Max. Expiration Time|
+| :-: | :-: | :-: | :-: | :-: |
+|Bank Central Asia (BCA) |014|Yes|Yes|Lifetime|
+|Bank Negara Indonesia (BNI) |009|No|Yes|Lifetime|
+|Bank Rakyat Indonesia (BRI) |002|Yes|Yes|Lifetime|
+|Bank Mandiri |008|Yes|Yes|Lifetime|
+|Bank CIMB |022|Yes|Yes|Lifetime|
+|Bank BTPN Jenius |213|Yes|Yes|Lifetime|
+|Bank Danamon |011|Yes|Yes|Lifetime|
+|BII Maybank |016|Yes|Yes|Lifetime|
+|Bank KEB Hana |484|Yes|Yes|Lifetime|
+|Bank Syariah Indonesia (BSI)|451|No|Yes|70 days after creation|
+|Bank Permata|013|Yes|Yes|Lifetime|
+
+Note: there is no minimum expiration time for VAs. However, you are recommended to set a reasonable expiration time, enabling your customers to complete their payments conveniently.
 
 
 ### Available Payment Channels for VA 
@@ -298,6 +203,8 @@ Your end-users may use the below payment channels to pay for their bills via VA
 | KEB Hana               | No   | No   | Yes | Yes      | No                                  | No                       |
 | BSI                    | No   | No   | Yes | Yes      | Yes                                 | Yes                      |
 
+
+
 ## Payment Link
 Payment Link is a pre-built checkout page that allows your business to easily and securely accept payments online. You can share the link to your customers and they can choose various payment methods that OY supports inside the Payment Link. OY supports up to 17 payment methods– including Bank Transfer, E-Wallet, QR Code (QRIS), Credit and Debit cards. Payment Links can be created without using any code/integration. However, if you need to create Payment Links from your website/application, OY also provides Payment Link API.
 
@@ -310,7 +217,7 @@ There are two types of Payment Link:
 
 ![Payment Link Preview](images/acceptingPayments/paymentLink/payment_link_overview_flow.png)
 
-#### Flow
+### Flow
 ![Payment Link One Time Flow](images/acceptingPayments/paymentLink/payment_link_sequence_diagram_payment_link_one_time.png)
 ![Payment Link Reusable Flow](images/acceptingPayments/paymentLink/payment_link_sequence_diagram_payment_link_reusable.png)
 ### Features
@@ -1607,7 +1514,7 @@ There will be 3 different ways to distribute the invoice via Whatsapp and there 
 
 ## API E-Wallet Aggregator 
 E-Wallet API allows clients to charge and receive payments directly from top e-wallet providers. With one integration, they are able to get access to all of OY’s available e-wallets and the upcoming e-wallet integrations.
-#### Flow
+### Flow
 ![Ewallet Aggregator Flow](images/acceptingPayments/ewalletAggregator/ewallet_aggregator_sequence.png)
 ### Features
 #### Support multiple E-wallets
@@ -1740,68 +1647,198 @@ There might be times when your customer already completed the payments but the t
 ### Receiving fund to balance
 Once a transaction is paid by the customer, OY! updates the transaction status and sends callback to your system that the transaction has been paid. OY! also sends/settles the funds to your OY! balance. Each provider has a different settlement time, varying from D+1 to D+2 working days. 
 
-
 ## API Payment Routing
+Payment Routing API is a service that allows you to receive payments & send money in one integrated API. It enables you to automatically send money to several recipients once you receive payments from your customers. You can save development time by integrating with Payment Routing API as it provides two services at once
 
-Some business have some use cases that require them to receive and disburse the fund. Often times, the operation team is struggling to manage this use case. Limited resource makes it harder to disburse the fund received. Therefore, API Payment Routing is the best solutions to cater this needs. It allows end-to-end process from accepting fund to disburse fund in one flow.
+<table>
+  <tr>
+    <th colspan="2" valign="top">Payment Routing Type</th>
+    <th valign="top">Features </th>
+  </tr>
+  <tr>
+    <td rowspan="2" valign="top">Transaction Type</td>
+    <td valign="top">Payment Aggregator</td>
+    <td valign="top"><p>Receive payments only</p><p></p><p>All-in-one API to receive payments via bank transfers, e-wallets, QRIS, and cards.</p></td>
+  </tr>
+  <tr>
+    <td valign="top">Payment Routing</td>
+    <td valign="top">Receive payments and automatically send the money to several recipients</td>
+  </tr>
+  <tr>
+    <td rowspan="2" valign="top">Receive Money Type</td>
+    <td valign="top">One Payment Method (Aggregator Scheme)</td>
+    <td valign="top"><p>Support one payment method only (One Time & Direct Payment)</p><p></p><p>You have your own checkout page and OY! provides the payment details</p><p></p><p>OY! provides the payment details information after creation (ex. VA number, E-wallet URL, QR code URL, etc)</p></td>
+  </tr>
+  <tr>
+    <td valign="top">Multiple Payment Methods (Payment Link Scheme)</td>
+    <td valign="top"><p>Support multiple payment methods in one transaction</p><p></p><p>Use OY! built-in checkout page (Payment Link) </p><p></p><p>OY! provides the Payment Link after creation</p>
+    </td>
+  </tr>
+</table>
 
-### Description about Payment Routing
+#### Use Cases
+**Payment Aggregator**
 
-Payment Routing is an API that combines receive money and disburse money features. It allows you to immediately disburse the money once you receive from your customers. By integrating to this API, you will get the end-to-end solutions for your business needs.
+1. One Time Payments. 
+    - One Time payment is a type of payment that allows your customer to complete payments easily. Available for Bank Transfer (Virtual Account & Unique Code), E-Wallet, QRIS, and Cards.
+1. Direct Payments. 
+    - Direct payment requires account linking, meaning that your customer must connect their payment account to your system before completing payments. You can do this by using our API Account Linking. Direct payments offer a more seamless payment experience. After successful linkage, your customer does not need to open or get redirected to the payment provider application to complete payments. This feature is currently only available for e-Wallet ShopeePay. 
 
-Through API Payment Routing you may create Payment Link transactions and/or receive money via Bank Transfer (via Virtual Account & Unique Code), E-Wallet (One Time & Direct), QRIS, and Cards.
+**Payment Routing**
+
+1. Investment 
+    - OJK regulation does not allow investment applications to keep users balance. Use payment routing to receive funds from investors and directly send the funds to custodian banks.
+2. E-Commerce
+    - Receive goods payments from customers and directly send the merchant’s share to the merchant’s bank account. 
+3. Education
+    - Receive tuition payments from parents and directly send the admin fee to the school’s bank account 
+4. Loan Application
+    - Receive loan repayments from the borrower and directly disburse the money to the lender’s pooling account or the borrower’s pooling account.
+
 
 ### Flow
+![Payment Routing Aggregator Scheme](images/acceptingPayments/paymentRouting/payment_routing_sequence_aggregator_scheme.png)
 
-![Payment Routing Flow](/images/Payment_Routing_Flow.png)
+![Payment Routing Payment Link Scheme](images/acceptingPayments/paymentRouting/payment_routing_sequence_payment_link_scheme.png)
 
-### Key Features
+### Features
 
-1. **Accept and disburse money in a real time manner** - By integrating to this API, you will get end-to-end solutions from receive to disburse money. All in real time manner. Note : Some payment methods have H+1 or H+2 settlement period. You have to keep some balance to cater the settlement from the payment methods.
-1. **You can select Payment Link, Bank Transfer, E-Wallet, and QRIS to receive money** - You can choose Bank Transfer (via Virtual Account & Unique Code), E-Wallet (One Time & Direct), Cards, or QRIS as a payment method to receive the money. We provide all banks offered in VA Aggregator for Virtual Accounts, BCA for Unique Code, ShopeePay, DANA, LinkAja as payment method for E-Wallet, and Visa/Mastercard for Cards. However, you don't need to worry if you don't have your own UI. You can use our Payment Link to help your customers to complete the payments.
-1. **Transaction tracking and monitoring capability** - You can track all payment routing transactions details through our callback or the OY! dashboard. You will receive callbacks two times, once we have succesfully receive money and once we have successfully disburse money.
+#### Support multiple payment methods
+OY! supports various payment methods in the Payment Routing API, including: 
 
-### Use Cases
+1. Bank Transfer 
+   - Virtual Account: BCA, BNI, BRI, Mandiri, CIMB, BTPN Jenius, Danamon, Maybank, KEB Hana, BSI, Permata
+   - Unique Code: BCA
+1. E-Wallet
+   - One Time: ShopeePay, DANA, LinkAja
+   - Direct Payment: ShopeePay
+1. Cards: Visa, Mastercard, JCB
+1. QRIS 
 
-Below are few examples of Payment Routing usage.
+#### Send money to multiple recipients in a real-time manner
+Once you receive payments from the customer, OY! can directly send the money up to 10 recipients without waiting for the settlement, as long as you have enough balance in your OY! account. Depending on the payment methods used, some transactions might not be settled real-time to your balance (e.g. QRIS, e-wallet). Therefore, you must  keep enough balance to cater the sending money process.
 
-1. Mutual Fund Investment - Accept investment money from users and directly disburse to each custodian banks.
-1. Borrower and Lender - Accept money from Lender/Borrower and disburse them directly to Rekening Penampungan Lender/Rekening Penampungan Borrower.
-1. Put money directly to Your Business Account- Receive money from your customers/buyers and directly put them to your business bank account in order to secure the money and prevent fraud.
+#### Use Payment Links to receive money
+There are two types of receive money: Aggregator Scheme and Payment Link Scheme. The Aggregator Scheme can be used if you have your own checkout page and you only need the payment details information to complete the payments. Here are the payment information you will receive after successful transaction creation:
 
+1. Bank Transfer - Virtual Account : destination bank, VA number, and amount of transaction
+1. Bank Transfer - Unique Code: destination bank, bank account number, bank account name, billed amount (original amount), unique amount, and total amount (final amount)
+1. QRIS: URL to access the QR code
+1. E-wallets: link to redirect your customer to the respective e-wallet selected
+1. Cards:  link to redirect your customer to fill in card details and proceed to payment
+
+However, if you do not have your own checkout page, no need to worry as you can use OY’s checkout page (Payment Link) for Payment Routing transactions. You can do so by filling the “need\_frontend” parameter with “TRUE” in the creation API. Read more about payment link in Payment Link - Product Docs and Payment Link - API Docs #todo hyperlink
+
+#### Create E-Wallet Direct Payment transactions
+Payment Routing API supports Direct Payment transactions where your customer is not redirected to an external payment provider’s application/website to complete payments, resulting in a more seamless transaction and better payment experience. This feature is currently only supported for e-Wallet ShopeePay
+
+Refer to this section to understand how e-Wallet One-Time payments differs from Direct Payments: E-Wallet Payments #todo hyperlink
+
+#### Transaction tracking and monitoring capability
+All created Payment Routing transactions are shown in the OY! Dashboard. Navigate to “Payment Routing” to see the list of created transactions. Inside the dashboard, you can see the details of the transactions, including all the transaction information inputted during creation, the transaction status , and the payment reference number\*. The dashboard also has a feature to search, filter, and export the list of transactions in various formats : Excel (.xlsx), PDF (.pdf), and CSV (.csv)
+
+![Payment Routing Monitoring Transactions](images/acceptingPayments/paymentRouting/payment_routing_monitoring_transactions.png)
+
+\*Payment Reference Number is an identifier of a payment attempt when the customer successfully completes a QRIS payment. The reference number is also displayed in the customer’s receipt/proof of transaction. Only available for QRIS transactions.
+#### Use the same Virtual Account number for different transactions
+One customer might do payments for multiple transactions and use the same bank each time. By generating the same VA number for different transactions, it makes the payment easier for your customer as they can save the VA number on their mobile banking application. You can only use the same VA number for one active transaction at a time. 
 ### Registration and Setup
+Here are the steps to guide you through registration and set up for creating Payment Routing transactions. 
 
-Follow the below check-list to ensure you're all set up to use our Payment Routing API service:
+1. Create an account at OY! Dashboard
+1. Do account verification by submitting the verification form. Ensure to tick the “Receive Money” and “Send Money” products since Payment Routing is a part of Receive Money & Send Money products.
+1. OY! team will review and verify the form and documents submitted 
+1. Once verification is approved, set up your receiving bank account information. Important Note: Ensure that the receiving bank account information is accurate as you can only set it up once via OY! Dashboard for security reasons
+1. By default, you get several payment methods on the get go, including all Bank Transfers (excl. BCA)
+1. Other payment methods like QRIS, Ewallets, Cards, and BCA need additional onboarding to be available to use. Please refer to this section for detail guidelines:
+   1. Ewallet Onboarding #todo hyperlink
+   1. QRIS Onboarding #todo hyperlink
+   1. VA BCA Onboarding #todo hyperlink
+   1. Cards Onboarding #todo hyperlink
+1. Submit your IP address(es) & callback URL to your business representative or send an email to <business.support@oyindonesia.com> 
+1. OY! will send the Production API Key as an API authorization through your business representative. 
+   Note: Staging/Demo API Key can be accessed via OY! Dashboard by going to the “Demo” environment and the key can be found on the bottom left menu. 
+1. Integrate Payment Routing API to your system. Please follow the API documentation to guide you through. [Payment Routing - API Docs](https://api-docs.oyindonesia.com/#payment-routing) 
 
-1. Create an account
-1. Upgrade your account by submitting the required documentations
-1. Have your upgrade request approved
-1. Set up your receiving bank account information (note: ensure that the receiving bank account information is accurate as it cannot be changed via OY! dashboard for security reasons)
-1. Submit your IPs and callback URLs to your business representative or to partner@oyindonesia.com
-1. Receive an API Key from us (note: it is required for API authorization purpose)
-1. Integrate with our Payment Routing API
+### Creating Payment Routing transactions
+Once you successfully complete the registration process, you can immediately create Payment Routing transactions (via API only). You can create a transaction using the aggregator scheme or Payment Link scheme, depending on the use case. 
 
-### Testing
+#### Aggregator Scheme
+1. Integrate API Create Payment Routing transactions to your system. [Create Payment Routing - API Docs](https://api-docs.oyindonesia.com/#https-request-create-and-update-payment-routing)
+1. Hit OY!’s API Create Payment Routing transaction
+   1. Insert parameter “need\_frontend” with “TRUE”
+   1. Choose one payment method to accept the payment. You can choose between BANK\_TRANSFER, EWALLET, QRIS, or CARDS.
+   1. Insert the chosen payment method into the “list\_enable\_payment\_method” parameter. Note: Ensure that you only input one payment method since you use the aggregator scheme, otherwise you will get an error message
+   1. Choose one bank/payment provider (SOF) based on the payment method. 
+      1. BANK\_TRANSFER: 014, 009, 002, 008, 022, 213, 011, 016, 484, 451, 013. Refer to this section to see all supported banks and the bank\_code: Bank Transfer - Payment Method
+      1. EWALLET: shopeepay\_ewallet, dana\_ewallet, linkaja\_ewallet
+      1. QRIS: QRIS
+      1. CARDS: CARDS
+   1. Insert the chosen SOF into the “list\_enable\_sof” parameter. Note: Ensure that you only input one SOF since you use the aggregator scheme, otherwise you will get an error message
+   1. If you want to use E-Wallet Direct Payment, fill “use\_linked\_account” with “TRUE”, otherwise fill the parameter with “FALSE”. Only available for ShopeePay. You must do Account Linking prior to creating direct payment transactions. Refer to this section to understand about Account Linking. 
+   1. If you want to send the money once you receive payments, fill in the destination bank account number and the amount of each recipient under the “payment\_routing” object. 
+1. OY! will return the information to complete the payment based on the requested payment method
+   1. Bank Transfer - Virtual Account : destination bank, VA number, and amount of transaction
+   1. Bank Transfer - Unique Code: destination bank, bank account number, bank account name, billed amount (original amount), unique amount, and total amount (final amount)
+   1. QRIS: URL to access the QR code
+   1. E-wallets: link to redirect your customer to the respective e-wallet selected
+   1. Cards:  link to redirect your customer to fill in card details and proceed to payment
+1. Show the payment details to your customer inside your application
 
-Once you successfully create an OY! account, you can immediately simulate Bank Transfer (Virtual Account and Unique Code), Ewallet, CC/DC payments via API.
-Follow the below steps to test the Payment Routing flow:
+#### Payment Link Scheme
+1. Integrate API Create Payment Routing transactions to your system. [Create Payment Routing - API Docs](https://api-docs.oyindonesia.com/#https-request-create-and-update-payment-routing)
+1. Hit OY!’s API Create Payment Routing transaction
+   1. Insert parameter “need\_frontend” with “FALSE”
+   1. Choose the list of payment methods to accept the payment. You can choose to insert BANK\_TRANSFER, EWALLET, QRIS, and CARDS.
+   1. Insert the list of chosen payment methods into the “list\_enable\_payment\_method” parameter. You can insert multiple payment methods to let your customer choose the preferred payment method
+   1. Choose banks/payment providers (SOF) for each payment method. 
+      1. BANK\_TRANSFER: 014, 009, 002, 008, 022, 213, 011, 016, 484, 451, 013
+      1. EWALLET: shopeepay\_ewallet, dana\_ewallet, linkaja\_ewallet
+      1. QRIS: QRIS
+      1. CARDS: CARDS
+   1. Insert the list of chosen SOFs into the “list\_enable\_sof” parameter. You can insert multiple banks/payment providers to let your customer choose the preferred payment method
+   1. If you want to send the money once you receive payments, fill in the destination bank account number and the amount of each recipient under the “payment\_routing” object. 
+1. OY! will return the Payment Link URL and you can share this to your customer. 
 
-1. Create an account
-1. Send a request to activate API Payment Routing product and obtain staging API Key to your business representative
-1. Send a ‘POST’ request _https://partner.oyindonesia.com/api/payment-routing/create-transaction_ (https://partner.oyindonesia.com/api/payment-routing/create-transaction) using your staging API key. Enter the required and optional fields, as referenced in the API reference docs (https://api-docs.oyindonesia.com/#create-payment-routing).
-1. If you use Bank Transfer (via Virtual Account or Unique Code) as the payment method, you can simulate the payment through your dashboard (in Staging environment) by going to Settings, and choose "Bank Transfer Callback". ![Bank Transfer Callback](images/bank_transfer_callback_va.png)
-1. If you use Ewallet as the payment method, you can simulate the payment through your dashboard (in Demo environment) by going to Settings, and choose "Ewallet Callback".
-1. If you use CC/DC as the payment method, you can simulate the payment through your dashboard (in Demo environment) by going to Settings, and choose "CC/DC Callback".
-1. If you use Payment Link as the payment method, you can open the link and simulate payment from there as an alternative.
-1. If payment is successful, we will send a callback to the registered staging callback URL destination.
-1. You can monitor Payment Routing transaction through OY! Dashboard or call the endpoint API. Go to “Payment Routing” menu to monitor your transactions.
+### Completing payments
 
+#### Aggregator Scheme
+Each payment method has a different flow to complete the transaction, depending on the nature of each payment method. Please refer to these guidelines for completing transactions based on each payment method:
+
+1. Complete Bank Transfer - Virtual Account transactions #todo hyperlink
+1. Complete Bank Transfer - Unique Code transactions #todo hyperlink
+1. Complete QRIS transactions #todo hyperlink
+1. Complete E-wallet transactions #todo hyperlink
+1. Complete Cards transactions #todo hyperlink
+
+To simulate demo/staging transactions, please refer to this section:
+
+1. Simulate Bank Transfer - Virtual Account payments #todo hyperlink
+1. Simulate Bank Transfer - Unique Code payments #todo hyperlink
+1. Simulate QRIS payments\* 
+1. Simulate E-wallet payments #todo hyperlink
+1. Simulate Cards payments #todo hyperlink
+
+\*currently not available
+
+#### Payment Link Scheme
+Once you successfully create a Payment Routing with Payment Link scheme, you may share the link to your customers. The steps for your customers to complete a transaction using Payment Link scheme is the same as completing a Payment Link transaction. Please refer to this section: Completing Payment Link transactions - Product Docs
+### Checking transaction status
+All created Payment Routing transactions are shown in OY! Dashboard. Navigate to “Payment Routing” to see the list of created transactions. Inside the dashboard, you can see the details of the transactions, including all the transaction information inputted during creation, transaction status, and the payment reference number\*. The dashboard also has a feature to search, filter, and export the list of transactions in various formats: Excel (.xlsx), PDF (.pdf), and CSV (.csv)
+
+If for some reason you do not receive our transaction callbacks successfully, you may use our API Check Status to get the latest transaction status. [Check Status Payment Routing - API Docs](https://api-docs.oyindonesia.com/#check-status-payment-routing-transaction-payment-routing). 
+##
+\*Payment Reference Number is an identifier of a payment attempt when the customer successfully completes a QRIS payment. The reference number is also displayed in the customer’s receipt/proof of transaction. Only available for QRIS transactions.
+### Receiving fund to balance
+Once a transaction is paid by the customer, OY! updates the transaction status and sends notification to your system indicating that the transaction has been paid, and settles the funds to your OY! balance. Each payment method has a different settlement time, varying from real-time to D+2 working days. 
+### Sending funds to recipients
+Payment Routing allows you to disburse funds automatically once the transaction is paid by the customer. OY! automatically sends the funds to the recipient(s) stated in the creation process once the payment is received. You need to make sure that you have enough balance to carry out the disbursement process, especially for payment methods that have non-real time settlement; otherwise, the disbursement process fails due to insufficient balance. 
 
 ## API Account Linking
 Account Linking is a feature that allows your customer's payment account to be linked to your system using tokenization. By linking the customer’s account up front, your customer can see their account balance inside your application and later on can complete payments without being prompted for any card details or e-wallet phone number. The feature is currently supported for e-wallet ShopeePay & DANA. 
 
 Account linking feature is free of charge.
-#### Flow
+### Flow
 
 ![Account Linking Flow](images/acceptingPayments/accountLinking/account_linking_sequence_linking.png)
 ![Get Account Balance Flow](images/acceptingPayments/accountLinking/account_linking_sequence_get_ewallet_balance.png)
