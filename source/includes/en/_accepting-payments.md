@@ -1073,9 +1073,9 @@ Here are the steps to guide you through registration and set up for creating Pay
 1. Once verification is approved, set up your receiving bank account information. Important Note: Ensure that the receiving bank account information is accurate as you can only set it up once via OY! Dashboard for security reasons
 1. By default, you get several payment methods on the get go, including all Bank Transfers (excl. BCA)
 1. Other payment methods like QRIS, Ewallets, and BCA need additional onboarding to be available to use. Please refer to this section for detail guidelines:
-   - Ewallet Onboarding #todo hyperlink
-   - QRIS Onboarding #todo hyperlink
-   - VA BCA Onboarding #todo hyperlink
+   - [Ewallet Activation](https://docs.oyindonesia.com/#e-wallet-payment-methods)
+   - [QRIS Activation](https://docs.oyindonesia.com/#qris-payment-methods)
+   - [VA BCA Activation](https://docs.oyindonesia.com/#bank-transfer-virtual-account-payment-methods)
 
 If you use Payment Link API, then you need to do additional steps, including:
 
@@ -1124,10 +1124,10 @@ Once you successfully create a Payment Link, you may share the link to your cust
    - For Credit & Debit Cards, customers will be redirected to fill the card number, card expiry date, and CVV
 1. You have to be aware that each Payment Method has a different expiry time to complete payments. Please refer to the table below for information
 1. To simulate demo transactions, please refer to these sections:
-   - Simulate Virtual Account transactions
-   - Simulate Unique Code transactions
-   - Simulate E-Wallet transactions
-   - Simulate Cards transactions
+   - [Simulate Virtual Account payments](https://docs.oyindonesia.com/#bank-transfer-virtual-account-payment-methods)
+   - [Simulate Unique Code payments](https://docs.oyindonesia.com/#bank-transfer-unique-code-payment-methods)
+   - [Simulate E-wallet payments](https://docs.oyindonesia.com/#e-wallet-payment-methods)
+   - [Simulate Cards payments](https://docs.oyindonesia.com/#cards-payment-methods-payment-methods)
    - Note: Simulate QRIS transactions is currently not available
 1. The status on the Payment Link will change to successful once the payment is made. Customers can do a check status on the Payment Link page in case the transaction status is not automatically updated 
 
@@ -2457,7 +2457,7 @@ Here are the steps to guide you through registration and setup for creating E-wa
 1. Do account verification by submitting the verification form. Ensure to tick the “Receive Money” product since E-wallet Aggregator is a part of Receive Money products.
 1. OY! team will review and verify the form and documents submitted 
 1. Once verification is approved, set up your receiving bank account information. Important Note: Ensure that the receiving bank account information is accurate as you can only set it up once via OY! Dashboard for security reasons
-1. Follow the registration process for each Ewallet that you want to use. Please refer to this section for detailed guidelines: e-wallet Onboarding #todo hyperlink
+1. Follow the registration process for each Ewallet that you want to use. Please refer to this section for detailed guidelines: [e-wallet Activation](https://docs.oyindonesia.com/#e-wallet-payment-methods)
 1. Submit your IP address(es) & callback URL to your business representative or send an email to our support team, <business.support@oyindonesia.com> .
 1. OY! will send the Production API Key as an API authorization through your business representative. 
    Note: Staging/Demo API Key can be accessed via OY! Dashboard by going to the “Demo” environment and the key can be found on the bottom left menu. 
@@ -2477,12 +2477,12 @@ You can create E-Wallet transactions via API only. Here are the guidelines to cr
 ### Completing transaction
 Each e-wallet provider has a different method to complete the transaction, redirection or push notification method. ShopeePay, LinkAja, and DANA use a redirection method. Meanwhile, OVO uses a push notification method. Please refer to these guidelines for completing transactions based on each provider:
 
-1. Complete e-wallet transactions via ShopeePay #todo hyperlink
-1. Complete e-wallet transactions via LinkAja #todo hyperlink
-1. Complete e-wallet transactions via DANA #todo hyperlink
-1. Complete e-wallet transactions via OVO #todo hyperlink
+1. Complete e-wallet transactions via ShopeePay [ShopeePay Payment Journey](https://docs.oyindonesia.com/#e-wallet-payment-methods)
+1. Complete e-wallet transactions via LinkAja [LinkAja Payment Journey](https://docs.oyindonesia.com/#e-wallet-payment-methods)
+1. Complete e-wallet transactions via DANA [DANA Payment Journey](https://docs.oyindonesia.com/#e-wallet-payment-methods)
+1. Complete e-wallet transactions via OVO [OVO Payment Journey](https://docs.oyindonesia.com/#e-wallet-payment-methods)
 
-To simulate demo transactions, please refer to this section: Simulate E-Wallet Payments - Product Docs #todo hyperlink
+To simulate demo transactions, please refer to this section: Simulate [E-Wallet Payments - Product Docs](https://docs.oyindonesia.com/#e-wallet-payment-methods)
 
 ### Checking transaction status
 All created E-wallet transactions are shown in OY! Dashboard. Navigate to “E-Wallet” to see the list of transactions. Inside the dashboard, you can see the details of the transactions, including all the transaction information inputted during creation, status of transactions, and the payment reference number. The dashboard also has a feature to search, filter, and export the list of transactions in various formats: Excel (.xlsx), PDF (.pdf), and CSV(.csv)
@@ -2572,12 +2572,13 @@ There are two types of receive money: Aggregator Scheme and Payment Link Scheme.
 1. E-wallets: link to redirect your customer to the respective e-wallet selected
 1. Cards:  link to redirect your customer to fill in card details and proceed to payment
 
-However, if you do not have your own checkout page, no need to worry as you can use OY’s checkout page (Payment Link) for Payment Routing transactions. You can do so by filling the “need\_frontend” parameter with “TRUE” in the creation API. Read more about payment link in Payment Link - Product Docs and Payment Link - API Docs #todo hyperlink
+However, if you do not have your own checkout page, no need to worry as you can use OY’s checkout page (Payment Link) for Payment Routing transactions. You can do so by filling the “need\_frontend” parameter with “TRUE” in the creation API. Read more about payment link in [Payment Link - Product Docs](https://docs.oyindonesia.com/#payment-link-accepting-payments) and [Payment Link - API Docs](https://api-docs.oyindonesia.com/#fund-acceptance)
+
 
 #### Create E-Wallet Direct Payment transactions
 Payment Routing API supports Direct Payment transactions where your customer is not redirected to an external payment provider’s application/website to complete payments, resulting in a more seamless transaction and better payment experience. This feature is currently only supported for e-Wallet ShopeePay
 
-Refer to this section to understand how e-Wallet One-Time payments differs from Direct Payments: E-Wallet Payments #todo hyperlink
+Refer to this section to understand how e-Wallet One-Time payments differs from Direct Payments: [E-Wallet Payment Type](https://docs.oyindonesia.com/#e-wallet-payment-methods)
 
 #### Transaction tracking and monitoring capability
 All created Payment Routing transactions are shown in the OY! Dashboard. Navigate to “Payment Routing” to see the list of created transactions. Inside the dashboard, you can see the details of the transactions, including all the transaction information inputted during creation, the transaction status , and the payment reference number\*. The dashboard also has a feature to search, filter, and export the list of transactions in various formats : Excel (.xlsx), PDF (.pdf), and CSV (.csv)
@@ -2596,10 +2597,10 @@ Here are the steps to guide you through registration and set up for creating Pay
 1. Once verification is approved, set up your receiving bank account information. Important Note: Ensure that the receiving bank account information is accurate as you can only set it up once via OY! Dashboard for security reasons
 1. By default, you get several payment methods on the get go, including all Bank Transfers (excl. BCA)
 1. Other payment methods like QRIS, Ewallets, Cards, and BCA need additional onboarding to be available to use. Please refer to this section for detail guidelines:
-   1. Ewallet Onboarding #todo hyperlink
-   1. QRIS Onboarding #todo hyperlink
-   1. VA BCA Onboarding #todo hyperlink
-   1. Cards Onboarding #todo hyperlink
+   1. [Ewallet Onboarding](https://docs.oyindonesia.com/#e-wallet-payment-methods)
+   1. [QRIS Onboarding](https://docs.oyindonesia.com/#qris-payment-methods)
+   1. [VA BCA Onboarding](https://docs.oyindonesia.com/#bank-transfer-virtual-account-payment-methods)
+   1. [Cards Onboarding](https://docs.oyindonesia.com/#cards-payment-methods-payment-methods)
 1. Submit your IP address(es) & callback URL to your business representative or send an email to <business.support@oyindonesia.com> 
 1. OY! will send the Production API Key as an API authorization through your business representative. 
    Note: Staging/Demo API Key can be accessed via OY! Dashboard by going to the “Demo” environment and the key can be found on the bottom left menu. 
@@ -2650,19 +2651,19 @@ Once you successfully complete the registration process, you can immediately cre
 #### Aggregator Scheme
 Each payment method has a different flow to complete the transaction, depending on the nature of each payment method. Please refer to these guidelines for completing transactions based on each payment method:
 
-1. Complete Bank Transfer - Virtual Account transactions #todo hyperlink
-1. Complete Bank Transfer - Unique Code transactions #todo hyperlink
-1. Complete QRIS transactions #todo hyperlink
-1. Complete E-wallet transactions #todo hyperlink
-1. Complete Cards transactions #todo hyperlink
+1. [Complete Bank Transfer - Virtual Account transactions](https://docs.oyindonesia.com/#bank-transfer-virtual-account-payment-methods)
+1. [Complete Bank Transfer - Unique Code transactions](https://docs.oyindonesia.com/#bank-transfer-unique-code-payment-methods)
+1. [Complete QRIS transactions](https://docs.oyindonesia.com/#qris-payment-methods)
+1. [Complete E-wallet transactions](https://docs.oyindonesia.com/#e-wallet-payment-methods)
+1. [Complete Cards transactions](https://docs.oyindonesia.com/#cards-payment-methods-payment-methods)
 
 To simulate demo/staging transactions, please refer to this section:
 
-1. Simulate Bank Transfer - Virtual Account payments #todo hyperlink
-1. Simulate Bank Transfer - Unique Code payments #todo hyperlink
+1. [Simulate Bank Transfer - Virtual Account payments](https://docs.oyindonesia.com/#bank-transfer-virtual-account-payment-methods)
+1. [Simulate Bank Transfer - Unique Code payments](https://docs.oyindonesia.com/#bank-transfer-unique-code-payment-methods)
 1. Simulate QRIS payments\* 
-1. Simulate E-wallet payments #todo hyperlink
-1. Simulate Cards payments #todo hyperlink
+1. [Simulate E-wallet payments](https://docs.oyindonesia.com/#e-wallet-payment-methods)
+1. [Simulate Cards payments](https://docs.oyindonesia.com/#cards-payment-methods-payment-methods)
 
 \*currently not available
 
