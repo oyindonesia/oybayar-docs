@@ -1379,7 +1379,7 @@ Your end-users may use the below payment channels to pay for their bills via VA
 
 
 
-## Payment Links/Invoice
+## Payment Invoice / Account Receivable
 
 **Overview**
 Payment Link
