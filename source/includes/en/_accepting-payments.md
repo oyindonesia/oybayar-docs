@@ -114,7 +114,7 @@ Your end-users may use the below payment channels to pay for their bills via VA
 1. Enter the payment date and time. Ensure that payment date and time are greater than created but less than expiration time 
 1. You may use this feature for all your VA transactions across all of OY! Receive Money products (VA Aggregator, Payment Link, and Payment Routing) 
 
-![](Aspose.Words.50aec8f4-672b-4dff-9053-4c26d52e8822.003.png)
+![Bank Transfer - Virtual Account Simulate Payment](images/acceptingPayments/paymentMethod/payment_method_bank_transfer_simulate_payments.png)
 
 
 ### Bank Transfer - Unique Code
@@ -200,7 +200,7 @@ Quick Response Code Indonesian Standard (QRIS) is a standardized QR payments in 
 
 #### Transaction Amount Details 
 
-The maximum amount per transaction for QRIS is Rp 10,000,000. The minimum amount per transaction is Rp 10,000, both in Payment Link and Payment Routing. Should you have any request to receive payments below Rp 10,000 , please contact your Business Representative 
+The maximum amount per transaction for QRIS is Rp 10,000,000. The minimum amount per transaction is Rp 10,000, both in Payment Link and Payment Routing. Should you have any request to receive payments below Rp 10,000, please contact your Business Representative 
 #### Payment Flow
 ![QRIS Flow](images/acceptingPayments/paymentMethod/payment_method_qris_sequence.png)
 #### Activation
@@ -279,7 +279,7 @@ Here are the requirements that must be fulfilled in order to submit a registrati
     <td valign=”center” style="text-align:center">✅</td>
   </tr>
   <tr>
-    <td valign="top">Document (dalam JPG atau PNG)</td>
+    <td valign="top">Document (in .jpg or .png)</td>
     <td valign=”center” style="text-align:center">✅</td>
   </tr>
   <tr>
@@ -359,18 +359,18 @@ Simulating QRIS payments for demo transactions is currently not available.
 
 ### E-Wallet
 #### Intro
-E-Wallet is a type of electronic payment that allows you to pay for goods and services without requiring bank accounts or cash. E-Wallet plays a significant role in the rapid growth of e-commerce since it enables users to make payments easily without having to interact with banks or other third parties. OY! currently supports payment from several top e-wallets in Indonesia, including OVO, DANA, ShopeePay, and LinkAja.
+E-wallet is a type of electronic payment that allows you to pay for goods and services without requiring bank accounts or cash. E-wallet plays a significant role in the rapid growth of e-commerce since it enables users to make payments easily without having to interact with banks or other third parties. OY! currently supports payment from several top e-wallets in Indonesia, including OVO, DANA, ShopeePay, and LinkAja.
 
 #### E-wallet Payment Details
 
-|E-wallet Provider|Ewallet Code|Allowed Expiration Time|Flow Type|Payments via desktop|Payments via mobile browser|Payments via provider’s mobile app|
+|E-wallet Provider|E-wallet Code|Allowed Expiration Time|Flow Type|Payments via desktop|Payments via mobile browser|Payments via provider’s mobile app|
 | :- | :- | :- | :- | :-: | :-: | :-: |
 |ShopeePay|shopeepay\_ewallet|1 - 60 minute(s)|Redirection (JumpApp)|❌|❌|✅|
 |OVO|ovo\_ewallet|55 seconds|Push notification|❌|❌|✅|
 |DANA|dana\_ewallet|1 - 60 minute(s)|Redirection (JumpApp)|✅|✅|✅|
 |LinkAja|linkaja\_ewallet|5 minutes|Redirection (JumpApp)|❌|❌|✅|
 
-The maximum amount per transaction for all E-wallet providers is 10,000,000 IDR for customers who have performed KYC on the provider’s app and 2,000,000 IDR for customers who have not. 
+The maximum amount per transaction for all e-wallet providers is Rp 10,000,000 for customers who have performed KYC on the provider’s app and Rp 2,000,000 for customers who have not. 
 
 #### Feature Availability
 
@@ -392,11 +392,11 @@ The maximum amount per transaction for all E-wallet providers is 10,000,000 IDR 
     <th colspan="2" valign="top"><b>Payment Routing</b></th>
   </tr>
   <tr>
-    <td valign="top"><b>One Time</b></td>
-    <td valign="top"><b>-</b></td>
-    <td valign="top"><b>One Time</b></td>
-    <td valign="top"><b>One Time</b></td>
-    <td valign="top"><b>Direct Payment</b></td>
+    <th valign="top"><b>Single Payment</b></th>
+    <th valign="top"><b>-</b></th>
+    <th valign="top"><b>Single Payment</b></th>
+    <th valign="top"><b>Single Payment</b></th>
+    <th valign="top"><b>Direct Payment</b></th>
   </tr>
   <tr>
     <td valign="top">ShopeePay</td>
@@ -433,23 +433,23 @@ The maximum amount per transaction for all E-wallet providers is 10,000,000 IDR 
 </table>
 
 #### Payment Type & Flow
-##### One Time Payment
-One Time payment is a type of payment that allows your customer to complete payments using E-wallet easily. 
+##### Single Payment
+Single payment is a type of payment that allows your customer to complete payments using e-wallet easily. 
 
-There are two types of payment flow for One Time Payment: Redirection (JumpApp) or Push Notification.
+There are two types of payment flow for Single Payment: Redirection (JumpApp) or Push Notification.
 
-![Ewallet Redirection Flow](images/acceptingPayments/paymentMethod/payment_method_ewallet_redirection_sequence.png)
+![E-wallet Redirection Flow](images/acceptingPayments/paymentMethod/payment_method_ewallet_redirection_sequence.png)
 
-![Ewallet Push Notification Flow](images/acceptingPayments/paymentMethod/payment_method_ewallet_notification_sequence.png)
+![E-wallet Push Notification Flow](images/acceptingPayments/paymentMethod/payment_method_ewallet_notification_sequence.png)
 
 ##### Direct Payment
-Direct payment requires account linking, meaning that your customer must connect their E-wallet account to your system before completing payments. Direct payments offer a more seamless payment experience, as your customer does not need to open or get redirected to the e-wallet provider application to complete payments.
+Direct payment requires account linking, meaning that your customer must connect their e-wallet account to your system before completing payments. Direct payments offer a more seamless payment experience, as your customer does not need to open or get redirected to the e-wallet provider application to complete payments.
 
 Direct Payments offers both payment with and without authorization (auto-debit). Direct Payment with authorization requires the customer to input a PIN or OTP on every transaction, while Direct Payment without authorization allows your system to deduct your customers balance without the need to enter a PIN or OTP. Direct payment without authorization is suitable for subscription use cases.
 
-![Ewallet Direct Payment Flow](images/acceptingPayments/paymentMethod/payment_method_ewallet_direct_payment_sequence.png)
+![E-wallet Direct Payment Flow](images/acceptingPayments/paymentMethod/payment_method_ewallet_direct_payment_sequence.png)
 #### Activation
-In order to accept payments using E-wallets, you need to register your merchant to the E-wallet providers first. You can do the registration via OY! Dashboard by opening the Payment Method page, Payment Method - OY! Dashboard. OY! offers real time registration, so you can directly accept payments once you finish submitting your application.
+In order to accept payments using e-wallets, you need to register your merchant to the e-wallet providers first. You can do the registration via OY! Dashboard by opening the Payment Method page, Payment Method - OY! Dashboard. OY! offers real time registration, so you can directly accept payments once you finish submitting your application.
 
 Here are the requirements that must be fulfilled in order to submit a registration: 
 <table>
@@ -575,7 +575,7 @@ Here are the requirements that must be fulfilled in order to submit a registrati
     <td valign=”center” style="text-align:center">✅</td>
   </tr>
   <tr>
-    <td valign="top">Document (dalam JPG atau PNG)</td>
+    <td valign="top">Document (in .jpg or .png)</td>
     <td valign=”center” style="text-align:center">✅</td>
     <td valign=”center” style="text-align:center">✅</td>
     <td valign=”center” style="text-align:center">✅</td>
@@ -730,7 +730,7 @@ Here are the requirements that must be fulfilled in order to submit a registrati
 
 
 #### Payments
-ShopeePay (One Time)
+ShopeePay (Single Payment)
 
 [Click here to see the payment journey](https://drive.google.com/file/d/162WY4oEKwEcvgF7p_1lQ6VLHS4XGS-yI/view?usp=drive_link)
 
@@ -747,22 +747,22 @@ OVO
 [Click here to see the payment journey](https://drive.google.com/file/d/1b_ImuHTQPGF1UE6jrtxhqRAShpbx8DDi/view?usp=sharing)
 
 #### Simulate Payments
-To get more understanding of E-wallet transactions behavior, you can simulate E-wallet Demo transactions that are created in the Demo environment. Here are the steps to simulate E-wallet payments via OY! Dashboard:
+To get more understanding of e-wallet transactions behavior, you can simulate e-wallet Demo transactions that are created in the Demo environment. Here are the steps to simulate e-wallet payments via OY! Dashboard:
 
 1. Open OY! Dashboard and navigate to the Demo environment
 1. Open the “Settings” menu and click “E-wallet Callback”.
 1. Insert the payment detail of the transaction you want to simulate:
-   1. Choose the E-wallet provider: Shopeepay, DANA, LinkAja, or OVO.
-   1. Insert the Transaction Reference Number. For E-wallet transactions that are created via API E-wallet, you can find the Ref Number inside “E-Wallet API menu”. Please look at the image below to guide you
+   1. Choose the e-wallet provider: Shopeepay, DANA, LinkAja, or OVO.
+   1. Insert the Transaction Reference Number. For e-wallet transactions that are created via API E-wallet, you can find the Ref Number inside “E-Wallet API menu”. Please look at the image below to guide you
    1. Input the amount of transaction
 1. Once you input all the fields, you can simulate the payment by clicking “Send Callback”. If the payment is successful, a success notification will be shown inside the dashboard. OY! will also send the callback to your specified callback URL. If for some reason you did not receive any callback, please contact our customer service to help you solve the problem.
 
-![Ewallet Simulate Callback](images/acceptingPayments/paymentMethod/payment_method_ewallet_simulate_payments.png)
-![Ewallet See Reference Number](images/acceptingPayments/paymentMethod/payment_method_ewallet_reference_number.png)
+![E-wallet Simulate Callback](images/acceptingPayments/paymentMethod/payment_method_ewallet_simulate_payments.png)
+![E-wallet See Reference Number](images/acceptingPayments/paymentMethod/payment_method_ewallet_reference_number.png)
 
 Specifically for Payment Link transactions, you can directly simulate the payment on the Payment Link by clicking “Bayar Tagihan''.
 
-![Ewallet Simulate Callback Payment Link](images/acceptingPayments/paymentMethod/payment_method_ewallet_bayar_tagihan.png)
+![E-wallet Simulate Callback Payment Link](images/acceptingPayments/paymentMethod/payment_method_ewallet_bayar_tagihan.png)
 
 ### Cards
 #### Introduction 
@@ -799,10 +799,6 @@ Flow via Payment Routing
 
 If you need to accept payments from your end-users via debit and/or credit cards, you may contact your Business Representative for more information and assistance on the activation process. 
 
-[Option for Design] (nanti pilih salah 1 yg lebih gampang yg mana) 
-
-
-
 |Requirement |Credit and Debit Cards|
 | :-: | :-: |
 |Partner Eligibility Form|✅|
@@ -811,17 +807,7 @@ If you need to accept payments from your end-users via debit and/or credit cards
 |Company Profile |✅|
 |Operational license (if applicable)|✅|
 |KYC Flow |✅|
-|List of users|✅|
-
-
-You will need to fill and submit the following information and documents: 
-
-1. Partner Eligibility Form & Partner Request Form to Acquiring Bank 
-1. Partner and OY! Service Agreement 
-1. Company Profile 
-1. Operational license (if applicable) 
-1. KYC Flow 
-1. List of users 
+|List of users|✅| 
 
 
 #### Simulate Payments
@@ -830,12 +816,13 @@ You will need to fill and submit the following information and documents:
 1. Open the payment link URL on your browser
 1. Choose and confirm “Credit/Debit Card” as your payment method. You will then automatically be redirected to a page to fill your card details. If you are not automatically redirected, then click “Payment with Cards” button 
 1. Fill the card details as follow 
-  |Card Details|Mock Values|
-  | :- | :-: |
-  |Card Number|2223000000000007|
-  |Card Expiry Time|01/39|
-  |Card CVN|100|
-  |Cardholder Name|Testing|
+  
+|Card Details|Mock Values|
+| :- | :-: |
+|Card Number|2223000000000007|
+|Card Expiry Time|01/39|
+|Card CVN|100|
+|Cardholder Name|Testing|
 
 1. Fill the email and phone number accordingly 
 1. Click to pay 
@@ -844,7 +831,7 @@ You will need to fill and submit the following information and documents:
 
 
 ## Payment Link
-Payment Link is a pre-built checkout page that allows your business to easily and securely accept payments online. You can share the link to your customers and they can choose various payment methods that OY supports inside the Payment Link. OY supports up to 17 payment methods– including Bank Transfer, E-Wallet, QR Code (QRIS), Credit and Debit cards. Payment Links can be created without using any code/integration. However, if you need to create Payment Links from your website/application, OY also provides Payment Link API.
+Payment Link is a pre-built checkout page that allows your business to easily and securely accept payments online. You can share the link to your customers and they can choose various payment methods that OY! supports inside the Payment Link. OY! supports up to 17 payment methods– including Bank Transfer, E-Wallet, QR Code (QRIS), Credit and Debit cards. Payment Links can be created without using any code/integration. However, if you need to create Payment Links from your website/application, OY! also provides Payment Link API.
 
 There are two types of Payment Link:
 
@@ -917,14 +904,14 @@ Here is the example of the Payment Link before and after it is customized. The h
 #### Share Payment Link to multiple channels
 You can share created Payment Link directly to your customers through multiple channels, including email, WhatsApp message, and copy link
 
-##### Email
+***Email*** <br/>
 Send created Payment Link up to 6 email recipients per Payment Link. This feature is supported for creation via OY! Dashboard and API. Sending Payment Links via email is free of charge.
 
 You can fill the email recipients in the “Email(s)” field under “Customer Detail” section when creating Payment Links via OY! Dashboard. Separate multiple emails using semicolon (;) characters. Example: <email1@company.com>;email2@company.com;email3@company.com
 
 If you use Payment Link API, you can insert the email recipients under the “customer\_email” parameter when creating Payment Links. Please refer to the [Payment Link Creation](https://api-docs.oyindonesia.com/#api-create-payment-link-fund-acceptance) section in the API Docs for further details.
 
-##### WhatsApp
+***WhatsApp*** <br/>
 Send Payment Link to unlimited WhatsApp account per Payment Link. This feature is supported for creation via API only, and not supported for creation via OY! Dashboard. By default, this feature is not automatically activated after registration. Please contact your business representative to activate this feature
 
 Once you successfully create Payment Links, hit our API Send WhatsApp to send created Payment Links to your customers. Please refer to [API Send WhatsApp](https://api-docs.oyindonesia.com/#api-send-whatsapp) section for further details
@@ -944,7 +931,7 @@ Silakan klik link berikut untuk membayar: <https://pay.oyindonesia.com/123>
 
 Mohon untuk tidak membalas pesan ini.
 
-##### Copy Link
+***Copy Link*** <br/>
 After creating Payment Links, you will receive a URL link that can be copied and shared to your customers
 
 If you create the Payment Link via OY! Business App, you can use the built-in share feature from your mobile device when sharing Payment Link. 
@@ -986,7 +973,7 @@ Create a seamless payment experience for your customers by inserting a created P
 #### Refund payments to customer
 When your customer receives a defective product or the product is not delivered, they might request to refund the payment. You can directly refund payments to your customer’s account via OY! Dashboard. A refund can either be full or partial. A full refund gives your customers the entire amount back (100%). A partial refund returns the amount partially. 
 
-Refunds are free of charge. However, the admin fee charged for the original payment is not refunded by OY to your balance.
+Refunds are free of charge. However, the admin fee charged for the original payment is not refunded by OY! to your balance.
 
 There are several requirements that must be met to issue a refund:
 
@@ -1020,7 +1007,7 @@ Here are the steps to do refunds for Payment Link transactions:
 
 If you use Payment Link API, OY! sends a notification/callback to your system once a transaction is marked successful. Therefore, you will be notified if the customer has already completed the payment. There might be a case where your system does not receive the notification successfully. 
 
-By enabling Retry Callback, OY will try to resend another callback to your system if your system does not receive the callback successfully. You can request to resend a callback using Manual Retry Callback or Automatic Retry Callback. 
+By enabling Retry Callback, OY! will try to resend another callback to your system if your system does not receive the callback successfully. You can request to resend a callback using Manual Retry Callback or Automatic Retry Callback. 
 
 ##### Manual Retry Callback
 
@@ -1030,14 +1017,14 @@ Manual Retry Callback allows you to manually send callbacks for each transaction
 1. Open “Payment Link” and choose "One Time"/"Reusable" depending on the transaction
 1. Search the record of the transaction and click 3 dots button under “Action” column
 1. Make sure that you have set up your Callback URL via “Settings” → “Developer Option” → “Callback Configuration”
-1. Make sure to whitelist OY’s IP to receive callbacks from OY 
+1. Make sure to whitelist OY’s IP to receive callbacks from OY! 
    - 54.151.191.85
    - 54.179.86.72
 1. Click “Resend Callback” to resend a callback and repeat as you need
 
 ![Payment Link Manual Retry Callback](images/acceptingPayments/paymentLink/payment_link_manual_resend_callback.png) 
 ##### Automatic Retry Callback
-Automatic Retry Callback allows you to receive another callback within a certain interval if the previous callback that OY sent is not received successfully on your system. OY! will try to resend other callbacks up to 5 times. If your system still does not receive any callbacks after 5 retry attempts from OY, OY will notify you via email. You can input up to 6 email recipients and it is configurable via OY! Dashboard. 
+Automatic Retry Callback allows you to receive another callback within a certain interval if the previous callback that OY! sent is not received successfully on your system. OY! will try to resend other callbacks up to 5 times. If your system still does not receive any callbacks after 5 retry attempts from OY, OY! will notify you via email. You can input up to 6 email recipients and it is configurable via OY! Dashboard. 
 
 Callback Interval : Realtime → 1 minute (after the initial attempt)→ 2 minutes (after the first retry attempt)→ 13 minutes (after the second retry attempt) → 47 mins (after the third retry attempt) 
 
@@ -1073,7 +1060,7 @@ Here are the steps to guide you through registration and set up for creating Pay
 1. Once verification is approved, set up your receiving bank account information. Important Note: Ensure that the receiving bank account information is accurate as you can only set it up once via OY! Dashboard for security reasons
 1. By default, you get several payment methods on the get go, including all Bank Transfers (excl. BCA)
 1. Other payment methods like QRIS, Ewallets, and BCA need additional onboarding to be available to use. Please refer to this section for detail guidelines:
-   - [Ewallet Activation](https://docs.oyindonesia.com/#e-wallet-payment-methods)
+   - [E-wallet Activation](https://docs.oyindonesia.com/#e-wallet-payment-methods)
    - [QRIS Activation](https://docs.oyindonesia.com/#qris-payment-methods)
    - [VA BCA Activation](https://docs.oyindonesia.com/#bank-transfer-virtual-account-payment-methods)
 
@@ -1120,7 +1107,7 @@ Once you successfully create a Payment Link, you may share the link to your cust
 1. OY! will show the payment information for your end users to complete the payment based on the payment method chosen. 
    - For Bank Transfer transactions, Account Number and the Amount to be transferred will be shown
    - For QRIS Transactions, the QR generated from OY! will be shown in the page and can be downloaded or your customer may also directly scan the QR there
-   - For Ewallet Transactions, the customers can be automatically redirected to the e-wallet’s app (DANA, LinkAja, ShopeePay) or receive notification from the e-wallet’s app (OVO)
+   - For E-wallet Transactions, the customers can be automatically redirected to the e-wallet’s app (DANA, LinkAja, ShopeePay) or receive notification from the e-wallet’s app (OVO)
    - For Credit & Debit Cards, customers will be redirected to fill the card number, card expiry date, and CVV
 1. You have to be aware that each Payment Method has a different expiry time to complete payments. Please refer to the table below for information
 1. To simulate demo transactions, please refer to these sections:
@@ -1253,7 +1240,7 @@ Generally, you may create a VA number for your customers via API VA Aggregator. 
   <tr>
     <td rowspan="2" valign="top">VA Number</td>
     <td valign="top">Customizable</td>
-    <td valign="top"><p>You may personalize the VA suffix using the numbers you want (e.g. your end-users' phone number or billing number). To enable VA number customization, please contact your Business Representative. You may refer to the [API Docs - Create Customized VA Number](https://api-docs.oyindonesia.com/#create-customized-va-va-aggregator).</p><p></p><p>Specifically for this feature, we currently only support BRI and CIMB. </p></td>
+    <td valign="top"><p>You may personalize the VA suffix using the numbers you want (e.g. your end-users' phone number or billing number). To enable VA number customization, please contact your business representative. You may refer to the [API Docs - Create Customized VA Number](https://api-docs.oyindonesia.com/#create-customized-va-va-aggregator).</p><p></p><p>Specifically for this feature, we currently only support BRI and CIMB. </p></td>
     </tr>
   <tr>
     <td valign="top">Predetermined</td>
@@ -1305,7 +1292,7 @@ Here are the procedures to activate VA Aggregator feature:
 1. OY! team will review and verify the form and documents submitted
 1. Once verification is approved, set up your receiving bank account information. Important Note: Ensure that the receiving bank account information is accurate as you can only set it up once via OY! Dashboard for security reasons
 1. You may need to submit additional documents to be able to use VA for BCA (including, but not limited to, Taxpayer Registration Number (NPWP), and Nationality ID) 
-1. If you have any questions or concerns during this process, feel free to contact your Business Representative or email <partnerhelpdesk@oyindonesia.com> 
+1. If you have any questions or concerns during this process, feel free to contact your business representative or email <partnerhelpdesk@oyindonesia.com> 
 
 
 If you plan to use VA Aggregator by API, then you need to do additional steps: 
@@ -1603,9 +1590,9 @@ During testing, you can set the transaction amount to a certain mock value to si
 
 | Payment Method       | Scenario                                                                                                                                                                 | Criteria                                          | Expected Result   |
 | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------- | ----------------- |
-| E-Wallet - ShopeePay | Payment already successful on E-Wallet issuer side but failed on OY side (can be due to callback timeout reasons). The transaction is refunded to the end-user's balance | Amount is between 55,000 and 66,000               | Refund Successful |
-| QRIS                 | Payment already successful on E-Wallet issuer side but failed on OY side (can be due to callback timeout reasons). The transaction is refunded to the end-user's balance | Amount is between 55,000 and 66,000               | Refund Successful |
-| E-Wallet - LinkAja   | Payment already successful on E-Wallet issuer side but failed on OY side (can be due to callback timeout reasons). The transaction is refunded to the end-user's balance | Amount is between 55,000 and 66,000               | Refund Successful |
+| E-Wallet - ShopeePay | Payment already successful on e-wallet issuer side but failed on OY! side (can be due to callback timeout reasons). The transaction is refunded to the end-user's balance | Amount is between 55,000 and 66,000               | Refund Successful |
+| QRIS                 | Payment already successful on e-wallet issuer side but failed on OY! side (can be due to callback timeout reasons). The transaction is refunded to the end-user's balance | Amount is between 55,000 and 66,000               | Refund Successful |
+| E-Wallet - LinkAja   | Payment already successful on e-wallet issuer side but failed on OY! side (can be due to callback timeout reasons). The transaction is refunded to the end-user's balance | Amount is between 55,000 and 66,000               | Refund Successful |
 | E-Wallet - ShopeePay | Failure during refund process                                                                                                                                            | Amount is less than 55,000 or greater than 66,000 | Refund Failed     |
 | QRIS                 | Failure during refund process                                                                                                                                            | Amount is less than 55,000 or greater than 66,000 | Refund Failed     |
 | E-Wallet - LinkAja   | Failure during refund process                                                                                                                                            | Amount is less than 55,000 or greater than 66,000 | Refund Failed     |
@@ -2314,7 +2301,7 @@ For your convenience, you have the option to auto-generate invoice numbers. No m
 
 ### Sending the Created Payment Link through WhatsApp 
 
-For better payment conversion, you can send the created link to your users through WhatsApp. The message template is pre-defined by OY. Contact our Business Representative if you'd like to activate this feature.
+For better payment conversion, you can send the created link to your users through WhatsApp. The message template is pre-defined by OY. Contact our business representative if you'd like to activate this feature.
 
 The flow will be as follows:
 
@@ -2358,19 +2345,24 @@ There will be 3 different ways to distribute the invoice via Whatsapp and there 
 
 
 ## API E-Wallet Aggregator 
-E-Wallet API allows clients to charge and receive payments directly from top e-wallet providers. With one integration, they are able to get access to all of OY’s available e-wallets and the upcoming e-wallet integrations.
+E-Wallet API allows clients to charge and receive payments directly from Indonesia's top e-wallet providers. With one integration, they are able to get access to all of OY’s available e-wallets and the upcoming e-wallet integrations.
 ### Flow
-![Ewallet Aggregator Flow](images/acceptingPayments/ewalletAggregator/ewallet_aggregator_sequence.png)
+![E-wallet Aggregator Flow](images/acceptingPayments/ewalletAggregator/ewallet_aggregator_sequence.png)
 ### Features
 #### Support multiple E-wallets
-We currently support ShopeePay, LinkAja, DANA, and OVO for e-wallet transactions.
+Our E-wallet Aggregator product support e-wallet transactions from these issuers:
+- ShopeePay
+- LinkAja
+- DANA
+- OVO
+
 
 #### Monitor transactions via OY! Dashboard
 All created e-wallet transactions are shown in OY! Dashboard. Navigate to “E-Wallet” to see the list of transactions. Inside the dashboard, you can see the details of the transactions, including all the transaction information inputted during creation, status of transactions, and the payment reference number. The dashboard also has a feature to search, filter, and export the list of transactions in various formats: Excel (.xlsx), PDF (.pdf), and CSV (.csv)
 
 ![Monitor E-wallet Aggregator Transaction](images/acceptingPayments/ewalletAggregator/ewallet_aggregator_monitoring_transactions.png)
 #### Receipt for successful payments
-Customers can receive receipt of successful payments via email(s) that you provided during the creation process. Configure sending receipt via emails to your customers by going through this steps:
+Customers can receive receipt of successful payments via email(s) that you provided during the creation process. Configure sending receipt via emails to your customers by going through these steps:
 
 1. Log in to your OY! Dashboard account
 1. Go to “Settings” → “Notifications”
@@ -2378,7 +2370,7 @@ Customers can receive receipt of successful payments via email(s) that you provi
 1. Choose “Enable Success Notification” for E-Wallet API
 1. Input your logo to be put on the email in URL format (<https://example.com/image.jpg>) 
     - If you do not have the URL for your logo, you can use online tools like [snipboard.io](https://snipboard.io/) or [imgbb](https://imgbb.com/).
-    - Once you convert your logo to URL, the correct URL should look like this:
+    - Once you convert your logo to a URL, the correct URL should look like this:
       - Snipboard.io: <https://i.snipboard.io/image.jpg>
       - Ibbmg: <https://i.ibb.co/abcdef/image.jpg>
 1. Save the changes by clicking “Save”
@@ -2391,23 +2383,23 @@ Note: If you do not put any of your customer’s email during transaction creati
 #### Retry notification/callback for successful payments
 OY! will send a notification/callback to your system once a transaction is marked successful. Therefore, you will be notified if the customer has already completed the payment. There might be a case where your system does not receive the notification successfully. 
 
-By enabling Retry Callback, OY will try to resend another callback to your system if your system does not receive the callback successfully. You can request to resend a callback using Manual Retry Callback or Automatic Retry Callback. 
+By enabling Retry Callback, OY! will try to resend another callback to your system if your system does not receive the callback successfully. You can request to resend a callback using Manual Retry Callback or Automatic Retry Callback. 
 
 ##### Manual Retry Callback
 Manual Retry Callback allows you to manually send callbacks for each transaction from OY! Dashboard. Here are the steps to do so:
 
-1. Login to your account in OY! Dashboard
+1. Log in to your account in OY! Dashboard
 1. Navigate to “E-Wallet API ”
 1. Search the record of the transaction and click 3 dots button under “Action” column
 1. Make sure that you have set up your Callback URL via “Settings” → “Developer Option” → “Callback Configuration”
-1. Make sure to whitelist OY’s IP to receive callbacks from OY 
+1. Make sure to whitelist OY’s IP to receive callbacks from OY! 
    - 54.151.191.85
    - 54.179.86.72
 1. Click “Resend Callback” to resend a callback and repeat as you need
 
 ![Manual Retry Callback](images/acceptingPayments/ewalletAggregator/ewallet_aggregator_manual_retry_callback.png)
 ##### Automatic Retry Callback
-Automatic Retry Callback allows you to receive another callback within a certain interval if the previous callback that OY sent is not received successfully on your system. OY! will try to resend other callbacks up to 5 times. If your system still does not receive any callbacks after 5 retry attempts from OY, OY will notify you via email. You can input up to 6 email recipients and it is configurable via OY! Dashboard. 
+Automatic Retry Callback allows you to receive another callback within a certain interval if the previous callback that OY! sent is not received successfully on your system. OY! will try to resend other callbacks up to 5 times. If your system still does not receive any callbacks after 5 retry attempts from OY, OY! will notify you via email. You can input up to 6 email recipients and it is configurable via OY! Dashboard. 
 
 Callback Interval: Realtime → 1 minute (after the initial attempt)→ 2 minutes (after the first retry attempt)→ 13 minutes (after the second retry attempt) → 47 mins (after the third retry attempt) 
 
@@ -2423,7 +2415,7 @@ Automatic Retry Callback is not activated by default. You can see the guideline 
 1. Make sure to whitelist OY’s IP to receive callbacks from OY
    - 54.151.191.85
    - 54.179.86.72
-1. Make sure to implement the idempotency logic in your system. Use “tx\_ref\_number” parameter as idempotency key to ensure that multiple callbacks under “tx\_ref\_number”  key should not be treated as multiple different payments.
+1. Make sure to implement the idempotency logic in your system. Use “tx\_ref\_number” parameter as the idempotency key to ensure that multiple callbacks under “tx\_ref\_number”  key should not be treated as multiple different payments.
 1. Save the changes
 
 ![Automatic Retry Callback](images/acceptingPayments/ewalletAggregator/ewallet_aggregator_automatic_retry_callback.png)
@@ -2431,7 +2423,7 @@ Automatic Retry Callback is not activated by default. You can see the guideline 
 #### Refund transactions to customer
 When your customer receives a defective product or the product is not delivered, they might request to refund the transaction. You can directly refund transactions to your customer’s account via OY! Dashboard. A refund can either be full or partial. A full refund gives your customers the entire amount back (100%). A partial refund returns the amount partially. 
 
-Refunds are free of charge. However, the admin fee charged for the original transaction is not refunded by OY to your balance.
+Refunds are free of charge. However, the admin fee charged for the original transaction is not refunded by OY! to your balance.
 
 There are several requirements that must be met to issue a refund:
 
@@ -2457,14 +2449,14 @@ Here are the steps to guide you through registration and setup for creating E-wa
 1. Do account verification by submitting the verification form. Ensure to tick the “Receive Money” product since E-wallet Aggregator is a part of Receive Money products.
 1. OY! team will review and verify the form and documents submitted 
 1. Once verification is approved, set up your receiving bank account information. Important Note: Ensure that the receiving bank account information is accurate as you can only set it up once via OY! Dashboard for security reasons
-1. Follow the registration process for each Ewallet that you want to use. Please refer to this section for detailed guidelines: [e-wallet Activation](https://docs.oyindonesia.com/#e-wallet-payment-methods)
+1. Follow the registration process for each e-wallet that you want to use. Please refer to this section for detailed guidelines: [e-wallet Activation](https://docs.oyindonesia.com/#e-wallet-payment-methods)
 1. Submit your IP address(es) & callback URL to your business representative or send an email to our support team, <business.support@oyindonesia.com> .
 1. OY! will send the Production API Key as an API authorization through your business representative. 
    Note: Staging/Demo API Key can be accessed via OY! Dashboard by going to the “Demo” environment and the key can be found on the bottom left menu. 
 1. Integrate E-wallet API to your system. Please follow the API documentation to guide you through.[ E-wallet - API Docs](https://api-docs.oyindonesia.com/#create-e-wallet-transaction-api-e-wallet-aggregator) 
 
-### Creating E-Wallet transactions
-Create E-Wallet Transactions: Use this API to create an e-wallet transaction for your user
+### Creating E-wallet transactions
+Create E-wallet Transactions: Use this API to create an E-wallet transaction for your user
 
 You can create E-Wallet transactions via API only. Here are the guidelines to create E-wallet transactions via API:
 
@@ -2472,7 +2464,7 @@ You can create E-Wallet transactions via API only. Here are the guidelines to cr
 1. Hit OY!’s API to Create E-wallet transaction.
 1. OY! will return the information to complete the payment
    - For e-wallets that use the redirection method (i.e. ShopeePay, DANA, LinkAja), OY! will return the e-wallet URL to complete the payment. You can share the URL to your customer.
-   - For e-wallets that use the push notification method (i.e. OVO), the e-wallet provider will send a notification to your customer’s E-wallet app to complete the payment
+   - For e-wallets that use the push notification method (i.e. OVO), the e-wallet provider will send a notification to your customer’s e-wallet app to complete the payment
 
 ### Completing transaction
 Each e-wallet provider has a different method to complete the transaction, redirection or push notification method. ShopeePay, LinkAja, and DANA use a redirection method. Meanwhile, OVO uses a push notification method. Please refer to these guidelines for completing transactions based on each provider:
@@ -2511,12 +2503,23 @@ Payment Routing API is a service that allows you to receive payments & send mone
   </tr>
   <tr>
     <td rowspan="2" valign="top">Receive Money Type</td>
-    <td valign="top">One Payment Method (Aggregator Scheme)</td>
-    <td valign="top"><p>Support one payment method only (One Time & Direct Payment)</p><p></p><p>You have your own checkout page and OY! provides the payment details</p><p></p><p>OY! provides the payment details information after creation (ex. VA number, E-wallet URL, QR code URL, etc)</p></td>
+    <td valign="top">Without UI</td>
+    <td valign="top">
+      <p>You have your own checkout page and OY! provides the payment details</p>
+      <p></p>
+      <p>OY! provides the payment details information after creation (ex. VA number, e-wallet URL, QR code URL, etc)</p>
+      <p></p>
+      <p>Support one payment method only (Single Payment & Direct Payment)</p>
+    </td>
   </tr>
   <tr>
-    <td valign="top">Multiple Payment Methods (Payment Link Scheme)</td>
-    <td valign="top"><p>Support multiple payment methods in one transaction</p><p></p><p>Use OY! built-in checkout page (Payment Link) </p><p></p><p>OY! provides the Payment Link after creation</p>
+    <td valign="top">With UI</td>
+    <td valign="top">
+      <p>Use OY! built-in checkout page (Payment Link) </p>
+      <p></p>
+      <p>OY! provides the Payment Link after creation</p>
+      <p></p>
+      <p>Support multiple payment methods in one transaction</p>
     </td>
   </tr>
 </table>
@@ -2524,10 +2527,10 @@ Payment Routing API is a service that allows you to receive payments & send mone
 #### Use Cases
 **Payment Aggregator**
 
-1. One Time Payments. 
-    - One Time payment is a type of payment that allows your customer to complete payments easily. Available for Bank Transfer (Virtual Account & Unique Code), E-Wallet, QRIS, and Cards.
+1. Single Payments. 
+    - Single payment is a type of payment that allows your customer to complete payments easily. Available for Bank Transfer (Virtual Account & Unique Code), E-Wallet, QRIS, and Cards.
 1. Direct Payments. 
-    - Direct payment requires account linking, meaning that your customer must connect their payment account to your system before completing payments. You can do this by using our API Account Linking. Direct payments offer a more seamless payment experience. After successful linkage, your customer does not need to open or get redirected to the payment provider application to complete payments. This feature is currently only available for e-Wallet ShopeePay. 
+    - Direct payment requires account linking, meaning that your customer must connect their payment account to your system before completing payments. You can do this by using our API Account Linking. Direct payments offer a more seamless payment experience. After successful linkage, your customer does not need to open or get redirected to the payment provider application to complete payments. This feature is currently only available for e-wallet ShopeePay. 
 
 **Payment Routing**
 
@@ -2554,9 +2557,9 @@ OY! supports various payment methods in the Payment Routing API, including:
 1. Bank Transfer 
    - Virtual Account: BCA, BNI, BRI, Mandiri, CIMB, BTPN Jenius, Danamon, Maybank, KEB Hana, BSI, Permata
    - Unique Code: BCA
-1. E-Wallet
-   - One Time: ShopeePay, DANA, LinkAja
-   - Direct Payment: ShopeePay
+1. E-wallet
+   - Single Payments: ShopeePay, DANA, LinkAja
+   - Direct Payments: ShopeePay
 1. Cards: Visa, Mastercard, JCB
 1. QRIS 
 
@@ -2564,7 +2567,7 @@ OY! supports various payment methods in the Payment Routing API, including:
 Once you receive payments from the customer, OY! can directly send the money up to 10 recipients without waiting for the settlement, as long as you have enough balance in your OY! account. Depending on the payment methods used, some transactions might not be settled real-time to your balance (e.g. QRIS, e-wallet). Therefore, you must  keep enough balance to cater the sending money process.
 
 #### Use Payment Links to receive money
-There are two types of receive money: Aggregator Scheme and Payment Link Scheme. The Aggregator Scheme can be used if you have your own checkout page and you only need the payment details information to complete the payments. Here are the payment information you will receive after successful transaction creation:
+There are two types of receiving money: With UI and Without UI. The Without UI scheme can be used if you have your own checkout page and you only need the payment details information to complete the payments. Here are the payment information you will receive after successful transaction creation:
 
 1. Bank Transfer - Virtual Account : destination bank, VA number, and amount of transaction
 1. Bank Transfer - Unique Code: destination bank, bank account number, bank account name, billed amount (original amount), unique amount, and total amount (final amount)
@@ -2596,8 +2599,8 @@ Here are the steps to guide you through registration and set up for creating Pay
 1. OY! team will review and verify the form and documents submitted 
 1. Once verification is approved, set up your receiving bank account information. Important Note: Ensure that the receiving bank account information is accurate as you can only set it up once via OY! Dashboard for security reasons
 1. By default, you get several payment methods on the get go, including all Bank Transfers (excl. BCA)
-1. Other payment methods like QRIS, Ewallets, Cards, and BCA need additional onboarding to be available to use. Please refer to this section for detail guidelines:
-   1. [Ewallet Onboarding](https://docs.oyindonesia.com/#e-wallet-payment-methods)
+1. Other payment methods like QRIS, E-wallets, Cards, and BCA need additional onboarding to be available to use. Please refer to this section for detail guidelines:
+   1. [E-wallet Onboarding](https://docs.oyindonesia.com/#e-wallet-payment-methods)
    1. [QRIS Onboarding](https://docs.oyindonesia.com/#qris-payment-methods)
    1. [VA BCA Onboarding](https://docs.oyindonesia.com/#bank-transfer-virtual-account-payment-methods)
    1. [Cards Onboarding](https://docs.oyindonesia.com/#cards-payment-methods-payment-methods)
@@ -2607,21 +2610,21 @@ Here are the steps to guide you through registration and set up for creating Pay
 1. Integrate Payment Routing API to your system. Please follow the API documentation to guide you through. [Payment Routing - API Docs](https://api-docs.oyindonesia.com/#payment-routing) 
 
 ### Creating Payment Routing transactions
-Once you successfully complete the registration process, you can immediately create Payment Routing transactions (via API only). You can create a transaction using the aggregator scheme or Payment Link scheme, depending on the use case. 
+Once you successfully complete the registration process, you can immediately create Payment Routing transactions (via API only). You can create a transaction using the Without UI scheme or With UI scheme, depending on the use case. 
 
-#### Aggregator Scheme
+#### Without UI Scheme
 1. Integrate API Create Payment Routing transactions to your system. [Create Payment Routing - API Docs](https://api-docs.oyindonesia.com/#https-request-create-and-update-payment-routing)
 1. Hit OY!’s API Create Payment Routing transaction
    1. Insert parameter “need\_frontend” with “TRUE”
    1. Choose one payment method to accept the payment. You can choose between BANK\_TRANSFER, EWALLET, QRIS, or CARDS.
-   1. Insert the chosen payment method into the “list\_enable\_payment\_method” parameter. Note: Ensure that you only input one payment method since you use the aggregator scheme, otherwise you will get an error message
+   1. Insert the chosen payment method into the “list\_enable\_payment\_method” parameter. Note: Ensure that you only input one payment method since you use the Without UI scheme, otherwise you will get an error message
    1. Choose one bank/payment provider (SOF) based on the payment method. 
       1. BANK\_TRANSFER: 014, 009, 002, 008, 022, 213, 011, 016, 484, 451, 013. Refer to this section to see all supported banks and the bank\_code: Bank Transfer - Payment Method
       1. EWALLET: shopeepay\_ewallet, dana\_ewallet, linkaja\_ewallet
       1. QRIS: QRIS
       1. CARDS: CARDS
-   1. Insert the chosen SOF into the “list\_enable\_sof” parameter. Note: Ensure that you only input one SOF since you use the aggregator scheme, otherwise you will get an error message
-   1. If you want to use E-Wallet Direct Payment, fill “use\_linked\_account” with “TRUE”, otherwise fill the parameter with “FALSE”. Only available for ShopeePay. You must do Account Linking prior to creating direct payment transactions. Refer to this section to understand about Account Linking. 
+   1. Insert the chosen SOF into the “list\_enable\_sof” parameter. Note: Ensure that you only input one SOF since you use the Without UI scheme, otherwise you will get an error message
+   1. If you want to use e-wallet Direct Payment, fill “use\_linked\_account” with “TRUE”, otherwise fill the parameter with “FALSE”. Only available for ShopeePay. You must do Account Linking prior to creating direct payment transactions. Refer to this section to understand about Account Linking. 
    1. If you want to send the money once you receive payments, fill in the destination bank account number and the amount of each recipient under the “payment\_routing” object. 
 1. OY! will return the information to complete the payment based on the requested payment method
    1. Bank Transfer - Virtual Account : destination bank, VA number, and amount of transaction
@@ -2631,7 +2634,7 @@ Once you successfully complete the registration process, you can immediately cre
    1. Cards:  link to redirect your customer to fill in card details and proceed to payment
 1. Show the payment details to your customer inside your application
 
-#### Payment Link Scheme
+#### With UI Scheme
 1. Integrate API Create Payment Routing transactions to your system. [Create Payment Routing - API Docs](https://api-docs.oyindonesia.com/#https-request-create-and-update-payment-routing)
 1. Hit OY!’s API Create Payment Routing transaction
    1. Insert parameter “need\_frontend” with “FALSE”
@@ -2648,7 +2651,7 @@ Once you successfully complete the registration process, you can immediately cre
 
 ### Completing payments
 
-#### Aggregator Scheme
+#### Without UI Scheme
 Each payment method has a different flow to complete the transaction, depending on the nature of each payment method. Please refer to these guidelines for completing transactions based on each payment method:
 
 1. [Complete Bank Transfer - Virtual Account transactions](https://docs.oyindonesia.com/#bank-transfer-virtual-account-payment-methods)
@@ -2667,8 +2670,8 @@ To simulate demo/staging transactions, please refer to this section:
 
 \*currently not available
 
-#### Payment Link Scheme
-Once you successfully create a Payment Routing with Payment Link scheme, you may share the link to your customers. The steps for your customers to complete a transaction using Payment Link scheme is the same as completing a Payment Link transaction. Please refer to this section: Completing Payment Link transactions - Product Docs
+#### With UI Scheme
+Once you successfully create a Payment Routing using With UI scheme, you may share the link to your customers. The steps for your customers to complete a transaction using With UI scheme is the same as completing a Payment Link transaction. Please refer to this section: Completing Payment Link transactions - Product Docs
 ### Checking transaction status
 All created Payment Routing transactions are shown in OY! Dashboard. Navigate to “Payment Routing” to see the list of created transactions. Inside the dashboard, you can see the details of the transactions, including all the transaction information inputted during creation, transaction status, and the payment reference number\*. The dashboard also has a feature to search, filter, and export the list of transactions in various formats: Excel (.xlsx), PDF (.pdf), and CSV (.csv)
 
@@ -2714,7 +2717,7 @@ Customers can link their payment account to your application by hitting the API 
 1. Customer is redirected to the redirect URL you specify during registration
 
 ### Check customer’s payment account balance
-Once the customer linked their payment account, you can get the information of the customer's account balance by hitting the API Get E-Wallet balance. You can show the balance inside your application. For instance, show the balance during the checkout process so the customer can know their balance before choosing a payment method. Please refer to the API Docs for more details: [Get Account Balance API - API Docs](https://api-docs.oyindonesia.com/#get-e-wallet-account-balance-api-account-linking)
+Once the customer linked their payment account, you can get the information of the customer's account balance by hitting the API Get E-wallet balance. You can show the balance inside your application. For instance, show the balance during the checkout process so the customer can know their balance before choosing a payment method. Please refer to the API Docs for more details: [Get Account Balance API - API Docs](https://api-docs.oyindonesia.com/#get-e-wallet-account-balance-api-account-linking)
 
 ### Unlink customer’s payment account from your application
 Customers who have linked their payment account can unlink their account anytime. They can do so via API Account Unlinking or via Payment Provider Application. Using the API Account Unlinking allows your customers to unlink their account inside your application. Another option that the customer can do is to unlink their account via the payment provider’s application.
@@ -2722,7 +2725,7 @@ Customers who have linked their payment account can unlink their account anytime
 
 Here are the steps to guide you and your customer when unlinking an account:
 
-**API Account Linking**
+**API Account Unlinking**
 
 1. Integrate API Account Unlinking to your system. Account Unlinking - API Docs
 1. Hit OY!’s API Account Unlinking. Once you hit our API, OY! will hit the provider’s system to unlink the customer’s account
