@@ -1193,7 +1193,7 @@ In the current state, the designated approver(s) will receive individual email n
 ![Email approver](images/internationalTransfer/approver_email.png)
 
 Upon clicking the "Review the transaction" button, you will be redirected to the dashboard, where you can choose to either approve or reject the transaction.
-*Once a transaction is approved by any one approver, it will be executed immediately.*
+*Note: Once a transaction is approved by any one approver, it will be executed immediately.*
 ![Approver decision](images/internationalTransfer/approver_decision.png)
 
 
