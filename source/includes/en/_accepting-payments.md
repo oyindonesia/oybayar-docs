@@ -5,7 +5,7 @@
 #### Introduction 
 To receive payments digitally from your customers, you can create a virtual account (VA) number for your transactions. Your customers can directly transfer the payment to the generated VA number and you will receive a notification (i.e. callback) from OY! once the transaction is considered complete. 
 
-Currently, we offer VA service for 11 banks: 
+Currently, we offer VA service for 8 banks: 
 
 1. Bank Central Asia (BCA) 
 1. Bank Rakyat Indonesia (BRI) 
@@ -13,9 +13,6 @@ Currently, we offer VA service for 11 banks:
 1. Bank Negara Indonesia (BNI) 
 1. Bank CIMB & CIMB Syariah
 1. Bank BTPN Jenius 
-1. Bank Danamon 
-1. BII Maybank 
-1. Bank KEB Hana 
 1. Bank Syariah Indonesia (BSI)
 1. Bank Permata & Permata Syariah
 
@@ -61,9 +58,6 @@ Maximum amount per transaction
 |Bank Mandiri |Rp 500,000,000|
 |Bank CIMB |Rp 500,000,000|
 |Bank BTPN Jenius |Rp 500,000,000|
-|Bank Danamon |Rp 25,000,000|
-|BII Maybank |Rp 100,000,000|
-|Bank KEB Hana |Rp 50,000,000|
 |Bank Syariah Indonesia (BSI)|Rp 50,000,000|
 |Bank Permata|Rp 500,000,000|
 
@@ -98,9 +92,6 @@ Your end-users may use the below payment channels to pay for their bills via VA
 | CIMB Niaga / CIMB Niaga Syariah | Yes  | Yes | Yes | Yes (Mobile Banking), No (Internet Banking)| No                       | Yes                          |
 | BCA                    | No   | No   | Yes | Yes      | No                                  | No                       |
 | BTPN                   | Yes  | No   | Yes | Yes (Mobile Banking), No (Internet Banking)     | No                       | Yes                          |
-| Maybank                | Yes  | Yes  | Yes | Yes      | No                                  | No                       |
-| Danamon                | Yes  | Yes  | Yes | Yes      | No                                  | No                       |
-| KEB Hana               | No   | No   | Yes | Yes      | No                                  | No                       |
 | BSI                    | No   | No   | Yes | Yes      | Yes                                 | Yes                      |
 
 
@@ -1185,16 +1176,13 @@ Generally, you may create a VA number for your customers via API VA Aggregator. 
 ### Features 
 1. Flexible creation – either via Dashboard or API 
    - You can create the VA number either by OY! Dashboard or API. Don’t worry if you don’t have the resources to conduct API integration since you can still create VA number and receive payment from your customers through OY! Dashboard 
-1. Support VA payments from multiple banks. Currently we support VA payments from 11 banks: 
+1. Support VA payments from multiple banks. Currently we support VA payments from 8 banks: 
     1. Bank Central Asia (BCA) 
     1. Bank Rakyat Indonesia (BRI) 
     1. Bank Mandiri 
     1. Bank Negara Indonesia (BNI) 
     1. Bank CIMB & CIMB Syariah
     1. Bank BTPN Jenius 
-    1. Bank Danamon 
-    1. BII Maybank 
-    1. Bank KEB Hana 
     1. Bank Syariah Indonesia (BSI)
     1. Bank Permata & Permata Syariah
 1. Quick settlement for majority of the banks 
@@ -1271,9 +1259,6 @@ Generally, you may create a VA number for your customers via API VA Aggregator. 
 |Bank Mandiri |Rp 500,000,000|
 |Bank CIMB |Rp 500,000,000|
 |Bank BTPN Jenius |Rp 500,000,000|
-|Bank Danamon |Rp 25,000,000|
-|BII Maybank |Rp 100,000,000|
-|Bank KEB Hana |Rp 50,000,000|
 |Bank Syariah Indonesia (BSI)|Rp 50,000,000|
 |Bank Permata|Rp 500,000,000|
 
@@ -1346,9 +1331,6 @@ Capabilities
 |Bank Mandiri |008|Yes|Yes|Lifetime|
 |Bank CIMB |022|Yes|Yes|Lifetime|
 |Bank BTPN Jenius |213|Yes|Yes|Lifetime|
-|Bank Danamon |011|Yes|Yes|Lifetime|
-|BII Maybank |016|Yes|Yes|Lifetime|
-|Bank KEB Hana |484|Yes|Yes|Lifetime|
 |Bank Syariah Indonesia (BSI)|451|No|Yes|70 days after creation|
 |Bank Permata|013|Yes|Yes|Lifetime|
 
@@ -1369,9 +1351,6 @@ Your end-users may use the below payment channels to pay for their bills via VA
 | CIMB Niaga / CIMB Niaga Syariah | Yes  | Yes | Yes | Yes (Mobile Banking), No (Internet Banking)| No                       | Yes                          |
 | BCA                    | No   | No   | Yes | Yes      | No                                  | No                       |
 | BTPN                   | Yes  | No   | Yes | Yes (Mobile Banking), No (Internet Banking)     | No                       | Yes                          |
-| Maybank                | Yes  | Yes  | Yes | Yes      | No                                  | No                       |
-| Danamon                | Yes  | Yes  | Yes | Yes      | No                                  | No                       |
-| KEB Hana               | No   | No   | Yes | Yes      | No                                  | No                       |
 | BSI                    | No   | No   | Yes | Yes      | Yes                                 | Yes                      |
 
 
@@ -1590,7 +1569,7 @@ Payment Routing API is a service that allows you to receive payments & send mone
 OY! supports various payment methods in the Payment Routing API, including: 
 
 1. Bank Transfer 
-   - Virtual Account: BCA, BNI, BRI, Mandiri, CIMB, BTPN Jenius, Danamon, Maybank, KEB Hana, BSI, Permata
+   - Virtual Account: BCA, BNI, BRI, Mandiri, CIMB, BTPN Jenius, BSI, Permata
    - Unique Code: BCA
 1. E-wallet
    - Single Payments: ShopeePay, DANA, LinkAja
@@ -2744,8 +2723,5 @@ There will be 3 different ways to distribute the invoice via Whatsapp and there 
 | Bank Permata / Permata Syariah| Open Amount, Closed Amount              |
 | CIMB Niaga / CIMB Niaga Syariah | Open Amount, Closed Amount            | 
 | BTPN                   | Open Amount, Closed Amount                     | 
-| KEB Hana               | Open Amount, Closed Amount                     | 
-| Maybank                | Open Amount, Closed Amount                     |
-| Bank Danamon           | Open Amount, Closed Amount                     |
 | Bank Syariah Indonesia (BSI)| Closed Amount                             | 
 
