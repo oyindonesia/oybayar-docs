@@ -1034,34 +1034,29 @@ International Transfer product provides the capability for users to transfer acr
 
 ### Key Features
 
-**Account Management**
-When you first create an account, your account will be assigned as a Super Admin role. As a Super Admin, you have the ability to create new sub-accounts and assign different roles to your team such as Admin that is applicable for international transfers. Both Super Admin and Admin may edit or delete created sub-accounts.
+**Account Management**\
+When you first create an account, your account will be assigned as a Super Admin role. As a Super Admin, you have the ability to create new sub-accounts and and assign different roles to your team such as Admin, Maker and Approver that are applicable for international transfers. The Super Admin and Admin can also edit or delete created sub-accounts.\
+*Note: it is not necessary to create new sub-accounts in order to use international transfer. The Super Admin and Admin roles allows you to directly create and approve transactions.*
 
-Note: it is not necessary to create new sub-accounts in order to use international transfer. The Super Admin and Admin roles allows you to directly create and approve transactions.
-
-Detailed step-by-step instructions on setting up user management and the different role types coming soon.
-
-**Roles & Accessibility**
+**Roles & Accessibility**\
 Only Super Admin and Admin roles are available to create transactions. However, if an approval flow is set up, Maker roles are allowed to create transaction with the approval of Super Admin, Admin or Approver roles. All other roles are only allowed to view transaction list, transaction details, filter, export and edit custom column in dashboard. 
 
-**Available destinations**
-Current list of countries supported: Singapore, Hong Kong and China
-Current list of currencies supported: Singapore Dollars (SGD), Hong Kong Dollars (HKD), Chinese Yuan (CNY) and US Dollars (USD)
-
+**Available Destinations**\
+Current list of countries supported: Singapore, Hong Kong and China.\
+Current list of currencies supported: Singapore Dollars (SGD), Hong Kong Dollars (HKD), Chinese Yuan (CNY) and US Dollars (USD).\
 More countries such as Australia, Malaysia, South Korea and United States will be available soon.
 
-**Sender / Recipient Contacts**
+**Sender / Recipient Contacts**\
 Suppose that you want to create an international transfer on behalf of another entity, you may create an individual / business sender or recipient and input all required information about the sender or recipient. All sender and recipient information will be saved in contacts and may be reused in the future.
 
-**Additional Documents**
+**Additional Documents**\
 We provide a placeholder for you to upload invoice and other supporting documents for the purpose of transfer and source of funds.
 
-**Transaction Details**
+**Transaction Details**\
 Once a transaction is successfully created, all transaction details and updates will be recorded in OY! dashboard.
 
-**Approval Flow** 
-
-Approval flow is designed to elevate your user experience and streamline the process of managing international transactions. The feature empowers our partners by allowing them to customize the approval process for transactions. Now, partners can assign approvers, ensuring that each transaction undergoes a thorough review before execution. This not only adds an extra layer of security to your international remittances but also provides you with greater control over the entire process.
+**Single-layer Approval**\
+Approval flow is designed to elevate your user experience and streamline the process of managing international transactions. The feature empowers our partners by allowing them to customize the approval process for transactions. Now, partners have the ability to assign Maker roles, responsible for initiating transaction creation, and Approver roles, ensuring each transaction undergoes a thorough review before execution. This not only adds an extra layer of security to your international remittances but also provides you with greater control over the entire process.
 
 ### Registration and Set Up 
 **Prerequisites**
