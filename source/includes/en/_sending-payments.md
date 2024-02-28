@@ -1042,13 +1042,13 @@ Note: it is not necessary to create new sub-accounts in order to use internation
 Detailed step-by-step instructions on setting up user management and the different role types coming soon.
 
 **Roles & Accessibility**
-Only Super Admin and Admin roles are available to create transactions. All other roles are only allowed to view transaction list, transaction details, filter, export and edit custom column in dashboard.
+Only Super Admin and Admin roles are available to create transactions. However, if an approval flow is set up, Maker roles are allowed to create transaction with the approval of Super Admin, Admin or Approver roles. All other roles are only allowed to view transaction list, transaction details, filter, export and edit custom column in dashboard. 
 
 **Available destinations**
-Current list of countries supported: Singapore
-Current list of currencies supported: Singapore Dollars (SGD), US Dollars (USD)
+Current list of countries supported: Singapore, Hong Kong and China
+Current list of currencies supported: Singapore Dollars (SGD), Hong Kong Dollars (HKD), Chinese Yuan (CNY) and US Dollars (USD)
 
-More countries such as Australia, China, Hongkong, Malaysia, South Korea and United States will be available soon.
+More countries such as Australia, Malaysia, South Korea and United States will be available soon.
 
 **Sender / Recipient Contacts**
 Suppose that you want to create an international transfer on behalf of another entity, you may create an individual / business sender or recipient and input all required information about the sender or recipient. All sender and recipient information will be saved in contacts and may be reused in the future.
