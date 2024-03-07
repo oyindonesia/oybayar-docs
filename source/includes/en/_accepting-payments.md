@@ -42,7 +42,8 @@ Minimum amount per transaction
 
 |Product Type|Min. VA Transaction Amount|
 | :-: | :-: |
-|Payment Link|Rp 10,000 |
+|Payment Link (non CIMB, Mandiri, Permata) |Rp 10,000 |
+|Payment Link (VA CIMB, Mandiri, Permata) |Rp 15,000 |
 |Payment Routing|Rp 10,000 |
 |VA Aggregator (Closed Amount)|Rp 10,000 |
 |VA Aggregator (Open Amount)|No minimum amount |
