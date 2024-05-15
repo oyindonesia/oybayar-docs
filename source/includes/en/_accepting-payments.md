@@ -1481,6 +1481,10 @@ You can create E-Wallet transactions via API only. Here are the guidelines to cr
    - For e-wallets that use the redirection method (i.e. ShopeePay, DANA, LinkAja), OY! will return the e-wallet URL to complete the payment. You can share the URL to your customer.
    - For e-wallets that use the push notification method (i.e. OVO), the e-wallet provider will send a notification to your customer’s e-wallet app to complete the payment
 
+Note: When you hit Create E-Wallet Transaction endpoint in Staging/Demo environment, it will always return the same ewallet_url & success_redirect URL in the response: https://pay-dev.shareitpay.in/aggregate-pay-gate. You cannot simulate payment by clicking this URL.
+
+In order to be able to simulate payment, please refer to this section: Simulate [E-Wallet Payments - Product Docs](https://docs.oyindonesia.com/#e-wallet-payment-methods)
+
 ### Completing transaction
 Each e-wallet provider has a different method to complete the transaction, redirection or push notification method. ShopeePay, LinkAja, and DANA use a redirection method. Meanwhile, OVO uses a push notification method. Please refer to these guidelines for completing transactions based on each provider:
 
