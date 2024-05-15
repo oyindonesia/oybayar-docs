@@ -7053,6 +7053,10 @@ Note: Staging/Demo API Key can be accessed via OY! Dashboard by going to the “
 <li>For e-wallets that use the push notification method (i.e. OVO), the e-wallet provider will send a notification to your customer’s e-wallet app to complete the payment</li>
 </ul></li>
 </ol>
+
+<p>Note: When you hit Create E-Wallet Transaction endpoint in Staging/Demo environment, it will always return the same ewallet_url &amp; success_redirect URL in the response: https://pay-dev.shareitpay.in/aggregate-pay-gate. You cannot simulate payment by clicking this URL.</p>
+
+<p>In order to be able to simulate payment, please refer to this section: Simulate <a href="https://docs.oyindonesia.com/#e-wallet-payment-methods">E-Wallet Payments - Product Docs</a></p>
 <h3 id='completing-transaction-api-e-wallet-aggregator' type='normal'>Completing transaction</h3>
 <p>Each e-wallet provider has a different method to complete the transaction, redirection or push notification method. ShopeePay, LinkAja, and DANA use a redirection method. Meanwhile, OVO uses a push notification method. Please refer to these guidelines for completing transactions based on each provider:</p>
 
