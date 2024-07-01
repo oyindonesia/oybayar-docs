@@ -6,7 +6,7 @@ Businesses are struggling to manage hundreds or even thousands of physical bank 
 
 Virtual Account (VA) is essentially a dummy account that is linked to a physical account and has all the physical account characteristics that enables a much easier reporting and reconciliation process by centralizing the money flow into the physical account. By issuing VAs, you can assign each VA for specific person and/or purposes.
 
-![API VA Aggregator](images/va_diagram_1.png)
+<img data-src="images/va_diagram_1.png" alt="API VA Aggregator" loading="lazy" class="lazyload" />
 
 From the example above, it shows how payments made through the VAs are merely pass-throughs for the physical accounts to receive money. Without VAs, the above example might require up to 8 physical accounts from 2 different banks rather than 2 physical accounts from 2 different banks.
 
@@ -16,7 +16,7 @@ Our API VA Aggregator product provides you with the capabilities to create uniqu
 
 Our virtual accounts are adjustable according to your needs. We offer options of static or dynamic accounts, single or mutli use accounts, opened or closed amounts, and determinable expiration dates. You can also track all created virtual accounts, incoming payments, and their respective details either through our API callback or the OY! dashboard.
 
-![API VA Aggregator](images/va_diagram_2.png)
+<img data-src="images/va_diagram_2.png" alt="API VA Aggregator" loading="lazy" class="lazyload" />
 
 ### Key Features
 
@@ -60,7 +60,7 @@ All of the VA information, even after they are updated, is available on the OY! 
 
 ### Use Cases
 
-![API VA Aggregator](images/va_use_case_new.png)
+<img data-src="images/va_use_case_new.png" alt="API VA Aggregator" loading="lazy" class="lazyload" />
 
 ### Registration and Set Up
 
@@ -174,7 +174,7 @@ Once a VA is created, its details can be seen and monitored through the OY! dash
 - For Create VA via API, an endpoint to [check your VA information](https://api-docs.oyindonesia.com/#get-va-info) is also available and can be accessed at any time.
 - If you wish to change the details of your VA, you can do so by [updating your VA](https://api-docs.oyindonesia.com/#update-va) at any time.
 
-![API VA Aggregator](images/va_waiting_payment.png)
+<img data-src="images/va_waiting_payment.png" alt="API VA Aggregator" loading="lazy" class="lazyload" />
 
 > Below is an example of the request body:
 
@@ -252,13 +252,13 @@ All details regarding your [created VA](https://api-docs.oyindonesia.com/#get-li
 
 - Additionally, Create VA via API can be retrieved via our API endpoint.
 
-![API VA Aggregator](images/va_created_va.png)
+<img data-src="images/va_created_va.png" alt="API VA Aggregator" loading="lazy" class="lazyload" />
 
 Similarly, all the details regarding [incoming transactions](https://api-docs.oyindonesia.com/#get-list-of-transaction-for-va) can be monitored directly from the OY! dashboard.
 
 - Additionally, Create VA via API can be retrieved via our API endpoint.
 
-![API VA Aggregator](images/va_incoming.png)
+<img data-src="images/va_incoming.png" alt="API VA Aggregator" loading="lazy" class="lazyload" />
 
 For further details regarding OY!'s extensive API VA Aggregator capabilities and endpoints, please refer to the [OY! API Documentation](https://api-docs.oyindonesia.com/#va-aggregator).
 
@@ -316,7 +316,7 @@ Creating a payment link/invoice page is free! You will only be charged when you 
 
 **Payment Link Preview**
 
-![Payment Link](images/3p1p_preview.png)
+<img data-src="images/3p1p_preview.png" alt="Payment Link" loading="lazy" class="lazyload" />
 
 ### Key Features
 
@@ -403,7 +403,7 @@ You will be able to see the details of the payment link including, but not limit
 
 We also provide an API for you to check the transaction status manually.
 
-![Payment Link](images/payment_checkout_list.png)
+<img data-src="images/payment_checkout_list.png" alt="Payment Link" loading="lazy" class="lazyload" />
 
 #### Support Multi Account Management
 
@@ -462,11 +462,11 @@ One-time Payment Link consists of 3 parameter types: Transaction-related, Custom
 
 Note: For Payment Link Configuration-related fields (Amount Type, Payment Method, Admin Fee Method, Payment Link Expiration Date), you can choose to save your selected configuration for the future transactions by ticking the "Use this configuration for future transaction(s) option. By saving it, you will no longer need to fill in the fields again the next time you create a payment link.
 
-![Payment Link](images/create_payment_link_1.png)
+<img data-src="images/create_payment_link_1.png" alt="Payment Link" loading="lazy" class="lazyload" />
 
-![Payment Link](images/create_payment_link_2.png)
+<img data-src="images/create_payment_link_2.png" alt="Payment Link" loading="lazy" class="lazyload" />
 
-![Payment Link](images/create_payment_link_3.png)
+<img data-src="images/create_payment_link_3.png" alt="Payment Link" loading="lazy" class="lazyload" />
 
 Reusable Link
 
@@ -571,11 +571,11 @@ One-time Payment Link consists of 3 parameter types: Transaction-related, Custom
 
 Note: For Payment Link Configuration-related fields (Amount Type, Payment Method, Admin Fee Method, Payment Link Expiration Date), you can choose to save your selected configuration for the future transactions by ticking the "Use this configuration for future transaction(s) option. By saving it, you will no longer need to fill in the fields again the next time you create a payment link.
 
-![Payment Link](images/create_payment_link_4.png)
+<img data-src="images/create_payment_link_4.png" alt="Payment Link" loading="lazy" class="lazyload" />
 
-![Payment Link](images/create_payment_link_5.png)
+<img data-src="images/create_payment_link_5.png" alt="Payment Link" loading="lazy" class="lazyload" />
 
-![Payment Link](images/create_payment_link_6.png)
+<img data-src="images/create_payment_link_6.png" alt="Payment Link" loading="lazy" class="lazyload" />
 
 Reusable Link
 
@@ -601,11 +601,11 @@ Reusable Payment Link consists of 2 parameter types: Transaction-related and Gen
 
 Note: For Payment Link Configuration-related fields (Amount Type, Payment Method, Admin Fee Method, Payment Link Expiration Date), you can choose to save your selected configuration for the future transactions by ticking the "Use this configuration for future transaction(s) option. By saving it, you will no longer need to fill in the fields again the next time you create a payment link.
 
-![Payment Link](images/create_reusable_1.png)
+<img data-src="images/create_reusable_1.png" alt="Payment Link" loading="lazy" class="lazyload" />
 
-![Payment Link](images/create_reusable_2.png)
+<img data-src="images/create_reusable_2.png" alt="Payment Link" loading="lazy" class="lazyload" />
 
-![Payment Link](images/create_reusable_3.png)
+<img data-src="images/create_reusable_3.png" alt="Payment Link" loading="lazy" class="lazyload" />
 
 ### Monitoring the payment link transactions
 
@@ -633,7 +633,7 @@ The transaction details that you can see are;
 | Customer Notes        | The transaction notes written by your user/customer                                                                                                                |
 | Status                | The transaction status. Possible values are WAITING PAYMENT, FAILED, CHARGE IN PROGRESS, EXPIRED, AND COMPLETE                                                     |
 
-![Payment Link](images/one_time_link_list.png)
+<img data-src="images/one_time_link_list.png" alt="Payment Link" loading="lazy" class="lazyload" />
 
 Reusable Link
 
@@ -653,11 +653,11 @@ After you successfully create a reusable link, it will become a "Parent" link. T
 | Status                       | The status of a parent reusable link. Possible status: OPEN FOR PAYMENT (means the link can still receive payments) and EXPIRED (status will be changed to EXPIRED when the payment link has exceeded the expiration date). When status is set as EXPIRED, the payment link can no longer receive a transaction |
 | Action                       | The possible actions that you can take on a link: Copy URL, Visit URL, Delete, and Resend Callback                                                                                                                                                                                                              |
 
-![Payment Link](images/reusable_link_parent.png)
+<img data-src="images/reusable_link_parent.png" alt="Payment Link" loading="lazy" class="lazyload" />
 
 When you click the hyperlink in the Partner Tx ID, you will be redirected to a page where you can see the transaction details corresponding to that Parent Reusable Link.
 
-![Payment Link](images/reusable_link_parent_details.png)
+<img data-src="images/reusable_link_parent_details.png" alt="Payment Link" loading="lazy" class="lazyload" />
 
 The transaction list displayed is the transaction that is linked to a Parent Reusable Link
 
@@ -703,7 +703,7 @@ The details that you can see are;
 | Status                | The transaction status. Possible values are WAITING PAYMENT, FAILED, CHARGE IN PROGRESS, EXPIRED, AND COMPLETE                   |
 | Action                | The possible actions that you can take on a link: Copy URL, Visit URL, Delete, and Resend Callback                               |
 
-![Payment Link](images/reusable_link_child.png)
+<img data-src="images/reusable_link_child.png" alt="Payment Link" loading="lazy" class="lazyload" />
 
 ### How to Use Invoice/Account Receivable via Dashboard
 
@@ -736,15 +736,15 @@ The details that you can see are;
 
 
 * Create Invoice form with flexible Payment Link Expiry Time
-![Invoice](images/accountReceivable/AR_expiry_datetime.png)
+<img data-src="images/accountReceivable/AR_expiry_datetime.png" alt="Invoice" loading="lazy" class="lazyload" />
 
 
 * Invoice details inside dashboard.
-![Invoice](images/accountReceivable/invoice_detail.jpg)
+<img data-src="images/accountReceivable/invoice_detail.jpg" alt="Invoice" loading="lazy" class="lazyload" />
 
 
 * Invoice preview inside dashboard
-![Invoice](images/accountReceivable/detailpdf.jpg)
+<img data-src="images/accountReceivable/detailpdf.jpg" alt="Invoice" loading="lazy" class="lazyload" />
 
 
 
@@ -755,7 +755,7 @@ The details that you can see are;
 All of the created invoices (via API or Dashboard) can be monitored through your dashboard (Invoice List).
 
 
-![Invoice](images/accountReceivable/filter.jpg)
+<img data-src="images/accountReceivable/filter.jpg" alt="Invoice" loading="lazy" class="lazyload" />
 
 
 The transaction details that you can see are:
@@ -809,7 +809,7 @@ There are 2 ways to create a Customer:
 Option 1: Through "Create Invoice" menu
 
 
-![Invoice](images/add_new_customer.png)
+<img data-src="images/add_new_customer.png" alt="Invoice" loading="lazy" class="lazyload" />
 
 
 1. Click dropdown of the "Customer"
@@ -835,10 +835,10 @@ For Tax Type, the explanation is as follows:
 Option 2: Through "Customer Management" menu
 
 
-![Invoice](images/accountReceivable/AR_customer.png)
+<img data-src="images/accountReceivable/AR_customer.png" alt="Invoice" loading="lazy" class="lazyload" />
 
 
-![Invoice](images/accountReceivable/AR_new_customer.png)
+<img data-src="images/accountReceivable/AR_new_customer.png" alt="Invoice" loading="lazy" class="lazyload" />
 
 
 
@@ -849,7 +849,7 @@ Option 2: Through "Customer Management" menu
 4. Click "Save"
 
 
-![Invoice](images/accountReceivable/AR_new_customer.png)
+<img data-src="images/accountReceivable/AR_new_customer.png" alt="Invoice" loading="lazy" class="lazyload" />
 
 
 All of the created customer can be monitored through your dashboard (Customer List). There are several actions that you take for the customer data:
@@ -866,7 +866,7 @@ If you click on the row you selected, you will be able to see the detailed data 
 
 
 
-![Invoice](images/accountReceivable/customermanagement.png)
+<img data-src="images/accountReceivable/customermanagement.png" alt="Invoice" loading="lazy" class="lazyload" />
 
 
 
@@ -879,7 +879,7 @@ If you click on the row you selected, you will be able to see the detailed data 
 OY! has a feature that allows you to add the price of the subtotal (addition) and/or deduct the price from subtotal. The step is as follows:
 
 
-![Invoice](images/add_column_amount_customization.png)
+<img data-src="images/add_column_amount_customization.png" alt="Invoice" loading="lazy" class="lazyload" />
 
 
 
@@ -890,7 +890,7 @@ OY! has a feature that allows you to add the price of the subtotal (addition) an
 4. Fill in the amount
 
 
-![Invoice](images/accountReceivable/AR_kolom.png)
+<img data-src="images/accountReceivable/AR_kolom.png" alt="Invoice" loading="lazy" class="lazyload" />
 
 
 ### How to Use Payment Link/Invoice via API
@@ -1093,7 +1093,7 @@ curl -X DELETE \
 
 Just like the Payment Link via Link, you can access all your payment links and its details from the OY! dashboard. This report will include all payment links generated both via Link and API.
 
-![Payment Link](images/payment_checkout_list.png)
+<img data-src="images/payment_checkout_list.png" alt="Payment Link" loading="lazy" class="lazyload" />
 
 ### Pop!: Seamless Payment Experience
 
@@ -1124,16 +1124,16 @@ How to customize the UI via Payment Link or Account Receivable
 - Click the 'Settings" icon located at the top right of the page
 
 
-![Payment Link](images/ui_customization_settings_icon.png)
+<img data-src="images/ui_customization_settings_icon.png" alt="Payment Link" loading="lazy" class="lazyload" />
 
 
-![Account Receivable](images/accountReceivable/appearance_setting.png)
+<img data-src="images/accountReceivable/appearance_setting.png" alt="Account Receivable" loading="lazy" class="lazyload" />
 
 
 - You will be redirected to the Settings page
 
 
-![Payment Link](images/ui_customization_settings_page.png)
+<img data-src="images/ui_customization_settings_page.png" alt="Payment Link" loading="lazy" class="lazyload" />
 
 
 - Input the URL for your logo (If you’re using [snipboard.io](https://snipboard.io/), the correct URL should be in “https://i.snipboard.io/image.jpg” format. If you’re using [imgbb.com](https://imgbb.com/), the correct URL should be in “https://i.ibb.co/abcdef/image.jpg” format)
@@ -1145,7 +1145,7 @@ How to customize the UI via Payment Link or Account Receivable
 - Select your secondary color (you can select from our available color picker tools or you can input the 6 digit #HEX code). This secondary color will be the color of CTA button in your payment link and the color of the text outside the header
 
 
-![Payment Link](images/ui_customization_color_logo.png)
+<img data-src="images/ui_customization_color_logo.png" alt="Payment Link" loading="lazy" class="lazyload" />
 
 
 - Click "Save Changes"
@@ -1164,7 +1164,7 @@ Illustration;
 If we pick green (#HEX code #067610) as the primary color and black (#HEX code #000000) as the secondary color, the look and feel will be as follows;
 
 
-![Payment Link](images/3p1p_preview.png)
+<img data-src="images/3p1p_preview.png" alt="Payment Link" loading="lazy" class="lazyload" />
 
 
 ### Customizing Account Receivable Invoice Template and Color
@@ -1189,10 +1189,10 @@ How to customize the Account Receivable Invoice UI:
 8. Click “Save”
 
 
-![Account Receivable](images/accountReceivable/appearance_setting.png)
+<img data-src="images/accountReceivable/appearance_setting.png" alt="Account Receivable" loading="lazy" class="lazyload" />
 
 
-![Account Receivable](images/accountReceivable/Templatesettings.png)
+<img data-src="images/accountReceivable/Templatesettings.png" alt="Account Receivable" loading="lazy" class="lazyload" />
 
 
 
@@ -1213,7 +1213,7 @@ For your convenience, you have the option to auto-generate invoice numbers. No m
 **This update will not impact your existing invoices**
 
 
-![Account Receivable](images/accountReceivable/invoicenumber.png)
+<img data-src="images/accountReceivable/invoicenumber.png" alt="Account Receivable" loading="lazy" class="lazyload" />
 
 
 ### Sending the Created Payment Link through WhatsApp 
@@ -1222,7 +1222,7 @@ For better payment conversion, you can send the created link to your users throu
 
 The flow will be as follows:
 
-![WhatsApp Flow](images/flow_whatsapp_notif.png)
+<img data-src="images/flow_whatsapp_notif.png" alt="WhatsApp Flow" loading="lazy" class="lazyload" />
 
 Click [here](https://api-docs.oyindonesia.com/#https-request-send-payment-invoice-link-whatsapp-notification) for more information on API Send WhatsApp
 
@@ -1233,13 +1233,13 @@ For your convenience, you can now distribute invoice to your users through Whats
 There will be 3 different ways to distribute the invoice via Whatsapp and there is a maximum of one Whatsapp message per unpaid invoice. When the status is paid, users will get a payment confirmation from Whatsapp too.
 
 * Option 1 - via invoice details
-![WhatsApp Flow via detail](images/accountReceivable/AR_WA_Table.png)
+<img data-src="images/accountReceivable/AR_WA_Table.png" alt="WhatsApp Flow via detail" loading="lazy" class="lazyload" />
 
 * Option 2 - via new invoice creation
-![WhatsApp Flow via new invoice](source/images/accountReceivable/AR_WA_Creation.png)
+<img data-src="source/images/accountReceivable/AR_WA_Creation.png" alt="WhatsApp Flow via new invoice" loading="lazy" class="lazyload" />
 
 * Option 3 - via invoice table
-![WhatsApp Flow via table](images/accountReceivable/AR_WA_Table.png)
+<img data-src="images/accountReceivable/AR_WA_Table.png" alt="WhatsApp Flow via table" loading="lazy" class="lazyload" />
 
 
 
@@ -1269,7 +1269,7 @@ E-Wallet API allows clients to charge and receive payments directly from top e-w
 
 ### E-Wallet Product Flow
 
-![E-Wallet API](images/ewallet_product_flow.png)
+<img data-src="images/ewallet_product_flow.png" alt="E-Wallet API" loading="lazy" class="lazyload" />
 
 ### Key Features
 
@@ -1299,8 +1299,8 @@ In order to be able to simulate payment (change the transaction status into Comp
 1.  Create an account
 2.  Send a request to activate API E-Wallet product and obtain staging API Key to your business representative
 3.  Create a transaction by sending a ‘POST’ request to https://api-stg.oyindonesia.com/api/e-wallet-aggregator/create-transaction using your staging API key. Enter the required and optional fields, as referenced in the API reference docs (https://api-docs.oyindonesia.com/#api-e-wallet-aggregator)
-4.  After an E-Wallet transaction is generated, you can simulate an E-Wallet payment through their dashboard (in Staging environment) by going to the "E-Wallet" sidebar, look for the newly created transaction row on the table (should be at the top), then click on the "Pay" button on the very right of that row. ![E-Wallet Table](images/ewallet_testing_2.png)
-5.  Fill in the e-wallet name, the ref number and amount should be prefilled from the transaction in the previous step, then click on "Send Callback" ![E-Wallet API](images/ewallet_testing.png)
+4.  After an E-Wallet transaction is generated, you can simulate an E-Wallet payment through their dashboard (in Staging environment) by going to the "E-Wallet" sidebar, look for the newly created transaction row on the table (should be at the top), then click on the "Pay" button on the very right of that row. <img data-src="images/ewallet_testing_2.png" alt="E-Wallet Table" loading="lazy" class="lazyload" />
+5.  Fill in the e-wallet name, the ref number and amount should be prefilled from the transaction in the previous step, then click on "Send Callback" <img data-src="images/ewallet_testing.png" alt="E-Wallet API" loading="lazy" class="lazyload" />
 6.  If a payment is successful, we will send a callback to the registered staging callback URL destination
 7.  The payment made to the e-wallet transaction can be monitored through OY! dashboard, in the "E-Wallet" sidebar
 
@@ -1313,7 +1313,7 @@ We provide 2 endpoints for you to use:
 
 All details regarding your created e-wallet and its payments can be retrieved via our API endpoint (Check E-Wallet Transaction Status) or can be monitored directly from the OY! dashboard (through the E-Wallet sidebar)
 
-![E-Wallet API](images/ewallet_dashboard.png)
+<img data-src="images/ewallet_dashboard.png" alt="E-Wallet API" loading="lazy" class="lazyload" />
 
 ### E-Wallet Details
 
@@ -1336,7 +1336,7 @@ Through API Payment Routing you may create Payment Link transactions and/or rece
 
 ### Flow
 
-![Payment Routing Flow](/images/Payment_Routing_Flow.png)
+<img data-src="/images/Payment_Routing_Flow.png" alt="Payment Routing Flow" loading="lazy" class="lazyload" />
 
 ### Key Features
 
@@ -1448,7 +1448,7 @@ Follow the instruction below to activate retry callback
 5. Click "Save Changes". The configuration will not able to be saved if the callback URL or/and email format are not valid.
 
 
-![Resend Callback](images/retry_callback_developer_option.png)
+<img data-src="images/retry_callback_developer_option.png" alt="Resend Callback" loading="lazy" class="lazyload" />
 
 Don't forget to whitelist these IPs in order to be able to receive callback from OY: 54.151.191.85 and 54.179.86.72
 
@@ -1466,13 +1466,13 @@ Ewallet Aggregator: open "E-Wallet" menu
 4. If the product product is Payment Link, click 3 dots in the related transaction and click "Resend Callback"
 
 
-![Resend Callback](images/payment_link_resend_callback.png)
+<img data-src="images/payment_link_resend_callback.png" alt="Resend Callback" loading="lazy" class="lazyload" />
 
-![Resend Callback](images/reusable_resend_callback.png)
+<img data-src="images/reusable_resend_callback.png" alt="Resend Callback" loading="lazy" class="lazyload" />
 
-![Resend Callback](images/va_resend_callback.png)
+<img data-src="images/va_resend_callback.png" alt="Resend Callback" loading="lazy" class="lazyload" />
 
-![Resend Callback](images/ewallet_resend_callback.png)
+<img data-src="images/ewallet_resend_callback.png" alt="Resend Callback" loading="lazy" class="lazyload" />
 
 
 
@@ -1517,12 +1517,12 @@ Refund features allow you to refund a successful e-wallet transaction to your en
   - VA Aggregator : Click “Virtual Account” and choose “Incoming Payment”
   - Payment Routing ; Click “Payment Routing”
 3. You can see a transaction that should be refunded
-4. On “Action” column, you can click the the three-dots button and click “Refund E-Wallet”. ![Refund E-wallet](images/ewallet_refund_action.png)
-5. If you try to trigger refund after the time limit or outside operational hours, an error modal will show up and you can not continue the refund process. ![Refund E-wallet](images/ewallet_refund_operational.png)
-6. You can fill the amount of refund, only for partial refund. ![Refund E-wallet](images/ewallet_refund_amount.png)
-7. Make sure that you have enough balance to issue a refund. If you do not have enough balance, an error message will show up. You can top up your balance via “Top Up” feature. ![Refund E-wallet](images/ewallet_refund_balance.png)
+4. On “Action” column, you can click the the three-dots button and click “Refund E-Wallet”. <img data-src="images/ewallet_refund_action.png" alt="Refund E-wallet" loading="lazy" class="lazyload" />
+5. If you try to trigger refund after the time limit or outside operational hours, an error modal will show up and you can not continue the refund process. <img data-src="images/ewallet_refund_operational.png" alt="Refund E-wallet" loading="lazy" class="lazyload" />
+6. You can fill the amount of refund, only for partial refund. <img data-src="images/ewallet_refund_amount.png" alt="Refund E-wallet" loading="lazy" class="lazyload" />
+7. Make sure that you have enough balance to issue a refund. If you do not have enough balance, an error message will show up. You can top up your balance via “Top Up” feature. <img data-src="images/ewallet_refund_balance.png" alt="Refund E-wallet" loading="lazy" class="lazyload" />
 8. The transaction will change to “Refunded” if the refund is successful. You can not trigger another refund after the refund is successful. The refund button will be disabled.
-9. You can see the refunded transaction in “Account Statement” page by clicking “Transaction Report” and “Account Statement”. ![Refund E-wallet](images/ewallet_refund_account_statement.png)
+9. You can see the refunded transaction in “Account Statement” page by clicking “Transaction Report” and “Account Statement”. <img data-src="images/ewallet_refund_account_statement.png" alt="Refund E-wallet" loading="lazy" class="lazyload" />
 
 
 ## Feature: Account Linking

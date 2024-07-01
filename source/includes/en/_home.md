@@ -4,7 +4,7 @@ Welcome to OY! We aim to be among the world class financial services and always 
 
 ## How OY! Can Help
 
-![How OY Can Help](images/how_oy_can_help.png)
+<img data-src="images/how_oy_can_help.png" alt="How OY Can Help" loading="lazy" class="lazyload" />
 
 ## Our Product Suites
 
@@ -32,13 +32,13 @@ Follow the steps below to create an account:
 
 *Please note that your username cannot be changed once the registration form is submitted.*
 
-![Creating Account](images/desktop_register.png)
+<img data-src="images/desktop_register.png" alt="Creating Account" loading="lazy" class="lazyload" />
 
 **2. Activate your account**: Once the registration is submitted, an activation link will be sent to the email registered.
 Once you are successfully logged in, you will be able to try our product suites in staging/test environment, where you can execute money-in and money-out dummy transactions (without real money movement).
 If you are ready to proceed to go live or integrate with OY!, refer to the below sections for more information on the steps to upgrade your account.
 
-![Creating Account](images/creating_account_2.jpg)
+<img data-src="images/creating_account_2.jpg" alt="Creating Account" loading="lazy" class="lazyload" />
 
 Once you are successfully logged in, you will be able to try our product suites in staging/test environment, where you can execute money-in and money-out dummy transactions (without real money movement).
 
@@ -50,34 +50,34 @@ Follow the steps below to verify your business:
 
 **1. Request to Verify your Business**: To access the full version of our products and services, please select “Verify Your Business” on the menu at the left side of the OY! dashboard (Production environment) and complete all the required information.
 
-![Upgrade](images/upgrade_account_1.png)
+<img data-src="images/upgrade_account_1.png" alt="Upgrade" loading="lazy" class="lazyload" />
 
 **2. For Individual User: Upload ID Card for Identity Verification**: Please take an identity card photo and a Selfie photo holding an identity card. The system will automatically read your Identity card photo to fill the form, make sure all information is correct based on your ID card.
 
 - For Individual type of business
-  ![Upgrade](images/upgrade_account_2.png)
+  <img data-src="images/upgrade_account_2.png" alt="Upgrade" loading="lazy" class="lazyload" />
 
 **2. For Corporate User: Upload the Legality Documents**: We ask for different legality documents for different types of corporate entities. After choosing your corporate type we will show you what document you need to submit.
 
-![Upgrade](images/upgrade_account_3.png)
+<img data-src="images/upgrade_account_3.png" alt="Upgrade" loading="lazy" class="lazyload" />
 
 Please upload the required supporting documents according to your business type. Documents are only accepted in PDF format and must be less than 10 MB in size each.
 
 - Here is an example for Corporate (PJSP) type of business
-  ![Upgrade](images/upgrade_account_4.png)
+  <img data-src="images/upgrade_account_4.png" alt="Upgrade" loading="lazy" class="lazyload" />
 
 - For Corporate (Non PJSP) type of business  
-  ![Upgrade](images/upgrade_account_5.png)
+  <img data-src="images/upgrade_account_5.png" alt="Upgrade" loading="lazy" class="lazyload" />
 
 **3. Fill Business Information Form**: Let us know more about your business by filling out the Business Information form. Please note that you will not be able to change this field in the need revision status.
 
-![Upgrade](images/upgrade_account_7.png)
+<img data-src="images/upgrade_account_7.png" alt="Upgrade" loading="lazy" class="lazyload" />
 
 **4. Submit your Bank Account**: Add Bank Account Information as the destination account for withdrawing money from OY! Business Platform.
 
 *Please note that the receiving bank account information cannot be changed via the OY! dashboard once your business verification request is approved for security reasons. Please contact us at partner@oyindonesia.com to change the receiving bank account information.*
 
-![Upgrade](images/upgrade_account_6.png)
+<img data-src="images/upgrade_account_6.png" alt="Upgrade" loading="lazy" class="lazyload" />
 
 **5. Submit your Request**: Click “Submit”, and a new status of “Waiting for Approval” should appear on the Home page, indicating that your request has been submitted along with your supporting documents.
 
