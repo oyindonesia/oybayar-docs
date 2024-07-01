@@ -33,11 +33,11 @@ Untuk membuat akun, ikuti langkah-langkah berikut:
 
    *Harap perhatikan bahwa username Anda tidak dapat diubah setelah formulir pendaftaran dikirimkan.*
 
-![Creating Account](images/desktop_register.png)
+<img data-src="images/desktop_register.png" alt="Creating Account" loading="lazy" class="lazyload" />
 
 2. **Aktivasi akun Anda:** Setelah formulir pendaftaran dikirimkan, sebuah link aktivasi akan dikirimkan ke email yang terdaftar. Setelah Anda berhasil masuk, Anda dapat mencoba produk kami di mode demo, di mana Anda dapat melakukan transaksi tanpa menggunakan uang sungguhan. Jika Anda ingin bertransaksi di mode production atau mengintegrasikan platform Anda dengan OY!, silakan baca langkah-langkah di bawah ini untuk memverifikasi akun Anda.
 
-![Creating Account](images/creating_account_2.jpg)
+<img data-src="images/creating_account_2.jpg" alt="Creating Account" loading="lazy" class="lazyload" />
 
    Setelah Anda berhasil masuk, Anda akan dapat mencoba produk kami di mode demo, di mana Anda dapat melakukan transaksi tanpa menggunakan uang sungguhan. Jika Anda siap melanjutkan, lihat bagian di bawah untuk informasi lebih lanjut tentang langkah-langkah untuk meng-upgrade akun Anda.
 
@@ -47,34 +47,34 @@ Silakan ikuti langkah-langkah berikut untuk memverifikasi bisnis Anda:
 
 1. **Lakukan permintaan verifikasi bisnis:** Untuk mengakses semua produk OY!, silakan pilih "Verifikasi Bisnis" pada menu di sisi kiri dashboard OY! di mode Production dan lengkapi semua informasi yang diperlukan.
 
-   ![Upgrade](images/upgrade_account_1.png)
+   <img data-src="images/upgrade_account_1.png" alt="Upgrade" loading="lazy" class="lazyload" />
 
 2. **Untuk tipe bisnis individual:** Unggah KTP Anda untuk verifikasi identitas. Silakan ambil foto KTP dan foto selfie sambil memegang KTP. Sistem akan secara otomatis membaca informasi pada foto KTP Anda dan formulir otomatis terisi. Pastikan semua informasi yang tertera sesuai dengan KTP Anda.
 
    *Untuk tipe bisnis individual:*
-   ![Upgrade](images/upgrade_account_2.png)
+   <img data-src="images/upgrade_account_2.png" alt="Upgrade" loading="lazy" class="lazyload" />
 
 3. **Untuk tipe bisnis perusahaan:** Unggah persyaratan dokumen. Kami akan meminta persyaratan dokumen yang berbeda untuk berbagai jenis entitas perusahaan. Setelah memilih jenis perusahaan Anda, kami akan memberitahu dokumen apa yang perlu Anda kirimkan.
 
-   ![Upgrade](images/upgrade_account_3.png)
+   <img data-src="images/upgrade_account_3.png" alt="Upgrade" loading="lazy" class="lazyload" />
 
    Silakan unggah dokumen yang diperlukan sesuai dengan tipe bisnis Anda. Dokumen yang diunggah harus dalam format PDF dan memiliki ukuran per dokumen kurang dari 10 MB.
 
    - Berikut adalah contoh dokumen yang harus diunggah perusahaan tipe bisnis penyelenggara jasa sistem pembayaran (PJSP)
-     ![Upgrade](images/upgrade_account_4.png)
+     <img data-src="images/upgrade_account_4.png" alt="Upgrade" loading="lazy" class="lazyload" />
 
    - Berikut adalah contoh dokumen yang harus diunggah perusahaan tipe bisnis non-PJSP
-     ![Upgrade](images/upgrade_account_5.png)
+     <img data-src="images/upgrade_account_5.png" alt="Upgrade" loading="lazy" class="lazyload" />
 
 4. **Isi Formulir Informasi Bisnis:** Berikan informasi lebih lanjut tentang bisnis Anda dengan mengisi formulir informasi. Harap perhatikan bahwa Anda tidak akan dapat mengubah informasi bisnis Anda ini dalam status Butuh Revisi.
 
-   ![Upgrade](images/upgrade_account_7.png)
+   <img data-src="images/upgrade_account_7.png" alt="Upgrade" loading="lazy" class="lazyload" />
 
 5. **Masukkan Nomor Rekening Bank Anda:** Tambahkan Informasi Rekening Bank sebagai rekening tujuan untuk menarik uang dari Platform OY! Business.
 
    *Catatan: informasi rekening bank penerima tidak dapat diubah melalui dashboard OY! setelah permintaan verifikasi bisnis Anda disetujui karena alasan keamanan. Silakan hubungi kami di partner@oyindonesia.com untuk mengubah informasi rekening bank penerima.*
 
-   ![Upgrade](images/upgrade_account_6.png)
+   <img data-src="images/upgrade_account_6.png" alt="Upgrade" loading="lazy" class="lazyload" />
 
 6. **Kirimkan Permintaan Verifikasi Anda:** Klik "Kirim", dan status "Menunggu Persetujuan" akan muncul di halaman utama, menandakan bahwa permintaan Anda telah diajukan.
 

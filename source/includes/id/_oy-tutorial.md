@@ -7,13 +7,13 @@ Untuk masuk ke dashboard OY!, lakukan langkah berikut:
 1. Akses halaman login di https://desktop-business.oyindonesia.com/login. 
 2. Masukkan username dan password Anda. 
 
-![Login page](images/desktop_login.png)
+<img data-src="images/desktop_login.png" alt="Login page" loading="lazy" class="lazyload" />
 
 3. Anda akan diarahkan untuk memasukkan kode OTP. Silakan cek inbox email yang terdaftar untuk mendapatkan kode OTP, lalu masukkan di kolom yang tersedia.
 
-![Login OTP](images/desktop_login_otp.png)
+<img data-src="images/desktop_login_otp.png" alt="Login OTP" loading="lazy" class="lazyload" />
 
-![Email OTP](images/email_otp.png)
+<img data-src="images/email_otp.png" alt="Email OTP" loading="lazy" class="lazyload" />
 
 Jika Anda mencentang opsi “Ingat perangkat ini”, Anda tidak perlu memasukkan OTP saat Anda masuk kembali. Oleh karena itu, langkah ketiga hanya diperlukan saat Anda masuk untuk pertama kali setelah Anda membuat akun.
 
@@ -22,7 +22,7 @@ Jika Anda mencentang opsi “Ingat perangkat ini”, Anda tidak perlu memasukkan
 Fitur analitik pada dashboard OY! memberikan Anda informasi tentang transaksi pendapatan dan pengeluaran yang terjadi di OY!. Dengan fitur ini, Anda bisa tahu berapa banyak uang yang sudah Anda keluarkan dan berapa yang sudah Anda dapatkan dalam jangka waktu tertentu. Anda bisa melihat rincian transaksi Anda secara harian, mingguan, atau bulanan. Anda juga bebas memilih periode waktu yang Anda inginkan. Dari sini, Anda akan mendapatkan gambaran tentang bagaimana tren transaksi bisnis Anda bergerak. Dengan demikian, fitur ini dapat membantu Anda dalam mengambil keputusan bisnis baru guna mengembangkan bisnis Anda.
 
 
-![Dashboard Analytics Image](images/desktop_analytics_spend_earn.png)
+<img data-src="images/desktop_analytics_spend_earn.png" alt="Dashboard Analytics Image" loading="lazy" class="lazyload" />
 
 * Anda bisa pilih seberapa rinci dan dalam periode waktu berapa Anda ingin melihat informasi transaksi Anda.
 * Indikator kenaikan dan penurunan akan membandingkan bagaimana transaksi Anda pada periode yang Anda pilih dengan periode sebelumnya.
@@ -32,7 +32,7 @@ Bagi Anda yang menggunakan produk Virtual Account, Link Pembayaran, dan E-wallet
 
 
 
-![Dashboard Analytics Payment Method](images/desktop_analytics_paymethod.png)
+<img data-src="images/desktop_analytics_paymethod.png" alt="Dashboard Analytics Payment Method" loading="lazy" class="lazyload" />
 
 ## Manajemen Akun
 
@@ -44,11 +44,11 @@ Berikut adalah langkah-langkah berikut untuk menambahkan pengguna baru:
 2. Klik menu Akun, kemudian klik “Manajemen Pengguna”
 3. Klik tombol “Tambah Pengguna” di sebelah kanan atas
 
-![User Management 1](images/user_management_1.png)
+<img data-src="images/user_management_1.png" alt="User Management 1" loading="lazy" class="lazyload" />
 
 4.  Isi nama lengkap, username, email, nomor telepon (opsional), dan kata sandi
 
-![User Management 2](images/user_management_2.png)
+<img data-src="images/user_management_2.png" alt="User Management 2" loading="lazy" class="lazyload" />
 
 5.  Pilih peran yang ingin Anda berikan kepada anggota tim Anda. Anda dapat memilih antara Administrator, Approver, dan Maker 
 
@@ -170,7 +170,7 @@ Berikut adalah langkah-langkah untuk mengisi ulang saldo OY! Anda melalui dashbo
 ### Isi Ulang via Virtual Account
 Anda bisa melihat nomor VA di tab 'Virtual Account' setelah Anda mengklik tombol 'Bagaimana Cara Isi Ulang'. Jumlah saldo yang Anda isi akan otomatis masuk ke akun Anda secara real-time tanpa perlu mengirim konfirmasi manual ke OY. 
 
-![VA Topup](images/desktop_topup.png)
+<img data-src="images/desktop_topup.png" alt="VA Topup" loading="lazy" class="lazyload" />
 
 ### Isi Ulang Manual via Transfer Bank
 Selain menggunakan Virtual Account, Anda juga dapat mentransfer ke rekening giro OY. Jika Anda memilih untuk isi ulang saldo melalui metode ini, Anda perlu melakukan konfirmasi manual agar uang Anda dapat diteruskan ke akun Anda.
@@ -179,7 +179,7 @@ Setelah Anda menyelesaikan transfer dana ke OY! Indonesia, Anda perlu melakukan 
 
 1. Klik tab “Transfer Bank Manual” pada menu Isi Ulang Saldo
 
-![Manual Topup](images/manual_topup.png)
+<img data-src="images/manual_topup.png" alt="Manual Topup" loading="lazy" class="lazyload" />
 
 2. Isi kolom informasi berikut:
 
@@ -194,13 +194,13 @@ Setelah Anda menyelesaikan transfer dana ke OY! Indonesia, Anda perlu melakukan 
 4. Anda akan menerima email menyatakan bahwa isi ulang saldo Anda sedang diproses.
 
 
-![Topup Confirmation Dashboard](images/topup_confirmation_dashboard.png)
+<img data-src="images/topup_confirmation_dashboard.png" alt="Topup Confirmation Dashboard" loading="lazy" class="lazyload" />
 
-![Topup Confirmation Email](images/topup_confirmation_email.png)
+<img data-src="images/topup_confirmation_email.png" alt="Topup Confirmation Email" loading="lazy" class="lazyload" />
 
 5. Terakhir, Anda akan menerima email konfirmasi yang menyatakan bahwa isi ulang saldo Anda telah berhasil atau gagal.
 
-![Success Failed Confirmation](images/success_failed_confirmation.png)
+<img data-src="images/success_failed_confirmation.png" alt="Success Failed Confirmation" loading="lazy" class="lazyload" />
 
 ### Isi Ulang via Transfer Instan BCA
 
@@ -212,16 +212,16 @@ Untuk melakukan isi ulang via transfer instan BCA, silakan ikuti langkah-langkah
 2. Masukkan nominal saldo yang ingin Anda isi, dengan pengisian minimal Rp10.000.
 
 
-![BCA Unique Code Input Amount](images/desktop_bcauniquecode_input_amount.png)
+<img data-src="images/desktop_bcauniquecode_input_amount.png" alt="BCA Unique Code Input Amount" loading="lazy" class="lazyload" />
 
 3. OY! akan menampilkan jumlah yang harus Anda transfer, ditambah tiga digit kode unik di belakang nominal transfer. Pastikan Anda transfer sesuai dengan jumlah yang tertera.
 
-![BCA Unique Code Transfer](images/desktop_bcauniquecode_transfer.png)
+<img data-src="images/desktop_bcauniquecode_transfer.png" alt="BCA Unique Code Transfer" loading="lazy" class="lazyload" />
 
 4. Setelah transaksi berhasil, saldo yang tertera pada Subtotal akan masuk ke akun OY! Anda. 
 Catatan: Jam operasional untuk metode ini adalah setiap hari, mulai dari pukul 03.01 pagi hingga pukul 08.30 malam. Di luar jam tersebut, Anda tidak bisa menggunakan metode ini.
 
-![BCA Unique Code Transfer](images/desktop_bcauniquecode_success.png)
+<img data-src="images/desktop_bcauniquecode_success.png" alt="BCA Unique Code Transfer" loading="lazy" class="lazyload" />
 
 ## Tarik Saldo ke Rekening
 
@@ -233,7 +233,7 @@ Anda dapat menarik saldo OY! ke rekening Anda dengan mengikuti langkah-langkah b
 4. Masukkan jumlah yang ingin Anda tarik
 
 
-![Withdrawal Top Up](images/withdrawal_topup.png)
+<img data-src="images/withdrawal_topup.png" alt="Withdrawal Top Up" loading="lazy" class="lazyload" />
 
 4.  Pilih jenis penarikan Anda. Anda dapat memilih salah satu dari opsi berikut:
 
@@ -251,7 +251,7 @@ Untuk mengakses laporan penyelesaian, ikuti langkah-langkah berikut:
 - Pilih menu Laporan Transaksi, lalu klik Laporan Penyelesaian
 
 
-![Settlement Report](images/settlement_report.png)
+<img data-src="images/settlement_report.png" alt="Settlement Report" loading="lazy" class="lazyload" />
 
 Laporan Penyelesaian berisi informasi sebagai berikut:
 
@@ -299,7 +299,7 @@ Anda dapat mengaktifkan atau menonaktifkan pengaturan notifikasi saat saldo Anda
 
 1. Masuk ke dashboard melalui https://business.oyindonesia.com/ 
 2. Pergi ke menu Pengaturan -> Notifikasi
-   ![Notif Disbursement - 1  Initial](https://user-images.githubusercontent.com/79620482/126457509-ca20c24b-9277-4be4-943e-801b79806e65.png)
+   <img data-src="https://user-images.githubusercontent.com/79620482/126457509-ca20c24b-9277-4be4-943e-801b79806e65.png" alt="Notif Disbursement - 1  Initial" loading="lazy" class="lazyload" />
 3. Jika Anda ingin mendapatkan pemberitahuan melalui email jika saldo Anda mencapai limit, atur di tab "Saldo Rendah". Masukkan limit jumlah saldo dan alamat email yang ingin dikirimkan notifikasi.
 4. Pilih apakah Anda ingin mengaktifkan atau menonaktifkan pemberitahuan untuk Multitransfer atau API Kirim Uang. 
   a. Aktifkan Pemberitahuan: Pemberitahuan melalui email akan dikirimkan untuk transaksi tertunda, gagal, dan berhasil. 
@@ -350,29 +350,29 @@ Untuk menambahkan sub-entity, lakukan langkah berikut:
 1. Masuk ke dashboard dengan akun utama 
 2. Pergi ke menu Multi Entity lalu klik tombol “Tambah Sub-Entity”
 
-![Image: As a Main Entity - Add a New Sub-entity](../images/MEM_Add_Sub_Entity_1.png)
+<img data-src="../images/MEM_Add_Sub_Entity_1.png" alt="Image: As a Main Entity - Add a New Sub-entity" loading="lazy" class="lazyload" />
 
 3. Isi username sub-entity yang ingin Anda hubungkan. Anda dapat menemukan username Anda dari menu Akun → Profil Pengguna dalam bagian username. 
 4. Klik Tombol “Tambah”, lalu jika akun ada di sistem, akan ada konfirmasi untuk menghubungkan. 
 
-![Image: As Main Entity - Subs - 6. Add Child - Type Username](../images/MEM_Add_Sub_Entity_2.jpg) 
+<img data-src="../images/MEM_Add_Sub_Entity_2.jpg" alt="Image: As Main Entity - Subs - 6. Add Child - Type Username" loading="lazy" class="lazyload" /> 
 
 5. Setelah mengonfirmasi, permintaan akan dikirimkan ke akun yang bersangkutan untuk diterima.
 
 2. **Jika Anda adalah Sub-Entity**
 
 Untuk menerima permintaan dari main entity, silakan masuk ke dashboard dengan akun sub-entity, kemudian buka menu “Laporan Transaksi” → “Laporan Transaksi Rekening”.
-![Image: As Child - AccState - 2b. Waiting approval](../images/As_Child_AccState_2b_Waiting_approval.png)
+<img data-src="../images/As_Child_AccState_2b_Waiting_approval.png" alt="Image: As Child - AccState - 2b. Waiting approval" loading="lazy" class="lazyload" />
 
 1. Klik tombol "Cek Permintaan" yang dapat ditemukan di dekat sudut kanan atas halaman.
 2. Anda akan melihat permintaan yang masuk untuk dihubungkan menjadi main entity untuk akun Anda, kemudian Anda dapat memilih akun mana yang merupakan akun yang benar untuk main entity dengan mengklik “Terima” pada akun yang sesuai. 
 
 
-![Image: As Child - AccState - 4b. 2 Requests to connect.png](../images/As_Child_AccState_4b_2_Requests_to_connect.png)![Image: As Child - AccState - 4e. Confirmation to connect](../images/As_Child_AccState_4e_Confirmation_to_connect.png)
+<img data-src="../images/As_Child_AccState_4b_2_Requests_to_connect.png" alt="Image: As Child - AccState - 4b. 2 Requests to connect.png" loading="lazy" class="lazyload" /><img data-src="../images/As_Child_AccState_4e_Confirmation_to_connect.png" alt="Image: As Child - AccState - 4e. Confirmation to connect" loading="lazy" class="lazyload" />
 
 3. Setelah berhasil menerima permintaan dari main entity untuk terhubung, Anda akan menemukan informasi main entity Anda di dekat sudut kanan atas halaman Anda, dan selamat, Anda sekarang sudah terhubung! 
 
-![Image: As Child - AccState - 4h. Success add new head company](../images/As_Child_AccState_4h_Success_add_new_head_company.png)
+<img data-src="../images/As_Child_AccState_4h_Success_add_new_head_company.png" alt="Image: As Child - AccState - 4h. Success add new head company" loading="lazy" class="lazyload" />
 
 **B. TMengisi Saldo ke akun Sub-Entity**
 
@@ -384,7 +384,7 @@ Setelah terhubung dengan sub-entity Anda, Anda dapat mengisi ulang saldo akun su
 5. Anda juga dapat melakukan pengisian ulang dengan mentransfer ke salah satu Virtual Account yang disediakan (lihat "Cara Mengisi Saldo melalui VA")
 
 
-![Image: As Parent - Subs - 5a. Top Up.png](../images/As_Parent_Subs_5a_Top_Up.png)
+<img data-src="../images/As_Parent_Subs_5a_Top_Up.png" alt="Image: As Parent - Subs - 5a. Top Up.png" loading="lazy" class="lazyload" />
 
 **C. Mengirim Uang Menggunakan Saldo Sub-Entity**
 
@@ -394,7 +394,7 @@ Dengan menu Multi Entity, Anda dapat melakukan pengiriman uang menggunakan akun 
 2. Pilih saldo sub-entity Anda sebagai sumber dana untuk melakukan pengiriman uang dengan memilih "Saldo Sub-entity Saya" dan pilih akun yang sesuai.
 3. Setelah memilih, Anda dapat melanjutkan untuk melakukan pengiriman uang seperti biasa.
 
-![Image: Choose SoF - 2. Choose SoF subsidiary.png](images/MEM_select_subentity_disbursement.png)
+<img data-src="images/MEM_select_subentity_disbursement.png" alt="Image: Choose SoF - 2. Choose SoF subsidiary.png" loading="lazy" class="lazyload" />
 
 **D. CMembuat Link Pembayaran Atas Nama Sub-Entity**
 
@@ -413,7 +413,7 @@ Silakan hit [API Link Pembayaran](https://api-docs.oyindonesia.com/#api-create-p
 2. Klik "Buat Link Pembayaran" (untuk tautan pembayaran satu kali) atau klik "Buat Link Pakai Berulang" (untuk link pembayaran yang dapat digunakan berulang kali). Anda akan melihat pop-up untuk melanjutkan proses pembuatan link pembayaran. 
 3. Isi "Tujuan Saldo" dengan "Saldo Saya" (jika tujuan saldo transaksi adalah ke akun main entity) atau "Saldo Sub-entity" (jika tujuan saldo transaksi adalah sub-entity Anda). Jika Anda memilih "Saldo Sub-entity", Anda akan melihat dropdown untuk memilih username sub-entity. Anda hanya dapat memilih 1 akun sub-entity. 
 
-![MAM Payment Link](images/MEM_select_subentity_paymentlink.png)
+<img data-src="images/MEM_select_subentity_paymentlink.png" alt="MAM Payment Link" loading="lazy" class="lazyload" />
 
 ## Integrasi dengan Xero
 
@@ -428,33 +428,33 @@ Setelah Anda berhasil menghubungkan akun Xero Anda di OY!, setiap transaksi yang
 ### Menghubungkan Akun Xero Anda
 
 - Masuk ke dashboard, lalu pilih menu Integrasi
-![Integration Menu](images/xero/menu.png)
+<img data-src="images/xero/menu.png" alt="Integration Menu" loading="lazy" class="lazyload" />
 
 - Anda akan melihat pilihan app Xero. Klik "Hubungkan" untuk menghubungkan akun Xero Anda ke OY!. Anda akan diarahkan ke halaman login Xero. Setelah Anda berhasil masuk ke Xero, akan muncul notifikasi.
-![Product List](images/xero/product_list.png)
+<img data-src="images/xero/product_list.png" alt="Product List" loading="lazy" class="lazyload" />
 
 Pratinjau untuk halaman login Xero:
-![Xero's Login Page](images/xero/login_xero.png)
-![Consent Page](images/xero/consent_page.png)
+<img data-src="images/xero/login_xero.png" alt="Xero's Login Page" loading="lazy" class="lazyload" />
+<img data-src="images/xero/consent_page.png" alt="Consent Page" loading="lazy" class="lazyload" />
 
 Pratinjau notifikasi OY!: 
-![Notification](images/xero/connect_success_notification.png)
+<img data-src="images/xero/connect_success_notification.png" alt="Notification" loading="lazy" class="lazyload" />
 
 - Setelah berhasil terhubung ke Xero, kami akan membuat rekening bank baru dalam akun Xero Anda, dengan nama "OY! Indonesia Balance" di mana setiap transaksi yang terjadi di OY! akan dicatat di sana.
-![New Account](images/xero/new_account.png)
+<img data-src="images/xero/new_account.png" alt="New Account" loading="lazy" class="lazyload" />
 
 ### Memetakan Chart of Account Anda
 
 - Setelah Anda berhasil terhubung ke Xero, Anda akan diarahkan ke halaman untuk melakukan pemetaan chart of account Anda.
-![Configure Account Page](images/xero/coa_mapping.png)
+<img data-src="images/xero/coa_mapping.png" alt="Configure Account Page" loading="lazy" class="lazyload" />
 
 - Kemudian, lakukan pemetaan setiap produk ke account yang sesuai. Setiap transaksi yang menggunakan setiap produk akan dimasukkan ke dalam chart of account yang Anda tentukan di halaman ini.
-![Mapping Modal](images/xero/coa_mapping_modal.png)
-![Mapping Modal](images/xero/coa_mapping_modal_2.png)
+<img data-src="images/xero/coa_mapping_modal.png" alt="Mapping Modal" loading="lazy" class="lazyload" />
+<img data-src="images/xero/coa_mapping_modal_2.png" alt="Mapping Modal" loading="lazy" class="lazyload" />
 
 Catatan: Khusus untuk produk Multitransfer, Anda dapat menentukan chart of account nanti dalam proses pembuatan transaksi pada halaman "Masukkan Detail" di langkah ke-3, pada kolom kategori transaksi.
 
-![Bulk Disbursement CoA](images/desktop_accountingapp_bulkdisbursement.png)
+<img data-src="images/desktop_accountingapp_bulkdisbursement.png" alt="Bulk Disbursement CoA" loading="lazy" class="lazyload" />
 
 - Anda dapat mengubah pemetaanchart of account kapan saja sesuai kebutuhan, cukup pergi ke menu Integrasi > Xero > Konfigurasi.
 
@@ -465,8 +465,8 @@ Catatan: Khusus untuk produk Multitransfer, Anda dapat menentukan chart of accou
 - Transaction in OY! will be treated as SPEND or RECEIVE money transaction in a bank account (OY! Balance). 
 - Each transaction will contains of two rows. Row 1 contains of amount of transaction where row 2 contains of admin fee.
 - In this version, any tax will be excluded. Means that you will need to input manually the tax invoice you obtained from OY! team to your Xero.
-![Recorded Transaction](images/xero/recorded_transaction.png)
-![Recorded Transaction](images/xero/recorded_transaction_2.png)
+<img data-src="images/xero/recorded_transaction.png" alt="Recorded Transaction" loading="lazy" class="lazyload" />
+<img data-src="images/xero/recorded_transaction_2.png" alt="Recorded Transaction" loading="lazy" class="lazyload" />
 
 
 ### Disconnected your Xero 
@@ -484,23 +484,23 @@ Once you have connected your Accurate account in OY!, any transaction that happe
 1. Login to your OY! dashboard. In the sidebar, select the Integration menu.
 2. You will see Accurate menu. Click “Connect” to connect your Accurate account to OY!. You will be redirected to Accurate’s login page. 
 
-![Connect Accurate](images/desktop_accurate_connect.png)
+<img data-src="images/desktop_accurate_connect.png" alt="Connect Accurate" loading="lazy" class="lazyload" />
 
 3. After login to your Accurate account, click Allow to allow conection between OY! and Accurate.
-![User Consent Accurate](images/desktop_accurate_authorize.png)
+<img data-src="images/desktop_accurate_authorize.png" alt="User Consent Accurate" loading="lazy" class="lazyload" />
 
 4. Next, please select an Accurate database that you want to connect with your OY! account.
-![Accurate Select Database](images/desktop_accurate_select_database.png)
+<img data-src="images/desktop_accurate_select_database.png" alt="Accurate Select Database" loading="lazy" class="lazyload" />
 
 5. Once you have successfully connected to Accurate, a notification in your OY! dashboard will appear and you can see your status is now "Connected/Terhubung".
 
-![Accurate Connected](images/desktop_accurate_connected_status.png)
+<img data-src="images/desktop_accurate_connected_status.png" alt="Accurate Connected" loading="lazy" class="lazyload" />
 
 6. Upon success connecting to Accurate, we will create a new Bank Account into your Accurate account, named “OY! balance” in which any transaction that happened in OY! will be recorded there. Your current OY! balance will also be mapped there.
 
 7. In your Accurate Dashboard, you can see that OY! Indonesia app will be listed in the Accurate Store >> Aplikasi Saya menu.
-![Accurate Listing](images/desktop_accurate_listing.png)
-![Accurate Aplikasi saya](images/desktop_accurate_aplikasisaya.png)
+<img data-src="images/desktop_accurate_listing.png" alt="Accurate Listing" loading="lazy" class="lazyload" />
+<img data-src="images/desktop_accurate_aplikasisaya.png" alt="Accurate Aplikasi saya" loading="lazy" class="lazyload" />
 
 8. Note: A fee of IDR 20k/month will be added to your Accurate billing.
 
@@ -509,11 +509,11 @@ Once you have connected your Accurate account in OY!, any transaction that happe
 1. Click on "Configure" to map your Chart of Account (Akun Perkiraan).
 2. Then, map each product to the corresponding Account. Any transaction using each product will be put into the Chart of Accounts you defined on this page. 
 
-![Accurate Config COA](images/desktop_accurate_config_coa.png)
+<img data-src="images/desktop_accurate_config_coa.png" alt="Accurate Config COA" loading="lazy" class="lazyload" />
 
 Note: Special for Bulk Disbursement product, you can define the Chart of Account later in the campaign creation process - Step 3 Input Detail page. In the Transaction Category field.
 
-![Bulk Disbursement CoA](images/desktop_accountingapp_bulkdisbursement.png)
+<img data-src="images/desktop_accountingapp_bulkdisbursement.png" alt="Bulk Disbursement CoA" loading="lazy" class="lazyload" />
 
 3. You can change the CoA mapping anytime as needed, just go to Integration >> Accurate >> Configure.
 
@@ -528,7 +528,7 @@ Note: Special for Bulk Disbursement product, you can define the Chart of Account
 ### Disconnected your Accurate 
 1. To disconnect your Accurate account from OY!, open the Integration menu on the sidebar. Then select “Disconnect”.
 
-![Accurate Connected](images/desktop_accurate_connected_status.png)
+<img data-src="images/desktop_accurate_connected_status.png" alt="Accurate Connected" loading="lazy" class="lazyload" />
 
 2. Then, you will be disconnected from Accurate. Any transaction that you execute via OY! will not be recorded in Accurate.
 3. Note: To remove the bill, please make sure you also uninstall OY! app in your Accurate dashboard.
@@ -543,41 +543,41 @@ Once you have connected your Jurnal account in OY!, any transaction that happene
 ### Connect your Jurnal
 1. Before connecting your Jurnal account, you need to log in to your Jurnal account in your browser.
 
-![Jurnal Login](images/jurnal_login.png)
+<img data-src="images/jurnal_login.png" alt="Jurnal Login" loading="lazy" class="lazyload" />
 
 2. Login to your OY! dashboard. In the sidebar, select the "Integration" menu.
 
 3. You will see the Jurnal menu. Click “Connect” to connect your Jurnal account to OY!. 
 
-![Jurnal Connect](images/jurnal_integration_menu.png)
+<img data-src="images/jurnal_integration_menu.png" alt="Jurnal Connect" loading="lazy" class="lazyload" />
 
 
 4. There will be a page to ask for your consent regarding this connection process. Make sure to select OY! Indonesia. Click Allow to allow connection between OY! and Jurnal.
 
-![Jurnal Authorization](images/jurnal_authorization_page.png)
+<img data-src="images/jurnal_authorization_page.png" alt="Jurnal Authorization" loading="lazy" class="lazyload" />
 
 5. Once you have successfully connected to Jurnal, a notification in your OY! dashboard will appear and you can see your status is now "Connected/ Terhubung".
 
-![Jurnal Connection Success](images/jurnal_connection_success.png)
+<img data-src="images/jurnal_connection_success.png" alt="Jurnal Connection Success" loading="lazy" class="lazyload" />
 
-![Jurnal Notification](images/jurnal_success_notif.png)
+<img data-src="images/jurnal_success_notif.png" alt="Jurnal Notification" loading="lazy" class="lazyload" />
 
-![Jurnal Connection Status](images/jurnal_connection_status.png)
+<img data-src="images/jurnal_connection_status.png" alt="Jurnal Connection Status" loading="lazy" class="lazyload" />
 
 6. Upon success connecting to Jurnal, we will create a new Bank Account into your Jurnal account, named “OY! Balance”. Any transaction that happened in OY! will be recorded under that bank account. Your current OY! balance will be mapped into your OY! Balance Cash Bank Account as a bank deposit transaction. 
 
-![Jurnal OY! Balance](images/jurnal_oy_balance.png)
+<img data-src="images/jurnal_oy_balance.png" alt="Jurnal OY! Balance" loading="lazy" class="lazyload" />
 
 ### Map your Chart of Account
 1. Click on "Configure" button in the "Integrasi" menu to map your Chart of Account.
 
 2. Then, map each product to the corresponding Account. Any transaction using each product will be put into the Chart of Accounts you defined on this page.
 
-![Jurnal COA Mapping](images/jurnal_coa_mapping.png)
+<img data-src="images/jurnal_coa_mapping.png" alt="Jurnal COA Mapping" loading="lazy" class="lazyload" />
 
 3. Note: Special for Bulk Disbursement product, you can define the Chart of Account later in the campaign creation process - Step 3 Input Detail page. In the Transaction Category field.
 
-![Jurnal Bulk Disburse COA](images/jurnal_bulk_disburse_coa.png)
+<img data-src="images/jurnal_bulk_disburse_coa.png" alt="Jurnal Bulk Disburse COA" loading="lazy" class="lazyload" />
 
 4. You can change the CoA mapping anytime as needed, just go to Integration >> Jurnal >> Configure.
 
@@ -589,7 +589,7 @@ Once you have connected your Jurnal account in OY!, any transaction that happene
 
 3. In this image, we show you a Disbursement Transaction with CoA "Iklan & Promosi" and admin fee with CoA "Komisi & Fee". It is recorded into the "Expenses" module in your Jurnal account with status LUNAS.
 
-![Jurnal Disburse Transaction](images/jurnal_bulk_disburse_txn.png)
+<img data-src="images/jurnal_bulk_disburse_txn.png" alt="Jurnal Disburse Transaction" loading="lazy" class="lazyload" />
 
 4. Note: For some reasons, we do not map Top up and Withdraw balance transactions to Jurnal. Therefore, you should adjust your bank’s Cash Bank account balance as well as OY! Indonesia Cash Bank account balance in your Jurnal dashboard everytime you execute top up and withdraw transactions.
 
@@ -609,7 +609,7 @@ Anda dapat mengikuti langkah-langkah berikut untuk mengatur perizinan callback m
 1. Masuk ke dashboard OY! sebagai superadmin atau admin, kemudian pilih menu Pengaturan, lalu pilih Opsi Developer.
 2. Pilih tab “Authorization Callback”. Selanjutnya, Anda perlu memasukkan kredensial otorisasi Anda (URL untuk Otorisasi, client ID, dan client secret) sehingga OY! dapat melalui proses otorisasi sebelum mengirimkan callback kepada Anda.
 
-![Callback Authorization Configuration](images/oy_auth_configuration.png)
+<img data-src="images/oy_auth_configuration.png" alt="Callback Authorization Configuration" loading="lazy" class="lazyload" />
 
 3. Klik tombol “Simpan Perubahan”.
 4. Jika Anda sudah memasukkan kredensial OAuth, maka setiap callback yang dikirimkan oleh OY! akan melalui proses otorisasi atau perizinan sebelum callback dikirimkan kepada Anda. OY! akan mendapatkan token akses beserta tenggat waktu dari sistem Anda.
