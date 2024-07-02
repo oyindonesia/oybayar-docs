@@ -7,7 +7,7 @@ services:
       - "./build:/srv/slate/build"
       - "./source:/srv/slate/source"
   slate_serve:
-    image: slatedocs/slate
+    image: oybayar-docs-slate
     command: ["serve"]
     ports:
       - "4567:4567"
