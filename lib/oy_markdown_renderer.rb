@@ -1,6 +1,5 @@
 require 'middleman-core/renderers/redcarpet'
 require 'fastimage'
-require 'base64'
 require 'digest'
 
 class OyMarkdownRenderer < Middleman::Renderers::MiddlemanRedcarpetHTML
@@ -61,22 +60,12 @@ class OyMarkdownRenderer < Middleman::Renderers::MiddlemanRedcarpetHTML
     end
   end
 
-  # Optimize image to reduce jumpy-ness when loading multiple images
-  # Reference:
-  # - https://developer.mozilla.org/en-US/docs/Web/Performance/Lazy_loading#images_and_iframes
-  # - https://stackoverflow.com/a/44803992
+  # Reduce jumpy-ness when loading multiple images
   def image(link, title, alt_text)
-    # build svg placeholder
-    placeholder = 300
-    svg_content = <<-SVG
-    <svg width="#{placeholder}" height="#{placeholder}" xmlns="http://www.w3.org/2000/svg">
-      <rect width="100%" height="100%" fill="none" stroke="none" />
-    </svg>
-    SVG
+    # 300x300 transparent svg for placeholder to keep overall structure intact
+    svg_placeholder = "data:image/svg+xml;base64,ICAgIDxzdmcgd2lkdGg9IjMwMCIgaGVpZ2h0PSIzMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgICAgIDxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9Im5vbmUiIHN0cm9rZT0ibm9uZSIgLz4KICAgIDwvc3ZnPgo="
 
-    encoded_svg = Base64.strict_encode64(svg_content)
-
-    # keep the alt empty and don't use width and height property
-    return %{<img src="data:image/svg+xml;base64,#{encoded_svg}" data-src="#{link}" loading="lazy" class="lazyload" title="#{title}" alt="#{alt_text}">}
+    # lazy load image to reduce page jumps
+    return %{<img src="#{svg_placeholder}" data-src="#{link}" loading="lazy" class="lazyload" title="#{title}" alt="#{alt_text}">}
   end
 end
