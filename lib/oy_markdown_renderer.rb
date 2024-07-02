@@ -1,5 +1,4 @@
 require 'middleman-core/renderers/redcarpet'
-require 'fastimage'
 require 'digest'
 
 class OyMarkdownRenderer < Middleman::Renderers::MiddlemanRedcarpetHTML
