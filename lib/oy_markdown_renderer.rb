@@ -1,4 +1,6 @@
 require 'middleman-core/renderers/redcarpet'
+require 'fastimage'
+require 'base64'
 require 'digest'
 
 class OyMarkdownRenderer < Middleman::Renderers::MiddlemanRedcarpetHTML
@@ -59,9 +61,22 @@ class OyMarkdownRenderer < Middleman::Renderers::MiddlemanRedcarpetHTML
     end
   end
 
-  # Lazy load images
-  # Reference: https://developer.mozilla.org/en-US/docs/Web/Performance/Lazy_loading#images_and_iframes
+  # Optimize image to reduce jumpy-ness when loading multiple images
+  # Reference:
+  # - https://developer.mozilla.org/en-US/docs/Web/Performance/Lazy_loading#images_and_iframes
+  # - https://stackoverflow.com/a/44803992
   def image(link, title, alt_text)
-    scope.image_tag(link, loading: "lazy", class: "lazyload", title: title, alt: alt_text)
+    # build svg placeholder
+    size = FastImage.size(File.join(File.dirname(__FILE__), '../source', link))
+    width, height = size ? size : [10, 10] # Default to 10x10 if size is nil
+    svg_content = <<-SVG
+    <svg width="#{width}" height="#{height}" xmlns="http://www.w3.org/2000/svg">\
+      <rect width='100%' height='100%' fill='none' stroke='none' />
+    </svg>
+    SVG
+    encoded_svg = Base64.strict_encode64(svg_content)
+
+    # keep the alt empty and don't use width and height property
+    return %{<img src="data:image/svg+xml;base64,#{encoded_svg}" data-src="#{link}" loading="lazy" class="lazyload" title="#{title}" alt="#{alt_text}">}
   end
 end
