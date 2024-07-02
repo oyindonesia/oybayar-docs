@@ -67,13 +67,13 @@ class OyMarkdownRenderer < Middleman::Renderers::MiddlemanRedcarpetHTML
   # - https://stackoverflow.com/a/44803992
   def image(link, title, alt_text)
     # build svg placeholder
-    size = FastImage.size(File.join(File.dirname(__FILE__), '../source', link))
-    width, height = size ? size : [10, 10] # Default to 10x10 if size is nil
+    placeholder = 300
     svg_content = <<-SVG
-    <svg width="#{width}" height="#{height}" xmlns="http://www.w3.org/2000/svg">\
-      <rect width='100%' height='100%' fill='none' stroke='none' />
+    <svg width="#{placeholder}" height="#{placeholder}" xmlns="http://www.w3.org/2000/svg">
+      <rect width="100%" height="100%" fill="none" stroke="none" />
     </svg>
     SVG
+
     encoded_svg = Base64.strict_encode64(svg_content)
 
     # keep the alt empty and don't use width and height property
