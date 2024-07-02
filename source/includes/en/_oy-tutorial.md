@@ -7,13 +7,13 @@ To be able to login to Dashboard;
 1. Go to https://desktop-business.oyindonesia.com/login. 
 2. Make sure the username and password that you input are correct.
 
-<img data-src="images/desktop_login.png" alt="Login page" loading="lazy" class="lazyload" />
+![Login page](images/desktop_login.png)
 
 3. You will be redirected to the input the OTP page. The OTP will be sent to the email associated with your username. Then, input the OTP number.
 
-<img data-src="images/desktop_login_otp.png" alt="Login OTP" loading="lazy" class="lazyload" />
+![Login OTP](images/desktop_login_otp.png)
 
-<img data-src="images/email_otp.png" alt="Email OTP" loading="lazy" class="lazyload" />
+![Email OTP](images/email_otp.png)
 
 If you tick the 'Remember this device' option, you are not required to input an OTP when you log back in next time. Hence, point 2 is required only when you login for the first time after you create your account.
 
@@ -21,7 +21,7 @@ If you tick the 'Remember this device' option, you are not required to input an 
 
 Analytics feature allows you to get some insights about your earning and spending transaction that happened in OY!. With this feature, you can get information about how much money you have spent and how much money you have earned in a time interval. You can see your transaction growth on daily, weekly, or monthly basis. You also can select the time range. You will get some insights about the trend of your business transaction. Therefore, this feature can help you to generate new business decision to grow your business.
 
-<img data-src="images/desktop_analytics_spend_earn.png" alt="Dashboard Analytics Image" loading="lazy" class="lazyload" />
+![Dashboard Analytics Image](images/desktop_analytics_spend_earn.png)
 
 * You can select which time granularity and time period you want to see you transaction growth with. 
 * The increase and decrease indicator will compare your transaction performance from the time period you select vs the previous period. 
@@ -29,7 +29,7 @@ Analytics feature allows you to get some insights about your earning and spendin
 
 For VA, Payment Link, and E-wallet users. Now you can see the comparison of conversion between each payment method your end users are using. This data can be a great insight for you so you know which channel most of your users are using.
 
-<img data-src="images/desktop_analytics_paymethod.png" alt="Dashboard Analytics Payment Method" loading="lazy" class="lazyload" />
+![Dashboard Analytics Payment Method](images/desktop_analytics_paymethod.png)
 
 ## User Management
 
@@ -41,11 +41,11 @@ These are the following steps to add new users;
 2.  Go to Accounts -> User Management.
 3.  Click the 'Create User' button
 
-<img data-src="images/user_management_1.png" alt="User Management 1" loading="lazy" class="lazyload" />
+![User Management 1](images/user_management_1.png)
 
 4.  Fill in the full name, username, email, phone number (optional), and password
 
-<img data-src="images/user_management_2.png" alt="User Management 2" loading="lazy" class="lazyload" />
+![User Management 2](images/user_management_2.png)
 
 5.  Choose the role that you want to assign your team member(s) to. You can select between Admin, Approver, and Maker
 
@@ -173,7 +173,7 @@ Here's how you can access the top-up menu on your dashboard;
 ### Top Up via Virtual Account
   The Virtual Account number information can be found on 'How to Top Up Balance via VA' tab once you click the 'How To Top Up' button. If you choose to top up via VA, the topped up amount will be credited into your account real-time and you do not need to send any manual confirmation to OY
 
-<img data-src="images/desktop_topup.png" alt="VA Topup" loading="lazy" class="lazyload" />
+![VA Topup](images/desktop_topup.png)
 
 ### Manual Top Up via Bank Transfer
   Aside from Virtual Account, you can also transfer the top up money to OY's giro account. If you choose to top up via this method, you need to perform a manual confirmation in order that your money can be credited into your account.
@@ -182,7 +182,7 @@ After you have completed the fund transfer to OY! Indonesia, you need to perform
 
 1. Click the 'Manual Top Up Confirmation' tab on the top-up menu
 
-<img data-src="images/manual_topup.png" alt="Manual Topup" loading="lazy" class="lazyload" />
+![Manual Topup](images/manual_topup.png)
 
 2. Fill in the fields with the following information;
 
@@ -196,13 +196,13 @@ After you have completed the fund transfer to OY! Indonesia, you need to perform
 3. Click 'Submit Now'
 4. You will receive a receipt of your transaction in your email, stating that your transaction is currently being processed
 
-<img data-src="images/topup_confirmation_dashboard.png" alt="Topup Confirmation Dashboard" loading="lazy" class="lazyload" />
+![Topup Confirmation Dashboard](images/topup_confirmation_dashboard.png)
 
-<img data-src="images/topup_confirmation_email.png" alt="Topup Confirmation Email" loading="lazy" class="lazyload" />
+![Topup Confirmation Email](images/topup_confirmation_email.png)
 
 5. You will receive an email confirming whether your top up is success or failed
 
-<img data-src="images/success_failed_confirmation.png" alt="Success Failed Confirmation" loading="lazy" class="lazyload" />
+![Success Failed Confirmation](images/success_failed_confirmation.png)
 
 ### Top Up using BCA with Unique Code
   Now, we provide you with a new method for BCA. Top-up using BCA with a unique code allows you to top up your balance in a real-time manner. You do not have to confirm manually as we will automatically detect your top-up and reflect it to your balance.
@@ -212,16 +212,16 @@ Steps:
 1. In the top up page, click on the “BCA Unique Code” tab.
 2. Input the amount you want to top up. Note : The minimum amount that we allow for this method is IDR10,000.
 
-<img data-src="images/desktop_bcauniquecode_input_amount.png" alt="BCA Unique Code Input Amount" loading="lazy" class="lazyload" />
+![BCA Unique Code Input Amount](images/desktop_bcauniquecode_input_amount.png)
 
 3. OY! will display the amount you input PLUS three-dgits unique code generated by us. Transfer the exact nominal that appeared on the screen to the bank account stated on the page. Please make sure to use BCA bank account. 
 
-<img data-src="images/desktop_bcauniquecode_transfer.png" alt="BCA Unique Code Transfer" loading="lazy" class="lazyload" />
+![BCA Unique Code Transfer](images/desktop_bcauniquecode_transfer.png)
 
 4. After the transaction is successful, the ORIGINAL AMOUNT will be reflected in your balance.
 Note :  The operational hour for this method is every day, from 3.01 AM to 8.30 PM. Outside those hours, this method will be closed.
 
-<img data-src="images/desktop_bcauniquecode_success.png" alt="BCA Unique Code Transfer" loading="lazy" class="lazyload" />
+![BCA Unique Code Transfer](images/desktop_bcauniquecode_success.png)
 
 ## Withdrawal
 
@@ -231,7 +231,7 @@ When you want to withdraw, do the following steps:
 2.  Click Withdraw
 3.  Fill in the amount that you want to withdraw
 
-<img data-src="images/withdrawal_topup.png" alt="Withdrawal Top Up" loading="lazy" class="lazyload" />
+![Withdrawal Top Up](images/withdrawal_topup.png)
 
 4.  Choose your withdrawal type. You can pick one from the following options:
 
@@ -243,7 +243,7 @@ When you want to withdraw, do the following steps:
 
 If you want to set up an **Auto Withdrawal** periodically, go to Settings -> Auto Withdrawal.
 
-<img data-src="images/auto_withdrawal.png" alt="Auto Withdrawal" loading="lazy" class="lazyload" />
+![Auto Withdrawal](images/auto_withdrawal.png)
 
 Here's how you can configure the auto withdrawal settings;
 
@@ -265,7 +265,7 @@ To access the Settlement report;
 - Login to Dashboard
 - Go to Transaction Report -> Settlement Report
 
-<img data-src="images/settlement_report.png" alt="Settlement Report" loading="lazy" class="lazyload" />
+![Settlement Report](images/settlement_report.png)
 
 The Settlement Report consists of the following information;
 
@@ -311,7 +311,7 @@ You can enable or disable notification settings for low balance, send money prod
 
 1. Login to dashboard https://business.oyindonesia.com/
 2. Go to Settings -> Notification
-   <img data-src="https://user-images.githubusercontent.com/79620482/126457509-ca20c24b-9277-4be4-943e-801b79806e65.png" alt="Notif Disbursement - 1  Initial" loading="lazy" class="lazyload" />
+   ![Notif Disbursement - 1  Initial](https://user-images.githubusercontent.com/79620482/126457509-ca20c24b-9277-4be4-943e-801b79806e65.png)
 3. If you want to notified by email if your balance is low, set in the "Low Balance" tab. Input the amount threshold and the email where the notification will be sent to.
 4. Choose whether or not you want notifications enabled or disabled for 
 Bulk Disbursement or API Disbursement.
@@ -355,28 +355,28 @@ To properly used Multi Entity Management, we required several accounts to be lin
 
 To add a new sub-entity,please 1) Log in to Dashboard with main account credential 2) Go to Multi Entity → List of Sub-entity
 
-<img data-src="../images/MEM_Add_Sub_Entity_1.png" alt="Image: As a Main Entity - Add a New Sub-entity" loading="lazy" class="lazyload" />
+![Image: As a Main Entity - Add a New Sub-entity](../images/MEM_Add_Sub_Entity_1.png)
 
 1. Click the “+ Add Sub-Entity
 2. Fill in the username for the sub-entity you wished to connect. You can find your username from the menu Accounts → User Profile in the Username section
 3. Click Add and then if the account is found in the system you can confirm by clicking Connect in the confirmation window
 
-<img data-src="../images/MEM_Add_Sub_Entity_2.jpg" alt="Image: As Main Entity - Subs - 6. Add Child - Type Username" loading="lazy" class="lazyload" /> 
+![Image: As Main Entity - Subs - 6. Add Child - Type Username](../images/MEM_Add_Sub_Entity_2.jpg) 
 After confirming, the request will be sent to the respective account to be accepted
 
 1. **For Sub-entity Account**
 
 To receive a request from a main entity , please 1) Log in to dashboard with child credential 2) Go to Transaction Report → Account Statement
-<img data-src="../images/As_Child_AccState_2b_Waiting_approval.png" alt="Image: As Child - AccState - 2b. Waiting approval" loading="lazy" class="lazyload" />
+![Image: As Child - AccState - 2b. Waiting approval](../images/As_Child_AccState_2b_Waiting_approval.png)
 
 1. Click the “Check All request” button that can be found near the top right corner of the page
 2. You will see the incoming request to be the main entity account for your account, then you can choose which account is the correct account for the main entity by click Accept in the respective account and confirmation window
 
-<img data-src="../images/As_Child_AccState_4b_2_Requests_to_connect.png" alt="Image: As Child - AccState - 4b. 2 Requests to connect.png" loading="lazy" class="lazyload" /><img data-src="../images/As_Child_AccState_4e_Confirmation_to_connect.png" alt="Image: As Child - AccState - 4e. Confirmation to connect" loading="lazy" class="lazyload" />
+![Image: As Child - AccState - 4b. 2 Requests to connect.png](../images/As_Child_AccState_4b_2_Requests_to_connect.png)![Image: As Child - AccState - 4e. Confirmation to connect](../images/As_Child_AccState_4e_Confirmation_to_connect.png)
 
 3. After successfully received the main entity request to connect, you will find your parent information near the top right corner of your page, and you are now connected with your main entity.
 
-<img data-src="../images/As_Child_AccState_4h_Success_add_new_head_company.png" alt="Image: As Child - AccState - 4h. Success add new head company" loading="lazy" class="lazyload" />
+![Image: As Child - AccState - 4h. Success add new head company](../images/As_Child_AccState_4h_Success_add_new_head_company.png)
 
 **B. Topup money to a sub-entity account**
 
@@ -387,7 +387,7 @@ After connected with your sub-entities, you can transfer money to the sub-entity
 4. Click the “Top Up Now” button to proceed
 5. You can also do Top Up by transfer to one of the VA provided (see “How to Top Up Balance via VA”
 
-<img data-src="../images/As_Parent_Subs_5a_Top_Up.png" alt="Image: As Parent - Subs - 5a. Top Up.png" loading="lazy" class="lazyload" />
+![Image: As Parent - Subs - 5a. Top Up.png](../images/As_Parent_Subs_5a_Top_Up.png)
 
 **C. Disburse Money using a sub-entity's balance**
 
@@ -397,7 +397,7 @@ In Multi Entity Management, you will be able to do disbursement using your sub-e
 2. Select your sub-entity balance as a source of fund to do disbursement by selecting “My Sub-entity Balance” and choose the appropriate account.
 3. After choosing the balance you could proceed to do disbursement just like regular disbursement
 
-<img data-src="images/MEM_select_subentity_disbursement.png" alt="Image: Choose SoF - 2. Choose SoF subsidiary.png" loading="lazy" class="lazyload" />
+![Image: Choose SoF - 2. Choose SoF subsidiary.png](images/MEM_select_subentity_disbursement.png)
 
 **D. Create a payment link on behalf of a sub-entity account**
 
@@ -417,7 +417,7 @@ Hit [API Create Payment Link](https://api-docs.oyindonesia.com/#api-create-payme
 4. Fill in "Balance Destination" with "My Balance" (if the balance destination of the transaction is your own) or "Sub-entity Balance" (if the balance destination of the transaction is your sub-entity's). If you select "Sub-entity Balance", you will see a dropdown to select a username of the sub-entity account. Only 1 sub-entity account is currently allowed to be a balance destination
 5. If you select "Sub-entity Balance", when your users make a successful transaction, the transaction will be recorded in the specified Sub-entity Account's balance.
 
-<img data-src="images/MEM_select_subentity_paymentlink.png" alt="MAM Payment Link" loading="lazy" class="lazyload" />
+![MAM Payment Link](images/MEM_select_subentity_paymentlink.png)
 
 ## Xero Integration
 
@@ -430,33 +430,33 @@ Once you have connected your Xero account in OY!, any transaction that happened 
 ### Connect your Xero
 
 - Login to your dashboard. In the sidebar, select Integration menu.
-<img data-src="images/xero/menu.png" alt="Integration Menu" loading="lazy" class="lazyload" />
+![Integration Menu](images/xero/menu.png)
 
 - You will see Xero menu. Click “Connect” to connect your Xero account to OY!. You will be redirected to Xero’s login page. Once you have successfully logged in to Xero, a notification will appear.
-<img data-src="images/xero/product_list.png" alt="Product List" loading="lazy" class="lazyload" />
+![Product List](images/xero/product_list.png)
 
 Preview for Xero's login page
-<img data-src="images/xero/login_xero.png" alt="Xero's Login Page" loading="lazy" class="lazyload" />
-<img data-src="images/xero/consent_page.png" alt="Consent Page" loading="lazy" class="lazyload" />
+![Xero's Login Page](images/xero/login_xero.png)
+![Consent Page](images/xero/consent_page.png)
 
 Preview for Notification
-<img data-src="images/xero/connect_success_notification.png" alt="Notification" loading="lazy" class="lazyload" />
+![Notification](images/xero/connect_success_notification.png)
 
 - Upon success connect to Xero, we will create a new Bank Account into your Xero account, named “OY! balance” in which any transaction happened in OY! will be recorded there.
-<img data-src="images/xero/new_account.png" alt="New Account" loading="lazy" class="lazyload" />
+![New Account](images/xero/new_account.png)
 
 ### Map your Chart of Account
 
 - Once you have successfully connected to Xero, you will be directed to a page to map your Chart of Account.
-<img data-src="images/xero/coa_mapping.png" alt="Configure Account Page" loading="lazy" class="lazyload" />
+![Configure Account Page](images/xero/coa_mapping.png)
 
 - Then, map each product to the corresponding Account. Any transaction using each product will be put into the chart of account you defined in this page. 
-<img data-src="images/xero/coa_mapping_modal.png" alt="Mapping Modal" loading="lazy" class="lazyload" />
-<img data-src="images/xero/coa_mapping_modal_2.png" alt="Mapping Modal" loading="lazy" class="lazyload" />
+![Mapping Modal](images/xero/coa_mapping_modal.png)
+![Mapping Modal](images/xero/coa_mapping_modal_2.png)
 
 Note: Special for Bulk Disbursement product, you can define the Chart of Account later in the campaign creation process - Step 3 Input Detail page. In the Transaction Category field.
 
-<img data-src="images/desktop_accountingapp_bulkdisbursement.png" alt="Bulk Disbursement CoA" loading="lazy" class="lazyload" />
+![Bulk Disbursement CoA](images/desktop_accountingapp_bulkdisbursement.png)
 
 - You can change the CoA mapping anytime as needed, just go to Integration >> Xero >> Configuration.
 
@@ -467,8 +467,8 @@ Note: Special for Bulk Disbursement product, you can define the Chart of Account
 - Transaction in OY! will be treated as SPEND or RECEIVE money transaction in a bank account (OY! Balance). 
 - Each transaction will contains of two rows. Row 1 contains of amount of transaction where row 2 contains of admin fee.
 - In this version, any tax will be excluded. Means that you will need to input manually the tax invoice you obtained from OY! team to your Xero.
-<img data-src="images/xero/recorded_transaction.png" alt="Recorded Transaction" loading="lazy" class="lazyload" />
-<img data-src="images/xero/recorded_transaction_2.png" alt="Recorded Transaction" loading="lazy" class="lazyload" />
+![Recorded Transaction](images/xero/recorded_transaction.png)
+![Recorded Transaction](images/xero/recorded_transaction_2.png)
 
 
 ### Disconnected your Xero 
@@ -486,23 +486,23 @@ Once you have connected your Accurate account in OY!, any transaction that happe
 1. Login to your OY! dashboard. In the sidebar, select the Integration menu.
 2. You will see Accurate menu. Click “Connect” to connect your Accurate account to OY!. You will be redirected to Accurate’s login page. 
 
-<img data-src="images/desktop_accurate_connect.png" alt="Connect Accurate" loading="lazy" class="lazyload" />
+![Connect Accurate](images/desktop_accurate_connect.png)
 
 3. After login to your Accurate account, click Allow to allow conection between OY! and Accurate.
-<img data-src="images/desktop_accurate_authorize.png" alt="User Consent Accurate" loading="lazy" class="lazyload" />
+![User Consent Accurate](images/desktop_accurate_authorize.png)
 
 4. Next, please select an Accurate database that you want to connect with your OY! account.
-<img data-src="images/desktop_accurate_select_database.png" alt="Accurate Select Database" loading="lazy" class="lazyload" />
+![Accurate Select Database](images/desktop_accurate_select_database.png)
 
 5. Once you have successfully connected to Accurate, a notification in your OY! dashboard will appear and you can see your status is now "Connected/Terhubung".
 
-<img data-src="images/desktop_accurate_connected_status.png" alt="Accurate Connected" loading="lazy" class="lazyload" />
+![Accurate Connected](images/desktop_accurate_connected_status.png)
 
 6. Upon success connecting to Accurate, we will create a new Bank Account into your Accurate account, named “OY! balance” in which any transaction that happened in OY! will be recorded there. Your current OY! balance will also be mapped there.
 
 7. In your Accurate Dashboard, you can see that OY! Indonesia app will be listed in the Accurate Store >> Aplikasi Saya menu.
-<img data-src="images/desktop_accurate_listing.png" alt="Accurate Listing" loading="lazy" class="lazyload" />
-<img data-src="images/desktop_accurate_aplikasisaya.png" alt="Accurate Aplikasi saya" loading="lazy" class="lazyload" />
+![Accurate Listing](images/desktop_accurate_listing.png)
+![Accurate Aplikasi saya](images/desktop_accurate_aplikasisaya.png)
 
 8. Note: A fee of IDR 20k/month will be added to your Accurate billing.
 
@@ -511,11 +511,11 @@ Once you have connected your Accurate account in OY!, any transaction that happe
 1. Click on "Configure" to map your Chart of Account (Akun Perkiraan).
 2. Then, map each product to the corresponding Account. Any transaction using each product will be put into the Chart of Accounts you defined on this page. 
 
-<img data-src="images/desktop_accurate_config_coa.png" alt="Accurate Config COA" loading="lazy" class="lazyload" />
+![Accurate Config COA](images/desktop_accurate_config_coa.png)
 
 Note: Special for Bulk Disbursement product, you can define the Chart of Account later in the campaign creation process - Step 3 Input Detail page. In the Transaction Category field.
 
-<img data-src="images/desktop_accountingapp_bulkdisbursement.png" alt="Bulk Disbursement CoA" loading="lazy" class="lazyload" />
+![Bulk Disbursement CoA](images/desktop_accountingapp_bulkdisbursement.png)
 
 3. You can change the CoA mapping anytime as needed, just go to Integration >> Accurate >> Configure.
 
@@ -530,7 +530,7 @@ Note: Special for Bulk Disbursement product, you can define the Chart of Account
 ### Disconnected your Accurate 
 1. To disconnect your Accurate account from OY!, open the Integration menu on the sidebar. Then select “Disconnect”.
 
-<img data-src="images/desktop_accurate_connected_status.png" alt="Accurate Connected" loading="lazy" class="lazyload" />
+![Accurate Connected](images/desktop_accurate_connected_status.png)
 
 2. Then, you will be disconnected from Accurate. Any transaction that you execute via OY! will not be recorded in Accurate.
 3. Note: To remove the bill, please make sure you also uninstall OY! app in your Accurate dashboard.
@@ -545,41 +545,41 @@ Once you have connected your Jurnal account in OY!, any transaction that happene
 ### Connect your Jurnal
 1. Before connecting your Jurnal account, you need to log in to your Jurnal account in your browser.
 
-<img data-src="images/jurnal_login.png" alt="Jurnal Login" loading="lazy" class="lazyload" />
+![Jurnal Login](images/jurnal_login.png)
 
 2. Login to your OY! dashboard. In the sidebar, select the "Integration" menu.
 
 3. You will see the Jurnal menu. Click “Connect” to connect your Jurnal account to OY!. 
 
-<img data-src="images/jurnal_integration_menu.png" alt="Jurnal Connect" loading="lazy" class="lazyload" />
+![Jurnal Connect](images/jurnal_integration_menu.png)
 
 
 4. There will be a page to ask for your consent regarding this connection process. Make sure to select OY! Indonesia. Click Allow to allow connection between OY! and Jurnal.
 
-<img data-src="images/jurnal_authorization_page.png" alt="Jurnal Authorization" loading="lazy" class="lazyload" />
+![Jurnal Authorization](images/jurnal_authorization_page.png)
 
 5. Once you have successfully connected to Jurnal, a notification in your OY! dashboard will appear and you can see your status is now "Connected/ Terhubung".
 
-<img data-src="images/jurnal_connection_success.png" alt="Jurnal Connection Success" loading="lazy" class="lazyload" />
+![Jurnal Connection Success](images/jurnal_connection_success.png)
 
-<img data-src="images/jurnal_success_notif.png" alt="Jurnal Notification" loading="lazy" class="lazyload" />
+![Jurnal Notification](images/jurnal_success_notif.png)
 
-<img data-src="images/jurnal_connection_status.png" alt="Jurnal Connection Status" loading="lazy" class="lazyload" />
+![Jurnal Connection Status](images/jurnal_connection_status.png)
 
 6. Upon success connecting to Jurnal, we will create a new Bank Account into your Jurnal account, named “OY! Balance”. Any transaction that happened in OY! will be recorded under that bank account. Your current OY! balance will be mapped into your OY! Balance Cash Bank Account as a bank deposit transaction. 
 
-<img data-src="images/jurnal_oy_balance.png" alt="Jurnal OY! Balance" loading="lazy" class="lazyload" />
+![Jurnal OY! Balance](images/jurnal_oy_balance.png)
 
 ### Map your Chart of Account
 1. Click on "Configure" button in the "Integrasi" menu to map your Chart of Account.
 
 2. Then, map each product to the corresponding Account. Any transaction using each product will be put into the Chart of Accounts you defined on this page.
 
-<img data-src="images/jurnal_coa_mapping.png" alt="Jurnal COA Mapping" loading="lazy" class="lazyload" />
+![Jurnal COA Mapping](images/jurnal_coa_mapping.png)
 
 3. Note: Special for Bulk Disbursement product, you can define the Chart of Account later in the campaign creation process - Step 3 Input Detail page. In the Transaction Category field.
 
-<img data-src="images/jurnal_bulk_disburse_coa.png" alt="Jurnal Bulk Disburse COA" loading="lazy" class="lazyload" />
+![Jurnal Bulk Disburse COA](images/jurnal_bulk_disburse_coa.png)
 
 4. You can change the CoA mapping anytime as needed, just go to Integration >> Jurnal >> Configure.
 
@@ -611,7 +611,7 @@ You can follow the steps below to set up callback authorization via your dashboa
 1. Log in to the OY! dashboard as a super admin or admin, then select the "Settings" menu, and choose "Developer Options." 
 2. Click on the "Authorization Callback" tab. Then, you should input your authorization details (Authorization URL, client ID, and client secret). This step is necessary to allow OY! to complete the authorization process before sending a callback to you. 
 
-<img data-src="images/oy_auth_configuration.png" alt="Callback Authorization Configuration" loading="lazy" class="lazyload" />
+![Callback Authorization Configuration](images/oy_auth_configuration.png)
 
 3. Click the "Save changes" button. 
 4. Once you have configured your OAuth 2.0 credentials, all callbacks from OY! will go through your authorization process before you can receive them. OY! will obtain an access token along with the expiry time from your system. 

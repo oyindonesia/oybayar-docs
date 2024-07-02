@@ -220,9 +220,9 @@ curl -X GET 'https://partner.oyindonesia.com/api/balance'
 
 Lastly, all transactions can be monitored from the OY! dashboard which includes all the transaction details.
 
-<img data-src="images/api_disburse_error_reason.png" alt="API Disbursement" loading="lazy" class="lazyload" />
+![API Disbursement](images/api_disburse_error_reason.png)
 
-<img data-src="images/api_disburse_success.png" alt="API Disbursement" loading="lazy" class="lazyload" />
+![API Disbursement](images/api_disburse_success.png)
 
 
 For further details on the parameters definition and proper usage, please refer to our [API Documentation](https://api-docs.oyindonesia.com/#fund-disbursement).
@@ -284,7 +284,7 @@ In order to create disbursement campaigns, a sufficient available OY! balance is
 
 *2. Create Campaign Details*: Fill in the campaign details with 2 options:
 
-<img data-src="https://user-images.githubusercontent.com/79620482/128454459-16770aa6-486a-40b8-a73b-f2c4bb1910e3.png" alt="Create Bulk - 1  Initial" loading="lazy" class="lazyload" />
+![Create Bulk - 1  Initial](https://user-images.githubusercontent.com/79620482/128454459-16770aa6-486a-40b8-a73b-f2c4bb1910e3.png)
 
 
 a. upload an xlsx or csv file 
@@ -308,27 +308,27 @@ c. [Staging only] You can replicate failed status on individual transaction with
 
 *3. Re-verify all the Information and Submit*: Once your xlsx or csv file is uploaded or filled out manually, you can verify all of the information uploaded from the file from the table displayed. If there is any incorrect submission such as invalid entry due to special characters, a red box will appear to highlight the entry that should be corrected. Issues must be resolved before a campaign can be submitted
 
-<img data-src="https://user-images.githubusercontent.com/79620482/128454606-2838f6ca-aad1-446a-becb-75d780460708.png" alt="Create Bulk - 2  File Uploaded" loading="lazy" class="lazyload" />
+![Create Bulk - 2  File Uploaded](https://user-images.githubusercontent.com/79620482/128454606-2838f6ca-aad1-446a-becb-75d780460708.png)
 
 
 *4. Validate Name Matching*
 After all the issue has been resolved, user able to click submit and there will be popup shown to validate each recipient *name *with their *Bank Account Name* as shown below:
 
-<img data-src="https://user-images.githubusercontent.com/79620482/128454745-c5a42979-30ba-44c2-a405-bbe9b0325677.png" alt="Create Bulk - 3  Ask Name Validation" loading="lazy" class="lazyload" />
+![Create Bulk - 3  Ask Name Validation](https://user-images.githubusercontent.com/79620482/128454745-c5a42979-30ba-44c2-a405-bbe9b0325677.png)
 
 if you choose YES: if there is a name difference, a popup name validation with details of mismatched transactions will be displayed. if the information inputted is invalid, you could edit the information and choose the ‘ validate’ button to revalidate the data, or you could click the ‘ignore mismatch’ button to ignore the name matching validation and to process the disbursement.
 
-<img data-src="https://user-images.githubusercontent.com/79620482/128454900-3a007579-2701-4305-9f9d-15cc8a09ab2f.png" alt="Create Bulk - 5e  Mismatch Names" loading="lazy" class="lazyload" />
+![Create Bulk - 5e  Mismatch Names](https://user-images.githubusercontent.com/79620482/128454900-3a007579-2701-4305-9f9d-15cc8a09ab2f.png)
 
 
 If there is no issue with the details uploaded, a validate and submit button will be available at the bottom of the list of transactions, indicating that all information is valid. Click “Submit” to complete creating the bulk disbursement campaign.
 
-<img data-src="https://user-images.githubusercontent.com/79620482/128454982-b1ab6dfc-c279-4baf-a0e6-a2983a069488.png" alt="Create Bulk - 6a  All data inquired without Name Matching" loading="lazy" class="lazyload" />
+![Create Bulk - 6a  All data inquired without Name Matching](https://user-images.githubusercontent.com/79620482/128454982-b1ab6dfc-c279-4baf-a0e6-a2983a069488.png)
 
 
 *5. Approve/Cancel Campaign**: Once the bulk disbursement campaign is created, a new status of `waiting approval` will appear. Approve the campaign by clicking the “Approve” button. If you want to cancel a campaign, click the “...” button and select “Cancel”.
 
-<img data-src="../images/bulk_disburse_4.png" alt="Bulk Disburse" loading="lazy" class="lazyload" />
+![Bulk Disburse](../images/bulk_disburse_4.png)
 
 Once the bulk disbursement campaign is approved, details regarding the campaign can no long er be changed. This includes changes made to individual transactions and their respective recipient information. 
 
@@ -336,13 +336,13 @@ The balances will also immediately reflect changes. For more information about t
 
 *Note:* 
 - *Depend on the approval layer that you configured, this transaction should be approved by all layer before it can be executed by the system.*
-<img data-src="../images/multi-layer-approval.png" alt="Bulk Disburse" loading="lazy" class="lazyload" />
+![Bulk Disburse](../images/multi-layer-approval.png)
 
 - *Multiple campaigns can be approved at a time as long as there is sufficient available balance to complete campaigns that have already been approved but are still in queue to be processed.*
 
 *6. Keep Track of Campaign Details**: To check the details of the bulk disbursement campaign, click on the campaign name to find the campaign summary and its recipient list. Keep track of the both the overall campaign status and the status of individual transactions through the page. 
 
-<img data-src="../images/bulk_disburse_5.png" alt="Bulk Disburse" loading="lazy" class="lazyload" />
+![Bulk Disburse](../images/bulk_disburse_5.png)
 
 *7. Status: In-Progress, Finish, and Cancel**: Congratulations! You just made your first bulk disbursement with OY! Below are a list of statuses you will find on the OY! dashboard. 
 
@@ -350,24 +350,24 @@ _In-Progress_
 
 As your individual disbursements are executed, the status of your bulk disbursement campaign will indicate an in-progress status. 
 
-<img data-src="../images/bulk_disburse_error_reason.png" alt="Bulk Disburse" loading="lazy" class="lazyload" />
+![Bulk Disburse](../images/bulk_disburse_error_reason.png)
 
 _Incomplete_
 
 The status of your bulk disbursement will change to incomplete once all of the listed transactions have been executed and the relevant final statuses of Failed or partially Failed have been assigned. The failed transactions will be shown the failed reason and can be retried.
-<img data-src="../images/bulk_disburse_list_incomplete.png" alt="Notif Pending - 1  Initial" loading="lazy" class="lazyload" />
+![Notif Pending - 1  Initial](../images/bulk_disburse_list_incomplete.png)
 
 
 _Finish_
 
 Once all of the listed transactions have been completed and the final status of success for all transactions has been achieved, the status of your bulk disbursement campaign will change to Finish.  The recipients should have all received an email detailing an “Incoming Transfer Alert.” You can also download a report of the campaign details directly through the OY! dashboard.
-<img data-src="../images/bulk_disburse_finish.png" alt="Bulk Disburse" loading="lazy" class="lazyload" />
+![Bulk Disburse](../images/bulk_disburse_finish.png)
 
 _Cancel_ 
 
 If you choose not to approve your disbursement campaign, the status of your bulk disbursement campaign will indicate a cancelled status. 
 
-<img data-src="../images/bulk_disburse_cancel.png" alt="Bulk Disburse" loading="lazy" class="lazyload" />
+![Bulk Disburse](../images/bulk_disburse_cancel.png)
 
 You can also double check each of your transactions by navigating to the account statement page on the OY! dashboard. 
 
@@ -381,7 +381,7 @@ At the moment, Claim Fund product is available only on OY! Business Dashboard.
 
 ### Transaction Flow
 
-<img data-src="../images/claim-fund-flow.png" alt="Transacation Flow" loading="lazy" class="lazyload" />
+![Transacation Flow](../images/claim-fund-flow.png)
 
 ### Use Case
 1. Refund for purchase transaction 
@@ -410,8 +410,8 @@ In order to execute claim fund transaction successfully, a sufficient available 
 **1. Business Dashboard - Create Claim Fund**
 
 * Create Claim Fund: On the OY! dashboard, navigate to Send Money > Claim Fund on your left menu bar. Click `Create Claim Fund` button on the far righthand side of that page to create a new claim fund transaction.
-<img data-src="../images/claim-fund-landing.png" alt="Claim Fund Landing Page" loading="lazy" class="lazyload" />
-<img data-src="../images/claim-fund-create.png" alt="Create Claim Fund - input data" loading="lazy" class="lazyload" />
+![Claim Fund Landing Page](../images/claim-fund-landing.png)
+![Create Claim Fund - input data](../images/claim-fund-create.png)
 
 * Please fill-out the information accordingly. Below table is the description of each fields:
 
@@ -428,28 +428,28 @@ In order to execute claim fund transaction successfully, a sufficient available 
 * Click `Create Claim Fund` button to submit the transaction. Your recipient will get notified of this claim fund transaction through email. Transaction link will be attached on this email.
 
 * Successful claim fund transaction will be listed on the claim fund transaction listing with INITIATED status.
-<img data-src="../images/claim-fund-create-success.png" alt="Create Claim Fund - Success" loading="lazy" class="lazyload" />
+![Create Claim Fund - Success](../images/claim-fund-create-success.png)
 
 * Please be noted that this transaction still need account detail to be filled-out by the recipient.
 
 **2. Fund Recipient - Input Account Information**
 
 * On the notification email, user click the `Ajukan Klaim Dana` link to get into claim fund input page. 
-<img data-src="../images/claim-fund-user-email.png" alt="Create Claim Fund - Email" loading="lazy" class="lazyload" />
+![Create Claim Fund - Email](../images/claim-fund-user-email.png)
 
 * User should fill-out the detail information so that OY! system can continue with the approval process. 
-<img data-src="../images/claim-fund-input-detail.png" alt="Create Claim Fund - input detail" loading="lazy" class="lazyload" />
-<img data-src="../images/claim-fund-input-submitted.png" alt="Create Claim Fund - input submitted" loading="lazy" class="lazyload" />
+![Create Claim Fund - input detail](../images/claim-fund-input-detail.png)
+![Create Claim Fund - input submitted](../images/claim-fund-input-submitted.png)
 
 **3. Business Dashboard - Approve Transaction**
 
 Transaction need to go through approval process to ensure that the money will be delivered to correct recipient and sufficient amount is available.
 
 * Approve claim fund transaction: On the OY! dashboard, navigate to Send Money > Claim Fund on your left menu bar. Transactions that already have user detail will be marked with `WAITING APPROVAL` status. 
-<img data-src="../images/claim-fund-partner-approval1.png" alt="Create Claim Fund - partner approval" loading="lazy" class="lazyload" />
+![Create Claim Fund - partner approval](../images/claim-fund-partner-approval1.png)
 
 * You can approve the transaction directly from this screen by clicking Approve button, or go to detail transaction to see more information before approve.
-<img data-src="../images/claim-fund-partner-approval2.png" alt="Create Claim Fund - partner approval" loading="lazy" class="lazyload" />
+![Create Claim Fund - partner approval](../images/claim-fund-partner-approval2.png)
 
 * Click approve button to release the transaction to user.
 
@@ -458,7 +458,7 @@ Transaction need to go through approval process to ensure that the money will be
 * Your recipient should get the money delivered to their account immediately.
 
 * In parallel, your customer will also get email notification about successful claim fund transaction.
-<img data-src="../images/claim-fund-user-success.png" alt="Create Claim Fund - user success" loading="lazy" class="lazyload" />
+![Create Claim Fund - user success](../images/claim-fund-user-success.png)
 
 ## API Biller
 
@@ -467,7 +467,7 @@ The integration process to use the API biller product is straight forward and th
 
 ### Transaction Flow
 
-<img data-src="../images/Flow_API_Biller.png" alt="Transacation Flow" loading="lazy" class="lazyload" />
+![Transacation Flow](../images/Flow_API_Biller.png)
 
 ### Key Features
 
@@ -661,7 +661,7 @@ curl -X GET 'https://partner.oyindonesia.com/api/balance'
 
 Lastly, all transactions can be monitored from the OY! dashboard which includes all the transaction details.
 
-<img data-src="../images/API_Biller.png" alt="API Biller" loading="lazy" class="lazyload" />
+![API Biller](../images/API_Biller.png)
 
 
 For further details on the parameters definition and proper usage, please refer to our [API Documentation](https://api-docs.oyindonesia.com/#biller-api).
@@ -690,7 +690,7 @@ Follow the instruction below to activate retry callback
 5. Click "Save Changes". The configuration will not able to be saved if the callback URL or/and email format are not valid.
 
 
-<img data-src="images/api_disburse_retry_callback_developer_option.png" alt="Resend Callback" loading="lazy" class="lazyload" />
+![Resend Callback](images/api_disburse_retry_callback_developer_option.png)
 
 Don't forget to whitelist these IPs in order to be able to receive callback from OY: 54.151.191.85 and 54.179.86.72
 
@@ -701,7 +701,7 @@ If you want to manually resend a callback, you can follow the instruction below
 3. Click the "Resend Callback" button in the related transaction
 
 
-<img data-src="images/api_disburse_resend_callback.png" alt="Resend Callback" loading="lazy" class="lazyload" />
+![Resend Callback](images/api_disburse_resend_callback.png)
 
 
 
@@ -757,7 +757,7 @@ You can create new invoice to be paid and set up payment by following this step:
     Note: Maximum 20 rows for line item detail
 
     **Image Account Payable**
-    <img data-src="images/accountPayable/invoice_creation_1.png" alt="AP Invoice Creation One" loading="lazy" class="lazyload" />
+    ![AP Invoice Creation One](images/accountPayable/invoice_creation_1.png)
 
 8. Continue to set up 'Invoice Payment Details'. You can set up the payment to one time payment by choosing 'Full Payment' or multiple times payment by choosing 'Partial Payment'.
 
@@ -770,11 +770,11 @@ You can create new invoice to be paid and set up payment by following this step:
     Remaining Amount | Total pay to vendor - subtotal. This amount should be 0 to continue the process
 
     **Image Payment Page**
-    <img data-src="images/accountPayable/AP_scheduled_payment.png" alt="AP Invoice Creation Two" loading="lazy" class="lazyload" />
+    ![AP Invoice Creation Two](images/accountPayable/AP_scheduled_payment.png)
 
-    <img data-src="images/accountPayable/AP_Scheduled_Payment_Details.png" alt="AP Invoice Scheduled Payment Detai" loading="lazy" class="lazyload" />
+    ![AP Invoice Scheduled Payment Detai](images/accountPayable/AP_Scheduled_Payment_Details.png)
 
-    <img data-src="images/accountPayable/AP_Trx_detail.png" alt="AP Detail Transaction" loading="lazy" class="lazyload" />
+    ![AP Detail Transaction](images/accountPayable/AP_Trx_detail.png)
 
 9. Status: Waiting Payment, Partially Paid, Complete and Cancelled
 Congratulations! You have finished your first invoice payable set up. Below are the list of statuses you will find on 'Invoice List'
@@ -787,7 +787,7 @@ Congratulations! You have finished your first invoice payable set up. Below are 
     Complete | All payment of the invoice is complete
 
     **List of the Invoice Payable**
-<img data-src="images/accountPayable/AP_Trx_detail.png" alt="AP Invoice List" loading="lazy" class="lazyload" />
+![AP Invoice List](images/accountPayable/AP_Trx_detail.png)
 
 
 
@@ -824,13 +824,13 @@ PPN Inclusive | Tax will not be added upon the subtotal because the subtotal is 
 There will be an PPh email sent on the 1st day of each month that contains all the PPh from your vendors in the previous month. This report can help company with tax payment & reporting, and 'Faktur Pajak' generation to your vendor.
 
 **Create New Vendor**
-<img data-src="images/vendorManagement/creation.png" alt="VM Vendor Creation" loading="lazy" class="lazyload" />
+![VM Vendor Creation](images/vendorManagement/creation.png)
 
 **List Of Vendor**
-<img data-src="images/vendorManagement/list.png" alt="VM Vendor List" loading="lazy" class="lazyload" />
+![VM Vendor List](images/vendorManagement/list.png)
 
 **Vendor Detail**
-<img data-src="images/vendorManagement/detail.png" alt="VM Vendor Detail" loading="lazy" class="lazyload" />
+![VM Vendor Detail](images/vendorManagement/detail.png)
 
 **How to Set Up Invoice Payable Approval**
 
@@ -878,19 +878,19 @@ You can create new virtual card by following these steps:
 
 * Corporate Card Dashboard
 
-<img data-src="images/virtualCard/blankpagecard.jpg" alt="Corporate Card Dashboard" loading="lazy" class="lazyload" />
+![Corporate Card Dashboard](images/virtualCard/blankpagecard.jpg)
 
 * Virtual Card Type
 
-<img data-src="images/virtualCard/virtualtype.jpg" alt="Card Form" loading="lazy" class="lazyload" />
+![Card Form](images/virtualCard/virtualtype.jpg)
 
-<img data-src="images/virtualCard/frequency.jpg" alt="Card Form" loading="lazy" class="lazyload" />
+![Card Form](images/virtualCard/frequency.jpg)
 
 * Virtual Card Form
 
-<img data-src="source/images/virtualCard/cardholderdetails.jpg" alt="Card Form" loading="lazy" class="lazyload" />
+![Card Form](source/images/virtualCard/cardholderdetails.jpg)
 
-<img data-src="images/virtualCard/carddetails.jpg" alt="Card Form" loading="lazy" class="lazyload" />
+![Card Form](images/virtualCard/carddetails.jpg)
 
 
 ### How to Transact with Card 
@@ -904,13 +904,13 @@ Steps to use card for online transaction:
 
 * Virtual Card Information
 
-<img data-src="images/virtualCard/card_detail.png" alt="VCC Detail" loading="lazy" class="lazyload" />
+![VCC Detail](images/virtualCard/card_detail.png)
 
 * Virtual Card
 
-<img data-src="images/virtualCard/detailtrxn.jpg" alt="VCC Transaction Detail" loading="lazy" class="lazyload" /> 
+![VCC Transaction Detail](images/virtualCard/detailtrxn.jpg) 
 
-<img data-src="images/virtualCard/vcc_txnemail.png" alt="VCC Transaction Email" loading="lazy" class="lazyload" /> 
+![VCC Transaction Email](images/virtualCard/vcc_txnemail.png) 
 
 
 
@@ -945,11 +945,11 @@ Reversal | Temporary hold on card is returned to card prior settlement
 
 * Add New Approver
 
-<img data-src="images/virtualCard/vcc_addapprover.png" alt="VCC Add Approver" loading="lazy" class="lazyload" />
+![VCC Add Approver](images/virtualCard/vcc_addapprover.png)
 
 * Approver Form
 
-<img data-src="images/virtualCard/vcc_approverform.png" alt="VCC Approver Form" loading="lazy" class="lazyload" />
+![VCC Approver Form](images/virtualCard/vcc_approverform.png)
 
 **Notes**: Approver data cannot be added or edited through dashboard for security purposes. Please contact our business representative for helps
 
@@ -965,7 +965,7 @@ Email | Approver email for card approval purposes
 1. Click “See All Cards”
 2. Click the card that needs to be managed
 
-<img data-src="images/virtualCard/vcc_cardlist.png" alt="VCC Card List" loading="lazy" class="lazyload" />
+![VCC Card List](images/virtualCard/vcc_cardlist.png)
 
 **Card actions** 
 
@@ -989,15 +989,15 @@ Delete | Only applicable for "Waiting for Approval" card
 
 * Department page prior to “Edit Department” button
 
-<img data-src="images/virtualCard/departmen.jpg" alt="Card Department" loading="lazy" class="lazyload" />
+![Card Department](images/virtualCard/departmen.jpg)
 
 * Category page
 
-<img data-src="images/virtualCard/category.jpg" alt="Card Category" loading="lazy" class="lazyload" />
+![Card Category](images/virtualCard/category.jpg)
 
 * Approver Page
 
-<img data-src="images/virtualCard/approver.jpg" alt="Card Approver" loading="lazy" class="lazyload" />
+![Card Approver](images/virtualCard/approver.jpg)
 
 
 **Failed Transaction Possible Reasons**
@@ -1081,65 +1081,65 @@ Once a transaction is successfully created, all transaction details and updates 
 In order to create international transfers, you need to have sufficient available OY! balance is required in the account. If there is an insufficient available balance in the account, international transfers cannot be created
  1. *Create new transaction*: On the OY! dashboard, navigate to Send Payments > International Transfer on your left menu bar. Click “Create New Transaction” on the far righthand side of that page to create a new transfer.
 
-<img data-src="images/internationalTransfer/create_inter_remit.jpg" alt="Create New Transaction" loading="lazy" class="lazyload" />
+![Create New Transaction](images/internationalTransfer/create_inter_remit.jpg)
 
  2. *Input transfer amount details*: You may fill out the amount of transfer in two ways:
   1. Fill in the send amount (in Rupiah) you would like to transfer, along with the destination currency and country. Our system will automatically convert according to the foreign exchange rate at that time.
   1. Fill in the recipient amount (in SGD/USD) you would like to transfer, along with the destination currency and country. Our system will automatically convert according to the foreign exchange rate at that time.
 
-<img data-src="images/internationalTransfer/input_amount.jpg" alt="Input Send Amount" loading="lazy" class="lazyload" />
+![Input Send Amount](images/internationalTransfer/input_amount.jpg)
 
 *Note: If the nominal amount greater than the available balance, then our system will restrict users from proceeding*
-<img data-src="images/internationalTransfer/balance_less_than_send_amount.jpg" alt="Balance Less Than Send Amount" loading="lazy" class="lazyload" />
+![Balance Less Than Send Amount](images/internationalTransfer/balance_less_than_send_amount.jpg)
 
  3. *Input sender details*: Decide whether sender is an individual or business entity, and you will see the corresponding details to fill out for each. Previously saved sender contacts will be displayed at the bottom of this page.
-<img data-src="images/internationalTransfer/list_of_existing_senders.jpg" alt="List Of Existing Senders" loading="lazy" class="lazyload" />
+![List Of Existing Senders](images/internationalTransfer/list_of_existing_senders.jpg)
 
 Create a new individual sender by filling out this form
 
-<img data-src="images/internationalTransfer/input_individual_sender.jpg" alt="Input Individual Sender" loading="lazy" class="lazyload" />
+![Input Individual Sender](images/internationalTransfer/input_individual_sender.jpg)
 
 Create a new business sender by filling out this form
 
-<img data-src="images/internationalTransfer/input_business_sender.jpg" alt="Input Business Sender" loading="lazy" class="lazyload" />
+![Input Business Sender](images/internationalTransfer/input_business_sender.jpg)
 
  4. *Input recipient details*: Decide whether recipient is an individual or business entity, and you will see the corresponding details to fill out for each. Previously saved recipient contacts will be displayed at the bottom of this page.
 
-<img data-src="images/internationalTransfer/list_of_existing_recipients.jpg" alt="List Of Existing Recipients" loading="lazy" class="lazyload" />
+![List Of Existing Recipients](images/internationalTransfer/list_of_existing_recipients.jpg)
 
 This will be the form you will need to fill out for individual recipient
 
 Create a new individual recipient by filling out this form
 
-<img data-src="images/internationalTransfer/input_individual_recipient.jpg" alt="Input Individual Recipient" loading="lazy" class="lazyload" />
+![Input Individual Recipient](images/internationalTransfer/input_individual_recipient.jpg)
 
 Create a new business contact by filling out this form
 
-<img data-src="images/internationalTransfer/input_business_recipient.jpg" alt="Input Business Recipient" loading="lazy" class="lazyload" />
+![Input Business Recipient](images/internationalTransfer/input_business_recipient.jpg)
 
  5. *Add supporting information*: In this step, we need to record source of funds, purpose of transfer for the transaction. You may also attach supporting documents to aid the compliance requirements for your transaction.
 
-<img data-src="images/internationalTransfer/transfer_reason_docs.jpg" alt="Transfer Reason And Supporting Docs" loading="lazy" class="lazyload" />
+![Transfer Reason And Supporting Docs](images/internationalTransfer/transfer_reason_docs.jpg)
 
  6. *Summary*: The summary of your transaction will be shown. If all the information is correct, you may click the **Submit** button at the bottom right hand corner of the screen.
 
-<img data-src="images/internationalTransfer/summary.png" alt="Summary" loading="lazy" class="lazyload" />
+![Summary](images/internationalTransfer/summary.png)
 
 *Note: A fixed quotation rate is created since Input sender details and will be refreshed every 30 minutes. In the case when the quotation expires, a pop up will show to fetch the latest exchange rate and a new quotation is created.*
 
-<img data-src="images/internationalTransfer/update_exchange_rate.png" alt="Update Exchange Rate" loading="lazy" class="lazyload" />
+![Update Exchange Rate](images/internationalTransfer/update_exchange_rate.png)
 
 If the available balance is insufficient for the new quotation amount, then you will be prompted to change the transfer amount or top up balance.
 
-<img data-src="images/internationalTransfer/balance_not_enough.png" alt="Balance Not Enough" loading="lazy" class="lazyload" />
+![Balance Not Enough](images/internationalTransfer/balance_not_enough.png)
 
  7. *Input Password*: For security reasons, OY! will prompt clients to input their password prior to every transaction.
 
-<img data-src="images/internationalTransfer/password_filled.png" alt="Password Filled" loading="lazy" class="lazyload" />
+![Password Filled](images/internationalTransfer/password_filled.png)
 
 Each client has 5 chances to input the correct password. If you failed to input the correct password 5 times, then the transaction will automatically be cancelled.
 
-<img data-src="images/internationalTransfer/incorrect_password.png" alt="Incorrect Password" loading="lazy" class="lazyload" />
+![Incorrect Password](images/internationalTransfer/incorrect_password.png)
 
  8. *Transaction Status: In Progress, Success, Failed.*
 
@@ -1147,24 +1147,24 @@ Each client has 5 chances to input the correct password. If you failed to input 
 
 Once a transaction is successfully created, it will appear in your dashboard the status column will be set as *In Progress*.
 
-<img data-src="images/internationalTransfer/in_progress_transaction.png" alt="In Progress Status" loading="lazy" class="lazyload" />
+![In Progress Status](images/internationalTransfer/in_progress_transaction.png)
 
 *Success*
 
 Once your transaction is processed successfully, the status column will be updated as Success. Both sender and recipient should have received an email detailing a “Successful Transfer.”
 
-<img data-src="images/internationalTransfer/success_email.png" alt="Success Email" loading="lazy" class="lazyload" />
+![Success Email](images/internationalTransfer/success_email.png)
 
 *Failed*
 
 If your transaction has failed to process, the status column will be updated as Failed. Both sender and recipient should have received an email detailing a “Failed Transfer.”
 
-<img data-src="images/internationalTransfer/failed_email.png" alt="Failed Email" loading="lazy" class="lazyload" />
+![Failed Email](images/internationalTransfer/failed_email.png)
 
  9. *Check transaction details*: You may check transaction details by clicking on the transaction id on the list of transaction details on dashboard
 
-<img data-src="images/internationalTransfer/list_of_transactions.png" alt="List Of Transactions" loading="lazy" class="lazyload" />
-<img data-src="images/internationalTransfer/transaction_detail.png" alt="Transaction Detail" loading="lazy" class="lazyload" />
+![List Of Transactions](images/internationalTransfer/list_of_transactions.png)
+![Transaction Detail](images/internationalTransfer/transaction_detail.png)
 
 
 
@@ -1199,7 +1199,7 @@ Setting up the approver will only occur once when the page is first opened.
 
 * Approver registration page
 
-<img data-src="images/reimbursement/Approver_Registration.png" alt="Approver registration" loading="lazy" class="lazyload" />
+![Approver registration](images/reimbursement/Approver_Registration.png)
 
 
 **Notes**
@@ -1234,14 +1234,14 @@ After Approver registration, you can start sharing the reimbursement link with e
 
 * Link distribution page
 
-<img data-src="images/reimbursement/Reimbursement_Link.png" alt="Distribution page" loading="lazy" class="lazyload" />
+![Distribution page](images/reimbursement/Reimbursement_Link.png)
 
 
 * Form page
 
-<img data-src="images/reimbursement/Reimbursement_Step1.png" alt="Form page" loading="lazy" class="lazyload" />
+![Form page](images/reimbursement/Reimbursement_Step1.png)
 
-<img data-src="images/reimbursement/Reimbursement_Step2.png" alt="Form page" loading="lazy" class="lazyload" />
+![Form page](images/reimbursement/Reimbursement_Step2.png)
 
 
 **Mandatory Parameters in the Form**
@@ -1278,14 +1278,14 @@ Scheduled disbursement can only be done if the reporting manager has approved th
 
 * Request list in dashboard
 
-<img data-src="images/reimbursement/Reimbursement_List.png" alt="Dashboard list" loading="lazy" class="lazyload" />
+![Dashboard list](images/reimbursement/Reimbursement_List.png)
 
 
 * Request detail in dashboard
 
-<img data-src="images/reimbursement/Reimbursement_Detail1.png" alt="Request Detail" loading="lazy" class="lazyload" />
+![Request Detail](images/reimbursement/Reimbursement_Detail1.png)
 
-<img data-src="images/reimbursement/Reimbursement_Detail2.png" alt="Request Detail" loading="lazy" class="lazyload" />
+![Request Detail](images/reimbursement/Reimbursement_Detail2.png)
 
 
 **Note:** If there is insufficient balance on the day of scheduled disbursement, you can retry manually when the balance is sufficient via the dashboard.
@@ -1317,11 +1317,11 @@ Insufficient Balance | Fail to disburse due to insufficient balance (admin can r
 
 * Approver portal (unique per approver)
 
-<img data-src="images/reimbursement/Approver_Portal_List.png" alt="Approver portal" loading="lazy" class="lazyload" />
+![Approver portal](images/reimbursement/Approver_Portal_List.png)
 
 * Approver - request details with action buttons
 
-<img data-src="images/reimbursement/Approver_List_Detail.png" alt="Request details" loading="lazy" class="lazyload" />
+![Request details](images/reimbursement/Approver_List_Detail.png)
 
 
 
@@ -1335,11 +1335,11 @@ Insufficient Balance | Fail to disburse due to insufficient balance (admin can r
 
 * Employee Tracker page
 
-<img data-src="images/reimbursement/Employee_Tracker1.png" alt="Employee tracker" loading="lazy" class="lazyload" />
+![Employee tracker](images/reimbursement/Employee_Tracker1.png)
 
 * Employee Tracker page -- transaction detail
 
-<img data-src="images/reimbursement/Employee_Tracker2.png" alt="Employee tracker" loading="lazy" class="lazyload" />
+![Employee tracker](images/reimbursement/Employee_Tracker2.png)
 
 
 
