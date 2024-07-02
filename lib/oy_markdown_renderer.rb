@@ -1,12 +1,15 @@
-# Unique header generation
 require 'middleman-core/renderers/redcarpet'
 require 'digest'
-class UniqueHeadCounter < Middleman::Renderers::MiddlemanRedcarpetHTML
+
+class OyMarkdownRenderer < Middleman::Renderers::MiddlemanRedcarpetHTML
+  
   def initialize
     super
     @head_count = {}
     @previous = {}
   end
+
+  # Unique header generation
   def header(text, header_level)
     friendly_text = text.gsub(/<[^>]*>/,"").parameterize
     if(friendly_text.include? "release-")
@@ -54,5 +57,11 @@ class UniqueHeadCounter < Middleman::Renderers::MiddlemanRedcarpetHTML
     else
       return "<h#{header_level} id='#{friendly_text}' type='normal'>#{text}</h#{header_level}>"
     end
+  end
+
+  # Lazy load images
+  # Reference: https://developer.mozilla.org/en-US/docs/Web/Performance/Lazy_loading#images_and_iframes
+  def image(link, title, alt_text)
+    scope.image_tag(link, loading: "lazy", class: "lazyload", title: title, alt: alt_text)
   end
 end
