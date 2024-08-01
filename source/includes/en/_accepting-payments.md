@@ -58,7 +58,7 @@ Maximum amount per transaction
 |Bank Rakyat Indonesia (BRI) |Rp 500,000,000|
 |Bank Mandiri |Rp 500,000,000|
 |Bank CIMB |Rp 500,000,000|
-|Bank BTPN Jenius |Rp 500,000,000|
+|Bank BTPN Jenius |Rp 100,000,000|
 |Bank Syariah Indonesia (BSI)|Rp 50,000,000|
 |Bank Permata|Rp 500,000,000|
 
