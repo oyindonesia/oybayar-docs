@@ -66,7 +66,7 @@ Ya. Pencairan yang dilakukan melalui API Kirim Uang semuanya dilakukan secara re
 
 Bank apa saja yang didukung untuk produk API VA Aggregator?
 
-Saat ini kami memiliki 11 bank yang tersedia untuk API VA Aggregator. Anda dapat melihat daftar bank [di sini](https://api-docs.oyindonesia.com/#va-aggregator-bank-code).
+Saat ini kami memiliki 8 bank yang tersedia untuk API VA Aggregator. Anda dapat melihat daftar bank [di sini](https://api-docs.oyindonesia.com/#va-aggregator-bank-code).
 
 **Apakah saldo yang saya terima langsung masuk secara real-time?**
 
