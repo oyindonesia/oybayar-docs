@@ -62,7 +62,7 @@ class OyMarkdownRenderer < Middleman::Renderers::MiddlemanRedcarpetHTML
   # Reduce jumpy-ness when loading multiple images
   def image(link, title, alt_text)
     # 300x300 transparent svg for placeholder to keep overall structure intact
-    svg_placeholder = "data:image/svg+xml;base64,ICAgIDxzdmcgd2lkdGg9IjMwMCIgaGVpZ2h0PSIzMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgICAgIDxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9Im5vbmUiIHN0cm9rZT0ibm9uZSIgLz4KICAgIDwvc3ZnPgo="
+    svg_placeholder = "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJ4TWlkWU1pZCIgd2lkdGg9IjMwMCIgaGVpZ2h0PSIzMDAiIHN0eWxlPSJzaGFwZS1yZW5kZXJpbmc6IGF1dG87IGRpc3BsYXk6IGJsb2NrOyBiYWNrZ3JvdW5kOiByZ2IoMjU1LCAyNTUsIDI1NSk7IiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgPGc+CiAgICA8Y2lyY2xlIHN0cm9rZS1kYXNoYXJyYXk9IjE2NC45MzM2MTQzMTM0NjQxNSA1Ni45Nzc4NzE0Mzc4MjEzOCIgcj0iMzUiIHN0cm9rZS13aWR0aD0iMTAiIHN0cm9rZT0iIzBkNDdhMSIgZmlsbD0ibm9uZSIgY3k9IjUwIiBjeD0iNTAiPgogICAgICA8YW5pbWF0ZVRyYW5zZm9ybSBrZXlUaW1lcz0iMDsxIiB2YWx1ZXM9IjAgNTAgNTA7MzYwIDUwIDUwIiBkdXI9IjFzIiByZXBlYXRDb3VudD0iaW5kZWZpbml0ZSIgdHlwZT0icm90YXRlIiBhdHRyaWJ1dGVOYW1lPSJ0cmFuc2Zvcm0iPjwvYW5pbWF0ZVRyYW5zZm9ybT4KICAgIDwvY2lyY2xlPgogICAgPGc+PC9nPgogIDwvZz4KPC9zdmc+"
 
     # lazy load image to reduce page jumps
     return %{<img src="#{svg_placeholder}" data-src="#{link}" loading="lazy" class="lazyload" title="#{title}" alt="#{alt_text}">}
