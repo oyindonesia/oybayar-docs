@@ -74,6 +74,7 @@ Steps to use virtual card for online transaction:
 
 
 **Virtual Card Status**
+
 Status| Description
 ------ | -----------
 Pending Approval | Card has been requested but not yet approved. Requests are valid for 14 days.
@@ -86,6 +87,7 @@ Rejected | Card is rejected by approver.
 
 
 **Transaction Status**
+
 Transaction Status | Description
 ------ | -----------
 Successful | Transaction was successful.
@@ -126,9 +128,10 @@ Email | Approver email for card approval purposes
 1. Dashboard will show analytics dashboard (divided per department) and list of card to manage
 1. Click the card that needs to be managed
 
-![Virtual Card List](images/virtualCard/vcc_card_list.png)
+![Virtual Card List](images/virtualCard/vcc_card_list.jpg)
 
 **Card Actions**
+
 Card Actions | Description
 ------ | -----------
 Resend Card Info | To resend card info to cardholders, in case of missing email.
@@ -164,6 +167,7 @@ Delete | Only applicable for "Pending Approval" card. This will archive the card
 ![Approver List](images/virtualCard/vcc_approver_list.png)
 
 ### Decline Transaction Possible Reasons
+
 Issues | Explanations
 ------ | -----------
 Card utilization is more than requested | Admin requests a card for single use only, but it is being used for more than one transaction. Please request a multiple use card if you expect the card to process multiple transactions.
@@ -176,6 +180,7 @@ Invalid CVV | Cardholder made an error inputting the CVV number. Please enter th
 Issuer network not supported | Not all overseas merchants can process transactions for certain reasons. If you experience a declined error, please check the merchant's capabilities; they might only accept physical cards, regional restrictions, or other reasons.
 
 Notes
+
 1. Transactions will be settled according to the bank’s instructions.
 1. Successful card transactions will directly reduce card limit.
 1. For refunds, please contact the merchant where you made the purchase. OY! is not responsible for processing refunds until we receive the funds back from the merchant.
@@ -197,6 +202,7 @@ Reimbursement Details | For admin, every reimbursement request from employees ca
 Reimbursement Tracking | For employees, no more hassle in checking reimbursement progress with the admin. Your employee will receive a tracking email to check progress in real-time.
 
 **Notes:**
+
 * First approval: Team Manager 
 * Second approval: Admin (it can be Finance Team or HR Team)
 
@@ -224,6 +230,7 @@ Follow the below check-list to ensure you're all set up to use the service:
 
 ### How to Set Approver
 By default, admin is the second approver for reimbursement requests. However, you need to register your Team Manager as the first approver for reimbursement requests. **Setting up the approver will only occur once when the page is first opened.**
+
 1. Log in to your OY! dashboard.
 1. Navigate to "Reimbursement" product under the Expense Management menu.
 1. Click on "Create Reimbursement Link."
@@ -236,6 +243,7 @@ By default, admin is the second approver for reimbursement requests. However, yo
 ![Approver registration](images/reimbursement/Approver_Registration.png)
 
 **Notes**
+
 * Approver emails are mapped based on department names, and duplicate department names are not allowed.
 * After submission, addition, editing, or deletion of existing approvers can only be done via OY! Customer Service.
 * Team managers will only receive notifications via email; no dashboard access is required.
