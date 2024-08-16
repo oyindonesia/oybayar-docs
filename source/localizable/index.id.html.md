@@ -12,6 +12,7 @@ includes:
   - business-app
   - sending-payments
   - accepting-payments
+  - expense-management
   - faq
 
 code_clipboard: true
