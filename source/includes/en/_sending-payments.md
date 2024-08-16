@@ -1242,6 +1242,7 @@ Follow the below check-list to ensure you're all set up to use the service:
 
 ### How to Set Approver
 By default, admin is the second approver for reimbursement requests. However, you need to register your Team Manager as the first approver for reimbursement requests. **Setting up the approver will only occur once when the page is first opened.**
+
 1. Log in to your OY! dashboard.
 1. Navigate to "Reimbursement" product under the Expense Management menu.
 1. Click on "Create Reimbursement Link."
