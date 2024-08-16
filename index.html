@@ -4478,25 +4478,73 @@ Approval flow is designed to elevate your user experience and streamline the pro
 
 <p><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0xNTAgLTE1MCA0MDAgNDAwIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJ4TWlkWU1pZCIgd2lkdGg9IjMwMCAiIGhlaWdodD0iMzAwIiBzdHlsZT0ic2hhcGUtcmVuZGVyaW5nOiBhdXRvOyBkaXNwbGF5OiBibG9jazsgYmFja2dyb3VuZDogcmdiKDI1NSwgMjU1LCAyNTUpOyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxnPjxjaXJjbGUgc3Ryb2tlLWRhc2hhcnJheT0iMTY0LjkzMzYxNDMxMzQ2NDE1IDU2Ljk3Nzg3MTQzNzgyMTM4IiByPSIzNSIgc3Ryb2tlLXdpZHRoPSIxMCIgc3Ryb2tlPSIjMGQ0N2ExIiByYWRpdXM9IjEwMCIgZmlsbD0ibm9uZSIgY3k9IjUwIiBjeD0iNTAiPjxhbmltYXRlVHJhbnNmb3JtIGtleVRpbWVzPSIwOzEiIHZhbHVlcz0iMCA1MCA1MDszNjAgNTAgNTAiIGR1cj0iMXMiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIiB0eXBlPSJyb3RhdGUiIGF0dHJpYnV0ZU5hbWU9InRyYW5zZm9ybSI+PC9hbmltYXRlVHJhbnNmb3JtPjwvY2lyY2xlPjxnPjwvZz48L2c+PC9zdmc+" data-src="images/virtualCard/vcc_trx_email-8e636c62.png" loading="lazy" class="lazyload" title="" alt="Virtual Card Transaction Details - Email"></p>
 
-<p><strong>Virtual Card Status</strong>
-Status| Description
------- | -----------
-Pending Approval | Card has been requested but not yet approved. Requests are valid for 14 days.
-Active | Card is ready to be used for transactions.
-Active with Warning | Card is active with balance, but only &lt;15% balance remaining.
-Inactive | Card has been blocked. The card can be activated any time needed through OY! dashboard.
-Need top-up | New card has been created but failed to top-up the card balance due to insufficient OY! balance, OR current card limit is 0 and passed renewal time due to insufficient OY! balance.
-Expired | Card is expired or intentionally archived permanently.
-Rejected | Card is rejected by approver.</p>
+<p><strong>Virtual Card Status</strong></p>
 
-<p><strong>Transaction Status</strong>
-Transaction Status | Description
------- | -----------
-Successful | Transaction was successful.
-Failed | Failed transaction issue that related to OY! balance (top-up card or create card).
-Reversal | Transaction was canceled, and the amount was refunded due to errors, returns, or fraud.
-Declined | Transaction was declined by the merchant.
-Refund | Refund by merchant.</p>
+<table><thead>
+<tr>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Pending Approval</td>
+<td>Card has been requested but not yet approved. Requests are valid for 14 days.</td>
+</tr>
+<tr>
+<td>Active</td>
+<td>Card is ready to be used for transactions.</td>
+</tr>
+<tr>
+<td>Active with Warning</td>
+<td>Card is active with balance, but only &lt;15% balance remaining.</td>
+</tr>
+<tr>
+<td>Inactive</td>
+<td>Card has been blocked. The card can be activated any time needed through OY! dashboard.</td>
+</tr>
+<tr>
+<td>Need top-up</td>
+<td>New card has been created but failed to top-up the card balance due to insufficient OY! balance, OR current card limit is 0 and passed renewal time due to insufficient OY! balance.</td>
+</tr>
+<tr>
+<td>Expired</td>
+<td>Card is expired or intentionally archived permanently.</td>
+</tr>
+<tr>
+<td>Rejected</td>
+<td>Card is rejected by approver.</td>
+</tr>
+</tbody></table>
+
+<p><strong>Transaction Status</strong></p>
+
+<table><thead>
+<tr>
+<th>Transaction Status</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Successful</td>
+<td>Transaction was successful.</td>
+</tr>
+<tr>
+<td>Failed</td>
+<td>Failed transaction issue that related to OY! balance (top-up card or create card).</td>
+</tr>
+<tr>
+<td>Reversal</td>
+<td>Transaction was canceled, and the amount was refunded due to errors, returns, or fraud.</td>
+</tr>
+<tr>
+<td>Declined</td>
+<td>Transaction was declined by the merchant.</td>
+</tr>
+<tr>
+<td>Refund</td>
+<td>Refund by merchant.</td>
+</tr>
+</tbody></table>
 <h3 id='how-to-set-approver-for-virtual-card-corporate-card' type='normal'>How to Set Approver for Virtual Card</h3>
 <ol>
 <li>Log in to your OY! dashboard</li>
@@ -4555,16 +4603,43 @@ Refund | Refund by merchant.</p>
 
 <p><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0xNTAgLTE1MCA0MDAgNDAwIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJ4TWlkWU1pZCIgd2lkdGg9IjMwMCAiIGhlaWdodD0iMzAwIiBzdHlsZT0ic2hhcGUtcmVuZGVyaW5nOiBhdXRvOyBkaXNwbGF5OiBibG9jazsgYmFja2dyb3VuZDogcmdiKDI1NSwgMjU1LCAyNTUpOyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxnPjxjaXJjbGUgc3Ryb2tlLWRhc2hhcnJheT0iMTY0LjkzMzYxNDMxMzQ2NDE1IDU2Ljk3Nzg3MTQzNzgyMTM4IiByPSIzNSIgc3Ryb2tlLXdpZHRoPSIxMCIgc3Ryb2tlPSIjMGQ0N2ExIiByYWRpdXM9IjEwMCIgZmlsbD0ibm9uZSIgY3k9IjUwIiBjeD0iNTAiPjxhbmltYXRlVHJhbnNmb3JtIGtleVRpbWVzPSIwOzEiIHZhbHVlcz0iMCA1MCA1MDszNjAgNTAgNTAiIGR1cj0iMXMiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIiB0eXBlPSJyb3RhdGUiIGF0dHJpYnV0ZU5hbWU9InRyYW5zZm9ybSI+PC9hbmltYXRlVHJhbnNmb3JtPjwvY2lyY2xlPjxnPjwvZz48L2c+PC9zdmc+" data-src="images/virtualCard/vcc_card_list.png" loading="lazy" class="lazyload" title="" alt="Virtual Card List"></p>
 
-<p><strong>Card Actions</strong>
-Card Actions | Description
------- | -----------
-Resend Card Info | To resend card info to cardholders, in case of missing email.
-Edit Information | To edit the card limit. Editing card limits will lead to card temporary blockage and require reapproval flow again.
-Block | To temporarily lock the card, limit remains in the card and card’s status will be “Inactive” 
-Archive | To permanently lock the card, card limit will be reduced to 0 and remaining card limit will be returned to OY! balance.
-Renew Limit | To renew the card limit with a desired amount using OY! balance.
-Resend Approval Notification | To remind approver to approve the card request in case of missing email.
-Delete | Only applicable for &quot;Pending Approval&quot; card. This will archive the card so the card is no longer used.</p>
+<p><strong>Card Actions</strong></p>
+
+<table><thead>
+<tr>
+<th>Card Actions</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Resend Card Info</td>
+<td>To resend card info to cardholders, in case of missing email.</td>
+</tr>
+<tr>
+<td>Edit Information</td>
+<td>To edit the card limit. Editing card limits will lead to card temporary blockage and require reapproval flow again.</td>
+</tr>
+<tr>
+<td>Block</td>
+<td>To temporarily lock the card, limit remains in the card and card’s status will be “Inactive”</td>
+</tr>
+<tr>
+<td>Archive</td>
+<td>To permanently lock the card, card limit will be reduced to 0 and remaining card limit will be returned to OY! balance.</td>
+</tr>
+<tr>
+<td>Renew Limit</td>
+<td>To renew the card limit with a desired amount using OY! balance.</td>
+</tr>
+<tr>
+<td>Resend Approval Notification</td>
+<td>To remind approver to approve the card request in case of missing email.</td>
+</tr>
+<tr>
+<td>Delete</td>
+<td>Only applicable for &quot;Pending Approval&quot; card. This will archive the card so the card is no longer used.</td>
+</tr>
+</tbody></table>
 <h3 id='how-to-set-up-card-configuration-corporate-card' type='normal'>How to Set Up Card Configuration</h3>
 <ol>
 <li>Log in to your OY! dashboard</li>
@@ -4671,9 +4746,12 @@ Delete | Only applicable for &quot;Pending Approval&quot; card. This will archiv
 </tr>
 </tbody></table>
 
-<p><strong>Notes:</strong>
-* First approval: Team Manager 
-* Second approval: Admin (it can be Finance Team or HR Team)</p>
+<p><strong>Notes:</strong></p>
+
+<ul>
+<li>First approval: Team Manager </li>
+<li>Second approval: Admin (it can be Finance Team or HR Team)</li>
+</ul>
 
 <p>This ensures that each approval request is reviewed by at least two reviewers, providing an extra layer of oversight and security.</p>
 <h3 id='registration-and-set-up-reimbursement' type='normal'>Registration and Set Up</h3>
