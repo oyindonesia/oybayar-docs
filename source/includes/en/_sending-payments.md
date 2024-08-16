@@ -1141,7 +1141,7 @@ Email | Approver email for card approval purposes
 1. Dashboard will show analytics dashboard (divided per department) and list of card to manage
 1. Click the card that needs to be managed
 
-![Virtual Card List](images/virtualCard/vcc_card_list.png)
+![Virtual Card List](images/virtualCard/vcc_card_list.jpg)
 
 **Card Actions**
 
@@ -1193,6 +1193,7 @@ Invalid CVV | Cardholder made an error inputting the CVV number. Please enter th
 Issuer network not supported | Not all overseas merchants can process transactions for certain reasons. If you experience a declined error, please check the merchant's capabilities; they might only accept physical cards, regional restrictions, or other reasons.
 
 Notes
+
 1. Transactions will be settled according to the bank’s instructions.
 1. Successful card transactions will directly reduce card limit.
 1. For refunds, please contact the merchant where you made the purchase. OY! is not responsible for processing refunds until we receive the funds back from the merchant.
