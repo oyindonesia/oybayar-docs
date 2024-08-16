@@ -1087,6 +1087,7 @@ Steps to use virtual card for online transaction:
 
 
 **Virtual Card Status**
+
 Status| Description
 ------ | -----------
 Pending Approval | Card has been requested but not yet approved. Requests are valid for 14 days.
@@ -1099,6 +1100,7 @@ Rejected | Card is rejected by approver.
 
 
 **Transaction Status**
+
 Transaction Status | Description
 ------ | -----------
 Successful | Transaction was successful.
@@ -1142,6 +1144,7 @@ Email | Approver email for card approval purposes
 ![Virtual Card List](images/virtualCard/vcc_card_list.png)
 
 **Card Actions**
+
 Card Actions | Description
 ------ | -----------
 Resend Card Info | To resend card info to cardholders, in case of missing email.
@@ -1177,6 +1180,7 @@ Delete | Only applicable for "Pending Approval" card. This will archive the card
 ![Approver List](images/virtualCard/vcc_approver_list.png)
 
 ### Decline Transaction Possible Reasons
+
 Issues | Explanations
 ------ | -----------
 Card utilization is more than requested | Admin requests a card for single use only, but it is being used for more than one transaction. Please request a multiple use card if you expect the card to process multiple transactions.
@@ -1210,6 +1214,7 @@ Reimbursement Details | For admin, every reimbursement request from employees ca
 Reimbursement Tracking | For employees, no more hassle in checking reimbursement progress with the admin. Your employee will receive a tracking email to check progress in real-time.
 
 **Notes:**
+
 * First approval: Team Manager 
 * Second approval: Admin (it can be Finance Team or HR Team)
 
