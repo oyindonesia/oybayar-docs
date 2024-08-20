@@ -1176,10 +1176,6 @@ Account Number | Account number that will receive funds
 ![Receipt Business](images/accountPayable/receipt_business_creation_fx.png)
 
 
-
-### How to Add Receipt Data for International Payment
-
-
 ## International Transfer
 
 International Transfer product provides the capability for users to transfer across countries from Indonesia at any time. You may create a transaction within OY! dashboard without the need for any technical integration. 
