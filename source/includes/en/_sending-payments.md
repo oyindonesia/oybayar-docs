@@ -899,8 +899,8 @@ Reference Documents (Upload document) | The supporting documents that you want t
 
 11. Click “Next” to move to the next process
 12. We will show the calculation of exchange rate and fee to process the payment, also we will inform you about required documents to support this process. Please click “Next” to continue the process
-13. Choose saved sender data or create new sender data (please follow this instruction for create new sender data) then click “Next”
-14. Choose saved receipt data or create new sender data (please follow this instruction for create new sender data) then click “Next”
+13. Choose saved sender data or create new sender data (please follow [this instruction for create new sender data](https://docs.oyindonesia.com/#how-to-add-sender-data-for-international-payment-account-payable)) then click “Next”
+14. Choose saved receipt data or create new receipt data (please follow [this instruction for create new receipt data](https://docs.oyindonesia.com/#how-to-add-receipt-data-for-international-payment-account-payable)) then click “Next”
 15. Input supporting information regarding “Source of Fund” and “Transfer Reason”, also attach supporting documents related to the transaction then click “Next”
 16. You’ll see the summary of transactions, about the sender, receipt, and amount of money that will be deducted to your OY! Balance. Make sure all the data is correct.
 17. After careful review of the transaction, you may click “Send”
@@ -1108,9 +1108,9 @@ Postal Code | Postal code from the address
 1. Fill all required fields
 1. Click “Next” to move to the next process
 1. We will show the calculation of exchange rate and fee to proceed the payment, also we will inform you about required documents to support this process. Please click “Next” to continue the process
-1. Choose saved sender data or create new sender data (please follow this instruction).
+1. Choose saved sender data or create new sender data ([please follow this instruction](https://docs.oyindonesia.com/#how-to-add-sender-data-for-international-payment-account-payable)).
 1. OY! will show you the current saved receipt data and option for creating a new receipt.
-1. Click type of receipt (Individual or Business)
+1. If you decided to create new receipt, click type of receipt (Individual or Business)
 1. Fill these fields then click “Save and Next”, this process will automatically save the sender data
 
 
