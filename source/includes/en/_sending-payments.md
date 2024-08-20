@@ -722,7 +722,44 @@ API Disburse: trx_id
 
 ## Account Payable
 
-OY! Account Payable product provides the capability to record, create approval levels, and scheduled payment for invoice payables without hassle. Account Payable is made through the OY! dashboard, so no technical integration is required to use this product. 
+OY! Account Payable allows you to pay your vendor’s billings. This feature offers record transactions, creates approval layers, and schedules payment for invoice payables without hassle. Account Payable is made through the OY! dashboard, so no technical integration is required to use this product.
+
+### Key Features
+
+Parameter | Description
+------ | ------
+Multi-layer Approval | By default, OY!’s account payable can be created and approved by the super admin or admin. However, you can configure additional approval layers to enhance security.
+OCR enabled | OY! provides you with OCR for automatic input of payable invoices. You only need to upload the invoice then let OY!’s OCR do the job.
+International Transfer | You can make overseas payments with OY!'s account payable. There's no need to visit the bank or convert your IDR money first—handle it anytime, anywhere with OY!'s account payable.
+
+### Registration and Set Up
+
+Follow the below check-list to ensure you're all set up to use the service:
+
+1. Create an account for OY! business
+1. Verify your account by submitting the required documentations
+1. Have your upgrade request approved
+1. Set up your receiving bank account information (note: ensure that the receiving bank account information is accurate as it cannot be changed via OY! dashboard for security reasons)
+1. Once your account is approved, you can start using Account Payable product
+
+### Testing
+
+#### Account Payable in IDR
+
+1. Log on to your OY! dashboard
+1. Choose "Demo" environment
+1. Create vendor data first by following the steps in How to Manage Vendor Data
+1. After create the vendor data, you can start create Account Payable, please follow steps in How to Use Account Payable for IDR
+1. You’ll see your created transaction in Account Payable table
+
+#### Account Payable for International Payment
+
+1. Log on to your OY! dashboard
+1. Choose "Demo" environment
+1. Create vendor data first by following the steps in How to Manage Vendor Data
+1. After create the vendor data, you can start create account payable, please follow steps in How to Use Account Payable for International Payment
+1. You’ll see your created transaction in Account Payable table
+
 
 ### How to Use Account Payable via Dashboard
 
@@ -732,121 +769,411 @@ You can create new invoice to be paid and set up payment by following this step:
 2. Choose "Production" environment
 3. Click "Pay Invoice" under Account Payable menu
 4. Click "Invoice List"
-5. Choose "Create New Invoice"
-6. Upload your invoice document to help you easier record the invoice by click "Browse to Upload" or Drag & drop to the invoice area
-7. Fill in the necessary details
+5. Click "Create New Invoice" on top right
+6. Choose “Send IDR”
+7. Upload your invoice document to help you easier record the invoice by click "Browse to Upload" or Drag & drop to the invoice area
+8. Fill the payable invoice data. You can choose between these 2 options for input data:
+    1. By Automatic OCR
+        1. Click the toggle auto-fill on top left corner page
+        2. Choose vendor that this invoice belongs to
+        4. Click “Process”
+        5. Your invoice will have status “Auto-Filling” until the OCR has successfully completed the extraction process
+    2. Manual Input necessary details of payable invoice
 
     Parameter | Description
     ------ | -----------
-    Purchase Type | You can choose between purchase order, service fee, bill, subscription fee, and reimbursement
-    Invoice Number | The number of the invoice that you get from your vendor/supplier
-    Invoice Date | The date of the invoice
-    Due Date | Due date of a transaction as mentioned in the invoice. Your approver will be reminded to approve on D-7, D-3, and D-1 from the invoice due date
-    PO/PR Number (optional)	| The reference PO/PR number from your company to track this invoice
-    Note | The note for this invoice
-    Vendor | The name of the vendor that this invoice belongs to. You can choose the name of the vendor from the dropdown menu. To create a new vendor, follow the instruction here
-    Product Description | The name and/or description of the product
-    Quantity | The quantity of the product
-    Price | Unit price of the product
-    Total | Total price of the product (Total = Quantity x Price)
+    Purchase Type | You can choose between purchase order, service fee, bill, subscription fee, and reimbursement.
+    Invoice Number | The number of the invoice that you get from your vendor/supplier.
+    Invoice Date | The date of the invoice.
+    Due Date | Due date of a transaction as mentioned in the invoice. Your approver will be reminded to approve on D-7, D-3, and D-1 from the invoice due date.
+    PO/PR Number (optional)	| The reference PO/PR number from your company to track this invoice.
+    Note | The note for this invoice.
+    Vendor | The name of the vendor that this invoice belongs to. You can choose the name of the vendor from the dropdown menu. To create a new vendor, follow the instructions [here](https://docs.oyindonesia.com/#how-to-create-edit-and-inactivate-vendor-data-account-payable).
+    Product Description | The name and/or description of the product.
+    Quantity | The quantity of the product.
+    Price | Unit price of the product.
+    Total | Total price of the product (Total = Quantity x Price).
     Subtotal | The total price of all the products
-    PPn | PPn that should be paid to the vendor. PPn is calculated from subtotal amount. You can set up the tax during vendor addition or edit in 'Vendor Management' menu under Account Payable
-    PPh | PPh that should be deducted from the vendor. PPh is calculated from subtotal amount.You can set up the tax during vendor addition or edit in 'Vendor Management' menu under Account Payable
-    Total Pay to Vendor | Total amount that will be paid to vendor on scheduled date, post approval
-    Reference Documents (Upload document) | The supporting documents that you want to record related to this invoice. Accept PDF files only. Maximum 7 documents (maximum 2.5MB each)
+    PPn | PPn that should be paid to the vendor. PPn is calculated from subtotal amount. You can set up the tax during vendor addition or edit in the "Vendor Management" menu under Account Payable.
+    PPh | PPh that should be deducted from the vendor. PPh is calculated from subtotal amount.You can set up the tax during vendor addition or edit in "Vendor Management" menu under Account Payable.
+    Total Pay to Vendor | Total amount that will be paid to vendor on scheduled date, post approval.
+    Reference Documents (Upload document) | The supporting documents that you want to record related to this invoice. Accept PDF files only. Up to 7 documents, each with a maximum file size of 2.5MB.
+    
     Note: Maximum 20 rows for line item detail
+9. If you’re using OCR, these following steps will be taken before setting your payment.
+    1. If your invoice has been successfully processed by the OCR, then the status will be “Unconfirmed”. Click the invoice data to proceed the invoice
+    2. Check whether the data is correct and choose the “Purchase Type” then click “Next”
 
-    **Image Account Payable**
-    ![AP Invoice Creation One](images/accountPayable/invoice_creation_1.png)
-
-8. Continue to set up 'Invoice Payment Details'. You can set up the payment to one time payment by choosing 'Full Payment' or multiple times payment by choosing 'Partial Payment'.
+10. Continue to set up '”Invoice Payment Details”. You can set up the payment to one time payment  (i.e. lump sum) by choosing “Full Payment” or multiple times payment by choosing “Partial Payment”.
 
     Parameter | Description
     ------ | -----------
     Payment Amount | Amount that will be automatically paid to vendor on scheduled date
-    Due Date | The due date of the payment. The due date cannot do back date or more than due date that set in the first page (record invoice). Notification will be send to approval D-7, D-3, and D-1 if the status is waiting aproval
-    Status | Status of the invoice payment. You can choose 'Paid' for record intention and this amount will not be paid by system. Choose 'Unpaid' for incoming transaction that needs to be paid
-    Scheduled Payment | Time of the payment. You can prepare the balance prior to scheduled payment time and make sure the payment date is based on your preference and will only be executed post approval
-    Remaining Amount | Total pay to vendor - subtotal. This amount should be 0 to continue the process
+    Due Date | The due date of the payment. The due date should be from today onward and not exceed the previously entered due date from the invoice. Reminder notification will be sent for approval D-7, D-3, and D-1 if the status is waiting approval.
+    Status | Status of the invoice payment. You can choose “Paid” to record the invoice as documentation only, meaning no payment will be processed by the system. For invoices that require payment, choose “Unpaid”.
+    Scheduled Payment | Time of the payment based on your preference. Please note that every payment will only be executed after approval and when your OY! balance is sufficient.
+    Remaining Amount | Total pay to vendor - subtotal. This amount should be 0 to continue the process.
 
-    **Image Payment Page**
-    ![AP Invoice Creation Two](images/accountPayable/AP_scheduled_payment.png)
-
-    ![AP Invoice Scheduled Payment Detai](images/accountPayable/AP_Scheduled_Payment_Details.png)
-
-    ![AP Detail Transaction](images/accountPayable/AP_Trx_detail.png)
-
-9. Status: Waiting Payment, Partially Paid, Complete and Cancelled
-Congratulations! You have finished your first invoice payable set up. Below are the list of statuses you will find on 'Invoice List'
-
-    Parameter | Description
-    ------ | -----------
-    Partially Paid | Multi times payment or partially paid that not finish yet. You can click invoice number to find the partial payment details in 'payment transaction' tab
-    Waiting Payment	| Waiting for approval or balance not enough
-    Cancelled | Invoice has been cancelled
-    Complete | All payment of the invoice is complete
-
-    **List of the Invoice Payable**
-![AP Invoice List](images/accountPayable/AP_Trx_detail.png)
-
-
-
-### How to Create, Edit and Inactivate Vendor Data ###
-
-**Add New Vendor for Account Payable**
-
-1. Click 'Add' in the 'Vendor' field in the 'Create Payable Invoice' page.
-2. Fill in the necessary details
-3. Click 'Add Vendor' after complete registration of new vendor
+11. After Account Payable creation, you will be redirected to this table that shows all payable invoices you’ve made. Status: Waiting Payment, Partially Paid, Complete and Canceled. Below are the list of statuses you will find on “Invoice List”. 
 
 Parameter | Description
 ------ | -----------
-Vendor ID (Optional) | Unique ID of the vendor from your company. This is not mandatory
-Vendor Name | The company/vendor name. Make sure the vendor name matches the vendor NPWP (if any) to help your company tax record
-Vendor Address (Optional) | Vendor address to be recorded. This is not mandatory
-Bank Name | Recipient bank name. You can choose using drop down
-Account Number | Recipient bank account number. You can check the inquiry by clicking 'Get Account Name' after filling the account number
-PIC Name | The PIC name of this vendor
-PIC Email | The PIC or recipient email. Payment/transfer receipt will be send automatically to this email after complete payment
-PIC WhatsApp (optional) | The PIC WhatsApp number for your record
-PPh (optional) | PPh type from this vendor. Default of the setting is Not Subject to PPh.
-Vendor NPWP (optional) | The vendor NPWP number record that can be use for company reference to generate 'Faktur Pajak'
-NPWP Document (optional) | Vendor NPWP document to be record. Accept PDF and JPG format. Maximum 10 MB
-PPn (optional) | PPn type of this vendor. Default of the setting is Not Subject to PPn.
-SKB Document (optional) | Vendor SKB Document to be record. Accept PDF and JPG format. Maximum 10 MB
-Not subject of PPh | Tax will not be added upon the subtotal |
-Not subject of PPn | Tax will not be added upon the subtotal |
-PPN Exclusive | PPN of the subtotal will be added upon the subtotal of the invoice. For example is subtotal is 10,000, then the PPN is 11% of the 10,000 = 1,100 |
-PPN Inclusive | Tax will not be added upon the subtotal because the subtotal is assumed to be tax inclusive |
+Auto-Filling | Created invoice using OCR is still in process.
+Unconfirmed | Invoice created using the OCR system is finished and needs to be processed to schedule the payment.
+Incomplete | Invoice has been canceled.
+Unpaid | Waiting for approval or balance is not enough.
+Partially Paid | Multi time payment or partially paid that is not finished yet. You can click the invoice number to find the partial payment details in the 'Payment Transaction' tab.
+Paid | All payment of the invoice is complete.
 
-**Each vendor only have 1 type of PPh setting and 1 type of PPn setting**
+12. For managing your transaction, you can see the table below. This table will show you all transactions you should pay/have paid. Status: Waiting Approval, Insufficient Balance, Failed, Canceled and Paid. Below is the list of statuses you will find on “Invoice Transaction” page. This page intended to process your payable invoice transactions.
 
-There will be an PPh email sent on the 1st day of each month that contains all the PPh from your vendors in the previous month. This report can help company with tax payment & reporting, and 'Faktur Pajak' generation to your vendor.
+Parameter | Description
+------ | -----------
+Waiting Approval | Waiting for approval.
+Insufficient Balance | The payable invoice is approved and scheduled for payment but the balance is insufficient when the system tries to pay the balance at the scheduled date.
+Failed | The payable invoice is approved and ready to be paid but due to insufficient balance the payment is failed.
+Canceled | Invoice has been canceled.
+Paid | The payable invoice already paid either full payment or partial payment.
 
-**Create New Vendor**
-![VM Vendor Creation](images/vendorManagement/creation.png)
+**Note:** Please allow up to 1 business day for the OCR extraction process
 
-**List Of Vendor**
-![VM Vendor List](images/vendorManagement/list.png)
+* Create IDR Account Payable page
 
-**Vendor Detail**
-![VM Vendor Detail](images/vendorManagement/detail.png)
+![Create IDR Account Payable](images/accountPayable/creation_manual_idr.png)
 
-**How to Set Up Invoice Payable Approval**
+* Create Account Payable with OCR page
+
+![Create Account Payable OCR](images/accountPayable/creation_ocr_idr)
+
+* Filled Payable Invoice with OCR page
+
+![Filled AP with OCR](images/accountPayable/autofilled_idr.png)
+
+* Payment Option page
+
+![Payment Option](images/accountPayable/payment_option.png)
+
+* List of Invoice Payable
+
+![Invoice List](images/accountPayable/invoice_list)
+
+
+### How to Use Account Payable via Dashboard (for International Payment)
+
+1. Log on to your OY! dashboard
+2. Choose "Production" environment
+3. Click "Pay Invoice" under Account Payable menu
+4. Click "Invoice List"
+5. Click "Create New Invoice" on top right
+6. Choose “Send Other Currency”
+7. Choose the currency you want to send; currently OY! available for these currencies :
+    1. SGD
+    2. HKD
+    3. CNH
+    4. USD
+8. If you select USD as the currency, choose the destination country. Other currencies, such as HKD or CNH, can only be used in their origin country. For example, if you choose HKD, you can only make payments to Hong Kong; currently we accept these countries for international payment in USD :
+    1. Singapore
+    2. China
+    3. Hong Kong
+9. Upload your invoice document to help you record the invoice easier by clicking "Browse to Upload" or Drag & drop to the invoice area
+10. Fill in the necessary details. Please input the total payment amount between IDR 200.000 - IDR 35.000.000 and make sure your OY! balance is enough to process the transaction or our system will restrict users from proceeding.
+
+Parameter | Description
+------ | -----------
+Purchase Type | You can choose between purchase order, service fee, bill, subscription fee, and reimbursement.
+Invoice Number | The number of the invoice that you get from your vendor/supplier.
+Invoice Date | The date of the invoice.
+Due Date | Due date of a transaction as mentioned in the invoice. Your approver will be reminded to approve on D-7, D-3, and D-1 from the invoice due date.
+PO/PR Number (optional) | The reference PO/PR number from your company to track this invoice.
+Note | The note for this invoice.
+Vendor | The name of the vendor that this invoice belongs to. You can choose the name of the vendor from the dropdown menu. To create a new vendor, follow the instructions [here.](https://docs.oyindonesia.com/#how-to-create-edit-and-inactivate-vendor-data-account-payable)
+Product Description | The name and/or description of the product.
+Quantity | The quantity of the product.
+Price | Unit price of the product.
+Total | Total price of the product (Total = Quantity x Price).
+Subtotal | The total price of all the products.
+Total Pay to Vendor | Total amount that will be paid to vendor on scheduled date, post approval.
+Reference Documents (Upload document) | The supporting documents that you want to record related to this invoice. Accept PDF files only. Maximum 7 documents (maximum 2.5MB each).
+
+**Note:** Maximum 20 rows for line item detail
+
+11. Click “Next” to move to the next process
+12. We will show the calculation of exchange rate and fee to process the payment, also we will inform you about required documents to support this process. Please click “Next” to continue the process
+13. Choose saved sender data or create new sender data (please follow this instruction for create new sender data) then click “Next”
+14. Choose saved receipt data or create new sender data (please follow this instruction for create new sender data) then click “Next”
+15. Input supporting information regarding “Source of Fund” and “Transfer Reason”, also attach supporting documents related to the transaction then click “Next”
+16. You’ll see the summary of transactions, about the sender, receipt, and amount of money that will be deducted to your OY! Balance. Make sure all the data is correct.
+17. After careful review of the transaction, you may click “Send”
+18. The money will arrive to your recipient’s bank account no later than 3 business days
+
+* Create Account Payable International Transaction page
+
+![Create AP International](images/accountPayable/creation_fx.png)
+
+* Supporting Document page
+
+![Supporting Doc](images/accountPayable/supporting_docs_fx.jpg)
+
+* Summary Transaction page
+
+![Summary](images/accountPayable/summary_fx.jpg)
+
+19. After Account Payable creation, you will be redirected to this table that shows all payable invoices you’ve made. Status: Waiting Payment, Partially Paid, Complete and Canceled. Below are the list of statuses you will find on “Invoice List”. 
+
+Parameter | Description
+------ | -----------
+Auto-Filling | Created invoice using OCR is still in process.
+Unconfirmed | Invoice created using the OCR system is finished and needs to be processed to schedule the payment.
+Incomplete | Invoice has been canceled.
+Unpaid | Waiting for approval or balance is not enough.
+Partially Paid | Multi time payment or partially paid that is not finished yet. You can click the invoice number to find the partial payment details in the 'Payment Transaction' tab.
+Paid | All payment of the invoice is complete.
+
+20. For managing your transaction, you can see the table below. This table will show you all transactions you should pay/have paid. Status: Waiting Approval, Insufficient Balance, Failed, Canceled and Paid. Below is the list of statuses you will find on “Invoice Transaction” page. This page intended to process your payable invoice transactions.
+
+Parameter | Description
+------ | -----------
+Waiting Approval | Waiting for approval.
+Insufficient Balance | The payable invoice is approved and scheduled for payment but the balance is insufficient when the system tries to pay the balance at the scheduled date.
+Failed | The payable invoice is approved and ready to be paid but due to insufficient balance the payment is failed.
+Canceled | Invoice has been canceled.
+Paid | The payable invoice already paid either full payment or partial payment.
+
+* List of Invoice Payable
+
+![Invoice List](images/accountPayable/invoice_list.png)
+
+### How to Manage Vendor Data
+
+**Add New Vendor for Account Payable in IDR :**
+
+1. Click “Vendor Data” under “Send Money” menu
+2. Click “Add New Vendor”
+3. Choose “Domestic Vendor” 
+4. Fill in the necessary details
+5. Click “Add Vendor” after complete registration of new vendor
+
+
+Parameter | Description
+------ | -----------
+Vendor ID | Unique ID of the vendor from your company. This is not mandatory.
+Vendor Name | The company/vendor name. Make sure the vendor name matches the vendor’s NPWP (if any) to help your company with the tax record.
+Vendor Address | Vendor address to be recorded. This is not mandatory.
+Bank Name | Recipient bank name. We already provide the list of bank names in the form of a dropdown menu that you can select according to your needs.
+Account Number | Recipient bank account number. You can check the inquiry by clicking “Get Account Name” after filling the account number.
+PIC Name | The PIC name of this vendor.
+PIC Email | The PIC or recipient active email. Payment/transfer receipt will be sent automatically to this email after payment is completed.
+PIC WhatsApp | The PIC WhatsApp number for your record. This is not mandatory.
+PPh | PPh type from this vendor. Default of the setting is Not Subject to PPh. There are several types of PPh you can choose as needed.
+Vendor NPWP | The vendor NPWP number record that can be used for company reference to generate “Faktur Pajak”.
+NPWP Document | Vendor NPWP document to be record. Accept PDF and JPG format. Maximum 10 MB
+PPn | PPn type of this vendor. Default of the setting is not Subject to PPn. There are several types of PPn you can choose (i.e. PPn Inclusive means that subtotal is included the tax, PPn Exclusive means that subtotal is exclude the subtotal and will be added according to subtotal value)
+SKB Document | Vendor SKB Document to be recorded. Accept PDF and JPG format. Maximum 10 MB.
+
+**Note:** Each vendor only has 1 type of PPh setting and 1 type of PPn setting. There will be a PPh email sent on the 1st day of each month that contains all the PPh from your vendors in the previous month. This report can help companies with tax payment, reporting, and “Faktur Pajak” generation to your vendor.
+
+* Create New Vendor
+
+![Add Vendor 1](images/accountPayable/add_vendor_1.png)
+
+![Add Vendor 2](images/accountPayable/add_vendor_2.png)
+
+![Add Vendor 3](images/accountPayable/add_vendor_3.png)
+
+* List of Vendor
+
+![List of Vendor](images/accountPayable/vendor_list.jpg)
+
+* Vendor Details
+
+![Vendor Details](images/accountPayable/vendor_details.jpg)
+
+**Add New Vendor for Account Payable for International Payment :**
+
+1. Click “Vendor Data” under “Send Money” menu
+2. Click “Add New Vendor”
+3. Choose “International Vendor” 
+4. Fill in the necessary details
+5. Click “Save” after complete registration of new vendor
+
+Parameter | Description
+------ | -----------
+Vendor ID | Unique ID of the vendor from your company. This is not mandatory.
+Vendor Name | The company/vendor name. Make sure the vendor name matches the vendor’s NPWP (if any) to help your company with the tax record.
+Vendor Address | Vendor address to be recorded. This is not mandatory.
+PIC Name | The PIC name of this vendor.
+PIC Email | The PIC or recipient active email. Payment/transfer receipt will be sent automatically to this email after payment is completed.
+PIC WhatsApp | The PIC WhatsApp number for your record. This is not mandatory.
+
+### How to Set Up Invoice Payable Approval
 
 You can set up multi level approval from OY's users. There will be 4 type of users: Super Admin, Admin, Approver, and Maker
 
 **Approval Layer Set Up**
 
-Approval Layer can be set up using 'User Management' under 'General' menu. When you first create an account, your account will be assigned as a Super Admin role. As a Super Admin, you have the ability to create new sub-accounts and assign different roles to your team such as Admin, Maker and Approver that are applicable for bulk disbursement. The Super Admin and Admin can also edit or delete created sub-accounts.
-Note: it is not necessary to create new sub-accounts in order to use Account Payable. The Super Admin and Admin roles allows you to directly create and approve Account Payable and also Bulk Disbursement.
-Detailed step-by-step instructions on setting up user management and the different role types coming soon.
+By the first time you create your account, your account will be assigned as Super Admin. You have the ability to create, edit, and delete sub-account. Sub-account itself can be utilized as Maker only, Approver only, or Admin account. Please follow steps [here](https://docs.oyindonesia.com/#user-management-oy-dashboard-tutorial) for user management in OY! dashboard. It is not necessary to create new sub-accounts in order to use Account Payable. The Super Admin and Admin roles allows you to directly create and approve Account Payable. If you want to create multi-layer approval please follow the steps in the Multi-Layer Approval section.
 
 **Multi-Layer Approval**
 
-Multi-layer Approval will improve your control over your bulk disburse transaction especially for big amount of money. You can setup up to 3 layers of approver before the transaction instruction is executed. By assigning proper approver and amount limitation, you can avoid a huge trouble on your business operational caused by incorrect transfer amount.
+By default admin is the one who approves the payable invoices but you can create a multi-layer approval to enhance security of your account payable transactions. You can assign up to 3 sub-accounts with role Admin or Approver also the limit amount of transaction by follow the steps below:
+
+1. Log in to your OY! Account
+1. Open “Multi Approval” under “Settings” menu
+1. You’ll see 3 levels of approval, the first level (default) minimum amount is IDR 0 you can choose to have multiple approvals by selecting approver level to “All Accounts” or “Choosen Accounts”
+1. If you want to create another level approval, please fill the minimum amount and choose approver for this level
+1. If you’re done, please click “Save Changes”
+
+* Multi Approval page
+
+![Multi Approval Page](images/accountPayable/multi_account_management.png)
+
+By setting the multi-layer approval, every transaction will not be transferred to vendor without approval from all approvers.
 
 Default approval: Super Admin, Admin, and Approval.
+
+### How to Add Sender Data for International Payment
+
+1. Log on to your OY! dashboard
+1. Choose "Production" environment
+1. Click "Pay Invoice" under Account Payable menu
+1. Click "Invoice List"
+1. Click "Create New Invoice" on top right
+1. Choose “Send Other Currency”
+1. Fill all required fields
+1. Click “Next” to move to the next process
+1. We will show the calculation of exchange rate and fee to proceed the payment, also we will inform you about required documents to support this process. Please click “Next” to continue the process
+1. OY! will show you the current saved sender data and option for creating a new sender
+1. If you decide to create a new sender, choose type of sender (Individual or Business)
+1. Fill these fields then click “Save and Next”, this process will automatically save the sender data
+
+**Fields for Individual Sender**
+
+Parameter | Description
+------ | -----------
+First Name | Sender’s first name (optional)
+Middle Name | Sender’s middle name (optional)
+Last Name | Sender’s last name
+Other Name | Sender’s other name if any (Chinese name, religious name, etc)
+Gender | Gender of the sender
+Occupation | Sender’s current job title
+Date of Birth | Sender’s date of birth
+Country of Birth | Sender’s origin country of birth
+Nationality | Sender’s current nationality
+Identity Document | Identity document that is used to input identity number
+Identity Number | Identity number from the inputted identity document
+Phone Number | Sender’s active phone number
+Email | Sender’s active email
+Residential Status | Current residential status of sender in Indonesia
+Address Line | Sender’s origin address
+City | City from the address
+State/Province | State/province from the address
+Country | Country from the address
+Postal Code | Postal code of address
+
+**Fields for Business Sender**
+
+Parameter | Description
+------ | -----------
+Business Name | Name of business (e.g. PT Dompet Harapan Bangsa)
+Business Registration Number | A unique identifier assigned to a business by a government authority when it is officially registered. (NIB, Nomor Induk Berusaha)
+Date of Incorporation | Date when the business was launched or registered
+Website | Company profile website of the business
+Country of Incorporation | Country where the business is incorporated in
+Operate in | Country where the business is operating
+Phone Number | Business sender active phone number
+Email | Business sender active email/PIC for the business sender active email
+Address Line | Business sender’s origin address
+City | City from the address
+State/Province | State/province from the address
+Country | Country from the address
+Postal Code | Postal code from the address
+
+* Sender form page for individual
+
+![Sender Individual](images/accountPayable/sender_individual_creation_fx.png)
+
+* Sender form page for business
+
+![Sender Business](images/accountPayable/sender_business_creation_fx.png)
+
+
+### How to Add Receipt Data for International Payment
+
+1. Log on to your OY! dashboard
+1. Choose "Production" environment
+1. Click "Pay Invoice" under Account Payable menu
+1. Click "Invoice List"
+1. Click "Create New Invoice" on top right
+1. Choose “Send Other Currency”
+1. Fill all required fields
+1. Click “Next” to move to the next process
+1. We will show the calculation of exchange rate and fee to proceed the payment, also we will inform you about required documents to support this process. Please click “Next” to continue the process
+1. Choose saved sender data or create new sender data (please follow this instruction).
+1. OY! will show you the current saved receipt data and option for creating a new receipt.
+1. Click type of receipt (Individual or Business)
+1. Fill these fields then click “Save and Next”, this process will automatically save the sender data
+
+
+**Fields for Individual Receipt**
+
+Parameter | Description
+------ | -----------
+First Name | Receipt’s first name (optional)
+Middle Name | Receipt’s middle name (optional)
+Last Name | Receipt’s last name
+Other Name | Receipt’s other name if any (Chinese name, religious name, etc)
+Gender | Gender of the receipt
+Occupation | Receipt’s current job title
+Date of Birth | Receipt’s date of birth
+Country of Birth | Receipt’s origin country of birth
+Nationality | Receipt’s current nationality
+Identity Document | Identity document that is used to input identity number
+Identity Number | Identity number from the inputted identity document
+Phone Number | Receipt’s active phone number
+Email | Receipt’s active email
+Residential Status | Current residential status of receipt in Indonesia
+Address Line | Receipt’s origin address
+City | City from the address
+State/Province | State/province from the address
+Country | Country from the address
+Postal Code | Postal code of address
+Bank Name | Registered bank name
+Bank Address | Registered bank address
+SWIFT/BIC Code | SWIFT/BIC code of the bank
+Account Holder Name | Account holder name from the registered account number
+Account Number | Account number that will receive funds
+
+
+**Fields for Business Receipt**
+
+Parameter | Description
+------ | -----------
+Business Name | Name of business (e.g. PT Dompet Harapan Bangsa)
+Business Registration Number | A unique identifier assigned to a business by a government authority when it is officially registered. (NIB, Nomor Induk Berusaha)
+Date of Incorporation | Date when the business was launched or registered
+Website | Company profile website of the business
+Country of Incorporation | Country where the business is incorporated in
+Operate in | Country where the business is operating
+Phone Number | Business receipt active phone number
+Email | Business receipt active email/PIC for the business receipt active email
+Address Line | Business receipt’s origin address
+City | City from the address
+State/Province | State/province from the address
+Country | Country from the address
+Postal Code | Postal code from the address
+Bank Name | Registered bank name
+Bank Address | Registered bank address
+SWIFT/BIC Code | SWIFT/BIC code of the bank
+Account Holder Name | Account holder name from the registered account number
+Account Number | Account number that will receive funds
+
+* Receipt form page for individual
+
+![Receipt Individual](images/accountPayable/receipt_individual_creation_fx.png)
+
+* Receipt form page for business
+
+![Receipt Business](images/accountPayable/receipt_business_creation_fx.png)
 
 
 ## International Transfer
