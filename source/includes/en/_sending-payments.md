@@ -843,7 +843,7 @@ Paid | The payable invoice already paid either full payment or partial payment.
 
 * Create Account Payable with OCR page
 
-![Create Account Payable OCR](images/accountPayable/creation_ocr_idr)
+![Create Account Payable OCR](images/accountPayable/creation_ocr_idr.png)
 
 * Filled Payable Invoice with OCR page
 
@@ -876,7 +876,7 @@ Paid | The payable invoice already paid either full payment or partial payment.
     2. China
     3. Hong Kong
 9. Upload your invoice document to help you record the invoice easier by clicking "Browse to Upload" or Drag & drop to the invoice area
-10. Fill in the necessary details. Please input the total payment amount between IDR 200.000 - IDR 35.000.000 and make sure your OY! balance is enough to process the transaction or our system will restrict users from proceeding.
+10. Fill in the necessary details. Please input the total payment amount between IDR 200.000 - IDR 35.000.000 and make sure your OY! balance is enough to process the transaction or our system will restrict users from proceeding. **Note:** Maximum 20 rows for line item detail
 
 Parameter | Description
 ------ | -----------
@@ -894,8 +894,6 @@ Total | Total price of the product (Total = Quantity x Price).
 Subtotal | The total price of all the products.
 Total Pay to Vendor | Total amount that will be paid to vendor on scheduled date, post approval.
 Reference Documents (Upload document) | The supporting documents that you want to record related to this invoice. Accept PDF files only. Maximum 7 documents (maximum 2.5MB each).
-
-**Note:** Maximum 20 rows for line item detail
 
 11. Click “Next” to move to the next process
 12. We will show the calculation of exchange rate and fee to process the payment, also we will inform you about required documents to support this process. Please click “Next” to continue the process
