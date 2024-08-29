@@ -2,12 +2,13 @@ version: '3'
 services:
   slate:
     build: .
+    image: local/oybayar-docs-slate
     command: ["build"]
     volumes:
       - "./build:/srv/slate/build"
       - "./source:/srv/slate/source"
   slate_serve:
-    image: oybayar-docs-slate
+    image: local/oybayar-docs-slate
     command: ["serve"]
     ports:
       - "4567:4567"

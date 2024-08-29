@@ -1327,13 +1327,15 @@ Capabilities
 |Banks|Bank Code|Open Amount |Closed Amount |Max. Expiration Time|
 | :-: | :-: | :-: | :-: | :-: |
 |Bank Central Asia (BCA) |014|Yes|Yes|Lifetime|
-|Bank Negara Indonesia (BNI) |009|No|Yes|Lifetime|
+|Bank Negara Indonesia (BNI) |009|Partial*|Yes|Lifetime|
 |Bank Rakyat Indonesia (BRI) |002|Yes|Yes|Lifetime|
 |Bank Mandiri |008|Yes|Yes|Lifetime|
 |Bank CIMB |022|Yes|Yes|Lifetime|
 |Bank BTPN Jenius |213|Yes|Yes|Lifetime|
 |Bank Syariah Indonesia (BSI)|451|No|Yes|70 days after creation|
 |Bank Permata|013|Yes|Yes|Lifetime|
+
+*contact our business representative for further information
 
 Note: there is no minimum expiration time for VAs. However, you are recommended to set a reasonable expiration time, enabling your customers to complete their payments conveniently.
 
