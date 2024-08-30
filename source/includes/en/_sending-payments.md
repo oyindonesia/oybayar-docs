@@ -825,7 +825,7 @@ Unpaid | Waiting for approval or balance is not enough.
 Partially Paid | Multi time payment or partially paid that is not finished yet. You can click the invoice number to find the partial payment details in the 'Payment Transaction' tab.
 Paid | All payment of the invoice is complete.
 
-12. For managing your transaction, you can see the table below. This table will show you all transactions you should pay/have paid. Status: Waiting Approval, Insufficient Balance, Failed, Canceled and Paid. Below is the list of statuses you will find on “Invoice Transaction” page. This page intended to process your payable invoice transactions.
+12.  For managing your transaction, you can see the table below. This table will show you all transactions you should pay/have paid. Status: Waiting Approval, Insufficient Balance, Failed, Canceled and Paid. Below is the list of statuses you will find on “Invoice Transaction” page. This page intended to process your payable invoice transactions.
 
 Parameter | Description
 ------ | -----------
@@ -855,28 +855,30 @@ Paid | The payable invoice already paid either full payment or partial payment.
 
 * List of Invoice Payable
 
-![Invoice List](images/accountPayable/invoice_list)
+![Invoice List](images/accountPayable/invoice_list.png)
 
 
 ### How to Use Account Payable via Dashboard (for International Payment)
 
-1. Log on to your OY! dashboard
-2. Choose "Production" environment
-3. Click "Pay Invoice" under Account Payable menu
-4. Click "Invoice List"
-5. Click "Create New Invoice" on top right
-6. Choose “Send Other Currency”
-7. Choose the currency you want to send; currently OY! available for these currencies :
+1.    Log on to your OY! dashboard
+2.    Choose "Production" environment
+3.    Click "Pay Invoice" under Account Payable menu
+4.    Click "Invoice List"
+5.    Click "Create New Invoice" on top right
+6.    Choose “Send Other Currency”
+7.    Choose the currency you want to send; currently OY! available for these currencies :
     1. SGD
     2. HKD
     3. CNH
     4. USD
-8. If you select USD as the currency, choose the destination country. Other currencies, such as HKD or CNH, can only be used in their origin country. For example, if you choose HKD, you can only make payments to Hong Kong; currently we accept these countries for international payment in USD :
+8.     If you select USD as the currency, choose the destination country. Other currencies, such as HKD or CNH, can only be used in their origin country. For example, if you choose HKD, you can only make payments to Hong Kong; currently we accept these countries for international payment in USD :
     1. Singapore
     2. China
     3. Hong Kong
-9. Upload your invoice document to help you record the invoice easier by clicking "Browse to Upload" or Drag & drop to the invoice area
-10. Fill in the necessary details. Please input the total payment amount between IDR 200.000 - IDR 35.000.000 and make sure your OY! balance is enough to process the transaction or our system will restrict users from proceeding. **Note:** Maximum 20 rows for line item detail
+9.     Upload your invoice document to help you record the invoice easier by clicking "Browse to Upload" or Drag & drop to the invoice area
+10.    Fill in the necessary details. Please input the total payment amount between IDR 200.000 - IDR 35.000.000 and make sure your OY! balance is enough to process the transaction or our system will restrict users from proceeding. 
+
+**Note:** Maximum 20 rows for line item detail
 
 Parameter | Description
 ------ | -----------
@@ -895,14 +897,14 @@ Subtotal | The total price of all the products.
 Total Pay to Vendor | Total amount that will be paid to vendor on scheduled date, post approval.
 Reference Documents (Upload document) | The supporting documents that you want to record related to this invoice. Accept PDF files only. Maximum 7 documents (maximum 2.5MB each).
 
-11. Click “Next” to move to the next process
-12. We will show the calculation of exchange rate and fee to process the payment, also we will inform you about required documents to support this process. Please click “Next” to continue the process
-13. Choose saved sender data or create new sender data (please follow [this instruction for create new sender data](https://docs.oyindonesia.com/#how-to-add-sender-data-for-international-payment-account-payable)) then click “Next”
-14. Choose saved receipt data or create new receipt data (please follow [this instruction for create new receipt data](https://docs.oyindonesia.com/#how-to-add-receipt-data-for-international-payment-account-payable)) then click “Next”
-15. Input supporting information regarding “Source of Fund” and “Transfer Reason”, also attach supporting documents related to the transaction then click “Next”
-16. You’ll see the summary of transactions, about the sender, receipt, and amount of money that will be deducted to your OY! Balance. Make sure all the data is correct.
-17. After careful review of the transaction, you may click “Send”
-18. The money will arrive to your recipient’s bank account no later than 3 business days
+11.    Click “Next” to move to the next process
+12.    We will show the calculation of exchange rate and fee to process the payment, also we will inform you about required documents to support this process. Please click “Next” to continue the process
+13.    Choose saved sender data or create new sender data (please follow [this instruction for create new sender data](https://docs.oyindonesia.com/#how-to-add-sender-data-for-international-payment-account-payable)) then click “Next”
+14.    Choose saved receipt data or create new receipt data (please follow [this instruction for create new receipt data](https://docs.oyindonesia.com/#how-to-add-receipt-data-for-international-payment-account-payable)) then click “Next”
+15.    Input supporting information regarding “Source of Fund” and “Transfer Reason”, also attach supporting documents related to the transaction then click “Next”
+16.    You’ll see the summary of transactions, about the sender, receipt, and amount of money that will be deducted to your OY! Balance. Make sure all the data is correct.
+17.    After careful review of the transaction, you may click “Send”
+18.    The money will arrive to your recipient’s bank account no later than 3 business days
 
 * Create Account Payable International Transaction page
 
