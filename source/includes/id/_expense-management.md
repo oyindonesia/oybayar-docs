@@ -42,17 +42,17 @@ You can create new virtual corporate card by following these steps:
 
 * Corporate Card Dashboard
 
- ![Corporate Card Dashboard](images/virtualCard/corporate_card_dashboard.png)
+ ![Corporate Card Dashboard](../images/virtualCard/corporate_card_dashboard.png)
 
 * Virtual Card Type
 
- ![Virtual Card Type](images/virtualCard/virtual_card_type.png)
+ ![Virtual Card Type](../images/virtualCard/virtual_card_type.png)
 
 * Virtual Card Form
 
-![Virtual Card Form 1](images/virtualCard/vcc_form_1.png)
+![Virtual Card Form 1](../images/virtualCard/vcc_form_1.png)
 
-![Virtual Card Form 2](images/virtualCard/vcc_form_2.png)
+![Virtual Card Form 2](../images/virtualCard/vcc_form_2.png)
 
 ### How to Transact with Virtual Card
 Steps to use virtual card for online transaction:
@@ -64,13 +64,13 @@ Steps to use virtual card for online transaction:
 
 * Virtual Card Information
 
-![Virtual Card Information](images/virtualCard/virtual_card_info.png)
+![Virtual Card Information](../images/virtualCard/virtual_card_info.png)
 
 * Virtual Card Transaction Details
 
-![Virtual Card Transaction Details - Cardholder Page](images/virtualCard/vcc_transaction_details.png)
+![Virtual Card Transaction Details - Cardholder Page](../images/virtualCard/vcc_transaction_details.png)
 
-![Virtual Card Transaction Details - Email](images/virtualCard/vcc_trx_email.png)
+![Virtual Card Transaction Details - Email](../images/virtualCard/vcc_trx_email.png)
 
 
 **Virtual Card Status**
@@ -104,11 +104,11 @@ Refund | Refund by merchant.
 
 * Add New Approver
 
-![Add New Approver](images/virtualCard/add_new_approver.png)
+![Add New Approver](../images/virtualCard/add_new_approver.png)
 
 * Approver Form
 
-![Add Approver Form](images/virtualCard/add_approver_form.png)
+![Add Approver Form](../images/virtualCard/add_approver_form.png)
 
 **Notes:** Approver data cannot be added or edited through OY! dashboard for security purposes. Please contact our business representative for help.
 
@@ -126,7 +126,7 @@ Email | Approver email for card approval purposes
 1. Dashboard will show analytics dashboard (divided per department) and list of card to manage
 1. Click the card that needs to be managed
 
-![Virtual Card List](images/virtualCard/vcc_card_list.png)
+![Virtual Card List](../images/virtualCard/vcc_card_list.png)
 
 **Card Actions**
 Card Actions | Description
@@ -149,19 +149,19 @@ Delete | Only applicable for "Pending Approval" card. This will archive the card
 
 * Department page prior to “Edit Department” button
 
-![Department List](images/virtualCard/vcc_department_list.png)
+![Department List](../images/virtualCard/vcc_department_list.png)
 
-![Edit Department](images/virtualCard/vcc_edit_department.png)
+![Edit Department](../images/virtualCard/vcc_edit_department.png)
 
 * Category page
 
-![Category List](images/virtualCard/vcc_category_list.png)
+![Category List](../images/virtualCard/vcc_category_list.png)
 
-![Edit Category](images/virtualCard/vcc_edit_category.png)
+![Edit Category](../images/virtualCard/vcc_edit_category.png)
 
 * Approver page
 
-![Approver List](images/virtualCard/vcc_approver_list.png)
+![Approver List](../images/virtualCard/vcc_approver_list.png)
 
 ### Decline Transaction Possible Reasons
 Issues | Explanations
@@ -233,7 +233,7 @@ By default, admin is the second approver for reimbursement requests. However, yo
 
 * Approver registration page
 
-![Approver registration](images/reimbursement/Approver_Registration.png)
+![Approver registration](../images/reimbursement/Approver_Registration.png)
 
 **Notes**
 * Approver emails are mapped based on department names, and duplicate department names are not allowed.
@@ -254,7 +254,7 @@ After Approver registration, you can start sharing the reimbursement link with e
 
 * Bulk Upload and Link Distribution page from OY! Dashboard
 
-![Distribution page](images/reimbursement/Reimbursement_Link.png)
+![Distribution page](../images/reimbursement/Reimbursement_Link.png)
 
 ### How to Fill Reimbursement Request
 1. Click reimbursement link that has been shared from Admin.
@@ -263,9 +263,9 @@ After Approver registration, you can start sharing the reimbursement link with e
 
 * Form Reimbursement Request page
 
-![Form Request page 1](images/reimbursement/reimbursement_form_1.png)
+![Form Request page 1](../images/reimbursement/reimbursement_form_1.png)
 
-![Form Request page 2](images/reimbursement/reimbursement_form_2_filled.png)
+![Form Request page 2](../images/reimbursement/reimbursement_form_2_filled.png)
 
 **Mandatory Parameters in the Form**
 
@@ -291,11 +291,11 @@ Transaction Date | Date of transaction printed on the invoice
 
 * Approver portal (unique per approver)
 
-![Approver portal](images/reimbursement/Approver_Portal_List.png)
+![Approver portal](../images/reimbursement/Approver_Portal_List.png)
 
 * Approver - request details with action buttons
 
-![Request details](images/reimbursement/Approver_List_Detail.png)
+![Request details](../images/reimbursement/Approver_List_Detail.png)
 
 ### How to Schedule Disbursement
 Scheduled disbursement can only be done if the team manager has approved the request, and the OY! dashboard admin agrees to schedule the disbursement.
@@ -306,14 +306,14 @@ Scheduled disbursement can only be done if the team manager has approved the req
 
 * Request list in dashboard
 
-![Dashboard list](images/reimbursement/Reimbursement_List.png)
+![Dashboard list](../images/reimbursement/Reimbursement_List.png)
 
 
 * Request detail in dashboard
 
-![Request Detail](images/reimbursement/Reimbursement_Detail1.png)
+![Request Detail](../images/reimbursement/Reimbursement_Detail1.png)
 
-![Request Detail](images/reimbursement/Reimbursement_Detail2.png)
+![Request Detail](../images/reimbursement/Reimbursement_Detail2.png)
 
 **Note:** If there is insufficient balance on the day of scheduled disbursement, you can retry the fund transfer manually after a successful OY! balance top up.
 
@@ -339,11 +339,11 @@ Insufficient Balance | Fail to disburse due to insufficient OY! balance (OY! das
 
 * Employee Tracker page
 
-![Employee tracker](images/reimbursement/Employee_Tracker1.png)
+![Employee tracker](../images/reimbursement/Employee_Tracker1.png)
 
 * Employee Tracker page -- Transaction Detail
 
-![Employee tracker](images/reimbursement/Employee_Tracker2.png)
+![Employee tracker](../images/reimbursement/Employee_Tracker2.png)
 
 **Tracker Status**
 

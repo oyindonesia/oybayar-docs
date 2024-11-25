@@ -220,9 +220,9 @@ curl -X GET 'https://partner.oyindonesia.com/api/balance'
 
 Lastly, all transactions can be monitored from the OY! dashboard which includes all the transaction details.
 
-![API Disbursement](images/api_disburse_error_reason.png)
+![API Disbursement](../images/api_disburse_error_reason.png)
 
-![API Disbursement](images/api_disburse_success.png)
+![API Disbursement](../images/api_disburse_success.png)
 
 
 For further details on the parameters definition and proper usage, please refer to our [API Documentation](https://api-docs.oyindonesia.com/#fund-disbursement).
@@ -690,7 +690,7 @@ Follow the instruction below to activate retry callback
 5. Click "Save Changes". The configuration will not able to be saved if the callback URL or/and email format are not valid.
 
 
-![Resend Callback](images/api_disburse_retry_callback_developer_option.png)
+![Resend Callback](../images/api_disburse_retry_callback_developer_option.png)
 
 Don't forget to whitelist these IPs in order to be able to receive callback from OY: 54.151.191.85 and 54.179.86.72
 
@@ -701,7 +701,7 @@ If you want to manually resend a callback, you can follow the instruction below
 3. Click the "Resend Callback" button in the related transaction
 
 
-![Resend Callback](images/api_disburse_resend_callback.png)
+![Resend Callback](../images/api_disburse_resend_callback.png)
 
 
 
@@ -757,7 +757,7 @@ You can create new invoice to be paid and set up payment by following this step:
     Note: Maximum 20 rows for line item detail
 
     **Image Account Payable**
-    ![AP Invoice Creation One](images/accountPayable/invoice_creation_1.png)
+    ![AP Invoice Creation One](../images/accountPayable/invoice_creation_1.png)
 
 8. Continue to set up 'Invoice Payment Details'. You can set up the payment to one time payment by choosing 'Full Payment' or multiple times payment by choosing 'Partial Payment'.
 
@@ -770,11 +770,11 @@ You can create new invoice to be paid and set up payment by following this step:
     Remaining Amount | Total pay to vendor - subtotal. This amount should be 0 to continue the process
 
     **Image Payment Page**
-    ![AP Invoice Creation Two](images/accountPayable/AP_scheduled_payment.png)
+    ![AP Invoice Creation Two](../images/accountPayable/AP_scheduled_payment.png)
 
-    ![AP Invoice Scheduled Payment Detai](images/accountPayable/AP_Scheduled_Payment_Details.png)
+    ![AP Invoice Scheduled Payment Detai](../images/accountPayable/AP_Scheduled_Payment_Details.png)
 
-    ![AP Detail Transaction](images/accountPayable/AP_Trx_detail.png)
+    ![AP Detail Transaction](../images/accountPayable/AP_Trx_detail.png)
 
 9. Status: Waiting Payment, Partially Paid, Complete and Cancelled
 Congratulations! You have finished your first invoice payable set up. Below are the list of statuses you will find on 'Invoice List'
@@ -787,7 +787,7 @@ Congratulations! You have finished your first invoice payable set up. Below are 
     Complete | All payment of the invoice is complete
 
     **List of the Invoice Payable**
-![AP Invoice List](images/accountPayable/AP_Trx_detail.png)
+![AP Invoice List](../images/accountPayable/AP_Trx_detail.png)
 
 
 
@@ -824,13 +824,13 @@ PPN Inclusive | Tax will not be added upon the subtotal because the subtotal is 
 There will be an PPh email sent on the 1st day of each month that contains all the PPh from your vendors in the previous month. This report can help company with tax payment & reporting, and 'Faktur Pajak' generation to your vendor.
 
 **Create New Vendor**
-![VM Vendor Creation](images/vendorManagement/creation.png)
+![VM Vendor Creation](../images/vendorManagement/creation.png)
 
 **List Of Vendor**
-![VM Vendor List](images/vendorManagement/list.png)
+![VM Vendor List](../images/vendorManagement/list.png)
 
 **Vendor Detail**
-![VM Vendor Detail](images/vendorManagement/detail.png)
+![VM Vendor Detail](../images/vendorManagement/detail.png)
 
 **How to Set Up Invoice Payable Approval**
 
@@ -878,19 +878,19 @@ You can create new virtual card by following these steps:
 
 * Corporate Card Dashboard
 
-![Corporate Card Dashboard](images/virtualCard/blankpagecard.jpg)
+![Corporate Card Dashboard](../images/virtualCard/blankpagecard.jpg)
 
 * Virtual Card Type
 
-![Card Form](images/virtualCard/virtualtype.jpg)
+![Card Form](../images/virtualCard/virtualtype.jpg)
 
-![Card Form](images/virtualCard/frequency.jpg)
+![Card Form](../images/virtualCard/frequency.jpg)
 
 * Virtual Card Form
 
 ![Card Form](source/images/virtualCard/cardholderdetails.jpg)
 
-![Card Form](images/virtualCard/carddetails.jpg)
+![Card Form](../images/virtualCard/carddetails.jpg)
 
 
 ### How to Transact with Card 
@@ -904,13 +904,13 @@ Steps to use card for online transaction:
 
 * Virtual Card Information
 
-![VCC Detail](images/virtualCard/card_detail.png)
+![VCC Detail](../images/virtualCard/card_detail.png)
 
 * Virtual Card
 
-![VCC Transaction Detail](images/virtualCard/detailtrxn.jpg) 
+![VCC Transaction Detail](../images/virtualCard/detailtrxn.jpg) 
 
-![VCC Transaction Email](images/virtualCard/vcc_txnemail.png) 
+![VCC Transaction Email](../images/virtualCard/vcc_txnemail.png) 
 
 
 
@@ -945,11 +945,11 @@ Reversal | Temporary hold on card is returned to card prior settlement
 
 * Add New Approver
 
-![VCC Add Approver](images/virtualCard/vcc_addapprover.png)
+![VCC Add Approver](../images/virtualCard/vcc_addapprover.png)
 
 * Approver Form
 
-![VCC Approver Form](images/virtualCard/vcc_approverform.png)
+![VCC Approver Form](../images/virtualCard/vcc_approverform.png)
 
 **Notes**: Approver data cannot be added or edited through dashboard for security purposes. Please contact our business representative for helps
 
@@ -965,7 +965,7 @@ Email | Approver email for card approval purposes
 1. Click “See All Cards”
 2. Click the card that needs to be managed
 
-![VCC Card List](images/virtualCard/vcc_cardlist.png)
+![VCC Card List](../images/virtualCard/vcc_cardlist.png)
 
 **Card actions** 
 
@@ -989,15 +989,15 @@ Delete | Only applicable for "Waiting for Approval" card
 
 * Department page prior to “Edit Department” button
 
-![Card Department](images/virtualCard/departmen.jpg)
+![Card Department](../images/virtualCard/departmen.jpg)
 
 * Category page
 
-![Card Category](images/virtualCard/category.jpg)
+![Card Category](../images/virtualCard/category.jpg)
 
 * Approver Page
 
-![Card Approver](images/virtualCard/approver.jpg)
+![Card Approver](../images/virtualCard/approver.jpg)
 
 
 **Failed Transaction Possible Reasons**
@@ -1081,65 +1081,65 @@ Once a transaction is successfully created, all transaction details and updates 
 In order to create international transfers, you need to have sufficient available OY! balance is required in the account. If there is an insufficient available balance in the account, international transfers cannot be created
  1. *Create new transaction*: On the OY! dashboard, navigate to Send Payments > International Transfer on your left menu bar. Click “Create New Transaction” on the far righthand side of that page to create a new transfer.
 
-![Create New Transaction](images/internationalTransfer/create_inter_remit.jpg)
+![Create New Transaction](../images/internationalTransfer/create_inter_remit.jpg)
 
  2. *Input transfer amount details*: You may fill out the amount of transfer in two ways:
   1. Fill in the send amount (in Rupiah) you would like to transfer, along with the destination currency and country. Our system will automatically convert according to the foreign exchange rate at that time.
   1. Fill in the recipient amount (in SGD/USD) you would like to transfer, along with the destination currency and country. Our system will automatically convert according to the foreign exchange rate at that time.
 
-![Input Send Amount](images/internationalTransfer/input_amount.jpg)
+![Input Send Amount](../images/internationalTransfer/input_amount.jpg)
 
 *Note: If the nominal amount greater than the available balance, then our system will restrict users from proceeding*
-![Balance Less Than Send Amount](images/internationalTransfer/balance_less_than_send_amount.jpg)
+![Balance Less Than Send Amount](../images/internationalTransfer/balance_less_than_send_amount.jpg)
 
  3. *Input sender details*: Decide whether sender is an individual or business entity, and you will see the corresponding details to fill out for each. Previously saved sender contacts will be displayed at the bottom of this page.
-![List Of Existing Senders](images/internationalTransfer/list_of_existing_senders.jpg)
+![List Of Existing Senders](../images/internationalTransfer/list_of_existing_senders.jpg)
 
 Create a new individual sender by filling out this form
 
-![Input Individual Sender](images/internationalTransfer/input_individual_sender.jpg)
+![Input Individual Sender](../images/internationalTransfer/input_individual_sender.jpg)
 
 Create a new business sender by filling out this form
 
-![Input Business Sender](images/internationalTransfer/input_business_sender.jpg)
+![Input Business Sender](../images/internationalTransfer/input_business_sender.jpg)
 
  4. *Input recipient details*: Decide whether recipient is an individual or business entity, and you will see the corresponding details to fill out for each. Previously saved recipient contacts will be displayed at the bottom of this page.
 
-![List Of Existing Recipients](images/internationalTransfer/list_of_existing_recipients.jpg)
+![List Of Existing Recipients](../images/internationalTransfer/list_of_existing_recipients.jpg)
 
 This will be the form you will need to fill out for individual recipient
 
 Create a new individual recipient by filling out this form
 
-![Input Individual Recipient](images/internationalTransfer/input_individual_recipient.jpg)
+![Input Individual Recipient](../images/internationalTransfer/input_individual_recipient.jpg)
 
 Create a new business contact by filling out this form
 
-![Input Business Recipient](images/internationalTransfer/input_business_recipient.jpg)
+![Input Business Recipient](../images/internationalTransfer/input_business_recipient.jpg)
 
  5. *Add supporting information*: In this step, we need to record source of funds, purpose of transfer for the transaction. You may also attach supporting documents to aid the compliance requirements for your transaction.
 
-![Transfer Reason And Supporting Docs](images/internationalTransfer/transfer_reason_docs.jpg)
+![Transfer Reason And Supporting Docs](../images/internationalTransfer/transfer_reason_docs.jpg)
 
  6. *Summary*: The summary of your transaction will be shown. If all the information is correct, you may click the **Submit** button at the bottom right hand corner of the screen.
 
-![Summary](images/internationalTransfer/summary.png)
+![Summary](../images/internationalTransfer/summary.png)
 
 *Note: A fixed quotation rate is created since Input sender details and will be refreshed every 30 minutes. In the case when the quotation expires, a pop up will show to fetch the latest exchange rate and a new quotation is created.*
 
-![Update Exchange Rate](images/internationalTransfer/update_exchange_rate.png)
+![Update Exchange Rate](../images/internationalTransfer/update_exchange_rate.png)
 
 If the available balance is insufficient for the new quotation amount, then you will be prompted to change the transfer amount or top up balance.
 
-![Balance Not Enough](images/internationalTransfer/balance_not_enough.png)
+![Balance Not Enough](../images/internationalTransfer/balance_not_enough.png)
 
  7. *Input Password*: For security reasons, OY! will prompt clients to input their password prior to every transaction.
 
-![Password Filled](images/internationalTransfer/password_filled.png)
+![Password Filled](../images/internationalTransfer/password_filled.png)
 
 Each client has 5 chances to input the correct password. If you failed to input the correct password 5 times, then the transaction will automatically be cancelled.
 
-![Incorrect Password](images/internationalTransfer/incorrect_password.png)
+![Incorrect Password](../images/internationalTransfer/incorrect_password.png)
 
  8. *Transaction Status: In Progress, Success, Failed.*
 
@@ -1147,24 +1147,24 @@ Each client has 5 chances to input the correct password. If you failed to input 
 
 Once a transaction is successfully created, it will appear in your dashboard the status column will be set as *In Progress*.
 
-![In Progress Status](images/internationalTransfer/in_progress_transaction.png)
+![In Progress Status](../images/internationalTransfer/in_progress_transaction.png)
 
 *Success*
 
 Once your transaction is processed successfully, the status column will be updated as Success. Both sender and recipient should have received an email detailing a “Successful Transfer.”
 
-![Success Email](images/internationalTransfer/success_email.png)
+![Success Email](../images/internationalTransfer/success_email.png)
 
 *Failed*
 
 If your transaction has failed to process, the status column will be updated as Failed. Both sender and recipient should have received an email detailing a “Failed Transfer.”
 
-![Failed Email](images/internationalTransfer/failed_email.png)
+![Failed Email](../images/internationalTransfer/failed_email.png)
 
  9. *Check transaction details*: You may check transaction details by clicking on the transaction id on the list of transaction details on dashboard
 
-![List Of Transactions](images/internationalTransfer/list_of_transactions.png)
-![Transaction Detail](images/internationalTransfer/transaction_detail.png)
+![List Of Transactions](../images/internationalTransfer/list_of_transactions.png)
+![Transaction Detail](../images/internationalTransfer/transaction_detail.png)
 
 
 
@@ -1199,7 +1199,7 @@ Setting up the approver will only occur once when the page is first opened.
 
 * Approver registration page
 
-![Approver registration](images/reimbursement/Approver_Registration.png)
+![Approver registration](../images/reimbursement/Approver_Registration.png)
 
 
 **Notes**
@@ -1234,14 +1234,14 @@ After Approver registration, you can start sharing the reimbursement link with e
 
 * Link distribution page
 
-![Distribution page](images/reimbursement/Reimbursement_Link.png)
+![Distribution page](../images/reimbursement/Reimbursement_Link.png)
 
 
 * Form page
 
-![Form page](images/reimbursement/Reimbursement_Step1.png)
+![Form page](../images/reimbursement/Reimbursement_Step1.png)
 
-![Form page](images/reimbursement/Reimbursement_Step2.png)
+![Form page](../images/reimbursement/Reimbursement_Step2.png)
 
 
 **Mandatory Parameters in the Form**
@@ -1278,14 +1278,14 @@ Scheduled disbursement can only be done if the reporting manager has approved th
 
 * Request list in dashboard
 
-![Dashboard list](images/reimbursement/Reimbursement_List.png)
+![Dashboard list](../images/reimbursement/Reimbursement_List.png)
 
 
 * Request detail in dashboard
 
-![Request Detail](images/reimbursement/Reimbursement_Detail1.png)
+![Request Detail](../images/reimbursement/Reimbursement_Detail1.png)
 
-![Request Detail](images/reimbursement/Reimbursement_Detail2.png)
+![Request Detail](../images/reimbursement/Reimbursement_Detail2.png)
 
 
 **Note:** If there is insufficient balance on the day of scheduled disbursement, you can retry manually when the balance is sufficient via the dashboard.
@@ -1317,11 +1317,11 @@ Insufficient Balance | Fail to disburse due to insufficient balance (admin can r
 
 * Approver portal (unique per approver)
 
-![Approver portal](images/reimbursement/Approver_Portal_List.png)
+![Approver portal](../images/reimbursement/Approver_Portal_List.png)
 
 * Approver - request details with action buttons
 
-![Request details](images/reimbursement/Approver_List_Detail.png)
+![Request details](../images/reimbursement/Approver_List_Detail.png)
 
 
 
@@ -1335,11 +1335,11 @@ Insufficient Balance | Fail to disburse due to insufficient balance (admin can r
 
 * Employee Tracker page
 
-![Employee tracker](images/reimbursement/Employee_Tracker1.png)
+![Employee tracker](../images/reimbursement/Employee_Tracker1.png)
 
 * Employee Tracker page -- transaction detail
 
-![Employee tracker](images/reimbursement/Employee_Tracker2.png)
+![Employee tracker](../images/reimbursement/Employee_Tracker2.png)
 
 
 
