@@ -70,7 +70,7 @@ Maximum amount per transaction
 
 
 #### Payment Flow 
-![Bank Transfer Virtual Account Flow](images/acceptingPayments/paymentMethod/payment_method_bank_transfer_sequence_virtual_account.png)
+![Bank Transfer Virtual Account Flow](images/acceptingPayments/payment-methods/bank-transfer-virtual-account/payment-flow.webp)
 #### Activation 
 1. Banks non BCA 
    - Generally, you do not need extra onboarding steps to activate VAs for each bank (non-BCA). Once you are allowed to use Receive Money products, you should be able to use the VAs without additional documents required. Kindly let your business representative know about the banks that you will need 
@@ -106,7 +106,7 @@ Your end-users may use the below payment channels to pay for their bills via VA
 1. Enter the payment date and time. Ensure that payment date and time are greater than created but less than expiration time 
 1. You may use this feature for all your VA transactions across all of OY! Receive Money products (VA Aggregator, Payment Link, and Payment Routing) 
 
-![Bank Transfer - Virtual Account Simulate Payment](images/acceptingPayments/paymentMethod/payment_method_bank_transfer_simulate_payments.png)
+![Bank Transfer - Virtual Account Simulate Payment](images/acceptingPayments/payment-methods/bank-transfer-virtual-account/simulating-callback.webp)
 
 
 ### Bank Transfer - Unique Code
@@ -149,7 +149,7 @@ As an example, if you create a unique code transaction with an amount of Rp 100.
 |Addition|Rp 10,000 |Rp 499,999,000|
 
 #### Payment Flow
-![Bank Transfer - Unique Code Flow](images/acceptingPayments/paymentMethod/payment_method_bank_transfer_sequence_unique_code.png)
+![Bank Transfer - Unique Code Flow](images/acceptingPayments/payment-methods/bank-transfer-unique-code/payment-flow.webp)
 #### Activation
 You can only use one type of bank transfer (virtual account / unique code) per bank. By default, all banks use virtual accounts. In order to accept payments using unique code, you need to submit a request to OY! via your business representative or our business support. 
 #### Payment
@@ -169,9 +169,9 @@ To get more understanding of unique code transactions behavior, you can simulate
    - Payment Date and Time: Choose the date & time that you want the payment to occur
 1. Once you input all the fields, you can simulate the payment by clicking “Send Callback”. If the payment is successful, a success notification will be shown inside the dashboard. OY! will also send the callback to your specified callback URL. If for some reason you did not receive any callback, please contact the customer service to help you solve the problem.
 
-![Bank Transfer - Unique Code Simulate Payment](images/acceptingPayments/paymentMethod/payment_method_bank_transfer_simulate_payments.png)
+![Bank Transfer - Unique Code Simulate Payment](images/acceptingPayments/payment-methods/bank-transfer-unique-code/simulating-callback.webp)
 
-![Bank Transfer - Unique Code Amount Detail](images/acceptingPayments/paymentMethod/payment_method_bank_transfer_unique_amount.png)
+![Bank Transfer - Unique Code Amount Detail](images/acceptingPayments/payment-methods/bank-transfer-unique-code/payment-link-view.webp)
 
 
 ### QR Code (QRIS)
@@ -194,7 +194,7 @@ Quick Response Code Indonesian Standard (QRIS) is a standardized QR payments in 
 
 The maximum amount per transaction for QRIS is Rp 10,000,000. The minimum amount per transaction is Rp 10,000, both in Payment Link and Payment Routing. Should you have any request to receive payments below Rp 10,000, please contact your Business Representative 
 #### Payment Flow
-![QRIS Flow](images/acceptingPayments/paymentMethod/payment_method_qris_sequence.png)
+![QRIS Flow](images/acceptingPayments/payment-methods/qr-code-(qris)/payment-flow.webp)
 #### Activation
 In order to accept payments using QRIS, you need to register your merchant to the QRIS providers first. You can do the registration via OY! Dashboard by opening the Payment Method page and clicking the Payment Method tab. OY! offers real time registration, so you can directly accept payments once you finish submitting your application.
 
@@ -430,16 +430,17 @@ Single payment is a type of payment that allows your customer to complete paymen
 
 There are two types of payment flow for Single Payment: Redirection (JumpApp) or Push Notification.
 
-![E-wallet Redirection Flow](images/acceptingPayments/paymentMethod/payment_method_ewallet_redirection_sequence.png)
+![E-wallet Redirection Flow](images/acceptingPayments/payment-methods/e-wallet/payment-flow-single-payment-redirection.webp)
 
-![E-wallet Push Notification Flow](images/acceptingPayments/paymentMethod/payment_method_ewallet_notification_sequence.png)
+![E-wallet Push Notification Flow](images/acceptingPayments/payment-methods/e-wallet/payment-flow-single-payment-push-notification.webp)
 
 ##### Direct Payment
 Direct payment requires account linking, meaning that your customer must connect their e-wallet account to your system before completing payments. Direct payments offer a more seamless payment experience, as your customer does not need to open or get redirected to the e-wallet provider application to complete payments.
 
 Direct Payments offers both payment with and without authorization (auto-debit). Direct Payment with authorization requires the customer to input a PIN or OTP on every transaction, while Direct Payment without authorization allows your system to deduct your customers balance without the need to enter a PIN or OTP. Direct payment without authorization is suitable for subscription use cases.
 
-![E-wallet Direct Payment Flow](images/acceptingPayments/paymentMethod/payment_method_ewallet_direct_payment_sequence.png)
+![E-wallet Direct Payment Flow](images/acceptingPayments/payment-methods/e-wallet/payment-flow-direct-payment.webp)
+
 #### Activation
 In order to accept payments using e-wallets, you need to register your merchant to the e-wallet providers first. You can do the registration via OY! Dashboard by opening the Payment Method page, Payment Method - OY! Dashboard. OY! offers real time registration, so you can directly accept payments once you finish submitting your application.
 
@@ -749,12 +750,12 @@ To get more understanding of e-wallet transactions behavior, you can simulate e-
    1. Input the amount of transaction
 1. Once you input all the fields, you can simulate the payment by clicking “Send Callback”. If the payment is successful, a success notification will be shown inside the dashboard. OY! will also send the callback to your specified callback URL. If for some reason you did not receive any callback, please contact our customer service to help you solve the problem.
 
-![E-wallet Simulate Callback](images/acceptingPayments/paymentMethod/payment_method_ewallet_simulate_payments.png)
-![E-wallet See Reference Number](images/acceptingPayments/paymentMethod/payment_method_ewallet_reference_number.png)
+![E-wallet Simulate Callback](images/acceptingPayments/payment-methods/e-wallet/simulating-callback.webp)
+![E-wallet See Reference Number](images/acceptingPayments/payment-methods/e-wallet/preview-dashboard.webp)
 
 Specifically for Payment Link transactions, you can directly simulate the payment on the Payment Link by clicking “Bayar Tagihan''.
 
-![E-wallet Simulate Callback Payment Link](images/acceptingPayments/paymentMethod/payment_method_ewallet_bayar_tagihan.png)
+![E-wallet Simulate Callback Payment Link](images/acceptingPayments/payment-methods/e-wallet/simulating-callback.webp)
 
 ### Cards
 #### Introduction 
@@ -771,22 +772,28 @@ To increase the chance of successful transactions, please ensure that your custo
 1. (Especially for overseas transactions) Have notified their card issuer (i.e. the bank or entity that issues the card) of their intention to conduct overseas transactions 
 
 Minimum transaction amount with cards is Rp 15.000. There is no maximum transaction limit for each transaction. The limit depends on the availability of balance or credit limit for each card. 
+
 #### Understanding Overseas Transactions 
+
 Your customers may use credit and/or debit cards issued locally or internationally. If you plan to conduct overseas transactions, it is important to note that OY! can only create the transactions in IDR. This means that your customers can still use their overseas cards for payment, however the card will still be charged in IDR and settlement to your OY! balance will also be done in IDR. The cardholder's billing statement, however, will show the transaction amount in their local currency with foreign exchange rate & extra fees (if any) as applied by their issuer (i.e. the bank or entity that issues the card).
 
 Some card issuers might not allow overseas transactions. Therefore, it is recommended for your customers to check with their issuing bank regarding country restrictions to reduce the chance of the transaction being declined by the issuer.
+
 #### Transactions Declined by Issuer 
+
 When a transaction attempt is submitted to your customer’s issuer (i.e. the bank or entity that issues the card), they usually have an automated system and parameters that help them in deciding whether or not to authorize the transaction. The parameters may include, but not limited to, behavior from past transactions, card details such as expiration date and CVV, and availability of funds.
 
 Even though all of the card details seem correct, the funds are available and 3DS has been enabled for the card, it is possible that the transaction is declined by the issuer. Unfortunately, sometimes the decline reason provided by the issuer is too “generic”. If that’s the case, you may ask your customers to either use alternative cards or payment methods or to contact their issuer directly for more information on the decline reason. Due to privacy & security concerns, issuers can only discuss the specific reason why a transaction is declined to the respective cardholder. This means that issuer will most likely not entertain decline explanation requests via OY!.
+
 #### Payment Flow 
+
 Flow via Payment Link 
 
-![Cards Flow via Payment Link](images/acceptingPayments/paymentMethod/payment_method_cards_flow_payment_link.png)
+![Cards Flow via Payment Link](images/acceptingPayments/payment-methods/cards/payment-flow-via-payment-link.webp)
 
 Flow via Payment Routing
 
-![Cards Flow via Payment Routing](images/acceptingPayments/paymentMethod/payment_method_cards_flow_payment_routing.png)
+![Cards Flow via Payment Routing](images/acceptingPayments/payment-methods/cards/payment-flow-via-payment-routing.webp)
 #### Activation 
 
 If you need to accept payments from your end-users via debit and/or credit cards, you may contact your Business Representative for more information and assistance on the activation process. 
@@ -828,11 +835,13 @@ There are two types of Payment Link:
 |One Time|One link to accept single payment|One-Time payments|
 |Reusable|One link to accept multiple payments and support lifetime payments|Top Up, Donation|
 
-![Payment Link Preview](images/acceptingPayments/paymentLink/payment_link_overview_flow.png)
+![Payment Link Preview](images/acceptingPayments/payment-link/flow/preview-payment-link.webp)
 
 ### Flow
-![Payment Link One Time Flow](images/acceptingPayments/paymentLink/payment_link_sequence_diagram_payment_link_one_time.png)
-![Payment Link Reusable Flow](images/acceptingPayments/paymentLink/payment_link_sequence_diagram_payment_link_reusable.png)
+
+![Payment Link One Time Flow](images/acceptingPayments/payment-link/flow/payment-flow-one-time.webp)
+![Payment Link Reusable Flow](images/acceptingPayments/payment-link/flow/payment-flow-reusable.webp)
+
 ### Features
 #### Customize Payment Link transaction configuration
 Set your Payment Link configurations depending on the use case of your transactions. There are several things that you can configure:
@@ -852,12 +861,12 @@ Set your Payment Link configurations depending on the use case of your transacti
 
 You can define your default configuration, so you will no longer need to fill in these fields again the next time you create a payment link. Save your default configuration by ticking  "Use this configuration for future transaction(s)” option when creating Payment Links. 
 
-![Payment Link Save Configuration](images/acceptingPayments/paymentLink/payment_link_save_configuration.png)
+![Payment Link Save Configuration](images/acceptingPayments/payment-link/features/default-config.webp)
 
 #### Monitoring transactions via OY! Dashboard
 All created Payment Link transactions are shown in the OY! Dashboard. Navigate to “Payment Link” → “One Time”/”Reusable” to see the list of created transactions. Inside the dashboard, you can see the details of the transactions, including all the transaction information inputted during creation, the status of transactions, and the payment reference number\*. The dashboard also has a feature to search, filter, and export the list of transactions in various formats: Excel (.xlsx), PDF (.pdf), and CSV(.csv)
 
-![Payment Link Monitoring Transactions](images/acceptingPayments/paymentLink/payment_link_monitoring_transactions.png)
+![Payment Link Monitoring Transactions](images/acceptingPayments/payment-link/features/dashboard-view.webp)
 
 \*Payment Reference Number is an identifier of a payment attempt when the customer successfully completes a QRIS payment. The reference number is also stated in the customer’s receipt/proof of transaction. Only available for QRIS transactions.
 
@@ -883,11 +892,11 @@ You can customize the theme for Payment Link through OY! Dashboard. Here are the
 1. You can choose a different color for the buttons inside the Payment Link. Choose a color from the Color Picker or type the HEX color code in “Button & Link Color”.
 1. Save the changes. The changes will be applied to all payment links created in real-time. You can see when the last Payment Link Display was modified.
 
-![Payment Link Customizing Theme](images/acceptingPayments/paymentLink/payment_link_customizing_theme.png)
+![Payment Link Customizing Theme](images/acceptingPayments/payment-link/features/dashboard-customized-payment-link.webp)
 
 Here is the example of the Payment Link before and after it is customized. The header’s color is customized using brown color and the button’s color uses green color.
 
-![Payment Link Customized](images/acceptingPayments/paymentLink/payment_link_customize_theme.png)
+![Payment Link Customized](images/acceptingPayments/payment-link/features/payment-link-after-changes.webp)
 
 #### Share Payment Link to multiple channels
 You can share created Payment Link directly to your customers through multiple channels, including email, WhatsApp message, and copy link
@@ -924,7 +933,8 @@ After creating Payment Links, you will receive a URL link that can be copied and
 
 If you create the Payment Link via OY! Business App, you can use the built-in share feature from your mobile device when sharing Payment Link. 
 
-![Payment Link Sharing Capabilities](images/acceptingPayments/paymentLink/payment_link_sharing_capabilities.jpg)
+![Payment Link Sharing Capabilities](images/acceptingPayments/payment-link/features/copy-link.webp)
+
 #### Receipt for successful payments
 Customers can directly see the receipt of payments inside the Payment Link once payment is made. Customers can also receive the receipt via email(s) that you provided during Payment Link creation. Configure sending receipt via emails to your customers by going through this steps:
 
@@ -941,7 +951,7 @@ Customers can directly see the receipt of payments inside the Payment Link once 
 1. Create a Payment Link transaction and input the customer’s email address in the “Email(s)” field under “Customer Detail” section when creating Payment Links via OY! Dashboard. Separate multiple emails using semicolon (;) characters. Example: <email1@company.com>;email2@company.com;email3@company.com
 1. Your customer will receive successful receipt to the emails once payment is made
 
-![Payment Link Notifications to Payer](images/acceptingPayments/paymentLink/payment_link_notification_to_sender.png)
+![Payment Link Notifications to Payer](images/acceptingPayments/payment-link/features/dashboard-notif-for-sender.webp)
 
 Note: If you do not put any of your customer’s email during Payment Link creation, OY! will not send any receipt via email even though you enabled the notification configuration
 
@@ -955,7 +965,8 @@ You can also receive the receipt to your email once payment is made by the custo
 1. Save the changes by clicking “Save Changes”
 1. You will receive an email for every successful Payment Link payments made by your customers 
 
-![Payment Link Notifications to Merchant](images/acceptingPayments/paymentLink/payment_link_notification_to_receiver.png) 
+![Payment Link Notifications to Merchant](images/acceptingPayments/payment-link/features/dashboard-notif-for-receiver.webp) 
+
 #### Embedding Payment Link to your website/application
 Create a seamless payment experience for your customers by inserting a created Payment Link to your website or application. Customers can stay on your page without being redirected to another page to complete the payments. There are many ways that you can show a Payment Link inside your page, and here are several suggestions that you can use: Pop Up - Center, Pop Up - Right, Pop Up - Left, and Slide - Right. Please refer to [Embed Payment Link](https://api-docs.oyindonesia.com/#pop-seamless-payment-experience-fund-acceptance) in the API Docs to see detailed implementation of inserting Payment Link to your application.
 #### Refund payments to customer
@@ -1010,7 +1021,8 @@ Manual Retry Callback allows you to manually send callbacks for each transaction
    - 54.179.86.72
 1. Click “Resend Callback” to resend a callback and repeat as you need
 
-![Payment Link Manual Retry Callback](images/acceptingPayments/paymentLink/payment_link_manual_resend_callback.png) 
+![Payment Link Manual Retry Callback](images/acceptingPayments/payment-link/features/dashboard-resend-callback.webp) 
+
 ##### Automatic Retry Callback
 Automatic Retry Callback allows you to receive another callback within a certain interval if the previous callback that OY! sent is not received successfully on your system. OY! will try to resend other callbacks up to 5 times. If your system still does not receive any callbacks after 5 retry attempts from OY, OY! will notify you via email. You can input up to 6 email recipients and it is configurable via OY! Dashboard. 
 
@@ -1031,7 +1043,8 @@ Automatic Retry Callback is not activated by default. You can see the guideline 
 1. Make sure to implement the idempotency logic in your system. Use “tx\_ref\_number” parameter  as idempotency key to ensure that multiple callbacks under “tx\_ref\_number”  key should not be treated as multiple different payments.
 1. Save the changes
 
-![Payment Link Automatic Retry Callback](images/acceptingPayments/paymentLink/payment_link_automatic_callback_configuration.png)  
+![Payment Link Automatic Retry Callback](images/acceptingPayments/payment-link/features/dashboard-developer-option.webp) 
+
 #### Multi Entity Management
 Multi Entity Management is a feature that can help you handle multiple OY! accounts under one entity. The account that acts as an admin is called a Main Entity and the accounts that can be controlled by the admin are called Sub Entity. 
 
@@ -1071,7 +1084,7 @@ You can create Payment Links via OY! Dashboard. Another way to create a Payment 
 1. Click “Save”
 1. Once a creation is successful, you can see the created Payment Link and share it to your customers. 
 
-![Payment Link Creation](images/acceptingPayments/paymentLink/payment_link_creation.png) 
+![Payment Link Creation](images/acceptingPayments/payment-link/creating-payment-link/creation.webp) 
 
 |Field|Description|
 | :- | :- |
@@ -1171,7 +1184,7 @@ Virtual Account (VA) Aggregator is a feature that is specifically designed to ge
 Generally, you may create a VA number for your customers via API VA Aggregator. However, if you prefer to create VA without API integration, then you may do so via OY! Dashboard by clicking the Virtual Account (Created VA) tab under the “Receive Money” section. 
 
 ### Flow 
-![VA Aggregator Flow](images/acceptingPayments/vaAggregator/va_aggregator_flow.png)
+![VA Aggregator Flow](images/acceptingPayments/va-aggregator/payment-flow.webp)
 
 
 ### Features 
@@ -1265,7 +1278,8 @@ Generally, you may create a VA number for your customers via API VA Aggregator. 
 
 
 ### Use Cases 
-![VA Aggregator Use Case](images/acceptingPayments/vaAggregator/va_aggregator_use_case.png)
+
+![VA Aggregator Use Case](images/acceptingPayments/va-aggregator/use-cases.webp)
 
 ### Registration and Set Up 
 Here are the procedures to activate VA Aggregator feature: 
@@ -1313,11 +1327,11 @@ If you plan to use VA Aggregator by API, then you need to do additional steps:
 1. Viewing list of Created VA 
    1. You can monitor your created VA numbers through the “Receive Money” tab → Virtual Account → Created VA
    1. You can also see their payment status, amount, VA type, and count of completed transactions. You may also click to export these details to your device as PDF, Excel or CSV 
-   ![VA Aggregator Monitor Created Transactions](images/acceptingPayments/vaAggregator/vaAggregator_monitoring_created_transactions.png)
+   ![VA Aggregator Monitor Created Transactions](images/acceptingPayments/va-aggregator/viewing-list-of-created-va.webp)
 1. Viewing list of VA Payment 
    1. For all successful VA transactions, you can monitor them through the “Receive Money” tab → Virtual Account → Incoming Payment 
    1. You can also see the transaction timestamp, status, amount, admin fee and other information.  You may also click to export these details to your device as PDF, Excel or CSV 
-   ![VA Aggregator Monitor Incoming Transactions](images/acceptingPayments/vaAggregator/vaAggregator_monitoring_incoming_transactions.png)
+   ![VA Aggregator Monitor Incoming Transactions](images/acceptingPayments/va-aggregator/viewing-list-of-incoming-payment.webp)
 
 
 ### VA Bank Details 
@@ -1362,8 +1376,11 @@ Your end-users may use the below payment channels to pay for their bills via VA
 
 ## API E-Wallet Aggregator 
 E-Wallet API allows clients to charge and receive payments directly from Indonesia's top e-wallet providers. With one integration, they are able to get access to all of OY’s available e-wallets.
+
 ### Flow
-![E-wallet Aggregator Flow](images/acceptingPayments/ewalletAggregator/ewallet_aggregator_sequence.png)
+
+![E-wallet Aggregator Flow](images/acceptingPayments/api-e-wallet-aggragator/payment-flow.webp)
+
 ### Features
 #### Support multiple E-wallets
 Our E-wallet Aggregator product support e-wallet transactions from these issuers:
@@ -1373,11 +1390,11 @@ Our E-wallet Aggregator product support e-wallet transactions from these issuers
 - DANA
 - OVO
 
-
 #### Monitor transactions via OY! Dashboard
 All created e-wallet transactions are shown in OY! Dashboard. Navigate to “E-Wallet” to see the list of transactions. Inside the dashboard, you can see the details of the transactions, including all the transaction information inputted during creation, status of transactions, and the payment reference number. The dashboard also has a feature to search, filter, and export the list of transactions in various formats: Excel (.xlsx), PDF (.pdf), and CSV (.csv)
 
-![Monitor E-wallet Aggregator Transaction](images/acceptingPayments/ewalletAggregator/ewallet_aggregator_monitoring_transactions.png)
+![Monitor E-wallet Aggregator Transaction](images/acceptingPayments/api-e-wallet-aggragator/dashboard-selesai.webp)
+
 #### Receipt for successful payments
 Customers can receive receipt of successful payments via email(s) that you provided during the creation process. Configure sending receipt via emails to your customers by going through these steps:
 
@@ -1394,7 +1411,7 @@ Customers can receive receipt of successful payments via email(s) that you provi
 1. Create an E-Wallet transaction via API  and input the customer’s email address in the “email” parameter. 
 1. Your customer will receive successful receipt to the emails once payment is made
 
-![Receipt for successful Payment](images/acceptingPayments/ewalletAggregator/ewallet_aggregator_monitoring_transactions.png)
+![Receipt for successful Payment](images/acceptingPayments/payment-link/features/dashboard-notif-for-sender.webp)
 
 Note: If you do not put any of your customer’s email during transaction creation, OY! will not send any receipt via email even though you enabled the notification configuration
 #### Retry notification/callback for successful payments
@@ -1414,7 +1431,8 @@ Manual Retry Callback allows you to manually send callbacks for each transaction
    - 54.179.86.72
 1. Click “Resend Callback” to resend a callback and repeat as you need
 
-![Manual Retry Callback](images/acceptingPayments/ewalletAggregator/ewallet_aggregator_manual_retry_callback.png)
+![Manual Retry Callback](images/acceptingPayments/api-e-wallet-aggragator/dashboard-callback.webp)
+
 ##### Automatic Retry Callback
 Automatic Retry Callback allows you to receive another callback within a certain interval if the previous callback that OY! sent is not received successfully on your system. OY! will try to resend other callbacks up to 5 times. If your system still does not receive any callbacks after 5 retry attempts from OY, OY! will notify you via email. You can input up to 6 email recipients and it is configurable via OY! Dashboard. 
 
@@ -1435,7 +1453,7 @@ Automatic Retry Callback is not activated by default. You can see the guideline 
 1. Make sure to implement the idempotency logic in your system. Use “tx\_ref\_number” parameter as the idempotency key to ensure that multiple callbacks under “tx\_ref\_number”  key should not be treated as multiple different payments.
 1. Save the changes
 
-![Automatic Retry Callback](images/acceptingPayments/ewalletAggregator/ewallet_aggregator_automatic_retry_callback.png)
+![Automatic Retry Callback](images/acceptingPayments/api-e-wallet-aggragator/dashboard-developer-option.webp)
 
 #### Refund transactions to customer
 When your customer receives a defective product or the product is not delivered, they might request to refund the transaction. You can directly refund transactions to your customer’s account via OY! Dashboard. A refund can either be full or partial. A full refund gives your customers the entire amount back (100%). A partial refund returns the amount partially. 
@@ -1566,9 +1584,10 @@ Payment Routing API is a service that allows you to receive payments & send mone
 
 
 ### Flow
-![Payment Routing Aggregator Scheme](images/acceptingPayments/paymentRouting/payment_routing_sequence_aggregator_scheme.png)
 
-![Payment Routing Payment Link Scheme](images/acceptingPayments/paymentRouting/payment_routing_sequence_payment_link_scheme.png)
+![Payment Routing Aggregator Scheme](images/acceptingPayments/api-payment-routing/payment-flow-without-ui-scheme.webp)
+
+![Payment Routing Payment Link Scheme](images/acceptingPayments/api-payment-routing/payment-flow-with-ui-scheme.webp)
 
 ### Features
 
@@ -1609,7 +1628,7 @@ Refer to this section to understand how e-Wallet One-Time payments differs from 
 #### Transaction tracking and monitoring capability
 All created Payment Routing transactions are shown in the OY! Dashboard. Navigate to “Payment Routing” to see the list of created transactions. Inside the dashboard, you can see the details of the transactions, including all the transaction information inputted during creation, the transaction status , and the payment reference number\*. The dashboard also has a feature to search, filter, and export the list of transactions in various formats: Excel (.xlsx), PDF (.pdf), and CSV (.csv)
 
-![Payment Routing Monitoring Transactions](images/acceptingPayments/paymentRouting/payment_routing_monitoring_transactions.png)
+![Payment Routing Monitoring Transactions](images/acceptingPayments/api-payment-routing/dashboard.webp)
 
 \*Payment Reference Number is an identifier of a payment attempt when the customer successfully completes a QRIS payment. The reference number is also displayed in the customer’s receipt/proof of transaction. Only available for QRIS transactions.
 #### Use the same Virtual Account number for different transactions
@@ -1711,12 +1730,13 @@ Payment Routing allows you to disburse funds automatically once the transaction 
 Account Linking is a feature that allows your customer's payment account to be linked to your system using tokenization. By linking the customer’s account upfront, your customer can see their account balance inside your application and later on can complete payments without being prompted for any card details or e-wallet phone number. The feature is currently supported for e-wallet ShopeePay & DANA. 
 
 Account linking feature is free of charge.
+
 ### Flow
 
-![Account Linking Flow](images/acceptingPayments/accountLinking/account_linking_sequence_linking.png)
-![Get Account Balance Flow](images/acceptingPayments/accountLinking/account_linking_sequence_get_ewallet_balance.png)
-![Account Unlinking API Flow](images/acceptingPayments/accountLinking/account_linking_sequence_unlinking_api.png)
-![Account Unlinking via App Flow](images/acceptingPayments/accountLinking/account_linking_sequence_unlinking_app.png)
+![Account Linking Flow](images/acceptingPayments/api-account-linking/payment-flow-api-account-linking.webp)
+![Get Account Balance Flow](images/acceptingPayments/api-account-linking/payment-flow-api-get-e-wallet-balance.webp)
+![Account Unlinking API Flow](images/acceptingPayments/api-account-linking/payment-flow-unlink-account-via-api-accoung-linking.webp)
+![Account Unlinking via App Flow](images/acceptingPayments/api-account-linking/payment-flow-unlink-account-via-e-wallet-app.webp)
 
 ### Registration and Setup
 Here are the steps to guide you through registration and set up for doing Account Linking. 
