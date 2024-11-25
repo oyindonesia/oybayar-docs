@@ -194,7 +194,7 @@ Quick Response Code Indonesian Standard (QRIS) is a standardized QR payments in 
 
 The maximum amount per transaction for QRIS is Rp 10,000,000. The minimum amount per transaction is Rp 10,000, both in Payment Link and Payment Routing. Should you have any request to receive payments below Rp 10,000, please contact your Business Representative 
 #### Payment Flow
-![QRIS Flow](images/acceptingPayments/payment-methods/qr-code-(qris)/payment-flow.webp)
+![QRIS Flow](images/acceptingPayments/payment-methods/qr-code-qris/payment-flow.webp)
 #### Activation
 In order to accept payments using QRIS, you need to register your merchant to the QRIS providers first. You can do the registration via OY! Dashboard by opening the Payment Method page and clicking the Payment Method tab. OY! offers real time registration, so you can directly accept payments once you finish submitting your application.
 
