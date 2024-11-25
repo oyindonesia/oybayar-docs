@@ -861,9 +861,7 @@ Set your Payment Link configurations depending on the use case of your transacti
 
 You can define your default configuration, so you will no longer need to fill in these fields again the next time you create a payment link. Save your default configuration by ticking  "Use this configuration for future transaction(s)” option when creating Payment Links. 
 
-<!-- TODO: NEED ADJUSTMENT FROM DESIGNER -->
-
-![Payment Link Save Configuration](images/acceptingPayments/paymentLink/payment_link_save_configuration.png)
+![Payment Link Save Configuration](images/acceptingPayments/payment-link/features/default-config.webp)
 
 #### Monitoring transactions via OY! Dashboard
 All created Payment Link transactions are shown in the OY! Dashboard. Navigate to “Payment Link” → “One Time”/”Reusable” to see the list of created transactions. Inside the dashboard, you can see the details of the transactions, including all the transaction information inputted during creation, the status of transactions, and the payment reference number\*. The dashboard also has a feature to search, filter, and export the list of transactions in various formats: Excel (.xlsx), PDF (.pdf), and CSV(.csv)
