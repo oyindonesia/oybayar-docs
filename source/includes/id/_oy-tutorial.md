@@ -219,7 +219,7 @@ Untuk melakukan isi ulang via transfer instan BCA, silakan ikuti langkah-langkah
 ![BCA Unique Code Transfer](../images/desktop_bcauniquecode_transfer.png)
 
 4. Setelah transaksi berhasil, saldo yang tertera pada Subtotal akan masuk ke akun OY! Anda. 
-Catatan: Jam operasional untuk metode ini adalah setiap hari, mulai dari pukul 03.01 pagi hingga pukul 08.30 malam. Di luar jam tersebut, Anda tidak bisa menggunakan metode ini.
+Catatan: Jam operasional untuk metode ini adalah setiap hari, mulai dari pukul 03.01 pagi hingga pukul 08.00 malam. Di luar jam tersebut, Anda tidak bisa menggunakan metode ini.
 
 ![BCA Unique Code Transfer](../images/desktop_bcauniquecode_success.png)
 
