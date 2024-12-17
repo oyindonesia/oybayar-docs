@@ -12,7 +12,7 @@ Currently, we offer VA service for 8 banks:
 1. Bank Mandiri 
 1. Bank Negara Indonesia (BNI) 
 1. Bank CIMB & CIMB Syariah
-1. Bank BTPN Jenius 
+1. Bank SMBC 
 1. Bank Syariah Indonesia (BSI)
 1. Bank Permata & Permata Syariah
 
@@ -58,7 +58,7 @@ Maximum amount per transaction
 |Bank Rakyat Indonesia (BRI) |Rp 500,000,000|
 |Bank Mandiri |Rp 500,000,000|
 |Bank CIMB |Rp 500,000,000|
-|Bank BTPN Jenius |Rp 100,000,000|
+|Bank SMBC |Rp 100,000,000|
 |Bank Syariah Indonesia (BSI)|Rp 50,000,000|
 |Bank Permata|Rp 500,000,000|
 
@@ -92,7 +92,7 @@ Your end-users may use the below payment channels to pay for their bills via VA
 | Permata                | Yes  | Yes  | Yes | Yes                                            | No                       | Yes 
 | CIMB Niaga / CIMB Niaga Syariah | Yes  | Yes | Yes | Yes (Mobile Banking), No (Internet Banking)| No                       | Yes                          |
 | BCA                    | No   | No   | Yes | Yes      | No                                  | No                       |
-| BTPN                   | Yes  | No   | Yes | Yes (Mobile Banking), No (Internet Banking)     | No                       | Yes                          |
+| SMBC                   | Yes  | No   | Yes | Yes (Mobile Banking), No (Internet Banking)     | No                       | Yes                          |
 | BSI                    | No   | No   | Yes | Yes      | Yes                                 | Yes                      |
 
 
@@ -1196,7 +1196,7 @@ Generally, you may create a VA number for your customers via API VA Aggregator. 
     1. Bank Mandiri 
     1. Bank Negara Indonesia (BNI) 
     1. Bank CIMB & CIMB Syariah
-    1. Bank BTPN Jenius 
+    1. Bank SMBC 
     1. Bank Syariah Indonesia (BSI)
     1. Bank Permata & Permata Syariah
 1. Quick settlement for majority of the banks 
@@ -1272,7 +1272,7 @@ Generally, you may create a VA number for your customers via API VA Aggregator. 
 |Bank Rakyat Indonesia (BRI) |Rp 500,000,000|
 |Bank Mandiri |Rp 500,000,000|
 |Bank CIMB |Rp 500,000,000|
-|Bank BTPN Jenius |Rp 500,000,000|
+|Bank SMBC |Rp 500,000,000|
 |Bank Syariah Indonesia (BSI)|Rp 50,000,000|
 |Bank Permata|Rp 500,000,000|
 
@@ -1345,7 +1345,7 @@ Capabilities
 |Bank Rakyat Indonesia (BRI) |002|Yes|Yes|Lifetime|
 |Bank Mandiri |008|Yes|Yes|Lifetime|
 |Bank CIMB |022|Yes|Yes|Lifetime|
-|Bank BTPN Jenius |213|Yes|Yes|Lifetime|
+|Bank SMBC |213|Yes|Yes|Lifetime|
 |Bank Syariah Indonesia (BSI)|451|No|Yes|70 days after creation|
 |Bank Permata|013|Yes|Yes|Lifetime|
 
@@ -1367,7 +1367,7 @@ Your end-users may use the below payment channels to pay for their bills via VA
 | Permata                | Yes  | Yes  | Yes | Yes                                            | No                       | Yes 
 | CIMB Niaga / CIMB Niaga Syariah | Yes  | Yes | Yes | Yes (Mobile Banking), No (Internet Banking)| No                       | Yes                          |
 | BCA                    | No   | No   | Yes | Yes      | No                                  | No                       |
-| BTPN                   | Yes  | No   | Yes | Yes (Mobile Banking), No (Internet Banking)     | No                       | Yes                          |
+| SMBC                   | Yes  | No   | Yes | Yes (Mobile Banking), No (Internet Banking)     | No                       | Yes                          |
 | BSI                    | No   | No   | Yes | Yes      | Yes                                 | Yes                      |
 
 
@@ -1595,7 +1595,7 @@ Payment Routing API is a service that allows you to receive payments & send mone
 OY! supports various payment methods in the Payment Routing API, including: 
 
 1. Bank Transfer 
-   - Virtual Account: BCA, BNI, BRI, Mandiri, CIMB, BTPN Jenius, BSI, Permata
+   - Virtual Account: BCA, BNI, BRI, Mandiri, CIMB, SMBC, BSI, Permata
    - Unique Code: BCA
 1. E-wallet
    - Single Payments: ShopeePay, DANA, LinkAja
