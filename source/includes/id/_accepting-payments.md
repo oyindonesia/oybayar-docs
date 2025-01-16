@@ -24,7 +24,7 @@ Our virtual accounts are adjustable according to your needs. We offer options of
 
 2. **Create VA number via Dashboard** - Do not have enough resources to integrate with API VA? Do not worry, you can create a VA number easily via OY! Dashboard. No need to write some codes!
 
-3. **Support multiple banks** - Currently, we support virtual accounts (VA) at 8 banks: BCA, BNI, Mandiri, BRI, Permata, CIMB Niaga, BTPN, and Bank Syariah Indonesia (BSI)
+3. **Support multiple banks** - Currently, we support virtual accounts (VA) at 8 banks: BCA, BNI, Mandiri, BRI, Permata, CIMB Niaga, SMBC, and Bank Syariah Indonesia (BSI)
 
 4. **Real-time settlement for majority of the banks** - Payment into a VA will settle in your OY! dashboard on a real-time basis for the majority of the banks (note: for BCA, the settlement will take place H+2 after payment is made into the VA)
 
@@ -272,7 +272,7 @@ For further details regarding OY!'s extensive API VA Aggregator capabilities and
 | BCA                    | Open Amount, Closed Amount                     | 
 | Bank Permata / Permata Syariah| Open Amount, Closed Amount              |
 | CIMB Niaga / CIMB Niaga Syariah| Open Amount, Closed Amount             | 
-| BTPN                   | Open Amount, Closed Amount                     | 
+| SMBC                   | Open Amount, Closed Amount                     | 
 | BSI (Bank Syariah Indonesia)| Closed Amount                             |
 
 
@@ -289,7 +289,7 @@ Your end-users may use the below payment channels to pay for their bills via VA
 | Permata                | Yes  | Yes  | Yes | Yes                                            | No                       | Yes 
 | CIMB Niaga / CIMB Niaga Syariah | Yes  | Yes | Yes | Yes (Mobile Banking), No (Internet Banking)| No                       | Yes                          |
 | BCA                    | No   | No   | Yes | Yes      | No                                  | No                       |
-| BTPN                   | Yes  | No   | Yes | Yes (Mobile Banking), No (Internet Banking)     | No                       | Yes                          |
+| SMBC                   | Yes  | No   | Yes | Yes (Mobile Banking), No (Internet Banking)     | No                       | Yes                          |
 | BSI                    | No   | No   | Yes | Yes      | Yes                                 | Yes                      |
 
 
@@ -1247,7 +1247,7 @@ There will be 3 different ways to distribute the invoice via Whatsapp and there 
 | BCA                    | Open Amount, Closed Amount                     | 
 | Bank Permata / Permata Syariah| Open Amount, Closed Amount              |
 | CIMB Niaga / CIMB Niaga Syariah | Open Amount, Closed Amount            | 
-| BTPN                   | Open Amount, Closed Amount                     | 
+| SMBC                   | Open Amount, Closed Amount                     | 
 | Bank Syariah Indonesia (BSI)| Closed Amount                             | 
 
 
