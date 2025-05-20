@@ -10,7 +10,7 @@ jobs:
       contents: write
 
     # See https://github.com/oyindonesia/oybayar-docs/pull/119 about the reason of using 20.04
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     env:
       ruby-version: 2.6
 
@@ -21,7 +21,7 @@ jobs:
       with:
         ruby-version: ${{ env.ruby-version }}
 
-    - uses: actions/cache@v2
+    - uses: actions/cache@v3
       with:
         path: vendor/bundle
         key: gems-${{ runner.os }}-${{ env.ruby-version }}-${{ hashFiles('**/Gemfile.lock') }}

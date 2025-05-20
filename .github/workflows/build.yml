@@ -9,7 +9,7 @@ on:
 jobs:
   test:
     # See https://github.com/oyindonesia/oybayar-docs/pull/119 about the reason of using 20.04
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
 
     strategy:
       matrix:
@@ -22,7 +22,7 @@ jobs:
       with:
         ruby-version: ${{ matrix.ruby-version }}
 
-    - uses: actions/cache@v2
+    - uses: actions/cache@v3
       with:
         path: vendor/bundle
         key: gems-${{ runner.os }}-${{ matrix.ruby-version }}-${{ hashFiles('**/Gemfile.lock') }}

@@ -1272,7 +1272,7 @@ Generally, you may create a VA number for your customers via API VA Aggregator. 
 |Bank Rakyat Indonesia (BRI) |Rp 500,000,000|
 |Bank Mandiri |Rp 500,000,000|
 |Bank CIMB |Rp 500,000,000|
-|Bank SMBC |Rp 500,000,000|
+|Bank SMBC |Rp 100,000,000|
 |Bank Syariah Indonesia (BSI)|Rp 50,000,000|
 |Bank Permata|Rp 500,000,000|
 
