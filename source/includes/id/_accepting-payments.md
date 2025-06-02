@@ -1374,7 +1374,7 @@ Quick Response Code Indonesian Standard (QRIS) adalah standar pembayaran QR di I
 **Catatan**: QRIS Aggregator menggunakan API Payment Routing yang sudah ada. Bagian ini hanya menjelaskan fitur, alur, dll. yang berhubungan dengan transaksi QRIS Aggregator. Semua transaksi akan ditampilkan di halaman dashboard OY! di bagian halaman Payment Routing.
 
 ### Alur QRIS Aggregator
-![QRIS Aggregator Scheme](images/acceptingPayments/qris-aggregator/qris-flow.webp)
+![QRIS Aggregator Scheme](../images/acceptingPayments/qris-aggregator/qris-flow.webp)
 
 ### Fitur QRIS Aggregator
 Jumlah maksimum per transaksi untuk QRIS adalah Rp10.000.000, sedangkan jumlah minimum per transaksi adalah Rp10.000, baik melalui Link Pembayaran maupun Routing Pembayaran. Jika Anda ingin menerima pembayaran di bawah Rp10.000, silakan hubungi perwakilan bisnis kami.
