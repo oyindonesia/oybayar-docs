@@ -1368,6 +1368,57 @@ Follow the below steps to test the Payment Routing flow:
 1. If payment is successful, we will send a callback to the registered staging callback URL destination.
 1. You can monitor Payment Routing transaction through OY! Dashboard or call the endpoint API. Go to “Payment Routing” menu to monitor your transactions.
 
+## QRIS Aggregator
+Quick Response Code Indonesian Standard (QRIS) adalah standar pembayaran QR di Indonesia yang dikembangkan oleh Bank Indonesia. Pembayaran dilakukan oleh pelanggan dengan memindai QR melalui aplikasi m-banking atau E-wallet mereka. Pembayaran QR sangat cocok untuk transaksi bernilai kecil karena menawarkan biaya yang terjangkau (0,7% per transaksi). QRIS Aggregator dapat digunakan untuk membuat transaksi QRIS sebagai metode pembayaran untuk kemudian ditampilkan ke customer Anda.
+
+**Catatan**: QRIS Aggregator menggunakan API Payment Routing yang sudah ada. Bagian ini hanya menjelaskan fitur, alur, dll. yang berhubungan dengan transaksi QRIS Aggregator. Semua transaksi akan ditampilkan di halaman dashboard OY! di bagian halaman Payment Routing.
+
+### Alur QRIS Aggregator
+![QRIS Aggregator Scheme](images/acceptingPayments/qris-aggregator/qris-flow.webp)
+
+### Fitur QRIS Aggregator
+Jumlah maksimum per transaksi untuk QRIS adalah Rp10.000.000, sedangkan jumlah minimum per transaksi adalah Rp10.000, baik melalui Link Pembayaran maupun Routing Pembayaran. Jika Anda ingin menerima pembayaran di bawah Rp10.000, silakan hubungi perwakilan bisnis kami.
+
+### Cara Mengaktifkan
+Ikuti langkah-langkah berikut untuk melakukan registrasi dan melakukan transaksi QRIS Aggregator:
+
+1. Buat akun di OY!
+1. Lakukan verifikasi akun dengan mengisi formulir verifikasi. Pastikan untuk mencentang produk Terima Uang dan Kirim Uang, karena Routing Pembayaran termasuk dalam produk ini.
+1. Tim OY! akan meninjau dan memverifikasi formulir serta dokumen yang dikirimkan.
+1. Setelah verifikasi disetujui, atur informasi rekening penerima.
+  Catatan: Pastikan informasi rekening bank penerima benar, karena Anda hanya dapat mengaturnya sekali saja melalui dashboard demi alasan keamanan.
+1. Buka halaman [Metode Pembayaran QRIS](https://docs.oyindonesia.com/#qr-code-qris-payment-methods) untuk informasi lebih detail mengenai apa yang diperlukan untuk aktivasi
+1. Kirimkan alamat IP dan URL Callback ke perwakilan bisnis Anda atau melalui email ke business.support@oyindonesia.com. 
+1. OY! akan mengirimkan Production API Key melalui perwakilan bisnis Anda.
+  Catatan: Key Staging/Demo API dapat diakses melalui dashboard dengan masuk ke mode “Demo”, lalu temukan API key di menu kiri bawah.
+1. Integrasikan QRIS Aggregator melalui API Payment Routing ke dalam sistem Anda. Ikuti panduan di dokumentasi [QRIS Aggregator - API Docs](https://api-docs.oyindonesia.com/#qris-aggregator).
+
+### Cara Membuat Transaksi QRIS Aggregator
+Setelah Anda berhasil menyelesaikan proses registrasi untuk metode pembayaran QRIS, Anda dapat langsung membuat transaksi QRIS Aggregator melalui Payment Routing (hanya melalui API). Anda akan menggunakan Payment Routing Tanpa UI saat menerapkan skema QRIS Aggregator.
+
+1. Integrasikan API QRIS Aggregator [API QRIS Aggregator](https://api-docs.oyindonesia.com/#qris-aggregator) melalui Payment Routing.
+1. Panggil [API Create QRIS transaction](https://api-docs.oyindonesia.com/#create-qris-transaction-qris-aggregator) milik OY!.
+  1. Masukkan parameter “need_frontend” dengan nilai "false".
+  1. Pilih QRIS sebagai metode pembayaran dengan
+    1. Mengisi QRIS dalam parameter list_enable_payment_method.
+    1. Mengisi QRIS dalam parameter list_enable_sof.
+1. OY! akan mengembalikan URL untuk mengakses kode QR guna menyelesaikan pembayaran.
+1. Tampilkan kode QR tersebut kepada pelanggan Anda di dalam aplikasi.
+
+### Cara Menyelesaikan Pembayaran
+Silakan merujuk pada bagian [berikut ini](https://docs.oyindonesia.com/#qr-code-qris-payment-methods).
+
+### Memeriksa Status Transaksi
+Semua transaksi QRIS Aggregator yang telah dibuat akan ditampilkan di dashboard. Anda dapat pergi ke menu "Routing Pembayaran" untuk melihat daftar transaksi yang telah dibuat. Di dalam dashboard, Anda dapat melihat detail transaksi, termasuk informasi transaksi yang dimasukkan saat pembuatan, status transaksi, dan nomor referensi pembayaran*
+Dashboard juga memiliki fitur untuk mencari, memfilter, dan mengekspor daftar transaksi dalam berbagai format, seperti Excel (.xlsx), PDF (.pdf), dan CSV (.csv).
+
+Jika Anda tidak menerima callback transaksi dari sistem kami, Anda dapat menggunakan API Check Status untuk mendapatkan status transaksi terbaru.
+ [Check Status QRIS Transaction - API Docs](https://api-docs.oyindonesia.com/#check-status-qris-transaction-qris-aggregator).
+
+*Nomor Referensi Pembayaran adalah nomor identifikasi untuk pembayaran yang berhasil ketika pelanggan menyelesaikan transaksi QRIS. Nomor referensi ini juga ditampilkan pada bukti transaksi pelanggan.
+
+### Menerima Dana ke Saldo
+Setelah pelanggan melakukan pembayaran, OY! akan memperbarui status transaksi dan mengirimkan notifikasi ke sistem Anda untuk mengkonfirmasi bahwa transaksi telah dibayar. OY! kemudian akan menyelesaikan dana ke saldo akun OY! Anda. Namun, waktu penyelesaian (settlement) dapat berbeda tergantung pada metode pembayaran yang digunakan, dengan rentang waktu mulai dari real-time hingga H+2 hari kerja.
 
 
 
