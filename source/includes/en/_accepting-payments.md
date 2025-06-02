@@ -1726,6 +1726,56 @@ Once a transaction is paid by the customer, OY! updates the transaction status a
 ### Sending funds to recipients
 Payment Routing allows you to disburse funds automatically once the transaction is paid by the customer. OY! automatically sends the funds to the recipient(s) stated in the creation process once the payment is received. You need to make sure that you have enough balance to carry out the disbursement process, especially for payment methods that have non-real time settlement; otherwise, the disbursement process fails due to insufficient balance. 
 
+## QRIS Aggregator
+Quick Response Code Indonesian Standard (QRIS) is a standardized QR payments in Indonesia that are developed by Bank Indonesia. Payments are performed by the customers scanning the QR on their m-banking/e-wallet application. QR payments are highly suitable for low-value transactions since they offer an affordable price (0.7% per transaction). QRIS aggregator allows you to create QRIS transactions as a payment method to be displayed to your customer.
+
+**Note**: QRIS Aggregator is implemented using existing Payment Routing API. This section highlights only the features, flow, etc. that relevant for QRIS Aggregator transaction. All transactions will be displayed in OY! Dashboard under Payment Routing menu.
+
+### Flow
+![QRIS Aggregator Scheme](images/acceptingPayments/qris-aggregator/qris-flow.webp)
+
+### Features
+The maximum amount per transaction for QRIS is Rp 10,000,000. The minimum amount per transaction is Rp 10,000. Should you have any request to receive payments below Rp 10,000, please contact your Business Representative.
+
+### Registration and Setup
+Here are the steps to guide you through registration and set up for creating QRIS Aggregator transactions.
+
+1. Create an account at OY! Dashboard
+1. Do account verification by submitting the verification form. Ensure to tick the “Receive Money” and “Send Money” products since Payment Routing is a part of Receive Money & Send Money products.
+1. OY! team will review and verify the form and documents submitted
+1. Once verification is approved, set up your receiving bank account information.
+  Important Note: Ensure that the receiving bank account information is accurate as you can only set it up once via OY! Dashboard for security reasons
+1. Refer to this section for detailed guidelines on [how to activate QRIS Payment Method](https://docs.oyindonesia.com/#qr-code-qris-payment-methods)
+1. Submit your IP address(es) & callback URL to your business representative or send an email to business.support@oyindonesia.com
+1. OY! will send the Production API Key as an API authorization through your business representative.
+  Note: Staging/Demo API Key can be accessed via OY! Dashboard by going to the “Demo” environment and the key can be found on the bottom left menu.
+1. Integrate QRIS Aggregator via Payment Routing API to your system. Please follow the API documentation to guide you through [QRIS Aggregator - API Docs](https://api-docs.oyindonesia.com/#qris-aggregator).
+
+### Creating QRIS Aggregator Transaction
+Once you successfully complete the registration process for QRIS payment method, you can immediately create QRIS Aggregator transaction via Payment Routing (via API only). You will use Payment Routing Without UI when implementing QRIS Aggregator scheme.
+
+1. Integrate [API QRIS Aggregator](https://api-docs.oyindonesia.com/#qris-aggregator) via Payment Routing.
+1. Hit OY!’s [API Create QRIS transaction](https://api-docs.oyindonesia.com/#create-qris-transaction-qris-aggregator)
+  1. Insert parameter “need_frontend” with "false"
+  1. Choose QRIS as Payment Method by
+    1. Filling QRIS in list_enable_payment_method parameter
+    1. Filling QRIS in list_enable_sof
+1. OY! will return url to access the QR code to complete the payment
+1. Show the QR code to your customer inside your application
+
+### Completing Payment
+Please refer to [this section](https://docs.oyindonesia.com/#qr-code-qris-payment-methods).
+
+### Checking Transaction Status
+All created QRIS Aggregator transactions are shown in OY! Dashboard. Navigate to “Payment Routing” to see the list of created transactions. Inside the dashboard, you can see the details of the transactions, including all the transaction information inputted during creation, transaction status, and the payment reference number*. The dashboard also has a feature to search, filter, and export the list of transactions in various formats: Excel (.xlsx), PDF (.pdf), and CSV (.csv)
+
+If for some reason you do not receive our transaction callbacks successfully, you may use our API Check Status to get the latest transaction status. [Check Status QRIS Transaction - API Docs](https://api-docs.oyindonesia.com/#check-status-qris-transaction-qris-aggregator).
+
+*Payment Reference Number is an identifier of a payment attempt when the customer successfully completes a QRIS payment. The reference number is also displayed in the customer’s receipt/proof of transaction.
+
+### Receiving Fund to Balance
+Once a transaction is paid by the customer, OY! updates the transaction status and sends notification to your system indicating that the transaction has been paid, and settles the funds to your OY! balance. Each payment method has a different settlement time, varying from real-time to D+2 working days.
+
 ## API Account Linking
 Account Linking is a feature that allows your customer's payment account to be linked to your system using tokenization. By linking the customer’s account upfront, your customer can see their account balance inside your application and later on can complete payments without being prompted for any card details or e-wallet phone number. The feature is currently supported for e-wallet ShopeePay & DANA. 
 
