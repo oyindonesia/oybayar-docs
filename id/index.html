@@ -1574,6 +1574,72 @@
                     </ul>
                   </li>
                   <li>
+                    <a href="#qris-aggregator-terima-uang" class="toc-h2 toc-link" data-title="QRIS Aggregator">
+                      <span class="toc-link-content">
+                        QRIS Aggregator
+                      </span>
+                         <img src="../images/arrow-bottom-425d93ba.svg" class="active-parent icon-arrow" alt="" />
+                    </a>
+                    <ul class="toc-list-h3">
+                        <li>
+                          <a href="#alur-qris-aggregator-qris-aggregator" class="toc-h3 toc-link" data-title="Alur QRIS Aggregator">
+                            <span class="toc-link-content">
+                              Alur QRIS Aggregator
+                            </span> 
+                            <img src="../images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#fitur-qris-aggregator-qris-aggregator" class="toc-h3 toc-link" data-title="Fitur QRIS Aggregator">
+                            <span class="toc-link-content">
+                              Fitur QRIS Aggregator
+                            </span> 
+                            <img src="../images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#cara-mengaktifkan-qris-aggregator" class="toc-h3 toc-link" data-title="Cara Mengaktifkan">
+                            <span class="toc-link-content">
+                              Cara Mengaktifkan
+                            </span> 
+                            <img src="../images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#cara-membuat-transaksi-qris-aggregator-qris-aggregator" class="toc-h3 toc-link" data-title="Cara Membuat Transaksi QRIS Aggregator">
+                            <span class="toc-link-content">
+                              Cara Membuat Transaksi QRIS Aggregator
+                            </span> 
+                            <img src="../images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#cara-menyelesaikan-pembayaran-qris-aggregator" class="toc-h3 toc-link" data-title="Cara Menyelesaikan Pembayaran">
+                            <span class="toc-link-content">
+                              Cara Menyelesaikan Pembayaran
+                            </span> 
+                            <img src="../images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#memeriksa-status-transaksi-qris-aggregator" class="toc-h3 toc-link" data-title="Memeriksa Status Transaksi">
+                            <span class="toc-link-content">
+                              Memeriksa Status Transaksi
+                            </span> 
+                            <img src="../images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#menerima-dana-ke-saldo-qris-aggregator" class="toc-h3 toc-link" data-title="Menerima Dana ke Saldo">
+                            <span class="toc-link-content">
+                              Menerima Dana ke Saldo
+                            </span> 
+                            <img src="../images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
+                          </a>
+                        </li>
+                    </ul>
+                  </li>
+                  <li>
                     <a href="#understanding-cards-transaction-terima-uang" class="toc-h2 toc-link" data-title="Understanding Cards Transaction">
                       <span class="toc-link-content">
                         Understanding Cards Transaction
@@ -7008,6 +7074,57 @@ Follow the below steps to test the Payment Routing flow:</p>
 <li>If payment is successful, we will send a callback to the registered staging callback URL destination.</li>
 <li>You can monitor Payment Routing transaction through OY! Dashboard or call the endpoint API. Go to “Payment Routing” menu to monitor your transactions.</li>
 </ol>
+<h2 id='qris-aggregator-terima-uang' type='normal'>QRIS Aggregator</h2>
+<p>Quick Response Code Indonesian Standard (QRIS) adalah standar pembayaran QR di Indonesia yang dikembangkan oleh Bank Indonesia. Pembayaran dilakukan oleh pelanggan dengan memindai QR melalui aplikasi m-banking atau E-wallet mereka. Pembayaran QR sangat cocok untuk transaksi bernilai kecil karena menawarkan biaya yang terjangkau (0,7% per transaksi). QRIS Aggregator dapat digunakan untuk membuat transaksi QRIS sebagai metode pembayaran untuk kemudian ditampilkan ke customer Anda.</p>
+
+<p><strong>Catatan</strong>: QRIS Aggregator menggunakan API Payment Routing yang sudah ada. Bagian ini hanya menjelaskan fitur, alur, dll. yang berhubungan dengan transaksi QRIS Aggregator. Semua transaksi akan ditampilkan di halaman dashboard OY! di bagian halaman Payment Routing.</p>
+<h3 id='alur-qris-aggregator-qris-aggregator' type='normal'>Alur QRIS Aggregator</h3>
+<p><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0xNTAgLTE1MCA0MDAgNDAwIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJ4TWlkWU1pZCIgd2lkdGg9IjMwMCAiIGhlaWdodD0iMzAwIiBzdHlsZT0ic2hhcGUtcmVuZGVyaW5nOiBhdXRvOyBkaXNwbGF5OiBibG9jazsgYmFja2dyb3VuZDogcmdiKDI1NSwgMjU1LCAyNTUpOyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxnPjxjaXJjbGUgc3Ryb2tlLWRhc2hhcnJheT0iMTY0LjkzMzYxNDMxMzQ2NDE1IDU2Ljk3Nzg3MTQzNzgyMTM4IiByPSIzNSIgc3Ryb2tlLXdpZHRoPSIxMCIgc3Ryb2tlPSIjMGQ0N2ExIiByYWRpdXM9IjEwMCIgZmlsbD0ibm9uZSIgY3k9IjUwIiBjeD0iNTAiPjxhbmltYXRlVHJhbnNmb3JtIGtleVRpbWVzPSIwOzEiIHZhbHVlcz0iMCA1MCA1MDszNjAgNTAgNTAiIGR1cj0iMXMiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIiB0eXBlPSJyb3RhdGUiIGF0dHJpYnV0ZU5hbWU9InRyYW5zZm9ybSI+PC9hbmltYXRlVHJhbnNmb3JtPjwvY2lyY2xlPjxnPjwvZz48L2c+PC9zdmc+" data-src="images/acceptingPayments/qris-aggregator/qris-flow.webp" loading="lazy" class="lazyload" title="" alt="QRIS Aggregator Scheme"></p>
+<h3 id='fitur-qris-aggregator-qris-aggregator' type='normal'>Fitur QRIS Aggregator</h3>
+<p>Jumlah maksimum per transaksi untuk QRIS adalah Rp10.000.000, sedangkan jumlah minimum per transaksi adalah Rp10.000, baik melalui Link Pembayaran maupun Routing Pembayaran. Jika Anda ingin menerima pembayaran di bawah Rp10.000, silakan hubungi perwakilan bisnis kami.</p>
+<h3 id='cara-mengaktifkan-qris-aggregator' type='normal'>Cara Mengaktifkan</h3>
+<p>Ikuti langkah-langkah berikut untuk melakukan registrasi dan melakukan transaksi QRIS Aggregator:</p>
+
+<ol>
+<li>Buat akun di OY!</li>
+<li>Lakukan verifikasi akun dengan mengisi formulir verifikasi. Pastikan untuk mencentang produk Terima Uang dan Kirim Uang, karena Routing Pembayaran termasuk dalam produk ini.</li>
+<li>Tim OY! akan meninjau dan memverifikasi formulir serta dokumen yang dikirimkan.</li>
+<li>Setelah verifikasi disetujui, atur informasi rekening penerima.
+Catatan: Pastikan informasi rekening bank penerima benar, karena Anda hanya dapat mengaturnya sekali saja melalui dashboard demi alasan keamanan.</li>
+<li>Buka halaman <a href="https://docs.oyindonesia.com/#qr-code-qris-payment-methods">Metode Pembayaran QRIS</a> untuk informasi lebih detail mengenai apa yang diperlukan untuk aktivasi</li>
+<li>Kirimkan alamat IP dan URL Callback ke perwakilan bisnis Anda atau melalui email ke business.support@oyindonesia.com. </li>
+<li>OY! akan mengirimkan Production API Key melalui perwakilan bisnis Anda.
+Catatan: Key Staging/Demo API dapat diakses melalui dashboard dengan masuk ke mode “Demo”, lalu temukan API key di menu kiri bawah.</li>
+<li>Integrasikan QRIS Aggregator melalui API Payment Routing ke dalam sistem Anda. Ikuti panduan di dokumentasi <a href="https://api-docs.oyindonesia.com/#qris-aggregator">QRIS Aggregator - API Docs</a>.</li>
+</ol>
+<h3 id='cara-membuat-transaksi-qris-aggregator-qris-aggregator' type='normal'>Cara Membuat Transaksi QRIS Aggregator</h3>
+<p>Setelah Anda berhasil menyelesaikan proses registrasi untuk metode pembayaran QRIS, Anda dapat langsung membuat transaksi QRIS Aggregator melalui Payment Routing (hanya melalui API). Anda akan menggunakan Payment Routing Tanpa UI saat menerapkan skema QRIS Aggregator.</p>
+
+<ol>
+<li>Integrasikan API QRIS Aggregator <a href="https://api-docs.oyindonesia.com/#qris-aggregator">API QRIS Aggregator</a> melalui Payment Routing.</li>
+<li>Panggil <a href="https://api-docs.oyindonesia.com/#create-qris-transaction-qris-aggregator">API Create QRIS transaction</a> milik OY!.
+
+<ol>
+<li>Masukkan parameter “need_frontend” dengan nilai &quot;false&quot;.</li>
+<li>Pilih QRIS sebagai metode pembayaran dengan</li>
+<li>Mengisi QRIS dalam parameter list_enable_payment_method.</li>
+<li>Mengisi QRIS dalam parameter list_enable_sof.</li>
+</ol></li>
+<li>OY! akan mengembalikan URL untuk mengakses kode QR guna menyelesaikan pembayaran.</li>
+<li>Tampilkan kode QR tersebut kepada pelanggan Anda di dalam aplikasi.</li>
+</ol>
+<h3 id='cara-menyelesaikan-pembayaran-qris-aggregator' type='normal'>Cara Menyelesaikan Pembayaran</h3>
+<p>Silakan merujuk pada bagian <a href="https://docs.oyindonesia.com/#qr-code-qris-payment-methods">berikut ini</a>.</p>
+<h3 id='memeriksa-status-transaksi-qris-aggregator' type='normal'>Memeriksa Status Transaksi</h3>
+<p>Semua transaksi QRIS Aggregator yang telah dibuat akan ditampilkan di dashboard. Anda dapat pergi ke menu &quot;Routing Pembayaran&quot; untuk melihat daftar transaksi yang telah dibuat. Di dalam dashboard, Anda dapat melihat detail transaksi, termasuk informasi transaksi yang dimasukkan saat pembuatan, status transaksi, dan nomor referensi pembayaran*
+Dashboard juga memiliki fitur untuk mencari, memfilter, dan mengekspor daftar transaksi dalam berbagai format, seperti Excel (.xlsx), PDF (.pdf), dan CSV (.csv).</p>
+
+<p>Jika Anda tidak menerima callback transaksi dari sistem kami, Anda dapat menggunakan API Check Status untuk mendapatkan status transaksi terbaru.
+ <a href="https://api-docs.oyindonesia.com/#check-status-qris-transaction-qris-aggregator">Check Status QRIS Transaction - API Docs</a>.</p>
+
+<p>*Nomor Referensi Pembayaran adalah nomor identifikasi untuk pembayaran yang berhasil ketika pelanggan menyelesaikan transaksi QRIS. Nomor referensi ini juga ditampilkan pada bukti transaksi pelanggan.</p>
+<h3 id='menerima-dana-ke-saldo-qris-aggregator' type='normal'>Menerima Dana ke Saldo</h3>
+<p>Setelah pelanggan melakukan pembayaran, OY! akan memperbarui status transaksi dan mengirimkan notifikasi ke sistem Anda untuk mengkonfirmasi bahwa transaksi telah dibayar. OY! kemudian akan menyelesaikan dana ke saldo akun OY! Anda. Namun, waktu penyelesaian (settlement) dapat berbeda tergantung pada metode pembayaran yang digunakan, dengan rentang waktu mulai dari real-time hingga H+2 hari kerja.</p>
 <h2 id='understanding-cards-transaction-terima-uang' type='normal'>Understanding Cards Transaction</h2><h3 id='how-to-activate-understanding-cards-transaction' type='normal'>How to Activate</h3>
 <p>If you need to accept payments from your end-users via debit and/or credit cards, you may contact your Business Representative for more information and assistance on the activation process. </p>
 <h3 id='products-available-understanding-cards-transaction' type='normal'>Products Available</h3>

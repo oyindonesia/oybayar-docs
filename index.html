@@ -1514,6 +1514,72 @@
                     </ul>
                   </li>
                   <li>
+                    <a href="#qris-aggregator-accepting-payments" class="toc-h2 toc-link" data-title="QRIS Aggregator">
+                      <span class="toc-link-content">
+                        QRIS Aggregator
+                      </span>
+                         <img src="images/arrow-bottom-425d93ba.svg" class="active-parent icon-arrow" alt="" />
+                    </a>
+                    <ul class="toc-list-h3">
+                        <li>
+                          <a href="#flow-qris-aggregator" class="toc-h3 toc-link" data-title="Flow">
+                            <span class="toc-link-content">
+                              Flow
+                            </span> 
+                            <img src="images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#features-qris-aggregator" class="toc-h3 toc-link" data-title="Features">
+                            <span class="toc-link-content">
+                              Features
+                            </span> 
+                            <img src="images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#registration-and-setup-qris-aggregator" class="toc-h3 toc-link" data-title="Registration and Setup">
+                            <span class="toc-link-content">
+                              Registration and Setup
+                            </span> 
+                            <img src="images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#creating-qris-aggregator-transaction-qris-aggregator" class="toc-h3 toc-link" data-title="Creating QRIS Aggregator Transaction">
+                            <span class="toc-link-content">
+                              Creating QRIS Aggregator Transaction
+                            </span> 
+                            <img src="images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#completing-payment-qris-aggregator" class="toc-h3 toc-link" data-title="Completing Payment">
+                            <span class="toc-link-content">
+                              Completing Payment
+                            </span> 
+                            <img src="images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#checking-transaction-status-qris-aggregator" class="toc-h3 toc-link" data-title="Checking Transaction Status">
+                            <span class="toc-link-content">
+                              Checking Transaction Status
+                            </span> 
+                            <img src="images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#receiving-fund-to-balance-qris-aggregator" class="toc-h3 toc-link" data-title="Receiving Fund to Balance">
+                            <span class="toc-link-content">
+                              Receiving Fund to Balance
+                            </span> 
+                            <img src="images/arrow-right-7aed4afa.svg" class="icon-arrow" alt="" />
+                          </a>
+                        </li>
+                    </ul>
+                  </li>
+                  <li>
                     <a href="#api-account-linking-accepting-payments" class="toc-h2 toc-link" data-title="API Account Linking">
                       <span class="toc-link-content">
                         API Account Linking
@@ -7599,6 +7665,55 @@ Note: Staging/Demo API Key can be accessed via OY! Dashboard by going to the “
 <p>Once a transaction is paid by the customer, OY! updates the transaction status and sends notification to your system indicating that the transaction has been paid, and settles the funds to your OY! balance. Each payment method has a different settlement time, varying from real-time to D+2 working days. </p>
 <h3 id='sending-funds-to-recipients-api-payment-routing' type='normal'>Sending funds to recipients</h3>
 <p>Payment Routing allows you to disburse funds automatically once the transaction is paid by the customer. OY! automatically sends the funds to the recipient(s) stated in the creation process once the payment is received. You need to make sure that you have enough balance to carry out the disbursement process, especially for payment methods that have non-real time settlement; otherwise, the disbursement process fails due to insufficient balance. </p>
+<h2 id='qris-aggregator-accepting-payments' type='normal'>QRIS Aggregator</h2>
+<p>Quick Response Code Indonesian Standard (QRIS) is a standardized QR payments in Indonesia that are developed by Bank Indonesia. Payments are performed by the customers scanning the QR on their m-banking/e-wallet application. QR payments are highly suitable for low-value transactions since they offer an affordable price (0.7% per transaction). QRIS aggregator allows you to create QRIS transactions as a payment method to be displayed to your customer.</p>
+
+<p><strong>Note</strong>: QRIS Aggregator is implemented using existing Payment Routing API. This section highlights only the features, flow, etc. that relevant for QRIS Aggregator transaction. All transactions will be displayed in OY! Dashboard under Payment Routing menu.</p>
+<h3 id='flow-qris-aggregator' type='normal'>Flow</h3>
+<p><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0xNTAgLTE1MCA0MDAgNDAwIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJ4TWlkWU1pZCIgd2lkdGg9IjMwMCAiIGhlaWdodD0iMzAwIiBzdHlsZT0ic2hhcGUtcmVuZGVyaW5nOiBhdXRvOyBkaXNwbGF5OiBibG9jazsgYmFja2dyb3VuZDogcmdiKDI1NSwgMjU1LCAyNTUpOyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxnPjxjaXJjbGUgc3Ryb2tlLWRhc2hhcnJheT0iMTY0LjkzMzYxNDMxMzQ2NDE1IDU2Ljk3Nzg3MTQzNzgyMTM4IiByPSIzNSIgc3Ryb2tlLXdpZHRoPSIxMCIgc3Ryb2tlPSIjMGQ0N2ExIiByYWRpdXM9IjEwMCIgZmlsbD0ibm9uZSIgY3k9IjUwIiBjeD0iNTAiPjxhbmltYXRlVHJhbnNmb3JtIGtleVRpbWVzPSIwOzEiIHZhbHVlcz0iMCA1MCA1MDszNjAgNTAgNTAiIGR1cj0iMXMiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIiB0eXBlPSJyb3RhdGUiIGF0dHJpYnV0ZU5hbWU9InRyYW5zZm9ybSI+PC9hbmltYXRlVHJhbnNmb3JtPjwvY2lyY2xlPjxnPjwvZz48L2c+PC9zdmc+" data-src="images/acceptingPayments/qris-aggregator/qris-flow-33720be4.webp" loading="lazy" class="lazyload" title="" alt="QRIS Aggregator Scheme"></p>
+<h3 id='features-qris-aggregator' type='normal'>Features</h3>
+<p>The maximum amount per transaction for QRIS is Rp 10,000,000. The minimum amount per transaction is Rp 10,000. Should you have any request to receive payments below Rp 10,000, please contact your Business Representative.</p>
+<h3 id='registration-and-setup-qris-aggregator' type='normal'>Registration and Setup</h3>
+<p>Here are the steps to guide you through registration and set up for creating QRIS Aggregator transactions.</p>
+
+<ol>
+<li>Create an account at OY! Dashboard</li>
+<li>Do account verification by submitting the verification form. Ensure to tick the “Receive Money” and “Send Money” products since Payment Routing is a part of Receive Money &amp; Send Money products.</li>
+<li>OY! team will review and verify the form and documents submitted</li>
+<li>Once verification is approved, set up your receiving bank account information.
+Important Note: Ensure that the receiving bank account information is accurate as you can only set it up once via OY! Dashboard for security reasons</li>
+<li>Refer to this section for detailed guidelines on <a href="https://docs.oyindonesia.com/#qr-code-qris-payment-methods">how to activate QRIS Payment Method</a></li>
+<li>Submit your IP address(es) &amp; callback URL to your business representative or send an email to business.support@oyindonesia.com</li>
+<li>OY! will send the Production API Key as an API authorization through your business representative.
+Note: Staging/Demo API Key can be accessed via OY! Dashboard by going to the “Demo” environment and the key can be found on the bottom left menu.</li>
+<li>Integrate QRIS Aggregator via Payment Routing API to your system. Please follow the API documentation to guide you through <a href="https://api-docs.oyindonesia.com/#qris-aggregator">QRIS Aggregator - API Docs</a>.</li>
+</ol>
+<h3 id='creating-qris-aggregator-transaction-qris-aggregator' type='normal'>Creating QRIS Aggregator Transaction</h3>
+<p>Once you successfully complete the registration process for QRIS payment method, you can immediately create QRIS Aggregator transaction via Payment Routing (via API only). You will use Payment Routing Without UI when implementing QRIS Aggregator scheme.</p>
+
+<ol>
+<li>Integrate <a href="https://api-docs.oyindonesia.com/#qris-aggregator">API QRIS Aggregator</a> via Payment Routing.</li>
+<li>Hit OY!’s <a href="https://api-docs.oyindonesia.com/#create-qris-transaction-qris-aggregator">API Create QRIS transaction</a>
+
+<ol>
+<li>Insert parameter “need_frontend” with &quot;false&quot;</li>
+<li>Choose QRIS as Payment Method by</li>
+<li>Filling QRIS in list_enable_payment_method parameter</li>
+<li>Filling QRIS in list_enable_sof</li>
+</ol></li>
+<li>OY! will return url to access the QR code to complete the payment</li>
+<li>Show the QR code to your customer inside your application</li>
+</ol>
+<h3 id='completing-payment-qris-aggregator' type='normal'>Completing Payment</h3>
+<p>Please refer to <a href="https://docs.oyindonesia.com/#qr-code-qris-payment-methods">this section</a>.</p>
+<h3 id='checking-transaction-status-qris-aggregator' type='normal'>Checking Transaction Status</h3>
+<p>All created QRIS Aggregator transactions are shown in OY! Dashboard. Navigate to “Payment Routing” to see the list of created transactions. Inside the dashboard, you can see the details of the transactions, including all the transaction information inputted during creation, transaction status, and the payment reference number*. The dashboard also has a feature to search, filter, and export the list of transactions in various formats: Excel (.xlsx), PDF (.pdf), and CSV (.csv)</p>
+
+<p>If for some reason you do not receive our transaction callbacks successfully, you may use our API Check Status to get the latest transaction status. <a href="https://api-docs.oyindonesia.com/#check-status-qris-transaction-qris-aggregator">Check Status QRIS Transaction - API Docs</a>.</p>
+
+<p>*Payment Reference Number is an identifier of a payment attempt when the customer successfully completes a QRIS payment. The reference number is also displayed in the customer’s receipt/proof of transaction.</p>
+<h3 id='receiving-fund-to-balance-qris-aggregator' type='normal'>Receiving Fund to Balance</h3>
+<p>Once a transaction is paid by the customer, OY! updates the transaction status and sends notification to your system indicating that the transaction has been paid, and settles the funds to your OY! balance. Each payment method has a different settlement time, varying from real-time to D+2 working days.</p>
 <h2 id='api-account-linking-accepting-payments' type='normal'>API Account Linking</h2>
 <p>Account Linking is a feature that allows your customer&#39;s payment account to be linked to your system using tokenization. By linking the customer’s account upfront, your customer can see their account balance inside your application and later on can complete payments without being prompted for any card details or e-wallet phone number. The feature is currently supported for e-wallet ShopeePay &amp; DANA. </p>
 
