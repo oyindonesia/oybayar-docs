@@ -64,7 +64,7 @@ Untuk membuat VA yang bisa disesuaikan, Anda perlu mengakses endpoint URL yang b
 |✅|✅|❌|✅|
 
 #### Alur Pembayaran
-![Bank Transfer Virtual Account Flow](images/acceptingPayments/payment-methods/bank-transfer-virtual-account/payment-flow.webp)
+![Bank Transfer Virtual Account Flow](../images/acceptingPayments/payment-methods/bank-transfer-virtual-account/payment-flow.webp)
 #### Cara Mengaktifkan
 1. Bank selain BCA
 
@@ -104,7 +104,7 @@ Pelanggan Anda dapat membayar tagihan VA melalui metode pembayaran berikut:
 8. Anda dapat menggunakan fitur ini untuk semua transaksi VA pada semua produk “Terima Uang” OY!, (Aggregator VA, Link Pembayaran, Routing Pembayaran)
 
 
-![Bank Transfer - Virtual Account Simulate Payment](images/acceptingPayments/payment-methods/bank-transfer-virtual-account/simulating-callback.webp)
+![Bank Transfer - Virtual Account Simulate Payment](../images/acceptingPayments/payment-methods/bank-transfer-virtual-account/simulating-callback.webp)
 
 
 ### Transfer Bank - Kode Unik
@@ -159,7 +159,7 @@ Dengan kedua metode tersebut, jumlah yang akan masuk ke saldo Anda tetap Rp100.0
 |Penambahan|Rp 10,000 |Rp 499,999,000|
 
 #### Alur Transaksi Pembayaran
-![Bank Transfer - Unique Code Flow](images/acceptingPayments/payment-methods/bank-transfer-unique-code/payment-flow.webp)
+![Bank Transfer - Unique Code Flow](../images/acceptingPayments/payment-methods/bank-transfer-unique-code/payment-flow.webp)
 #### Aktivasi
 Anda hanya dapat menggunakan satu jenis transfer bank (virtual account / kode unik) per bank. Secara default, semua bank menggunakan virtual account. Untuk menerima pembayaran menggunakan kode unik, Anda perlu mengajukan permintaan ke OY! melalui perwakilan bisnis Anda atau tim support kami.
 #### Payment
@@ -179,9 +179,9 @@ Untuk memahami lebih lanjut tentang transaksi menggunakan kode unik, Anda dapat 
 - Tanggal dan Waktu Pembayaran: Pilih tanggal dan waktu yang diinginkan untuk pembayaran.
 4. Setelah semua kolom diisi, Anda dapat mensimulasikan pembayaran dengan mengklik “Kirim Callback”. Jika pembayaran berhasil, notifikasi sukses akan ditampilkan di dalam dashboard. OY! juga akan mengirimkan callback ke URL callback yang telah Anda tentukan. Jika karena alasan tertentu Anda tidak menerima callback, silakan hubungi layanan pelanggan kami untuk membantu menyelesaikan masalah tersebut.
 
-![Bank Transfer - Unique Code Simulate Payment](images/acceptingPayments/payment-methods/bank-transfer-unique-code/simulating-callback.webp)
+![Bank Transfer - Unique Code Simulate Payment](../images/acceptingPayments/payment-methods/bank-transfer-unique-code/simulating-callback.webp)
 
-![Bank Transfer - Unique Code Amount Detail](images/acceptingPayments/payment-methods/bank-transfer-unique-code/payment-link-view.webp)
+![Bank Transfer - Unique Code Amount Detail](../images/acceptingPayments/payment-methods/bank-transfer-unique-code/payment-link-view.webp)
 
 ### Kode QR (QRIS)
 #### Pendahuluan
@@ -436,16 +436,16 @@ Jumlah maksimum per transaksi untuk semua provider E-wallet adalah Rp10.000.000 
 ##### Single Payment
 Single Payment adalah tipe pembayaran untuk pelanggan Anda membayar transaksi langsung di aplikasi E-wallet mereka. Single Payment memiliki 2 alur pembayaran, yaitu dialihkan ke app (JumpApp) dan notifikasi. Untuk mengerti alurnya, Anda dapat melihat bagan berikut:
 
-![Bagan alur JumpApp](images/acceptingPayments/payment-methods/e-wallet/payment-flow-single-payment-redirection.webp)
+![Bagan alur JumpApp](../images/acceptingPayments/payment-methods/e-wallet/payment-flow-single-payment-redirection.webp)
 
-![Bagan alur Notifikasi](images/acceptingPayments/payment-methods/e-wallet/payment-flow-single-payment-push-notification.webp)
+![Bagan alur Notifikasi](../images/acceptingPayments/payment-methods/e-wallet/payment-flow-single-payment-push-notification.webp)
 
 ##### Direct Payment
 Tipe pembayaran Direct Payment membutuhkan pelanggan Anda untuk melakukan _account linking_. _Account linking_ mengharuskan pelanggan Anda untuk menghubungkan akun E-walletnya ke sistem Anda sebelum melakukan pembayaran. Direct Payment memberikan kemudahan kepada pelanggan, karena pelanggan tidak perlu diarahkan ke aplikasi provider E-wallet untuk melakukan pembayaran.
 
 Dengan Direct Payment, pelanggan dapat melakukan transaksi dengan atau tanpa otorisasi (auto-debit). Transaksi dengan otorisasi memerlukan PIN atau OTP, sedangkan transaksi tanpa otorisasi memungkinkan sistem memotong saldo secara otomatis tanpa PIN atau OTP, cocok untuk kebutuhan seperti langganan _(subscription)_.
 
-![E-wallet Direct Payment Flow](images/acceptingPayments/payment-methods/e-wallet/payment-flow-direct-payment.webp)
+![E-wallet Direct Payment Flow](../images/acceptingPayments/payment-methods/e-wallet/payment-flow-direct-payment.webp)
 
 #### Aktivasi
 Untuk menerima pembayaran menggunakan E-wallet, Anda perlu mendaftarkan merchant Anda terlebih dahulu ke provider E-wallet. Pendaftaran dapat dilakukan melalui dashboard OY! dengan membuka halaman “Layanan Kami” dan mengklik tab “Metode Pembayaran”. OY! menyediakan pendaftaran secara _real-time_, sehingga Anda dapat langsung menerima pembayaran setelah selesai mengajukan pendaftaran. Berikut adalah persyaratan yang harus dipenuhi untuk mengajukan pendaftaran:
@@ -762,12 +762,12 @@ Untuk memahami lebih lanjut tentang transaksi menggunakan E-wallet, Anda dapat m
    3. Masukkan nominal transaksi yang ingin dibayar
 4. Setelah semua kolom diisi, Anda dapat mensimulasikan pembayaran dengan mengklik “Kirim Callback”. Jika pembayaran berhasil, notifikasi sukses akan ditampilkan di dalam dashboard. OY! juga akan mengirimkan callback ke URL callback yang telah Anda tentukan. Jika karena alasan tertentu Anda tidak menerima callback, silakan hubungi layanan pelanggan kami untuk membantu menyelesaikan masalah tersebut.
 
-![E-wallet Simulate Callback](images/acceptingPayments/payment-methods/e-wallet/simulating-callback.webp)
-![E-wallet See Reference Number](images/acceptingPayments/payment-methods/e-wallet/preview-dashboard.webp)
+![E-wallet Simulate Callback](../images/acceptingPayments/payment-methods/e-wallet/simulating-callback.webp)
+![E-wallet See Reference Number](../images/acceptingPayments/payment-methods/e-wallet/preview-dashboard.webp)
 
 Khusus untuk transaksi Link Pembayaran, Anda dapat mensimulasikan pembayaran dengan klik tombol “Bayar Tagihan” pada Link Pembayaran yang telah Anda buat.
 
-![E-wallet Simulate Callback Payment Link](images/acceptingPayments/payment-methods/e-wallet/simulating-callback.webp)
+![E-wallet Simulate Callback Payment Link](../images/acceptingPayments/payment-methods/e-wallet/simulating-callback.webp)
 
 ### Kartu Debit dan Kredit
 #### Pendahuluan
@@ -800,11 +800,11 @@ Meskipun semua detail kartu sudah benar, saldo kartu tersedia, dan 3DS sudah dia
 
 Alur via Link Pembayaran
 
-![Cards Flow via Payment Link](images/acceptingPayments/payment-methods/cards/payment-flow-via-payment-link.webp)
+![Cards Flow via Payment Link](../images/acceptingPayments/payment-methods/cards/payment-flow-via-payment-link.webp)
 
 Alur via Routing Pembayaran
 
-![Cards Flow via Payment Routing](images/acceptingPayments/payment-methods/cards/payment-flow-via-payment-routing.webp)
+![Cards Flow via Payment Routing](../images/acceptingPayments/payment-methods/cards/payment-flow-via-payment-routing.webp)
 
 #### Aktivasi
 
@@ -846,12 +846,12 @@ Terdapat 2 tipe Link Pembayaran, yaitu:
 |Sekali Pakai|Satu link untuk menerima satu kali pembayaran.|Transaksi sekali bayar|
 |Pakai Berulang|Satu link untuk menerima pembayaran berulang, bisa diatur tanpa waktu kedaluwarsa.|Top up, Donasi|
 
-![Payment Link Preview](images/acceptingPayments/payment-link/flow/preview-payment-link.webp)
+![Payment Link Preview](../images/acceptingPayments/payment-link/flow/preview-payment-link.webp)
 
 ### Alur Link Pembayaran
 
-![Payment Link One Time Flow](images/acceptingPayments/payment-link/flow/payment-flow-one-time.webp)
-![Payment Link Reusable Flow](images/acceptingPayments/payment-link/flow/payment-flow-reusable.webp)
+![Payment Link One Time Flow](../images/acceptingPayments/payment-link/flow/payment-flow-one-time.webp)
+![Payment Link Reusable Flow](../images/acceptingPayments/payment-link/flow/payment-flow-reusable.webp)
 
 ### Fitur Link Pembayaran
 #### Penyesuaian Konfigurasi Link Pembayaran
@@ -875,12 +875,12 @@ Anda dapat mengatur konfigurasi Link Pembayaran Anda tergantung dari penggunaan 
 
 Anda dapat mengatur konfigurasi default Anda agar tidak perlu mengisi kolom-kolom ini lagi saat membuat Link Pembayaran berikutnya. Simpan konfigurasi default Anda dengan mencentang opsi "Gunakan konfigurasi ini untuk transaksi selanjutnya" saat membuat Link Pembayaran.
 
-![Payment Link Save Configuration](images/acceptingPayments/payment-link/features/default-config.webp)
+![Payment Link Save Configuration](../images/acceptingPayments/payment-link/features/default-config.webp)
 
 #### Memantau Transaksi via Dashboard
 Semua transaksi Link Pembayaran yang Anda buat akan ditampilkan di Dashboard OY!. Akses menu "Link Pembayaran" → "Sekali Pakai"/"Pakai Berulang" untuk melihat daftar transaksi yang telah dibuat. Di dalam dashboard, Anda dapat melihat detail transaksi, termasuk informasi yang dimasukkan saat pembuatan, status transaksi, dan nomor referensi pembayaran*. Dashboard juga dilengkapi fitur pencarian, penyaringan, dan ekspor daftar transaksi ke berbagai format: Excel (.xlsx), PDF (.pdf), dan CSV (.csv).
 
-![Payment Link Monitoring Transactions](images/acceptingPayments/payment-link/features/dashboard-view.webp)
+![Payment Link Monitoring Transactions](../images/acceptingPayments/payment-link/features/dashboard-view.webp)
 
 \*Nomor Referensi Pembayaran adalah nomor identitas pembayaran ketika pelanggan berhasil menyelesaikan pembayaran QRIS. Nomor referensi ini juga tercantum pada struk/bukti transaksi pelanggan. Fitur ini hanya tersedia untuk transaksi QRIS.
 
@@ -907,11 +907,11 @@ Anda dapat menyesuaikan tema untuk Link Pembayaran melalui Dashboard OY!. Beriku
 5. Anda dapat memilih warna yang berbeda untuk tombol di dalam Link Pembayaran. Pilih warna dari _Color Picker_ atau ketik kode warna HEX di “Warna Tombol & Link”. 
 6. Terakhir, simpan perubahan. Perubahan akan diterapkan secara real-time pada semua Link Pembayaran yang dibuat. Anda juga dapat melihat waktu terakhir Link Pembayaran diperbarui.
 
-![Payment Link Customizing Theme](images/acceptingPayments/payment-link/features/dashboard-customized-payment-link.webp)
+![Payment Link Customizing Theme](../images/acceptingPayments/payment-link/features/dashboard-customized-payment-link.webp)
 
 Berikut adalah contoh Payment Link sebelum dan sesudah disesuaikan. Warna header dan tombol telah disesuaikan menjadi warna merah.
 
-![Payment Link Customized](images/acceptingPayments/payment-link/features/payment-link-after-changes.webp)
+![Payment Link Customized](../images/acceptingPayments/payment-link/features/payment-link-after-changes.webp)
 
 #### Bagikan _Payment Link_ Melalui Berbagai Metode
 Anda dapat membagikan _Payment Link_ yang telah dibuat langsung kepada pelanggan Anda melalui berbagai metode, termasuk email, pesan WhatsApp, dan salin tautan.
@@ -952,7 +952,7 @@ Setelah Anda membuat Link Pembayaran, Anda akan mendapatkan link URL yang dapat 
 
 Jika Anda membuat Link Pembayaran melalui aplikasi OY! Business, Anda bisa menggunakan fitur “Bagikan” yang ada pada app dari perangkat mobile Anda ketika akan membagikan link.
 
-![Payment Link Sharing Capabilities](images/acceptingPayments/payment-link/features/copy-link.webp)
+![Payment Link Sharing Capabilities](../images/acceptingPayments/payment-link/features/copy-link.webp)
 
 #### Bukti Pembayaran
 Pelanggan dapat langsung melihat bukti pembayaran di dalam Link Pembayaran setelah pembayaran berhasil. Selain itu, pelanggan juga dapat menerima bukti pembayaran melalui email yang Anda masukkan saat membuat Link Pembayaran. Anda dapat mengatur pengiriman bukti pembayaran melalui email kepada pelanggan Anda dengan mengikuti langkah-langkah berikut:
@@ -970,7 +970,7 @@ Pelanggan dapat langsung melihat bukti pembayaran di dalam Link Pembayaran setel
 7. Buat transaksi Link Pembayaran dan masukkan alamat email pelanggan pada kolom "Email" di bagian "Detail Pelanggan” saat membuat Link Pembayaran melalui Dashboard. Pisahkan beberapa email dengan menggunakan tanda titik koma (;). Contoh: email1@company.com;email2@company.com;email3@company.com
 8. Pelanggan Anda akan menerima bukti pembayaran yang berhasil ke email yang terdaftar setelah pembayaran dilakukan.
 
-![Payment Link Notifications to Payer](images/acceptingPayments/payment-link/features/dashboard-notif-for-sender.webp)
+![Payment Link Notifications to Payer](../images/acceptingPayments/payment-link/features/dashboard-notif-for-sender.webp)
 
 Anda juga dapat menerima bukti pembayaran ke email Anda setelah pelanggan melakukan pembayaran. Untuk mengaturnya, silakan ikuti langkah-langkah berikut:
 
@@ -984,7 +984,7 @@ Anda juga dapat menerima bukti pembayaran ke email Anda setelah pelanggan melaku
 
 **Catatan**: Jika Anda tidak memasukkan alamat email pelanggan saat membuat Link Pembayaran, OY! tidak akan mengirimkan bukti melalui email meskipun konfigurasi notifikasi sudah diaktifkan.
 
-![Payment Link Notifications to Merchant](images/acceptingPayments/payment-link/features/dashboard-notif-for-receiver.webp)
+![Payment Link Notifications to Merchant](../images/acceptingPayments/payment-link/features/dashboard-notif-for-receiver.webp)
 
 #### Menyematkan Payment Link ke Website atau Aplikasi Anda
 Anda dapat menyematkan Link Pembayaran langsung di website atau aplikasi Anda, sehingga pelanggan dapat menyelesaikan pembayaran tanpa dialihkan ke halaman lain.
@@ -1044,7 +1044,7 @@ Jika Anda mengaktifkan fitur *Retry Callback*, sistem akan secara otomatis mengi
    * 54.179.86.72
 7. Klik “Kirim Ulang Callback” untuk mengirim ulang *callback*, dan ulangi proses ini sesuai kebutuhan.
 
-![Payment Link Manual Retry Callback](images/acceptingPayments/payment-link/features/dashboard-resend-callback.webp)
+![Payment Link Manual Retry Callback](../images/acceptingPayments/payment-link/features/dashboard-resend-callback.webp)
 
 ##### ***Retry Callback*** **Otomatis**
 
@@ -1069,7 +1069,7 @@ Retry Callback Otomatis  tidak aktif secara default. Berikut cara mengaktifkanny
 7. Pastikan sistem Anda menerapkan *idempotency logic* dengan menggunakan parameter “tx\_ref\_number” sebagai *idempotency key* untuk mencegah *callback* yang sama diproses sebagai pembayaran yang berbeda.
 8. Simpan perubahan
 
-![Payment Link Automatic Retry Callback](images/acceptingPayments/payment-link/features/dashboard-developer-option.webp)
+![Payment Link Automatic Retry Callback](../images/acceptingPayments/payment-link/features/dashboard-developer-option.webp)
 
 #### Multi Entity Management
 Multi Entity Management adalah fitur yang dapat membantu Anda mengelola beberapa akun OY\! dalam satu entitas. Akun yang berperan sebagai admin disebut Main Entity, sedangkan akun yang dapat dikendalikan oleh admin disebut Sub Entity.
@@ -1112,7 +1112,7 @@ Anda dapat membuat Link Pembayaran melalui dashboard. Selain itu, Anda juga bisa
 6. Klik "Simpan".
 7. Setelah Link Pembayaran berhasil dibuat, Anda dapat meninjau dan membagikannya ke pelanggan.
 
-![Payment Link Creation](images/acceptingPayments/payment-link/creating-payment-link/creation.webp)
+![Payment Link Creation](../images/acceptingPayments/payment-link/creating-payment-link/creation.webp)
 
 | Kolom                | Deskripsi                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 |:---------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -1220,7 +1220,7 @@ Virtual Account (VA) Aggregator adalah fitur yang dirancang khusus untuk membuat
 
 Secara umum, pembuatan nomor VA untuk pelanggan dapat dilakukan melalui API VA Aggregator. Namun, jika Anda ingin membuat VA tanpa integrasi API, Anda dapat melakukannya melalui Dashboard dengan mengakses menu "Virtual Account" di bagian "Terima Uang".
 ### Alur VA Aggregator
-![VA Aggregator Flow](images/acceptingPayments/va-aggregator/payment-flow.webp)
+![VA Aggregator Flow](../images/acceptingPayments/va-aggregator/payment-flow.webp)
 
 
 ### Fitur VA Aggregator
@@ -1345,7 +1345,7 @@ Anda dapat mengkonfigurasi jenis VA sesuai kebutuhan bisnis Anda, memberikan fle
 
 ### Use Cases
 
-![VA Aggregator Use Case](images/acceptingPayments/va-aggregator/use-cases.webp)
+![VA Aggregator Use Case](../images/acceptingPayments/va-aggregator/use-cases.webp)
 
 ### Cara Mengaktifkan
 Berikut adalah langkah-langkah aktivasi fitur VA Aggregator:
@@ -1402,7 +1402,7 @@ Melihat Daftar Virtual Account (VA) yang Dibuat
 
 Di halaman ini, Anda dapat melihat VA yang sudah Anda buat dengan detail informasi berikut: Nomor VA yang telah dibuat, Status pembayaran, Jumlah transaksi, Jenis VA, serta Jumlah transaksi yang telah diselesaikan. Anda juga dapat mengekspor daftar VA beserta detailnya dalam format PDF, Excel, atau CSV sesuai kebutuhan.
 
-![VA Aggregator Monitor Created Transactions](images/acceptingPayments/va-aggregator/viewing-list-of-created-va.webp)
+![VA Aggregator Monitor Created Transactions](../images/acceptingPayments/va-aggregator/viewing-list-of-created-va.webp)
 
 Melihat Daftar Pembayaran Virtual Account (VA)
 
@@ -1413,7 +1413,7 @@ Melihat Daftar Pembayaran Virtual Account (VA)
 
 Di halaman ini, Anda dapat melihat transaksi yang sudah diterima dari nomor VA yang sudah Anda buat dengan detail informasi berikut: *Timestamp* transaksi, Status transaksi, Jumlah pembayaran, Biaya admin, dan Informasi tambahan lainnya. Anda juga dapat mengekspor daftar VA beserta detailnya dalam format PDF, Excel, atau CSV sesuai kebutuhan.
 
-![VA Aggregator Monitor Incoming Transactions](images/acceptingPayments/va-aggregator/viewing-list-of-incoming-payment.webp)
+![VA Aggregator Monitor Incoming Transactions](../images/acceptingPayments/va-aggregator/viewing-list-of-incoming-payment.webp)
 
 
 ### Detail Virtual Account Tiap Bank
@@ -1453,7 +1453,7 @@ API E-Wallet Aggregator adalah fitur yang membantu Anda untuk menerima pembayara
 
 ### Alur API E-Wallet Aggregator
 
-![E-wallet Aggregator Flow](images/acceptingPayments/api-e-wallet-aggragator/payment-flow.webp)
+![E-wallet Aggregator Flow](../images/acceptingPayments/api-e-wallet-aggragator/payment-flow.webp)
 
 ### Fitur E-Wallet Aggregator
 Produk E-wallet Aggregator kami mendukung transaksi E-wallet dari provider berikut:
@@ -1466,7 +1466,7 @@ Produk E-wallet Aggregator kami mendukung transaksi E-wallet dari provider berik
 #### Pantau Transaksi via Dashboard
 Semua transaksi E-wallet yang telah dibuat dapat dipantau melalui Dashboard OY\!. Masuk ke dashboard OY\! dan pergi ke tab E-Wallet. Di dalam dashboard, Anda dapat melihat detail setiap transaksi, termasuk informasi yang diinput saat pembuatan, status transaksi, dan nomor referensi pembayaran. Gunakan fitur pencarian dan filter untuk menemukan transaksi tertentu dengan cepat. Transaksi dapat diekspor dalam berbagai format: Excel (.xlsx), PDF (.pdf), dan CSV (.csv).
 
-![Monitor E-wallet Aggregator Transaction](images/acceptingPayments/api-e-wallet-aggragator/dashboard-selesai.webp)
+![Monitor E-wallet Aggregator Transaction](../images/acceptingPayments/api-e-wallet-aggragator/dashboard-selesai.webp)
 
 #### Cara Mengaktifkan
 Berikut adalah panduan untuk mengaktifkan fitur API E-Wallet:
@@ -1513,7 +1513,7 @@ Pelanggan Anda dapat menerima bukti pembayaran yang berhasil melalui email yang 
 7. Masukkan email pelanggan lewat parameter “email” saat membuat transaksi E-Wallet via API.
 8. Pelanggan Anda akan menerima bukti pembayaran yang berhasil ke email yang terdaftar setelah pembayaran dilakukan.
 
-![Receipt for successful Payment](images/acceptingPayments/payment-link/features/dashboard-notif-for-sender.webp)
+![Receipt for successful Payment](../images/acceptingPayments/payment-link/features/dashboard-notif-for-sender.webp)
 
 **Catatan:** Jika Anda tidak memasukkan alamat email pelanggan saat membuat transaksi, OY\! tidak akan mengirimkan bukti transaksi melalui email, meskipun konfigurasi notifikasi sudah diaktifkan. Sebaliknya, jika Anda memasukkan alamat email tetapi konfigurasi notifikasi tidak diaktifkan, bukti transaksi juga tidak akan dikirimkan.
 
@@ -1534,7 +1534,7 @@ Retry Callback Manual membantu Anda untuk mengirim ulang *callback* secara manua
 5. Cari transaksi yang ingin dikirim ulang *callback*\-nya, lalu klik tombol tiga titik pada kolom “Tindakan”.
 6. Klik “Kirim Ulang Callback” untuk mengirim ulang *callback*, dan ulangi proses ini sesuai kebutuhan.
 
-![Manual Retry Callback](images/acceptingPayments/api-e-wallet-aggragator/dashboard-callback.webp)
+![Manual Retry Callback](../images/acceptingPayments/api-e-wallet-aggragator/dashboard-callback.webp)
 
 ##### *Retry Callback* Otomatis
 Ikuti langkah-langkah berikut untuk mengaktifkan *Retry Callback* Otomatis:
@@ -1550,7 +1550,7 @@ Ikuti langkah-langkah berikut untuk mengaktifkan *Retry Callback* Otomatis:
 7. Pastikan sistem Anda menerapkan *idempotency logic* dengan menggunakan parameter “tx\_ref\_number” sebagai *idempotency key* untuk mencegah *callback* yang sama diproses sebagai pembayaran yang berbeda.
 8. Simpan perubahan
 
-![Automatic Retry Callback](images/acceptingPayments/api-e-wallet-aggragator/dashboard-developer-option.webp)
+![Automatic Retry Callback](../images/acceptingPayments/api-e-wallet-aggragator/dashboard-developer-option.webp)
 
 #### Refund Pembayaran ke Pelanggan
 Jika pelanggan menerima produk yang tidak sesuai, seperti rusak, atau pesanan tidak terkirim, mereka dapat meminta pengembalian dana (*refund)*. Anda dapat langsung mengembalikan pembayaran ke akun pelanggan melalui dashboard OY\!. Refund dapat bersifat penuh atau sebagian. Refund penuh mengembalikan seluruh jumlah pembayaran (100%). Refund sebagian mengembalikan jumlah tertentu sesuai permintaan.
@@ -1673,9 +1673,9 @@ Terima pembayaran cicilan dari peminjam dan langsung salurkan dana ke rekening p
 
 ### Alur Routing Pembayaran
 
-![Payment Routing Aggregator Scheme](images/acceptingPayments/api-payment-routing/payment-flow-without-ui-scheme.webp)
+![Payment Routing Aggregator Scheme](../images/acceptingPayments/api-payment-routing/payment-flow-without-ui-scheme.webp)
 
-![Payment Routing Payment Link Scheme](images/acceptingPayments/api-payment-routing/payment-flow-with-ui-scheme.webp)
+![Payment Routing Payment Link Scheme](../images/acceptingPayments/api-payment-routing/payment-flow-with-ui-scheme.webp)
 
 ### Fitur Routing Pembayaran
 
@@ -1724,7 +1724,7 @@ Di dalam dashboard, Anda dapat melihat detail transaksi, yaitu Informasi transak
 
 Dashboard juga menyediakan fitur untuk mencari, memfilter, dan mengekspor daftar transaksi dalam berbagai format, seperti Excel (.xlsx), PDF (.pdf), dan CSV (.csv).
 
-![Payment Routing Monitoring Transactions](images/acceptingPayments/api-payment-routing/dashboard.webp)
+![Payment Routing Monitoring Transactions](../images/acceptingPayments/api-payment-routing/dashboard.webp)
 
 \*Nomor Referensi Pembayaran adalah nomor identifikasi untuk pembayaran yang berhasil ketika pelanggan menyelesaikan transaksi QRIS. Nomor referensi ini juga ditampilkan pada bukti transaksi pelanggan. Fitur ini hanya tersedia untuk transaksi QRIS.
 
@@ -1915,10 +1915,10 @@ Tautan Pembayaran atau *Account Linking* adalah fitur yang dapat membantu pelang
 
 ### Alur Account Linking
 
-![Account Linking Flow](images/acceptingPayments/api-account-linking/payment-flow-api-account-linking.webp)
-![Get Account Balance Flow](images/acceptingPayments/api-account-linking/payment-flow-api-get-e-wallet-balance.webp)
-![Account Unlinking API Flow](images/acceptingPayments/api-account-linking/payment-flow-unlink-account-via-api-accoung-linking.webp)
-![Account Unlinking via App Flow](images/acceptingPayments/api-account-linking/payment-flow-unlink-account-via-e-wallet-app.webp)
+![Account Linking Flow](../images/acceptingPayments/api-account-linking/payment-flow-api-account-linking.webp)
+![Get Account Balance Flow](../images/acceptingPayments/api-account-linking/payment-flow-api-get-e-wallet-balance.webp)
+![Account Unlinking API Flow](../images/acceptingPayments/api-account-linking/payment-flow-unlink-account-via-api-accoung-linking.webp)
+![Account Unlinking via App Flow](../images/acceptingPayments/api-account-linking/payment-flow-unlink-account-via-e-wallet-app.webp)
 
 ### Cara mengaktifkan fitur Account Linking
 Ikuti langkah-langkah berikut untuk mengaktifkan fitur Account Linking:
