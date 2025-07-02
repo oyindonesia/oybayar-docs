@@ -706,14 +706,14 @@ Here are the requirements that must be fulfilled in order to submit a registrati
     <td valign=”center” style="text-align:center">✅</td>
   </tr>
   <tr>
-    <td colspan="2" valign="top">Projected turnover per month using QRIS</td>
+    <td colspan="2" valign="top">Projected turnover per month using E-Wallet</td>
     <td valign=”center” style="text-align:center">✅</td>
     <td valign=”center” style="text-align:center">✅</td>
     <td valign=”center” style="text-align:center">✅</td>
     <td valign=”center” style="text-align:center">✅</td>
   </tr>
   <tr>
-    <td colspan="2" valign="top">Projected number of transactions per month using QRIS</td>
+    <td colspan="2" valign="top">Projected number of transactions per month using E-Wallet</td>
     <td valign=”center” style="text-align:center">✅</td>
     <td valign=”center” style="text-align:center">✅</td>
     <td valign=”center” style="text-align:center">✅</td>

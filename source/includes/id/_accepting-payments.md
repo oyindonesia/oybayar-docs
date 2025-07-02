@@ -1,1372 +1,1862 @@
 # Terima Uang
+## Metode Pembayaran
+
+### Transfer Bank - Virtual Account
+#### Pendahuluan
+Sebagai metode pembayaran digital, Anda bisa membuat virtual account (VA) untuk transaksi Anda. Pelanggan dapat langsung mentransfer pembayaran ke nomor VA yang dibuat oleh sistem. Anda akan menerima notifikasi (callback) dari OY! saat transaksi sudah selesai. Untuk saat ini, OY! mendukung VA dari 8 bank:
+
+1. Bank Central Asia (BCA)
+2. Bank Rakyat Indonesia (BRI)
+3. Bank Mandiri 
+4. Bank Negara Indonesia (BNI)
+5. Bank CIMB & CIMB Syariah 
+6. Bank SMBC 
+7. Bank Syariah Indonesia (BSI)
+8. Bank Permata & Permata Syariah
+
+#### Ketersediaan Fitur VA
+| Fitur VA          |       Link Pembayaran        | VA Aggregator | E-Wallet Aggregator | Routing Pembayaran |
+|:------------------|:----------------------------:|:-------------:|:-------------------:|:------------------:|
+| Open Amount       |              ❌               |       ✅       |          ❌          |         ❌          |
+| Closed Amount     |              ✅               |       ✅       |          ❌          |         ✅          |
+| VA Pakai Berulang |              ❌               |       ✅       |          ❌          |         ✅          |
+| VA Sekali Pakai   |              ✅               |       ✅       |          ❌          |         ✅          |
+| Statis            |              ❌               |       ✅       |          ❌          |         ✅          |
+| Dinamis           | ✅ (otomatis diset ke 24 jam) |       ✅       |          ❌          |         ✅          |
+| VA Nomor Custom   |              ❌               |       ✅       |          ❌          |         ❌          |
+
+Di samping parameter dari Link Pembayaran (seperti open amount, statis, dsb), pelanggan Anda harus memasukkan nominal yang harus dibayarkan sebelum memilih metode pembayaran dan membayar transaksi.
+
+Karena itu, jika pelanggan Anda memilih untuk membayar melalui VA - Link Pembayaran, nomor VA yang dihasilkan hanya dapat menerima jumlah yang telah ditentukan _(closed amount)_ dan hanya dapat digunakan untuk transaksi tersebut saja (_single-use_ VA). Nomor VA yang dihasilkan melalui Link Pembayaran akan kedaluwarsa dalam 24 jam setelah pelanggan Anda mengonfirmasi metode pembayaran.
+
+Pelanggan Anda juga bisa membuat nomor VA khusus. Anda bisa menyesuaikan suffix (nomor belakang) dari nomor VA berdasarkan nomor HP atau nomor tagihan pelanggan. Sebagai contoh, jika nomor HP pelanggan adalah 08123456789, maka ketika membuat VA, nomor VA nya akan menjadi 23088123456789.
+
+Untuk membuat VA yang bisa disesuaikan, Anda perlu mengakses endpoint URL yang berbeda dari endpoint pembuatan VA yang biasa, yaitu *[API Create Customized VA](https://api-docs.oyindonesia.com/#create-customized-va-va-aggregator)*. Endpoint API untuk [memperbarui](https://api-docs.oyindonesia.com/#update-customized-va-va-aggregator) dan [menonaktifkan](https://api-docs.oyindonesia.com/#deactivate-customized-va-va-aggregator) VA khusus juga berbeda dari VA yang tidak disesuaikan. Secara umum, VA khusus dapat menerima pembayaran berulang dan tidak ada waktu kedaluwarsa. Saat ini, fitur ini hanya tersedia untuk bank BRI dan CIMB. Untuk mengaktifkan fitur ini, silakan hubungi tim kami.
+
+#### Detail Nominal Transaksi
+**Nominal minimum per transaksi**
+
+|Tipe Produk|Nominal minimum per transaksi |
+| :-: | :-: |
+|Link Pembayaran (Selain CIMB, Mandiri, Permata, BNI, BRI) |Rp 10,000 |
+|Link Pembayaran (VA CIMB, Mandiri, Permata, BNI, BRI) |Rp 15,000 |
+|Routing Pembayaran|Rp 10,000 |
+|VA Aggregator (Closed Amount)|Rp 10,000 |
+|VA Aggregator (Open Amount)|Tidak ada minimum |
+
+**Nominal maksimum per transaksi**
+
+|Nama Bank|Nominal maksimum per transaksi  |
+| :-: | :-: |
+|Bank Central Asia (BCA) |Rp 50,000,000|
+|Bank Negara Indonesia (BNI) |Rp 50,000,000|
+|Bank Rakyat Indonesia (BRI) |Rp 500,000,000|
+|Bank Mandiri |Rp 500,000,000|
+|Bank CIMB |Rp 500,000,000|
+|Bank SMBC |Rp 100,000,000|
+|Bank Syariah Indonesia (BSI)|Rp 50,000,000|
+|Bank Permata|Rp 500,000,000|
+
+#### Tersedia pada produk:
+
+|Link Pembayaran|VA Aggregator|E-Wallet Aggregator|Routing Pembayaran|
+| :-: | :-: | :-: | :-: |
+|✅|✅|❌|✅|
+
+#### Alur Pembayaran
+![Bank Transfer Virtual Account Flow](images/acceptingPayments/payment-methods/bank-transfer-virtual-account/payment-flow.webp)
+#### Cara Mengaktifkan
+1. Bank selain BCA
+
+    Tidak ada proses _onboarding_ tambahan untuk mengaktifkan metode pembayaran virtual  account. Setelah produk Terima Uang aktif, Anda bisa menggunakan VA tanpa perlu dokumen tambahan. Anda cukup memberi tahu tim kami VA bank apa saja yang Anda perlukan.
+
+2. BCA
+   
+    Anda perlu mengajukan dokumen tambahan untuk mengaktifkan VA BCA(termasuk, namun tidak terbatas pada, Nomor Pokok Wajib Pajak (NPWP) dan KTP). Proses _onboarding_ bank BCA membutuhkan waktu kurang lebih 14 sampai 30 hari kerja, tergantung pada penilaian bank dan kelengkapan dokumen.
+
+#### Metode Pembayaran untuk Membayar VA
+
+
+Pelanggan Anda dapat membayar tagihan VA melalui metode pembayaran berikut:
+
+
+| Virtual Akun Bank               | SKN | RTGS | ATMs | Mobile Banking antar bank | Internet Banking antar bank | Internet Banking (jaringan bank sama) | Mobile Banking (jaringan bank sama) |
+|---------------------------------|:---:|:----:|:----:|:-------------------------:|:---------------------------:|:-------------------------------------:|:-----------------------------------:|
+| Bank Mandiri                    |  ✅  |  ✅   |  ✅   |             ✅             |              ✅              |                   ✅                   |                  ✅                  |
+| BRI                             |  ✅  |  ✅   |  ✅   |             ✅             |              ✅              |                   ❌                   |                  ✅                  |
+| BNI                             |  ✅  |  ✅   |  ✅   |             ✅             |              ✅              |                   ❌                   |                  ✅                  |
+| Permata                         |  ✅  |  ✅   |  ✅   |             ✅             |              ✅              |                   ❌                   |                  ✅                  |
+| CIMB Niaga / CIMB Niaga Syariah |  ✅  |  ✅   |  ✅   |             ✅             |              ❌              |                   ❌                   |                  ✅                  |
+| BCA                             |  ❌  |  ❌   |  ✅   |             ✅             |              ✅              |                   ❌                   |                  ❌                  |
+| SMBC                            |  ✅  |  ❌   |  ✅   |             ✅             |              ❌              |                   ❌                   |                  ✅                  |
+| BSI                             |  ❌  |  ❌   |  ✅   |             ✅             |              ✅              |                   ✅                   |                  ✅                  |
+
+
+
+#### Simulasi *Callback:*
+1. Sebelum melakukan simulasi callback, perlu diingat bahwa Anda perlu membuat transaksi pada produk Terima Uang terlebih dahulu untuk mendapatkan nomor VA di mode Demo. 
+2. Untuk mensimulasikan pembayaran yang berhasil, pastikan Anda sudah berada pada mode Demo. Untuk masuk mode Demo, klik tombol “Coba di Demo” pada dashboard Anda. 
+3. Klik menu “Pengaturan”, lalu pilih pengaturan untuk “Callback Transfer Bank” 
+4. Pilih “Virtual Account” sebagai tipe transaksi 
+5. Pilih nama bank berdasarkan nomor VA yang telah Anda buat 
+6. Masukkan nomor VA dan nominal pembayaran. Untuk VA tipe closed, Anda perlu memasukkan nominal yang Anda tentukan saat membuat VA tersebut 
+7. Masukkan waktu pembayaran. Pastikan waktu pembayaran melebihi waktu pembuatan serta kurang dari waktu kedaluwarsa 
+8. Anda dapat menggunakan fitur ini untuk semua transaksi VA pada semua produk “Terima Uang” OY!, (Aggregator VA, Link Pembayaran, Routing Pembayaran)
+
+
+![Bank Transfer - Virtual Account Simulate Payment](images/acceptingPayments/payment-methods/bank-transfer-virtual-account/simulating-callback.webp)
+
+
+### Transfer Bank - Kode Unik
+#### Pendahuluan
+Kode Unik adalah tipe pembayaran melalui transfer bank dengan menambahkan atau mengurangi nominal berdasarkan kode unik (sebesar Rp 1-999) pada total nominal pembayaran Anda. Tidak seperti virtual account, di mana tiap pelanggan mendapatkan nomor VA yang berbeda, kode unik selalu menggunakan nomor rekening yang sama setiap bertransaksi. Nomor rekening yang digunakan akan menggunakan nama perusahaan OY! (PT. Dompet Harapan Bangsa), dan Anda tidak dapat menyesuaikan dengan rekening Anda sendiri. Metode kode unik juga mempunyai jam operasional, yaitu pada jam 03.00 - 20.30 WIB.
+
+Ada dua metode yang dapat Anda gunakan untuk transaksi kode unik: metode penambahan atau pendekatan pengurangan.
+
+1. Metode Penambahan
+
+    Dengan menggunakan metode penambahan, nominal kode unik akan ditambahkan ke tagihan, sehingga pelanggan Anda akan membayar Rp 1-999 lebih banyak dari jumlah tagihan. Jumlah tambahan ini tidak akan masuk ke saldo Anda.
+
+2. Metode Pengurangan 
+
+    Dengan menggunakan metode pengurangan, jumlah tagihan akan dikurangi dengan nominal kode unik. Dalam hal ini, pelanggan Anda akan membayar Rp 1-999 lebih sedikit dari jumlah tagihan. Namun, jangan khawatir, jumlah yang masuk ke saldo Anda tidak akan terpengaruh oleh nominal kode unik ini.
+
+Metode default pada kode unik adalah penambahan, tetapi Anda dapat meminta perubahan metode dengan menghubungi tim kami.
+
+Sebagai contoh, jika Anda membuat transaksi kode unik dengan jumlah tagihan Rp 100.000, maka OY! akan membuat nominal kode unik untuk transaksi tersebut. Misalnya, nominal kode unik yang dihasilkan adalah Rp100.
+
+Jika Anda menggunakan metode penambahan, pelanggan Anda akan membayar total Rp100.100.
+
+Namun, jika Anda menggunakan metode pengurangan, pelanggan Anda akan membayar total Rp99.900.
+
+Dengan kedua metode tersebut, jumlah yang akan masuk ke saldo Anda tetap Rp100.000.
+
+
+#### Detail Pembayaran Kode Unik
+
+|Bank|Kode Bank|Open Amount |Closed Amount |Waktu Pembayaran Maksimum|Jam Operasional|
+| :-: | :-: | :-: | :-: | :-: | :-: |
+|Bank Central Asia (BCA) |014|❌|✅|Max. 3 jam|03.00 - 20.30 WIB.|
+
+#### Fitur Pembayaran
+
+| Bank | Fitur Refund |
+|:----:|:------------:|
+| BCA  |      ❌       |
+
+
+#### Ketersediaan Produk
+
+|Bank |Link Pembayaran|Aggregator VA|Aggregator E-Wallet|Routing Pembayaran|
+| :- | :-: | :-: | :-: | :-: |
+|BCA |✅|❌|❌|✅|
+
+#### Detail Nominal Transaksi
+
+|Metode Kode Unik|Min. Nominal Transaksi |Max. Nominal Transaksi|
+| :-: | :-: | :-: |
+|Pengurangan|Rp 11,000 |Rp 500,000,000|
+|Penambahan|Rp 10,000 |Rp 499,999,000|
+
+#### Alur Transaksi Pembayaran
+![Bank Transfer - Unique Code Flow](images/acceptingPayments/payment-methods/bank-transfer-unique-code/payment-flow.webp)
+#### Aktivasi
+Anda hanya dapat menggunakan satu jenis transfer bank (virtual account / kode unik) per bank. Secara default, semua bank menggunakan virtual account. Untuk menerima pembayaran menggunakan kode unik, Anda perlu mengajukan permintaan ke OY! melalui perwakilan bisnis Anda atau tim support kami.
+#### Payment
+
+[Klik di sini untuk melihat tutorial pembayaran](https://drive.google.com/file/d/1D8cJEPFmVEN8-QVppiSm9RPa2vpb-b2H/view?usp=drive_link)
+
+#### Simulasi Pembayaran
+Untuk memahami lebih lanjut tentang transaksi menggunakan kode unik, Anda dapat mensimulasikan transaksi kode unik yang dibuat di mode Demo. Berikut adalah langkah-langkah untuk mensimulasikan pembayaran kode unik melalui dashboard OY!:
+
+1. Buka dashboard OY! dan masuk ke mode Demo. 
+2. Buka menu “Pengaturan” dan klik Callback Transfer Bank. 
+3. Masukkan detail pembayaran untuk transaksi yang ingin Anda simulasikan:
+- Jenis Transaksi: Pilih Kode Unik.
+- Bank: Pilih bank tujuan.
+- Nomor Rekening: Masukkan nomor rekening bank OY! Indonesia yang Anda terima saat pembuatan transaksi.
+- Jumlah: Masukkan jumlah tagihan beserta nominal kode unik yang Anda terima saat pembuatan transaksi.
+- Tanggal dan Waktu Pembayaran: Pilih tanggal dan waktu yang diinginkan untuk pembayaran.
+4. Setelah semua kolom diisi, Anda dapat mensimulasikan pembayaran dengan mengklik “Kirim Callback”. Jika pembayaran berhasil, notifikasi sukses akan ditampilkan di dalam dashboard. OY! juga akan mengirimkan callback ke URL callback yang telah Anda tentukan. Jika karena alasan tertentu Anda tidak menerima callback, silakan hubungi layanan pelanggan kami untuk membantu menyelesaikan masalah tersebut.
+
+![Bank Transfer - Unique Code Simulate Payment](images/acceptingPayments/payment-methods/bank-transfer-unique-code/simulating-callback.webp)
+
+![Bank Transfer - Unique Code Amount Detail](images/acceptingPayments/payment-methods/bank-transfer-unique-code/payment-link-view.webp)
+
+### Kode QR (QRIS)
+#### Pendahuluan
+Quick Response Code Indonesian Standard (QRIS) adalah standar pembayaran QR di Indonesia yang dikembangkan oleh Bank Indonesia. Pembayaran dilakukan oleh pelanggan dengan memindai QR melalui aplikasi m-banking atau E-wallet mereka. Pembayaran QR sangat cocok untuk transaksi bernilai kecil karena menawarkan biaya yang terjangkau (0,7% per transaksi).
+
+#### Fitur Pembayaran
+
+| Provider QRIS | Fitur Refund |
+|:-------------:|:------------:|
+|     QRIS      |      ❌       |
+
+#### Ketersediaan Produk
+
+| Provider QRIS | Link Pembayaran | Aggregator VA | Aggregator E-Wallet | Routing Pembayaran |
+|:-------------:|:---------------:|:-------------:|:-------------------:|:------------------:|
+|     QRIS      |        ✅        |       ❌       |          ❌          |         ✅          |
+
+#### Detail Nominal Transaksi
+
+Jumlah maksimum per transaksi untuk QRIS adalah Rp10.000.000, sedangkan jumlah minimum per transaksi adalah Rp10.000, baik melalui Link Pembayaran maupun Routing Pembayaran. Jika Anda ingin menerima pembayaran di bawah Rp10.000, silakan hubungi [perwakilan bisnis kami](customerservice@oyindonesia.com).
+
+#### Aktivasi
+Untuk menerima pembayaran menggunakan QRIS, Anda perlu mendaftarkan merchant Anda terlebih dahulu ke provider QRIS. Pendaftaran dapat dilakukan melalui dashboard OY! dengan membuka halaman “Layanan Kami” dan mengklik tab “Metode Pembayaran”.
+
+Berikut adalah persyaratan yang harus dipenuhi untuk mengajukan pendaftaran:
+
+<table>
+  <tr>
+    <th colspan="2" valign="top" style="text-align:center">
+      <p></p>
+      <p><b>Persyaratan</b></p>
+    </th>
+    <th valign="top" halign="center" ><b>QRIS</b></th>
+  </tr>
+  <tr>
+    <td colspan="2" valign="top">Kepemilikan Bisnis</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td rowspan="11" valign="top">KTP Direktur atau Pemilik Bisnis</td>
+    <td valign="top">NIK</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td valign="top">Nama Lengkap</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td valign="top">Tanggal Lahir</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td valign="top">Pekerjaan </td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td valign="top">Jenis Kelamin</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td valign="top">Provinsi</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td valign="top">Kota</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td valign="top">Kecamatan </td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td valign="top">Kel/Desa</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td valign="top">Kode Pos</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td valign="top">Alamat Lengkap</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="top">Email Direktur</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="top">Nomor HP Direktur</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td rowspan="2" valign="top">NPWP</td>
+    <td valign="top">Nomor NPWP</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td valign="top">Lampiran Dokumen</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td rowspan="2" valign="top">Person in Charge (PIC) - Direktur</td>
+    <td valign="top">Nama Lengkap</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td valign="top">
+      <p>Jabatan</p>
+      <p></p>
+      <p></p>
+    </td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td rowspan="4" valign="top">Person in Charge (PIC) - Non Direktur</td>
+    <td valign="top">Nama Lengkap</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td valign="top">
+      <p>Jabatan</p>
+      <p></p>
+      <p></p>
+    </td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td valign="top">Alamat Email</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td valign="top">Nomor HP</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="top">Alur Pembayaran Bisnis</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="top">Logo Bisnis (dalam format URL Gdrive))</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="top">Link Website</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="top">Nomor Induk Berusaha (sesuai dengan dokumen legalitas)</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="top">Tanggal Pendirian Usaha (sesuai dengan dokumen legalitas)</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="top">Tempat Pendirian Usaha (sesuai dengan dokumen legalitas)</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="top">Perkiraan omzet per bulan menggunakan QRIS</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="top">Perkiraan jumlah transaksi per bulan menggunakan QRIS</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+</table>
+
+
+#### Pembayaran
+[Klik di sini untuk melihat tutorial pembayaran](https://drive.google.com/file/d/1nwoMKH8iKaq8S89an0_bPlNQ11xMyo7T/view?usp=sharing)
+
+#### Simulasi Pembayaran
+Saat ini, demo simulasi pembayaran QRIS untuk transaksi belum tersedia.
+
+### E-Wallet
+#### Pendahuluan
+E-wallet adalah metode pembayaran elektronik yang memungkinkan Anda membayar barang dan jasa tanpa memerlukan rekening bank atau uang tunai. E-wallet memiliki peran penting dalam pertumbuhan e-commerce, karena memungkinkan pengguna melakukan pembayaran dengan mudah tanpa harus berinteraksi dengan bank atau pihak ketiga lainnya. Saat ini, OY! mendukung pembayaran dari beberapa E-wallet di Indonesia, yaitu OVO, DANA, ShopeePay, dan LinkAja.
+
+#### Detail Pembayaran E-Wallet
+
+| Provider E-Wallet |Kode E-Wallet| Waktu Berlaku |Tipe Alur|Bayar via Desktop|Bayar via Browser HP|
+|:-----------------:| :- |:--------------| :- | :-: | :-: |
+|     ShopeePay     |shopeepay\_ewallet| 1 - 60 menit  |Dialihkan ke app (JumpApp)|❌|❌|
+|        OVO        |ovo\_ewallet| 55 detik      |Notifkasi|❌|❌|
+|       DANA        |dana\_ewallet| 1 - 60 menit  |Dialihkan ke app (JumpApp)|✅|✅|
+|      LinkAja      |linkaja\_ewallet| 5 menit       |Dialihkan ke app (JumpApp)|❌|❌|
+
+Jumlah maksimum per transaksi untuk semua provider E-wallet adalah Rp10.000.000 untuk pelanggan yang telah melakukan KYC di aplikasi provider, dan Rp2.000.000 untuk pelanggan yang belum melakukan KYC.
+
+#### Fitur Pembayaran
+
+| Provider E-Wallet |  Fitur Refund   | Fitur Account Linking | Waktu Kedaluwarsa Link |  Perpanjangan Link  |
+|:-----------------:|:---------------:|:---------------------:|:----------------------:|:-------------------:|
+|     ShopeePay     |  Refund Penuh   |           ✅           |        5 tahun         | Setelah kedaluwarsa |
+|        OVO        | Belum Didukung  |           ❌           |           -            |          -          |
+|       DANA        | Refund Sebagian |           ✅           |        10 tahun        | Setelah kedaluwarsa |
+|      LinkAja      |  Refund Penuh   |           ❌           |           -            |          -          |
+
+#### Ketersediaan Produk
+
+<table>
+  <tr>
+    <th rowspan="2" valign="top"><b>Provider E-Wallet</b></th>
+    <th valign="top"><b>Link Pembayaran</b></th>
+    <th valign="top"><b>Aggregator VA</b></th>
+    <th valign="top"><b>Aggregator E-Wallet </b></th>
+    <th colspan="2" valign="top"><b>Routing Pembayaran</b></th>
+  </tr>
+  <tr>
+    <th valign="top"><b>Single Payment</b></th>
+    <th valign="top"><b>-</b></th>
+    <th valign="top"><b>Single Payment</b></th>
+    <th valign="top"><b>Single Payment</b></th>
+    <th valign="top"><b>Direct Payment</b></th>
+  </tr>
+  <tr>
+    <td valign="top">ShopeePay</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">❌</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td valign="top">OVO</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">❌</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">❌</td>
+    <td valign=”center” style="text-align:center">❌</td>
+  </tr>
+  <tr>
+    <td valign="top">DANA</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">❌</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">❌</td>
+  </tr>
+  <tr>
+    <td valign="top">LinkAja</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">❌</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">❌</td>
+  </tr>
+</table>
+
+#### Tipe Pembayaran Beserta Alurnya
+##### Single Payment
+Single Payment adalah tipe pembayaran untuk pelanggan Anda membayar transaksi langsung di aplikasi E-wallet mereka. Single Payment memiliki 2 alur pembayaran, yaitu dialihkan ke app (JumpApp) dan notifikasi. Untuk mengerti alurnya, Anda dapat melihat bagan berikut:
+
+![Bagan alur JumpApp](images/acceptingPayments/payment-methods/e-wallet/payment-flow-single-payment-redirection.webp)
+
+![Bagan alur Notifikasi](images/acceptingPayments/payment-methods/e-wallet/payment-flow-single-payment-push-notification.webp)
+
+##### Direct Payment
+Tipe pembayaran Direct Payment membutuhkan pelanggan Anda untuk melakukan _account linking_. _Account linking_ mengharuskan pelanggan Anda untuk menghubungkan akun E-walletnya ke sistem Anda sebelum melakukan pembayaran. Direct Payment memberikan kemudahan kepada pelanggan, karena pelanggan tidak perlu diarahkan ke aplikasi provider E-wallet untuk melakukan pembayaran.
+
+Dengan Direct Payment, pelanggan dapat melakukan transaksi dengan atau tanpa otorisasi (auto-debit). Transaksi dengan otorisasi memerlukan PIN atau OTP, sedangkan transaksi tanpa otorisasi memungkinkan sistem memotong saldo secara otomatis tanpa PIN atau OTP, cocok untuk kebutuhan seperti langganan _(subscription)_.
+
+![E-wallet Direct Payment Flow](images/acceptingPayments/payment-methods/e-wallet/payment-flow-direct-payment.webp)
+
+#### Aktivasi
+Untuk menerima pembayaran menggunakan E-wallet, Anda perlu mendaftarkan merchant Anda terlebih dahulu ke provider E-wallet. Pendaftaran dapat dilakukan melalui dashboard OY! dengan membuka halaman “Layanan Kami” dan mengklik tab “Metode Pembayaran”. OY! menyediakan pendaftaran secara _real-time_, sehingga Anda dapat langsung menerima pembayaran setelah selesai mengajukan pendaftaran. Berikut adalah persyaratan yang harus dipenuhi untuk mengajukan pendaftaran:
+
+<table>
+  <tr>
+    <th colspan="2" rowspan="2" valign="top" style="text-align:center">
+      <p></p>
+      <p><b>Persyaratan</b></p>
+    </th>
+    <th colspan="4" valign="top" style="text-align:center"><b>Provider E-Wallet</b></th>
+  </tr>
+  <tr>
+    <th valign="top"><b>ShopeePay</b></th>
+    <th valign="top"><b>LinkAja</b></th>
+    <th valign="top"><b>DANA</b></th>
+    <th valign="top"><b>OVO</b></th>
+  </tr>
+  <tr>
+    <td colspan="2" valign="top">Kepemilikan Bisnis</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td rowspan="11" valign="top">KTP Direktur atau Pemilik Bisnis</td>
+    <td valign="top">KTP</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td valign="top">Nama Lengkap</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td valign="top">Tanggal Lahir</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td valign="top">Pekerjaan </td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td valign="top">Jenis Kelamin</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td valign="top">Provinsi</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td valign="top">Kota</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td valign="top">Kecamatan </td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td valign="top">Kel/Desa</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td valign="top">Kode Pos</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td valign="top">Alamat Lengkap</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="top">Email Direktur</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="top">Nomor HP Direktur</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td valign="top">NPWP</td>
+    <td valign="top">Tipe NPWP</td>
+    <td valign=”center” style="text-align:center">❌</td>
+    <td valign=”center” style="text-align:center">❌</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">❌</td>
+  </tr>
+  <tr>
+    <td rowspan="8" valign="top"></td>
+    <td valign="top">Nomor NPWP</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td valign="top">Lampiran Dokumen</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td valign="top">Provinsi</td>
+    <td valign=”center” style="text-align:center">❌</td>
+    <td valign=”center” style="text-align:center">❌</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">❌</td>
+  </tr>
+  <tr>
+    <td valign="top">Kota</td>
+    <td valign=”center” style="text-align:center">❌</td>
+    <td valign=”center” style="text-align:center">❌</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">❌</td>
+  </tr>
+  <tr>
+    <td valign="top">Kecamatan </td>
+    <td valign=”center” style="text-align:center">❌</td>
+    <td valign=”center” style="text-align:center">❌</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">❌</td>
+  </tr>
+  <tr>
+    <td valign="top">Kel/Desa</td>
+    <td valign=”center” style="text-align:center">❌</td>
+    <td valign=”center” style="text-align:center">❌</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">❌</td>
+  </tr>
+  <tr>
+    <td valign="top">Kode Pos</td>
+    <td valign=”center” style="text-align:center">❌</td>
+    <td valign=”center” style="text-align:center">❌</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">❌</td>
+  </tr>
+  <tr>
+    <td valign="top">Alamat Lengkap</td>
+    <td valign=”center” style="text-align:center">❌</td>
+    <td valign=”center” style="text-align:center">❌</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">❌</td>
+  </tr>
+  <tr>
+    <td rowspan="4" valign="top">Person in Charge (PIC) - Non Direktur</td>
+    <td valign="top">Nama Lengkap</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td valign="top">
+      <p>Jabatan</p>
+      <p></p>
+      <p></p>
+    </td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td valign="top">Alamat Email</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td valign="top">Nomor HP</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="top">Apakah Izin Usaha Anda Mempunyai Masa Berlaku?</td>
+    <td valign=”center” style="text-align:center">❌</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">❌</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="top">Alur Pembayaran Bisnis</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="top">Logo Bisnis (dalam format URL Gdrive)</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="top">Link Website</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="top">Nomor Induk Berusaha (sesuai dengan dokumen legalitas)</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="top">Nomor Induk Berusaha / Sertifikat Pendaftaran Perusahaan</td>
+    <td valign=”center” style="text-align:center">❌</td>
+    <td valign=”center” style="text-align:center">❌</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="top">Tanggal Pendirian Usaha (sesuai dengan dokumen legalitas)</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="top">Tempat Pendirian Usaha (sesuai dengan dokumen legalitas)</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="top">Perkiraan omzet per bulan menggunakan E-Wallet</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="top">Perkiraan jumlah transaksi per bulan menggunakan E-Wallet</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+    <td valign=”center” style="text-align:center">✅</td>
+  </tr>
+</table>
+
+
+#### Pembayaran
+ShopeePay (Single Payment)
+
+[Klik di sini untuk melihat tutorial pembayaran](https://drive.google.com/file/d/162WY4oEKwEcvgF7p_1lQ6VLHS4XGS-yI/view?usp=drive_link)
+
+DANA
+
+[Klik di sini untuk melihat tutorial pembayaran](https://drive.google.com/file/d/1c65gLG1gZdGKWhM6FazlqRA5qJVRhOYf/view?usp=drive_link)
+
+LinkAja
+
+[Klik di sini untuk melihat tutorial pembayaran](https://drive.google.com/file/d/1bN4-fVS0i1ygK96UVo7XcdnIhhQqzZi3/view?usp=drive_link)
+
+OVO
+
+[Klik di sini untuk melihat tutorial pembayaran](https://drive.google.com/file/d/1b_ImuHTQPGF1UE6jrtxhqRAShpbx8DDi/view?usp=sharing)
+
+#### Simulasi Pembayaran
+Untuk memahami lebih lanjut tentang transaksi menggunakan E-wallet, Anda dapat mensimulasikan transaksi E-wallet yang dibuat di mode Demo. Berikut adalah langkah-langkah untuk mensimulasikan pembayaran E-wallet melalui dashboard OY!:
+
+1. Buka dashboard OY! dan masuk ke mode Demo. 
+2. Buka menu “Pengaturan” dan klik Callback E-wallet. 
+3. Masukkan detail pembayaran untuk transaksi yang ingin Anda simulasikan:
+   1. Pilih provider E-wallet: ShopeePay, DANA, OVO, atau LinkAja 
+   2. Masukkan nomor referensi transaksi. Untuk transaksi E-wallet yang dibuat via API E-wallet, Anda bisa menemukan nomor referensi pada “Menu API E-wallet”. Untuk lebih jelasnya, silakan lihat gambar di bawah. 
+   3. Masukkan nominal transaksi yang ingin dibayar
+4. Setelah semua kolom diisi, Anda dapat mensimulasikan pembayaran dengan mengklik “Kirim Callback”. Jika pembayaran berhasil, notifikasi sukses akan ditampilkan di dalam dashboard. OY! juga akan mengirimkan callback ke URL callback yang telah Anda tentukan. Jika karena alasan tertentu Anda tidak menerima callback, silakan hubungi layanan pelanggan kami untuk membantu menyelesaikan masalah tersebut.
+
+![E-wallet Simulate Callback](images/acceptingPayments/payment-methods/e-wallet/simulating-callback.webp)
+![E-wallet See Reference Number](images/acceptingPayments/payment-methods/e-wallet/preview-dashboard.webp)
+
+Khusus untuk transaksi Link Pembayaran, Anda dapat mensimulasikan pembayaran dengan klik tombol “Bayar Tagihan” pada Link Pembayaran yang telah Anda buat.
+
+![E-wallet Simulate Callback Payment Link](images/acceptingPayments/payment-methods/e-wallet/simulating-callback.webp)
+
+### Kartu Debit dan Kredit
+#### Pendahuluan
+OY! menyediakan metode pembayaran melalui kartu debit dan kredit untuk pelanggan Anda. Untuk saat ini, OY! mendukung kartu VISA dan Mastercard.
+
+#### Detail Fitur
+1. Transaksi aman dengan perlindungan 3DSecure – memberikan keamanan bagi Anda dan pelanggan Anda dari risiko penipuan. 
+2. Mendukung berbagai jaringan global (Visa dan Mastercard) – mempermudah pemrosesan transaksi lokal dan internasional.
+
+Untuk memastikan transaksi berjalan dengan lancar, pastikan pelanggan Anda telah:
+1. Menyalakan 3DS sebagai metode otentikasi untuk setiap transaksi yang dilakukan dari kartu mereka 
+2. Memiliki saldo atau limit kredit yang cukup untuk tiap transaksi 
+3. Khusus untuk transaksi internasional, pastikan bank atau perusahaan penyedia kartu telah diizinkan untuk melakukan transaksi internasional
+
+Nominal minimum untuk pembayaran kartu adalah Rp15.000 dan tidak ada nominal maximum untuk tiap transaksi. Sementara, limit kartu akan ditentukan oleh saldo atau limit kredit yang dimiliki tiap kartu.
+
+#### Penjelasan untuk Transaksi Internasional
+
+Pelanggan Anda dapat menggunakan kartu debit atau kredit yang diterbitkan di dalam atau pun luar negeri. Jika Anda berencana melakukan transaksi internasional, perlu diingat bahwa OY! hanya bisa melakukan transaksi dalam Rupiah. Artinya, pelanggan Anda tetap dapat menggunakan kartu internasional mereka untuk pembayaran, namun kartu tersebut akan tetap dikenakan biaya dalam Rupiah, dan penyelesaian dana ke saldo OY! akan dilakukan dalam Rupiah. Sementara, pada laporan tagihan penyedia kartu akan ditampilkan mata uang lokal mereka, beserta rate kurs dan biaya tambahan (jika ada) yang dikenakan oleh penyedia kartu.
+
+Beberapa penyedia kartu mungkin tidak mengizinkan untuk melakukan transaksi internasional. Karena itu, penting untuk pelanggan Anda untuk mengecek apakah ada limitasi untuk meminimalisir transaksi ditolak oleh penyedia kartu.
+
+#### Transactions Declined by Issuer
+
+Ketika transaksi diajukan ke penyedia kartu pelanggan Anda, biasanya mereka memiliki sistem otomatis dan parameter yang membantu mereka dalam memutuskan apakah akan mengotorisasi transaksi tersebut atau tidak. Parameter ini dapat mencakup, namun tidak terbatas pada, aktivitas dari transaksi-transaksi sebelumnya, detail kartu; seperti tanggal kedaluwarsa dan CVV, serta ketersediaan saldo.
+
+Meskipun semua detail kartu sudah benar, saldo kartu tersedia, dan 3DS sudah diaktifkan, masih ada kemungkinan transaksi ditolak oleh penyedia kartu. Terkadang, alasan penolakan yang diberikan terlalu “umum”. Jika itu terjadi, Anda dapat meminta pelanggan Anda untuk menggunakan kartu lain atau metode pembayaran yang lain. Selain itu, pelanggan dapat menghubungi penyedia kartu langsung untuk informasi lebih lanjut mengenai alasan yang lebih spesifik. Penyedia kartu kemungkinan besar tidak akan memberikan penjelasan penolakan melalui OY!.
+
+#### Alur Transaksi Pembayaran
+
+Alur via Link Pembayaran
+
+![Cards Flow via Payment Link](images/acceptingPayments/payment-methods/cards/payment-flow-via-payment-link.webp)
+
+Alur via Routing Pembayaran
+
+![Cards Flow via Payment Routing](images/acceptingPayments/payment-methods/cards/payment-flow-via-payment-routing.webp)
+
+#### Aktivasi
+
+Untuk menerima pembayaran menggunakan kartu debit atau kredit, Anda perlu menghubungi [perwakilan bisnis kami](customerservice@oyindonesia.com) untuk informasi lebih lanjut mengenai proses aktivasi.
+
+|Persyaratan |Kartu Debit atau Kredit|
+| :-: | :-: |
+|Formulir Kelayakan Partner|✅|
+|Formulir Permintaan Partner ke Bank |✅|
+|Perjanjian Kerja Sama dengan OY! |✅|
+|Profil Perusahaan |✅|
+|Izin Operasional (jika berlaku)|✅|
+|Alur KYC |✅|
+|Daftar User|✅| 
+
+
+#### Simulasi Pembayaran
+1. Buka dashboard OY! dan masuk ke mode Demo 
+2. Buat transaksi Link Pembayaran. Pastikan Anda memilih “Kartu Debit/Kredit” sebagai opsi metode pembayaran 
+3. Buka link pembayaran melalui browser 
+4. Pilih “Kartu Debit/Kredit” sebagai metode pembayaran Anda. Selanjutnya, Anda akan diarahkan ke halaman untuk mengisi detail kartu. Jika tidak diarahkan secara otomatis, silakan klik tombol “Pembayaran dengan Kartu” 
+5. Isi detail kartu dengan informasi sebagai berikut:
+   - Nomor Kartu: 2223000000000007 
+   - Masa Aktif Kartu: 01/39 
+   - CVV Kartu: 100 
+   - Nama Pemegang Kartu: Testing 
+6. Isi email dan nomor HP 
+7. Klik Bayar 
+8. Anda akan diarahkan ke halaman untuk simulasi otentikasi 3DS. (pada pembayaran sebenarnya, Anda akan menerima OTP yang dikirimkan ke nomor HP Anda oleh bank). Pilih dari menu dropdown untuk transaksi yang berhasil diautentikasi (catatan: Anda juga dapat mensimulasikan transaksi yang ditolak dengan memilih opsi otentikasi gagal dari menu dropdown). 
+9. Transaksi sukses
+
+## Link Pembayaran
+Link Pembayaran adalah halaman pembayaran yang membantu bisnis Anda untuk menerima pembayaran online dengan mudah dan aman. Anda dapat membagikan link ke pelanggan dan mereka akan memilih beberapa metode pembayaran yang didukung oleh OY! dalam halaman Link Pembayaran. OY! mendukung lebih dari 17 metode pembayaran, seperti transfer bank, E-wallet, QRIS, serta kartu debit dan kredit. Link Pembayaran dapat dibuat tanpa integrasi. Tetapi, jika Anda ingin membuat Link Pembayaran dari website atau aplikasi Anda, OY! juga menyediakan API Link Pembayaran.
+
+Terdapat 2 tipe Link Pembayaran, yaitu:
+
+|Tipe Link Pembayaran|Penjelasan|Contoh Penggunaan|
+| :- | :- | :- |
+|Sekali Pakai|Satu link untuk menerima satu kali pembayaran.|Transaksi sekali bayar|
+|Pakai Berulang|Satu link untuk menerima pembayaran berulang, bisa diatur tanpa waktu kedaluwarsa.|Top up, Donasi|
+
+![Payment Link Preview](images/acceptingPayments/payment-link/flow/preview-payment-link.webp)
+
+### Alur Link Pembayaran
+
+![Payment Link One Time Flow](images/acceptingPayments/payment-link/flow/payment-flow-one-time.webp)
+![Payment Link Reusable Flow](images/acceptingPayments/payment-link/flow/payment-flow-reusable.webp)
+
+### Fitur Link Pembayaran
+#### Penyesuaian Konfigurasi Link Pembayaran
+Anda dapat mengatur konfigurasi Link Pembayaran Anda tergantung dari penggunaan transaksi bisnis Anda. Berikut adalah beberapa hal yang dapat Anda sesuaikan:
+
+1. Daftar Metode Pembayaran
+   
+    Atur metode pembayaran yang Anda sediakan untuk pelanggan. Metode pembayaran yang tersedia adalah transfer bank (via virtual account dan kode unik), kartu debit dan kredit, E-wallet, dan QRIS 
+
+2. Tipe Nominal 
+   - Open Amount: Dapat menerima pembayaran dengan maksimal nominal yang telah Anda tentukan saat membuat Link Pembayaran. 
+   - Closed Amount: Hanya menerima pembayaran dengan nominal yang telah Anda tentukan saat membuat Link Pembayaran.
+
+3. Tipe Biaya Admin 
+   - Termasuk dalam nominal: Biaya admin akan terpotong saat saldo sudah masuk ke rekening Anda. Dengan kata lain, biaya admin tersebut ditanggung oleh Anda (merchant). 
+   - Tidak termasuk dalam nominal: Biaya admin akan ditambahkan ke dalam nominal yang akan dibayar (biaya admin ditanggung) oleh pelanggan Anda. Jadi, nominal yang ditagih ke pelanggan Anda adalah: Nominal pembayaran + biaya admin.
+
+4. Masa Kedaluwarsa 
+   - Secara default, masa kedaluwarsa link pembayaran adalah 24 jam. Tetapi, Anda dapat menyesuaikan masa kedaluwarsa tersebut berdasarkan hari dan jam, dengan maksimum waktu pembayaran adalah 31 hari + 23 jam. 
+   - Khusus untuk Link Pembayaran berulang, Anda dapat mengatur waktu kedaluwarsa menjadi tanpa kedaluwarsa, yang artinya link tersebut tidak dapat kedaluwarsa, kecuali Anda menonaktifkannya secara manual.
+
+Anda dapat mengatur konfigurasi default Anda agar tidak perlu mengisi kolom-kolom ini lagi saat membuat Link Pembayaran berikutnya. Simpan konfigurasi default Anda dengan mencentang opsi "Gunakan konfigurasi ini untuk transaksi selanjutnya" saat membuat Link Pembayaran.
+
+![Payment Link Save Configuration](images/acceptingPayments/payment-link/features/default-config.webp)
+
+#### Memantau Transaksi via Dashboard
+Semua transaksi Link Pembayaran yang Anda buat akan ditampilkan di Dashboard OY!. Akses menu "Link Pembayaran" → "Sekali Pakai"/"Pakai Berulang" untuk melihat daftar transaksi yang telah dibuat. Di dalam dashboard, Anda dapat melihat detail transaksi, termasuk informasi yang dimasukkan saat pembuatan, status transaksi, dan nomor referensi pembayaran*. Dashboard juga dilengkapi fitur pencarian, penyaringan, dan ekspor daftar transaksi ke berbagai format: Excel (.xlsx), PDF (.pdf), dan CSV (.csv).
+
+![Payment Link Monitoring Transactions](images/acceptingPayments/payment-link/features/dashboard-view.webp)
+
+\*Nomor Referensi Pembayaran adalah nomor identitas pembayaran ketika pelanggan berhasil menyelesaikan pembayaran QRIS. Nomor referensi ini juga tercantum pada struk/bukti transaksi pelanggan. Fitur ini hanya tersedia untuk transaksi QRIS.
+
+#### Sesuaikan Tampilan
+
+Secara default, Link Pembayaran menggunakan tema bawaan OY!. Namun, tema bawaan ini mungkin tidak sesuai dengan branding perusahaan Anda. Untuk menjaga konsistensi brand bagi pelanggan Anda, Anda dapat menyesuaikan tampilan Link Pembayaran dengan melakukan hal-hal berikut:
+
+1. Unggah logo perusahaan atau bisnis Anda sendiri 
+2. Memilih warna tema 
+3. Memilih warna tombol
+
+Jika Anda menggunakan produk invoice OY!, penyesuaian tema Link Pembayaran juga akan diterapkan pada invoice, begitu pula sebaliknya.
+
+Anda dapat menyesuaikan tema untuk Link Pembayaran melalui Dashboard OY!. Berikut langkah-langkahnya:
+
+1. Masuk ke dashboard OY! melaui https://www.desktop-business.oyindonesia.com. Saat ini, menu penyesuaian hanya tersedia di versi web desktop (belum tersedia di web seluler dan aplikasi OY! Business). 
+2. Masuk ke menu “Pengaturan dan klik opsi “Tampilan Link Pembayaran”. 
+3. Untuk mengunggah logo perusahaan, Anda harus mengunggah dengan format (contoh: https://example.com/image.jpg). 
+   - Jika Anda tidak memiliki URL logo, gunakan tools online seperti [snipboard.io](http://snipboard.io) atau [imgbb](https://imgbb.com/) untuk mengonversi logo Anda ke URL. 
+   - Berikut adalah contoh URL yang benar:
+     - Snipboard.io: https://i.snipboard.io/image.jpg
+     - Imgbb: https://i.ibb.co/abcdef/image.jpg  
+4. Untuk mengunggah warna header, pilih warna menggunakan _Color Picker_ atau ketik kode warna HEX di kolom “Warna Header” (contoh: #FFFFFF). 
+5. Anda dapat memilih warna yang berbeda untuk tombol di dalam Link Pembayaran. Pilih warna dari _Color Picker_ atau ketik kode warna HEX di “Warna Tombol & Link”. 
+6. Terakhir, simpan perubahan. Perubahan akan diterapkan secara real-time pada semua Link Pembayaran yang dibuat. Anda juga dapat melihat waktu terakhir Link Pembayaran diperbarui.
+
+![Payment Link Customizing Theme](images/acceptingPayments/payment-link/features/dashboard-customized-payment-link.webp)
+
+Berikut adalah contoh Payment Link sebelum dan sesudah disesuaikan. Warna header dan tombol telah disesuaikan menjadi warna merah.
+
+![Payment Link Customized](images/acceptingPayments/payment-link/features/payment-link-after-changes.webp)
+
+#### Bagikan _Payment Link_ Melalui Berbagai Metode
+Anda dapat membagikan _Payment Link_ yang telah dibuat langsung kepada pelanggan Anda melalui berbagai metode, termasuk email, pesan WhatsApp, dan salin tautan.
+
+***Email*** <br/>
+Kirim Payment Link yang telah dibuat hingga ke 6 penerima email per Payment Link. Fitur ini tersedia untuk pembuatan melalui Dashboard dan API. Mengirimkan Payment Link melalui email tidak dikenakan biaya.
+
+Anda dapat mengisi daftar penerima email di kolom “Email” pada bagian “Detail Pelanggan” saat membuat Payment Link melalui Dashboard OY!. Pisahkan beberapa alamat email dengan tanda titik koma (;).
+
+Contoh: email1@company.com;email2@company.com;email3@company.com
+
+Jika Anda menggunakan API Link Pembayaran, Anda dapat memasukkan penerima email di bawah parameter “customer_email” saat membuat Payment Link. Untuk informasi lebih lanjut, silakan merujuk ke bagian Pembuatan Payment Link di [API Docs](https://api-docs.oyindonesia.com/#api-create-payment-link-fund-acceptance).
+
+***WhatsApp*** <br/>
+Kirim Payment Link ke akun WhatsApp tanpa batas per Payment Link. Fitur ini hanya tersedia untuk pembuatan melalui API dan tidak didukung untuk pembuatan melalui  Dashboard. Secara default, fitur ini tidak diaktifkan secara otomatis setelah pendaftaran. Anda dapat menghubungi perwakilan bisnis Anda untuk mengaktifkan fitur ini.
+
+Setelah berhasil membuat Payment Link, gunakan API Kirim WhatsApp untuk mengirim Payment Link yang telah dibuat ke pelanggan Anda. Untuk informasi lebih lanjut, silakan merujuk ke bagian [API Kirim WhatsApp](https://api-docs.oyindonesia.com/#api-send-whatsapp).
+
+Pelanggan Anda akan menerima pesan WhatsApp dari akun WhatsApp OY! dengan format berikut:
+
+
+Hi {{Nama Pelanggan}}, <br/>
+Anda memiliki transaksi di {{Nama Brand Anda}} yang sedang menunggu pembayaran. Lakukan pembayaran sebelum {{Waktu Kedaluwarsa Payment Link}}.
+Silakan klik link berikut untuk membayar: {{URL Payment Link}}
+
+Mohon untuk tidak membalas pesan ini.
+
+Contoh:
+
+Hi John Doe, <br/>
+Anda memiliki transaksi di Jane’s Store yang sedang menunggu pembayaran. Lakukan pembayaran sebelum 1-Feb-2022, 13.28.
+Silakan klik link berikut untuk membayar: <https://pay.oyindonesia.com/123>
+
+Mohon untuk tidak membalas pesan ini.
+
+**Salin Link** <br/>
+Setelah Anda membuat Link Pembayaran, Anda akan mendapatkan link URL yang dapat Anda salin dan bagikan kepada pelanggan Anda.
+
+Jika Anda membuat Link Pembayaran melalui aplikasi OY! Business, Anda bisa menggunakan fitur “Bagikan” yang ada pada app dari perangkat mobile Anda ketika akan membagikan link.
+
+![Payment Link Sharing Capabilities](images/acceptingPayments/payment-link/features/copy-link.webp)
+
+#### Bukti Pembayaran
+Pelanggan dapat langsung melihat bukti pembayaran di dalam Link Pembayaran setelah pembayaran berhasil. Selain itu, pelanggan juga dapat menerima bukti pembayaran melalui email yang Anda masukkan saat membuat Link Pembayaran. Anda dapat mengatur pengiriman bukti pembayaran melalui email kepada pelanggan Anda dengan mengikuti langkah-langkah berikut:
+
+1. Masuk ke dashboard OY!
+2. Buka menu “Pengaturan” → “Notifikasi” 
+3. Klik Tab “Terima Uang (ke Penerima)” 
+4. Pilih “Aktifkan Notifikasi Transaksi yang Berhasil” 
+5. Pilih logo yang akan tertera di email dalam format URL. Contoh: (https://example.com/image.jpg)
+   - Jika Anda tidak memiliki URL logo, gunakan tools online seperti snipboard.io atau imgbb untuk mengonversi logo Anda ke URL. 
+   - Berikut adalah contoh URL yang benar:
+     - Snipboard.io: https://i.snipboard.io/image.jpg
+     - Imgbb: https://i.ibb.co/abcdef/image.jpg
+6. Simpan perubahan dengan mengklik "Simpan Perubahan"
+7. Buat transaksi Link Pembayaran dan masukkan alamat email pelanggan pada kolom "Email" di bagian "Detail Pelanggan” saat membuat Link Pembayaran melalui Dashboard. Pisahkan beberapa email dengan menggunakan tanda titik koma (;). Contoh: email1@company.com;email2@company.com;email3@company.com
+8. Pelanggan Anda akan menerima bukti pembayaran yang berhasil ke email yang terdaftar setelah pembayaran dilakukan.
+
+![Payment Link Notifications to Payer](images/acceptingPayments/payment-link/features/dashboard-notif-for-sender.webp)
+
+Anda juga dapat menerima bukti pembayaran ke email Anda setelah pelanggan melakukan pembayaran. Untuk mengaturnya, silakan ikuti langkah-langkah berikut:
+
+1. Masuk ke dashboard OY!
+2. Buka menu “Pengaturan” -> “Notifikasi” 
+3. Klik Tab “Terima Uang (ke Pengirim)” 
+4. Pilih “Aktifkan Notifikasi Transaksi yang Berhasil” 
+5. Masukkan link logo yang akan ditampilkan pada bukti pembayaran. 
+6. Simpan perubahan dengan mengklik "Simpan Perubahan"
+7. Anda akan menerima email untuk setiap pembayaran Link Pembayaran yang berhasil dilakukan oleh pelanggan Anda.
+
+**Catatan**: Jika Anda tidak memasukkan alamat email pelanggan saat membuat Link Pembayaran, OY! tidak akan mengirimkan bukti melalui email meskipun konfigurasi notifikasi sudah diaktifkan.
+
+![Payment Link Notifications to Merchant](images/acceptingPayments/payment-link/features/dashboard-notif-for-receiver.webp)
+
+#### Menyematkan Payment Link ke Website atau Aplikasi Anda
+Anda dapat menyematkan Link Pembayaran langsung di website atau aplikasi Anda, sehingga pelanggan dapat menyelesaikan pembayaran tanpa dialihkan ke halaman lain.
+
+Ada beberapa cara untuk menampilkan Link Pembayaran di halaman Anda, berikut beberapa saran yang bisa digunakan: Pop-up (Tengah), Pop-up (Kanan), Pop-up (Kiri), Slide (Kanan). Anda dapat membaca  [API Docs](https://api-docs.oyindonesia.com/#pop-seamless-payment-experience-fund-acceptance) untuk panduan implementasi lebih lanjut.
+
+#### Refund Pembayaran ke Pelanggan
+Jika pelanggan menerima produk yang tidak sesuai, seperti rusak, atau pesanan tidak terkirim, mereka dapat meminta pengembalian dana _(refund)_. Anda dapat langsung mengembalikan pembayaran ke akun pelanggan melalui dashboard OY!. Refund dapat bersifat penuh atau sebagian. Refund penuh mengembalikan seluruh jumlah pembayaran (100%). Refund sebagian mengembalikan jumlah tertentu sesuai permintaan.
+
+Fitur ini tidak dipungut biaya apa pun. Namun, biaya admin dari pembayaran awal tidak akan dikembalikan oleh OY! ke saldo Anda.
+
+Terdapat beberapa syarat yang harus dipenuhi untuk melakukan refund:
+
+1. Refund hanya dapat dilakukan hingga 7 hari kalender setelah transaksi dinyatakan berhasil. 
+2. Saldo Anda harus mencukupi agar kami dapat memotong jumlah transaksi yang akan dikembalikan. 
+3. Refund hanya dapat dilakukan sekali untuk setiap transaksi yang berhasil, baik itu refund penuh maupun sebagian. 
+4. Refund harus dilakukan pada jam operasional, sesuai dengan metode pembayaran yang digunakan. Lihat tabel di bawah untuk detailnya.
+
+Saat ini, refund hanya tersedia untuk pembayaran melalui E-wallet sebagai berikut:
+
+|Metode Pembayaran|Fitur Refund|Jam Operasional|
+| :- | :- | :- |
+|<p>DANA	</p><p></p>|Full, sebagian|00\.00 - 23.59 GMT+7|
+|ShopeePay|Full|05\.00 - 23.59 GMT+7|
+|LinkAja |Full|00\.00 - 23.59 GMT+7|
+|OVO|Tidak didukung|-|
+
+Berikut adalah langkah-langkah untuk melakukan refund transaksi Link Pembayaran:
+
+1. Masuk ke dashboard OY! dengan username dan password yang telah Anda daftarkan. 
+2. Buka menu “Link Pembayaran”, lalu pilih “Sekali Pakai” atau “Pakai Berulang”, sesuai dengan jenis transaksi Anda. 
+3. Cari transaksi yang ingin direfund. Pada kolom “Tindakan”, klik tombol tiga titik, lalu pilih “Refund E-Wallet” untuk memproses refund. 
+4. Jika refund tidak memenuhi syarat yang disebutkan sebelumnya, akan muncul pesan error, dan Anda tidak dapat melanjutkan proses refund. 
+5. Jika transaksi memenuhi syarat refund, akan muncul pop-up untuk melanjutkan proses refund. 
+6. Untuk refund sebagian, isi jumlah yang ingin dikembalikan. 
+7. Pastikan saldo Anda mencukupi untuk melakukan refund. Jika saldo tidak mencukupi, akan muncul pesan error, dan Anda perlu mengisi saldo terlebih dahulu. 
+8. Setelah refund berhasil, status transaksi akan berubah menjadi “Direfund”. 
+9. Anda dapat melihat transaksi refund di halaman “Laporan Transaksi Rekening” dengan memilih “Laporan Transaksi” → “Laporan Transaksi Rekening”.
+
+#### _Retry_ Notifikasi/_Callback_ untuk Pembayaran Berhasil
+
+Jika Anda menggunakan API Link Pembayaran, OY! akan mengirimkan notifikasi/_callback_ ke sistem Anda setelah transaksi dinyatakan berhasil. Dengan demikian, Anda akan mendapatkan pemberitahuan saat pelanggan Anda telah menyelesaikan pembayaran. Namun, ada kemungkinan sistem Anda tidak menerima notifikasi.
+
+Dengan mengaktifkan _Retry Callback_, OY! akan mencoba mengirimkan ulang _callback_ jika sistem Anda tidak menerimanya. Anda dapat meminta pengiriman ulang _callback_ melalui Retry Callback Manual atau Retry Callback Otomatis.
+
+##### Cara Mengaktifkan _Retry Callback_ Manual
+
+Jika Anda mengaktifkan fitur *Retry Callback*, sistem akan secara otomatis mengirim ulang *callback* yang gagal. Namun, Anda juga tetap bisa mengirim ulang *callback* secara manual melalui dashboard apabila diperlukan.  Berikut langkah-langkahnya:
+
+1. Masuk ke akun Anda
+2. Buka menu “Link Pembayaran”, lalu pilih “Sekali Pakai” atau “Pakai Berulang”, sesuai dengan jenis transaksi Anda.
+3. Cari transaksi yang ingin dikirim ulang *callback*\-nya, lalu klik tombol tiga titik pada kolom “Tindakan”.
+4. Pastikan Anda telah mengatur Callback URL melalui “Pengaturan” → “Opsi Developer” → “Konfigurasi Callback”.
+5. Masukkan URL *callback* untuk produk yang ingin Anda aktifkan. Pastikan format URL benar, lalu validasi dengan mengklik “Validasi String URL”.
+6. Pastikan Anda telah whitelist IP OY\! agar sistem Anda dapat menerima *callback*:
+   * 54.151.191.85
+   * 54.179.86.72
+7. Klik “Kirim Ulang Callback” untuk mengirim ulang *callback*, dan ulangi proses ini sesuai kebutuhan.
+
+![Payment Link Manual Retry Callback](images/acceptingPayments/payment-link/features/dashboard-resend-callback.webp)
+
+##### ***Retry Callback*** **Otomatis**
+
+Retry Callback Otomatis dapat membantu Anda untuk menerima *callback* ulang dalam interval tertentu jika *callback* sebelumnya tidak berhasil diterima oleh sistem Anda. OY\! akan mencoba mengirim ulang hingga 5 kali. Jika setelah 5 kali percobaan *callback* masih gagal diterima, OY\! akan mengirim notifikasi melalui email. Anda dapat mendaftarkan hingga 6 penerima email, yang dapat dikonfigurasi melalui dashboard.
+
+Interval *Callback*:
+
+*Realtime* → 1 menit (setelah percobaan awal) → 2 menit (setelah percobaan pertama) → 13 menit (setelah percobaan kedua) → 47 menit (setelah percobaan ketiga)
+
+OY\! mengirimkan *callback* pertama setelah transaksi berhasil. Jika sistem Anda gagal menerimanya, OY\! akan langsung mengirimkan *callback* ulang pertama. Jika *callback* masih gagal, OY\! akan mengirimkan *callback* ulang kedua 1 menit setelah *timeout* atau menerima respons gagal dari sistem Anda. Proses ini akan berlanjut hingga *callback* berhasil diterima atau semua percobaan *callback* telah dilakukan.
+
+Retry Callback Otomatis  tidak aktif secara default. Berikut cara mengaktifkannya:
+
+1. Masuk ke akun Anda
+2. Buka menu “Pengaturan”, lalu pilih “Opsi Developer”.
+3. Pilih tab “Konfigurasi Callback”.
+4. Masukkan URL *callback* untuk produk yang ingin Anda aktifkan. Pastikan format URL benar, lalu validasi dengan mengklik “Validasi String URL”.
+5. Untuk mengaktifkan Retry Callback Otomatis, centang “Aktifkan Retry Callback Otomatis” untuk produk terkait. Masukkan email penerima yang akan menerima notifikasi jika callback gagal setelah semua percobaan dilakukan.
+6. Pastikan Anda telah whitelist IP OY\! agar sistem dapat menerima *callback*:
+* 54.151.191.85
+* 54.179.86.72
+7. Pastikan sistem Anda menerapkan *idempotency logic* dengan menggunakan parameter “tx\_ref\_number” sebagai *idempotency key* untuk mencegah *callback* yang sama diproses sebagai pembayaran yang berbeda.
+8. Simpan perubahan
+
+![Payment Link Automatic Retry Callback](images/acceptingPayments/payment-link/features/dashboard-developer-option.webp)
+
+#### Multi Entity Management
+Multi Entity Management adalah fitur yang dapat membantu Anda mengelola beberapa akun OY\! dalam satu entitas. Akun yang berperan sebagai admin disebut Main Entity, sedangkan akun yang dapat dikendalikan oleh admin disebut Sub Entity.
+
+Dengan fitur ini, Anda dapat menerima pembayaran dari pelanggan melalui Link Pembayaran yang dibuat atas nama Sub Entity. Ketika pengguna melakukan transaksi yang berhasil, transaksi tersebut akan dicatat dalam saldo Sub Entity. Sebagai Main Entity, Anda dapat melihat saldo dan daftar transaksi Sub Entity kapan saja melalui menu Multi Entity → Laporan Penyelesaian Sub Entity.
+
+Silakan lihat bagian [Multi Entity Management](https://docs.oyindonesia.com/id/#multi-entity-management-tutorial-dashboard-oy) untuk informasi lebih lanjut.
+
+### Cara Mengaktifkan Fitur Link Pembayaran
+Berikut adalah panduan untuk mengaktifkan fitur Link Pembayaran:
+
+1. Buat akun di OY\!
+2. Lakukan verifikasi akun dengan mengisi formulir verifikasi. Pastikan Anda mencentang produk “Terima Uang”, karena Link Pembayaran termasuk dalam kategori produk ini.
+3. Tim OY\! akan meninjau dan memverifikasi formulir serta dokumen yang telah Anda kirimkan.
+4. Setelah verifikasi disetujui, atur informasi rekening bank penerima untuk menerima saldo dari OY\!.  
+   **Catatan Penting**: Pastikan informasi rekening bank penerima benar, karena Anda hanya dapat mengaturnya sekali saja melalui dashboard  demi alasan keamanan.
+5. Secara default, Anda akan mendapatkan beberapa metode pembayaran, termasuk semua transfer bank (kecuali BCA).
+6. Metode pembayaran lain seperti QRIS, E-Wallet, dan BCA memerlukan proses *onboarding* tambahan agar dapat digunakan. Silakan lihat panduan lebih lanjut di:
+   * [Aktivasi E-Wallet](https://docs.oyindonesia.com/#e-wallet-payment-methods)
+   * [Aktivasi QRIS](https://docs.oyindonesia.com/#qris-payment-methods)
+   * [Aktivasi VA BCA](https://docs.oyindonesia.com/#bank-transfer-virtual-account-payment-methods)
+
+Jika Anda ingin menggunakan API Link Pembayaran, Anda perlu melakukan langkah tambahan berikut:
+
+1. Kirimkan alamat IP dan URL Callback ke perwakilan bisnis Anda atau melalui email ke business.support@oyindonesia.com.
+2. OY\! akan mengirimkan Production API Key sebagai otorisasi API melalui perwakilan bisnis Anda.  
+   **Catatan:** Key Staging/Demo API dapat diakses melalui dashboard dengan masuk ke mode “Demo”, lalu temukan API key di menu kiri bawah.
+3. Integrasikan API ke sistem Anda dengan mengikuti panduan di [API Docs Link Pembayaran](https://api-docs.oyindonesia.com/#api-create-payment-checkout)
+
+Setelah semua langkah di atas selesai, Anda siap untuk membuat Link Pembayaran.
+
+### Cara Membuat Link Pembayaran
+Anda dapat membuat Link Pembayaran melalui dashboard. Selain itu, Anda juga bisa membuat melalui API, tetapi hanya bisa untuk link sekali pakai. Berikut adalah panduan untuk membuat Link Pembayaran melalui dashboard:
+
+1. Masuk ke akun dashboard OY\!
+2. Pilih mode yang sesuai. Jika Anda ingin membuat untuk transaksi sebenarnya, pilih "Production" pada sidebar. Jika Anda ingin membuat untuk pengujian/demo, pilih "Coba di Demo".
+3. Buka menu "Terima Uang", lalu pilih "Link Pembayaran". Pilih "Sekali Pakai" atau "Pakai Berulang" sesuai dengan jenis  yang ingin dibuat.
+4. Klik "Buat Link Pembayaran".
+5. Akan muncul pop-up untuk mengisi detail link. Silakan lihat tabel di bawah untuk penjelasan setiap kolom.
+6. Klik "Simpan".
+7. Setelah Link Pembayaran berhasil dibuat, Anda dapat meninjau dan membagikannya ke pelanggan.
+
+![Payment Link Creation](images/acceptingPayments/payment-link/creating-payment-link/creation.webp)
+
+| Kolom                | Deskripsi                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+|:---------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Nominal              | Jumlah pembayaran yang akan ditampilkan di laman pembayaran.                                                                                                                                                                                                                                                                                                                                                                                      |
+| Deskripsi (opsional) | Anda dapat menjelaskan konteks pembayaran kepada pelanggan Anda melalui kolom deskripsi.                                                                                                                                                                                                                                                                                                                                                          |
+| ID Transaksi Partner | ID unik yang dapat Anda berikan untuk mengidentifikasi suatu transaksi.                                                                                                                                                                                                                                                                                                                                                                           |
+| Tujuan Dana Masuk    | <p>Hanya tersedia jika Anda menggunakan Multi Entity Management.</p> <p>Anda dapat memilih antara "Saldo Saya" atau "Saldo Sub Entity":</p> <p>Saldo Saya: Setelah transaksi berhasil, dana akan masuk ke akun saldo Anda.</p> <p>Saldo Sub Entity: Setelah transaksi berhasil, dana akan masuk ke saldo Sub Entity yang Anda pilih.</p>                                                                                                          |
+| Detail Pelanggan     | Detail pelanggan yang dapat Anda isi, berupa: Nama Pelanggan, Nomor Telepon, Email, dan Catatan. Jika alamat email diisi, kami akan mengirimkan Link Pembayaran ke email tersebut.                                                                                                                                                                                                                                                                |
+| Tipe Nominal         | <p>Anda dapat memilih tipe nominal *open amount* atau *closed amount*.</p>  <p>*Open amount:* Anda dapat menerima pembayaran sampai maksimal sebesar nominal yang Anda tentukan.</p>  <p>*Closed Amount:* Anda hanya dapat menerima pembayaran sejumlah nominal yang ditentukan.</p>                                                                                                                                                              |
+| Metode Pembayaran    | Metode pembayaran yang dapat Anda pilih untuk diaktifkan. Metode pembayaran yang tersedia meliputi transfer bank, E-wallet, gerai ritel, kartu debit/kedit, dan QRIS.                                                                                                                                                                                                                                                                             |
+| Jenis Biaya Admin    | <p>Jika biaya admin termasuk dalam nominal, maka akan dipotong dari pembayaran pelanggan.</p> <p>Jika tidak termasuk, biaya admin akan ditambahkan ke total yang dibayar pelanggan.</p>                                                                                                                                                                                                                                                           |
+| Tanggal Kedaluwarsa  | <p>Setelah kedaluwarsa, pelanggan tidak dapat membuka link lagi.</p> <p>Secara default, waktu kedaluwarsa adalah 24 jam. Anda dapat menyesuaikan waktu kedaluwarsa berdasarkan hari dan/atau jam.</p> <p>Khusus untuk Link Pembayaran Pakai Berulang, Anda dapat menetapkan waktu kedaluwarsa sebagai "Lifetime", yang berarti link tidak memiliki batas waktu dan dapat menerima pembayaran kapan saja, kecuali dinonaktifkan secara manual.</p> |
+
+
+### Menyelesaikan Pembayaran
+Setelah berhasil membuat link, Anda dapat membagikan link tersebut kepada pelanggan Anda. Pelanggan Anda dapat membuka link melalui browser di desktop atau mobile. Berikut langkah-langkah bagi pelanggan untuk menyelesaikan pembayaran melalui Link Pembayaran:
+
+1. Pelanggan akan mengisi atau mengubah nominal transaksi (hanya tersedia untuk transaksi *open amount*).
+2. Memilih metode pembayaran yang diinginkan.
+3. Mengisi detail pelanggan, termasuk Nama Pelanggan, Email, Nomor Telepon, dan Catatan. Semua kolom bersifat opsional kecuali Nama Pelanggan.
+4. Mengonfirmasi metode pembayaran dengan mengklik “Bayar”.
+5. OY\! akan menampilkan informasi pembayaran sesuai metode yang dipilih:
+   * Transfer Bank: Menampilkan Nomor Rekening dan Jumlah Transfer.
+   * QRIS: Menampilkan kode QR yang dapat diunduh atau langsung dipindai.
+   * E-wallet: Pelanggan akan diarahkan ke aplikasi E-wallet (DANA, LinkAja, ShopeePay) atau menerima notifikasi dari aplikasi E-wallet (OVO).
+   * Kartu Kredit & Debit: Pelanggan akan diarahkan untuk mengisi nomor kartu, tanggal kedaluwarsa, dan CVV.
+6. Perlu diperhatikan bahwa setiap metode pembayaran memiliki batas waktu pembayaran yang berbeda. Silakan merujuk ke tabel berikut untuk informasi lebih lanjut.
+7. Untuk melakukan simulasi transaksi demo, silakan merujuk ke bagian berikut:
+   * [Simulasi pembayaran Virtual Account](https://docs.oyindonesia.com/#bank-transfer-virtual-account-payment-methods)
+   * [Simulasi pembayaran Kode Unik](https://docs.oyindonesia.com/#bank-transfer-unique-code-payment-methods)
+   * [Simulasi pembayaran E-wallet](https://docs.oyindonesia.com/#e-wallet-payment-methods)
+   * [Simulasi pembayaran Kartu](https://docs.oyindonesia.com/#cards-payment-methods-payment-methods)
+   * Catatan: Simulasi transaksi QRIS saat ini belum tersedia.
+8. Status pada Link Pembayaran akan berubah menjadi berhasil setelah pembayaran dilakukan. Jika status transaksi tidak otomatis diperbarui, pelanggan dapat memeriksa statusnya langsung di halaman Link Pembayaran.
+
+<table>
+  <tr>
+    <th colspan="2" valign="top"><b>Metode Pembayaran</b></th>
+    <th valign="top"><b>Batas Waktu Bayar</b></th>
+  </tr>
+  <tr>
+    <td rowspan="2" valign="top">Transfer Bank</td>
+    <td valign="top">Virtual Account</td><td valign="top">hingga 24 jam</td>
+  </tr>
+  <tr>
+    <td valign="top">Kode Unik</td>
+    <td valign="top">hingga 3 jam</td>
+  </tr>
+  <tr>
+    <td rowspan="4" valign="top">E-Wallet</td>
+    <td valign="top">ShopeePay</td><td valign="top">hingga 60 menit</td>
+  </tr>
+  <tr>
+    <td valign="top">LinkAja</td>
+    <td valign="top">5 menit</td>
+  </tr>
+  <tr>
+    <td valign="top">DANA</td>
+    <td valign="top">hingga 60 menit</td>
+  </tr>
+  <tr>
+    <td valign="top">OVO</td>
+    <td valign="top">hingga 55 detik</td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="top">QRIS</td>
+    <td valign="top">hingga 30 menit</td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="top">Kartu Debit & Kredit</td>
+    <td valign="top">60 menit</td>
+  </tr>
+</table>
+
+Batas waktu metode pembayaran berbeda dengan batas waktu kedaluwarsa Link Pembayaran. Batas waktu metode pembayaran dihitung sejak pelanggan mengkonfirmasi metode pembayaran yang dipilih. Sementara itu, batas waktu kedaluwarsa Link Pembayaran dihitung sejak link dibuat. Anda hanya dapat menyesuaikan batas waktu kedaluwarsa Link Pembayaran.
+
+Contoh: Anda membuat Link Pembayaran yang menerima pembayaran melalui Virtual Account (VA) dan QRIS dengan batas waktu kedaluwarsa 2 jam.
+
+Pelanggan membuka link dan memilih QRIS sebagai metode pembayaran. OY! akan menghasilkan kode QR, yang dapat dibayar dalam 30 menit sebelum kedaluwarsa. Jika pelanggan tidak menyelesaikan pembayaran dalam 30 menit, kode QR akan kedaluwarsa, dan mereka harus memilih metode pembayaran lain.
+
+Kali ini, pelanggan memilih VA sebagai metode pembayaran. OY! akan menghasilkan nomor VA, yang berlaku selama 1 jam 30 menit karena sisa waktu kedaluwarsa Link Pembayaran adalah 1 jam 30 menit. Setelah 2 jam, Link Pembayaran akan kedaluwarsa, dan pelanggan tidak dapat mengaksesnya lagi.
+
+### Mengecek Status Transaksi
+Semua transaksi Link Pembayaran yang dibuat akan ditampilkan di dashboard. Untuk melihat daftar transaksi yang telah dibuat, Anda bisa pergi ke ke “Link Pembayaran” → “Sekali Pakai” atau “Pakai Berulang”.
+
+Di dalam dashboard, Anda dapat melihat detail transaksi, termasuk informasi yang diinput saat pembuatan, status transaksi, dan nomor referensi pembayaran. Dashboard juga menyediakan fitur untuk mencari, memfilter, dan mengekspor daftar transaksi dalam berbagai format, seperti Excel (.xlsx), PDF (.pdf), dan CSV (.csv).
+
+Terkadang, pelanggan Anda mungkin telah menyelesaikan pembayaran, tetapi status transaksi belum diperbarui menjadi sukses. Jika hal ini terjadi, Anda dapat melakukan beberapa langkah berikut untuk memeriksa status transaksi:
+
+1. Pelanggan dapat langsung memeriksa status transaksi dengan memilih tombol “Cek Status” pada halaman Link Pembayaran.
+2. Anda dapat mengecek status transaksi menggunakan API dengan memanggil API Check Status. Silakan merujuk ke dokumen berikut: [Check Status Payment Link \- API Docs](https://api-docs.oyindonesia.com/#api-payment-status-fund-acceptance).
+
+### Menerima Dana ke Saldo
+Setelah pelanggan Anda melakukan pembayaran, OY\! akan memperbarui status transaksi dan mengirim notifikasi ke sistem Anda sebagai konfirmasi bahwa transaksi telah dibayar. Dana dari transaksi tersebut akan diselesaikan (*settled*) ke saldo Anda.
+
+Waktu penyelesaian (*settlement time*) berbeda untuk setiap metode pembayaran, mulai dari *real-time* hingga H+2 Hari Kerja tergantung pada metode yang digunakan.
+
 
 ## VA Aggregator
+Bisnis sering menghadapi tantangan dalam mengelola ratusan hingga ribuan rekening bank fisik untuk berbagai keperluan. Hal ini menyebabkan biaya operasional yang tinggi, baik dari segi pemeliharaan rekening maupun waktu yang dihabiskan untuk pelaporan dan rekonsiliasi.
 
-Businesses are struggling to manage hundreds or even thousands of physical bank accounts that are used for different purposes. It causes significant overhead cost in terms of the amount of account maintenance and man hours needed for reporting and reconciliation purposes, combining different information from different accounts.
+Virtual Account (VA) adalah akun *dummy* yang terhubung dengan rekening bank fisik dan memiliki karakteristik serupa dengan rekening fisik. VA memungkinkan proses pelaporan dan rekonsiliasi yang lebih mudah dengan memusatkan aliran dana ke dalam satu rekening fisik. Dengan menggunakan VA, Anda dapat mengatur setiap VA untuk pelanggan atau tujuan tertentu.
 
-Virtual Account (VA) is essentially a dummy account that is linked to a physical account and has all the physical account characteristics that enables a much easier reporting and reconciliation process by centralizing the money flow into the physical account. By issuing VAs, you can assign each VA for specific person and/or purposes.
+Virtual Account (VA) Aggregator adalah fitur yang dirancang khusus untuk membuat Virtual Account, memungkinkan Anda menerima pembayaran melalui transfer bank dari pelanggan.Jika Anda ingin menerima pembayaran menggunakan berbagai metode pembayaran untuk satu transaksi, sebaiknya gunakan Link Pembayaran atau Routing Pembayaran sebagai alternatif.
 
-![API VA Aggregator](../images/va_diagram_1.png)
+Secara umum, pembuatan nomor VA untuk pelanggan dapat dilakukan melalui API VA Aggregator. Namun, jika Anda ingin membuat VA tanpa integrasi API, Anda dapat melakukannya melalui Dashboard dengan mengakses menu "Virtual Account" di bagian "Terima Uang".
+### Alur VA Aggregator
+![VA Aggregator Flow](images/acceptingPayments/va-aggregator/payment-flow.webp)
 
-From the example above, it shows how payments made through the VAs are merely pass-throughs for the physical accounts to receive money. Without VAs, the above example might require up to 8 physical accounts from 2 different banks rather than 2 physical accounts from 2 different banks.
 
-**OY! API VA Aggregator**
+### Fitur VA Aggregator
+**Pembuatan Fleksibel – via Dashboard atau API**
 
-Our API VA Aggregator product provides you with the capabilities to create unique Virtual Account (VA) numbers as a bank transfer payment method for your customers while the fund movements take place through OY!'s physical account. It provides you with the capabilities to receive payments from your customers via bank transfer without having each respective bank account across multiple banks.
+Anda dapat membuat nomor VA melalui Dashboard atau API. Jika tidak memiliki sumber daya untuk mengintegrasikan API, Anda tetap bisa membuat nomor VA dan menerima pembayaran langsung melalui dashboard.
 
-Our virtual accounts are adjustable according to your needs. We offer options of static or dynamic accounts, single or mutli use accounts, opened or closed amounts, and determinable expiration dates. You can also track all created virtual accounts, incoming payments, and their respective details either through our API callback or the OY! dashboard.
+**Dukungan Pembayaran VA dari Berbagai Bank**
 
-![API VA Aggregator](../images/va_diagram_2.png)
+Saat ini, OY\! mendukung pembayaran VA dari 8 bank, yaitu:
 
-### Key Features
+1. Bank Central Asia (BCA)
+2. Bank Rakyat Indonesia (BRI)
+3. Bank Mandiri
+4. Bank Negara Indonesia (BNI)
+5. Bank CIMB & CIMB Syariah
+6. Bank SMBC
+7. Bank Syariah Indonesia (BSI)
+8. Bank Permata & Permata Syariah
 
-1. **Create VA number via API** - Create VA automatically by integrating your applications with our API VA. For more information, visit our [API Docs](https://api-docs.oyindonesia.com/).
+***Settlement*** **Cepat untuk Mayoritas Bank**
 
-2. **Create VA number via Dashboard** - Do not have enough resources to integrate with API VA? Do not worry, you can create a VA number easily via OY! Dashboard. No need to write some codes!
+OY\! memahami bahwa arus kas yang lancar sangat penting bagi bisnis Anda. Kami menawarkan *settlement real-time* ke saldo OY\! untuk sebagian besar bank yang didukung, sehingga dana dapat langsung digunakan tanpa menunggu lama.
 
-3. **Support multiple banks** - Currently, we support virtual accounts (VA) at 8 banks: BCA, BNI, Mandiri, BRI, Permata, CIMB Niaga, SMBC, and Bank Syariah Indonesia (BSI)
+**Menyesuaikan Jenis VA Sesuai Kebutuhan**
 
-4. **Real-time settlement for majority of the banks** - Payment into a VA will settle in your OY! dashboard on a real-time basis for the majority of the banks (note: for BCA, the settlement will take place H+2 after payment is made into the VA)
+Anda dapat mengkonfigurasi jenis VA sesuai kebutuhan bisnis Anda, memberikan fleksibilitas lebih dalam pengelolaan transaksi pembayaran dengan detail sebagai berikut:
 
-5. **Transaction tracking and monitoring capability** - You can track all created VA, incoming payments, and their respective details through our API callback or the OY! dashboard. You will receive a callback all incoming transactions.
+| Kategori | Tipe | Deskripsi |
+| :---- | :---- | :---- |
+| Masa Berlaku  | VA Statis (Tanpa Kedaluwarsa) | VA yang memiliki masa berlaku tidak terbatas. Akan selalu aktif sampai dinonaktifkan secara manual. |
+|  | VA Dinamis | VA yang memiliki periode masa berlaku tertentu. Akan selalu aktif sampai masa berlakunya habis atau dinonaktifkan secara manual. |
+| Nominal Transaksi | VA *Closed Amount* | VA yang hanya menerima pembayaran dengan nominal yang ditentukan. |
+|  | VA *Open Amount* | VA yang dapat menerima pembayaran dengan maksimal nominal yang telah Anda tentukan saat membuat VA. |
+| Jumlah Penggunaan | VA Sekali Pakai | VA yang hanya bisa menerima satu kali pembayaran. |
+|  | VA Pemakaian Berulang | VA yang hanya kedaluwarsa ketika mencapai tanggal kedaluwarsa atau ketika dinonaktifkan secara manual. Anda juga dapat menyesuaikan batas maksimum pembayaran. VA Pemakaian Berulang dengan batas maksimum pembayaran yang disesuaikan akan kedaluwarsa setelah batas pembayaran terlampaui meskipun belum mencapai waktu kedaluwarsa.  |
+| Nomor VA | Nomor VA *Custom* | Anda dapat mempersonalisasi nomor akhir VA dengan angka yang Anda inginkan (misalnya, nomor telepon atau nomor tagihan pengguna akhir Anda). Untuk mengaktifkan penyesuaian nomor VA, silakan hubungi perwakilan bisnis Anda. Anda dapat merujuk ke [API Docs \- Create Customized VA Number.](https://api-docs.oyindonesia.com/#create-customized-va-va-aggregator) Khusus untuk fitur ini, saat ini kami hanya mendukung bank BRI dan CIMB. |
+|  | *Predetermined* | OY\! akan membuat nomor VA secara random atas nama Anda. Anda dapat merujuk ke [API Docs \- Create VA Number](https://api-docs.oyindonesia.com/#create-va-va-aggregator).  |
 
-6. **Customizable VA types** - You can customize the VA numbers you want to create. Each VA would consist of three categories you can define in the creation process. Refer to the table below for more information on various types of VA:
 
-| Category        | Type/Feature                  | Description                                                                                                  |
-| --------------- | ----------------------------- | ------------------------------------------------------------------------------------------------------------ |
-| Validity Period | Static Virtual Account        | VA that has a lifetime validity. It will always be active until it is manually deactivated                   |
-| Validity Period | Dynamic Virtual Account       | VA that has a specific validity period. It will always be active until it is expired or manually deactivated |
-| Amount Type     | Closed Amount Virtual Account | VA that only accepts payment of a specific amount/declared amount                                            |
-| Amount Type     | Opened Amount Virtual Account | VA that accepts payment of any amount                                                                        |
-| Usage Frequency | Single Use Virtual Account    | VA that expires after a single payment. A single use configuration can only be set up for a dynamic VA       |
-| Usage Frequency | Multiple Use Virtual Account  | VA that only expires when expiration date is reached or when it is manually deactivated                      |
-| VA Number       | Customized or predetermined   | You may personalize the VA suffix using the numbers you want (e.g. your end-users' phone number or billing number). To enable VA number customization, please contact your Business Representative         |
+<table>
+  <tr>
+    <th valign="top"><b>Kategori</b></th>
+    <th valign="top"><b>Tipe</b></th><th valign="top"><b>Deskripsi</b></th>
+  </tr>
+  <tr>
+    <td rowspan="2" valign="top">Masa Berlaku</td>
+    <td valign="top">VA Statis (Tanpa Kedaluwarsa) </td>
+    <td valign="top"> VA yang memiliki masa berlaku tidak terbatas. Akan selalu aktif sampai dinonaktifkan secara manual.</td>
+  </tr>
+  <tr>
+    <td valign="top">VA Dinamis </td>
+    <td valign="top">VA yang memiliki periode masa berlaku tertentu. Akan selalu aktif sampai masa berlakunya habis atau dinonaktifkan secara manual.</td>
+  </tr>
+  <tr>
+    <td rowspan="2" valign="top">Nominal Transaksi</td>
+    <td valign="top">VA Closed Amount</td>
+    <td valign="top">VA yang hanya menerima pembayaran dengan nominal yang ditentukan.</td>
+  </tr>
+  <tr>
+    <td valign="top">VA Open Amount</td>
+    <td valign="top">VA yang dapat menerima pembayaran dengan maksimal nominal yang telah Anda tentukan saat membuat VA.</td>
+  </tr>
+  <tr>
+    <td rowspan="2" valign="top">Jumlah Penggunaan</td>
+    <td valign="top">VA Sekali Pakai</td>
+    <td valign="top">VA yang hanya bisa menerima satu kali pembayaran.</td>
+  </tr>
+  <tr>
+    <td valign="top">VA Pemakaian Berulang</td>
+    <td valign="top">VA yang hanya kedaluwarsa ketika mencapai tanggal kedaluwarsa atau ketika dinonaktifkan secara manual. Anda juga dapat menyesuaikan batas maksimum pembayaran. VA Pemakaian Berulang dengan batas maksimum pembayaran yang disesuaikan akan kedaluwarsa setelah batas pembayaran terlampaui meskipun belum mencapai waktu kedaluwarsa. </td>
+  </tr>
+  <tr>
+    <td rowspan="2" valign="top">Nomor VA</td>
+    <td valign="top">Custom</td>
+    <td valign="top"><p>Anda dapat mempersonalisasi nomor akhir VA dengan angka yang Anda inginkan (misalnya, nomor telepon atau nomor tagihan pengguna akhir Anda). Untuk mengaktifkan penyesuaian nomor VA, silakan hubungi perwakilan bisnis Anda. Anda dapat merujuk ke <a href="https://api-docs.oyindonesia.com/#create-customized-va-va-aggregator">API Docs - Create Customized VA Number</a></p><p></p><p>Khusus untuk fitur ini, saat ini kami hanya mendukung bank BRI dan CIMB. </p></td>
+    </tr>
+  <tr>
+    <td valign="top">Predetermined</td>
+    <td valign="top">OY! akan membuat nomor VA secara random atas nama Anda. Anda dapat merujuk ke <a href="https://api-docs.oyindonesia.com/#create-va-va-aggregator">API Docs - Create VA Number</a>.
+    </td>
+    </tr>
+</table>
 
-7. **Capability to update VA** Attribute that can be updated:
-   * amount
-   * is_single_use
-   * email
-   * trx_counter
-   * expired_time
-   * trx_expired_time
-   * username_display
+1. **Kemampuan untuk Memperbarui VA**
 
-Example:
+    Setelah nomor VA dibuat, Anda masih bisa mengubah beberapa parameter berikut:
+    - Nominal VA (nominal) → Mengubah jumlah nominal pembayaran. 
+    - Jenis Penggunaan (is\_single\_use) → Mengubah VA dari Sekali Pakai ke Pakai Berulang atau sebaliknya. 
+    - Email (email) → Memperbarui alamat email
+    - Batas Transaksi (trx\_counter) → Menentukan jumlah pembayaran yang dapat diterima oleh nomor VA. Parameter ini hanya bisa digunakan oleh VA Pemakaian Berulang.
+    - Waktu Kedaluwarsa Transaksi (trx\_expired\_time) → Mengatur batas waktu transaksi VA. 
+    - Waktu Kedaluwarsa VA (expired\_time) → Menetapkan kapan VA tidak lagi berlaku. Waktu ini harus sama atau lebih lama dari trx\_expired\_time. 
+    - Nama yang Ditampilkan (username\_display) → Nama VA yang akan muncul saat pelanggan memasukkan nomor VA di aplikasi perbankan mereka.
+   
+    **Catatan:** Setelah VA diperbarui, konfigurasi baru akan langsung diterapkan, dan pengaturan sebelumnya tidak lagi berlaku.
 
-* A static VA with a closed amount can be updated with a new closed amount hence it can work as a bill to be paid for a particular customer
-* A static VA can be updated to a single use so it will be the last payment received from a particular customer
+2. ***Callback* Otomatis & Retry *Callback***
 
-All of the VA information, even after they are updated, is available on the OY! dashboard or via API. Once a VA is updated, the new set of configuration will apply for that VA and the previous configure is overridden and no longer applicable
+    Anda akan menerima *callback* untuk setiap pembayaran VA yang sukses melalui API. Jika *callback* gagal diterima, Anda bisa mengaktifkan Automatic Retry *Callback* melalui:
+
+    Dashboard → Pengaturan → Opsi Developer → Konfigurasi Callback.
+
+    Jika *callback* pertama gagal, sistem OY\! akan mencoba kembali hingga 5 kali. Jika semua percobaan gagal, OY\! akan mengirimkan notifikasi ke email yang telah Anda atur. Anda juga akan menerima *callback* untuk setiap transaksi yang berhasil diselesaikan ke saldo Anda.
+
+3. **Nominal Minimum dan Maksimum Transaksi VA**
+
+   * Nominal minimum transaksi VA: Rp10.000 (untuk *closed amount*).
+   * nominal maksimum transaksi VA: Tergantung pada kebijakan masing-masing bank. Dengan detail sebagai berikut:
+
+|Nama Bank|Nominal maksimum per transaksi |
+| :-: | :-: |
+|Bank Central Asia (BCA) |Rp 50,000,000|
+|Bank Negara Indonesia (BNI) |Rp 50,000,000|
+|Bank Rakyat Indonesia (BRI) |Rp 500,000,000|
+|Bank Mandiri |Rp 500,000,000|
+|Bank CIMB |Rp 500,000,000|
+|Bank SMBC |Rp 100,000,000|
+|Bank Syariah Indonesia (BSI)|Rp 50,000,000|
+|Bank Permata|Rp 500,000,000|
+
 
 ### Use Cases
 
-![API VA Aggregator](../images/va_use_case_new.png)
+![VA Aggregator Use Case](images/acceptingPayments/va-aggregator/use-cases.webp)
 
-### Registration and Set Up
+### Cara Mengaktifkan
+Berikut adalah langkah-langkah aktivasi fitur VA Aggregator:
 
-Follow the below check-list to ensure you're all set up to use our VA Aggregator API service:
+1. Buat akun OY\!
+2. Lakukan verifikasi akun dengan mengisi formulir verifikasi. Pastikan untuk mencentang produk "Terima Uang", karena VA Aggregator merupakan bagian dari produk tersebut.
+3. Tim OY\! akan meninjau dan memverifikasi formulir serta dokumen yang dikirimkan.
+4. Setelah verifikasi disetujui, atur informasi rekening penerima sebagai rekening tujuan penarikan saldo. Pastikan informasi rekening penerima sudah benar, karena pengaturan ini hanya dapat dilakukan sekali melalui dashboard untuk alasan keamanan.
+5. Untuk penggunaan VA BCA, Anda mungkin perlu mengirimkan dokumen tambahan, seperti Nomor Pokok Wajib Pajak (NPWP) dan Kartu Tanda Penduduk (KTP)
+6. Jika memiliki pertanyaan atau kendala, silakan hubungi perwakilan bisnis OY\! atau email ke business.support@oyindonesia.com
 
-1. Create an account
-2. Upgrade your account by submitting the required documentations
-3. Have your upgrade request approved
-4. Set up your receiving bank account information (note: ensure that the receiving bank account information is accurate as it cannot be changed via OY! dashboard for security reasons)
-5. Submit your IPs and callback URLs to your business representative or to partner@oyindonesia.com
-6. Receive an API Key from us (note: it is required for API authorization purpose)
-7. Integrate with our Virtual Account Aggregator API
+Jika Anda ingin menggunakan VA Aggregator via API, terdapat langkah tambahan:
 
-### Testing
+1. Kirimkan alamat IP dan URL callback Anda ke perwakilan bisnis OY\! atau melalui email ke [business.support@oyindonesia.com](mailto:business.support@oyindonesia.com). Maksimal 5 alamat IP yang dapat didaftarkan.
+2. OY\! akan mengirimkan Production API Key sebagai otorisasi API melalui perwakilan bisnis Anda.   
+   **Catatan:** Staging/Demo API Key dapat diakses melalui dashboard di mode "Demo" pada menu bagian kiri bawah.
+3. Integrasikan API VA Aggregator ke sistem Anda dengan mengikuti panduan pada [API Docs \- VA Aggregator](https://api-docs.oyindonesia.com/#create-customized-va-va-aggregator) untuk memastikan implementasi berjalan dengan baik.
 
-#### Create VA number via API
+### Simulasi Pembuatan Virtual Account
+**Membuat Nomor VA melalui API**
 
-Once you successfully create an OY! account, you can immediately simulate VA payments via API.
+1. Masuk ke mode Demo di dashboard dengan klik tomboll “Coba di Demo” untuk masuk ke mode uji coba (staging).
+2. Salin API Staging Key dari menu navigasi kiri bawah.
+3. Buat nomor VA dengan mengirimkan permintaan POST ke [https://api-stg.oyindonesia.com/api/generate-static-va](https://api-stg.oyindonesia.com/api/generate-static-va). Masukkan parameter yang diperlukan sesuai dengan API Docs.
+4. OY\! akan merespons dengan nomor VA yang berhasil dibuat.
 
-Follow the below steps to test the VA flow:
+**Membuat Nomor VA melalui Dashboard**
 
-1. Create an account
+1. Masuk ke mode Demo di dashboard dengan klik tomboll “Coba di Demo” untuk masuk ke mode uji coba (staging).
+2. Pergi ke “Terima Uang” → Virtual Account → Daftar VA.
+3. Klik tombol “Buat Virtual Account” di kanan atas.
+4. Pilih metode pembuatan nomor VA dengan mengunggah file Excel (sesuai format template) atau input manual dengan klik “Tambahkan Detail Virtual Account Secara Manual”.
+5. Klik “Validasi” setelah mengisi semua kolom.
+6. Klik “Buat” untuk mengirim permintaan.
+7. Setelah berhasil, Anda akan diarahkan ke halaman Daftar VA untuk melihat nomor VA yang sudah dibuat.
+8. VA Anda siap untuk digunakan
 
-2. Send a request to activate API VA Aggregator product and obtain staging API Key to your business representative
+**Simulasi *Callback* Berhasil**
 
-3. Create a VA number by sending a ‘POST’ request to https://api-stg.oyindonesia.com/api/generate-static-va using your staging API key. Enter the required and optional fields, as referenced in the [API reference docs](https://api-docs.oyindonesia.com/#create-va)
+1. Masuk ke mode Demo di dashboard dengan klik tomboll “Coba di Demo” untuk masuk ke mode uji coba (staging).
+2. Pergi ke “Pengaturan” → Callback Transfer Bank.
+3. Pilih “Virtual Account” sebagai Jenis Transaksi.
+4. Pilih nama bank dari VA yang sudah dibuat sebelumnya.
+5. Masukkan nomor VA dan jumlah transaksi. Untuk VA *closed amount*, jumlah yang dimasukkan harus sesuai dengan yang telah dibuat.
+6. Masukkan tanggal dan waktu pembayaran. Pastikan Tanggal & Waktu Pembuatan VA \< Tanggal & Waktu Pembayaran \< Tanggal & Waktu Kedaluwarsa
 
-4. After VA number is generated, partner can simulate VA payment through your dashboard (in Staging environment) by going to Settings, and choose "VA Callback"
+### Cara Menggunakan Virtual Account
+Melihat Daftar Virtual Account (VA) yang Dibuat
 
-5. Fill in the bank name associated with the generated VA number, the generated VA number, amount, and payment date & time
+1. Masuk ke dashboard.
+2. Pergi ke:
 
-6. If payment is successful, we will send a callback to the registered staging callback URL destination
+“Terima Uang” → “Virtual Account” → “Daftar VA”
 
-7. The payment made to the VA can be monitored through OY! dashboard. Go to "Virtual Account" menu, and choose "Incoming Payment"
+Di halaman ini, Anda dapat melihat VA yang sudah Anda buat dengan detail informasi berikut: Nomor VA yang telah dibuat, Status pembayaran, Jumlah transaksi, Jenis VA, serta Jumlah transaksi yang telah diselesaikan. Anda juga dapat mengekspor daftar VA beserta detailnya dalam format PDF, Excel, atau CSV sesuai kebutuhan.
 
-#### Create VA via Dashboard
+![VA Aggregator Monitor Created Transactions](images/acceptingPayments/va-aggregator/viewing-list-of-created-va.webp)
 
-Once you successfully create an OY! account, you can immediately create VA number and simulate VA payments via Dashboard.
+Melihat Daftar Pembayaran Virtual Account (VA)
 
-Follow the instruction below:
+1. Masuk ke dashboard.
+2. Pergi ke:
 
-1. Create an Account.
+“Terima Uang” → “Virtual Account” → “Pembayaran Berlangsung”
 
-2. Select ‘Staging’ environment.
+Di halaman ini, Anda dapat melihat transaksi yang sudah diterima dari nomor VA yang sudah Anda buat dengan detail informasi berikut: *Timestamp* transaksi, Status transaksi, Jumlah pembayaran, Biaya admin, dan Informasi tambahan lainnya. Anda juga dapat mengekspor daftar VA beserta detailnya dalam format PDF, Excel, atau CSV sesuai kebutuhan.
 
-3. Click menu Virtual Account, then click ‘Create VA’.
+![VA Aggregator Monitor Incoming Transactions](images/acceptingPayments/va-aggregator/viewing-list-of-incoming-payment.webp)
 
-4. In the top right, click ‘Create Virtual Account’ button.
 
-5. You can choose between creating VA by uploading a CSV file (template available) or creating manually one by one.
+### Detail Virtual Account Tiap Bank
+| Nama Bank | Kode Bank | Open Amount | Closed Amount | Max. Masa Berlaku |
+| ----- | ----- | ----- | ----- | ----- |
+| BCA | 014 | Ya | Ya | Lifetime |
+| BNI | 009 | Sebagian\* | Ya | Lifetime |
+| BRI | 002 | Ya | Ya | Lifetime |
+| Bank Mandiri | 008 | Ya | Ya | Lifetime |
+| Bank CIMB | 022 | Ya | Ya | Lifetime |
+| Bank SMBC | 213 | Ya | Ya | Lifetime |
+| BSI | 451 | Tidak | Ya | 70 hari setelah dibuat. |
+| Bank Permata | 013 | Ya | Ya | Lifetime |
 
-6. Fill out the requirements: Partner User ID, Partner Transaction ID, Bank Name, VA Name, VA Type, Amount, usage, Usage Limit, VA Expiration Type, VA Expiration Date & Time, Transaction Expiration Date & Time, and Email.
 
-7. Validate and Submit your request.
+\*Untuk informasi lebih lanjut, silakan hubungi perwakilan bisnis kami.
 
-8. VA number(s) that you created will appear in the Create VA menu.
+**Catatan**: Tidak ada batas waktu minimum untuk masa berlaku Virtual Account (VA). Namun, disarankan untuk menetapkan masa berlaku yang wajar agar pelanggan memiliki cukup waktu untuk menyelesaikan pembayaran dengan nyaman.
 
-9. To simulate VA payment and see status changing, tap ‘Send Callback’ button in the right section of the table
+### Daftar Metode Pembayaran untuk VA
 
-### How to Use
+Pelanggan Anda dapat melakukan pembayaran melalui VA dengan metode berikut:
 
-Send us instructions to generate a new VA number, or create a VA number via dashboard.
-
-> Below is an example of a request body to execute your request:
-
-```shell
-curl --location --request POST https://partner.oyindonesia.com/api/generate-static-va
---header 'content-type: application/json' \
---header 'accept: application/json' \
---header 'x-oy-username: username' \
---header 'x-api-key: apikey' \
--d '{
-    "partner_user_id":"51200021",
-    "bank_code": "014",
-    "amount": 150000,
-    "is_open" : false,
-    "is_single_use" : false,
-    "is_lifetime": false,
-    "expiration_time": 5,
-    "username_display" : "va name",
-    "email": "email@mail.com"
-    }'
-```
-
-> It will return an [error message](https://api-docs.oyindonesia.com/#va-aggregator-response-codes) if the request is not valid. Otherwise, below is the sample response parameters that will be returned:
-
-```json
-{
-  "id": "12345b1-23be-45670-a123-5ca678f12b3e",
-  "status": {
-    "code": "000",
-    "message": "Success"
-  },
-  "amount": 15000,
-  "va_number": "700707760000000003",
-  "bank_code": "014",
-  "is_open": false,
-  "is_single_use": false,
-  "expiration_time": 1582783668175,
-  "va_status": "WAITING_PAYMENT",
-  "username_display": "va name",
-  "trx_expiration_time": 1582783668175,
-  "partner_trx_id": "TRX0001"
-}
-```
-
->
-
-Once a VA is created, its details can be seen and monitored through the OY! dashboard.
-
-- For Create VA via API, an endpoint to [check your VA information](https://api-docs.oyindonesia.com/#get-va-info) is also available and can be accessed at any time.
-- If you wish to change the details of your VA, you can do so by [updating your VA](https://api-docs.oyindonesia.com/#update-va) at any time.
-
-![API VA Aggregator](../images/va_waiting_payment.png)
-
-> Below is an example of the request body:
-
-```shell
-curl --location --request GET https://partner.oyindonesia.com/api/static-virtual-account/12345b1-23be-45670-a123-5ca678f12b3e
---header 'content-type: application/json' \
---header 'accept: application/json' \
---header 'x-oy-username: username' \
---header 'x-api-key: apikey'
-```
-
-> Below is the sample response parameters that will be returned:
-
-```json
-{
-  "id": "12345b1-23be-45670-a123-5ca678f12b3e",
-  "status": {
-    "code": "000",
-    "message": "Success"
-  },
-  "amount": 150000.0000,
-  "va_number": "700707760000000003",
-  "bank_code": "014",
-  "is_open": false,
-  "is_single_use": false,
-  "expiration_time": 1582783668175,
-  "va_status": "WAITING_PAYMENT",
-  "username_display": "va name",
-  "amount_detected": 0,
-  "partner_user_id": "123456",
-  "trx_expiration_time": 1582783668175,
-  "partner_trx_id": "TRX0001"
-}
-```
-
->
-
-> Below is an example of the request body:
-
-```shell
-curl --location --request PUT https://partner.oyindonesia.com/api/static-virtual-account/12345b1-23be-45670-a123-5ca678f12b3e
---header 'content-type: application/json' \
---header 'accept: application/json' \
---header 'x-oy-username: username' \
---header 'x-api-key: apikey' \
--d '{"is_open" : true,"amount": 50000,"is_single_use" : false,"expiration_time": 30,"username_display" : "va name","bank_code": "014","trx_expiration_time":5,"partner_trx_id":"TRX0001"}'
-```
-
-> Below is the sample of response parameters that will be returned:
-
-```json
-{
-  "id": "12345b1-23be-45670-a123-5ca678f12b3e",
-  "status": {
-    "code": "000",
-    "message": "Success"
-  },
-  "amount": 50000,
-  "va_number": "700707760000000003",
-  "bank_code": "014",
-  "is_open": true,
-  "is_single_use": false,
-  "expiration_time": 1582802205412,
-  "va_status": "WAITING_PAYMENT",
-  "username_display": "va name",
-  "partner_user_id": "123456",
-  "trx_expiration_time": 1582802205412,
-  "partner_trx_id": "TRX0001"
-}
-```
-
->
-
-All details regarding your [created VA](https://api-docs.oyindonesia.com/#get-list-of-created-va) and its payments can be monitored directly from the OY! dashboard.
-
-- Additionally, Create VA via API can be retrieved via our API endpoint.
-
-![API VA Aggregator](../images/va_created_va.png)
-
-Similarly, all the details regarding [incoming transactions](https://api-docs.oyindonesia.com/#get-list-of-transaction-for-va) can be monitored directly from the OY! dashboard.
-
-- Additionally, Create VA via API can be retrieved via our API endpoint.
-
-![API VA Aggregator](../images/va_incoming.png)
-
-For further details regarding OY!'s extensive API VA Aggregator capabilities and endpoints, please refer to the [OY! API Documentation](https://api-docs.oyindonesia.com/#va-aggregator).
-
-### VA Bank Details
-
-| Bank (Virtual Account) | Capability (Open Amount/Closed Amount)         |
-| ---------------------- | ---------------------------------------------- | 
-| BNI                    | Closed Amount                                  | 
-| Bank Mandiri           | Open Amount, Closed Amount                     |                  
-| BRI                    | Open Amount, Closed Amount                     | 
-| BCA                    | Open Amount, Closed Amount                     | 
-| Bank Permata / Permata Syariah| Open Amount, Closed Amount              |
-| CIMB Niaga / CIMB Niaga Syariah| Open Amount, Closed Amount             | 
-| SMBC                   | Open Amount, Closed Amount                     | 
-| BSI (Bank Syariah Indonesia)| Closed Amount                             |
-
-
-### Available Payment Channels for VA 
-
-Your end-users may use the below payment channels to pay for their bills via VA
-
-
-| Bank (Virtual Account) | SKN  | RTGS  | ATMs | Intrabank Mobile Banking & Internet Banking | Interbank Internet Banking | Interbank Mobile Banking |
-| ---------------------- | ---  |----  |---- | ------------------------------------------- | --------------------------| ---------------------------- |
-| Bank Mandiri           | Yes  | Yes  | Yes | Yes                                            | Yes                       | Yes                          |
-| BRI                    | Yes  | Yes  | Yes | Yes                                            | No                       | Yes                           |
-| BNI                    | Yes  | Yes  | Yes | Yes                                            | No                       | Yes                           |
-| Permata                | Yes  | Yes  | Yes | Yes                                            | No                       | Yes 
-| CIMB Niaga / CIMB Niaga Syariah | Yes  | Yes | Yes | Yes (Mobile Banking), No (Internet Banking)| No                       | Yes                          |
-| BCA                    | No   | No   | Yes | Yes      | No                                  | No                       |
-| SMBC                   | Yes  | No   | Yes | Yes (Mobile Banking), No (Internet Banking)     | No                       | Yes                          |
-| BSI                    | No   | No   | Yes | Yes      | Yes                                 | Yes                      |
-
-
-## Payment Links/Invoice
-
-**Overview**
-Payment Link
-OY! Payment Link/Invoice is a pre-built payment page that allows your business to easily and securely accept payments online. Currently, our payment link/invoice page supports Credit Card, Debit Card, Bank Transfer, E-Wallet (ShopeePay, DANA, LinkAja, OVO), and QR Code (QRIS) payment methods. You can create payment link/invoice pages through various methods: OY! Dashboard and API.
-
-Creating a payment link/invoice page is free! You will only be charged when you successfully receive a payment made through that checkout/invoice page.
-
-**Payment Flow**
-
-1. You create payment link/invoice page for your customers
-2. Your customers make a payment through the payment link/invoice page
-3. OY! detects the payments and notifies you about the payments through sending a callback and/or updating the payment status on your dashboard
-4. The payments received will settle in your OY! dashboard
-
-**Payment Link Preview**
-
-![Payment Link](../images/3p1p_preview.png)
-
-### Key Features
-
-#### Various options of creating payment link/invoice page
-
-**1. Creating payment link/invoice page through dashboard**
-
-**No integration needed**
-
-Offer your customers a seamless way to pay and complete payment channels without the need of an integration. 
-
-**Choose between one-time link and reusable link**
-
-One-time link is a link that can only be paid once.
-Reusable link is a link that can receive multiple payments.
-
-**Parameter customization**
-
-| Parameter Type             | Parameter Name                                                                                                                                                                                           | Definition                                                                                                                                                                                                                                                                                                                                    |
-| -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Transaction-related        | Amount                                                                                                                                                                                                   | The payment amount that will be displayed in the payment link page                                                                                                                                                                                                                                                                            |
-| Transaction-related        | Description                                                                                                                                                                                              | The description of the payment link. Usually this is used to describe the purpose of the payment link page                                                                                                                                                                                                                                    |
-| Transaction-related        | Partner Transaction ID                                                                                                                                                                                   | A unique transaction ID that you can assign to a transaction                                                                                                                                                                                                                                                                                  |
-| Transaction-related        | Balance Destination.                                                                                                                                                                                     | The balance destination of the fund received from the transaction. Options: 1) "My Balance" (When your users make a successful payment, the transaction will be recorded in your balance/account statement, 2) "My Child's Balance" (When your users make a successful payment, the transaction will be recorded in the selected child's balance/account statement. This field only appears when your account has at least one or more active Child.                                                                                                                                                                                                                        |
-| Customer Detail            | Customer details that can be specified (optional): Customer Name, Phone Number, Email, and Notes. We will send the payment link page link to the specified email address (if email address is filled in) | Customer Name, Phone Number, Email, and Notes                                                                                                                                                                                                                                                                                                 |
-| Payment Link Configuration | Amount Type                                                                                                                                                                                              | You can choose between Open Amount and Closed Amount. Open Amount = can accept payments of any amount, OR up to the specified amount (if amount is filled in). Closed Amount = only accept payments of the specified amount                                                                                                                   |
-| Payment Link Configuration | Payment Method                                                                                                                                                                                           | The payment method that you can choose to enable/disable for your customers. The payment methods available are Bank Transfer (via Virtual Account), Cards (Credit Card/Debit Card), E-Wallet (ShopeePay, DANA, LinkAja, OVO), and QRIS                                                                                                        |
-| Payment Link Configuration | Admin Fee Method                                                                                                                                                                                         | You can choose between "Included in total amount" or "Excluded from total amount". "Included in total amount" means the admin fee will be deducted from the payment amount made by the customer. "Excluded from total amount" means the admin fee will be added to the customer's total payment (Total Amount = Specified Amount + Admin Fee) |
-| Payment Link Configuration | Payment Link Expiration Date                                                                                                                                                                             | You can choose (specify the day(s) and/or hour(s)) of when the payment link will expire after it is created. For example, if you want the link to expire 1 day after it is created, fill 1 day 0 hour in the Payment Link Expiration Date field.                                                                                              |
-
-**UI customization**
-
-In order to maintain a consistent brand experience for your users, you can customize the look and feel of your payment link in the Dashboard, where you can do the following things;
-
-* Upload a logo
-* Choose the button and the theme color of the payment link
-
-**Payment Link Delivery by Email and/or WhatsApp**
-
-You can choose to send the created link to your users through Email and/or WhatsApp for better payment conversion. If you want to share the payment link to your customer's email, you can define the email parameter in our API. No need for you to send a separate email. If you want to share the payment link through WhatsApp, follow the steps [here](https://docs.oyindonesia.com/#sending-the-created-payment-link-through-whatsapp-coming-soon)
-
-**Payment Success Notification for your Users**
-
-When your users make a successful payment, you can choose to send them a success receipt through Email
-
-
-**2. Creating payment link/invoice page through API**
-
-- **Seamless integration with your customer's purchase journey**
-  You can easily call our API - we will take care of the payment link/invoice link creation and feed it back to you so that you can embed the link in your customer journey.
-
-- **Added level of customization**
-
-Below are the things that you can customize:
-
-1. Amount (specify the amount and choose between open amount vs closed amount)
-
-2. Admin fee (choose whether the admin fee will be borne by your customers or borne by you)
-
-3. Payment method (choose the payment methods displayed to your customers among Bank Transfer (via Virtual Account and Unique Code), Cards (Credit Card/Debit Card), E-Wallet (ShopeePay, DANA, LinkAja, OVO), and QR Code options. Additionally, you can choose which banks are enabled for Bank Transfer method.)
-
-4. Payment link expiration date
-
-- **Static VA for Invoice Payment**
-  You can enable a static VA option when using the API specifically assigned to your customer.
-
-- **Upload or Create a PDF for your Invoice Billing**
-  You can upload an invoice attachment or create an attachment using the OY! PDF templates via our API so you do not need to send a separate email to your customer.
-
-- **Payment Link Delivery by Email and/or WhatsApp**
-
-You can choose to send the created link to your users through Email and/or WhatsApp for better payment conversion. If you want to share the payment link to your customer's email, you can define the email parameter in our API. No need for you to send a separate email. If you want to share the payment link through WhatsApp, follow the steps [here](https://docs.oyindonesia.com/#sending-the-created-payment-link-through-whatsapp-coming-soon)
-
-- **Payment Success Notification for your Users**
-
-When your users make a successful payment, you can choose to send them a success receipt through Email
-
-
-#### Capability to monitor payment link/invoice details on dashboard
-
-Whether you send your user dashboard-generated link, or an API-generated encapsulated link, each of your distributed payment link can be monitored through the OY! Dashboard. We will also send a callback for all incoming payments.
-
-You will be able to see the details of the payment link including, but not limited to, the payment status, creation and expiration dates and times, amount, description, payment details, and payer details. For further convenience, you can also find and filter through your payment link list by creation date, partner transaction ID, or status.
-
-We also provide an API for you to check the transaction status manually.
-
-![Payment Link](../images/payment_checkout_list.png)
-
-#### Support Multi Account Management
-
-With this feature, you will be able to accept payment from your users through Payment Link created on behalf of a child account. When your users make a successful transaction, the transaction will be recorded in the Child Account's balance. As a parent, you are equipped with the ability to view the Child Account's balance and transaction list anytime through Children → Children Statement. 
-
-Click [here](https://docs.oyindonesia.com/#how-to-use-multi-account-management) for more information on this feature. 
-
-### Registration and Set Up
-
-**For dashboard-generated links**
-
-Follow the below check-list to ensure you're all set up to use the above service:
-
-1. Create an account
-2. Upgrade your account by submitting the required documentations
-3. Have your upgrade request approved
-4. Set up your receiving bank account information (note: ensure that the receiving bank account information is accurate as it cannot be changed via OY! dashboard for security reasons)
-5. Once your account is approved, you can start creating Payment Link transactions
-
-**For API-generated links**
-
-1. Create an account
-2. Upgrade your account by submitting the required documentations
-3. Have your upgrade request approved
-4. Set up your receiving bank account information (note: ensure that the receiving bank account information is accurate as it cannot be changed via OY! dashboard for security reasons)
-5. Submit your IPs and callback URLs to your business representative or to partner@oyindonesia.com
-6. Receive an API Key from us (note: it is required for API authorization purpose)
-7. Integrate with our Payment Link API (https://api-docs.oyindonesia.com/#api-create-payment-checkout)
-
-### Testing
-
-**Creating dashboard-generated test links**
-
-One-time Link
-
-1. Log on your OY! dashboard
-2. Choose "Staging" environment
-3. Click "Request Money" menu, and choose "Payment Link"
-4. Choose "One Time"
-5. Click "Create One-Time Payment Link"
-6. Fill in the necessary details
-
-One-time Payment Link consists of 3 parameter types: Transaction-related, Customer Detail, and General Payment Link Configuration.
-
-| Parameter Type             | Parameter Name                                                                                                                                                                                 | Definition                                                                                                                                                                                                                                                                                                                                    |
-| -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Transaction-related        | Amount                                                                                                                                                                                         | The payment amount that will be displayed in the payment link page                                                                                                                                                                                                                                                                            |
-| Transaction-related        | Description                                                                                                                                                                                    | The description of the payment link. Usually this is used to describe the purpose of the payment link page                                                                                                                                                                                                                                    |
-| Transaction-related        | Partner Transaction ID                                                                                                                                                                         | A unique transaction ID that you can assign to a transaction                                                                                                                                                                                                                                                                                  |
-| Transaction-related        | Balance Destination.                                                                                                                                                                            | The balance destination of the fund received from the transaction. Options: 1) "My Balance" (When your users make a successful payment, the transaction will be recorded in your balance/account statement, 2) "My Child's Balance" (When your users make a successful payment, the transaction will be recorded in the selected child's balance/account statement. This field only appears when your account has at least one or more active Child.                                                                                                                                                                                                                       |
-| Customer Detail            | Customer details that can be specified (optional): Customer Name, Phone Number, Email, and Notes. We will send the payment link to the specified email address (if email address is filled in) | Customer Name, Phone Number, Email, and Notes                                                                                                                                                                                                                                                                                                 |
-| Payment Link Configuration | Amount Type                                                                                                                                                                                    | You can choose between Open Amount and Closed Amount. Open Amount = can accept payments of any amount, OR up to the specified amount (if amount is filled in). Closed Amount = only accept payments of the specified amount                                                                                                                   |
-| Payment Link Configuration | Payment Method                                                                                                                                                                                 | The payment method that you can choose to enable/disable for your customers. The payment methods available are Bank Transfer (via Virtual Account), Cards (Credit Card/Debit Card), E-Wallet (ShopeePay, DANA, LinkAja, OVO), and QRIS                                                                                                        |
-| Payment Link Configuration | Admin Fee Method                                                                                                                                                                               | You can choose between "Included in total amount" or "Excluded from total amount". "Included in total amount" means the admin fee will be deducted from the payment amount made by the customer. "Excluded from total amount" means the admin fee will be added to the customer's total payment (Total Amount = Specified Amount + Admin Fee) |
-| Payment Link Configuration | Payment Link Expiration Date                                                                                                                                                                   | You can choose (specify the day(s) and/or hour(s)) of when the payment link will expire after it is created. For example, if you want the link to expire 1 day after it is created, fill 1 day 0 hour in the Payment Link Expiration Date field.                                                                                              |
-
-Note: For Payment Link Configuration-related fields (Amount Type, Payment Method, Admin Fee Method, Payment Link Expiration Date), you can choose to save your selected configuration for the future transactions by ticking the "Use this configuration for future transaction(s) option. By saving it, you will no longer need to fill in the fields again the next time you create a payment link.
-
-![Payment Link](../images/create_payment_link_1.png)
-
-![Payment Link](../images/create_payment_link_2.png)
-
-![Payment Link](../images/create_payment_link_3.png)
-
-Reusable Link
-
-1. Log on your OY! dashboard
-2. Choose "Staging" environment
-3. Click "Request Money" menu, and choose "Payment Link"
-4. Choose "Reusable"
-5. Click "Create Reusable Link"
-6. Fill in the necessary details
-
-Reusable Payment Link consists of 2 parameter types: Transaction-related and General Payment Link Configuration.
-
-| Parameter Type             | Parameter Name               | Definition                                                                                                                                                                                                                                                                                                                                                                                                      |
-| -------------------------- | ---------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Transaction-related        | Amount                       | The payment amount that will be displayed in the payment link page                                                                                                                                                                                                                                                                                                                                              |
-| Transaction-related        | Description                  | The description of the payment link. Usually this is used to describe the purpose of the payment link page                                                                                                                                                                                                                                                                                                      |
-| Transaction-related        | Partner Transaction ID       | A unique transaction ID that you can assign to a transaction                                                                                                                                                                                                                                                                                                                                                    |
-| Transaction-related        | Balance Destination.                                                                                                                                                                            | The balance destination of the fund received from the transaction. Options: 1) "My Balance" (When your users make a successful payment, the transaction will be recorded in your balance/account statement, 2) "My Child's Balance" (When your users make a successful payment, the transaction will be recorded in the selected child's balance/account statement. This field only appears when your account has at least one or more active Child.                                                                                                                                                                                                                                                                                           |                      
-| Payment Link Configuration | Amount Type                  | You can choose between Open Amount and Closed Amount. Open Amount = can accept payments of any amount, OR up to the specified amount (if amount is filled in). Closed Amount = only accept payments of the specified amount                                                                                                                                                                                     |
-| Payment Link Configuration | Payment Method               | The payment method that you can choose to enable/disable for your customers. The payment methods available are Bank Transfer (via Virtual Account and Unique Code), Cards (Credit Card/Debit Card), E-Wallet (ShopeePay, DANA, LinkAja, OVO), and QRIS                                                                                                                                                                          |
-| Payment Link Configuration | Admin Fee Method             | You can choose between "Included in total amount" or "Excluded from total amount". "Included in total amount" means the admin fee will be deducted from the payment amount made by the customer. "Excluded from total amount" means the admin fee will be added to the customer's total payment (Total Amount = Specified Amount + Admin Fee)                                                                   |
-| Payment Link Configuration | Payment Link Expiration Date | You can choose (specify the day(s) and/or hour(s)) of when the payment link will expire after it is created. You can choose between "Custom" (where you can specify the expiration time as you wish) and "Lifetime" (where a link will last for a lifetime and have no expiration time). If you want the link to expire 1 day after it is created, fill 1 day 0 hour in the Payment Link Expiration Date field. |
-
-Note: For Payment Link Configuration-related fields (Amount Type, Payment Method, Admin Fee Method, Payment Link Expiration Date), you can choose to save your selected configuration for the future transactions by ticking the "Use this configuration for future transaction(s) option. By saving it, you will no longer need to fill in the fields again the next time you create a payment link.
-
-**Creating API-generated test links**
-
-1. Create an account
-2. Send a request to activate API Payment Link product and obtain staging API Key to your business representative
-3. Create a payment link by sending a ‘POST’ request to https://api-stg.oyindonesia.com/api/payment-checkout/create-v2. Enter the required and optional fields, as referenced in the [API reference docs](https://api-docs.oyindonesia.com/#api-create-payment-checkout)
-
-Note: The link generated via API will always be a one-time link.
-
-**Accessing and monitoring the created test payment links**
-
-Whether you create the link through dashboard or API, you can see the details of your link on the OY! Dashboard. The details that can be checked are the created date of the link, amount billed, amount received, expiration date, and status.
-
-**Mock Amount Values for Testing**
-
-During testing, you can set the transaction amount to a certain mock value to simulate a specific scenario.
-
-| Payment Method       | Scenario                                                                                                                                                                 | Criteria                                          | Expected Result   |
-| -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------- | ----------------- |
-| E-Wallet - ShopeePay | Payment already successful on E-Wallet issuer side but failed on OY side (can be due to callback timeout reasons). The transaction is refunded to the end-user's balance | Amount is between 55,000 and 66,000               | Refund Successful |
-| QRIS                 | Payment already successful on E-Wallet issuer side but failed on OY side (can be due to callback timeout reasons). The transaction is refunded to the end-user's balance | Amount is between 55,000 and 66,000               | Refund Successful |
-| E-Wallet - LinkAja   | Payment already successful on E-Wallet issuer side but failed on OY side (can be due to callback timeout reasons). The transaction is refunded to the end-user's balance | Amount is between 55,000 and 66,000               | Refund Successful |
-| E-Wallet - ShopeePay | Failure during refund process                                                                                                                                            | Amount is less than 55,000 or greater than 66,000 | Refund Failed     |
-| QRIS                 | Failure during refund process                                                                                                                                            | Amount is less than 55,000 or greater than 66,000 | Refund Failed     |
-| E-Wallet - LinkAja   | Failure during refund process                                                                                                                                            | Amount is less than 55,000 or greater than 66,000 | Refund Failed     |
-
-
-**Mock Credentials for Testing**
-
-Specifically for payment via Credit Card or Debit Card, you may use the below credentials to simulate an end-to-end payment joruney for a successful transaction in staging environment
-
-| Card Details          | Values                     |
-| ----------------------| ---------------------------|
-|Card Number            | 2223000000000007           |
-|Card Expired Month/Year| 01/39                      |
-|Card CVN               | 100                        |
-|Card Holder Name       | Testing                    |
-
-
-**Simulate Credit Card / Debit Card Transaction Callback for Testing**
-As an alternative to the above, if you would like to simulate the callback for Credit Card or Debit Card transaction, but not necessarily the end-to-end payment journey, you may manually send callback by following these steps: 
-
-1. Log in to your OY! Dashboard 
-2. Select Environment: Demo in the top left corner 
-3. Make sure to have inputted your staging callback URL on Settings: 'Developer Options' (tab: Callback Configuration - Payment Link)
-4. Create a payment link in Demo environment
-5. Click on the link and proceed with Credit Card or Debit Card as your payment method 
-6. Copy the Reference Number of the transaction - it should be available under "Transaction Details" 
-7. Return to OY! Dashboard and click on the Settings: 'CC-DC Callback" 
-8. Paste the Reference Number of the transaction and choose whether you would like to simulate a callback for successful transaction or a failed transaction 
-8. Click "Send Callback". OY! will only send callback for a successful transaction whether in staging environment or production environment 
-
-
-### How to Use Payment Link via Dashboard
-
-One-time Link
-
-1. Log on your OY! dashboard
-2. Choose "Staging" environment
-3. Click "Request Money" menu, and choose "Payment Link"
-4. Choose "One Time"
-5. Click "Create One-Time Link"
-6. Fill in the necessary details
-
-One-time Payment Link consists of 3 parameter types: Transaction-related, Customer Detail, and General Payment Link Configuration.
-
-| Parameter Type             | Parameter Name                                                                                                                                                                                 | Definition                                                                                                                                                                                                                                                                                                                                                                                                        |
-| -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Transaction-related        | Amount                                                                                                                                                                                         | The payment amount that will be displayed in the payment link page                                                                                                                                                                                                                                                                                                                                                |
-| Transaction-related        | Description                                                                                                                                                                                    | The description of the payment link. Usually this is used to describe the purpose of the payment link page                                                                                                                                                                                                                                                                                                        |
-| Transaction-related        | Partner Transaction ID                                                                                                                                                                         | A unique transaction ID that you can assign to a transaction                                                                                                                                                                                                                                                                                                                                                      |
-| Transaction-related        | Balance Destination.                                                                                                                                                                            | The balance destination of the fund received from the transaction. Options: 1) "My Balance" (When your users make a successful payment, the transaction will be recorded in your balance/account statement, 2) "My Child's Balance" (When your users make a successful payment, the transaction will be recorded in the selected child's balance/account statement. This field only appears when your account has at least one or more active Child.                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
-| Customer Detail            | Customer details that can be specified (optional): Customer Name, Phone Number, Email, and Notes. We will send the payment link to the specified email address (if email address is filled in) | Customer Name, Phone Number, Email, and Notes                                                                                                                                                                                                                                                                                                                                                                     |
-| Payment Link Configuration | Amount Type                                                                                                                                                                                    | You can choose between Open Amount and Closed Amount. Open Amount = can accept payments of any amount, OR up to the specified amount (if amount is filled in). Closed Amount = only accept payments of the specified amount                                                                                                                                                                                       |
-| Payment Link Configuration | Payment Method                                                                                                                                                                                 | The payment method that you can choose to enable/disable for your customers. The payment methods available are Bank Transfer (via Virtual Account and Unique Code), Cards (Credit Card/Debit Card), E-Wallet (ShopeePay, DANA, LinkAja, OVO), and QRIS                                                                                                                                                                            |
-| Payment Link Configuration | Admin Fee Method                                                                                                                                                                               | You can choose between "Included in total amount" or "Excluded from total amount". "Included in total amount" means the admin fee will be deducted from the payment amount made by the customer. "Excluded from total amount" means the admin fee will be added to the customer's total payment (Total Amount = Specified Amount + Admin Fee)                                                                     |
-| Payment Link Configuration | Payment Link Expiration Date                                                                                                                                                                   | You can choose (specify the day(s) and/or hour(s)) of when the payment link will expire after it is created. You can choose between "Custom" (where you can specify the expiration time as you wish) and "Lifetime" (where a link will last for a lifetime and have no expiration time). If you want the link to expire 1 day after it is created, fill 1 day 0 hour in the Payment Link Expiration Date field. . |
-
-Note: For Payment Link Configuration-related fields (Amount Type, Payment Method, Admin Fee Method, Payment Link Expiration Date), you can choose to save your selected configuration for the future transactions by ticking the "Use this configuration for future transaction(s) option. By saving it, you will no longer need to fill in the fields again the next time you create a payment link.
-
-![Payment Link](../images/create_payment_link_4.png)
-
-![Payment Link](../images/create_payment_link_5.png)
-
-![Payment Link](../images/create_payment_link_6.png)
-
-Reusable Link
-
-1. Log on your OY! dashboard
-2. Choose "Staging" environment
-3. Click "Request Money" menu, and choose "Payment Link"
-4. Choose "Reusable"
-5. Click "Create Reusable Link"
-6. Fill in the necessary details
-
-Reusable Payment Link consists of 2 parameter types: Transaction-related and General Payment Link Configuration.
-
-| Parameter Type             | Parameter Name               | Definition                                                                                                                                                                                                                                                                                                                                    |
-| -------------------------- | ---------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Transaction-related        | Amount                       | The payment amount that will be displayed in the payment link page                                                                                                                                                                                                                                                                            |
-| Transaction-related        | Description                  | The description of the payment link. Usually this is used to describe the purpose of the payment link page                                                                                                                                                                                                                                    |
-| Transaction-related        | Partner Transaction ID       | A unique transaction ID that you can assign to a transaction                                                                                                                                                                                                                                                                                  |
-| Transaction-related        | Balance Destination.                                                                                                                                                                            | The balance destination of the fund received from the transaction. Options: 1) "My Balance" (When your users make a successful payment, the transaction will be recorded in your balance/account statement, 2) "My Child's Balance" (When your users make a successful payment, the transaction will be recorded in the selected child's balance/account statement. This field only appears when your account has at least one or more active Child.                                                                                                                                                                                                                       |         
-| Payment Link Configuration | Amount Type                  | You can choose between Open Amount and Closed Amount. Open Amount = can accept payments of any amount, OR up to the specified amount (if amount is filled in). Closed Amount = only accept payments of the specified amount                                                                                                                   |
-| Payment Link Configuration | Payment Method               | The payment method that you can choose to enable/disable for your customers. The payment methods available are Bank Transfer (via Virtual Account and Unique Code), Cards (Credit Card/Debit Card), E-Wallet (ShopeePay, DANA, LinkAja, OVO), and QRIS                                                                                                        |
-| Payment Linkfiguration     | Admin Fee Method             | You can choose between "Included in total amount" or "Excluded from total amount". "Included in total amount" means the admin fee will be deducted from the payment amount made by the customer. "Excluded from total amount" means the admin fee will be added to the customer's total payment (Total Amount = Specified Amount + Admin Fee) |
-| Payment Link Configuration | Payment Link Expiration Date | You can choose (specify the day(s) and/or hour(s)) of when the payment link will expire after it is created. For example, if you want the link to expire 1 day after it is created, fill 1 day 0 hour in the Payment Link Expiration Date field.                                                                                              |
-
-Note: For Payment Link Configuration-related fields (Amount Type, Payment Method, Admin Fee Method, Payment Link Expiration Date), you can choose to save your selected configuration for the future transactions by ticking the "Use this configuration for future transaction(s) option. By saving it, you will no longer need to fill in the fields again the next time you create a payment link.
-
-![Payment Link](../images/create_reusable_1.png)
-
-![Payment Link](../images/create_reusable_2.png)
-
-![Payment Link](../images/create_reusable_3.png)
-
-### Monitoring the payment link transactions
-
-One-time Link
-
-All of the created links can be monitored through your dashboard (Payment Link List).
-
-The transaction details that you can see are;
-
-| Column Name           | Definition                                                                                                                                                         |
-| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Date & Time Created   | The creation timestamp of a child transaction. The timestamp of a user selecting a payment method                                                                  |
-| Last Update           | The last update timestamp of a child reusable link. This usually denotes the timestamp of a status change for a child link.                                        |
-| Partner Tx ID         | The partner tx ID of a reusable link you just created                                                                                                              |
-| Balance Destination   | The destination of the fund received from a transaction. Options: 1) "My Balance" (When your users make a successful payment, the transaction will be recorded in your balance/account statement, 2) "My Child's Balance" (When your users make a successful payment, the transaction will be recorded in the selected child's balance/account statement. This field only appears when your account has at least one or more active Child.                                                  |
-| Child Username        | The username of the child (this will only be filled in when Balance Destination = "Child's Balance"                                                                |
-| Amount Billed         | The amount billed for that particular transaction                                                                                                                  |
-| Admin Fee             | The admin fee charged for that particular transaction                                                                                                              |
-| Amount Received       | The amount received / the amount of payment made by the user. This will only be filled in if the user has completed the payment.                                   |
-| Payment method used   | The payment method that your user uses to pay the transaction. This will only be filled in if the user has completed the payment                                   |
-| Transaction Due Date  | The due date of a transaction.                                                                                                                                     |
-| Days Past Due         | How many days a link has gone past the transaction due date. For example, if today’s date is 1 Dec and transaction due date is 30 Nov, the days past due will be 1 |
-| Customer Name         | The name of your user/customer                                                                                                                                     |
-| Customer Phone Number | The phone number of your user/customer                                                                                                                             |
-| Customer Notes        | The transaction notes written by your user/customer                                                                                                                |
-| Status                | The transaction status. Possible values are WAITING PAYMENT, FAILED, CHARGE IN PROGRESS, EXPIRED, AND COMPLETE                                                     |
-
-![Payment Link](../images/one_time_link_list.png)
-
-Reusable Link
-
-After you successfully create a reusable link, it will become a "Parent" link. The Parent link will appear in the "Created Reusable Link" tab. There, you will see the details of a reusable link you just created.
-
-| Column Name                  | Definition                                                                                                                                                                                                                                                                                                      |
-| ---------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Last Update                  | The last update timestamp of a parent reusable link. This usually denotes the timestamp of a status change for a parent link.                                                                                                                                                                                   |
-| Partner Tx ID                | The partner tx ID of a reusable link you just created                                                                                                                                                                                                                                                           |
-| Balance Destination           | The destination of the fund received from a transaction. Options: 1) "My Balance" (When your users make a successful payment, the transaction will be recorded in your balance/account statement, 2) "My Child's Balance" (When your users make a successful payment, the transaction will be recorded in the selected child's balance/account statement. This field only appears when your account has at least one or more active Child.                                                  |
-| Child Username        | The username of the child (this will only be filled in when Balance Destination = "Child's Balance"                                                                |
-| Amount Billed                | The billed amount per individual transaction (not a cumulative amount). For example, if the amount is set at Rp 10,000 for a reusable parent link, the amount billed will be filled in with Rp 10,000                                                                                                           |
-| Admin Fee                    | The cumulative admin fee received for a particular parent reusable link. If a parent reusable link has peen paid twice, with admin fee Rp 500 each, the admin fee will be filled in with Rp 500 x 2 = Rp 1,000                                                                                                  |
-| Amount Received              | The cumulative admin fee received for a particular parent reusable link. If a parent reusable link has peen paid twice, with admin fee Rp 500 each, the admin fee will be filled in with Rp 500 x 2 = Rp 1,000                                                                                                  |
-| Count of Complete Tx         | The count of completed transactions under a parent reusable link                                                                                                                                                                                                                                                |
-| Payment link expiration date | The date after which a parent reusable link can no longer receive a transaction.                                                                                                                                                                                                                                |
-| Status                       | The status of a parent reusable link. Possible status: OPEN FOR PAYMENT (means the link can still receive payments) and EXPIRED (status will be changed to EXPIRED when the payment link has exceeded the expiration date). When status is set as EXPIRED, the payment link can no longer receive a transaction |
-| Action                       | The possible actions that you can take on a link: Copy URL, Visit URL, Delete, and Resend Callback                                                                                                                                                                                                              |
-
-![Payment Link](../images/reusable_link_parent.png)
-
-When you click the hyperlink in the Partner Tx ID, you will be redirected to a page where you can see the transaction details corresponding to that Parent Reusable Link.
-
-![Payment Link](../images/reusable_link_parent_details.png)
-
-The transaction list displayed is the transaction that is linked to a Parent Reusable Link
-
-The transaction details that you can see are;
-
-| Column Name           | Definition                                                                                                                                                         |
-| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Date & Time Created   | The creation timestamp of a child transaction. The timestamp of a user selecting a payment method                                                                  |
-| Last Update           | The last update timestamp of a child reusable link. This usually denotes the timestamp of a status change for a child link.                                        |
-| Partner Tx ID         | The partner tx ID of a reusable link you just created                                                                                                              |
-| Balance Destination   | The destination of the fund received from a transaction. Options: 1) "My Balance" (When your users make a successful payment, the transaction will be recorded in your balance/account statement, 2) "My Child's Balance" (When your users make a successful payment, the transaction will be recorded in the selected child's balance/account statement. This field only appears when your account has at least one or more active Child.                                                  |
-| Child Username        | The username of the child (this will only be filled in when Balance Destination = "Child's Balance"                                                                |
-| Amount Billed         | The amount billed for that particular transaction                                                                                                                  |
-| Admin Fee             | The admin fee charged for that particular transaction                                                                                                              |
-| Amount Received       | The amount received / the amount of payment made by the user. This will only be filled in if the user has completed the payment.                                   |
-| Payment method used   | The payment method that your user uses to pay the transaction. This will only be filled in if the user has completed the payment                                   |
-| Transaction Due Date  | The due date of a transaction.                                                                                                                                     |
-| Days Past Due         | How many days a link has gone past the transaction due date. For example, if today’s date is 1 Dec and transaction due date is 30 Nov, the days past due will be 1 |
-| Customer Name         | The name of your user/customer                                                                                                                                     |
-| Customer Phone Number | The phone number of your user/customer                                                                                                                             |
-| Customer Notes        | The transaction notes written by your user/customer                                                                                                                |
-| Status                | The transaction status. Possible values are WAITING PAYMENT, FAILED, CHARGE IN PROGRESS, EXPIRED, AND COMPLETE                                                     |
-| Action                | The possible actions that you can take on a link: Copy URL, Visit URL, Delete, and Resend Callback                                                                 |
-
-When your user has opened the parent reusable link and selected a payment method, it will become a "child reusable link" and generate a child transaction ID. The child transaction ID will appear in the "List of All Transactions" tab
-
-The details that you can see are;
-
-| Column Name           | Definition                                                                                                                       |
-| --------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| Date & Time Created   | The creation timestamp of a child transaction. The timestamp of a user selecting a payment method                                |
-| Last Update           | The last update timestamp of a child reusable link. This usually denotes the timestamp of a status change for a child link.      |
-| Partner Tx ID         | The partner tx ID of a reusable link you just created                                                                            |
-| Balance Destination   | The destination of the fund received from a transaction. Options: 1) "My Balance" (When your users make a successful payment, the transaction will be recorded in your balance/account statement, 2) "My Child's Balance" (When your users make a successful payment, the transaction will be recorded in the selected child's balance/account statement. This field only appears when your account has at least one or more active Child.               |
-| Child Username        | The username of the child (this will only be filled in when Balance Destination = "Child's Balance"                              |
-| Amount Billed         | The amount billed for that particular transaction                                                                                |
-| Admin Fee             | The admin fee charged for that particular transaction                                                                            |
-| Amount Received       | The amount received / the amount of payment made by the user. This will only be filled in if the user has completed the payment. |
-| Payment method used   | The payment method that your user uses to pay the transaction. This will only be filled in if the user has completed the payment |
-| Customer Name         | The name of your user/customer                                                                                                   |
-| Customer Phone Number | The phone number of your user/customer                                                                                           |
-| Customer Notes        | The transaction notes written by your user/customer                                                                              |
-| Status                | The transaction status. Possible values are WAITING PAYMENT, FAILED, CHARGE IN PROGRESS, EXPIRED, AND COMPLETE                   |
-| Action                | The possible actions that you can take on a link: Copy URL, Visit URL, Delete, and Resend Callback                               |
-
-![Payment Link](../images/reusable_link_child.png)
-
-### How to Use Invoice/Account Receivable via Dashboard
-
-
-1. Log on your OY! dashboard
-2. Choose "Production" environment
-3. Click "Create Invoice" under Account Receivable menu
-4. Click "Create New Invoice"
-5. Fill in the necessary details
-
-
-| Parameter                    | Description                                                                                                                                                                                                                                                                                                                                                          |
-| ---------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Invoice Number               | The number of the invoice to be created                                                                                                                                         |
-| Invoice Date      | The date of the invoice                                                                                                                                                                                                                                                                                                       |
-| Due Date               |  Due date of a transaction. You can choose between 7, 14, 30, 45, or 60 days after created date of the invoice OR you can also input a specific/custom date. Your customer will get reminders to pay on D-1, D-Day, and D+7 from the transaction due date.                                                                                                               
-| Link Expiry Datetime          |  You can now set your link expiry date and time for your conveniences. The expiry time selected will also appear on PDF documents. |
-| Customer           | The name of the customer that the invoice is addressed to. You can choose the name of the customer from the dropdown. To create a new customer, follow the instruction [here](https://docs.oyindonesia.com/#creating-a-customer-for-account-receivable-invoice-payment-links-invoice).  |
-| Product Description| The name and/or description of the product                                                                                                                 |
-| Quantity        | The quantity of the product   |
-| Unit price            | Unit price of the product                                                                                                                                                                                                                                                                                                                             |
-| Amount          | Total amount for the product |
-| Notes       | The note to be displayed in the automatically generated invoice file                                                                                                                                                                                                                                                                                          |
-| Additional Documents             | The supporting documents that will be attached in the email along with the invoice. Accept PDF & Excel files. Maximum of 4 documents (maximum 5MB each).                                                                                                     |
-| Invoice Payment             | You can choose between "Payment Link" (the invoice will be embedded with a payment link that the customer can use to make a payment on) or "Invoice Only" (the invoice will not be embedded with a payment link). For "Invoice Only", invoice status can be adjusted at any time for record purposes.                                                                                                                                                                                                            |
-| Payment Method               | The payment method that you can choose to enable/disable for your customers. The payment methods available are Bank Transfer (via Virtual Account and Unique Code), Cards (Credit Card/Debit Card), E-Wallet (ShopeePay, DANA, LinkAja, OVO), and QR Code                                                                                                                            |
-| Admin Fee Method             | You can choose between "Included in total amount" or "Excluded from total amount". "Included in total amount" means the admin fee will be deducted from the payment amount made by the customer. "Excluded from total amount" means the admin fee will be added to the customer's total payment (Total Amount = Specified Amount + Admin Fee)                        |
-
-
-
-
-* Create Invoice form with flexible Payment Link Expiry Time
-![Invoice](../images/accountReceivable/AR_expiry_datetime.png)
-
-
-* Invoice details inside dashboard.
-![Invoice](../images/accountReceivable/invoice_detail.jpg)
-
-
-* Invoice preview inside dashboard
-![Invoice](../images/accountReceivable/detailpdf.jpg)
-
-
-
-
-### Monitoring the invoices/account receivable
-
-
-All of the created invoices (via API or Dashboard) can be monitored through your dashboard (Invoice List).
-
-
-![Invoice](../images/accountReceivable/filter.jpg)
-
-
-The transaction details that you can see are:
-
-
-| Column Name           | Definition                                                                                                                                                         |
-| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Invoice Number  | The number of the invoice created                                                                  |
-| Customer Name          | The name of the customer whom the invoice belongs to                                        |
-| Amount Billed         | The amount billed for that particular transaction                                                                                                                  |
-| Admin Fee             | The admin fee charged for that particular transaction                                                                                                              |
-| Amount Received       | The amount received / the amount of payment made by the user. This will only be filled in after the user has completed the payment.                                   |
-| Invoice Date  | The date of the invoice.                                                                                                                                                        |
-| Payment Date        | The date of payment (if the invoice has been successfully paid by the customer) |
-| Due Date      | The invoice due date                                                                                                                           |
-| Days Past Due | How many days an invoice has gone unpaid past the due date. For example, if due date is 1 July and the invoice is not paid by 4 July, then Days Past Due will be filled in with 3 |
-| Payment Link Expiry | Maximum date and time that a payment link can stay valid for before expiring permanently |                                                                                                       
-| Status                | The transaction status. Possible values are CREATED, PAID, CANCELLED, and OVERDUE                                                  |
-
-
-In terms of status, below are the status mapping between API Invoice and status in dashboard
-
-
-| API Invoice Status         | Dashboard status                                                                                                                                                        |
-| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| CREATED, WAITING PAYMENT, FAILED  | UNPAID                                                             |
-| COMPLETE | PAID                                                           |
-| EXPIRED  | CANCELLED                                                          |
-| OVERDUE | Late Payment Tab |
-
-
-
-
-There are several actions that you can take for the created invoice:
-
-|Action | Definition |
-| ---------| -----------|
-| Send invoice | To send the invoice to the customer's defined email |
-| Download invoice | To download the PDF file of the invoice |
-| Delete | To delete the invoice. Only invoice with status CREATED can be deleted |
-
-
-
-
-### Creating a Customer for Account Receivable/Invoice
-
-
-There are 2 ways to create a Customer:
-
-
-Option 1: Through "Create Invoice" menu
-
-
-![Invoice](../images/add_new_customer.png)
-
-
-1. Click dropdown of the "Customer"
-2. Click "Add new customer"
-3. Fill in Customer ID, Customer Name (mandatory), PIC Name, Customer Phone Number, Tax Type (mandatory), Customer Email, Address.
-4. Click save
-
-
-For Tax Type, the explanation is as follows:
-
-
-| Tax Type         | Definition                                                                                                                                                         |
-| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| No tax           | Tax will not be added to the subtotal  |                                                                                         | PPN 11% Exclusive| PPN 11% of the subtotal will be added upon the subtotal of the invoice. For example is subtotal is 10,000, then the PPN will be 11% of the 10,000 = 1,100                                     |
-| PPN 10% Inclusive | Tax will not be added upon the subtotal because the subtotal is assumed to be tax inclusive. 10% is applicable for older than April 2022 transaction |
-|PPN 10% Exclusive| Tax will be added separately to the subtotal. 10% is applicable for older than April 2022 transaction
-|PPN 11% Inclusive |  Tax will not be added upon the subtotal because the subtotal is assumed to be tax inclusive
-|PPN 11% Exclusive| Tax will be added separately to the subtotal.|
-|PPh23 Non NPWP 4%| Tax will be substracted from the subtotal|
-|PPh 23 NPWP 2% |Tax will be substracted from the subtotal |
-
-
-Option 2: Through "Customer Management" menu
-
-
-![Invoice](../images/accountReceivable/AR_customer.png)
-
-
-![Invoice](../images/accountReceivable/AR_new_customer.png)
-
-
-
-
-1. Click "Customer Management" sidebar under the "Receive Money" menu
-2. Click "Add new customer"
-3. Fill in Customer ID, Customer Name (mandatory), PIC Name, Customer Phone Number, Tax Type (mandatory), Customer Email, Address.
-4. Click "Save"
-
-
-![Invoice](../images/accountReceivable/AR_new_customer.png)
-
-
-All of the created customer can be monitored through your dashboard (Customer List). There are several actions that you take for the customer data:
-
-
-1. Edit --> To edit the data of the customer
-
-
-1. Activate/Deactivate --> To deactivate / reactivate the customer
-
-
-If you click on the row you selected, you will be able to see the detailed data of the customer, including the list of invoices belonging to that customer.
-
-
-
-
-![Invoice](../images/accountReceivable/customermanagement.png)
-
-
-
-
-
-
-### Amount Customization for Account Receivable/Invoice
-
-
-OY! has a feature that allows you to add the price of the subtotal (addition) and/or deduct the price from subtotal. The step is as follows:
-
-
-![Invoice](../images/add_column_amount_customization.png)
-
-
-
-
-1. Click "add column" below the subtotal
-2. Choose "addition" or "substraction" from the dropdown
-3. Fill in the description
-4. Fill in the amount
-
-
-![Invoice](../images/accountReceivable/AR_kolom.png)
-
-
-### How to Use Payment Link/Invoice via API
-
-OY! provides 3 different payment link endpoints depending on your requirements and needs. We provide payment link, invoicing, and recurring invoice.
-
-Send us instructions to generate a [payment link](https://api-docs.oyindonesia.com/#api-create-payment-checkout).
-
-> Below is an example of a request body to execute your request:
-
-```shell
-curl -X POST \
-  https://partner.oyindonesia.com/api/payment-checkout/create-v2 \-H 'cache-control: no-cache' -H 'content-type: application/json' \-H 'X-Api-Key: apikeymu' -H 'X-Oy-Username: yourusername' \-d '{
-        "partner_tx_id":"partnerTxId",
-        "description":"description",
-        "notes":"notes",
-        "sender_name":"Sender name",
-        "amount":50000,
-        "email":"",
-        "phone_number":"",
-        "is_open":false,
-        "step":"input-amount",
-        "include_admin_fee":false,
-        "list_disabled_payment_methods":"",
-        "list_enabled_banks":"",
-        "expiration":"2020-08-08 08:09:12"
-    }'
-```
-
-> Below is the sample response parameters that will be returned:
-
-```json
-{
-  "success": true,
-  "url": "https://pay.oyindonesia.com/id",
-  "message": "success",
-  "email_status": "PROCESSED",
-  "payment_link_id": "id"
-}
-```
-
->
-
-Send us instructions to generate a [payment link invoice link](https://api-docs.oyindonesia.com/#api-create-invoicing).
-
-> Below is an example of a request body to execute your request:
-
-```shell
-url -X POST \
-  https://partner.oyindonesia.com/api/payment-checkout/create-invoice\-H 'cache-control: no-cache' -H 'content-type: application/json' \-H 'X-Api-key: apikeymu' -H 'X-Oy-Username: yourusername' \-d '{
-        "partner_tx_id":"partner tx id",
-        "description":"desc invoice",
-        "notes":"notes satu",
-        "sender_name":"Sender Name API",
-        "amount":"30000",
-        "email":"",
-        "phone_number":"",
-        "is_open":"true",
-        "step":"input-amount",
-        "include_admin_fee":false,
-        "list_disabled_payment_methods":"",
-        "list_enabled_banks":"013",
-        "expiration":"2020-07-28 19:15:13",
-        "partner_user_id":"partner user id",
-          "full_name" : "Raymond",
-          "is_va_lifetime": false,
-        "attachment": "JVBERi0xLjQKJeLjz9MKMyAwIG9iago8PC9GaWx0ZXIvRmxhdGVEZWNvZGUvTGVuZ3RoIDQ5Nj4+c3RyZWFtCnicrZVdb9MwFIbv/SsOd51EwrHjz0tKhxQk2IciJMS4CG46lbVNyYcE/HqcbNloh5xO8U3OUXJ8Hr/2aweBQkQBQRjhnnZLfpJ5RhIJQhjIluQ8I1eEwYfubVeHMFRnW/LmPQWKkK3I7Cz70dU+lfTN/hnE3ChJY9SPA0U3EPvP1S2ZXXx5Bemnzxfpu/OuGcLtfxp+/ebisp+QH8VkrNjhHJ9QaV23xRKyciKIGuCGjYPmv6cq0idKWuRNEYDlV7VoixAgwcdEXeZVsysqyH5BughA88t6uy3bXQNO3XRbCEq9pKr8sw5gPuXT8zGv7/JNCOeh9mAYMoxQRcyEMJ5KRlEmokkI63lVrSgqi8JEWlsV8ZURkRFMR1pILkVuZcJYCEd69V7vY3eZxYj4GvEkGsaMK5SAMTcauYsKje6aObskUsGWaKr7bPOYHUd7/8XIocZlx9H2DfuSh+Qw2AG4GZLDYMlqmLfHEQIS/XyBaOf++5uoqG213jfrcjfVfAYdi/tY0288noxBrpqpvwoh1AjjslrbqUo6j/kpWdnkG7iZpYvrm7MQmyOe045vBhkhDbFFI6gTz6Jvj9zqCd+frz/5MRMvOvyeBUxGRM3bvIHvRZXvmryGu7Jq901ZhTDJqEweC+xlvkTqX6+ILeYKZW5kc3RyZWFtCmVuZG9iagoxIDAgb2JqCjw8L1RhYnMvUy9Hcm91cDw8L1MvVHJhbnNwYXJlbmN5L1R5cGUvR3JvdXAvQ1MvRGV2aWNlUkdCPj4vQ29udGVudHMgMyAwIFIvVHlwZS9QYWdlL1Jlc291cmNlczw8L0NvbG9yU3BhY2U8PC9DUy9EZXZpY2VSR0I+Pi9Qcm9jU2V0IFsvUERGIC9UZXh0IC9JbWFnZUIgL0ltYWdlQyAvSW1hZ2VJXS9Gb250PDwvRjEgMiAwIFI+Pj4+L1BhcmVudCA0IDAgUi9Sb3RhdGUgOTAvTWVkaWFCb3hbMCAwIDU5NSA4NDJdPj4KZW5kb2JqCjUgMCBvYmoKWzEgMCBSL1hZWiAwIDYwNSAwXQplbmRvYmoKMiAwIG9iago8PC9TdWJ0eXBlL1R5cGUxL1R5cGUvRm9udC9CYXNlRm9udC9IZWx2ZXRpY2EvRW5jb2RpbmcvV2luQW5zaUVuY29kaW5nPj4KZW5kb2JqCjQgMCBvYmoKPDwvS2lkc1sxIDAgUl0vVHlwZS9QYWdlcy9Db3VudCAxL0lUWFQoMi4xLjcpPj4KZW5kb2JqCjYgMCBvYmoKPDwvTmFtZXNbKEpSX1BBR0VfQU5DSE9SXzBfMSkgNSAwIFJdPj4KZW5kb2JqCjcgMCBvYmoKPDwvRGVzdHMgNiAwIFI+PgplbmRvYmoKOCAwIG9iago8PC9OYW1lcyA3IDAgUi9UeXBlL0NhdGFsb2cvUGFnZXMgNCAwIFIvVmlld2VyUHJlZmVyZW5jZXM8PC9QcmludFNjYWxpbmcvQXBwRGVmYXVsdD4+Pj4KZW5kb2JqCjkgMCBvYmoKPDwvTW9kRGF0ZShEOjIwMjAwNzI5MTE1MzE1WikvQ3JlYXRvcihKYXNwZXJSZXBvcnRzIExpYnJhcnkgdmVyc2lvbiBudWxsKS9DcmVhdGlvbkRhdGUoRDoyMDIwMDcyOTExNTMxNVopL1Byb2R1Y2VyKGlUZXh0IDIuMS43IGJ5IDFUM1hUKT4+CmVuZG9iagp4cmVmCjAgMTAKMDAwMDAwMDAwMCA2NTUzNSBmIAowMDAwMDAwNTc4IDAwMDAwIG4gCjAwMDAwMDA4NjQgMDAwMDAgbiAKMDAwMDAwMDAxNSAwMDAwMCBuIAowMDAwMDAwOTUyIDAwMDAwIG4gCjAwMDAwMDA4MjkgMDAwMDAgbiAKMDAwMDAwMTAxNSAwMDAwMCBuIAowMDAwMDAxMDY5IDAwMDAwIG4gCjAwMDAwMDExMDEgMDAwMDAgbiAKMDAwMDAwMTIwNCAwMDAwMCBuIAp0cmFpbGVyCjw8L0luZm8gOSAwIFIvSUQgWzwzZWMyMWUyNjkwNjcxYzViYTliNjUxODNhY2IxOTM3ND48NzZhNzM1MWE1YmY4ZmMxNDNmY2NlZmUwYjRjMzA4MWI+XS9Sb290IDggMCBSL1NpemUgMTA+PgpzdGFydHhyZWYKMTM1OAolJUVPRgo=",
-          "invoice_items": [
-          {
-            "item":"item name",
-            "description":"description",
-            "quantity": 10,
-            "date_of_purchase":"2020-09-20",
-            "price_per_item": 33000
-          }
-        ],
-          "attachment": "string base 64 pdf"
-    }'
-```
-
-> Below is the sample of response parameters that will be returned:
-
-```json
-{
-  "success": true,
-  "url": "https://pay.oyindonesia.com/invoice/id",
-  "message": "success",
-  "email_status": "PROCESSED",
-  "payment_link_id": "id"
-}
-```
-
->
-
-Send us instructions to generate a [recurring payment link invoice link](https://api-docs.oyindonesia.com/#api-create-recurring-invoice-coming-soon).
-
-> Below is an example of a request body to execute your request: coming soon
-
-An endpoint to retrieve and/or re-send the latest [callback status](https://api-docs.oyindonesia.com/#api-payment-status) of a transaction is also available and can be accessed at anytime.
-
-> Below is an example of a request body to execute your request:
-
-```shell
-curl -X GET 'https://partner.oyindonesia.com/api/payment-checkout/status?partner_tx_id=OY123456&send_callback=false' -H 'x-oy-username:yourusername' -H ' x-api-key:yourapikey'
-```
-
-> Below is the sample response parameters that will be returned:
-
-```json
-{
-  "partner_tx_id": "partner000001",
-  "tx_ref_number": "1234567",
-  "amount": 15000,
-  "sender_name": "Joko Widodo",
-  "sender_phone": "+6281111111",
-  "sender_note": "Mohon dikirim segera",
-  "status": "success",
-  "settlement_type": "realtime",
-  "sender_bank": "008",
-  "payment_method": "DC",
-  "va_number": ""
-}
-```
-
->
-
-An endpoint to check your [payment or invoice data](https://api-docs.oyindonesia.com/#api-get) is also available and can be accessed at anytime.
-
-> Below is an example of a request body to execute your request:
-
-```shell
-curl -X GET \
-  https://partner.oyindonesia.com/api/payment-checkout/{payment_link_id_or_partner_tx_id}\
-  -H 'cache-control: no-cache' -H 'content-type: application/json' \
-  -H 'X-Api-key: apikeymu' -H 'X-Oy-Username: yourusername'
-```
-
-> Below is the sample response parameters that will be returned:
-
-```json
-{
-  "data": {
-    "partnerTxId": "abc10",
-    "paymentLinkId": "703e05c0-48e3-47bd-9c22-670941d4d5fe",
-    "amount": 15000,
-    "username": "justkhals",
-    "senderName": "John Doe",
-    "senderPhoneNumber": null,
-    "senderNotes": null,
-    "status": "CREATED",
-    "txRefNumber": null,
-    "description": "testdesc",
-    "isOpen": true,
-    "step": "input-amount",
-    "notes": "testnote",
-    "phoneNumber": "085248395555",
-    "email": "maskalgrr@gmail.com",
-    "includeAdminFee": false,
-    "listDisabledPaymentMethods": "",
-    "listEnabledBanks": "008",
-    "expirationTime": "2020-08-12 00:00:00",
-    "invoiceData": {
-      "fullName": "John Dooe",
-      "isVaLifetime": false,
-      "isScheduled": false,
-      "recurringStartDate": null,
-      "recurringEndDate": null,
-      "recurringFrequency": null,
-      "invoiceItems": "[{\"item\": \"AK 47\", \"quantity\": 2000, \"description\": \"Untuk Kemanan Negara\", \"price_per_item\": 2250000, \"date_of_purchase\": 1590969600000}]"
-    }
-  },
-  "message": "return payment checkout data",
-  "status": true
-}
-```
-
->
-
-Lastly, we provide an endpoint to [delete your payment or invoice link](https://api-docs.oyindonesia.com/#api-delete) based on `payment_link_id` or `partner_tx_id`. The payment or invoice link must still be active and a payment method must not have been selected.
-
-> Below is an example of a request body to execute your request:
-
-```shell
-curl -X DELETE \
-  https://partner.oyindonesia.com/api/payment-checkout/{payment_link_id_or_partner_tx_id}\
-  -H 'cache-control: no-cache' -H 'content-type: application/json' \
-  -H 'X-Api-key: apikeymu' -H 'X-Oy-Username: yourusername'
-```
-
-> Below is the sample of response parameters that will be returned:
-
-```json
-{
-  "status": true,
-  "message": "success delete payment checkout data"
-}
-```
-
->
-
-Just like the Payment Link via Link, you can access all your payment links and its details from the OY! dashboard. This report will include all payment links generated both via Link and API.
-
-![Payment Link](../images/payment_checkout_list.png)
-
-### Pop!: Seamless Payment Experience
-
-With Pop!, displaying our payment link page on your front-end web environment is now made easier than ever. Our payment link offers a seamless user experience in a way that can be catered to your UI needs.
-
-Click the button below to see a demonstration and a snippet code on how to display a payment link page in 4 styles/locations: Center, Right, Left, and Slide Right.
-
-<a class="lottie" id="learn-more" href="https://api-docs.oyindonesia.com/#pop-seamless-payment-experience-fund-acceptance"></a>
-
-### Customizing the UI of Payment Link & Account Receivable
-
-
-In order to maintain a consistent brand experience for your users, you can customize the look and feel of your Payment Link & Account Receivable in the Dashboard, where you can do the following things;
-
-
-- Upload a logo
-- Choose the button color and the theme color of the payment link
-
-
-The updated logo will be reflected in both products.
-
-
-How to customize the UI via Payment Link or Account Receivable
-
-
-- Log onto business.oyindonesia.com
-- Go to Payment Link section in the dashboard
-- Click the 'Settings" icon located at the top right of the page
-
-
-![Payment Link](../images/ui_customization_settings_icon.png)
-
-
-![Account Receivable](../images/accountReceivable/appearance_setting.png)
-
-
-- You will be redirected to the Settings page
-
-
-![Payment Link](../images/ui_customization_settings_page.png)
-
-
-- Input the URL for your logo (If you’re using [snipboard.io](https://snipboard.io/), the correct URL should be in “https://i.snipboard.io/image.jpg” format. If you’re using [imgbb.com](https://imgbb.com/), the correct URL should be in “https://i.ibb.co/abcdef/image.jpg” format)
-
-
-- Select your primary color (you can select from our available color picker tools or you can input the 6 digit #HEX code). This primary color will be the main theme color in your payment link and the color of the text in the header
-
-
-- Select your secondary color (you can select from our available color picker tools or you can input the 6 digit #HEX code). This secondary color will be the color of CTA button in your payment link and the color of the text outside the header
-
-
-![Payment Link](../images/ui_customization_color_logo.png)
-
-
-- Click "Save Changes"
-
-
-Note:
-
-
-- By saving the changes, the colours will be applied to the payment links previously created (before saving) as well as the payment links created after saving and also account receivable PDF documents.
-- Please create new payment link or Account Receivable invoice after you successfully save changes to check the difference.
-
-
-Illustration;
-
-
-If we pick green (#HEX code #067610) as the primary color and black (#HEX code #000000) as the secondary color, the look and feel will be as follows;
-
-
-![Payment Link](../images/3p1p_preview.png)
-
-
-### Customizing Account Receivable Invoice Template and Color
-
-
-For more personalized touch on the invoice, you can now customize your template look in the Dashboard, where you can do the following things;
-
-- Change invoice logo
-- Change Invoice template
-- Change Invoice color
-
-
-How to customize the Account Receivable Invoice UI:
-
-1. Log onto business.oyindonesia.com
-2. Go to Account Receivable section in the dashboard
-3. Click the 'Settings" icon located at the top right next to “Create New Invoice” button
-4. Click Open Configuration for “Invoice Template”
-5. Input the URL of your logo. Changing the logo here will automatically update the logo in Payment Link, Invoice and Email Notifications.
-6. Select your color theme (you can select from our available color picker tools or you can input the 6 digit #HEX code). This color will be the main theme color in your invoice.
-7. Select your template from our template selections. Changes will be reflected immediately in the preview area
-8. Click “Save”
-
-
-![Account Receivable](../images/accountReceivable/appearance_setting.png)
-
-
-![Account Receivable](../images/accountReceivable/Templatesettings.png)
-
-
-
-
-### How to Set Automated Invoice Number
-
-
-For your convenience, you have the option to auto-generate invoice numbers. No more worrying about the sequence of invoice numbers. The invoice number template has been pre-defined by OY!.
-
-
-1. Log onto business.oyindonesia.com
-2. Go to Payment Link or Account Receivable section in the dashboard
-3. Click the 'Settings" icon located at the top right next to “Create New Invoice” button
-4. Turn the toggle on. You can now adjust the automatic invoice number format
-5. Click “Save” to continue
-
-
-**This update will not impact your existing invoices**
-
-
-![Account Receivable](../images/accountReceivable/invoicenumber.png)
-
-
-### Sending the Created Payment Link through WhatsApp 
-
-For better payment conversion, you can send the created link to your users through WhatsApp. The message template is pre-defined by OY. Contact our Business Representative if you'd like to activate this feature.
-
-The flow will be as follows:
-
-![WhatsApp Flow](../images/flow_whatsapp_notif.png)
-
-Click [here](https://api-docs.oyindonesia.com/#https-request-send-payment-invoice-link-whatsapp-notification) for more information on API Send WhatsApp
-
-### Sending Account Receivable Invoice with Payment Link through WhatsApp
-
-For your convenience, you can now distribute invoice to your users through WhatsApp using default message template. Please kindly contact OY! team if you are interested in using this feature
-
-There will be 3 different ways to distribute the invoice via Whatsapp and there is a maximum of one Whatsapp message per unpaid invoice. When the status is paid, users will get a payment confirmation from Whatsapp too.
-
-* Option 1 - via invoice details
-![WhatsApp Flow via detail](../images/accountReceivable/AR_WA_Table.png)
-
-* Option 2 - via new invoice creation
-![WhatsApp Flow via new invoice](source/images/accountReceivable/AR_WA_Creation.png)
-
-* Option 3 - via invoice table
-![WhatsApp Flow via table](../images/accountReceivable/AR_WA_Table.png)
-
-
-
-### VA Bank Details
-
-| Bank (Virtual Account) | Capability (Open Amount/Closed Amount)         |
-| ---------------------- | ---------------------------------------------- | 
-| BNI                    | Closed Amount                                  | 
-| Bank Mandiri           | Open Amount, Closed Amount                     |                  
-| BRI                    | Open Amount, Closed Amount                     | 
-| BCA                    | Open Amount, Closed Amount                     | 
-| Bank Permata / Permata Syariah| Open Amount, Closed Amount              |
-| CIMB Niaga / CIMB Niaga Syariah | Open Amount, Closed Amount            | 
-| SMBC                   | Open Amount, Closed Amount                     | 
-| Bank Syariah Indonesia (BSI)| Closed Amount                             | 
-
-
-
-
+| Nama Bank | SKN | RTGS | ATM | Mobile Banking & Internet Banking Intrabank | Internet Banking Interbank | Mobile Banking Interbank |
+| :---- | :---- | :---- | :---- | :---- | :---- | :---- |
+| Bank Mandiri | Ya | Ya | Ya | Ya | Ya | Ya |
+| BRI | Ya | Ya | Ya | Ya | Tidak | Ya |
+| BNI | Ya | Ya | Ya | Ya | Tidak | Ya |
+| Permata | Ya | Ya | Ya | Ya | Tidak | Ya |
+| CIMB Niaga/CIMB Niaga Syariah | Ya | Ya | Ya | Ya (Mobile Banking), Tidak (Internet Banking) | Tidak | Ya |
+| BCA | Tidak | Tidak | Ya | Ya | Tidak | Tidak |
+| SMBC | Ya | Tidak | Ya | Ya (Mobile Banking), Tidak (Internet Banking) | Tidak | Ya |
+| BSI | Tidak | Tidak | Ya | Ya | Ya | Ya |
 
 ## API E-Wallet Aggregator
+API E-Wallet Aggregator adalah fitur yang membantu Anda untuk menerima pembayaran dari berbagai macam E-wallet. Dengan satu integrasi, maka Anda dapat mengakses semua E-wallet yang tersedia di OY\!.
 
-E-Wallet API allows clients to charge and receive payments directly from top e-wallet issuers. With one integration, they are able to get access to all of OY’s available e-wallets and the upcoming e-wallet integrations.
+### Alur API E-Wallet Aggregator
 
-### E-Wallet Product Flow
+![E-wallet Aggregator Flow](images/acceptingPayments/api-e-wallet-aggragator/payment-flow.webp)
 
-![E-Wallet API](../images/ewallet_product_flow.png)
+### Fitur E-Wallet Aggregator
+Produk E-wallet Aggregator kami mendukung transaksi E-wallet dari provider berikut:
 
-### Key Features
+* ShopeePay
+* LinkAja
+* DANA
+* OVO
 
-1.  **Support multiple e-wallets** - We support ShopeePay, LinkAja, DANA, and OVO
-2.  **Transaction tracking and monitoring capability** - You can track all created e-wallet transactions, incoming payments, and their respective details through our API callback or OY! dashboard. You will receive a callback for all incoming transactions.
-3.  **Check Status capability** - We have a Check Status endpoint available for you to regularly check the status of an e-wallet transaction
+#### Pantau Transaksi via Dashboard
+Semua transaksi E-wallet yang telah dibuat dapat dipantau melalui Dashboard OY\!. Masuk ke dashboard OY\! dan pergi ke tab E-Wallet. Di dalam dashboard, Anda dapat melihat detail setiap transaksi, termasuk informasi yang diinput saat pembuatan, status transaksi, dan nomor referensi pembayaran. Gunakan fitur pencarian dan filter untuk menemukan transaksi tertentu dengan cepat. Transaksi dapat diekspor dalam berbagai format: Excel (.xlsx), PDF (.pdf), dan CSV (.csv).
 
-### Registration and Setup
+![Monitor E-wallet Aggregator Transaction](images/acceptingPayments/api-e-wallet-aggragator/dashboard-selesai.webp)
 
-Follow the below check-list to ensure you're all set up to use our E-Wallet API service:
+#### Cara Mengaktifkan
+Berikut adalah panduan untuk mengaktifkan fitur API E-Wallet:
 
-1.  Create an account
-2.  Upgrade your account by submitting the required documentations
-3.  Have your upgrade request approved
-4.  Set up your receiving bank account information (note: ensure that the receiving bank account information is accurate as it cannot be changed via OY! dashboard for security reasons)
-5.  Submit your IPs and callback URLs to your business representative or to partner@oyindonesia.com
-6.  Receive an API Key from us (note: it is required for API authorization purpose)
-7.  Integrate with our E-Wallet API
+1. Buat akun di OY\!
+2. Lakukan verifikasi akun dengan mengisi formulir verifikasi. Pastikan Anda mencentang produk “Terima Uang”, karena API E-Wallet termasuk dalam kategori produk ini.
+3. Tim OY\! akan meninjau dan memverifikasi formulir serta dokumen yang telah Anda kirimkan.
+4. Setelah verifikasi disetujui, atur informasi rekening bank penerima.  
+   **Catatan Penting**: Pastikan informasi rekening bank penerima untuk menerima saldo OY\! benar, karena Anda hanya dapat mengaturnya sekali saja melalui dashboard demi alasan keamanan.
+4. Ikuti proses registrasi untuk setiap E-wallet yang ingin Anda gunakan. Panduan lengkapnya dapat ditemukan di bagian [E-Wallet Activation](https://docs.oyindonesia.com/#e-wallet-payment-methods).
+5. Kirimkan alamat IP dan URL Callback ke perwakilan bisnis Anda atau melalui email ke [business.support@oyindonesia.com](mailto:business.support@oyindonesia.com).
+6. OY\! akan mengirimkan Production API Key sebagai otorisasi API melalui perwakilan bisnis Anda.  
+   **Catatan:** Key Staging/Demo API dapat diakses melalui dashboard dengan masuk ke mode “Demo”, lalu temukan API key di menu kiri bawah.
+7. Integrasikan API ke sistem Anda dengan mengikuti panduan di [API Docs E-Wallet](https://api-docs.oyindonesia.com/#create-e-wallet-transaction-api-e-wallet-aggregator)
 
-### Testing
+#### Cara Membuat Transaksi E-Wallet via API
+Transaksi E-Wallet hanya dapat dibuat melalui API. Ikuti langkah-langkah berikut untuk membuat transaksi E-Wallet melalui API:
 
-When you hit Create E-Wallet Transaction endpoint (https://api-docs.oyindonesia.com/#https-request-create-e-wallet-transaction), it will always return the same ewallet_url & success_redirect URL in the response: https://pay-dev.shareitpay.in/aggregate-pay-gate. You cannot simulate payment by clicking this URL.
+1. Integrasikan API Create E-Wallet Transaction ke dalam sistem Anda. Panduan lengkap dapat ditemukan di [Create E-Wallet \- API Docs](https://api-docs.oyindonesia.com/#https-request-create-e-wallet-transaction).
+2. *Hit* API OY\! untuk membuat transaksi E-Wallet.
+3. OY\! akan mengembalikan informasi yang diperlukan untuk menyelesaikan pembayaran.
+* Untuk E-wallet dengan metode *redirection* (ShopeePay, DANA, LinkAja), OY\! akan mengembalikan URL E-wallet yang dapat dibagikan kepada pelanggan untuk menyelesaikan pembayaran.
+* Untuk E-wallet dengan metode *push notification* (OVO), penyedia E-wallet akan mengirimkan notifikasi ke aplikasi E-wallet pelanggan untuk menyelesaikan pembayaran.
 
-In order to be able to simulate payment (change the transaction status into Complete), follow the steps below: (Note: the process of simulating payment in Staging environment doesn't involve any forward / redirection to the E-Wallet apps, the scope is just changing the transaction status into Complete.)
+**Catatan**: Jika Anda melakukan hit API *Create E-Wallet Transaction* di mode Staging/Demo, API akan selalu mengembalikan URL yang sama dalam respons:
+
+[https://pay-dev.shareitpay.in/aggregate-pay-gate](https://pay-dev.shareitpay.in/aggregate-pay-gate)
+
+URL ini tidak dapat digunakan untuk mensimulasikan pembayaran. Untuk simulasi pembayaran, silakan merujuk ke bagian [Simulate E-Wallet Payments \- Product Docs](https://docs.oyindonesia.com/#e-wallet-payment-methods).
+
+#### Bukti Pembayaran
+Pelanggan Anda dapat menerima bukti pembayaran yang berhasil melalui email yang Anda berikan saat proses pembuatan transaksi. Anda dapat mengatur pengiriman bukti bayar melalui email kepada pelanggan dengan langkah-langkah berikut:
+
+1. Masuk ke dashboard OY\!
+2. Buka menu “Pengaturan” \-\> “Notifikasi”
+3. Klik Tab “Terima Uang (ke Pengirim)”
+4. Pilih “Aktifkan Notifikasi Transaksi yang Berhasil” untuk API E-Wallet. (Pengaturan API E-Wallet akan muncul bila Anda sudah mengaktifkan produk API E-Wallet.)
+5. Pilih logo yang akan tertera di email dalam format URL. Contoh: (https://example.com/image.jpg)
+* Jika Anda tidak memiliki URL logo, gunakan tools online seperti snipboard.io atau imgbb untuk mengonversi logo Anda ke URL.
+* Berikut adalah contoh URL yang benar:  
+  Snipboard.io: [https://i.snipboard.io/image.jpg](https://i.snipboard.io/image.jpg)  
+  Imgbb: https://i.ibb.co/abcdef/image.jpg
+6. Simpan perubahan dengan mengklik "Simpan Perubahan"
+7. Masukkan email pelanggan lewat parameter “email” saat membuat transaksi E-Wallet via API.
+8. Pelanggan Anda akan menerima bukti pembayaran yang berhasil ke email yang terdaftar setelah pembayaran dilakukan.
+
+![Receipt for successful Payment](images/acceptingPayments/payment-link/features/dashboard-notif-for-sender.webp)
+
+**Catatan:** Jika Anda tidak memasukkan alamat email pelanggan saat membuat transaksi, OY\! tidak akan mengirimkan bukti transaksi melalui email, meskipun konfigurasi notifikasi sudah diaktifkan. Sebaliknya, jika Anda memasukkan alamat email tetapi konfigurasi notifikasi tidak diaktifkan, bukti transaksi juga tidak akan dikirimkan.
+
+#### *Retry* Notifikasi/*Callback* untuk Pembayaran Berhasil
+OY\! akan mengirimkan notifikasi/*callback* ke sistem Anda setelah transaksi dinyatakan berhasil. Dengan demikian, Anda akan mendapatkan pemberitahuan saat pelanggan telah menyelesaikan pembayaran. Namun, ada kemungkinan sistem Anda tidak menerima notifikasi.
+
+Dengan mengaktifkan *Retry Callback*, OY\! akan mencoba mengirimkan ulang *callback* jika sistem Anda tidak menerimanya. Anda dapat meminta pengiriman ulang *callback* melalui Retry Callback Manual atau Retry Callback Otomatis.
+
+##### *Retry Callback* Manual
+Retry Callback Manual membantu Anda untuk mengirim ulang *callback* secara manual untuk setiap transaksi melalui dashboard. Berikut langkah-langkahnya:
+
+1. Masuk ke akun Anda
+2. Pastikan Anda telah mengatur Callback URL melalui “Pengaturan” → “Opsi Developer” → “Konfigurasi Callback” untuk produk E-Wallet Aggregator.
+3. Pastikan Anda telah whitelist IP OY\! agar sistem Anda dapat menerima *callback*:
+   - 54.151.191.85 
+   - 54.179.86.72
+4. Buka menu “API E-Wallet”.
+5. Cari transaksi yang ingin dikirim ulang *callback*\-nya, lalu klik tombol tiga titik pada kolom “Tindakan”.
+6. Klik “Kirim Ulang Callback” untuk mengirim ulang *callback*, dan ulangi proses ini sesuai kebutuhan.
+
+![Manual Retry Callback](images/acceptingPayments/api-e-wallet-aggragator/dashboard-callback.webp)
+
+##### *Retry Callback* Otomatis
+Ikuti langkah-langkah berikut untuk mengaktifkan *Retry Callback* Otomatis:
+
+1. Masuk ke akun Anda
+2. Buka menu “Pengaturan”, lalu pilih “Opsi Developer”.
+3. Pilih tab “Konfigurasi Callback”.
+4. Masukkan URL *callback* untuk produk yang ingin Anda aktifkan. Pastikan format URL benar, lalu validasi dengan mengklik “Validasi String URL”.
+5. Untuk mengaktifkan Retry Callback Otomatis, centang “Aktifkan Retry Callback Otomatis” untuk produk terkait. Masukkan email penerima yang akan menerima notifikasi jika callback gagal setelah semua percobaan dilakukan.
+6. Pastikan Anda telah whitelist IP OY\! agar sistem dapat menerima *callback*:
+   - 54.151.191.85 
+   - 54.179.86.72
+7. Pastikan sistem Anda menerapkan *idempotency logic* dengan menggunakan parameter “tx\_ref\_number” sebagai *idempotency key* untuk mencegah *callback* yang sama diproses sebagai pembayaran yang berbeda.
+8. Simpan perubahan
+
+![Automatic Retry Callback](images/acceptingPayments/api-e-wallet-aggragator/dashboard-developer-option.webp)
+
+#### Refund Pembayaran ke Pelanggan
+Jika pelanggan menerima produk yang tidak sesuai, seperti rusak, atau pesanan tidak terkirim, mereka dapat meminta pengembalian dana (*refund)*. Anda dapat langsung mengembalikan pembayaran ke akun pelanggan melalui dashboard OY\!. Refund dapat bersifat penuh atau sebagian. Refund penuh mengembalikan seluruh jumlah pembayaran (100%). Refund sebagian mengembalikan jumlah tertentu sesuai permintaan.
+
+Fitur ini tidak dipungut biaya apa pun. Namun, biaya admin dari pembayaran awal tidak akan dikembalikan oleh OY\! ke saldo Anda.
+
+Terdapat beberapa syarat yang harus dipenuhi untuk melakukan refund:
+
+1. Refund hanya dapat dilakukan hingga 7 hari kalender setelah transaksi dinyatakan berhasil.
+2. Saldo Anda harus mencukupi agar kami dapat memotong jumlah transaksi yang akan dikembalikan.
+3. Refund hanya dapat dilakukan sekali untuk setiap transaksi yang berhasil, baik itu refund penuh maupun sebagian.
+4. Refund harus dilakukan pada jam operasional, sesuai dengan metode pembayaran yang digunakan. Lihat tabel di bawah untuk detailnya.
+
+Saat ini, refund hanya tersedia untuk pembayaran melalui E-wallet sebagai berikut:
+
+| Metode Pembayaran | Fitur Refund | Jam Operasional |
+| ----- | ----- | ----- |
+| DANA | Full, sebagian | 00.00 \- 23.59 GMT+7 |
+| ShopeePay | Full | 05.00 \- 23.59 GMT+7 |
+| LinkAja | Full | 00.00 \- 23.59 GMT+7 |
+| OVO | Tidak didukung | \- |
+
+Jika Anda menggunakan API Refund, OY\! akan mengirimkan notifikasi ke sistem Anda melalui callback setelah transaksi berhasil direfund. Untuk detail lebih lengkapnya, silakan merujuk ke [Refund Callback \- API Docs](https://api-docs.oyindonesia.com/#callback-parameters-e-wallet-refund-callback). Transaksi refund juga akan ditampilkan pada Laporan Penyelesaian Anda.
+
+Anda juga dapat memeriksa status permintaan refund melalui API. Untuk panduan lebih lanjut, silakan lihat [Refund Check Status \- API Docs](https://api-docs.oyindonesia.com/#get-e-wallet-refund-status-api-e-wallet-aggregator).
+
+### Menyelesaikan Transaksi E-Wallet
+Setiap penyedia E-wallet memiliki metode yang berbeda untuk menyelesaikan transaksi. Pertama adalah metode *redirection* (ShopeePay, LinkAja, DANA), pelanggan akan diarahkan ke halaman E-wallet untuk menyelesaikan pembayaran. Kedua adalah metode *push notification* (OVO), penyedia E-wallet akan mengirimkan notifikasi ke aplikasi OVO pelanggan untuk menyelesaikan pembayaran. Baca panduan lengkapnya di sini:
+
+* Menyelesaikan transaksi E-wallet via ShopeePay [Payment Journey](https://docs.oyindonesia.com/#e-wallet-payment-methods)
+* Menyelesaikan transaksi E-wallet via LinkAja [Payment Journey](https://docs.oyindonesia.com/#e-wallet-payment-methods)
+* Menyelesaikan transaksi E-wallet via DANA [Payment Journey](https://docs.oyindonesia.com/#e-wallet-payment-methods)
+* Menyelesaikan transaksi E-wallet via OVO [Payment Journey](https://docs.oyindonesia.com/#e-wallet-payment-methods)
+
+Untuk menguji transaksi di mode demo, silakan merujuk ke [Simulate E-Wallet Payments \- Product Docs](https://docs.oyindonesia.com/#e-wallet-payment-methods).
+
+### Mengecek Status Transaksi
+Semua transaksi E-wallet yang dibuat akan ditampilkan di dashboard. Untuk melihat daftar transaksi yang telah dibuat, Anda bisa pergike menu “API E-wallet”.
+
+Di dalam dashboard, Anda dapat melihat detail transaksi, termasuk informasi yang diinput saat pembuatan, status transaksi, dan nomor referensi pembayaran. Dashboard juga menyediakan fitur untuk mencari, memfilter, dan mengekspor daftar transaksi dalam berbagai format, seperti Excel (.xlsx), PDF (.pdf), dan CSV (.csv).
+
+Terkadang, pelanggan mungkin sudah menyelesaikan pembayaran, tetapi status transaksi belum diperbarui menjadi sukses. Oleh karena itu, disarankan untuk secara berkala memeriksa status transaksi menggunakan [Check Status E-Wallet API](https://api-docs.oyindonesia.com/#https-request-check-e-wallet-transaction-status).
+
+### Menerima Dana ke Saldo
+Setelah pelanggan menyelesaikan pembayaran, OY\! akan secara otomatis memperbarui status transaksi dan mengirimkan *callback* ke sistem Anda untuk memberi tahu bahwa transaksi telah dibayar. Selain itu, OY\! juga akan menyelesaikan (*settle*) dana ke saldo OY\! Anda. Waktu *settlement* dana bervariasi tergantung pada penyedia layanan E-wallet, dengan estimasi penyelesaian dalam H+1 hingga H+2 hari kerja setelah pembayaran diterima.
 
 
-1.  Create an account
-2.  Send a request to activate API E-Wallet product and obtain staging API Key to your business representative
-3.  Create a transaction by sending a ‘POST’ request to https://api-stg.oyindonesia.com/api/e-wallet-aggregator/create-transaction using your staging API key. Enter the required and optional fields, as referenced in the API reference docs (https://api-docs.oyindonesia.com/#api-e-wallet-aggregator)
-4.  After an E-Wallet transaction is generated, you can simulate an E-Wallet payment through their dashboard (in Staging environment) by going to the "E-Wallet" sidebar, look for the newly created transaction row on the table (should be at the top), then click on the "Pay" button on the very right of that row. ![E-Wallet Table](../images/ewallet_testing_2.png)
-5.  Fill in the e-wallet name, the ref number and amount should be prefilled from the transaction in the previous step, then click on "Send Callback" ![E-Wallet API](../images/ewallet_testing.png)
-6.  If a payment is successful, we will send a callback to the registered staging callback URL destination
-7.  The payment made to the e-wallet transaction can be monitored through OY! dashboard, in the "E-Wallet" sidebar
+## API Routing Pembayaran
+API Routing Pembayaran adalah layanan yang dapat membantu Anda menerima pembayaran dari pelanggan Anda dan mengirim uang ke penerima dalam satu API terintegrasi. Dengan layanan ini, Anda dapat secara otomatis mendistribusikan dana ke beberapa penerima setelah menerima pembayaran dari pelanggan. Menggunakan API Routing Pembayaran dapat membantu Anda menghemat waktu, karena menyediakan dua layanan sekaligus dalam satu integrasi.
 
-### How to Use
+<table>
+  <tr>
+    <th colspan="2" valign="top">Tipe Routing Pembayaran</th>
+    <th valign="top">Fitur-Fitur </th>
+  </tr>
+  <tr>
+    <td rowspan="2" valign="top">Tipe Transaksi</td>
+    <td valign="top">Payment Aggregator</td>
+    <td valign="top"><p>Hanya menerima pembayaran dari pelanggan.</p><p></p><p>API all-in-one untuk menerima pembayaran melalui transfer bank, E-wallet, QRIS, dan kartu.</p></td>
+  </tr>
+  <tr>
+    <td valign="top">Payment Routing</td>
+    <td valign="top">Menerima pembayaran dari pelanggan dan secara otomatis meneruskan dana ke beberapa penerima menggunakan berbagai metode, seperti VA, E-wallet, QRIS, dll .</td>
+  </tr>
+  <tr>
+    <td rowspan="2" valign="top">Tipe Penerimaan Uang</td>
+    <td valign="top">Tanpa interface</td>
+    <td valign="top">
+      <p>Anda memiliki halaman checkout sendiri, dan OY\! menyediakan detail pembayarannya.</p>
+      <p></p>
+      <p>OY! menyediakan detail pembayaran setelah transaksi dibuat (misalnya, nomor VA, URL E-wallet, URL kode QR, dll.).</p>
+      <p></p>
+      <p>Mendukung hanya satu metode pembayaran dalam satu transaksi (Single Payment & Direct Payment).</p>
+    </td>
+  </tr>
+  <tr>
+    <td valign="top">Dengan interface</td>
+    <td valign="top">
+      <p>Menggunakan halaman checkout bawaan OY! (Link Pembayaran). </p>
+      <p></p>
+      <p>OY! menyediakan Link Pembayaran setelah dibuat.</p>
+      <p></p>
+      <p>Mendukung berbagai metode pembayaran dalam satu transaksi.</p>
+    </td>
+  </tr>
+</table>
 
-We provide 2 endpoints for you to use:
+#### Use Cases
+**Payment Aggregator**
 
-- [Create E-Wallet Transaction](https://api-docs.oyindonesia.com/#api-e-wallet-aggregator): Use this API to create an e-wallet transaction for your user
-- [Check E-Wallet Transaction Status](https://api-docs.oyindonesia.com/#https-request-check-e-wallet-transaction-status): Use this API to check the status of an e-wallet transaction. We highly recommend that you implement this endpoint.
+**Single Payments**
 
-All details regarding your created e-wallet and its payments can be retrieved via our API endpoint (Check E-Wallet Transaction Status) or can be monitored directly from the OY! dashboard (through the E-Wallet sidebar)
+Single payment memungkinkan pelanggan menyelesaikan pembayaran dengan mudah. Tersedia untuk Bank Transfer (Virtual Account & Unique Code), E-Wallet, QRIS, dan Kartu Debit/Kredit.
 
-![E-Wallet API](../images/ewallet_dashboard.png)
+**Direct Payments**
 
-### E-Wallet Details
+Direct payment memerlukan *account linking*, di mana pelanggan harus menghubungkan akun pembayaran mereka ke sistem Anda sebelum menyelesaikan pembayaran. Anda dapat menggunakan API *Account Linking* untuk proses ini.
 
-| E-Wallet Issuer    | E-Wallet Code     | Minimum Expiration Time                        | Maximum Expiration Time                        | Redirection Feature | Refund Feature     |
-| ------------------ | ----------------- | ---------------------------------------------- | ---------------------------------------------- | ------------------- | ------------------ |
-| OVO                | ovo_ewallet       | Parameter is ignored, always set to 55 seconds | Parameter is ignored, always set to 55 seconds | Not supported       | Not supported      |
-| ShopeePay          | shopeepay_ewallet | 1 minute                                       | 60 minutes                                     | Support             | Full               |
-| Linkaja            | linkaja_ewallet   | Parameter is ignored, always set to 5 minutes  | Parameter is ignored, always set to 5 minutes  | Support             | Full               |
-| DANA               | dana_ewallet      | 1 minute                                       | 60 minutes                                     | Support             | Full, Partial      |
+Direct payment menawarkan pengalaman pembayaran yang lebih mudah.. Setelah akun terhubung, pelanggan tidak perlu membuka atau dialihkan ke aplikasi penyedia pembayaran untuk menyelesaikan transaksi.
 
-## API Payment Routing
+Saat ini, fitur ini hanya tersedia untuk E-wallet ShopeePay.
 
-Some business have some use cases that require them to receive and disburse the fund. Often times, the operation team is struggling to manage this use case. Limited resource makes it harder to disburse the fund received. Therefore, API Payment Routing is the best solutions to cater this needs. It allows end-to-end process from accepting fund to disburse fund in one flow.
+**Contoh *Use Case* Routing Pembayaran**
 
-### Description about Payment Routing
+**Investasi**
 
-Payment Routing is an API that combines receive money and disburse money features. It allows you to immediately disburse the money once you receive from your customers. By integrating to this API, you will get the end-to-end solutions for your business needs.
+Regulasi OJK tidak mengizinkan aplikasi investasi menyimpan saldo pengguna. Anda dapat menggunakan routing pembayaran untuk menerima dana dari investor dan langsung mengirimkannya ke bank kustodian.
 
-Through API Payment Routing you may create Payment Link transactions and/or receive money via Bank Transfer (via Virtual Account & Unique Code), E-Wallet (One Time & Direct), QRIS, and Cards.
+**E-Commerce**
 
-### Flow
+Terima pembayaran barang dari pelanggan dan langsung kirimkan bagian pembayaran rekening bank merchant.
 
-![Payment Routing Flow](../images/Payment_Routing_Flow.png)
+**Pendidikan**
 
-### Key Features
+Terima pembayaran uang sekolah dari orang tua dan secara otomatis kirimkan biaya administrasi ke rekening bank sekolah.
 
-1. **Accept and disburse money in a real time manner** - By integrating to this API, you will get end-to-end solutions from receive to disburse money. All in real time manner. Note : Some payment methods have H+1 or H+2 settlement period. You have to keep some balance to cater the settlement from the payment methods.
-1. **You can select Payment Link, Bank Transfer, E-Wallet, and QRIS to receive money** - You can choose Bank Transfer (via Virtual Account & Unique Code), E-Wallet (One Time & Direct), Cards, or QRIS as a payment method to receive the money. We provide all banks offered in VA Aggregator for Virtual Accounts, BCA for Unique Code, ShopeePay, DANA, LinkAja as payment method for E-Wallet, and Visa/Mastercard for Cards. However, you don't need to worry if you don't have your own UI. You can use our Payment Link to help your customers to complete the payments.
-1. **Transaction tracking and monitoring capability** - You can track all payment routing transactions details through our callback or the OY! dashboard. You will receive callbacks two times, once we have succesfully receive money and once we have successfully disburse money.
+**Aplikasi Pinjaman**
 
-### Use Cases
+Terima pembayaran cicilan dari peminjam dan langsung salurkan dana ke rekening penampungan pemberi pinjaman atau peminjam.
 
-Below are few examples of Payment Routing usage.
+### Alur Routing Pembayaran
 
-1. Mutual Fund Investment - Accept investment money from users and directly disburse to each custodian banks.
-1. Borrower and Lender - Accept money from Lender/Borrower and disburse them directly to Rekening Penampungan Lender/Rekening Penampungan Borrower.
-1. Put money directly to Your Business Account- Receive money from your customers/buyers and directly put them to your business bank account in order to secure the money and prevent fraud.
+![Payment Routing Aggregator Scheme](images/acceptingPayments/api-payment-routing/payment-flow-without-ui-scheme.webp)
 
-### Registration and Setup
+![Payment Routing Payment Link Scheme](images/acceptingPayments/api-payment-routing/payment-flow-with-ui-scheme.webp)
 
-Follow the below check-list to ensure you're all set up to use our Payment Routing API service:
+### Fitur Routing Pembayaran
 
-1. Create an account
-1. Upgrade your account by submitting the required documentations
-1. Have your upgrade request approved
-1. Set up your receiving bank account information (note: ensure that the receiving bank account information is accurate as it cannot be changed via OY! dashboard for security reasons)
-1. Submit your IPs and callback URLs to your business representative or to partner@oyindonesia.com
-1. Receive an API Key from us (note: it is required for API authorization purpose)
-1. Integrate with our Payment Routing API
+#### Mendukung Berbagai metode Pembayaran
+OY\! mendukung berbagai metode pembayaran dalam API Routing Pembayaran, termasuk:
 
-### Testing
+1. Transfer Bank
+   - Virtual Account: BCA, BNI, BRI, Mandiri, CIMB, SMBC, BSI, Permata 
+   - Kode Unik: BCA
+2. E-Wallet
+   - Single Payments: ShopeePay, DANA, LinkAja 
+   - Direct Payments: ShopeePay
+3. Kartu Debit/Kredit: Visa, Mastercard, JCB
+4. QRIS
 
-Once you successfully create an OY! account, you can immediately simulate VA payments via API.
-Follow the below steps to test the Payment Routing flow:
+#### Kirim Dana ke Banyak Penerima Secara *Real-Time*
+Setelah menerima pembayaran dari pelanggan, OY\! dapat langsung menerima dana hingga ke 10 penerima tanpa menunggu proses *settlement*, selama saldo di akun Anda mencukupi.
 
-1. Create an account
-1. Send a request to activate API Payment Routing product and obtain staging API Key to your business representative
-1. Send a ‘POST’ request _https://partner.oyindonesia.com/api/payment-routing/create-transaction_ (https://partner.oyindonesia.com/api/payment-routing/create-transaction) using your staging API key. Enter the required and optional fields, as referenced in the API reference docs (https://api-docs.oyindonesia.com/#create-payment-routing).
-1. If you use VA as the payment method, after VA number is generated, you can simulate the payment through your dashboard (in Staging environment) by going to Settings, and choose "VA Callback".
-1. If you use Payment Link as the payment method, you can open the link and simulate payment from there.
-1. If payment is successful, we will send a callback to the registered staging callback URL destination.
-1. You can monitor Payment Routing transaction through OY! Dashboard or call the endpoint API. Go to “Payment Routing” menu to monitor your transactions.
+Perlu diperhatikan bahwa beberapa metode pembayaran mungkin tidak langsung masuk ke saldo secara *real-time* (misalnya QRIS dan E-wallet). Oleh karena itu, pastikan saldo Anda mencukupi untuk memproses pengiriman dana.
+
+#### Gunakan Fitur Link Pembayaran untuk Menerima Dana
+Terdapat dua jenis metode penerimaan dana: Dengan *Interface* dan Tanpa *Interface*. Tanpa *Interface* cocok digunakan jika Anda memiliki halaman checkout sendiri dan hanya membutuhkan detail pembayaran untuk menyelesaikan transaksi. Berikut adalah informasi pembayaran yang akan Anda terima setelah transaksi berhasil dibuat:
+
+1. Transfer Bank \- Virtual Account: bank tujuan, nomor VA, dan jumlah transaksi.
+2. Transfer Bank \- Kode Unik: bank tujuan, nomor rekening, nama rekening, nominal tagihan awal, nominal unik, dan total nominal.
+3. QRIS: URL untuk mengakses kode QR.
+4. E-Wallet: link untuk mengarahkan pelanggan ke E-wallet yang dipilih.
+5. Kartu debit/kredit: link untuk mengarahkan pelanggan agar mengisi detail kartu dan melanjutkan pembayaran.
+
+Dengan *Interface* cocok jika Anda tidak memiliki halaman checkout sendiri. Anda dapat menggunakan halaman checkout bawaan OY\! (Link Pembayaran) untuk transaksi Routing Pembayaran. Untuk mengaktifkan fitur ini, cukup isi parameter "need\_frontend" dengan "TRUE" dalam API pembuatan transaksi.
+
+Pelajari lebih lanjut tentang Link Pembayaran di [Payment Link \- Product Docs](https://docs.oyindonesia.com/#payment-link-accepting-payments).
+
+
+#### Buat Transaksi E-Wallet *Direct Payment*
+API Routing Pembayaran mendukung transaksi *Direct Payment*, di mana pelanggan tidak perlu dialihkan ke aplikasi atau situs web penyedia pembayaran untuk menyelesaikan transaksi. Hal ini memberikan pengalaman pembayaran yang lebih mudah dan efisien.
+
+Saat ini, fitur *Direct Payment* hanya tersedia untuk E-wallet ShopeePay.
+
+Pelajari perbedaan antara *Single Payment* dan *Direct Payment* di [E-Wallet Payment Type](https://docs.oyindonesia.com/#e-wallet-payment-methods).
+
+#### Lacak dan Pantau Transaksi
+Semua transaksi Routing Pembayaran yang dibuat akan ditampilkan di Dashboard OY\!. Untuk melihat daftar transaksi, silakan pergi ke menu Routing Pembayaran.
+
+Di dalam dashboard, Anda dapat melihat detail transaksi, yaitu Informasi transaksi yang diinput saat pembuatan, status transaksi, serta nomor referensi pembayaran\*
+
+Dashboard juga menyediakan fitur untuk mencari, memfilter, dan mengekspor daftar transaksi dalam berbagai format, seperti Excel (.xlsx), PDF (.pdf), dan CSV (.csv).
+
+![Payment Routing Monitoring Transactions](images/acceptingPayments/api-payment-routing/dashboard.webp)
+
+\*Nomor Referensi Pembayaran adalah nomor identifikasi untuk pembayaran yang berhasil ketika pelanggan menyelesaikan transaksi QRIS. Nomor referensi ini juga ditampilkan pada bukti transaksi pelanggan. Fitur ini hanya tersedia untuk transaksi QRIS.
+
+#### Gunakan Nomor Virtual Account yang Sama untuk Berbagai Transaksi
+Satu pelanggan mungkin melakukan pembayaran untuk beberapa transaksi dengan menggunakan bank yang sama. Dengan membuar nomor VA yang sama untuk transaksi yang berbeda, pelanggan dapat lebih mudah melakukan pembayaran karena mereka bisa menyimpan nomor VA di aplikasi mobile banking mereka.
+
+Namun, nomor VA yang sama hanya dapat digunakan untuk satu transaksi aktif dalam satu waktu.
+
+### Cara Mengaktifkan Fitur Routing Pembayaran
+Ikuti langkah-langkah berikut untuk melakukan registrasi dan melakukan transaksi Routing Pembayaran:
+
+1. Buat akun di OY\!
+2. Lakukan verifikasi akun dengan mengisi formulir verifikasi. Pastikan untuk mencentang produk Terima Uang dan Kirim Uang, karena Routing Pembayaran termasuk dalam produk ini.
+3. Tim OY\! akan meninjau dan memverifikasi formulir serta dokumen yang dikirimkan.
+4. Setelah verifikasi disetujui, atur informasi rekening penerima.
+
+   **Catatan Penting:** Pastikan informasi rekening bank penerima benar, karena Anda hanya dapat mengaturnya sekali saja melalui dashboard  demi alasan keamanan.
+5. Secara default, Anda akan mendapatkan beberapa metode pembayaran, termasuk semua transfer bank (kecuali BCA).
+6. Metode pembayaran lain seperti QRIS, E-Wallets, Kartu, dan BCA memerlukan *onboarding* tambahan agar bisa digunakan. Silakan merujuk ke panduan berikut:
+   - [Aktivasi E-Wallet](https://docs.oyindonesia.com/#e-wallet-payment-methods)
+   - [Aktivasi QRIS](https://docs.oyindonesia.com/#qris-payment-methods)
+   - [Aktivasi VA BCA](https://docs.oyindonesia.com/#bank-transfer-virtual-account-payment-methods)
+   - [Aktivasi Kartu Debit/Kredit](https://docs.oyindonesia.com/#cards-payment-methods-payment-methods)
+7. Kirimkan alamat IP dan URL Callback ke perwakilan bisnis Anda atau melalui email ke [business.support@oyindonesia.com](mailto:business.support@oyindonesia.com).
+8. OY\! akan mengirimkan Production API Key melalui perwakilan bisnis Anda.
+
+   **Catatan**: Key Staging/Demo API dapat diakses melalui dashboard dengan masuk ke mode “Demo”, lalu temukan API key di menu kiri bawah.
+9. Integrasikan API Routing Pembayaran ke dalam sistem Anda. Ikuti panduan di dokumentasi API: [Payment Routing \- API Docs](https://api-docs.oyindonesia.com/#payment-routing).
+
+### Cara Membuat Transaksi Routing Pembayaran
+Setelah menyelesaikan proses registrasi, Anda dapat langsung membuat transaksi Routing Pembayaran menggunakan API. Anda bisa memilih skema tanpa *Interface* atau dengan *Interface*, tergantung pada kebutuhan Anda.
+
+#### Skema Tanpa *Interface*
+1. Integrasikan API untuk membuat transaksi Payment Routing ke dalam sistem Anda. Untuk lebih jelasnya, silakan lihat Dokumentasi API: [Create Payment Routing \- API Docs](https://api-docs.oyindonesia.com/#https-request-create-and-update-payment-routing)
+2. Hit API OY\! untuk membuat transaksi Routing Pembayaran.
+3. Masukkan parameter berikut: "need\_frontend" → "FALSE"
+4. Pilih satu metode pembayaran: BANK\_TRANSFER, EWALLET, QRIS, CARDS
+5. Tambahkan metode pembayaran yang dipilih ke parameter "list\_enable\_payment\_method".
+
+   **Catatan:** Hanya satu metode pembayaran yang boleh dimasukkan, jika lebih dari satu akan muncul pesan error.
+6. Pilih satu bank atau penyedia pembayaran (SOF) sesuai metode yang dipilih:
+* BANK\_TRANSFER: 014, 009, 002, 008, 022, 213, 011, 016, 484, 451, 013\.
+* EWALLET: shopeepay\_ewallet, dana\_ewallet, linkaja\_ewallet
+* QRIS: QRIS
+* CARDS: CARDS
+7. Tambahkan SOF yang dipilih ke parameter "list\_enable\_sof".
+
+   **Catatan**: Hanya satu SOF yang boleh dimasukkan, jika lebih dari satu akan muncul pesan error.
+8. Jika menggunakan E-wallet Direct Payment, isi parameter "use\_linked\_account" dengan:
+
+   "TRUE" → Jika menggunakan ShopeePay Direct Payment  
+   "FALSE" → Jika tidak menggunakan fitur ini  
+   Pastikan [Account Linking](https://docs.oyindonesia.com/#api-account-linking-accepting-payments) sudah dilakukan sebelum membuat transaksi Direct Payment.
+9. Jika ingin langsung mengirim uang setelah menerima pembayaran, isi "payment\_routing" dengan nomor rekening tujuan dan nominal dana yang akan dikirim ke masing-masing penerima
+10. OY\! akan mengembalikan informasi pembayaran sesuai metode yang dipilih:
+    - Transfer Bank \- Virtual Account: bank tujuan, nomor VA, dan jumlah transaksi. 
+    - Transfer Bank \- Kode Unik: bank tujuan, nomor rekening, nama rekening, nominal tagihan awal, nominal unik, dan total nominal.
+    - QRIS: URL untuk mengakses kode QR. 
+    - E-Wallet: link untuk mengarahkan pelanggan ke E-wallet yang dipilih. 
+    - Kartu debit/kredit: link untuk mengarahkan pelanggan agar mengisi detail kartu dan melanjutkan pembayaran.
+11. Tampilkan detail pembayaran kepada pelanggan di dalam aplikasi Anda.
+
+#### Skema Dengan *Interface*
+Jika Anda ingin menggunakan halaman checkout bawaan dari OY\! (Link Pembayaran), ikuti langkah-langkah berikut:
+
+1. Integrasikan API untuk membuat transaksi Payment Routing ke dalam sistem Anda. Untuk lebih jelasnya, silakan lihat Dokumentasi API: [Create Payment Routing \- API Docs](https://api-docs.oyindonesia.com/#https-request-create-and-update-payment-routing)
+2. Hit API OY\! untuk membuat transaksi Routing Pembayaran.
+3. Masukkan parameter berikut: "need\_frontend" → "TRUE"
+4. Pilih satu metode pembayaran: BANK\_TRANSFER, EWALLET, QRIS, CARDS
+5. Tambahkan daftar metode pembayaran yang dipilih ke dalam parameter "list\_enable\_payment\_method".
+
+   **Catatan**: Anda bisa memasukkan lebih dari satu metode pembayaran agar pelanggan dapat memilih metode yang diinginkan.
+6. Pilih bank atau penyedia pembayaran (SOF) untuk setiap metode pembayaran:
+   - BANK\_TRANSFER: 014, 009, 002, 008, 022, 213, 011, 016, 484, 451, 013 
+   - EWALLET: shopeepay\_ewallet, dana\_ewallet, linkaja\_ewallet 
+   - QRIS: QRIS 
+   - CARDS: CARDS
+7. Tambahkan daftar SOF yang dipilih ke dalam parameter "list\_enable\_sof".
+
+   **Catatan**: Anda bisa memasukkan lebih dari satu bank/penyedia pembayaran agar pelanggan dapat memilih metode pembayaran yang diinginkan.
+8. Jika ingin langsung mengirim uang setelah menerima pembayaran, isi "payment\_routing" dengan nomor rekening tujuan dan nominal dana yang akan dikirim ke masing-masing penerima
+9. OY\! akan mengembalikan URL Link Pembayaran, yang dapat Anda bagikan kepada pelanggan untuk menyelesaikan pembayaran.
+
+
+### Cara Menyelesaikan Pembayaran
+
+#### Skema Tanpa *Interface*
+EachSetiap metode pembayaran memiliki alur yang berbeda untuk menyelesaikan transaksi, tergantung pada kebijakan masing-masing metode pembayaran. Silakan merujuk ke panduan berikut untuk menyelesaikan transaksi berdasarkan metode pembayaran yang digunakan:
+
+[Menyelesaikan transaksi Transfer Bank \- Virtual Account](https://docs.oyindonesia.com/#bank-transfer-virtual-account-payment-methods)
+
+[Menyelesaikan transaksi Transfer Bank \- Kode Unik](https://docs.oyindonesia.com/#bank-transfer-unique-code-payment-methods)
+
+[Menyelesaikan transaksi QRIS](https://docs.oyindonesia.com/#qris-payment-methods)
+
+[Menyelesaikan transaksi E-Wallet](https://docs.oyindonesia.com/#e-wallet-payment-methods)
+
+[Menyelesaikan transaksi Kartu Debit/Kredit](https://docs.oyindonesia.com/#cards-payment-methods-payment-methods)
+
+Untuk melakukan simulasi transaksi di mode demo/staging, silakan merujuk ke panduan berikut:
+
+[Simulasi pembayaran Transfer Bank \- Virtual Account](https://docs.oyindonesia.com/#bank-transfer-virtual-account-payment-methods)
+
+[Simulasi pembayaran Transfer Bank \- Kode Unik](https://docs.oyindonesia.com/#bank-transfer-unique-code-payment-methods)
+
+Simulasi pembayaran QRIS (saat ini belum tersedia)
+
+[Simulasi pembayaran E-Wallet](https://docs.oyindonesia.com/#e-wallet-payment-methods)
+
+[Simulasi pembayaran Kartu Debit/Kredit](https://docs.oyindonesia.com/#cards-payment-methods-payment-methods)
+
+#### Skema dengan *Interface*
+Setelah Anda berhasil membuat transaksi Routing Pembayaran menggunakan skema dengan *interface*, Anda dapat membagikan Link Pembayaran kepada pelanggan Anda.
+
+Langkah-langkah bagi pelanggan untuk menyelesaikan transaksi menggunakan skema dengan *interface* sama seperti menyelesaikan transaksi Link Pembayaran. Silakan merujuk ke panduan [berikut](https://docs.oyindonesia.com/#completing-payments-payment-link).
+
+### Memeriksa Status Transaksi
+Semua transaksi Routing Pembayaran yang telah dibuat akan ditampilkan di dashboard. Anda dapat pergi ke menu "Routing Pembayaran" untuk melihat daftar transaksi yang telah dibuat. Di dalam dashboard, Anda dapat melihat detail transaksi, termasuk informasi transaksi yang dimasukkan saat pembuatan, status transaksi, dan nomor referensi pembayaran\*
+
+Dashboard juga memiliki fitur untuk mencari, memfilter, dan mengekspor daftar transaksi dalam berbagai format, seperti Excel (.xlsx), PDF (.pdf), dan CSV (.csv).
+
+Jika Anda tidak menerima *callback* transaksi dari sistem kami, Anda dapat menggunakan [API Check Status](https://api-docs.oyindonesia.com/#check-status-payment-routing-transaction-payment-routing) untuk mendapatkan status transaksi terbaru.
+
+**Catatan:** Nomor Referensi Pembayaran adalah nomor identifikasi untuk pembayaran yang berhasil ketika pelanggan menyelesaikan transaksi QRIS. Nomor referensi ini juga ditampilkan pada bukti transaksi pelanggan. Fitur ini hanya tersedia untuk transaksi QRIS.
+
+### Menerima Dana ke Saldo
+Setelah pelanggan melakukan pembayaran, OY\! akan memperbarui status transaksi dan mengirimkan notifikasi ke sistem Anda untuk mengonfirmasi bahwa transaksi telah dibayar. OY\! kemudian akan menyelesaikan dana ke saldo akun OY\! Anda.
+
+Namun, waktu penyelesaian (*settlement*) dapat berbeda tergantung pada metode pembayaran yang digunakan, dengan rentang waktu mulai dari *real-time* hingga H+2 hari kerja.
+
+### Mengirim Dana ke Penerima
+Routing Pembayaran memungkinkan Anda untuk meneruskan dana secara otomatis setelah transaksi dibayarkan oleh pelanggan. OY\! secara otomatis mengirim dana ke penerima yang telah ditentukan dalam proses pembuatan transaksi setelah pembayaran diterima. Anda perlu memastikan bahwa saldo Anda mencukupi untuk melakukan proses pengiriman dana, terutama untuk metode pembayaran yang memiliki *settlement non-real time*; jika tidak, proses pengiriman dana akan gagal karena saldo tidak mencukupi.
 
 ## QRIS Aggregator
 Quick Response Code Indonesian Standard (QRIS) adalah standar pembayaran QR di Indonesia yang dikembangkan oleh Bank Indonesia. Pembayaran dilakukan oleh pelanggan dengan memindai QR melalui aplikasi m-banking atau E-wallet mereka. Pembayaran QR sangat cocok untuk transaksi bernilai kecil karena menawarkan biaya yang terjangkau (0,7% per transaksi). QRIS Aggregator dapat digunakan untuk membuat transaksi QRIS sebagai metode pembayaran untuk kemudian ditampilkan ke customer Anda.
@@ -1420,219 +1910,66 @@ Jika Anda tidak menerima callback transaksi dari sistem kami, Anda dapat menggun
 ### Menerima Dana ke Saldo
 Setelah pelanggan melakukan pembayaran, OY! akan memperbarui status transaksi dan mengirimkan notifikasi ke sistem Anda untuk mengkonfirmasi bahwa transaksi telah dibayar. OY! kemudian akan menyelesaikan dana ke saldo akun OY! Anda. Namun, waktu penyelesaian (settlement) dapat berbeda tergantung pada metode pembayaran yang digunakan, dengan rentang waktu mulai dari real-time hingga H+2 hari kerja.
 
+## API Account Linking
+Tautan Pembayaran atau *Account Linking* adalah fitur yang dapat membantu pelanggan Anda untuk menautkan akun pembayarannya ke sistem Anda melalui proses *tokenization.* Dengan menautkan akun, pelanggan Anda dapat melihat saldo akun mereka di dalam aplikasi Anda dan nantinya dapat melakukan pembayaran tanpa diminta untuk memasukkan rincian kartu atau nomor E-wallet. Untuk saat ini, fitur ini mendukung E-wallet ShopeePay dan DANA. Fitur ini gratis tanpa biaya sepeser pun.
 
+### Alur Account Linking
 
-## Understanding Cards Transaction 
+![Account Linking Flow](images/acceptingPayments/api-account-linking/payment-flow-api-account-linking.webp)
+![Get Account Balance Flow](images/acceptingPayments/api-account-linking/payment-flow-api-get-e-wallet-balance.webp)
+![Account Unlinking API Flow](images/acceptingPayments/api-account-linking/payment-flow-unlink-account-via-api-accoung-linking.webp)
+![Account Unlinking via App Flow](images/acceptingPayments/api-account-linking/payment-flow-unlink-account-via-e-wallet-app.webp)
 
-### How to Activate 
+### Cara mengaktifkan fitur Account Linking
+Ikuti langkah-langkah berikut untuk mengaktifkan fitur Account Linking:
 
-If you need to accept payments from your end-users via debit and/or credit cards, you may contact your Business Representative for more information and assistance on the activation process. 
+1. Buat akun OY\! Indonesia.
+2. Verifikasi akun Anda dengan cara mengisi formulir verifikasi. Pastikan Anda menceklis produk “Terima Uang”, karena fitur ini diperuntukkan untuk produk Terima Uang
+3. Tim kami akan mereview formulir dan dokumen Anda.
+4. Setelah akun Anda terverifikasi, siapkan informasi rekening bank penerima sebagai rekening penerima saldo OY\!.   
+   **Catatan penting:** pastikan informasi rekening bank penerima sudah benar, karena tidak dapat diubah melalui dashboard OY\!
+5. Kirimkan alamat IP, *callback* URL, dan *redirect* URL Anda kepada tim kami atau ke email [business.support@oyindonesia.com](mailto:business.support@oyindonesia.com).
+6. OY\! Akan mengirimkan API Key Production sebagai otorisasi API melalui tim kami.  
+   **Catatan:** API Key Staging/Demo dapat diakses melalui Dashboard OY\! dengan pergi ke mode "Demo," selanjutnya key Anda dapat ditemukan di menu kiri bawah.
+7. Integrasikan API Account Linking ke sistem Anda. Silakan ikuti panduan yang ada di API Documentation di [halaman berikut](https://api-docs.oyindonesia.com/#api-account-linking).
 
+### Menautkan akun pembayaran pelanggan ke aplikasi Anda
+Pelanggan Anda dapat menautkan akun pembayaran mereka ke aplikasi Anda dengan meng-*hit*  API Account Linking. Ikuti langkah-langkah berikut untuk melakukannya :
 
-### Products Available 
+1. Integrasikan API Account Linking ke sistem Anda. Untuk lebih jelasnya, silakan buka halaman [berikut](https://api-docs.oyindonesia.com/#get-linking-url-api-account-linking).
+2. *Hit* API Account Linking. Sebagai respons, Anda akan menerima URL *linking.* URL ini akan digunakan pelanggan Anda untuk memberikan izin permintaan penautan akun.
+3. Pelanggan Anda memberikan izin dan memasukkan PIN yang diperlukan untuk mengotorisasi permintaan.
+4. Penyedia pembayaran akan memproses permintaan, dan OY\! akan mengirimkan *callback* kepada Anda untuk memberitahu bahwa akun telah berhasil ditautkan.
+5. Setelah akun berhasil ditautkan, pelanggan akan diarahkan kembali ke *redirect* URL yang Anda tentukan saat proses aktivasi fitur.
 
-You may receive credit and/or debit card payments via Payment Link or Payment Routing.
+### Melihat informasi saldo pelanggan Anda
+Setelah pelanggan menautkan akun pembayaran mereka, Anda dapat mendapatkan informasi saldo akun pelanggan dengan menggunakan API *Get E-Wallet balance*. Anda dapat menampilkan saldo tersebut di dalam aplikasi Anda. Misalnya, menampilkan saldo selama proses *checkout*, sehingga pelanggan dapat mengetahui saldo mereka sebelum memilih metode pembayaran. Anda mendapatkan informasi lebih lanjut mengenai API *Get E-Wallet balance* di halaman [berikut](https://api-docs.oyindonesia.com/#get-e-wallet-account-balance-api-account-linking).
 
+### Melepas tautan pembayaran pelanggan dari aplikasi Anda
+Pelanggan yang telah menautkan akun pembayaran mereka dapat melepasnya kapan saja. Mereka dapat melakukannya melalui API *Account Unlinking* atau melalui aplikasi penyedia pembayaran. Menggunakan API *Account Unlinking* memungkinkan pelanggan Anda untuk memutuskan tautan akun di dalam aplikasi Anda. Pilihan lain yang dapat dilakukan pelanggan adalah melepas tautan akun melalui aplikasi penyedia pembayaran.
 
-### Supported Networks 
+Ikuti langkah-langkah berikut untuk memandu Anda dan pelanggan Anda saat melepas tautan akun:
 
-We currently support Mastercard, Visa, and JCB transactions. To protect you and your end-users from fraudulent payment attempts, all transactions will be processed with 3D Secure (i.e. 3DS). 
+**API Account Unlinking**
 
+1. Integrasikan API *Account Unlinking* ke sistem Anda. Lihat selengkapnya di [API Docs](https://api-docs.oyindonesia.com/#api-account-linking).
+2. *Hit* API *Account Unlinking* OY\!. Setelah Anda *hit* API kami, OY\! akan meng-*hit* sistem penyedia pembayaran untuk melepas tautan akun pelanggan.
+3. OY\! akan mengirimkan *callback* untuk memberi tahu Anda bahwa pelepasan tautan akun berhasil.
 
-### Payments via Cards
 
-To increase the chance of successful transaction, please ensure that your end-users:
+**Aplikasi Penyedia Pembayaran**
 
-1. Have sufficient balance or credit limit for the transaction
+1. ShopeePay 
+   1. Pelanggan Anda membuka aplikasi ShopeePay
+   2. Pada menu, pilih OY\! sebagai aplikasi yang terhubung
+   3. Pada bawah halaman “**Rincian Layanan**” , klik “**Hentikan Terhubung ke Layanan**”
 
-2. Have enabled 3D Secure (3DS) as a way to authenticate the transaction
-
-
-### Understanding Overseas Transactions
-
-Your end-users may use credit and/or debit cards issued locally or internationally. If you plan to conduct overseas transactions, it is important to note that OY! can only create the transactions in IDR. This means that your end-users can still use their overseas cards for payment, however the card will still be charged in IDR and settlement will also be done in IDR. The cardholder's billing statement, however, will show the transaction amount in their local currency with foreign exchange rate & extra fees (if any) as applied by their issuer (i.e. the bank or entity that issues the card).
-
-
-Some cards issuer might not allow overseas transactions. Therefore, it is recommended for your end-users to check with their issuing bank regarding country restrictions to reduce the chance of the transaction being declined by the issuer. 
-
-
-### Transactions Declined By Issuer 
-
-When a transaction attempt is submitted to your end-user’s issuer (i.e. the bank or entity that issues the card), they usually have an automated system and parameters that help them in deciding whether or not to authorize the transaction. The parameters may include, but not limited to, behavior from past transactions, card details such as expiration date and CVV, and availability of funds. 
-
-
-If all of the card details seem correct, the funds are available and 3DS has been enabled for the card, it is possible that the transaction is declined by the issuer. Unfortunately, sometimes the decline reason provided by the issuer is too “generic”. If that’s the case, you may ask your end-users to either use alternative cards or payment methods or to contact their issuer directly for more information on the decline reason. Due to privacy & security concerns, issuers can only discuss the specific reason why a transaction is declined to the respective cardholder. This means that issuer will most likely not entertain decline explanation requests via OY!. 
-
-
-
-
-## Feature: Resend Callback
-
-### Key Features
-
-Retry Callback allows you to resend a callback for your successful transaction to your system. Initially, OY! will send a callback to your system after your transaction status has been converted to success. If your system failed to receive the callback, this feature can help you to retry the callback process. The process can be done in two ways
-
-
-1. Automated retry callback
-If on the first try the callback is not successfully received, the system will automatically retry the callback delivery. If that callback still not received by the clients'  system, the system will automatically retry until 5 occurence. The interval of the sending process will be detailed in Callback Interval section. If all automated Retry Callback have been sent but still returned failed, system will send email notification to email address that has been set in the configuration.
-
-2. Manual retry callback
-Beside the automated process, you can manually request a callback.
-
-### Registration and Set Up
-
-Follow the instruction below to activate retry callback
-
-1. Login to your account in OY! Dashboard
-2. Open “Settings” and choose “Developer Option”. Choose “Callback Configuration”
-3. Fill your callback URL in the related product that you want to activate. Make sure the format is right. You can click URL String Validation button to validate the URL format.
-4. If you want to activate automated retry callback, check the Enable Automatic Retry Callback and fill in the email. The email will be used to receive a notification if all the automatic callback attempts have been made but still fail
-5. Click "Save Changes". The configuration will not able to be saved if the callback URL or/and email format are not valid.
-
-
-![Resend Callback](../images/retry_callback_developer_option.png)
-
-Don't forget to whitelist these IPs in order to be able to receive callback from OY: 54.151.191.85 and 54.179.86.72
-
-If you want to manually resend a callback, you can follow the instruction below
-
-1. Login to your account in OY! Dashboard
-2. Open the desired product menu
-
-
-Payment Link: open "Payment Link" and choose "One Time"/"Reusable"
-VA Aggregator: open "Virtual Account" menu and choose "Incoming Payment"
-Ewallet Aggregator: open "E-Wallet" menu
-
-3. If the product is VA Aggregator or Ewallet Aggregator, click "Resend Callback" button in the related transaction
-4. If the product product is Payment Link, click 3 dots in the related transaction and click "Resend Callback"
-
-
-![Resend Callback](../images/payment_link_resend_callback.png)
-
-![Resend Callback](../images/reusable_resend_callback.png)
-
-![Resend Callback](../images/va_resend_callback.png)
-
-![Resend Callback](../images/ewallet_resend_callback.png)
-
-
-
-### Callback Interval
-1st retry: realtime (after the first failed log received)
-2nd retry: 1 min (after callback failed log for the 1st retry is received)
-3rd retry: 2 mins (after callback failed log for the 2nd retry is received)
-4th retry: 13 mins (after callback failed log for the 3rd retry is received)
-5th retry: 47 mins (after callback failed log for the 4th retry is received)
-
-If all automated Retry Callback (all the 5 attempts) has been sent but we still get a Failed response from your end, our system will send an automated email notification to the  email address that has been set in the configuration earlier
-
-
-### Idempotency Key
-To implement automated retry callback, you need to handle the idempotency logic in your system using the below key:
-
-Payment Link - Invoice: tx_ref_number
-VA: trx_id
-Ewallet: trx_id OR ref_number
-
-## Feature: Refund E-wallet
-
-### Key Features
-Refund features allow you to refund a successful e-wallet transaction to your end-users. A refund can either be full or partial. A full refund will give your end-users or payers their entire payment amount back (100%). A partial refund will return up to the total amount paid to your end-users or payers. These requirements must be met in order for a refund transaction to be issued:
-
-1. Refunds can only be issued up to 7 days after transaction is success/complete.
-2. You have enough balance that allows us to deduct the amount of the transaction that should be refunded.
-3. A refund can only be issued once, whether it is a full or partial refund.
-
-| E-Wallet Issuer    | Refund Feature     |
-| ------------------ | ------------------ |
-| OVO                | Not supported      |
-| ShopeePay          | Full               |
-| Linkaja            | Full               |
-| DANA               | Full, Partial      |
-
-### How to Use
-
-1. Log in to your OY! Business dashboard with your username and password that you registered with.
-2. Click on the product page you desired.
-  - Payment Link : Click “Payment Link” and choose “One Time”/“Reusable”
-  - VA Aggregator : Click “Virtual Account” and choose “Incoming Payment”
-  - Payment Routing ; Click “Payment Routing”
-3. You can see a transaction that should be refunded
-4. On “Action” column, you can click the the three-dots button and click “Refund E-Wallet”. ![Refund E-wallet](../images/ewallet_refund_action.png)
-5. If you try to trigger refund after the time limit or outside operational hours, an error modal will show up and you can not continue the refund process. ![Refund E-wallet](../images/ewallet_refund_operational.png)
-6. You can fill the amount of refund, only for partial refund. ![Refund E-wallet](../images/ewallet_refund_amount.png)
-7. Make sure that you have enough balance to issue a refund. If you do not have enough balance, an error message will show up. You can top up your balance via “Top Up” feature. ![Refund E-wallet](../images/ewallet_refund_balance.png)
-8. The transaction will change to “Refunded” if the refund is successful. You can not trigger another refund after the refund is successful. The refund button will be disabled.
-9. You can see the refunded transaction in “Account Statement” page by clicking “Transaction Report” and “Account Statement”. ![Refund E-wallet](../images/ewallet_refund_account_statement.png)
-
-
-## Feature: Account Linking
-
-**Overview** Account Linking is a feature that allows your customer's bank/e-wallet account to be linked to your system using tokenization. By setting up account linking up front, your customer can later complete payments without being prompted for any card details or e-wallet phone number. Currently, our account linking feature is supported in E-Wallet (DANA & ShopeePay).
-
-
-Account linking feature is free of charge.
-
-### Key Features
-**1. Account Linking**
-
-Link your customer's bank/e-wallet account to your system using tokenization.
-
-**2. Account Unlinking**
-
-Unlink your customer's bank/e-wallet account from your system. 
-
-**3. Get E-wallet Balance**
-
-By using account linking, your users can now see their e-wallet balance on before checking out a payment.
-
-
-### Account Linking Flow
-1. You hit OY! API Account Linking for a particular payment method (e.g., DANA).
-
-2. OY! returns redirect URL for authentication.
-
-3. Your customer authorizes the account linking by signing the agreement page and inserting a PIN.
-
-4. OY! returns account linking result. If success, OY! will save the authorization as a token and redirect your customer to your success page URL.
-
-
-
-### Account Unlinking Flow
-Account Unlinking can be done in several ways:
-
-- **OY! API Unlinking** 
-
-  You can hit OY! API Unlinking to unlink your customer's bank/e-wallet account
-
-  1. You hit OY! API Account Unlinking for a particular payment method (e.g., DANA).
-
-  2. OY! returns account unlinking result. If success, OY! will invalidate the token.
-
-
-- **Mobile Banking/E-Wallet Application** 
-
-Your customer can unlink their account via their m-Banking/E-Wallet application.
-
-
-- **Deleted/Blocked Accounts** 
-
-If your customer's account is deleted/blocked, then their account is automatically unlinked.
-
-
-
-### Payment Method Supported
-Currently, Account Linking is only supported on e-wallet payment method. Each payment method have different expiry time and process to renew token.
-
-| E-Wallet Issuer    | Token Expiry Time  | Token Renewal      |
-| ------------------ | ------------------ | ------------------ |
-| DANA               | 10 Years           | After Expiry Time  |
-| ShopeePay          | 5 Years            | After Expiry Time  |
-| Linkaja            | Not supported      | -                  |
-| OVO                | Not supported      | -                  |
-
-For DANA: If your customer's DANA account is frozen, then their account is temporarily unlinked. Once the account is unfrozen and the token has not expired, their account is automatically linked again.
+2. DANA
+   1. Pelanggan Anda membuka aplikasi DANA
+   2. Pilih Akun → **Akun Terhubung**
+   3. Klik “**Lihat Lebih**” pada OY\!
+   4. Checklist salah satu atau semua perangkat yang terhubung
+   5. Pilih “**Hapus Semua**”
 
 
 
