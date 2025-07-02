@@ -179,7 +179,7 @@ Untuk memahami lebih lanjut tentang transaksi menggunakan kode unik, Anda dapat 
 - Tanggal dan Waktu Pembayaran: Pilih tanggal dan waktu yang diinginkan untuk pembayaran.
 4. Setelah semua kolom diisi, Anda dapat mensimulasikan pembayaran dengan mengklik “Kirim Callback”. Jika pembayaran berhasil, notifikasi sukses akan ditampilkan di dalam dashboard. OY! juga akan mengirimkan callback ke URL callback yang telah Anda tentukan. Jika karena alasan tertentu Anda tidak menerima callback, silakan hubungi layanan pelanggan kami untuk membantu menyelesaikan masalah tersebut.
 
-![Bank Transfer - Unique Code Simulate Payment](images/acceptingPayments/payment-methods/bank-transfer-unique-code/simulating-callback-2.webp)
+![Bank Transfer - Unique Code Simulate Payment](images/acceptingPayments/payment-methods/bank-transfer-unique-code/simulating-callback.webp)
 
 ![Bank Transfer - Unique Code Amount Detail](images/acceptingPayments/payment-methods/bank-transfer-unique-code/payment-link-view.webp)
 
