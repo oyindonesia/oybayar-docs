@@ -15,19 +15,19 @@ Sebagai metode pembayaran digital, Anda bisa membuat virtual account (VA) untuk 
 8. Bank Permata & Permata Syariah
 
 #### Ketersediaan Fitur VA
-|Fitur VA|Link Pembayaran|VA Aggregator|E-Wallet Aggregator|Routing Pembayaran|
-| :- | :-: | :-: | :-: | :-: |
-|Open Amount|❌|✅|❌|❌|
-|Closed Amount |✅|✅|❌|✅|
-|VA Pakai Berulang |❌|✅|❌|✅|
-|VA Sekali Pakai|✅|✅|❌|✅|
-|Statis|❌|✅|❌|✅|
-|Dinamis  |✅(otomatis diset ke 24 jam)|✅|❌|✅|
-|VA Nomor Custom|❌|✅|❌|❌|
+| Fitur VA          |       Link Pembayaran        | VA Aggregator | E-Wallet Aggregator | Routing Pembayaran |
+|:------------------|:----------------------------:|:-------------:|:-------------------:|:------------------:|
+| Open Amount       |              ❌               |       ✅       |          ❌          |         ❌          |
+| Closed Amount     |              ✅               |       ✅       |          ❌          |         ✅          |
+| VA Pakai Berulang |              ❌               |       ✅       |          ❌          |         ✅          |
+| VA Sekali Pakai   |              ✅               |       ✅       |          ❌          |         ✅          |
+| Statis            |              ❌               |       ✅       |          ❌          |         ✅          |
+| Dinamis           | ✅ (otomatis diset ke 24 jam) |       ✅       |          ❌          |         ✅          |
+| VA Nomor Custom   |              ❌               |       ✅       |          ❌          |         ❌          |
 
 Di samping parameter dari Link Pembayaran (seperti open amount, statis, dsb), pelanggan Anda harus memasukkan nominal yang harus dibayarkan sebelum memilih metode pembayaran dan membayar transaksi.
 
-Karena itu, jika pelanggan Anda memilih untuk membayar melalui VA - Link Pembayaran, nomor VA yang dihasilkan hanya dapat menerima jumlah yang telah ditentukan (closed amount) dan hanya dapat digunakan untuk transaksi tersebut saja (single-use VA). Nomor VA yang dihasilkan melalui Link Pembayaran akan kedaluwarsa dalam 24 jam setelah pelanggan Anda mengonfirmasi metode pembayaran.
+Karena itu, jika pelanggan Anda memilih untuk membayar melalui VA - Link Pembayaran, nomor VA yang dihasilkan hanya dapat menerima jumlah yang telah ditentukan _(closed amount)_ dan hanya dapat digunakan untuk transaksi tersebut saja (_single-use_ VA). Nomor VA yang dihasilkan melalui Link Pembayaran akan kedaluwarsa dalam 24 jam setelah pelanggan Anda mengonfirmasi metode pembayaran.
 
 Pelanggan Anda juga bisa membuat nomor VA khusus. Anda bisa menyesuaikan suffix (nomor belakang) dari nomor VA berdasarkan nomor HP atau nomor tagihan pelanggan. Sebagai contoh, jika nomor HP pelanggan adalah 08123456789, maka ketika membuat VA, nomor VA nya akan menjadi 23088123456789.
 
@@ -68,11 +68,11 @@ Untuk membuat VA yang bisa disesuaikan, Anda perlu mengakses endpoint URL yang b
 #### Cara Mengaktifkan
 1. Bank selain BCA
 
-    Tidak ada proses onboarding tambahan untuk mengaktifkan metode pembayaran virtual  account. Setelah produk Terima Uang aktif, Anda bisa menggunakan VA tanpa perlu dokumen tambahan. Anda cukup memberi tahu tim kami VA bank apa saja yang Anda perlukan.
+    Tidak ada proses _onboarding_ tambahan untuk mengaktifkan metode pembayaran virtual  account. Setelah produk Terima Uang aktif, Anda bisa menggunakan VA tanpa perlu dokumen tambahan. Anda cukup memberi tahu tim kami VA bank apa saja yang Anda perlukan.
 
 2. BCA
    
-    Anda perlu mengajukan dokumen tambahan untuk mengaktifkan VA BCA(termasuk, namun tidak terbatas pada, Nomor Pokok Wajib Pajak (NPWP) dan KTP). Proses onboarding bank BCA membutuhkan waktu kurang lebih 14 sampai 30 hari kerja, tergantung pada penilaian bank dan kelengkapan dokumen.
+    Anda perlu mengajukan dokumen tambahan untuk mengaktifkan VA BCA(termasuk, namun tidak terbatas pada, Nomor Pokok Wajib Pajak (NPWP) dan KTP). Proses _onboarding_ bank BCA membutuhkan waktu kurang lebih 14 sampai 30 hari kerja, tergantung pada penilaian bank dan kelengkapan dokumen.
 
 #### Metode Pembayaran untuk Membayar VA
 
@@ -104,7 +104,7 @@ Pelanggan Anda dapat membayar tagihan VA melalui metode pembayaran berikut:
 8. Anda dapat menggunakan fitur ini untuk semua transaksi VA pada semua produk “Terima Uang” OY!, (Aggregator VA, Link Pembayaran, Routing Pembayaran)
 
 
-![Bank Transfer - Virtual Account Simulate Payment](images/acceptingPayments/payment-methods/bank-transfer-virtual-account/simulating-callback-2.webp)
+![Bank Transfer - Virtual Account Simulate Payment](images/acceptingPayments/payment-methods/bank-transfer-virtual-account/simulating-callback.webp)
 
 
 ### Transfer Bank - Kode Unik
@@ -115,11 +115,11 @@ Ada dua metode yang dapat Anda gunakan untuk transaksi kode unik: metode penamba
 
 1. Metode Penambahan
 
-   Dengan menggunakan metode penambahan, nominal kode unik akan ditambahkan ke tagihan, sehingga pelanggan Anda akan membayar Rp 1-999 lebih banyak dari jumlah tagihan. Jumlah tambahan ini tidak akan masuk ke saldo Anda.
+    Dengan menggunakan metode penambahan, nominal kode unik akan ditambahkan ke tagihan, sehingga pelanggan Anda akan membayar Rp 1-999 lebih banyak dari jumlah tagihan. Jumlah tambahan ini tidak akan masuk ke saldo Anda.
 
-1. Metode Pengurangan
+2. Metode Pengurangan 
 
-   Dengan menggunakan metode pengurangan, jumlah tagihan akan dikurangi dengan nominal kode unik. Dalam hal ini, pelanggan Anda akan membayar Rp 1-999 lebih sedikit dari jumlah tagihan. Namun, jangan khawatir, jumlah yang masuk ke saldo Anda tidak akan terpengaruh oleh nominal kode unik ini.
+    Dengan menggunakan metode pengurangan, jumlah tagihan akan dikurangi dengan nominal kode unik. Dalam hal ini, pelanggan Anda akan membayar Rp 1-999 lebih sedikit dari jumlah tagihan. Namun, jangan khawatir, jumlah yang masuk ke saldo Anda tidak akan terpengaruh oleh nominal kode unik ini.
 
 Metode default pada kode unik adalah penambahan, tetapi Anda dapat meminta perubahan metode dengan menghubungi tim kami.
 
@@ -762,7 +762,7 @@ Untuk memahami lebih lanjut tentang transaksi menggunakan E-wallet, Anda dapat m
    3. Masukkan nominal transaksi yang ingin dibayar
 4. Setelah semua kolom diisi, Anda dapat mensimulasikan pembayaran dengan mengklik “Kirim Callback”. Jika pembayaran berhasil, notifikasi sukses akan ditampilkan di dalam dashboard. OY! juga akan mengirimkan callback ke URL callback yang telah Anda tentukan. Jika karena alasan tertentu Anda tidak menerima callback, silakan hubungi layanan pelanggan kami untuk membantu menyelesaikan masalah tersebut.
 
-![E-wallet Simulate Callback](images/acceptingPayments/payment-methods/e-wallet/simulating-callback-2.webp)
+![E-wallet Simulate Callback](images/acceptingPayments/payment-methods/e-wallet/simulating-callback.webp)
 ![E-wallet See Reference Number](images/acceptingPayments/payment-methods/e-wallet/preview-dashboard.webp)
 
 Khusus untuk transaksi Link Pembayaran, Anda dapat mensimulasikan pembayaran dengan klik tombol “Bayar Tagihan” pada Link Pembayaran yang telah Anda buat.
@@ -858,13 +858,17 @@ Terdapat 2 tipe Link Pembayaran, yaitu:
 Anda dapat mengatur konfigurasi Link Pembayaran Anda tergantung dari penggunaan transaksi bisnis Anda. Berikut adalah beberapa hal yang dapat Anda sesuaikan:
 
 1. Daftar Metode Pembayaran
-   Atur metode pembayaran yang Anda sediakan untuk pelanggan. Metode pembayaran yang tersedia adalah transfer bank (via virtual account dan kode unik), kartu debit dan kredit, E-wallet, dan QRIS 
+   
+    Atur metode pembayaran yang Anda sediakan untuk pelanggan. Metode pembayaran yang tersedia adalah transfer bank (via virtual account dan kode unik), kartu debit dan kredit, E-wallet, dan QRIS 
+
 2. Tipe Nominal 
    - Open Amount: Dapat menerima pembayaran dengan maksimal nominal yang telah Anda tentukan saat membuat Link Pembayaran. 
    - Closed Amount: Hanya menerima pembayaran dengan nominal yang telah Anda tentukan saat membuat Link Pembayaran.
+
 3. Tipe Biaya Admin 
    - Termasuk dalam nominal: Biaya admin akan terpotong saat saldo sudah masuk ke rekening Anda. Dengan kata lain, biaya admin tersebut ditanggung oleh Anda (merchant). 
    - Tidak termasuk dalam nominal: Biaya admin akan ditambahkan ke dalam nominal yang akan dibayar (biaya admin ditanggung) oleh pelanggan Anda. Jadi, nominal yang ditagih ke pelanggan Anda adalah: Nominal pembayaran + biaya admin.
+
 4. Masa Kedaluwarsa 
    - Secara default, masa kedaluwarsa link pembayaran adalah 24 jam. Tetapi, Anda dapat menyesuaikan masa kedaluwarsa tersebut berdasarkan hari dan jam, dengan maksimum waktu pembayaran adalah 31 hari + 23 jam. 
    - Khusus untuk Link Pembayaran berulang, Anda dapat mengatur waktu kedaluwarsa menjadi tanpa kedaluwarsa, yang artinya link tersebut tidak dapat kedaluwarsa, kecuali Anda menonaktifkannya secara manual.
@@ -881,7 +885,9 @@ Semua transaksi Link Pembayaran yang Anda buat akan ditampilkan di Dashboard OY!
 \*Nomor Referensi Pembayaran adalah nomor identitas pembayaran ketika pelanggan berhasil menyelesaikan pembayaran QRIS. Nomor referensi ini juga tercantum pada struk/bukti transaksi pelanggan. Fitur ini hanya tersedia untuk transaksi QRIS.
 
 #### Sesuaikan Tampilan
+
 Secara default, Link Pembayaran menggunakan tema bawaan OY!. Namun, tema bawaan ini mungkin tidak sesuai dengan branding perusahaan Anda. Untuk menjaga konsistensi brand bagi pelanggan Anda, Anda dapat menyesuaikan tampilan Link Pembayaran dengan melakukan hal-hal berikut:
+
 1. Unggah logo perusahaan atau bisnis Anda sendiri 
 2. Memilih warna tema 
 3. Memilih warna tombol
@@ -889,6 +895,7 @@ Secara default, Link Pembayaran menggunakan tema bawaan OY!. Namun, tema bawaan 
 Jika Anda menggunakan produk invoice OY!, penyesuaian tema Link Pembayaran juga akan diterapkan pada invoice, begitu pula sebaliknya.
 
 Anda dapat menyesuaikan tema untuk Link Pembayaran melalui Dashboard OY!. Berikut langkah-langkahnya:
+
 1. Masuk ke dashboard OY! melaui https://www.desktop-business.oyindonesia.com. Saat ini, menu penyesuaian hanya tersedia di versi web desktop (belum tersedia di web seluler dan aplikasi OY! Business). 
 2. Masuk ke menu “Pengaturan dan klik opsi “Tampilan Link Pembayaran”. 
 3. Untuk mengunggah logo perusahaan, Anda harus mengunggah dengan format (contoh: https://example.com/image.jpg). 
@@ -933,6 +940,7 @@ Silakan klik link berikut untuk membayar: {{URL Payment Link}}
 Mohon untuk tidak membalas pesan ini.
 
 Contoh:
+
 Hi John Doe, <br/>
 Anda memiliki transaksi di Jane’s Store yang sedang menunggu pembayaran. Lakukan pembayaran sebelum 1-Feb-2022, 13.28.
 Silakan klik link berikut untuk membayar: <https://pay.oyindonesia.com/123>
@@ -1080,9 +1088,9 @@ Berikut adalah panduan untuk mengaktifkan fitur Link Pembayaran:
    **Catatan Penting**: Pastikan informasi rekening bank penerima benar, karena Anda hanya dapat mengaturnya sekali saja melalui dashboard  demi alasan keamanan.
 5. Secara default, Anda akan mendapatkan beberapa metode pembayaran, termasuk semua transfer bank (kecuali BCA).
 6. Metode pembayaran lain seperti QRIS, E-Wallet, dan BCA memerlukan proses *onboarding* tambahan agar dapat digunakan. Silakan lihat panduan lebih lanjut di:
-* [Aktivasi E-Wallet](https://docs.oyindonesia.com/#e-wallet-payment-methods)
-* [Aktivasi QRIS](https://docs.oyindonesia.com/#qris-payment-methods)
-* [Aktivasi VA BCA](https://docs.oyindonesia.com/#bank-transfer-virtual-account-payment-methods)
+   * [Aktivasi E-Wallet](https://docs.oyindonesia.com/#e-wallet-payment-methods)
+   * [Aktivasi QRIS](https://docs.oyindonesia.com/#qris-payment-methods)
+   * [Aktivasi VA BCA](https://docs.oyindonesia.com/#bank-transfer-virtual-account-payment-methods)
 
 Jika Anda ingin menggunakan API Link Pembayaran, Anda perlu melakukan langkah tambahan berikut:
 
@@ -1127,17 +1135,17 @@ Setelah berhasil membuat link, Anda dapat membagikan link tersebut kepada pelang
 3. Mengisi detail pelanggan, termasuk Nama Pelanggan, Email, Nomor Telepon, dan Catatan. Semua kolom bersifat opsional kecuali Nama Pelanggan.
 4. Mengonfirmasi metode pembayaran dengan mengklik “Bayar”.
 5. OY\! akan menampilkan informasi pembayaran sesuai metode yang dipilih:
-* Transfer Bank: Menampilkan Nomor Rekening dan Jumlah Transfer.
-* QRIS: Menampilkan kode QR yang dapat diunduh atau langsung dipindai.
-* E-wallet: Pelanggan akan diarahkan ke aplikasi E-wallet (DANA, LinkAja, ShopeePay) atau menerima notifikasi dari aplikasi E-wallet (OVO).
-* Kartu Kredit & Debit: Pelanggan akan diarahkan untuk mengisi nomor kartu, tanggal kedaluwarsa, dan CVV.
+   * Transfer Bank: Menampilkan Nomor Rekening dan Jumlah Transfer.
+   * QRIS: Menampilkan kode QR yang dapat diunduh atau langsung dipindai.
+   * E-wallet: Pelanggan akan diarahkan ke aplikasi E-wallet (DANA, LinkAja, ShopeePay) atau menerima notifikasi dari aplikasi E-wallet (OVO).
+   * Kartu Kredit & Debit: Pelanggan akan diarahkan untuk mengisi nomor kartu, tanggal kedaluwarsa, dan CVV.
 6. Perlu diperhatikan bahwa setiap metode pembayaran memiliki batas waktu pembayaran yang berbeda. Silakan merujuk ke tabel berikut untuk informasi lebih lanjut.
 7. Untuk melakukan simulasi transaksi demo, silakan merujuk ke bagian berikut:
-* [Simulasi pembayaran Virtual Account](https://docs.oyindonesia.com/#bank-transfer-virtual-account-payment-methods)
-* [Simulasi pembayaran Kode Unik](https://docs.oyindonesia.com/#bank-transfer-unique-code-payment-methods)
-* [Simulasi pembayaran E-wallet](https://docs.oyindonesia.com/#e-wallet-payment-methods)
-* [Simulasi pembayaran Kartu](https://docs.oyindonesia.com/#cards-payment-methods-payment-methods)
-* Catatan: Simulasi transaksi QRIS saat ini belum tersedia.
+   * [Simulasi pembayaran Virtual Account](https://docs.oyindonesia.com/#bank-transfer-virtual-account-payment-methods)
+   * [Simulasi pembayaran Kode Unik](https://docs.oyindonesia.com/#bank-transfer-unique-code-payment-methods)
+   * [Simulasi pembayaran E-wallet](https://docs.oyindonesia.com/#e-wallet-payment-methods)
+   * [Simulasi pembayaran Kartu](https://docs.oyindonesia.com/#cards-payment-methods-payment-methods)
+   * Catatan: Simulasi transaksi QRIS saat ini belum tersedia.
 8. Status pada Link Pembayaran akan berubah menjadi berhasil setelah pembayaran dilakukan. Jika status transaksi tidak otomatis diperbarui, pelanggan dapat memeriksa statusnya langsung di halaman Link Pembayaran.
 
 <table>
@@ -1269,11 +1277,11 @@ Anda dapat mengkonfigurasi jenis VA sesuai kebutuhan bisnis Anda, memberikan fle
   </tr>
   <tr>
     <td rowspan="2" valign="top">Nominal Transaksi</td>
-    <td valign="top">VA *Closed Amount*</td>
+    <td valign="top">VA Closed Amount</td>
     <td valign="top">VA yang hanya menerima pembayaran dengan nominal yang ditentukan.</td>
   </tr>
   <tr>
-    <td valign="top">VA *Open Amount*</td>
+    <td valign="top">VA Open Amount</td>
     <td valign="top">VA yang dapat menerima pembayaran dengan maksimal nominal yang telah Anda tentukan saat membuat VA.</td>
   </tr>
   <tr>
@@ -1299,29 +1307,29 @@ Anda dapat mengkonfigurasi jenis VA sesuai kebutuhan bisnis Anda, memberikan fle
 
 1. **Kemampuan untuk Memperbarui VA**
 
-Setelah nomor VA dibuat, Anda masih bisa mengubah beberapa parameter berikut:
+    Setelah nomor VA dibuat, Anda masih bisa mengubah beberapa parameter berikut:
+    - Nominal VA (nominal) → Mengubah jumlah nominal pembayaran. 
+    - Jenis Penggunaan (is\_single\_use) → Mengubah VA dari Sekali Pakai ke Pakai Berulang atau sebaliknya. 
+    - Email (email) → Memperbarui alamat email
+    - Batas Transaksi (trx\_counter) → Menentukan jumlah pembayaran yang dapat diterima oleh nomor VA. Parameter ini hanya bisa digunakan oleh VA Pemakaian Berulang.
+    - Waktu Kedaluwarsa Transaksi (trx\_expired\_time) → Mengatur batas waktu transaksi VA. 
+    - Waktu Kedaluwarsa VA (expired\_time) → Menetapkan kapan VA tidak lagi berlaku. Waktu ini harus sama atau lebih lama dari trx\_expired\_time. 
+    - Nama yang Ditampilkan (username\_display) → Nama VA yang akan muncul saat pelanggan memasukkan nomor VA di aplikasi perbankan mereka.
+   
+    **Catatan:** Setelah VA diperbarui, konfigurasi baru akan langsung diterapkan, dan pengaturan sebelumnya tidak lagi berlaku.
 
-* Nominal VA (nominal) → Mengubah jumlah nominal pembayaran.
-* Jenis Penggunaan (is\_single\_use) → Mengubah VA dari Sekali Pakai ke Pakai Berulang atau sebaliknya.
-* Email (email) → Memperbarui alamat email
-* Batas Transaksi (trx\_counter) → Menentukan jumlah pembayaran yang dapat diterima oleh nomor VA. Parameter ini hanya bisa digunakan oleh VA Pemakaian Berulang.
-* Waktu Kedaluwarsa Transaksi (trx\_expired\_time) → Mengatur batas waktu transaksi VA.
-* Waktu Kedaluwarsa VA (expired\_time) → Menetapkan kapan VA tidak lagi berlaku. Waktu ini harus sama atau lebih lama dari trx\_expired\_time.
-* Nama yang Ditampilkan (username\_display) → Nama VA yang akan muncul saat pelanggan memasukkan nomor VA di aplikasi perbankan mereka.
+2. ***Callback* Otomatis & Retry *Callback***
 
-**Catatan:** Setelah VA diperbarui, konfigurasi baru akan langsung diterapkan, dan pengaturan sebelumnya tidak lagi berlaku.
+    Anda akan menerima *callback* untuk setiap pembayaran VA yang sukses melalui API. Jika *callback* gagal diterima, Anda bisa mengaktifkan Automatic Retry *Callback* melalui:
 
-2. ***Callback*** **Otomatis & Retry *Callback***
+    Dashboard → Pengaturan → Opsi Developer → Konfigurasi Callback.
 
-Anda akan menerima *callbac*k untuk setiap pembayaran VA yang sukses melalui API. Jika *callback* gagal diterima, Anda bisa mengaktifkan Automatic Retry *Callback* melalui:
-
-Dashboard → Pengaturan → Opsi Developer → Konfigurasi Callback.
-
-Jika *callback* pertama gagal, sistem OY\! akan mencoba kembali hingga 5 kali. Jika semua percobaan gagal, OY\! akan mengirimkan notifikasi ke email yang telah Anda atur. Anda juga akan menerima *callback* untuk setiap transaksi yang berhasil diselesaikan ke saldo Anda.
+    Jika *callback* pertama gagal, sistem OY\! akan mencoba kembali hingga 5 kali. Jika semua percobaan gagal, OY\! akan mengirimkan notifikasi ke email yang telah Anda atur. Anda juga akan menerima *callback* untuk setiap transaksi yang berhasil diselesaikan ke saldo Anda.
 
 3. **Nominal Minimum dan Maksimum Transaksi VA**
-* Nominal minimum transaksi VA: Rp10.000 (untuk *closed amount*).
-* nominal maksimum transaksi VA: Tergantung pada kebijakan masing-masing bank. Dengan detail sebagai berikut:
+
+   * Nominal minimum transaksi VA: Rp10.000 (untuk *closed amount*).
+   * nominal maksimum transaksi VA: Tergantung pada kebijakan masing-masing bank. Dengan detail sebagai berikut:
 
 |Nama Bank|Nominal maksimum per transaksi |
 | :-: | :-: |
@@ -1520,8 +1528,8 @@ Retry Callback Manual membantu Anda untuk mengirim ulang *callback* secara manua
 1. Masuk ke akun Anda
 2. Pastikan Anda telah mengatur Callback URL melalui “Pengaturan” → “Opsi Developer” → “Konfigurasi Callback” untuk produk E-Wallet Aggregator.
 3. Pastikan Anda telah whitelist IP OY\! agar sistem Anda dapat menerima *callback*:
-* 54.151.191.85
-* 54.179.86.72
+   - 54.151.191.85 
+   - 54.179.86.72
 4. Buka menu “API E-Wallet”.
 5. Cari transaksi yang ingin dikirim ulang *callback*\-nya, lalu klik tombol tiga titik pada kolom “Tindakan”.
 6. Klik “Kirim Ulang Callback” untuk mengirim ulang *callback*, dan ulangi proses ini sesuai kebutuhan.
@@ -1537,8 +1545,8 @@ Ikuti langkah-langkah berikut untuk mengaktifkan *Retry Callback* Otomatis:
 4. Masukkan URL *callback* untuk produk yang ingin Anda aktifkan. Pastikan format URL benar, lalu validasi dengan mengklik “Validasi String URL”.
 5. Untuk mengaktifkan Retry Callback Otomatis, centang “Aktifkan Retry Callback Otomatis” untuk produk terkait. Masukkan email penerima yang akan menerima notifikasi jika callback gagal setelah semua percobaan dilakukan.
 6. Pastikan Anda telah whitelist IP OY\! agar sistem dapat menerima *callback*:
-* 54.151.191.85
-* 54.179.86.72
+   - 54.151.191.85 
+   - 54.179.86.72
 7. Pastikan sistem Anda menerapkan *idempotency logic* dengan menggunakan parameter “tx\_ref\_number” sebagai *idempotency key* untuk mencegah *callback* yang sama diproses sebagai pembayaran yang berbeda.
 8. Simpan perubahan
 
@@ -1675,11 +1683,11 @@ Terima pembayaran cicilan dari peminjam dan langsung salurkan dana ke rekening p
 OY\! mendukung berbagai metode pembayaran dalam API Routing Pembayaran, termasuk:
 
 1. Transfer Bank
-* Virtual Account: BCA, BNI, BRI, Mandiri, CIMB, SMBC, BSI, Permata
-* Kode Unik: BCA
+   - Virtual Account: BCA, BNI, BRI, Mandiri, CIMB, SMBC, BSI, Permata 
+   - Kode Unik: BCA
 2. E-Wallet
-* Single Payments: ShopeePay, DANA, LinkAja
-* Direct Payments: ShopeePay
+   - Single Payments: ShopeePay, DANA, LinkAja 
+   - Direct Payments: ShopeePay
 3. Kartu Debit/Kredit: Visa, Mastercard, JCB
 4. QRIS
 
@@ -1736,10 +1744,10 @@ Ikuti langkah-langkah berikut untuk melakukan registrasi dan melakukan transaksi
    **Catatan Penting:** Pastikan informasi rekening bank penerima benar, karena Anda hanya dapat mengaturnya sekali saja melalui dashboard  demi alasan keamanan.
 5. Secara default, Anda akan mendapatkan beberapa metode pembayaran, termasuk semua transfer bank (kecuali BCA).
 6. Metode pembayaran lain seperti QRIS, E-Wallets, Kartu, dan BCA memerlukan *onboarding* tambahan agar bisa digunakan. Silakan merujuk ke panduan berikut:
-* [Aktivasi E-Wallet](https://docs.oyindonesia.com/#e-wallet-payment-methods)
-* [Aktivasi QRIS](https://docs.oyindonesia.com/#qris-payment-methods)
-* [Aktivasi VA BCA](https://docs.oyindonesia.com/#bank-transfer-virtual-account-payment-methods)
-* [Aktivasi Kartu Debit/Kredit](https://docs.oyindonesia.com/#cards-payment-methods-payment-methods)
+   - [Aktivasi E-Wallet](https://docs.oyindonesia.com/#e-wallet-payment-methods)
+   - [Aktivasi QRIS](https://docs.oyindonesia.com/#qris-payment-methods)
+   - [Aktivasi VA BCA](https://docs.oyindonesia.com/#bank-transfer-virtual-account-payment-methods)
+   - [Aktivasi Kartu Debit/Kredit](https://docs.oyindonesia.com/#cards-payment-methods-payment-methods)
 7. Kirimkan alamat IP dan URL Callback ke perwakilan bisnis Anda atau melalui email ke [business.support@oyindonesia.com](mailto:business.support@oyindonesia.com).
 8. OY\! akan mengirimkan Production API Key melalui perwakilan bisnis Anda.
 
@@ -1772,11 +1780,11 @@ Setelah menyelesaikan proses registrasi, Anda dapat langsung membuat transaksi R
    Pastikan [Account Linking](https://docs.oyindonesia.com/#api-account-linking-accepting-payments) sudah dilakukan sebelum membuat transaksi Direct Payment.
 9. Jika ingin langsung mengirim uang setelah menerima pembayaran, isi "payment\_routing" dengan nomor rekening tujuan dan nominal dana yang akan dikirim ke masing-masing penerima
 10. OY\! akan mengembalikan informasi pembayaran sesuai metode yang dipilih:
-* Transfer Bank \- Virtual Account: bank tujuan, nomor VA, dan jumlah transaksi.
-* Transfer Bank \- Kode Unik: bank tujuan, nomor rekening, nama rekening, nominal tagihan awal, nominal unik, dan total nominal.
-* QRIS: URL untuk mengakses kode QR.
-* E-Wallet: link untuk mengarahkan pelanggan ke E-wallet yang dipilih.
-* Kartu debit/kredit: link untuk mengarahkan pelanggan agar mengisi detail kartu dan melanjutkan pembayaran.
+    - Transfer Bank \- Virtual Account: bank tujuan, nomor VA, dan jumlah transaksi. 
+    - Transfer Bank \- Kode Unik: bank tujuan, nomor rekening, nama rekening, nominal tagihan awal, nominal unik, dan total nominal.
+    - QRIS: URL untuk mengakses kode QR. 
+    - E-Wallet: link untuk mengarahkan pelanggan ke E-wallet yang dipilih. 
+    - Kartu debit/kredit: link untuk mengarahkan pelanggan agar mengisi detail kartu dan melanjutkan pembayaran.
 11. Tampilkan detail pembayaran kepada pelanggan di dalam aplikasi Anda.
 
 #### Skema Dengan *Interface*
@@ -1790,10 +1798,10 @@ Jika Anda ingin menggunakan halaman checkout bawaan dari OY\! (Link Pembayaran),
 
    **Catatan**: Anda bisa memasukkan lebih dari satu metode pembayaran agar pelanggan dapat memilih metode yang diinginkan.
 6. Pilih bank atau penyedia pembayaran (SOF) untuk setiap metode pembayaran:
-* BANK\_TRANSFER: 014, 009, 002, 008, 022, 213, 011, 016, 484, 451, 013
-* EWALLET: shopeepay\_ewallet, dana\_ewallet, linkaja\_ewallet
-* QRIS: QRIS
-* CARDS: CARDS
+   - BANK\_TRANSFER: 014, 009, 002, 008, 022, 213, 011, 016, 484, 451, 013 
+   - EWALLET: shopeepay\_ewallet, dana\_ewallet, linkaja\_ewallet 
+   - QRIS: QRIS 
+   - CARDS: CARDS
 7. Tambahkan daftar SOF yang dipilih ke dalam parameter "list\_enable\_sof".
 
    **Catatan**: Anda bisa memasukkan lebih dari satu bank/penyedia pembayaran agar pelanggan dapat memilih metode pembayaran yang diinginkan.
@@ -1962,218 +1970,6 @@ Ikuti langkah-langkah berikut untuk memandu Anda dan pelanggan Anda saat melepas
    3. Klik “**Lihat Lebih**” pada OY\!
    4. Checklist salah satu atau semua perangkat yang terhubung
    5. Pilih “**Hapus Semua**”
-
-## Understanding Cards Transaction 
-
-### How to Activate 
-
-If you need to accept payments from your end-users via debit and/or credit cards, you may contact your Business Representative for more information and assistance on the activation process. 
-
-
-### Products Available 
-
-You may receive credit and/or debit card payments via Payment Link or Payment Routing.
-
-
-### Supported Networks 
-
-We currently support Mastercard, Visa, and JCB transactions. To protect you and your end-users from fraudulent payment attempts, all transactions will be processed with 3D Secure (i.e. 3DS). 
-
-
-### Payments via Cards
-
-To increase the chance of successful transaction, please ensure that your end-users:
-
-1. Have sufficient balance or credit limit for the transaction
-
-2. Have enabled 3D Secure (3DS) as a way to authenticate the transaction
-
-
-### Understanding Overseas Transactions
-
-Your end-users may use credit and/or debit cards issued locally or internationally. If you plan to conduct overseas transactions, it is important to note that OY! can only create the transactions in IDR. This means that your end-users can still use their overseas cards for payment, however the card will still be charged in IDR and settlement will also be done in IDR. The cardholder's billing statement, however, will show the transaction amount in their local currency with foreign exchange rate & extra fees (if any) as applied by their issuer (i.e. the bank or entity that issues the card).
-
-
-Some cards issuer might not allow overseas transactions. Therefore, it is recommended for your end-users to check with their issuing bank regarding country restrictions to reduce the chance of the transaction being declined by the issuer. 
-
-
-### Transactions Declined By Issuer 
-
-When a transaction attempt is submitted to your end-user’s issuer (i.e. the bank or entity that issues the card), they usually have an automated system and parameters that help them in deciding whether or not to authorize the transaction. The parameters may include, but not limited to, behavior from past transactions, card details such as expiration date and CVV, and availability of funds. 
-
-
-If all of the card details seem correct, the funds are available and 3DS has been enabled for the card, it is possible that the transaction is declined by the issuer. Unfortunately, sometimes the decline reason provided by the issuer is too “generic”. If that’s the case, you may ask your end-users to either use alternative cards or payment methods or to contact their issuer directly for more information on the decline reason. Due to privacy & security concerns, issuers can only discuss the specific reason why a transaction is declined to the respective cardholder. This means that issuer will most likely not entertain decline explanation requests via OY!. 
-
-
-
-
-## Feature: Resend Callback
-
-### Key Features
-
-Retry Callback allows you to resend a callback for your successful transaction to your system. Initially, OY! will send a callback to your system after your transaction status has been converted to success. If your system failed to receive the callback, this feature can help you to retry the callback process. The process can be done in two ways
-
-
-1. Automated retry callback
-If on the first try the callback is not successfully received, the system will automatically retry the callback delivery. If that callback still not received by the clients'  system, the system will automatically retry until 5 occurence. The interval of the sending process will be detailed in Callback Interval section. If all automated Retry Callback have been sent but still returned failed, system will send email notification to email address that has been set in the configuration.
-
-2. Manual retry callback
-Beside the automated process, you can manually request a callback.
-
-### Registration and Set Up
-
-Follow the instruction below to activate retry callback
-
-1. Login to your account in OY! Dashboard
-2. Open “Settings” and choose “Developer Option”. Choose “Callback Configuration”
-3. Fill your callback URL in the related product that you want to activate. Make sure the format is right. You can click URL String Validation button to validate the URL format.
-4. If you want to activate automated retry callback, check the Enable Automatic Retry Callback and fill in the email. The email will be used to receive a notification if all the automatic callback attempts have been made but still fail
-5. Click "Save Changes". The configuration will not able to be saved if the callback URL or/and email format are not valid.
-
-
-![Resend Callback](../images/retry_callback_developer_option.png)
-
-Don't forget to whitelist these IPs in order to be able to receive callback from OY: 54.151.191.85 and 54.179.86.72
-
-If you want to manually resend a callback, you can follow the instruction below
-
-1. Login to your account in OY! Dashboard
-2. Open the desired product menu
-
-
-Payment Link: open "Payment Link" and choose "One Time"/"Reusable"
-VA Aggregator: open "Virtual Account" menu and choose "Incoming Payment"
-Ewallet Aggregator: open "E-Wallet" menu
-
-3. If the product is VA Aggregator or Ewallet Aggregator, click "Resend Callback" button in the related transaction
-4. If the product product is Payment Link, click 3 dots in the related transaction and click "Resend Callback"
-
-
-![Resend Callback](../images/payment_link_resend_callback.png)
-
-![Resend Callback](../images/reusable_resend_callback.png)
-
-![Resend Callback](../images/va_resend_callback.png)
-
-![Resend Callback](../images/ewallet_resend_callback.png)
-
-
-
-### Callback Interval
-1st retry: realtime (after the first failed log received)
-2nd retry: 1 min (after callback failed log for the 1st retry is received)
-3rd retry: 2 mins (after callback failed log for the 2nd retry is received)
-4th retry: 13 mins (after callback failed log for the 3rd retry is received)
-5th retry: 47 mins (after callback failed log for the 4th retry is received)
-
-If all automated Retry Callback (all the 5 attempts) has been sent but we still get a Failed response from your end, our system will send an automated email notification to the  email address that has been set in the configuration earlier
-
-
-### Idempotency Key
-To implement automated retry callback, you need to handle the idempotency logic in your system using the below key:
-
-Payment Link - Invoice: tx_ref_number
-VA: trx_id
-Ewallet: trx_id OR ref_number
-
-## Feature: Refund E-wallet
-
-### Key Features
-Refund features allow you to refund a successful e-wallet transaction to your end-users. A refund can either be full or partial. A full refund will give your end-users or payers their entire payment amount back (100%). A partial refund will return up to the total amount paid to your end-users or payers. These requirements must be met in order for a refund transaction to be issued:
-
-1. Refunds can only be issued up to 7 days after transaction is success/complete.
-2. You have enough balance that allows us to deduct the amount of the transaction that should be refunded.
-3. A refund can only be issued once, whether it is a full or partial refund.
-
-| E-Wallet Issuer    | Refund Feature     |
-| ------------------ | ------------------ |
-| OVO                | Not supported      |
-| ShopeePay          | Full               |
-| Linkaja            | Full               |
-| DANA               | Full, Partial      |
-
-### How to Use
-
-1. Log in to your OY! Business dashboard with your username and password that you registered with.
-2. Click on the product page you desired.
-  - Payment Link : Click “Payment Link” and choose “One Time”/“Reusable”
-  - VA Aggregator : Click “Virtual Account” and choose “Incoming Payment”
-  - Payment Routing ; Click “Payment Routing”
-3. You can see a transaction that should be refunded
-4. On “Action” column, you can click the the three-dots button and click “Refund E-Wallet”. ![Refund E-wallet](../images/ewallet_refund_action.png)
-5. If you try to trigger refund after the time limit or outside operational hours, an error modal will show up and you can not continue the refund process. ![Refund E-wallet](../images/ewallet_refund_operational.png)
-6. You can fill the amount of refund, only for partial refund. ![Refund E-wallet](../images/ewallet_refund_amount.png)
-7. Make sure that you have enough balance to issue a refund. If you do not have enough balance, an error message will show up. You can top up your balance via “Top Up” feature. ![Refund E-wallet](../images/ewallet_refund_balance.png)
-8. The transaction will change to “Refunded” if the refund is successful. You can not trigger another refund after the refund is successful. The refund button will be disabled.
-9. You can see the refunded transaction in “Account Statement” page by clicking “Transaction Report” and “Account Statement”. ![Refund E-wallet](../images/ewallet_refund_account_statement.png)
-
-
-## Feature: Account Linking
-
-**Overview** Account Linking is a feature that allows your customer's bank/e-wallet account to be linked to your system using tokenization. By setting up account linking up front, your customer can later complete payments without being prompted for any card details or e-wallet phone number. Currently, our account linking feature is supported in E-Wallet (DANA & ShopeePay).
-
-
-Account linking feature is free of charge.
-
-### Key Features
-**1. Account Linking**
-
-Link your customer's bank/e-wallet account to your system using tokenization.
-
-**2. Account Unlinking**
-
-Unlink your customer's bank/e-wallet account from your system. 
-
-**3. Get E-wallet Balance**
-
-By using account linking, your users can now see their e-wallet balance on before checking out a payment.
-
-
-### Account Linking Flow
-1. You hit OY! API Account Linking for a particular payment method (e.g., DANA).
-
-2. OY! returns redirect URL for authentication.
-
-3. Your customer authorizes the account linking by signing the agreement page and inserting a PIN.
-
-4. OY! returns account linking result. If success, OY! will save the authorization as a token and redirect your customer to your success page URL.
-
-
-
-### Account Unlinking Flow
-Account Unlinking can be done in several ways:
-
-- **OY! API Unlinking** 
-
-  You can hit OY! API Unlinking to unlink your customer's bank/e-wallet account
-
-  1. You hit OY! API Account Unlinking for a particular payment method (e.g., DANA).
-
-  2. OY! returns account unlinking result. If success, OY! will invalidate the token.
-
-
-- **Mobile Banking/E-Wallet Application** 
-
-Your customer can unlink their account via their m-Banking/E-Wallet application.
-
-
-- **Deleted/Blocked Accounts** 
-
-If your customer's account is deleted/blocked, then their account is automatically unlinked.
-
-
-
-### Payment Method Supported
-Currently, Account Linking is only supported on e-wallet payment method. Each payment method have different expiry time and process to renew token.
-
-| E-Wallet Issuer    | Token Expiry Time  | Token Renewal      |
-| ------------------ | ------------------ | ------------------ |
-| DANA               | 10 Years           | After Expiry Time  |
-| ShopeePay          | 5 Years            | After Expiry Time  |
-| Linkaja            | Not supported      | -                  |
-| OVO                | Not supported      | -                  |
-
-For DANA: If your customer's DANA account is frozen, then their account is temporarily unlinked. Once the account is unfrozen and the token has not expired, their account is automatically linked again.
 
 
 

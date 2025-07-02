@@ -4,6 +4,7 @@ services:
     build: .
     image: local/oybayar-docs-slate
     command: ["build"]
+    user: "501:20"
     volumes:
       - "./build:/srv/slate/build"
       - "./source:/srv/slate/source"
@@ -12,6 +13,7 @@ services:
     command: ["serve"]
     ports:
       - "4567:4567"
+    user: "501:20"
     volumes:
       - "./source:/srv/slate/source"
     depends_on:
