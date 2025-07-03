@@ -172,11 +172,11 @@ Untuk memahami lebih lanjut tentang transaksi menggunakan kode unik, Anda dapat 
 1. Buka dashboard OY! dan masuk ke mode Demo. 
 2. Buka menu “Pengaturan” dan klik Callback Transfer Bank. 
 3. Masukkan detail pembayaran untuk transaksi yang ingin Anda simulasikan:
-- Jenis Transaksi: Pilih Kode Unik.
-- Bank: Pilih bank tujuan.
-- Nomor Rekening: Masukkan nomor rekening bank OY! Indonesia yang Anda terima saat pembuatan transaksi.
-- Jumlah: Masukkan jumlah tagihan beserta nominal kode unik yang Anda terima saat pembuatan transaksi.
-- Tanggal dan Waktu Pembayaran: Pilih tanggal dan waktu yang diinginkan untuk pembayaran.
+   - Jenis Transaksi: Pilih Kode Unik.
+   - Bank: Pilih bank tujuan.
+   - Nomor Rekening: Masukkan nomor rekening bank OY! Indonesia yang Anda terima saat pembuatan transaksi.
+   - Jumlah: Masukkan jumlah tagihan beserta nominal kode unik yang Anda terima saat pembuatan transaksi.
+   - Tanggal dan Waktu Pembayaran: Pilih tanggal dan waktu yang diinginkan untuk pembayaran.
 4. Setelah semua kolom diisi, Anda dapat mensimulasikan pembayaran dengan mengklik “Kirim Callback”. Jika pembayaran berhasil, notifikasi sukses akan ditampilkan di dalam dashboard. OY! juga akan mengirimkan callback ke URL callback yang telah Anda tentukan. Jika karena alasan tertentu Anda tidak menerima callback, silakan hubungi layanan pelanggan kami untuk membantu menyelesaikan masalah tersebut.
 
 ![Bank Transfer - Unique Code Simulate Payment](../images/acceptingPayments/payment-methods/bank-transfer-unique-code/simulating-callback.webp)
@@ -202,6 +202,9 @@ Quick Response Code Indonesian Standard (QRIS) adalah standar pembayaran QR di I
 #### Detail Nominal Transaksi
 
 Jumlah maksimum per transaksi untuk QRIS adalah Rp10.000.000, sedangkan jumlah minimum per transaksi adalah Rp10.000, baik melalui Link Pembayaran maupun Routing Pembayaran. Jika Anda ingin menerima pembayaran di bawah Rp10.000, silakan hubungi [perwakilan bisnis kami](customerservice@oyindonesia.com).
+
+#### Alur Pembayaran
+![QRIS Flow](../images/acceptingPayments/payment-methods/qr-code-qris/payment-flow.webp)
 
 #### Aktivasi
 Untuk menerima pembayaran menggunakan QRIS, Anda perlu mendaftarkan merchant Anda terlebih dahulu ke provider QRIS. Pendaftaran dapat dilakukan melalui dashboard OY! dengan membuka halaman “Layanan Kami” dan mengklik tab “Metode Pembayaran”.
@@ -363,12 +366,12 @@ E-wallet adalah metode pembayaran elektronik yang memungkinkan Anda membayar bar
 
 #### Detail Pembayaran E-Wallet
 
-| Provider E-Wallet |Kode E-Wallet| Waktu Berlaku |Tipe Alur|Bayar via Desktop|Bayar via Browser HP|
-|:-----------------:| :- |:--------------| :- | :-: | :-: |
-|     ShopeePay     |shopeepay\_ewallet| 1 - 60 menit  |Dialihkan ke app (JumpApp)|❌|❌|
-|        OVO        |ovo\_ewallet| 55 detik      |Notifkasi|❌|❌|
-|       DANA        |dana\_ewallet| 1 - 60 menit  |Dialihkan ke app (JumpApp)|✅|✅|
-|      LinkAja      |linkaja\_ewallet| 5 menit       |Dialihkan ke app (JumpApp)|❌|❌|
+| Provider E-Wallet | Kode E-Wallet      | Waktu Berlaku | Tipe Alur                  | Bayar via Desktop | Bayar via Browser HP | Bayar via Aplikasi Provider |
+|:-----------------:|:-------------------|:--------------|:---------------------------|:-----------------:|:--------------------:|-----------------------------|
+|     ShopeePay     | shopeepay\_ewallet | 1 - 60 menit  | Dialihkan ke app (JumpApp) |         ❌         |          ❌           | ✅                           |
+|        OVO        | ovo\_ewallet       | 55 detik      | Notifkasi                  |         ❌         |          ❌           | ✅                           |
+|       DANA        | dana\_ewallet      | 1 - 60 menit  | Dialihkan ke app (JumpApp) |         ✅         |          ✅           | ✅                           |
+|      LinkAja      | linkaja\_ewallet   | 5 menit       | Dialihkan ke app (JumpApp) |         ❌         |          ❌           | ✅                           |
 
 Jumlah maksimum per transaksi untuk semua provider E-wallet adalah Rp10.000.000 untuk pelanggan yang telah melakukan KYC di aplikasi provider, dan Rp2.000.000 untuk pelanggan yang belum melakukan KYC.
 
@@ -1064,8 +1067,8 @@ Retry Callback Otomatis  tidak aktif secara default. Berikut cara mengaktifkanny
 4. Masukkan URL *callback* untuk produk yang ingin Anda aktifkan. Pastikan format URL benar, lalu validasi dengan mengklik “Validasi String URL”.
 5. Untuk mengaktifkan Retry Callback Otomatis, centang “Aktifkan Retry Callback Otomatis” untuk produk terkait. Masukkan email penerima yang akan menerima notifikasi jika callback gagal setelah semua percobaan dilakukan.
 6. Pastikan Anda telah whitelist IP OY\! agar sistem dapat menerima *callback*:
-* 54.151.191.85
-* 54.179.86.72
+   - 54.151.191.85 
+   - 54.179.86.72
 7. Pastikan sistem Anda menerapkan *idempotency logic* dengan menggunakan parameter “tx\_ref\_number” sebagai *idempotency key* untuk mencegah *callback* yang sama diproses sebagai pembayaran yang berbeda.
 8. Simpan perubahan
 
@@ -1248,18 +1251,6 @@ OY\! memahami bahwa arus kas yang lancar sangat penting bagi bisnis Anda. Kami m
 **Menyesuaikan Jenis VA Sesuai Kebutuhan**
 
 Anda dapat mengkonfigurasi jenis VA sesuai kebutuhan bisnis Anda, memberikan fleksibilitas lebih dalam pengelolaan transaksi pembayaran dengan detail sebagai berikut:
-
-| Kategori | Tipe | Deskripsi |
-| :---- | :---- | :---- |
-| Masa Berlaku  | VA Statis (Tanpa Kedaluwarsa) | VA yang memiliki masa berlaku tidak terbatas. Akan selalu aktif sampai dinonaktifkan secara manual. |
-|  | VA Dinamis | VA yang memiliki periode masa berlaku tertentu. Akan selalu aktif sampai masa berlakunya habis atau dinonaktifkan secara manual. |
-| Nominal Transaksi | VA *Closed Amount* | VA yang hanya menerima pembayaran dengan nominal yang ditentukan. |
-|  | VA *Open Amount* | VA yang dapat menerima pembayaran dengan maksimal nominal yang telah Anda tentukan saat membuat VA. |
-| Jumlah Penggunaan | VA Sekali Pakai | VA yang hanya bisa menerima satu kali pembayaran. |
-|  | VA Pemakaian Berulang | VA yang hanya kedaluwarsa ketika mencapai tanggal kedaluwarsa atau ketika dinonaktifkan secara manual. Anda juga dapat menyesuaikan batas maksimum pembayaran. VA Pemakaian Berulang dengan batas maksimum pembayaran yang disesuaikan akan kedaluwarsa setelah batas pembayaran terlampaui meskipun belum mencapai waktu kedaluwarsa.  |
-| Nomor VA | Nomor VA *Custom* | Anda dapat mempersonalisasi nomor akhir VA dengan angka yang Anda inginkan (misalnya, nomor telepon atau nomor tagihan pengguna akhir Anda). Untuk mengaktifkan penyesuaian nomor VA, silakan hubungi perwakilan bisnis Anda. Anda dapat merujuk ke [API Docs \- Create Customized VA Number.](https://api-docs.oyindonesia.com/#create-customized-va-va-aggregator) Khusus untuk fitur ini, saat ini kami hanya mendukung bank BRI dan CIMB. |
-|  | *Predetermined* | OY\! akan membuat nomor VA secara random atas nama Anda. Anda dapat merujuk ke [API Docs \- Create VA Number](https://api-docs.oyindonesia.com/#create-va-va-aggregator).  |
-
 
 <table>
   <tr>
