@@ -5313,12 +5313,15 @@ Once a transaction is successfully created, all transaction details and updates 
 <ol>
 <li>Buka dashboard OY! dan masuk ke mode Demo. </li>
 <li>Buka menu “Pengaturan” dan klik Callback Transfer Bank. </li>
-<li>Masukkan detail pembayaran untuk transaksi yang ingin Anda simulasikan:</li>
+<li>Masukkan detail pembayaran untuk transaksi yang ingin Anda simulasikan:
+
+<ul>
 <li>Jenis Transaksi: Pilih Kode Unik.</li>
 <li>Bank: Pilih bank tujuan.</li>
 <li>Nomor Rekening: Masukkan nomor rekening bank OY! Indonesia yang Anda terima saat pembuatan transaksi.</li>
 <li>Jumlah: Masukkan jumlah tagihan beserta nominal kode unik yang Anda terima saat pembuatan transaksi.</li>
 <li>Tanggal dan Waktu Pembayaran: Pilih tanggal dan waktu yang diinginkan untuk pembayaran.</li>
+</ul></li>
 <li>Setelah semua kolom diisi, Anda dapat mensimulasikan pembayaran dengan mengklik “Kirim Callback”. Jika pembayaran berhasil, notifikasi sukses akan ditampilkan di dalam dashboard. OY! juga akan mengirimkan callback ke URL callback yang telah Anda tentukan. Jika karena alasan tertentu Anda tidak menerima callback, silakan hubungi layanan pelanggan kami untuk membantu menyelesaikan masalah tersebut.</li>
 </ol>
 
@@ -5359,6 +5362,8 @@ Once a transaction is successfully created, all transaction details and updates 
 </tbody></table>
 <h4 id='detail-nominal-transaksi-kode-qr-qris' type='normal'>Detail Nominal Transaksi</h4>
 <p>Jumlah maksimum per transaksi untuk QRIS adalah Rp10.000.000, sedangkan jumlah minimum per transaksi adalah Rp10.000, baik melalui Link Pembayaran maupun Routing Pembayaran. Jika Anda ingin menerima pembayaran di bawah Rp10.000, silakan hubungi <a href="customerservice@oyindonesia.com">perwakilan bisnis kami</a>.</p>
+<h4 id='alur-pembayaran-kode-qr-qris' type='normal'>Alur Pembayaran</h4>
+<p><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0xNTAgLTE1MCA0MDAgNDAwIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJ4TWlkWU1pZCIgd2lkdGg9IjMwMCAiIGhlaWdodD0iMzAwIiBzdHlsZT0ic2hhcGUtcmVuZGVyaW5nOiBhdXRvOyBkaXNwbGF5OiBibG9jazsgYmFja2dyb3VuZDogcmdiKDI1NSwgMjU1LCAyNTUpOyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxnPjxjaXJjbGUgc3Ryb2tlLWRhc2hhcnJheT0iMTY0LjkzMzYxNDMxMzQ2NDE1IDU2Ljk3Nzg3MTQzNzgyMTM4IiByPSIzNSIgc3Ryb2tlLXdpZHRoPSIxMCIgc3Ryb2tlPSIjMGQ0N2ExIiByYWRpdXM9IjEwMCIgZmlsbD0ibm9uZSIgY3k9IjUwIiBjeD0iNTAiPjxhbmltYXRlVHJhbnNmb3JtIGtleVRpbWVzPSIwOzEiIHZhbHVlcz0iMCA1MCA1MDszNjAgNTAgNTAiIGR1cj0iMXMiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIiB0eXBlPSJyb3RhdGUiIGF0dHJpYnV0ZU5hbWU9InRyYW5zZm9ybSI+PC9hbmltYXRlVHJhbnNmb3JtPjwvY2lyY2xlPjxnPjwvZz48L2c+PC9zdmc+" data-src="../images/acceptingPayments/payment-methods/qr-code-qris/payment-flow-ce2938df.webp" loading="lazy" class="lazyload" title="" alt="QRIS Flow"></p>
 <h4 id='aktivasi-kode-qr-qris' type='normal'>Aktivasi</h4>
 <p>Untuk menerima pembayaran menggunakan QRIS, Anda perlu mendaftarkan merchant Anda terlebih dahulu ke provider QRIS. Pendaftaran dapat dilakukan melalui dashboard OY! dengan membuka halaman “Layanan Kami” dan mengklik tab “Metode Pembayaran”.</p>
 
@@ -5520,6 +5525,7 @@ Once a transaction is successfully created, all transaction details and updates 
 <th style="text-align: left">Tipe Alur</th>
 <th style="text-align: center">Bayar via Desktop</th>
 <th style="text-align: center">Bayar via Browser HP</th>
+<th>Bayar via Aplikasi Provider</th>
 </tr>
 </thead><tbody>
 <tr>
@@ -5529,6 +5535,7 @@ Once a transaction is successfully created, all transaction details and updates 
 <td style="text-align: left">Dialihkan ke app (JumpApp)</td>
 <td style="text-align: center">❌</td>
 <td style="text-align: center">❌</td>
+<td>✅</td>
 </tr>
 <tr>
 <td style="text-align: center">OVO</td>
@@ -5537,6 +5544,7 @@ Once a transaction is successfully created, all transaction details and updates 
 <td style="text-align: left">Notifkasi</td>
 <td style="text-align: center">❌</td>
 <td style="text-align: center">❌</td>
+<td>✅</td>
 </tr>
 <tr>
 <td style="text-align: center">DANA</td>
@@ -5545,6 +5553,7 @@ Once a transaction is successfully created, all transaction details and updates 
 <td style="text-align: left">Dialihkan ke app (JumpApp)</td>
 <td style="text-align: center">✅</td>
 <td style="text-align: center">✅</td>
+<td>✅</td>
 </tr>
 <tr>
 <td style="text-align: center">LinkAja</td>
@@ -5553,6 +5562,7 @@ Once a transaction is successfully created, all transaction details and updates 
 <td style="text-align: left">Dialihkan ke app (JumpApp)</td>
 <td style="text-align: center">❌</td>
 <td style="text-align: center">❌</td>
+<td>✅</td>
 </tr>
 </tbody></table>
 
@@ -6350,9 +6360,12 @@ Setelah Anda membuat Link Pembayaran, Anda akan mendapatkan link URL yang dapat 
 <li>Pilih tab “Konfigurasi Callback”.</li>
 <li>Masukkan URL <em>callback</em> untuk produk yang ingin Anda aktifkan. Pastikan format URL benar, lalu validasi dengan mengklik “Validasi String URL”.</li>
 <li>Untuk mengaktifkan Retry Callback Otomatis, centang “Aktifkan Retry Callback Otomatis” untuk produk terkait. Masukkan email penerima yang akan menerima notifikasi jika callback gagal setelah semua percobaan dilakukan.</li>
-<li>Pastikan Anda telah whitelist IP OY! agar sistem dapat menerima <em>callback</em>:</li>
-<li>54.151.191.85</li>
+<li>Pastikan Anda telah whitelist IP OY! agar sistem dapat menerima <em>callback</em>:
+
+<ul>
+<li>54.151.191.85 </li>
 <li>54.179.86.72</li>
+</ul></li>
 <li>Pastikan sistem Anda menerapkan <em>idempotency logic</em> dengan menggunakan parameter “tx_ref_number” sebagai <em>idempotency key</em> untuk mencegah <em>callback</em> yang sama diproses sebagai pembayaran yang berbeda.</li>
 <li>Simpan perubahan</li>
 </ol>
@@ -6578,55 +6591,6 @@ Setelah Anda membuat Link Pembayaran, Anda akan mendapatkan link URL yang dapat 
 <p><strong>Menyesuaikan Jenis VA Sesuai Kebutuhan</strong></p>
 
 <p>Anda dapat mengkonfigurasi jenis VA sesuai kebutuhan bisnis Anda, memberikan fleksibilitas lebih dalam pengelolaan transaksi pembayaran dengan detail sebagai berikut:</p>
-
-<table><thead>
-<tr>
-<th style="text-align: left">Kategori</th>
-<th style="text-align: left">Tipe</th>
-<th style="text-align: left">Deskripsi</th>
-</tr>
-</thead><tbody>
-<tr>
-<td style="text-align: left">Masa Berlaku</td>
-<td style="text-align: left">VA Statis (Tanpa Kedaluwarsa)</td>
-<td style="text-align: left">VA yang memiliki masa berlaku tidak terbatas. Akan selalu aktif sampai dinonaktifkan secara manual.</td>
-</tr>
-<tr>
-<td style="text-align: left"></td>
-<td style="text-align: left">VA Dinamis</td>
-<td style="text-align: left">VA yang memiliki periode masa berlaku tertentu. Akan selalu aktif sampai masa berlakunya habis atau dinonaktifkan secara manual.</td>
-</tr>
-<tr>
-<td style="text-align: left">Nominal Transaksi</td>
-<td style="text-align: left">VA <em>Closed Amount</em></td>
-<td style="text-align: left">VA yang hanya menerima pembayaran dengan nominal yang ditentukan.</td>
-</tr>
-<tr>
-<td style="text-align: left"></td>
-<td style="text-align: left">VA <em>Open Amount</em></td>
-<td style="text-align: left">VA yang dapat menerima pembayaran dengan maksimal nominal yang telah Anda tentukan saat membuat VA.</td>
-</tr>
-<tr>
-<td style="text-align: left">Jumlah Penggunaan</td>
-<td style="text-align: left">VA Sekali Pakai</td>
-<td style="text-align: left">VA yang hanya bisa menerima satu kali pembayaran.</td>
-</tr>
-<tr>
-<td style="text-align: left"></td>
-<td style="text-align: left">VA Pemakaian Berulang</td>
-<td style="text-align: left">VA yang hanya kedaluwarsa ketika mencapai tanggal kedaluwarsa atau ketika dinonaktifkan secara manual. Anda juga dapat menyesuaikan batas maksimum pembayaran. VA Pemakaian Berulang dengan batas maksimum pembayaran yang disesuaikan akan kedaluwarsa setelah batas pembayaran terlampaui meskipun belum mencapai waktu kedaluwarsa.</td>
-</tr>
-<tr>
-<td style="text-align: left">Nomor VA</td>
-<td style="text-align: left">Nomor VA <em>Custom</em></td>
-<td style="text-align: left">Anda dapat mempersonalisasi nomor akhir VA dengan angka yang Anda inginkan (misalnya, nomor telepon atau nomor tagihan pengguna akhir Anda). Untuk mengaktifkan penyesuaian nomor VA, silakan hubungi perwakilan bisnis Anda. Anda dapat merujuk ke <a href="https://api-docs.oyindonesia.com/#create-customized-va-va-aggregator">API Docs - Create Customized VA Number.</a> Khusus untuk fitur ini, saat ini kami hanya mendukung bank BRI dan CIMB.</td>
-</tr>
-<tr>
-<td style="text-align: left"></td>
-<td style="text-align: left"><em>Predetermined</em></td>
-<td style="text-align: left">OY! akan membuat nomor VA secara random atas nama Anda. Anda dapat merujuk ke <a href="https://api-docs.oyindonesia.com/#create-va-va-aggregator">API Docs - Create VA Number</a>.</td>
-</tr>
-</tbody></table>
 
 <table>
   <tr>
