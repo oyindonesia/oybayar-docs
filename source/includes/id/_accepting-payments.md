@@ -158,7 +158,7 @@ Dengan kedua metode tersebut, jumlah yang akan masuk ke saldo Anda tetap Rp100.0
 |Pengurangan|Rp 11,000 |Rp 500,000,000|
 |Penambahan|Rp 10,000 |Rp 499,999,000|
 
-#### Alur Transaksi Pembayaran
+#### Alur Pembayaran
 ![Bank Transfer - Unique Code Flow](../images/acceptingPayments/payment-methods/bank-transfer-unique-code/payment-flow.webp)
 #### Aktivasi
 Anda hanya dapat menggunakan satu jenis transfer bank (virtual account / kode unik) per bank. Secara default, semua bank menggunakan virtual account. Untuk menerima pembayaran menggunakan kode unik, Anda perlu mengajukan permintaan ke OY! melalui perwakilan bisnis Anda atau tim support kami.
